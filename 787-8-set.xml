@@ -50,7 +50,7 @@
 
 			<pushback>
 				<kp type="double">300</kp>
-				<ki type="double">0</ki>
+				<ki type="double">25</ki>
 				<kd type="double">0</kd>
 				<position-norm type="double">0</position-norm>
 			</pushback>

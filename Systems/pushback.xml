@@ -33,6 +33,24 @@
      </test>
      <output>external_reactions/pushback/magnitude</output>
    </switch>
+   
+   <fcs_function name="Pushback Force X">
+      <function>
+        <cos>
+          <toradians><property>fcs/steer-pos-deg[0]</property></toradians>
+        </cos>
+      </function>
+      <output>external_reactions/pushback/x</output>
+    </fcs_function>
+
+    <fcs_function name="Pushback Force Y">
+      <function>
+        <sin>
+          <toradians><property>fcs/steer-pos-deg[0]</property></toradians>
+        </sin>
+      </function>
+      <output>external_reactions/pushback/y</output>
+    </fcs_function>
 
  </channel>
 </system>
