@@ -1,0 +1,27 @@
+AC3Db
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0.682 0.682 0.682  spec 0 0 0  shi 0  trans 0
+OBJECT world
+kids 1
+OBJECT group
+name "heat"
+loc 0.000233295 -0.0382313 -0.0465558
+kids 1
+OBJECT poly
+name "doors"
+loc -0.000538556 -0.0222217 -0.262576
+texture "doors.png"
+crease 45.000000
+numvert 4
+0 0.145964 0.392651
+0 -0.0338354 0.224556
+0 0.145964 0.224556
+0 -0.0338354 0.392651
+numsurf 1
+SURF 0x30
+mat 0
+refs 4
+1 1.00247 0.00121683
+2 1.00247 1.00077
+0 0 1.00077
+3 0 0.00121683
+kids 0

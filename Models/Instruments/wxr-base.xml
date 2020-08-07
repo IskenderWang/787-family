@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--158x212-->
+
+<PropertyList>
+    <name>WXRadar Echo Base</name>
+    <background>Aircraft/787-8/Models/Instruments/transparent.png</background>
+    <w>512</w>
+    <h>512</h>
+
+    <instruments>
+
+        <instrument include="wxradar-echo.xml">
+            <condition>
+				<and>
+                <greater-than>
+                    <property>systems/electrical/outputs/efis</property>
+                    <value>9</value>
+                </greater-than>	
+				<property>instrumentation/wxradar/serviceable</property>
+				</and>	
+            </condition>
+            <name>WXRadar Echo Main</name>
+            <x>256</x>
+            <y>50</y>
+            <w>512</w>
+            <h>512</h>
+        </instrument>
+
+    </instruments>
+
+</PropertyList>

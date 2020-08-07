@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<!-- 
+This will define properties the FlightGear should create
+ -->
+
+<system name="defines">
+ <property value="0">/sim/model/pushback/position-norm</property>
+ <property value="0">/gear/gear/wow</property>
+ <property value="0">/sim/model/pushback/kp</property>
+ <property value="0">/sim/model/pushback/ki</property>
+ <property value="0">/sim/model/pushback/kd</property>
+ <property value="0">/controls/ice/wing/lift-coefficient</property>
+ <property value="0">/controls/ice/wing/drag-coefficient</property>
+</system>
+

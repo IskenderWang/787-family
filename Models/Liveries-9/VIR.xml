@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+
+<sim>    
+  <model>        
+    <livery>
+		<name type="string">Virgin Atlantic</name>
+      <texture>Liveries-9/VIR.png</texture>
+    </livery>
+    <lights>
+      <texture>Liveries-9/VIR-lights.png</texture>
+    </lights>
+  </model>
+</sim>
+
+</PropertyList>

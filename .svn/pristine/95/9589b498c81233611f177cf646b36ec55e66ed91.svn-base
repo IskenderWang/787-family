@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--158x212-->
+
+<PropertyList>
+    <name>Airport Chart</name>
+    <background>Aircraft/787-8/Models/Instruments/transparent.png</background>
+    <w>512</w>
+    <h>512</h>
+
+    <instruments>
+
+        <instrument include="airport-display.xml">
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/outputs/efis</property>
+                    <value>9</value>
+                </greater-than>		
+            </condition>
+            <name>Chart</name>
+            <x>256</x>
+            <y>200</y>
+            <w>600</w>
+            <h>600</h>
+        </instrument>
+
+    </instruments>
+
+</PropertyList>

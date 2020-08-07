@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+	<model>
+		<livery>
+			<name type="string">All Nippon Airways (Special)</name> 
+			<texture>Liveries-8/JA802A.png</texture>
+		</livery>
+		<lights>
+			<texture>Liveries-8/JA802A-Lights.png</texture>
+		</lights>
+	</model>
+</sim>
+</PropertyList>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+
+	<particlesystem>
+		<texture>ext.png</texture>
+		<emissive>true</emissive>
+		<lighting>false</lighting>
+		<offsets>
+			<roll-deg>90</roll-deg>
+		</offsets>
+		<attach>world</attach>
+		<placer>
+			<type>point</type>
+		</placer>
+		<shooter>
+			<theta-min-deg>85</theta-min-deg>
+			<theta-max-deg>95</theta-max-deg>
+			<phi-min-deg>-5</phi-min-deg>
+			<phi-max-deg>5</phi-max-deg>
+			<speed>
+				<value>5</value>
+				<spread>15</spread>
+			</speed>
+			<rotation-speed>
+				<x-min-deg-sec>0</x-min-deg-sec>
+				<y-min-deg-sec>0</y-min-deg-sec>
+				<z-min-deg-sec>0</z-min-deg-sec>
+				<x-max-deg-sec>0</x-max-deg-sec>
+				<y-max-deg-sec>0</y-max-deg-sec>
+				<z-max-deg-sec>0</z-max-deg-sec>
+			</rotation-speed>
+		</shooter>
+		<counter>
+			<particles-per-sec>
+				<value>25</value>
+				<spread>15</spread>
+			</particles-per-sec>
+		</counter>
+		<align>billboard</align>
+		<particle>
+			<start>
+				<color>
+					<red>
+						<value>0.8</value>
+					</red>
+					<green>
+						<value>0.8</value>
+					</green>
+					<blue>
+						<value>0.8</value>
+					</blue>
+					<alpha>
+						<value>0.8</value>
+					</alpha>
+				</color>
+				<size>
+					<value>2</value>
+				</size>
+			</start>
+			<end>
+				<color>
+					<red>
+						<value>0</value>
+					</red>
+					<green>
+						<value>0</value>
+					</green>
+					<blue>
+						<value>0</value>
+					</blue>
+					<alpha>
+						<value>0</value>
+					</alpha>
+				</color>
+				<size>
+					<value>3</value>
+				</size>
+			</end>
+			<life-sec>
+				<value>10.0</value>
+			</life-sec>
+			<mass-kg>50</mass-kg>
+			<radius-m>1.5</radius-m>
+		</particle>
+		
+   <program>
+     <fluid>air</fluid>
+     <gravity type="bool">false</gravity>
+     <wind typ="bool">false</wind>
+   </program>
+   
+	</particlesystem>
+
+</PropertyList>

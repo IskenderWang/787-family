@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+
+<!--
+**********************************************************************
+Configure the nav-display symbology
+**********************************************************************
+-->
+
+<PropertyList>
+
+
+<symbol>
+    <type type="string">fix</type>
+    <enable>
+        <property>instrumentation/efis[0]/inputs/WPT</property>
+    </enable>
+    <width type="float">16</width>
+    <texture-size  type="int">512</texture-size>
+    <u0 type="float">192</u0>
+    <v0 type="float">8</v0>
+    <u1 type="float">256</u1>
+    <v1 type="float">56</v1>
+    <color>
+        <red type="float">1</red>
+        <green type="float">1</green>
+        <blue type="float">1</blue>
+    </color>
+    <text type="string">{id}</text>
+    <text-align type="string">left-top</text-align>
+    <text-offset-x>10</text-offset-x>
+    <text-offset-y>0</text-offset-y>
+</symbol>
+
+<symbol>
+    <type type="string">airport</type>
+    <enable>
+        <property>instrumentation/efis[0]/inputs/ARPT</property>
+    </enable>
+    
+    <state type="string">!departure</state>
+    <state type="string">!destination</state>
+    <width type="float">16</width>
+    <texture-size type="int">512</texture-size>
+    <u0 type="float">303.45</u0>
+    <v0 type="float">456.03</v0>
+    <u1 type="float">334.48</u1>
+    <v1 type="float">492.24</v1>
+    <color>
+        <red type="float">1</red>
+        <green type="float">0</green>
+        <blue type="float">1</blue>
+    </color>
+    <text type="string">{id}</text>
+    <text-align type="string">left-top</text-align>
+    <text-offset-x>8</text-offset-x>
+    <text-offset-y>5</text-offset-y>
+</symbol>
+
+<symbol>
+    <!-- type type="string">runway</type -->
+    <type type="string">airport</type>
+    <!-- state type="string">departure</state -->
+    <state type="string">destination</state>
+    <width type="float">16</width>
+    <height type="float">34</height>
+    <rotate-to-heading type="bool">true</rotate-to-heading>
+    <texture-size type="int">512</texture-size>
+    <u0 type="float">228.45</u0>
+    <v0 type="float">187.07</v0>
+    <u1 type="float">269.83</u1>
+    <v1 type="float">307.76</v1>
+    <color>
+        <red type="float">1</red>
+        <green type="float">1</green>
+        <blue type="float">1</blue>
+    </color>
+</symbol>
+
+<symbol>
+    <type type="string">waypoint</type>
+    <state type="string">current-wp</state>
+    <width type="float">16</width>
+    <texture-size  type="int">512</texture-size>
+    <u0 type="float">274.14</u0>
+    <v0 type="float">455.17</v0>
+    <u1 type="float">305.17</u1>
+    <v1 type="float">492.24</v1>
+    <color>
+        <red type="float">0</red>
+        <green type="float">1</green>
+        <blue type="float">0</blue>
+    </color>
+    <line-color>
+        <red type="float">0</red>
+        <green type="float">1</green>
+        <blue type="float">0</blue>
+    </line-color>
+    <draw-leg type="bool">true</draw-leg>
+    
+    <text type="string">{id}</text>
+    <text-align type="string">left-top</text-align>
+    <text-offset-x>13</text-offset-x>
+    <text-offset-y>13</text-offset-y>
+</symbol>
+    
+<symbol>
+    <type type="string">waypoint</type>
+    <state type="string">on-active-route</state>
+    <state type="string">!current-wp</state>
+    <width type="float">16</width>
+    <texture-size  type="int">512</texture-size>
+    <u0 type="float">274.14</u0>
+    <v0 type="float">455.17</v0>
+    <u1 type="float">305.17</u1>
+    <v1 type="float">492.24</v1>
+    <color>
+        <red type="float">0</red>
+        <green type="float">1</green>
+        <blue type="float">0</blue>
+    </color>
+    <line-color>
+        <red type="float">0</red>
+        <green type="float">1</green>
+        <blue type="float">0</blue>
+    </line-color>
+    <draw-leg type="bool">true</draw-leg>
+    
+    <text type="string">{id}</text>
+    <text-align type="string">left-top</text-align>
+    <text-offset-x>13</text-offset-x>
+    <text-offset-y>13</text-offset-y>
+    <character-size type="double">0.01</character-size>
+</symbol>
+    
+<symbol>
+    <type type="string">VOR</type>
+    <enable>
+      <property>instrumentation/efis[0]/inputs/VORD</property>
+    </enable>
+    <width type="float">16</width>
+    <texture-size  type="int">512</texture-size>
+    <u0 type="float">181.90</u0>
+    <v0 type="float">446.55</v0>
+    <u1 type="float">225.00</u1>
+    <v1 type="float">493.10</v1>
+    <color>
+        <red type="float">0.243</red>
+        <green type="float">0.663</green>
+        <blue type="float">0.961</blue>
+    </color>
+    <text type="string">{id}</text>
+    <text-align type="string">right-bottom</text-align>
+    <text-offset-x>-12</text-offset-x>
+    <text-offset-y>-5</text-offset-y>
+</symbol>
+
+<!-- symbol>
+    <type type="string">vor</type>
+    <enable>
+        <property>instrumentation/efis[0]/inputs/VORD</property>
+    </enable>
+    <state type="string">!tuned</state>
+    <width type="float">16</width>
+    <texture-size  type="int">512</texture-size>
+    <u0 type="float">181.90</u0>
+    <v0 type="float">493.10</v0>
+    <u1 type="float">225.00</u1>
+    <v1 type="float">446.55</v1>
+    <color>
+        <red type="float">1</red>
+        <green type="float">1</green>
+        <blue type="float">1</blue>
+    </color>
+</symbol -->
+
+<symbol>
+    <type type="string">NDB</type>
+    <enable>
+      <property>instrumentation/efis[0]/inputs/NDB</property>
+    </enable>
+    <width type="float">16</width>
+    <texture-size  type="int">512</texture-size>
+    <u0 type="float">233.62</u0>
+    <v0 type="float">454.31</v0>
+    <u1 type="float">273.28</u1>
+    <v1 type="float">490.52</v1>
+    <color>
+        <red type="float">1</red>
+        <green type="float">1</green>
+        <blue type="float">1</blue>
+    </color>
+    <text type="string">{id}</text>
+    <text-align type="string">right-bottom</text-align>
+    <text-offset-x>8</text-offset-x>
+    <text-offset-y>8</text-offset-y>
+</symbol>
+
+
+<symbol>
+    <type type="string">ai-aircraft</type>
+    <state type="string">tcas-threat-level-0</state>
+    <state type="string">tcas-threat-level-1</state>
+    <state type="string">tcas-threat-level-2</state>
+    <state type="string">tcas-threat-level-3</state>
+    <enable>
+      <property>instrumentation/efis[0]/inputs/TRAF</property>
+    </enable>
+    <width type="float">16</width>
+    <texture-size  type="int">512</texture-size>
+    <u0 type="float">144.83</u0>
+    <v0 type="float">454.31</v0>
+    <u1 type="float">175.86</u1>
+    <v1 type="float">484.48</v1>
+    <text type="string">{flight-level}</text>
+    <text-align type="string">left-top</text-align>
+    <text-offset-x>18</text-offset-x>
+    <text-offset-y>18</text-offset-y>
+    <color>
+        <red type="float">1</red>
+        <green type="float">0.876</green>
+        <blue type="float">0.486</blue>
+    </color>
+</symbol>
+
+</PropertyList>
+
+

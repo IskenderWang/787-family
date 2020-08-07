@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>fuel.ac</path>
+
+<!-- Come on only when there's atleast 9 volts of power -->
+
+	<animation>
+		<type>select</type>
+		<object-name>fuel</object-name>
+		<condition>
+			<greater-than>
+				<property>systems/electrical/outputs/efis</property>
+				<value>9</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+<!-- Light Text -->
+
+	<animation>
+		<name>White text</name>
+		<type>material</type>
+		<object-name>white</object-name>
+		<emission>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</emission>
+	</animation>
+
+<!-- 3D Text -->
+
+	<text><name>white</name>
+		<offsets>
+			<x-m>0.0001</x-m>
+			<y-m>0.0057</y-m>
+			<z-m>0.0523</z-m>
+		</offsets>
+		<alignment>center-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">number-value</type>
+		<format type="string">%3.1f°</format>
+		<property>controls/fuel/lbsx1000</property>
+		<font>courier-bold.txf</font>
+		<character-size>0.01</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>white</name>
+		<offsets>
+			<x-m>0.0001</x-m>
+			<y-m>-0.0506</y-m>
+			<z-m>0.0108</z-m>
+		</offsets>
+		<alignment>center-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">number-value</type>
+		<format type="string">%3.1f°</format>
+		<property>controls/fuel/ltank</property>
+		<font>courier-bold.txf</font>
+		<character-size>0.007</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>white</name>
+		<offsets>
+			<x-m>0.0001</x-m>
+			<y-m>0.0506</y-m>
+			<z-m>0.0108</z-m>
+		</offsets>
+		<alignment>center-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">number-value</type>
+		<format type="string">%3.1f°</format>
+		<property>controls/fuel/rtank</property>
+		<font>courier-bold.txf</font>
+		<character-size>0.007</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>white</name>
+		<offsets>
+			<x-m>0.0001</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.0348</z-m>
+		</offsets>
+		<alignment>center-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">number-value</type>
+		<format type="string">%3.1f°</format>
+		<property>controls/fuel/ctank</property>
+		<font>courier-bold.txf</font>
+		<character-size>0.007</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+<!-- Select Animations -->
+
+	<animation>
+		<type>select</type>
+		<object-name>ltank</object-name>
+		<condition>
+				<property>consumables/fuel/tank[0]/selected</property>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>rtank</object-name>
+		<condition>
+				<property>consumables/fuel/tank[2]/selected</property>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>ctank</object-name>
+		<condition>
+				<property>consumables/fuel/tank[1]/selected</property>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>xfeed</object-name>
+		<condition>
+				<property>controls/fuel/x-feed</property>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>lnozzle</object-name>
+		<condition>
+				<property>controls/jettison/rnozzle</property>
+				<property>controls/jettison/arm</property>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>rnozzle</object-name>
+		<condition>
+				<property>controls/jettison/lnozzle</property>
+				<property>controls/jettison/arm</property>
+		</condition>
+	</animation>
+
+</PropertyList>

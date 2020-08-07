@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+	<model>
+		<livery> 
+			<name type="string">China Southern Airlines (B-2727)</name>
+			<texture>Liveries-8/B-2727.png</texture>
+		</livery>
+		<lights>   
+			<texture>Liveries-8/CSN-Lights.png</texture>
+		</lights>
+	</model>
+</sim>
+</PropertyList>

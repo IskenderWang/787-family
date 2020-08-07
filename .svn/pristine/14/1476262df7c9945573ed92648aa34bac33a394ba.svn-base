@@ -1,0 +1,27 @@
+AC3Db
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0.682 0.682 0.682  spec 0 0 0  shi 0  trans 0
+OBJECT world
+kids 1
+OBJECT group
+name "hyd"
+loc -0.000305261 0.0370493 -0.0533991
+kids 1
+OBJECT poly
+name "pneu"
+loc 0 -0.134981 -0.240537
+texture "presure.png"
+crease 45.000000
+numvert 4
+0 0.213494 0.372888
+0 -0.0494889 0.213254
+0 0.213494 0.213254
+0 -0.0494889 0.372888
+numsurf 1
+SURF 0x30
+mat 0
+refs 4
+1 0.993266 0.00878906
+2 0.993266 0.982259
+0 0 0.982259
+3 0 0.00878906
+kids 0

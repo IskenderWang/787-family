@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+
+<sim>    
+  <model>        
+    <livery>
+		<name type="string">Turkish Airlines</name>
+      <texture>Liveries-9/THY.png</texture>
+    </livery>
+    <lights>
+      <texture>Liveries-9/THY-lights.png</texture>
+    </lights>
+  </model>
+</sim>
+
+</PropertyList>

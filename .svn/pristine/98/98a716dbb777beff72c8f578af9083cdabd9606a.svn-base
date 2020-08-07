@@ -1,0 +1,2994 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>eicas.ac</path>
+
+<!-- Come on only when there's atleast 9 volts of power -->
+
+	<animation>
+		<type>select</type>
+		<object-name>eicas</object-name>
+		<object-name>warn</object-name>
+		<object-name>msg</object-name>
+		<object-name>msg0</object-name>
+		<object-name>msg1</object-name>
+		<object-name>msg2</object-name>
+		<object-name>msg3</object-name>
+		<object-name>msg4</object-name>
+		<object-name>msg5</object-name>
+		<object-name>msg6</object-name>
+		<object-name>msg7</object-name>
+		<object-name>msg8</object-name>
+		<object-name>msg9</object-name>
+		<object-name>msg10</object-name>
+		<object-name>msg11</object-name>
+		<object-name>msg12</object-name>
+		<object-name>msg13</object-name>
+		<object-name>msg14</object-name>
+		<object-name>msg15</object-name>
+		<object-name>msg16</object-name>
+		<object-name>msg17</object-name>
+		<object-name>msg18</object-name>
+		<object-name>msg19</object-name>
+		<condition>
+			<greater-than>
+				<property>systems/electrical/outputs/efis</property>
+				<value>9</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+<!-- N1 Digits -->
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>LHn1.004</object-name>
+   	<property>engines/engine/n1</property>
+   	<factor>0.001</factor>
+	<step>100</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>LHn1.003</object-name>
+   	<property>engines/engine/n1</property>
+   	<factor>0.01</factor>
+	<step>10</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>LHn1.002</object-name>
+   	<property>engines/engine/n1</property>
+   	<factor>0.1</factor>
+	<step>1</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>LHn1.001</object-name>
+   	<property>engines/engine/n1</property>
+   	<factor>1.0</factor>
+	<step>0.1</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>RHn1.004</object-name>
+   	<property>engines/engine[1]/n1</property>
+   	<factor>0.001</factor>
+	<step>100</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>RHn1.003</object-name>
+   	<property>engines/engine[1]/n1</property>
+   	<factor>0.01</factor>
+	<step>10</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>RHn1.002</object-name>
+   	<property>engines/engine[1]/n1</property>
+   	<factor>0.1</factor>
+	<step>1</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>RHn1.001</object-name>
+   	<property>engines/engine[1]/n1</property>
+   	<factor>1.0</factor>
+	<step>0.1</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<!-- n2 Digits -->
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>LHn2.004</object-name>
+   	<property>engines/engine/n2</property>
+   	<factor>0.001</factor>
+	<step>100</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>LHn2.003</object-name>
+   	<property>engines/engine/n2</property>
+   	<factor>0.01</factor>
+	<step>10</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>LHn2.002</object-name>
+   	<property>engines/engine/n2</property>
+   	<factor>0.1</factor>
+	<step>1</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>LHn2.001</object-name>
+   	<property>engines/engine/n2</property>
+   	<factor>1.0</factor>
+	<step>0.1</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>RHn2.004</object-name>
+   	<property>engines/engine[1]/n2</property>
+   	<factor>0.001</factor>
+	<step>100</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>RHn2.003</object-name>
+   	<property>engines/engine[1]/n2</property>
+   	<factor>0.01</factor>
+	<step>10</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>RHn2.002</object-name>
+   	<property>engines/engine[1]/n2</property>
+   	<factor>0.1</factor>
+	<step>1</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>RHn2.001</object-name>
+   	<property>engines/engine[1]/n2</property>
+   	<factor>1.0</factor>
+	<step>0.1</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<!-- N1, N2 and EGT Rotate Animations -->
+
+<animation>
+	<type>rotate</type>
+   	<object-name>n1.l</object-name>
+   	<property>engines/engine/n1</property>
+   	<interpolation>
+        <entry>
+       		<ind>0.0</ind><dep>0.0</dep>
+     	</entry>
+     	<entry>
+       		<ind>100</ind><dep>225</dep>
+     	</entry>
+   	</interpolation>
+   	<center>
+    	<x-m>0</x-m>
+     	<y-m>-0.0577</y-m>
+     	<z-m>0.1189</z-m>
+   	</center>
+   	<axis>
+     	<x>-1.0</x>
+     	<y>0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+	<type>rotate</type>
+   	<object-name>n1.r</object-name>
+   	<property>engines/engine[1]/n1</property>
+   	<interpolation>
+        <entry>
+       		<ind>0.0</ind><dep>0.0</dep>
+     	</entry>
+     	<entry>
+       		<ind>100</ind><dep>225</dep>
+     	</entry>
+   	</interpolation>
+   	<center>
+    	<x-m>0</x-m>
+     	<y-m>-0.0160</y-m>
+     	<z-m>0.1189</z-m>
+   	</center>
+   	<axis>
+     	<x>-1.0</x>
+     	<y>0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+	<type>rotate</type>
+   	<object-name>n2.l</object-name>
+   	<property>engines/engine/n2</property>
+   	<interpolation>
+        <entry>
+       		<ind>0.0</ind><dep>0.0</dep>
+     	</entry>
+     	<entry>
+       		<ind>100</ind><dep>225</dep>
+     	</entry>
+   	</interpolation>
+   	<center>
+    	<x-m>0</x-m>
+     	<y-m>-0.0577</y-m>
+     	<z-m>0.0801</z-m>
+   	</center>
+   	<axis>
+     	<x>-1.0</x>
+     	<y>0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+	<type>rotate</type>
+   	<object-name>n2.r</object-name>
+   	<property>engines/engine[1]/n2</property>
+   	<interpolation>
+        <entry>
+       		<ind>0.0</ind><dep>0.0</dep>
+     	</entry>
+     	<entry>
+       		<ind>100</ind><dep>225</dep>
+     	</entry>
+   	</interpolation>
+   	<center>
+    	<x-m>0</x-m>
+     	<y-m>-0.0160</y-m>
+     	<z-m>0.0801</z-m>
+   	</center>
+   	<axis>
+     	<x>-1.0</x>
+     	<y>0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+	<type>rotate</type>
+   	<object-name>egt.l</object-name>
+   	<property>engines/engine/egt-degf</property>
+   	<interpolation>
+        <entry>
+       		<ind>0.0</ind><dep>0.0</dep>
+     	</entry>
+     	<entry>
+       		<ind>3000</ind><dep>225</dep>
+     	</entry>
+   	</interpolation>
+   	<center>
+    	<x-m>0</x-m>
+     	<y-m>-0.0577</y-m>
+     	<z-m>0.0412</z-m>
+   	</center>
+   	<axis>
+     	<x>-1.0</x>
+     	<y>0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+	<type>rotate</type>
+   	<object-name>egt.r</object-name>
+   	<property>engines/engine[1]/egt-degf</property>
+   	<interpolation>
+        <entry>
+       		<ind>0.0</ind><dep>0.0</dep>
+     	</entry>
+     	<entry>
+       		<ind>3000</ind><dep>225</dep>
+     	</entry>
+   	</interpolation>
+   	<center>
+    	<x-m>0</x-m>
+     	<y-m>-0.0160</y-m>
+     	<z-m>0.0412</z-m>
+   	</center>
+   	<axis>
+     	<x>-1.0</x>
+     	<y>0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<!-- TAT digits -->
+
+<!-- Positive TAT Value -->
+
+	<animation>
+		<type>select</type>
+		<object-name>TAT.1</object-name>
+		<object-name>TAT.10</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>controls/ice/tat</property>
+				<value>0</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
+
+<!-- Negative TAT Value -->
+
+	<animation>
+		<type>select</type>
+		<object-name>TAT.-</object-name>
+		<object-name>TAT.-1</object-name>
+		<object-name>TAT.-10</object-name>
+		<condition>
+			<less-than>
+				<property>controls/ice/tat</property>
+				<value>0</value>
+			</less-than>
+		</condition>
+	</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>TAT.10</object-name>
+   	<property>controls/ice/tat</property>
+   	<factor>0.01</factor>
+	<step>10</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>TAT.1</object-name>
+   	<property>controls/ice/tat</property>
+   	<factor>0.1</factor>
+	<step>1</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>TAT.-10</object-name>
+   	<property>controls/ice/tat</property>
+   	<factor>-0.01</factor>
+	<step>10</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>TAT.-1</object-name>
+   	<property>controls/ice/tat</property>
+   	<factor>-0.1</factor>
+	<step>1</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<!-- FUEL INDICATORS-->
+<!-- total fuel lbs-->
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>Tfuel.001</object-name>
+   	<property>consumables/fuel/total-fuel-lbs</property>
+   	<factor>0.10</factor>
+	<step>1</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>Tfuel.002</object-name>
+   	<property>consumables/fuel/total-fuel-lbs</property>
+   	<factor>0.010</factor>
+	<step>10</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>Tfuel.003</object-name>
+   	<property>consumables/fuel/total-fuel-lbs</property>
+   	<factor>0.0010</factor>
+	<step>100</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>Tfuel.004</object-name>
+   	<property>consumables/fuel/total-fuel-lbs</property>
+   	<factor>0.0001</factor>
+	<step>1000</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>Tfuel.005</object-name>
+   	<property>consumables/fuel/total-fuel-lbs</property>
+   	<factor>0.00001</factor>
+	<step>10000</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<!-- EGT Digits -->
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>egt.l.001</object-name>
+   	<property>engines/engine/egt-degf</property>
+   	<factor>0.0001</factor>
+	<step>1000</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>egt.l.004</object-name>
+   	<property>engines/engine/egt-degf</property>
+   	<factor>0.001</factor>
+	<step>100</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>egt.l.003</object-name>
+   	<property>engines/engine/egt-degf</property>
+   	<factor>0.01</factor>
+	<step>10</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>egt.l.002</object-name>
+   	<property>engines/engine/egt-degf</property>
+   	<factor>0.1</factor>
+	<step>1</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>egt.r.001</object-name>
+   	<property>engines/engine[1]/egt-degf</property>
+   	<factor>0.0001</factor>
+	<step>1000</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>egt.r.004</object-name>
+   	<property>engines/engine[1]/egt-degf</property>
+   	<factor>0.001</factor>
+	<step>100</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>egt.r.003</object-name>
+   	<property>engines/engine[1]/egt-degf</property>
+   	<factor>0.01</factor>
+	<step>10</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>egt.r.002</object-name>
+   	<property>engines/engine[1]/egt-degf</property>
+   	<factor>0.1</factor>
+	<step>1</step>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<!-- Flaps Indicator -->
+
+<animation>
+   	<type>textranslate</type>
+   	<object-name>flaps</object-name>
+   	<property>surface-positions/flap-pos-norm</property>
+   	<factor>0.36</factor>
+     <axis>
+     	<x>0.0</x>
+     	<y>1.0</y>
+     	<z>0.0</z>
+   	</axis>
+</animation>
+
+<!-- System LOG OSGText -->
+
+<!-- Latest Warning Message -->
+
+<text>
+	<name>warn</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0544</y-m>
+		<z-m>0.0074</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/warning</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<!-- Latest System Message -->
+
+<text>
+	<name>msg</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0544</y-m>
+		<z-m>-0.0053</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<!-- System Log Messages -->
+
+<text>
+	<name>msg0</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0732</y-m>
+		<z-m>-0.0170</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/disp[0]/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<text>
+	<name>msg1</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0732</y-m>
+		<z-m>-0.0220</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/disp[1]/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<text>
+	<name>msg2</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0732</y-m>
+		<z-m>-0.0270</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/disp[2]/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<text>
+	<name>msg3</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0732</y-m>
+		<z-m>-0.0320</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/disp[3]/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<text>
+	<name>msg4</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0732</y-m>
+		<z-m>-0.0370</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/disp[4]/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<text>
+	<name>msg5</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0732</y-m>
+		<z-m>-0.0420</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/disp[5]/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<text>
+	<name>msg6</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0732</y-m>
+		<z-m>-0.0470</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/disp[6]/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<text>
+	<name>msg7</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0732</y-m>
+		<z-m>-0.0520</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/disp[7]/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<text>
+	<name>msg8</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0732</y-m>
+		<z-m>-0.0570</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/disp[8]/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<text>
+	<name>msg9</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0732</y-m>
+		<z-m>-0.0620</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/disp[9]/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<text>
+	<name>msg10</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0732</y-m>
+		<z-m>-0.0670</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/disp[10]/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<text>
+	<name>msg11</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0732</y-m>
+		<z-m>-0.0720</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/disp[11]/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<text>
+	<name>msg12</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0732</y-m>
+		<z-m>-0.0770</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/disp[12]/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<text>
+	<name>msg13</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0732</y-m>
+		<z-m>-0.0820</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/disp[13]/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<text>
+	<name>msg14</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0732</y-m>
+		<z-m>-0.0870</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/disp[14]/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<text>
+	<name>msg15</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0732</y-m>
+		<z-m>-0.0920</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/disp[15]/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<text>
+	<name>msg16</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0732</y-m>
+		<z-m>-0.0970</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/disp[16]/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<text>
+	<name>msg17</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0732</y-m>
+		<z-m>-0.1020</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/disp[17]/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<text>
+	<name>msg18</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0732</y-m>
+		<z-m>-0.1070</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/disp[18]/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<text>
+	<name>msg19</name>
+	<offsets>
+		<x-m>0.0001</x-m>
+		<y-m>-0.0732</y-m>
+		<z-m>-0.1120</z-m>
+	</offsets>
+	<alignment>left-center</alignment>
+	<axis-alignment>yz-plane</axis-alignment>
+	<type type="string">text-value</type>
+	<format type="string">%s</format>
+	<property>instrumentation/sysinfo/disp[19]/message</property>
+	<truncate type="bool">false</truncate>
+	<font type="string">Helvetica.txf</font>
+	<draw-text type="bool">true</draw-text>
+	<draw-alignment type="bool">false</draw-alignment>
+	<draw-boundingbox type="bool">false</draw-boundingbox>
+	<character-size>0.005</character-size>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+</text>
+
+<!-- Material Animations based on message type -->
+
+<animation>
+	<type>material</type>
+	<object-name>warn</object-name>
+	<object-name>msg</object-name>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+
+<!-- Message Colors -->
+
+<animation>
+	<type>material</type>
+	<object-name>msg0</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[0]/type</property>
+			<value>0</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg0</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[0]/type</property>
+			<value>1</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg0</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[0]/type</property>
+			<value>2</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>msg1</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[1]/type</property>
+			<value>0</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg1</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[1]/type</property>
+			<value>1</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg1</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[1]/type</property>
+			<value>2</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>msg2</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[2]/type</property>
+			<value>0</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg2</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[2]/type</property>
+			<value>1</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg2</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[2]/type</property>
+			<value>2</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>msg3</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[3]/type</property>
+			<value>0</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg3</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[3]/type</property>
+			<value>1</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg3</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[3]/type</property>
+			<value>2</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>msg4</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[4]/type</property>
+			<value>0</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg4</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[4]/type</property>
+			<value>1</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg4</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[4]/type</property>
+			<value>2</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>msg5</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[5]/type</property>
+			<value>0</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg5</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[5]/type</property>
+			<value>1</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg5</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[5]/type</property>
+			<value>2</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>msg6</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[6]/type</property>
+			<value>0</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg6</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[6]/type</property>
+			<value>1</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg6</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[6]/type</property>
+			<value>2</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>msg7</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[7]/type</property>
+			<value>0</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg7</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[7]/type</property>
+			<value>1</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg7</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[7]/type</property>
+			<value>2</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>msg8</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[8]/type</property>
+			<value>0</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg8</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[8]/type</property>
+			<value>1</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg8</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[8]/type</property>
+			<value>2</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>msg9</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[9]/type</property>
+			<value>0</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg9</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[9]/type</property>
+			<value>1</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg9</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[9]/type</property>
+			<value>2</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>msg10</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[10]/type</property>
+			<value>0</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg10</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[10]/type</property>
+			<value>1</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg10</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[10]/type</property>
+			<value>2</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>msg11</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[11]/type</property>
+			<value>0</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg11</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[11]/type</property>
+			<value>1</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg11</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[11]/type</property>
+			<value>2</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>msg12</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[12]/type</property>
+			<value>0</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg12</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[12]/type</property>
+			<value>1</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg12</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[12]/type</property>
+			<value>2</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>msg13</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[13]/type</property>
+			<value>0</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg13</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[13]/type</property>
+			<value>1</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg13</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[13]/type</property>
+			<value>2</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>msg14</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[14]/type</property>
+			<value>0</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg14</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[14]/type</property>
+			<value>1</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg14</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[14]/type</property>
+			<value>2</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>msg15</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[15]/type</property>
+			<value>0</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg15</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[15]/type</property>
+			<value>1</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg15</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[15]/type</property>
+			<value>2</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>msg16</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[16]/type</property>
+			<value>0</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg16</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[16]/type</property>
+			<value>1</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg16</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[16]/type</property>
+			<value>2</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>msg17</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[17]/type</property>
+			<value>0</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg17</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[17]/type</property>
+			<value>1</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg17</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[17]/type</property>
+			<value>2</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>msg18</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[18]/type</property>
+			<value>0</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg18</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[18]/type</property>
+			<value>1</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg18</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[18]/type</property>
+			<value>2</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>msg19</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[19]/type</property>
+			<value>0</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>1</green>
+		<blue>1</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg19</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[19]/type</property>
+			<value>1</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>1</red>
+		<green>0.752941176</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>msg19</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[19]/type</property>
+			<value>2</value>
+		</equals>
+	</condition>
+	<emission>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</emission>
+	<diffuse>
+		<red>0.776470588</red>
+		<green>0</green>
+		<blue>0</blue>
+	</diffuse>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>print</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.print_log();
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>scroll_up</object-name>
+	<action>
+        <button>0</button>
+        <repeatable>1</repeatable>
+        <binding>
+            <command>nasal</command>
+			<script>
+				var max = getprop("/instrumentation/sysinfo/max");
+				var first = getprop("/instrumentation/sysinfo/first");
+				
+				if ((first > 0) and (max != 0))
+					setprop("/instrumentation/sysinfo/first", first - 1);
+					
+				b787.sysinfo.update_display();
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>scroll_down</object-name>
+	<action>
+        <button>0</button>
+        <repeatable>1</repeatable>
+        <binding>
+            <command>nasal</command>
+			<script>
+				var max = getprop("/instrumentation/sysinfo/max");
+				var first = getprop("/instrumentation/sysinfo/first");
+				
+				if ((max > first + 19) and (max != 0))
+					setprop("/instrumentation/sysinfo/first", first + 1);
+					
+				b787.sysinfo.update_display();
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>new.0</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[0]/attend</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>new.0</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.attend(0);
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>new.1</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[1]/attend</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>new.1</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.attend(1);
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>new.2</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[2]/attend</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>new.2</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.attend(2);
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>new.3</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[3]/attend</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>new.3</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.attend(3);
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>new.4</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[4]/attend</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>new.4</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.attend(4);
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>new.5</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[5]/attend</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>new.5</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.attend(5);
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>new.6</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[6]/attend</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>new.6</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.attend(6);
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>new.7</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[7]/attend</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>new.7</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.attend(7);
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>new.8</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[8]/attend</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>new.8</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.attend(8);
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>new.9</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[9]/attend</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>new.9</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.attend(9);
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>new.10</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[10]/attend</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>new.10</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.attend(10);
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>new.11</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[11]/attend</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>new.11</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.attend(11);
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>new.12</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[12]/attend</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>new.12</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.attend(12);
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>new.13</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[13]/attend</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>new.13</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.attend(13);
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>new.14</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[14]/attend</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>new.14</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.attend(14);
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>new.15</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[15]/attend</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>new.15</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.attend(15);
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>new.16</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[16]/attend</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>new.16</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.attend(16);
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>new.17</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[17]/attend</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>new.17</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.attend(17);
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>new.18</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[18]/attend</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>new.18</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.attend(18);
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>new.19</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/disp[19]/attend</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>new.19</object-name>
+	<action>
+        <button>0</button>
+        <binding>
+            <command>nasal</command>
+			<script>
+				b787.sysinfo.attend(19);
+			</script>
+        </binding>
+    </action>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>unattended</object-name>
+	<condition>
+		<equals>
+			<property>instrumentation/sysinfo/unattended</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+
+</PropertyList>

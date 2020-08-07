@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<name>Default Aircraft Hud</name>
+	
+	<import>
+		<path>Huds/Instruments/turn-bank-indicator.xml</path>
+		<y-offset>-195</y-offset>
+	</import>
+
+	<import>
+		<path>Huds/Sets/coordinates.xml</path>
+		<y-offset>190</y-offset>
+	</import>
+
+	<import>
+		<path>Huds/Instruments/compass.xml</path>
+		<y-offset>190</y-offset>
+	</import>
+
+	<import>
+		<path>Aircraft/787-8/Models/FlightDeck/HUD-controls.xml</path>
+	</import>
+
+	<import>
+		<path>Huds/Sets/parameters.xml</path>
+	</import>
+
+	<import>
+		<path>Huds/Sets/autopilot.xml</path>
+		<x-offset>-100</x-offset>
+		<y-offset>160</y-offset>
+	</import>
+
+    <import>
+		<path>Huds/Sets/gps.xml</path>
+		<x-offset>-300</x-offset>
+		<y-offset>160</y-offset>
+	</import>
+
+	<import>
+		<path>Huds/Instruments/ladder.xml</path>
+	</import>
+
+	<import>
+		<path>Huds/Instruments/runway.xml</path>
+	</import>
+</PropertyList>

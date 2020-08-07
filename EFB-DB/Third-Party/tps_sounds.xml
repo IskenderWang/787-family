@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<!-- Catch Me -->
+
+    <score>
+		<name>score</name>
+        <path>Aircraft/787-8/EFB-DB/Third-Party/Sounds/score.wav</path>
+        <mode>once</mode>
+        <condition>
+        	<equals>
+            <property>instrumentation/efb/catchme/scored</property>
+            <value>1</value>
+           </equals>
+        </condition>
+        <volume>
+            <factor>10</factor>
+        </volume>
+        <position>
+            <x>0.00</x>
+            <y>0.00</y>
+            <z>0.00</z>
+        </position>
+        <reference-dist>10.0</reference-dist>
+        <max-dist>100.0</max-dist>
+    </score>
+    
+    <gameover>
+		<name>gameover</name>
+        <path>Aircraft/787-8/EFB-DB/Third-Party/Sounds/gameover.wav</path>
+        <mode>looped</mode>
+        <condition>
+        	<equals>
+            <property>instrumentation/efb/page</property>
+            <value>GAME OVER</value>
+           </equals>
+        </condition>
+        <volume>
+            <factor>10</factor>
+        </volume>
+        <position>
+            <x>0.00</x>
+            <y>0.00</y>
+            <z>0.00</z>
+        </position>
+        <reference-dist>10.0</reference-dist>
+        <max-dist>100.0</max-dist>
+    </gameover>
+
+</PropertyList>

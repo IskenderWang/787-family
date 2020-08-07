@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropertyList>
+  <name>787-8-interior</name>
+  <inherits-from>Effects/model-interior</inherits-from>
+
+  <parameters>
+    <texture n="4">
+      <type>cubemap</type>
+      <images>
+        <positive-x>Aircraft/787-8/Models/Effects/interior/0004.png</positive-x>      <!-- px (tail) rotate 90 deg from N or S to W -->
+        <negative-x>Aircraft/787-8/Models/Effects/interior/0002.png</negative-x>      <!-- nx (nose) rotate 90 deg from N or S to E -->
+        <positive-y>Aircraft/787-8/Models/Effects/interior/0001.png</positive-y>      <!-- py (starboard/right) from N do not rotate -->
+        <negative-y>Aircraft/787-8/Models/Effects/interior/0003.png</negative-y>      <!-- ny (port/left) from N rotate 180 deg to S -->
+        <positive-z>Aircraft/787-8/Models/Effects/interior/0006.png</positive-z>      <!-- pz (top) rotate 90 deg from N or S to W -->
+        <negative-z>Aircraft/787-8/Models/Effects/interior/0005.png</negative-z>      <!-- nz (bottom) rotate 90 deg from N or S to W -->
+      </images>
+    </texture>
+
+    <!-- the cube center must be the same as the camera x,y,z in blend -->
+    <opacity-cube-center type="vec3d" n="0"> -22.81520 0.0 1.8787</opacity-cube-center>
+    <opacity-cube-scale type="vec3d" n="0"> 1.016 1.048 0.82</opacity-cube-scale>
+    <opacity-cube-angle type="float">0.0</opacity-cube-angle>
+
+  </parameters>
+</PropertyList>

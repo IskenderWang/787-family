@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+
+<sim>    
+  <model>        
+    <livery>
+        <name type="string">Merlion (Boeing Edition)</name>
+      <texture>Liveries-9/MIA-BOE.png</texture>
+    </livery>
+    <lights>
+      <texture>Liveries-9/MIA-BOE-lights.png</texture>
+    </lights>
+  </model>
+</sim>
+
+</PropertyList>

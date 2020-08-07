@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+	<name>flightplan</name>
+	<layout>vbox</layout>
+
+	<text>
+		<label>Import / Export Flightplans</label>
+	</text>
+	
+	<nasal>
+		<open>
+		
+			var import_plan = func {
+				if (getprop("/instrumentation/fmcFP/selectedFP") == "Primary")
+					var plan = 0;
+				else
+					var plan = 1;
+					
+				var path = getprop("/sim/gui/dialogs/file-select-1/path");
+					
+				b787.fmcFP.import(path, plan);
+			}
+			
+			var export_plan = func {
+				if (getprop("/instrumentation/fmcFP/selectedFP") == "Primary")
+					var plan = 0;
+				else
+					var plan = 1;
+					
+				var path = getprop("/sim/gui/dialogs/file-select-2/path");
+					
+				b787.fmcFP.export(path, plan);
+			}
+			
+			var open_selector = gui.FileSelector.new(import_plan, "Import Flightplan", "Import");
+            var save_selector = gui.FileSelector.new(export_plan, "Export Flightplan", "Export");
+		</open>
+		<close>
+			open_selector.del();
+            save_selector.del();
+		</close>
+	</nasal>
+
+<!--	<hrule />
+
+            <group>
+                <layout>hbox</layout>
+
+                <text>
+                    <label>Path:</label>
+                    <halign>right</halign>
+                </text>
+
+                <input>
+                    <property>/instrumentation/fmcFP/path</property>
+                    <live>true</live>
+					    <pref-width>300</pref-width>
+   						<pref-height>20</pref-height>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </input>
+            </group> -->
+                
+	<hrule />
+		<group>
+		<layout>hbox</layout>
+		
+	    <text>
+            <halign>right</halign>
+            <label>Plan:</label>
+        </text>
+        <combo>
+            <halign>left</halign>
+            <name>flightplan</name>
+					    <pref-width>300</pref-width>
+   						<pref-height>20</pref-height>
+            <property>/instrumentation/fmcFP/selectedFP</property>
+            <editable>false</editable>
+            <value>Primary</value>
+            <value>Secondary</value>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </combo>						
+			</group>
+	<hrule />
+	<group>
+	<layout>hbox</layout>
+
+		<button>
+			<legend>Clear</legend>
+			<default>true</default>
+			<padding>10</padding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					if (getprop("/instrumentation/fmcFP/selectedFP") == "Primary")
+						var plan = 0;
+					else
+						var plan = 1;
+					b787.fmcFP.clear(plan);
+				</script>
+			</binding>
+		</button>
+
+		<button>
+			<legend>Import</legend>
+			<default>true</default>
+			<padding>10</padding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					open_selector.open()
+				</script>
+			</binding>
+		</button>
+
+		<button>
+			<legend>Export</legend>
+			<default>true</default>
+			<padding>10</padding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					save_selector.open()
+				</script>
+			</binding>
+		</button>
+
+		<button>
+			<legend>Close</legend>
+			<default>true</default>
+			<key>Esc</key>
+		<padding>10</padding>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+		</button>
+		
+		</group>
+
+</PropertyList>

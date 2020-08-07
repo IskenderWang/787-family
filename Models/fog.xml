@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>fog.ac</path>
+
+<!-- Glass Reflection 
+
+<effect>
+	<inherits-from>FlightDeck/glassreflect</inherits-from>
+	<object-name>fog</object-name>
+</effect> -->
+
+<!-- Fog -->
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>fog</object-name>
+		<property>controls/window-heat/fog</property>
+		<interpolation>
+			<entry><ind>-1</ind><dep>0</dep></entry>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>1</ind><dep>0.66</dep></entry>
+			<entry><ind>2</ind><dep>0.66</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+ 	<animation>
+    	<type>material</type>
+		<object-name>fog</object-name>
+    	<condition>
+        	<property>controls/lighting/cockpit</property>
+  		</condition>
+    	<emission>
+      		<red>   0.12 </red>
+      		<green> 0.12 </green>
+      		<blue>  0.12 </blue>
+    	</emission>
+  	</animation>
+
+</PropertyList>
