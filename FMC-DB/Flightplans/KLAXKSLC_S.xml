@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<num type="int">29</num>
+    <wp>
+      <id type="string">KLAX</id>
+      <alt type="double">0</alt>
+    </wp>
+    <wp n="1">
+      <alt type="double">1000</alt>
+      <id type="string">DOCKR</id>
+    </wp>
+    <wp n="2">
+      <alt type="double">2000</alt>
+      <id type="string">WEILR</id>
+    </wp>
+    <wp n="3">
+      <alt type="double">4000</alt>
+      <id type="string">SHAEF</id>
+    </wp>
+    <wp n="4">
+      <alt type="double">7000</alt>
+      <id type="string">PEVEE</id>
+    </wp>
+    <wp n="5">
+      <alt type="double">11000</alt>
+      <id type="string">HOLTZ</id>
+    </wp>
+    <wp n="6">
+      <alt type="double">13000</alt>
+      <id type="string">OSHNN</id>
+    </wp>
+    <wp n="7">
+      <alt type="double">15000</alt>
+      <id type="string">SLI</id>
+    </wp>
+    <wp n="8">
+      <alt type="double">21000</alt>
+      <id type="string">SEBBY</id>
+    </wp>
+    <wp n="9">
+      <alt type="double">31000</alt>
+      <id type="string">DAG</id>
+    </wp>
+    <wp n="10">
+      <alt type="double">32000</alt>
+      <id type="string">MISEN</id>
+    </wp>
+    <wp n="11">
+      <alt type="double">39000</alt>
+      <id type="string">CLARR</id>
+    </wp>
+    <wp n="12">
+      <alt type="double">39000</alt>
+      <id type="string">LAS</id>
+    </wp>
+    <wp n="13">
+      <id type="string">NORRA</id>
+      <alt type="double">39000</alt>
+    </wp>
+    <wp n="14">
+      <id type="string">BERYL</id>
+      <alt type="double">39000</alt>
+    </wp>
+    <wp n="15">
+      <id type="string">MLF</id>
+      <alt type="double">39000</alt>
+    </wp>
+    <wp n="16">
+      <alt type="double">33000</alt>
+      <id type="string">BEVRR</id>
+    </wp>
+    <wp n="17">
+      <alt type="double">24000</alt>
+      <id type="string">DTA</id>
+    </wp>
+    <wp n="18">
+      <alt type="double">17000</alt>
+      <id type="string">JAMMN</id>
+    </wp>
+    <wp n="19">
+      <alt type="double">14000</alt>
+      <id type="string">DRAPR</id>
+    </wp>
+    <wp n="20">
+      <alt type="double">13000</alt>
+      <id type="string">SPIEK</id>
+    </wp>
+    <wp n="21">
+      <alt type="double">12000</alt>
+      <id type="string">HEIRY</id>
+    </wp>
+    <wp n="22">
+      <alt type="double">11000</alt>
+      <id type="string">PITTT</id>
+    </wp>
+    <wp n="23">
+      <id type="string">MAGNE</id>
+      <alt type="double">11000</alt>
+    </wp>
+    <wp n="24">
+      <id type="string">QUIPA</id>
+      <alt type="double">11000</alt>
+    </wp>
+    <wp n="25">
+      <id type="string">RROYY</id>
+      <alt type="double">11000</alt>
+    </wp>
+    <wp n="26">
+      <alt type="double">9000</alt>
+      <id type="string">RRUFF</id>
+    </wp>
+    <wp n="27">
+      <alt type="double">6000</alt>
+      <id type="string">BNKER</id>
+    </wp>
+    <wp n="28">
+      <id type="string">KSLC</id>
+      <alt type="double">0</alt>
+    </wp>
+</PropertyList>

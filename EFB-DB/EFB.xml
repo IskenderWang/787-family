@@ -1,0 +1,1009 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>efb.ac</path>
+
+<!-- Emission -->
+
+ 	<animation>
+    	<type>material</type>
+		<object-name>efis</object-name>
+    	<condition>
+        	<property>controls/lighting/cockpit</property>
+  		</condition>
+    	<emission>
+      		<red>   0.18 </red>
+      		<green> 0.18 </green>
+      		<blue>  0.18 </blue>
+    	</emission>
+  	</animation>
+
+<!-- Come on only when there's atleast 9 volts of power -->
+
+	<animation>
+		<type>select</type>
+		<object-name>text</object-name>
+		<object-name>worldmap</object-name>
+		<object-name>airportmarker</object-name>
+		<object-name>worldmap2</object-name>
+		<object-name>marker</object-name>
+		<object-name>diagram</object-name>
+		<object-name>chart</object-name>
+		<object-name>diagramrot1</object-name>
+		<object-name>chartrot1</object-name>
+		<object-name>diagramrot2</object-name>
+		<object-name>chartrot2</object-name>
+		<object-name>checklists</object-name>
+		<condition>
+			<greater-than>
+				<property>systems/electrical/outputs/efis</property>
+				<value>9</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+<!-- Page Specific Objects -->
+
+	<animation>
+		<type>select</type>
+		<object-name>worldmap</object-name>
+		<object-name>airportmarker</object-name>
+		<condition>
+			<equals>
+				<property>/instrumentation/efb/page</property>
+				<value>Airport Information</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>worldmap2</object-name>
+		<object-name>marker</object-name>
+		<condition>
+			<equals>
+				<property>/instrumentation/efb/page</property>
+				<value>GPS Settings</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>diagram</object-name>
+		<object-name>diagramrot1</object-name>
+		<object-name>diagramrot2</object-name>
+		<condition>
+			<equals>
+				<property>/instrumentation/efb/page</property>
+				<value>Airport Diagram</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>chart</object-name>
+		<object-name>chartrot1</object-name>
+		<object-name>chartrot2</object-name>
+		<condition>
+			<equals>
+				<property>/instrumentation/efb/page</property>
+				<value>Airport Charts</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>checklists</object-name>
+		<condition>
+			<equals>
+				<property>/instrumentation/efb/checklists/show</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>opsmanual</object-name>
+		<condition>
+			<equals>
+				<property>/instrumentation/efb/page</property>
+				<value>Operating Manual</value>
+			</equals>
+		</condition>
+	</animation>
+
+<!-- Chart and Diagram Rotations -->
+
+	<animation>
+		<type>select</type>
+		<object-name>diagram</object-name>
+		<condition>
+			<equals>
+				<property>/instrumentation/efb/diagram/rotation</property>
+				<value>0</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>diagramrot1</object-name>
+		<object-name>diagramrot2</object-name>
+		<condition>
+			<equals>
+				<property>/instrumentation/efb/diagram/rotation</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>chart</object-name>
+		<condition>
+			<equals>
+				<property>/instrumentation/efb/chart/rotation</property>
+				<value>0</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>chartrot1</object-name>
+		<object-name>chartrot2</object-name>
+		<condition>
+			<equals>
+				<property>/instrumentation/efb/chart/rotation</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+
+
+<!-- Page Name -->
+	<text><name>text</name>
+		<offsets>
+			<x-m>-0.085</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.001</z-m>
+			<heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>center-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/page</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.01</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>0.089</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.001</z-m>
+			<heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>center-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/input-helper</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.008</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+
+<!-- Left Side and Display Lines-->
+	<text><name>text</name>
+		<offsets>
+			<x-m>-0.0651</x-m>
+			<y-m>-0.0667</y-m>
+			<z-m>-0.001</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/line1-l</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.007</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>-0.0528</x-m>
+			<y-m>-0.0667</y-m>
+			<z-m>-0.001</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/line2-l</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.007</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>-0.0413</x-m>
+			<y-m>-0.0667</y-m>
+			<z-m>-0.001</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/line3-l</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.007</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>-0.0290</x-m>
+			<y-m>-0.0667</y-m>
+			<z-m>-0.001</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/line4-l</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.007</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>-0.0179</x-m>
+			<y-m>-0.0667</y-m>
+			<z-m>-0.001</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/line5-l</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.007</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>-0.0064</x-m>
+			<y-m>-0.0667</y-m>
+			<z-m>-0.001</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/line6-l</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.007</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>0.0052</x-m>
+			<y-m>-0.0667</y-m>
+			<z-m>-0.001</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/line7-l</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.007</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>0.0163</x-m>
+			<y-m>-0.0667</y-m>
+			<z-m>-0.001</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/line8-l</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.007</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>0.0278</x-m>
+			<y-m>-0.0667</y-m>
+			<z-m>-0.001</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/line9-l</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.007</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>0.0405</x-m>
+			<y-m>-0.0667</y-m>
+			<z-m>-0.001</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/line10-l</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.007</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>0.0516</x-m>
+			<y-m>-0.0667</y-m>
+			<z-m>-0.001</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/line11-l</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.007</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>0.0623</x-m>
+			<y-m>-0.0667</y-m>
+			<z-m>-0.001</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/line12-l</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.007</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>0.0747</x-m>
+			<y-m>-0.0667</y-m>
+			<z-m>-0.001</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/line13-l</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.007</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+<!-- Ride Side Menu Items -->
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>-0.0651</x-m>
+			<y-m>0.0703</y-m>
+			<z-m>-0.001</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/line1-r</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.007</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>-0.0413</x-m>
+			<y-m>0.0703</y-m>
+			<z-m>-0.001</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/line3-r</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.007</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>-0.0179</x-m>
+			<y-m>0.0703</y-m>
+			<z-m>-0.001</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/line5-r</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.007</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>0.0052</x-m>
+			<y-m>0.0703</y-m>
+			<z-m>-0.001</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/line7-r</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.007</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>0.0278</x-m>
+			<y-m>0.0703</y-m>
+			<z-m>-0.001</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/line9-r</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.007</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>0.0516</x-m>
+			<y-m>0.0703</y-m>
+			<z-m>-0.001</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/line11-r</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.007</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>0.0747</x-m>
+			<y-m>0.0703</y-m>
+			<z-m>-0.001</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>/instrumentation/efb/display/line13-r</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.007</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+<!-- Menu Presses -->
+
+    <animation>
+        <type>pick</type>
+        <object-name>efbl1</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-cycle</command>
+                <property>/instrumentation/efb/keypress</property>
+		<value>l1</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>efbl2</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-cycle</command>
+                <property>/instrumentation/efb/keypress</property>
+		<value>l2</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>efbl3</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-cycle</command>
+                <property>/instrumentation/efb/keypress</property>
+		<value>l3</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>efbl4</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-cycle</command>
+                <property>/instrumentation/efb/keypress</property>
+		<value>l4</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>efbl5</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-cycle</command>
+                <property>/instrumentation/efb/keypress</property>
+		<value>l5</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>efbl6</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-cycle</command>
+                <property>/instrumentation/efb/keypress</property>
+		<value>l6</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>efbl7</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-cycle</command>
+                <property>/instrumentation/efb/keypress</property>
+		<value>l7</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>efbr1</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-cycle</command>
+                <property>/instrumentation/efb/keypress</property>
+		<value>r1</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>efbr2</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-cycle</command>
+                <property>/instrumentation/efb/keypress</property>
+		<value>r2</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>efbr3</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-cycle</command>
+                <property>/instrumentation/efb/keypress</property>
+		<value>r3</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>efbr4</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-cycle</command>
+                <property>/instrumentation/efb/keypress</property>
+		<value>r4</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>efbr5</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-cycle</command>
+                <property>/instrumentation/efb/keypress</property>
+		<value>r5</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>efbr6</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-cycle</command>
+                <property>/instrumentation/efb/keypress</property>
+		<value>r6</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>efbr7</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-cycle</command>
+                <property>/instrumentation/efb/keypress</property>
+		<value>r7</value>
+            </binding>
+        </action>
+    </animation>
+
+<!-- Checklists Display -->
+
+<animation>
+  <type>texmultiple</type>
+  <object-name>checklists</object-name>
+  <transform>
+    <property>/instrumentation/efb/checklists/y</property>
+    <subtype>textranslate</subtype>
+    <factor>-0.3333</factor>
+    <axis>
+     <x>0</x>
+     <y>1</y>
+     <z>0</z>
+   </axis>
+  </transform>
+  <transform>
+    <property>/instrumentation/efb/checklists/x</property>
+    <subtype>textranslate</subtype>
+    <factor>0.25</factor>
+    <axis>
+     <x>1</x>
+     <y>0</y>
+     <z>0</z>
+   </axis>
+  </transform>
+ </animation>
+
+<!-- Airport Info World Map -->
+
+<animation>
+  <type>texmultiple</type>
+  <object-name>worldmap</object-name>
+  <transform>
+    <property>/instrumentation/gps/scratch/latitude-deg</property>
+    <subtype>textranslate</subtype>
+    <factor>0.0065</factor>
+    <axis>
+     <x>0</x>
+     <y>1</y>
+     <z>0</z>
+   </axis>
+  </transform>
+  <transform>
+    <property>/instrumentation/gps/scratch/longitude-deg</property>
+    <subtype>textranslate</subtype>
+    <factor>0.00277</factor>
+    <axis>
+     <x>1</x>
+     <y>0</y>
+     <z>0</z>
+   </axis>
+  </transform>
+ </animation>
+
+<!-- GPS World Map -->
+
+<animation>
+  <type>texmultiple</type>
+  <object-name>worldmap2</object-name>
+  <transform>
+    <property>/position/latitude-deg</property>
+    <subtype>textranslate</subtype>
+    <factor>0.0065</factor>
+    <axis>
+     <x>0</x>
+     <y>1</y>
+     <z>0</z>
+   </axis>
+  </transform>
+  <transform>
+    <property>/position/longitude-deg</property>
+    <subtype>textranslate</subtype>
+    <factor>0.00277</factor>
+    <axis>
+     <x>1</x>
+     <y>0</y>
+     <z>0</z>
+   </axis>
+  </transform>
+ </animation>
+
+<!-- Operating Manual -->
+
+<animation>
+  <type>textranslate</type>
+  <object-name>opsmanual</object-name>
+    <property>/instrumentation/efb/manual-page</property>
+    <factor>1</factor>
+    <axis>
+     <x>0</x>
+     <y>-1</y>
+     <z>0</z>
+   </axis>
+</animation>
+
+<!-- Airport Diagram Display -->
+
+<animation>
+        <type>material</type>
+        <object-name>diagram</object-name>
+        <object-name>diagramrot2</object-name>
+        <texture-prop>sim/model/efb/diagram</texture-prop>
+</animation>
+
+<!-- Airport Charts Display -->
+
+<animation>
+        <type>material</type>
+        <object-name>chart</object-name>
+        <object-name>chartrot2</object-name>
+        <texture-prop>sim/model/efb/chart</texture-prop>
+</animation>
+
+<!-- TEXT COLOR -->
+
+<animation>
+        <type>material</type>
+        <object-name>text</object-name>
+		<diffuse>
+			<red-prop>/instrumentation/efb/text-color</red-prop>
+			<blue-prop>/instrumentation/efb/text-color</blue-prop>
+			<green-prop>/instrumentation/efb/text-color</green-prop>
+		</diffuse>
+		<emission>
+			<red-prop>/instrumentation/efb/text-color</red-prop>
+			<blue-prop>/instrumentation/efb/text-color</blue-prop>
+			<green-prop>/instrumentation/efb/text-color</green-prop>
+		</emission>
+ </animation>
+ 
+<!-- Third Party Software -->
+
+<model>
+ 	<path>Aircraft/787-8/EFB-DB/Third-Party/CatchMe/animations.xml</path>
+ 	<condition>
+ 		<equals>
+ 			<property>/instrumentation/efb/page</property>
+ 			<value>Catch me if you can</value>
+ 		</equals>
+ 	</condition>
+</model>
+
+</PropertyList>
