@@ -1,5 +1,5 @@
 # 787-family
-787 family for FlightGear, the result of succeeding at my attempt to merge legoboyvdlp's abandoned -9 with the fgaddon -8 in active development
+787 family for FlightGear, the result of succeeding at my attempt to merge [Jonathan Redpath's abandoned -9](https://github.com/legoboyvdlp/787-9) with the fgaddon -8 in active development
 
 This is NOT the official home of the 787-8 for Flightgear – you can find that here:
 
