@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+	<name>failures</name>
+	<layout>vbox</layout>
+
+	<text>
+		<label>Simulate System Failures</label>
+	</text>
+                
+	<hrule />
+		<group>
+		<layout>vbox</layout>
+		
+			<text>
+				<label>Engine Failures</label>
+			</text>
+			
+			<group>
+			<layout>hbox</layout>
+			
+				<group>
+				<layout>vbox</layout>
+				
+					<text>
+						<label>Left Engine</label>
+					</text>
+			
+					<button>
+						<legend>Flame-out</legend>
+						<padding>1</padding>
+						<binding>
+							<command>nasal</command>
+							<script>
+								setprop("/controls/engines/engine[0]/cutoff", 1);
+							</script>
+						</binding>
+					</button>
+					
+					<button>
+						<legend>Fail</legend>
+						<padding>1</padding>
+						<binding>
+							<command>nasal</command>
+							<script>
+								setprop("/sim/failure-manager/engines/engine/serviceable", 0);
+							</script>
+						</binding>
+					</button>
+					
+					<button>
+						<legend>Fire</legend>
+						<padding>1</padding>
+						<binding>
+							<command>nasal</command>
+							<script>
+								setprop("/controls/fires/fire/on-fire", 1);
+							</script>
+						</binding>
+					</button>
+				
+				</group>
+				
+				<vrule />
+				
+				<group>
+				<layout>vbox</layout>
+				
+					<text>
+						<label>Right Engine</label>
+					</text>
+			
+					<button>
+						<legend>Flame-out</legend>
+						<padding>1</padding>
+						<binding>
+							<command>nasal</command>
+							<script>
+								setprop("/controls/engines/engine[1]/cutoff", 1);
+							</script>
+						</binding>
+					</button>
+					
+					<button>
+						<legend>Fail</legend>
+						<padding>1</padding>
+						<binding>
+							<command>nasal</command>
+							<script>
+								setprop("/sim/failure-manager/engines/engine[1]/serviceable", 0);
+							</script>
+						</binding>
+					</button>
+					
+					<button>
+						<legend>Fire</legend>
+						<padding>1</padding>
+						<binding>
+							<command>nasal</command>
+							<script>
+								setprop("/controls/fires/fire[1]/on-fire", 1);
+							</script>
+						</binding>
+					</button>
+				
+				</group>
+			
+			</group>
+			
+			<hrule />
+		
+			<text>
+				<label>Gear Failures</label>
+			</text>
+			
+			<group>
+			<layout>hbox</layout>
+			
+				<group>
+				<layout>vbox</layout>
+				<text>
+					<label>Left Gear</label>
+				</text>
+				
+				<button>
+					<legend>Burst Tyres</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/gear-failures/gear[1]/burst", 1);
+						</script>
+					</binding>
+				</button>
+				
+				<button>
+					<legend>Break Off</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/gear-failures/gear[1]/break", 1);
+						</script>
+					</binding>
+				</button>
+				
+				<button>
+					<legend>Stuck Gear</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/gear-failures/gear[1]/stuck-pos", 1);
+						</script>
+					</binding>
+				</button>
+				
+				</group>
+				
+				<vrule />
+				
+				<group>
+				<layout>vbox</layout>
+				<text>
+					<label>Nose Gear</label>
+				</text>
+				
+				<button>
+					<legend>Burst Tyres</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/gear-failures/gear[0]/burst", 1);
+						</script>
+					</binding>
+				</button>
+				
+				<button>
+					<legend>Break Off</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/gear-failures/gear[0]/break", 1);
+						</script>
+					</binding>
+				</button>
+				
+				<button>
+					<legend>Stuck Gear</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/gear-failures/gear[0]/stuck-pos", 1);
+						</script>
+					</binding>
+				</button>
+				
+				</group>
+				
+				<vrule />
+				
+				<group>
+				<layout>vbox</layout>
+				<text>
+					<label>Right Gear</label>
+				</text>
+				
+				<button>
+					<legend>Burst Tyres</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/gear-failures/gear[2]/burst", 1);
+						</script>
+					</binding>
+				</button>
+				
+				<button>
+					<legend>Break Off</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/gear-failures/gear[2]/break", 1);
+						</script>
+					</binding>
+				</button>
+				
+				<button>
+					<legend>Stuck Gear</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/gear-failures/gear[2]/stuck-pos", 1);
+						</script>
+					</binding>
+				</button>
+				
+				</group>
+			
+			</group>
+			
+			<hrule />
+			
+			<text>
+				<label>Hydraulic System Failures</label>
+			</text>
+			
+			<group>
+			<layout>hbox</layout>
+			
+			<checkbox>
+				<label>Fail Left System</label>
+				<property>controls/hydraulic/fail/system0</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Fail Central System</label>
+				<property>controls/hydraulic/fail/system2</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Fail Right System</label>
+				<property>controls/hydraulic/fail/system1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			</group>
+			
+			<hrule />
+			
+			<text>
+				<label>Hydraulic Pump Failures</label>
+			</text>
+			
+			<group>
+			<layout>hbox</layout>
+			
+				<group>
+				<layout>vbox</layout>
+				
+				<text>
+					<label>E1 Engine Pump</label>
+				</text>
+				
+				<button>
+					<legend>Overheat</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/pneumatic/temp/hyd-sys0-eng", 80);
+						</script>
+					</binding>
+				</button>
+				
+				<button>
+					<legend>Fault</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/pneumatic/temp/hyd-sys0-eng", 150);
+						</script>
+					</binding>
+				</button>
+				
+				</group>
+				
+				<vrule />
+				
+				<group>
+				<layout>vbox</layout>
+				
+				<text>
+					<label>C1 Electric Pump</label>
+				</text>
+				
+				<button>
+					<legend>Overheat</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/pneumatic/temp/hyd-sys2-elec", 80);
+						</script>
+					</binding>
+				</button>
+				
+				<button>
+					<legend>Fault</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/pneumatic/temp/hyd-sys2-elec", 150);
+						</script>
+					</binding>
+				</button>
+				
+				</group>
+				
+				<vrule />
+				
+				<group>
+				<layout>vbox</layout>
+				
+				<text>
+					<label>C2 Electric Pump</label>
+				</text>
+				
+				<button>
+					<legend>Overheat</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/pneumatic/temp/hyd-sys3-elec", 80);
+						</script>
+					</binding>
+				</button>
+				
+				<button>
+					<legend>Fault</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/pneumatic/temp/hyd-sys3-elec", 150);
+						</script>
+					</binding>
+				</button>
+				
+				</group>
+				
+				<vrule />
+				
+				<group>
+				<layout>vbox</layout>
+				
+				<text>
+					<label>E2 Engine Pump</label>
+				</text>
+				
+				<button>
+					<legend>Overheat</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/pneumatic/temp/hyd-sys1-eng", 80);
+						</script>
+					</binding>
+				</button>
+				
+				<button>
+					<legend>Fault</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/pneumatic/temp/hyd-sys1-eng", 150);
+						</script>
+					</binding>
+				</button>
+				
+				</group>
+			
+			</group>
+			
+			<hrule />
+			
+			<text>
+				<label>Fuel Pump Failures</label>
+			</text>
+			
+			<group>
+			<layout>hbox</layout>
+			
+				<group>
+				<layout>vbox</layout>
+				
+				<text>
+					<label>Left Pump</label>
+				</text>
+				
+				<button>
+					<legend>Overheat</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/pneumatic/temp/fuel-pump-left", 170);
+						</script>
+					</binding>
+				</button>
+				
+				<button>
+					<legend>Fault</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/pneumatic/temp/fuel-pump-left", 220);
+						</script>
+					</binding>
+				</button>
+				
+				</group>
+				
+				<vrule />
+				
+				<group>
+				<layout>vbox</layout>
+				
+				<text>
+					<label>Center Pump</label>
+				</text>
+				
+				<button>
+					<legend>Overheat</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/pneumatic/temp/fuel-pump-center", 170);
+						</script>
+					</binding>
+				</button>
+				
+				<button>
+					<legend>Fault</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/pneumatic/temp/fuel-pump-center", 220);
+						</script>
+					</binding>
+				</button>
+				
+				</group>
+				
+				<vrule />
+				
+				<group>
+				<layout>vbox</layout>
+				
+				<text>
+					<label>Right Pump</label>
+				</text>
+				
+				<button>
+					<legend>Overheat</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/pneumatic/temp/fuel-pump-right", 170);
+						</script>
+					</binding>
+				</button>
+				
+				<button>
+					<legend>Fault</legend>
+					<padding>1</padding>
+					<binding>
+						<command>nasal</command>
+						<script>
+							setprop("/controls/pneumatic/temp/fuel-pump-right", 220);
+						</script>
+					</binding>
+				</button>
+				
+				</group>
+			
+			</group>
+			
+	<hrule />
+
+		<button>
+			<legend>Close</legend>
+			<default>true</default>
+			<key>Esc</key>
+		<padding>1</padding>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+		</button>
+		
+		</group>
+
+</PropertyList>
