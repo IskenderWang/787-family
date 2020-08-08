@@ -5,9 +5,10 @@
 	<sim>
 		<description>Boeing 787-8 (Trent 1000)</description>
 		<flight-model>jsb</flight-model>
-		<aero>787-8</aero>
+		<aero>787-8-Trent</aero>
+        <variant-of>787-8-GEnx</variant-of>
         <authors>
-          Omega95, Redneck, Jentron, Scotth1, Bicyus, Awexome, Hooray, Zan, Nicky, Thorsten, Oliver T, Joshua W, Makoto Sakaguchi, Thomas Albrecht (radi). See Authors.txt for details.
+          Omega95, Redneck, Jentron, Scotth1, Bicyus, Awexome, Hooray, Zan, Nicky, Thorsten, Oliver T, Joshua W, Makoto Sakaguchi, Thomas Albrecht (radi). See Authors.md for details.
         </authors>
         <aircraft-version>3.6</aircraft-version>
         <rating>

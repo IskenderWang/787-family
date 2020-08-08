@@ -3,11 +3,12 @@
 <PropertyList>
 
     <sim>
-        <description>Boeing 787-9 (Trent 1000 engines)</description>
+        <description>Boeing 787-9 (Trent 1000)</description>
         <flight-model>jsb</flight-model>
         <aero>787-9-Trent</aero>
+        <variant-of>787-9-GEnx</variant-of>
         <authors>
-          See 787-9-authors.md for details.
+          See Authors.md for details.
         </authors>
         <aircraft-version>3.6</aircraft-version>
         <rating>
@@ -37,6 +38,7 @@
             <livery>
                <file type="string">BOE-9</file>
             </livery>
+
             <b787>
                 <heading-bug-pfd-deg type="double">0</heading-bug-pfd-deg>
                 <heading-bug-deg type="double">0</heading-bug-deg>

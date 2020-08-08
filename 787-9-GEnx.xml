@@ -8,7 +8,7 @@
   <author> Narendran Muraleedharan, Dwayne Gable and Nicky Ivy, Jonathan Redpath</author>
   <filecreationdate> 2017-04-21 </filecreationdate>
   <version>$Revision: 1.1 $</version>
-  <description> Flight Dynamics Model for the Boeing 787-9 GEnx. Revised by J Redpath</description>
+  <description> Flight Dynamics Model for the Boeing 787-9 GEnx. Revised by Jonathan Redpath</description>
 </fileheader>
 
 <!-- UNIT CONVERSIONS :
@@ -127,7 +127,6 @@
 			<z>-39.4</z>
 		</location>
 	</pointmass>
-
 </mass_balance>
 
 <ground_reactions>
@@ -247,7 +246,7 @@
 
 <propulsion>
 
-   <engine file="genx-1b">
+   <engine file="genx-1b-9">
     <location unit="IN">
       <x> -211.92078 </x>
       <y> -383.15712</y>
@@ -274,7 +273,7 @@
     </thruster>
   </engine>
 
-   <engine file="genx-1b">
+   <engine file="genx-1b-9">
     <location unit="IN">
       <x> -211.92078 </x>
       <y> 383.15712</y>
@@ -343,8 +342,8 @@
 
   <channel name="Pitch">
    <summer name="Pitch Trim Sum">
-      <input>fcs/elevator-cmd-norm</input>
-	  <!--<input>fcs/elevator-fbw-output</input>-->
+      <input>fcs/elevator-fbw-output</input>
+      <!--<input>fcs/elevator-cmd-norm</input>-->
       <input>fcs/pitch-trim-cmd-norm</input>
       <clipto>
         <min> -1 </min>
@@ -374,8 +373,8 @@
 
   <channel name="Roll">
    <summer name="Roll Trim Sum">
-      <input>fcs/aileron-cmd-norm</input>
-	  <!--<input>fcs/aileron-fbw-output</input>-->
+      <input>fcs/aileron-fbw-output</input>
+      <!--<input>fcs/aileron-cmd-norm</input>-->
       <input>fcs/roll-trim-cmd-norm</input>
       <clipto>
         <min> -1 </min>
@@ -431,8 +430,8 @@
 
   <channel name="Yaw">
    <summer name="Rudder Command Sum">
-      <input>fcs/rudder-cmd-norm</input>
-	  <!--<input>fcs/rudder-fbw-output</input>-->
+      <input>fcs/rudder-fbw-output</input>
+	  <!--<input>fcs/rudder-cmd-norm</input>-->
       <input>fcs/yaw-trim-cmd-norm</input>
       <clipto>
         <min> -0.25 </min>
@@ -590,15 +589,16 @@
         <function name="aero/function/kCLge">
             <description>Change_in_lift_due_to_ground_effect</description>
             <table>
-			  <independentVar>aero/h_b-mac-ft</independentVar>
-			  <tableData>
-				  0.0000	1.3000	
-				  0.1000	1.2500	
-				  0.1500	1.1000	
-				  0.2000	1.1200	
-				  1.1000	1.1000	
-			  </tableData>
-		  </table>
+                <independentVar>aero/h_b-mac-ft</independentVar>
+                <tableData>
+                  0.0000    1.3000  
+                  0.1000    1.2500  
+                  0.1500    1.1000  
+                  0.2000    1.1200  
+                  1.1000    1.1000
+                  1.2000    1.0000
+                </tableData>
+            </table>
         </function>
 
   <axis name="LIFT">

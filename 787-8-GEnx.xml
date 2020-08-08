@@ -6,9 +6,9 @@
 
 <fileheader>
   <author> Narendran Muraleedharan, Dwayne Gable and Nicky Ivy</author>
-  <filecreationdate> 2011-12-29 </filecreationdate>
+  <filecreationdate> 2020-08-08 </filecreationdate>
   <version>$Revision: 1.10 $</version>
-  <description> Flight Dynamics Model for the Boeing 787-8 </description>
+  <description> Flight Dynamics Model for the Boeing 787-8 GEnx. Revised by IskenderWang</description>
 </fileheader>
 
 <!-- UNIT CONVERSIONS :
@@ -127,7 +127,6 @@
 			<z>-39.4</z>
 		</location>
 	</pointmass>
-
 </mass_balance>
 
 <ground_reactions>
@@ -247,7 +246,7 @@
 
 <propulsion>
 
-   <engine file="trent_1000-8">
+   <engine file="genx-1b-8">
     <location unit="IN">
       <x> -211.92078 </x>
       <y> -383.15712</y>
@@ -274,7 +273,7 @@
     </thruster>
   </engine>
 
-   <engine file="trent_1000-8">
+   <engine file="genx-1b-8">
     <location unit="IN">
       <x> -211.92078 </x>
       <y> 383.15712</y>
@@ -344,6 +343,7 @@
   <channel name="Pitch">
    <summer name="Pitch Trim Sum">
       <input>fcs/elevator-fbw-output</input>
+      <!--<input>fcs/elevator-cmd-norm</input>-->
       <input>fcs/pitch-trim-cmd-norm</input>
       <clipto>
         <min> -1 </min>
@@ -374,6 +374,7 @@
   <channel name="Roll">
    <summer name="Roll Trim Sum">
       <input>fcs/aileron-fbw-output</input>
+      <!--<input>fcs/aileron-cmd-norm</input>-->
       <input>fcs/roll-trim-cmd-norm</input>
       <clipto>
         <min> -1 </min>
@@ -430,6 +431,7 @@
   <channel name="Yaw">
    <summer name="Rudder Command Sum">
       <input>fcs/rudder-fbw-output</input>
+      <!--<input>fcs/rudder-cmd-norm</input>-->
       <input>fcs/yaw-trim-cmd-norm</input>
       <clipto>
         <min> -0.25 </min>

@@ -3,11 +3,12 @@
 <PropertyList>
 
     <sim>
-        <description>Boeing 787-9 (GEnx-1B76 engines)</description>
+        <description>Boeing 787-9 (GEnx-1B75)</description>
         <flight-model>jsb</flight-model>
         <aero>787-9-GEnx</aero>
+        <primary-set type="bool">true</primary-set>
         <authors>
-          See 787-9-authors.md for details.
+          See Authors.md for details.
         </authors>
         <aircraft-version>3.6</aircraft-version>
         <rating>
@@ -29,7 +30,7 @@
           <tag>jet</tag>
           <tag>twin-engine</tag>
         </tags>
-        <engine>genx-1b</engine>
+        <engine>genx-1b-9</engine>
 
         <model>
             <path>Aircraft/787-family/Models/787-9.xml</path>
@@ -37,6 +38,7 @@
             <livery>
                <file type="string">BOE-9</file>
             </livery>
+
             <b787>
                 <heading-bug-pfd-deg type="double">0</heading-bug-pfd-deg>
                 <heading-bug-deg type="double">0</heading-bug-deg>
@@ -919,7 +921,7 @@
                 <input />
                 <serviceable type="bool">true</serviceable>
                 <model>787-9</model>
-                <engines>GEnx-1B76</engines>
+                <engines>GEnx-1B75</engines>
             </ident>
         </cdu>
         <fmc>
