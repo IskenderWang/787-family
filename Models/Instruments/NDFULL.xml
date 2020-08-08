@@ -16067,7 +16067,7 @@
 <!-- Ground Radar -->
 
     <panel>
-        <path>Aircraft/787-8/Models/Instruments/chart.xml</path>
+        <path>Aircraft/787-family/Models/Instruments/chart.xml</path>
         <bottom-left>
             <x-m>0.0005</x-m>
             <y-m>-0.0690</y-m>

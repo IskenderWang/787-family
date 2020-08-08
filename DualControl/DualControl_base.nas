@@ -10,7 +10,7 @@ var DCT = dual_control_tools;
 
 ######################################################################
 # Pilot/copilot aircraft identifiers. Used by dual_control.
-var copilot_type = "Aircraft/787-8/Models/787-8-copilot.xml";
+var copilot_type = "Aircraft/787-family/Models/787-8-copilot.xml";
 var copilot_view = "Copilot View";
 
 props.globals.initNode("/sim/remote/pilot-callsign", "", "STRING");

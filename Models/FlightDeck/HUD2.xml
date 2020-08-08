@@ -19,7 +19,7 @@
 	</import>
 
 	<import>
-		<path>Aircraft/787-8/Models/FlightDeck/HUD-controls.xml</path>
+		<path>Aircraft/787-family/Models/FlightDeck/HUD-controls.xml</path>
 	</import>
 
 	<import>

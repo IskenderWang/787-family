@@ -24812,7 +24812,7 @@
 <!-- Collins WXR-2100 -->
 
     <panel>
-        <path>Aircraft/787-8/Models/Instruments/wxr-base.xml</path>
+        <path>Aircraft/787-family/Models/Instruments/wxr-base.xml</path>
 		 <condition>
 		 <and>
 		  <greater-than>

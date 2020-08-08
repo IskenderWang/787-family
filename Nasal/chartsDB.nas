@@ -1,4 +1,4 @@
-# Parser for $FG_ROOT/Aircraft/787-8/EFB-DB/ChartsList
+# Parser for $FG_ROOT/Aircraft/787-family/EFB-DB/ChartsList
 #
 # Properties Stored in the following way:
 # > /instrumentation/efb/chartsDB/<icao>/<type (str/sid/iap)>[index]

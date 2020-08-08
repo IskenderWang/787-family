@@ -11,7 +11,7 @@
         <layer>
             <name>storm1-single_cell-low_precip</name>
             <texture>
-                <path>Aircraft/787-8/Models/Instruments/wxstorm.png</path>
+                <path>Aircraft/787-family/Models/Instruments/wxstorm.png</path>
                 <x1>0</x1>
                 <y1>512</y1>
                 <x2>171</x2>

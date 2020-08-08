@@ -9,7 +9,7 @@
     <apu-start>
         <name>apu-strt</name>
         <mode>once</mode>
-        <path>Aircraft/787-8/Sounds/apu_strt.wav</path>
+        <path>Aircraft/787-family/Sounds/apu_strt.wav</path>
         <condition>
             <equals>
                 <property>controls/APU/off-start-run</property>
@@ -33,7 +33,7 @@
     <apu-running2>
         <name>apu-run2</name>
         <mode>looped</mode>
-        <path>Aircraft/787-8/Sounds/apu_run.wav</path>
+        <path>Aircraft/787-family/Sounds/apu_run.wav</path>
         <condition>
             <equals>
                 <property>controls/APU/off-start-run</property>
@@ -58,7 +58,7 @@
     <apu-running>
         <name>apu-run</name>
         <mode>looped</mode>
-        <path>Aircraft/787-8/Sounds/apu_run.wav</path>
+        <path>Aircraft/787-family/Sounds/apu_run.wav</path>
         <condition>
             <equals>
                 <property>controls/APU/off-start-run</property>
@@ -82,7 +82,7 @@
     <apu-shutdown>
         <name>apu-stop</name>
         <mode>once</mode>
-        <path>Aircraft/787-8/Sounds/apu_stop.wav</path>
+        <path>Aircraft/787-family/Sounds/apu_stop.wav</path>
         <condition>
             <equals>
                 <property>controls/APU/off-start-run</property>
@@ -110,7 +110,7 @@
     <apu-shutdown2>
         <name>apu-stop2</name>
         <mode>once</mode>
-        <path>Aircraft/787-8/Sounds/apu_stop.wav</path>
+        <path>Aircraft/787-family/Sounds/apu_stop.wav</path>
         <condition>
             <equals>
                 <property>controls/APU/off-start-run</property>
@@ -139,7 +139,7 @@
 
     <engine>
         <name>left n1 external</name>
-        <path>Aircraft/787-8/Sounds/whine.wav</path>
+        <path>Aircraft/787-family/Sounds/whine.wav</path>
         <mode>looped</mode>
         <condition>
             <and>
@@ -179,7 +179,7 @@
 
     <engine1>
         <name>right n1 external</name>
-        <path>Aircraft/787-8/Sounds/whine.wav</path>
+        <path>Aircraft/787-family/Sounds/whine.wav</path>
         <mode>looped</mode>
         <condition>
             <and>
@@ -219,7 +219,7 @@
 
     <engine2>
         <name>left n2 external</name>
-        <path>Aircraft/787-8/Sounds/turbine.wav</path>
+        <path>Aircraft/787-family/Sounds/turbine.wav</path>
         <mode>looped</mode>
         <condition>
             <and>
@@ -259,7 +259,7 @@
 
     <engine3>
         <name>right n2 external</name>
-        <path>Aircraft/787-8/Sounds/turbine.wav</path>
+        <path>Aircraft/787-family/Sounds/turbine.wav</path>
         <mode>looped</mode>
         <condition>
             <and>
@@ -301,7 +301,7 @@
 
     <enginei>
         <name>internal left n1</name>
-        <path>Aircraft/787-8/Sounds/whine-inside.wav</path>
+        <path>Aircraft/787-family/Sounds/whine-inside.wav</path>
         <mode>looped</mode>
         <condition>
             <and>
@@ -339,7 +339,7 @@
 
     <enginei1>
         <name>internal right n1</name>
-        <path>Aircraft/787-8/Sounds/whine-inside.wav</path>
+        <path>Aircraft/787-family/Sounds/whine-inside.wav</path>
         <mode>looped</mode>
         <condition>
             <and>
@@ -377,7 +377,7 @@
 
     <enginei2>
         <name>internal left n2</name>
-        <path>Aircraft/787-8/Sounds/jet.wav</path>
+        <path>Aircraft/787-family/Sounds/jet.wav</path>
         <mode>looped</mode>
         <condition>
             <and>
@@ -415,7 +415,7 @@
 
     <enginei3>
         <name>internal right n2</name>
-        <path>Aircraft/787-8/Sounds/jet.wav</path>
+        <path>Aircraft/787-family/Sounds/jet.wav</path>
         <mode>looped</mode>
         <condition>
             <and>
@@ -456,7 +456,7 @@
 
 <announcement>
 <name>welcome</name>
- <path>Aircraft/787-8/Sounds/welcome.wav</path>
+ <path>Aircraft/787-family/Sounds/welcome.wav</path>
  <mode>once</mode>
  <condition>
   <property>sim/sound/welcome</property>
@@ -475,7 +475,7 @@
 
 <announcement>
 <name>safety</name>
- <path>Aircraft/787-8/Sounds/safety.wav</path>
+ <path>Aircraft/787-family/Sounds/safety.wav</path>
  <mode>once</mode>
  <condition>
   <property>sim/sound/safety</property>
@@ -494,7 +494,7 @@
 
 <announcement>
 <name>cruise</name>
- <path>Aircraft/787-8/Sounds/cruise.wav</path>
+ <path>Aircraft/787-family/Sounds/cruise.wav</path>
  <mode>once</mode>
  <condition>
   <property>sim/sound/cruise</property>
@@ -513,7 +513,7 @@
 
 <announcement>
 <name>climb</name>
- <path>Aircraft/787-8/Sounds/climb.wav</path>
+ <path>Aircraft/787-family/Sounds/climb.wav</path>
  <mode>once</mode>
  <condition>
   <property>sim/sound/climb</property>
@@ -532,7 +532,7 @@
 
 <announcement>
 <name>cruise-seatbelt</name>
- <path>Aircraft/787-8/Sounds/cruise-seatbelt.wav</path>
+ <path>Aircraft/787-family/Sounds/cruise-seatbelt.wav</path>
  <mode>once</mode>
  <condition>
   <property>sim/sound/cruise-seatbelt</property>
@@ -551,7 +551,7 @@
 
 <announcement>
 <name>turbulence</name>
- <path>Aircraft/787-8/Sounds/turbulence.wav</path>
+ <path>Aircraft/787-family/Sounds/turbulence.wav</path>
  <mode>once</mode>
  <condition>
   <property>sim/sound/turbulence</property>
@@ -570,7 +570,7 @@
 
 <announcement>
 <name>descent</name>
- <path>Aircraft/787-8/Sounds/descent.wav</path>
+ <path>Aircraft/787-family/Sounds/descent.wav</path>
  <mode>once</mode>
  <condition>
   <property>sim/sound/descent</property>
@@ -589,7 +589,7 @@
 
 <announcement>
 <name>land</name>
- <path>Aircraft/787-8/Sounds/land.wav</path>
+ <path>Aircraft/787-family/Sounds/land.wav</path>
  <mode>once</mode>
  <condition>
   <property>sim/sound/land</property>
@@ -608,7 +608,7 @@
 
 <announcement>
 <name>gate</name>
- <path>Aircraft/787-8/Sounds/gate.wav</path>
+ <path>Aircraft/787-family/Sounds/gate.wav</path>
  <mode>once</mode>
  <condition>
   <property>sim/sound/gate</property>
@@ -627,7 +627,7 @@
 
 <announcement>
 <name>emergency</name>
- <path>Aircraft/787-8/Sounds/emergency.wav</path>
+ <path>Aircraft/787-family/Sounds/emergency.wav</path>
  <mode>once</mode>
  <condition>
   <property>sim/sound/emergency</property>
@@ -646,7 +646,7 @@
 
 <announcement>
 <name>pretakeoff</name>
- <path>Aircraft/787-8/Sounds/pretakeoff.wav</path>
+ <path>Aircraft/787-family/Sounds/pretakeoff.wav</path>
  <mode>once</mode>
  <condition>
   <property>sim/sound/pretakeoff</property>
@@ -665,7 +665,7 @@
 
 <announcement>
 <name>brace</name>
- <path>Aircraft/787-8/Sounds/brace.wav</path>
+ <path>Aircraft/787-family/Sounds/brace.wav</path>
  <mode>once</mode>
  <condition>
   <property>sim/sound/brace</property>
@@ -685,7 +685,7 @@
 <!-- Engine Surge -->
     <surge>
         <name>Engine Surge</name>
-        <path>Aircraft/787-8/Sounds/surge.wav</path>
+        <path>Aircraft/787-family/Sounds/surge.wav</path>
         <mode>looped</mode>
         <condition>
         <equals>
@@ -709,7 +709,7 @@
 
     <explode0>
         <name>Explosion</name>
-        <path>Aircraft/787-8/Sounds/explode.wav</path>
+        <path>Aircraft/787-family/Sounds/explode.wav</path>
         <mode>once</mode>
         <condition>
         <equals>
@@ -731,7 +731,7 @@
     
     <explode1>
         <name>Explosion 1</name>
-        <path>Aircraft/787-8/Sounds/explode.wav</path>
+        <path>Aircraft/787-family/Sounds/explode.wav</path>
         <mode>once</mode>
         <condition>
         <equals>
@@ -753,7 +753,7 @@
     
     <extinguish>
         <name>extinguish</name>
-        <path>Aircraft/787-8/Sounds/extinguish.wav</path>
+        <path>Aircraft/787-family/Sounds/extinguish.wav</path>
         <mode>looped</mode>
         <condition>
             <equals>
@@ -775,7 +775,7 @@
     
     <extinguish1>
         <name>extinguish 1</name>
-        <path>Aircraft/787-8/Sounds/extinguish.wav</path>
+        <path>Aircraft/787-family/Sounds/extinguish.wav</path>
         <mode>looped</mode>
         <condition>
             <equals>
@@ -797,7 +797,7 @@
     
     <fire>
         <name>fire</name>
-        <path>Aircraft/787-8/Sounds/jet.wav</path>
+        <path>Aircraft/787-family/Sounds/jet.wav</path>
         <mode>looped</mode>
         <condition>
             <equals>
@@ -819,7 +819,7 @@
     
     <fire1>
         <name>fire 1</name>
-        <path>Aircraft/787-8/Sounds/jet.wav</path>
+        <path>Aircraft/787-family/Sounds/jet.wav</path>
         <mode>looped</mode>
         <condition>
             <equals>
@@ -841,7 +841,7 @@
     
     <fire-warn>
         <name>fire warn</name>
-        <path>Aircraft/787-8/Sounds/fire-warning.wav</path>
+        <path>Aircraft/787-family/Sounds/fire-warning.wav</path>
         <mode>looped</mode>
         <condition>
             <or>
@@ -869,7 +869,7 @@
     
     <master-warn>
         <name>master warning</name>
-        <path>Aircraft/787-8/Sounds/master-warning.wav</path>
+        <path>Aircraft/787-family/Sounds/master-warning.wav</path>
         <mode>looped</mode>
         <condition>
             <equals>
@@ -893,7 +893,7 @@
 
 <announcement>
 <name>seatbelt</name>
- <path>Aircraft/787-8/Sounds/cabinalert.wav</path>
+ <path>Aircraft/787-family/Sounds/cabinalert.wav</path>
  <mode>once</mode>
  <condition>
   <property>sim/sound/seatbelt-sign</property>
@@ -914,7 +914,7 @@
 
 <announcement>
 <name>no smoking</name>
- <path>Aircraft/787-8/Sounds/cabinalert.wav</path>
+ <path>Aircraft/787-family/Sounds/cabinalert.wav</path>
  <mode>once</mode>
  <condition>
   <property>sim/sound/no-smoking-sign</property>
@@ -936,7 +936,7 @@
     <flap>
         <name>flaps</name>
         <mode>in-transit</mode>
-        <path>Aircraft/787-8/Sounds/Flaps.wav</path>
+        <path>Aircraft/787-family/Sounds/Flaps.wav</path>
         <property>/surface-positions/flap-pos-norm</property>
         <volume>
             <property>sim/sound/effects/volume</property>
@@ -954,7 +954,7 @@
     <wind>
         <name>wind</name>
         <mode>looped</mode>
-        <path>Aircraft/787-8/Sounds/wind.wav</path>
+        <path>Aircraft/787-family/Sounds/wind.wav</path>
         <property>/velocities/airspeed-kt</property>
         <volume>
             <property>/position/altitude-ft</property>
@@ -986,7 +986,7 @@
     <stall>
         <name>stall</name>
         <mode>looped</mode>
-        <path>Aircraft/787-8/Sounds/stall.wav</path>
+        <path>Aircraft/787-family/Sounds/stall.wav</path>
         <condition>
             <greater-than>
                 <property>/position/altitude-agl-ft</property>
@@ -1012,7 +1012,7 @@
     <speedbrake>
         <name>speedbrake</name>
         <mode>in-transit</mode>
-        <path>Aircraft/787-8/Sounds/Flaps.wav</path>
+        <path>Aircraft/787-family/Sounds/Flaps.wav</path>
         <property>/surface-positions/speedbrake-pos-norm</property>
         <volume>
             <property>sim/sound/effects/volume</property>
@@ -1030,7 +1030,7 @@
     <enginesr1>
         <name>left reverse-thrust</name>
         <mode>looped</mode>
-        <path>Aircraft/787-8/Sounds/reverser.wav</path>
+        <path>Aircraft/787-family/Sounds/reverser.wav</path>
         <condition>
             <property>engines/engine[0]/running</property>
         </condition>
@@ -1052,7 +1052,7 @@
     <enginesr2>
         <name>right reverse-thrust</name>
         <mode>looped</mode>
-        <path>Aircraft/787-8/Sounds/reverser.wav</path>
+        <path>Aircraft/787-family/Sounds/reverser.wav</path>
         <condition>
             <property>engines/engine[1]/running</property>
         </condition>
@@ -1073,7 +1073,7 @@
 
     <overspeed>
         <name>Overspeed warning</name>
-        <path>Aircraft/787-8/Sounds/Ovspd.wav</path>
+        <path>Aircraft/787-family/Sounds/Ovspd.wav</path>
         <mode>looped</mode>
         <condition>
             <greater-than>
@@ -1096,7 +1096,7 @@
     <gear1>
         <name>gear</name>
         <mode>in-transit</mode>
-        <path>Aircraft/787-8/Sounds/gear.wav</path>
+        <path>Aircraft/787-family/Sounds/gear.wav</path>
         <property>/gear/gear[0]/position-norm</property>
         <volume>
             <property>sim/sound/effects/volume</property>
@@ -1119,7 +1119,7 @@
 
 <wheels1>
 <name>touchdown</name>
- <path>Aircraft/787-8/Sounds/touchdown.wav</path>
+ <path>Aircraft/787-family/Sounds/touchdown.wav</path>
  <mode>once</mode>
  <condition>
     <or>
@@ -1142,7 +1142,7 @@
 
 <wheels2>
 <name>slowroll</name>
- <path>Aircraft/787-8/Sounds/rumble.wav</path>
+ <path>Aircraft/787-family/Sounds/rumble.wav</path>
  <mode>looped</mode>
  <condition>
     <and>
@@ -1171,7 +1171,7 @@
 <!--
 <wheels3>
 <name>fastroll</name>
- <path>Aircraft/787-8/Sounds/roll.wav</path>
+ <path>Aircraft/787-family/Sounds/roll.wav</path>
  <mode>looped</mode>
  <condition>
     <and>

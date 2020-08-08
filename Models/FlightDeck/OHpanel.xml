@@ -1659,7 +1659,7 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		<inherits-from>Effects/lightmap</inherits-from>
 		<parameters>
 			<texture n="1">
-				<image>Aircraft/787-8/Models/Effects/OHpanel_base_lightmap.png</image>
+				<image>Aircraft/787-family/Models/Effects/OHpanel_base_lightmap.png</image>
 			</texture>
 			<condition>
 				<use>controls/lighting/cockpit</use>
@@ -1672,7 +1672,7 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		<inherits-from>Effects/lightmap</inherits-from>
 		<parameters>
 			<texture n="1">
-				<image>Aircraft/787-8/Models/Effects/OHpanel_panels_lightmap.png</image>
+				<image>Aircraft/787-family/Models/Effects/OHpanel_panels_lightmap.png</image>
 			</texture>
 			<condition>
 				<use>controls/lighting/cockpit</use>

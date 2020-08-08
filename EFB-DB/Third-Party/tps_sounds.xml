@@ -6,7 +6,7 @@
 
     <score>
 		<name>score</name>
-        <path>Aircraft/787-8/EFB-DB/Third-Party/Sounds/score.wav</path>
+        <path>Aircraft/787-family/EFB-DB/Third-Party/Sounds/score.wav</path>
         <mode>once</mode>
         <condition>
         	<equals>
@@ -28,7 +28,7 @@
     
     <gameover>
 		<name>gameover</name>
-        <path>Aircraft/787-8/EFB-DB/Third-Party/Sounds/gameover.wav</path>
+        <path>Aircraft/787-family/EFB-DB/Third-Party/Sounds/gameover.wav</path>
         <mode>looped</mode>
         <condition>
         	<equals>

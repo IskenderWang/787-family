@@ -997,7 +997,7 @@
 <!-- Third Party Software -->
 
 <model>
- 	<path>Aircraft/787-8/EFB-DB/Third-Party/CatchMe/animations.xml</path>
+ 	<path>Aircraft/787-family/EFB-DB/Third-Party/CatchMe/animations.xml</path>
  	<condition>
  		<equals>
  			<property>/instrumentation/efb/page</property>

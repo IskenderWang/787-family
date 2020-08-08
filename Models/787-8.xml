@@ -8,7 +8,7 @@
 		<inherits-from>Effects/lightmap</inherits-from>
 		<parameters>
 			<texture n="1">
-				<image>Aircraft/787-8/Models/Effects/rudder_lightmap.png</image>
+				<image>Aircraft/787-family/Models/Effects/rudder_lightmap.png</image>
 			</texture>
 			<condition>
 				<use>controls/lighting/logo</use>
@@ -22,7 +22,7 @@
 		<inherits-from>Effects/lightmap</inherits-from>
 		<parameters>
 			<texture n="1">
-				<image>Aircraft/787-8/Models/Effects/fuselage_lightmap-8.png</image>
+				<image>Aircraft/787-family/Models/Effects/fuselage_lightmap-8.png</image>
 			</texture>
 			<condition>
 				<use>controls/lighting/landing-lights[0]</use>
@@ -36,7 +36,7 @@
 		<inherits-from>Effects/lightmap</inherits-from>
 		<parameters>
 			<texture n="1">
-				<image>Aircraft/787-8/Models/Effects/engines_lightmap.png</image>
+				<image>Aircraft/787-family/Models/Effects/engines_lightmap.png</image>
 			</texture>
 			<condition>
 				<use>controls/lighting/wing-lights</use>
@@ -54,7 +54,7 @@
 		<inherits-from>Effects/lightmap</inherits-from>
 		<parameters>
 			<texture n="1">
-				<image>Aircraft/787-8/Models/Effects/wings_lightmap.png</image>
+				<image>Aircraft/787-family/Models/Effects/wings_lightmap.png</image>
 			</texture>
 			<condition>
 				<use>controls/lighting/wing-lights</use>
@@ -80,7 +80,7 @@
 		<inherits-from>Effects/lightmap</inherits-from>
 		<parameters>
 			<texture n="1">
-				<image>Aircraft/787-8/Models/Effects/beacon-lightmap-fuselage.png</image>
+				<image>Aircraft/787-family/Models/Effects/beacon-lightmap-fuselage.png</image>
 			</texture>
 		<condition>
 			<property>sim/model/lights/beacon/state</property>
@@ -93,7 +93,7 @@
 		<inherits-from>Effects/lightmap</inherits-from>
 		<parameters>
 			<texture n="1">
-				<image>Aircraft/787-8/Models/Effects/beacon-lightmap-wings.png</image>
+				<image>Aircraft/787-family/Models/Effects/beacon-lightmap-wings.png</image>
 			</texture>
 		<condition>
 			<property>sim/model/lights/beacon/state</property>
@@ -106,7 +106,7 @@
 
     <nasal>
         <load>
-         var livery_update = aircraft.livery_update.new("Aircraft/787-8/Models/Liveries-8", 10);
+         var livery_update = aircraft.livery_update.new("Aircraft/787-family/Models/Liveries-8", 10);
         </load>
 
         <unload>
@@ -1130,7 +1130,7 @@
 <!-- Landing Lights -->
 
 <model>
-<path>Aircraft/787-8/Models/Lights/landing-nose.xml</path>
+<path>Aircraft/787-family/Models/Lights/landing-nose.xml</path>
 <name>noselanding</name>
 <condition>
  <equals>
@@ -1147,7 +1147,7 @@
 </model>
 
 <model>
-<path>Aircraft/787-8/Models/Lights/taxi.xml</path>
+<path>Aircraft/787-family/Models/Lights/taxi.xml</path>
 <name>taxilight</name>
 <condition>
  <equals>
@@ -1165,7 +1165,7 @@
 
 
 <model>
-<path>Aircraft/787-8/Models/Lights/landing-port.xml</path>
+<path>Aircraft/787-family/Models/Lights/landing-port.xml</path>
 <name>LeftWingLandinglight</name>
 <offsets>
 <x-m>-6.9776</x-m>
@@ -1175,7 +1175,7 @@
 </model>
 
 <model>
-<path>Aircraft/787-8/Models/Lights/landing-stbd.xml</path>
+<path>Aircraft/787-family/Models/Lights/landing-stbd.xml</path>
 <name>RightWingLandinglight</name>
 <offsets>
 <x-m>-6.9776</x-m>
@@ -1187,7 +1187,7 @@
 <!-- Beacon Lights -->
 
 <model>
-<path>Aircraft/787-8/Models/Lights/beacon.xml</path>
+<path>Aircraft/787-family/Models/Lights/beacon.xml</path>
 <name>Beaconlight.top</name>
 <offsets>
 <x-m>-11.1355</x-m>
@@ -1197,7 +1197,7 @@
 </model>
 
 <model>
-<path>Aircraft/787-8/Models/Lights/beacon.xml</path>
+<path>Aircraft/787-family/Models/Lights/beacon.xml</path>
 <name>Beaconlight.bottom</name>
 <offsets>
 <x-m>-3.9956</x-m>
@@ -2224,7 +2224,7 @@
 </animation>
 
 <model>
- <path>Aircraft/787-8/Models/Effects/contrail.xml</path>
+ <path>Aircraft/787-family/Models/Effects/contrail.xml</path>
  <condition>
   <equals>
    <property>controls/switches/contrails</property>
@@ -2241,7 +2241,7 @@
 </model>
 
 <model>
- <path>Aircraft/787-8/Models/Effects/contrail.xml</path>
+ <path>Aircraft/787-family/Models/Effects/contrail.xml</path>
  <condition>
   <equals>
    <property>controls/switches/contrails</property>
@@ -2258,7 +2258,7 @@
 </model>
 
 <model>
- <path>Aircraft/787-8/Models/Effects/tire-smoke-nose.xml</path>
+ <path>Aircraft/787-family/Models/Effects/tire-smoke-nose.xml</path>
  <name>tyre-smoke-n</name>
  <offsets>
   <x-m>-20.56</x-m>
@@ -2268,7 +2268,7 @@
 </model>
 
 <model>
- <path>Aircraft/787-8/Models/Effects/tire-smoke-left.xml</path>
+ <path>Aircraft/787-family/Models/Effects/tire-smoke-left.xml</path>
  <name>tyre-smoke-l</name>
  <offsets>
   <x-m>1.97</x-m>
@@ -2278,7 +2278,7 @@
 </model>
 
 <model>
- <path>Aircraft/787-8/Models/Effects/tire-smoke-right.xml</path>
+ <path>Aircraft/787-family/Models/Effects/tire-smoke-right.xml</path>
  <name>tyre-smoke-r</name>
  <offsets>
   <x-m>1.97</x-m>
@@ -2288,7 +2288,7 @@
 </model>
 
 <model>
- <path>Aircraft/787-8/Models/Effects/wet-runway.xml</path>
+ <path>Aircraft/787-family/Models/Effects/wet-runway.xml</path>
  <name>tyre-smoke-n</name>
  <offsets>
   <x-m>-20.56</x-m>
@@ -2298,7 +2298,7 @@
 </model>
 
 <model>
- <path>Aircraft/787-8/Models/Effects/wet-runway.xml</path>
+ <path>Aircraft/787-family/Models/Effects/wet-runway.xml</path>
  <name>tyre-smoke-l</name>
  <offsets>
   <x-m>1.97</x-m>
@@ -2308,7 +2308,7 @@
 </model>
 
 <model>
- <path>Aircraft/787-8/Models/Effects/wet-runway.xml</path>
+ <path>Aircraft/787-family/Models/Effects/wet-runway.xml</path>
  <name>tyre-smoke-r</name>
  <offsets>
   <x-m>1.97</x-m>
@@ -2322,7 +2322,7 @@
 <!-- Green Naviagation Light -->
 
 <model>
-<path>Aircraft/787-8/Models/Lights/greennav.xml</path>
+<path>Aircraft/787-family/Models/Lights/greennav.xml</path>
 <name>greennav</name>
 <offsets>
 <x-m>9.6840</x-m>
@@ -2334,7 +2334,7 @@
 <!-- Red Naviagation Light -->
 
 <model>
-<path>Aircraft/787-8/Models/Lights/rednav.xml</path>
+<path>Aircraft/787-family/Models/Lights/rednav.xml</path>
 <name>rednav</name>
 <offsets>
 <x-m>9.6840</x-m>
@@ -2346,7 +2346,7 @@
 <!-- Left Strobe light -->
 
 <model>
-<path>Aircraft/787-8/Models/Lights/strobe.xml</path>
+<path>Aircraft/787-family/Models/Lights/strobe.xml</path>
 <name>strobe.left</name>
 <offsets>
 <x-m>9.6840</x-m>
@@ -2358,7 +2358,7 @@
 <!-- Right Strobe light -->
 
 <model>
-<path>Aircraft/787-8/Models/Effects/strobe.xml</path>
+<path>Aircraft/787-family/Models/Effects/strobe.xml</path>
 <name>strobe.right</name>
 <offsets>
 <x-m>9.6840</x-m>
@@ -2370,7 +2370,7 @@
 <!-- Fuel Dump -->
 
 <model>
-<path>Aircraft/787-8/Models/Effects/fuel-dump.xml</path>
+<path>Aircraft/787-family/Models/Effects/fuel-dump.xml</path>
 <name>fueldump.l</name>
 <condition>
 	<and>
@@ -2394,7 +2394,7 @@
 </model>
 
 <model>
-<path>Aircraft/787-8/Models/Effects/fuel-dump.xml</path>
+<path>Aircraft/787-family/Models/Effects/fuel-dump.xml</path>
 <name>fueldump.r</name>
 <condition>
 	<and>
@@ -2883,7 +2883,7 @@
 
 	<model>
 		<name>RAT</name>
-		<path>Aircraft/787-8/Models/RAT.xml</path>
+		<path>Aircraft/787-family/Models/RAT.xml</path>
 		<offsets>
 			<x-m>4.511</x-m>
 			<y-m>0</y-m>
@@ -2988,7 +2988,7 @@
 <!-- Smoke and Fire -->
 
 <model>
- <path>Aircraft/787-8/Models/Effects/fire.xml</path>
+ <path>Aircraft/787-family/Models/Effects/fire.xml</path>
  <condition>
 	<equals>
 		<property>controls/fires/fire/phase</property>
@@ -3005,7 +3005,7 @@
 </model>
 
 <model>
- <path>Aircraft/787-8/Models/Effects/smoke.xml</path>
+ <path>Aircraft/787-family/Models/Effects/smoke.xml</path>
  <condition>
  	<or>
 	<equals>
@@ -3028,7 +3028,7 @@
 </model>
 
 <model>
- <path>Aircraft/787-8/Models/Effects/explode1.xml</path>
+ <path>Aircraft/787-family/Models/Effects/explode1.xml</path>
  <condition>
 	<equals>
 		<property>controls/fires/fire/phase</property>
@@ -3045,7 +3045,7 @@
 </model>
 
 <model>
- <path>Aircraft/787-8/Models/Effects/fire.xml</path>
+ <path>Aircraft/787-family/Models/Effects/fire.xml</path>
  <condition>
 	<equals>
 		<property>controls/fires/fire[1]/phase</property>
@@ -3062,7 +3062,7 @@
 </model>
 
 <model>
- <path>Aircraft/787-8/Models/Effects/smoke.xml</path>
+ <path>Aircraft/787-family/Models/Effects/smoke.xml</path>
  <condition>
  	<or>
 	<equals>
@@ -3085,7 +3085,7 @@
 </model>
 
 <model>
- <path>Aircraft/787-8/Models/Effects/explode1.xml</path>
+ <path>Aircraft/787-family/Models/Effects/explode1.xml</path>
  <condition>
 	<equals>
 		<property>controls/fires/fire[1]/phase</property>
@@ -3102,7 +3102,7 @@
 </model>
 
 <model>
- <path>Aircraft/787-8/Models/Effects/ext.xml</path>
+ <path>Aircraft/787-family/Models/Effects/ext.xml</path>
  <condition>
 	<equals>
 		<property>controls/fires/fire/extinguish</property>
@@ -3119,7 +3119,7 @@
 </model>
 
 <model>
- <path>Aircraft/787-8/Models/Effects/ext.xml</path>
+ <path>Aircraft/787-family/Models/Effects/ext.xml</path>
  <condition>
 	<equals>
 		<property>controls/fires/fire[1]/extinguish</property>
@@ -3138,7 +3138,7 @@
 <!-- Fuel Truck -->
 
 <model>
-	<path>Aircraft/787-8/Models/Ground/Services/Fuel-Truck/Fuel_Truck_Short_VolvoFM.ac</path>
+	<path>Aircraft/787-family/Models/Ground/Services/Fuel-Truck/Fuel_Truck_Short_VolvoFM.ac</path>
 	<condition>
 		<equals>
 			<property>services/fuel-truck/enable</property>
@@ -3172,7 +3172,7 @@
 <!-- De-icing Truck -->
 
 <model>
-	<path>Aircraft/787-8/Models/Ground/Services/De-Icing/volvo_deicing_truck.xml</path>
+	<path>Aircraft/787-family/Models/Ground/Services/De-Icing/volvo_deicing_truck.xml</path>
 	<condition>
 		<equals>
 			<property>services/deicing_truck/enable</property>
@@ -3190,7 +3190,7 @@
 <!-- Catering Truck -->
 
 <model>
-	<path>Aircraft/787-8/Models/Ground/Services/Catering/Catering_Loader_Truck_VolvoFM.xml</path>
+	<path>Aircraft/787-family/Models/Ground/Services/Catering/Catering_Loader_Truck_VolvoFM.xml</path>
 	<condition>
 		<equals>
 			<property>services/catering/enable</property>
@@ -3202,7 +3202,7 @@
 <!-- Baggage Truck -->
 
 <model>
-	<path>Aircraft/787-8/Models/Ground/Services/Baggage/cargo_ramp.ac</path>
+	<path>Aircraft/787-family/Models/Ground/Services/Baggage/cargo_ramp.ac</path>
 	<condition>
 		<equals>
 			<property>services/baggage/enable</property>
@@ -3226,7 +3226,7 @@
 <!-- External Power -->
 
 <model>
-	<path>Aircraft/787-8/Models/Ground/Services/External-Power/ext-pwr-box.ac</path>
+	<path>Aircraft/787-family/Models/Ground/Services/External-Power/ext-pwr-box.ac</path>
 	<condition>
 		<equals>
 			<property>services/ext-pwr/enable</property>
@@ -3239,7 +3239,7 @@
 
 <model>
 	<name>choke_nose</name>
-	<path>Aircraft/787-8/Models/Ground/Services/Chokes/choke_nose.ac</path>
+	<path>Aircraft/787-family/Models/Ground/Services/Chokes/choke_nose.ac</path>
 	<condition>
 		<equals>
 			<property>services/chokes/nose</property>
@@ -3250,7 +3250,7 @@
 
 <model>
 	<name>choke_left</name>
-	<path>Aircraft/787-8/Models/Ground/Services/Chokes/choke_left.ac</path>
+	<path>Aircraft/787-family/Models/Ground/Services/Chokes/choke_left.ac</path>
 	<condition>
 		<equals>
 			<property>services/chokes/left</property>
@@ -3261,7 +3261,7 @@
 
 <model>
 	<name>choke_right</name>
-	<path>Aircraft/787-8/Models/Ground/Services/Chokes/choke_right.ac</path>
+	<path>Aircraft/787-family/Models/Ground/Services/Chokes/choke_right.ac</path>
 	<condition>
 		<equals>
 			<property>services/chokes/right</property>

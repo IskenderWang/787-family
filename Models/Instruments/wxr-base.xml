@@ -3,7 +3,7 @@
 
 <PropertyList>
     <name>WXRadar Echo Base</name>
-    <background>Aircraft/787-8/Models/Instruments/transparent.png</background>
+    <background>Aircraft/787-family/Models/Instruments/transparent.png</background>
     <w>512</w>
     <h>512</h>
 
