@@ -12,4 +12,4 @@ Install
 
 WIKI ARTICLE : http://wiki.flightgear.org/Boeing_787-8_Dreamliner
 
-IMPORTANT: To have everything working, make sure you rename the folder to 787-8 (!!) – all the links in the code to the 787-8 directory have yet to be changed
+IMPORTANT: To have everything working, make sure the folder is named 787-family (no -master after if downloading zip)!
