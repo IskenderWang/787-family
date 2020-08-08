@@ -1,11 +1,9 @@
 # 787-family
-Boeing 787 family for FlightGear: the result of succeeding at my attempt to merge [Jonathan Redpath's abandoned -9](https://github.com/legoboyvdlp/787-9) with the fgaddon -8 in active development
+Boeing 787 family for FlightGear: the result of succeeding at my attempt to merge [Jonathan Redpath's abandoned -9](https://github.com/legoboyvdlp/787-9) with the [FGAddon 787-8](http://sourceforge.net/p/flightgear/fgaddon/HEAD/tree/trunk/Aircraft/787-8/).
 
-This is NOT the official home of the 787-8 for FlightGear – you can find that here:
+This is the official home of the 787-family, based on the two models listed above
 
-http://sourceforge.net/p/flightgear/fgaddon/HEAD/tree/trunk/Aircraft/787-8/
-
-fter gitorious closed down and former maintainer Omega95 retired, islandmonkey created a Github repo, which was subsequently merged into FGAddon. Now, IskenderWang and Marsdolphin, among others, have collaborated on a project to make the 787 become an high quality aircraft.
+fter gitorious closed down and former maintainer Omega95 retired, islandmonkey created a Github repo, which was subsequently merged into FGAddon. Now, IskenderWang and Marsdolphin, among others, have collaborated on a project to make the 787 become a high quality aircraft.
 
 This package contains the following models:
 -------
