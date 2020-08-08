@@ -5,7 +5,14 @@ This is NOT the official home of the 787-8 for FlightGear – you can find that
 
 http://sourceforge.net/p/flightgear/fgaddon/HEAD/tree/trunk/Aircraft/787-8/
 
-After gitorious closed down and former maintainer Omega95 retired, islandmonkey created a Github repo, which was subsequently merged into FGAddon. 
+fter gitorious closed down and former maintainer Omega95 retired, islandmonkey created a Github repo, which was subsequently merged into FGAddon. Now, IskenderWang and Marsdolphin, among others, have collaborated on a project to make the 787 become an high quality aircraft.
+
+This package contains the following models:
+-------
+
+- 787-8 (RR Trent)
+- 787-9 (RR Trent and GEnx)
+
 
 Install
 -------
