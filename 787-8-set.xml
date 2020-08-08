@@ -3,7 +3,7 @@
 <PropertyList>
 
 	<sim>
-		<description>Boeing 787-8</description>
+		<description>Boeing 787-8 (Trent 1000)</description>
 		<flight-model>jsb</flight-model>
 		<aero>787-8</aero>
         <authors>
@@ -412,6 +412,23 @@
 		<dynamic>
 			<enabled type="bool" userarchive="y">false</enabled>
 		</dynamic>
+	</view>
+	<view n="108">
+		<name>Left Aft Wing View</name>
+		<type>lookfrom</type>
+		<internal type="bool">true</internal>
+		<cockpit type="bool">true</cockpit>
+		<config>
+			<from-model type="bool">true</from-model>
+			<from-model-idx type="int">0</from-model-idx>
+			<ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+			<x-offset-m type="double">0</x-offset-m>
+			<y-offset-m type="double">2.24</y-offset-m>
+			<z-offset-m type="double">7.96</z-offset-m>
+			<pitch-offset-deg>1.6</pitch-offset-deg>
+			<heading-offset-deg>81.5</heading-offset-deg>
+			<default-field-of-view-deg type="double">60</default-field-of-view-deg>
+		</config>
 	</view>
 
 		<menubar>
