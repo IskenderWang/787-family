@@ -22,7 +22,7 @@
 		<inherits-from>Effects/lightmap</inherits-from>
 		<parameters>
 			<texture n="1">
-				<image>Aircraft/787-8/Models/Effects/fuselage_lightmap.png</image>
+				<image>Aircraft/787-8/Models/Effects/fuselage_lightmap-8.png</image>
 			</texture>
 			<condition>
 				<use>controls/lighting/landing-lights[0]</use>
