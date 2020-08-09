@@ -147,7 +147,7 @@
         <property-base>sim/model/livery</property-base>
         <texture-prop>texture</texture-prop>
         <texture>BOE-8.png</texture>
- </animation>
+</animation>
 
 <animation>
         <type>shader</type>
@@ -178,7 +178,7 @@
 	<object-name>tailchrome</object-name>
 	<object-name>lchrome</object-name>
 	<object-name>rchrome</object-name>
- </animation>
+</animation>
 
 <model>
  <name>Pushback</name>

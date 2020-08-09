@@ -3,65 +3,65 @@
 
   <path>787-9.ac</path>
 
-	<!-- Lightmaps -->
-	<effect>
-		<inherits-from>Effects/lightmap</inherits-from>
-		<parameters>
-			<texture n="1">
-				<image>Aircraft/787-family/Models/Effects/rudder_lightmap.png</image>
-			</texture>
-			<condition>
-				<use>controls/lighting/logo</use>
-			</condition>
-		</parameters>
-		<object-name>rudder</object-name>
-		<object-name>fin</object-name>
-	</effect>
+    <!-- Lightmaps -->
+    <effect>
+        <inherits-from>Effects/lightmap</inherits-from>
+        <parameters>
+            <texture n="1">
+                <image>Aircraft/787-family/Models/Effects/rudder_lightmap.png</image>
+            </texture>
+            <condition>
+                <use>controls/lighting/logo</use>
+            </condition>
+        </parameters>
+        <object-name>rudder</object-name>
+        <object-name>fin</object-name>
+    </effect>
 
-	<effect>
-		<inherits-from>Effects/lightmap</inherits-from>
-		<parameters>
-			<texture n="1">
-				<image>Aircraft/787-family/Models/Effects/fuselage_lightmap-9.png</image>
-			</texture>
-			<condition>
-				<use>controls/lighting/landing-lights[0]</use>
-			</condition>
-		</parameters>
-		<object-name>bodyfairing</object-name>
-		<object-name>fuselage.001</object-name>
-	</effect>
+    <effect>
+        <inherits-from>Effects/lightmap</inherits-from>
+        <parameters>
+            <texture n="1">
+                <image>Aircraft/787-family/Models/Effects/fuselage_lightmap-9.png</image>
+            </texture>
+            <condition>
+                <use>controls/lighting/landing-lights[0]</use>
+            </condition>
+        </parameters>
+        <object-name>bodyfairing</object-name>
+        <object-name>fuselage.001</object-name>
+    </effect>
 
-	<effect>
-		<inherits-from>Effects/lightmap</inherits-from>
-		<parameters>
-			<texture n="1">
-				<image>Aircraft/787-family/Models/Effects/engines_lightmap.png</image>
-			</texture>
-			<condition>
-				<use>controls/lighting/wing-lights</use>
-			</condition>
-		</parameters>
-		<object-name>no2enge</object-name>
-		<object-name>rhreverser</object-name>
-		<object-name>rhvortexdev</object-name>
-		<object-name>no1enge</object-name>
-		<object-name>lhreverser</object-name>
-		<object-name>lhvortexdev</object-name>
-	</effect>
+    <effect>
+        <inherits-from>Effects/lightmap</inherits-from>
+        <parameters>
+            <texture n="1">
+                <image>Aircraft/787-family/Models/Effects/engines_lightmap.png</image>
+            </texture>
+            <condition>
+                <use>controls/lighting/wing-lights</use>
+            </condition>
+        </parameters>
+        <object-name>no2enge</object-name>
+        <object-name>rhreverser</object-name>
+        <object-name>rhvortexdev</object-name>
+        <object-name>no1enge</object-name>
+        <object-name>lhreverser</object-name>
+        <object-name>lhvortexdev</object-name>
+    </effect>
 
-	<effect>
-		<inherits-from>Effects/lightmap</inherits-from>
-		<parameters>
-			<texture n="1">
-				<image>Aircraft/787-family/Models/Effects/wings_lightmap.png</image>
-			</texture>
-			<condition>
-				<use>controls/lighting/wing-lights</use>
-			</condition>
-		</parameters>
-		<object-name>wings_lightmap</object-name>
-	</effect>
+    <effect>
+        <inherits-from>Effects/lightmap</inherits-from>
+        <parameters>
+            <texture n="1">
+                <image>Aircraft/787-family/Models/Effects/wings_lightmap.png</image>
+            </texture>
+            <condition>
+                <use>controls/lighting/wing-lights</use>
+            </condition>
+        </parameters>
+        <object-name>wings_lightmap</object-name>
+    </effect>
 
 <animation>
   <type>select</type>
@@ -76,30 +76,30 @@
 
 <!-- Beacon Lightmaps -->
 
-	<effect>
-		<inherits-from>Effects/lightmap</inherits-from>
-		<parameters>
-			<texture n="1">
-				<image>Aircraft/787-family/Models/Effects/beacon-lightmap-fuselage.png</image>
-			</texture>
-		<condition>
-			<property>sim/model/lights/beacon/state</property>
-		</condition>
-		</parameters>
-	</effect>
+    <effect>
+        <inherits-from>Effects/lightmap</inherits-from>
+        <parameters>
+            <texture n="1">
+                <image>Aircraft/787-family/Models/Effects/beacon-lightmap-fuselage.png</image>
+            </texture>
+        <condition>
+            <property>sim/model/lights/beacon/state</property>
+        </condition>
+        </parameters>
+    </effect>
 
-	<effect>
-		<inherits-from>Effects/lightmap</inherits-from>
-		<parameters>
-			<texture n="1">
-				<image>Aircraft/787-family/Models/Effects/beacon-lightmap-wings.png</image>
-			</texture>
-		<condition>
-			<property>sim/model/lights/beacon/state</property>
-		</condition>
-		</parameters>
-		<object-name>wings_lightmap</object-name>
-	</effect>
+    <effect>
+        <inherits-from>Effects/lightmap</inherits-from>
+        <parameters>
+            <texture n="1">
+                <image>Aircraft/787-family/Models/Effects/beacon-lightmap-wings.png</image>
+            </texture>
+        <condition>
+            <property>sim/model/lights/beacon/state</property>
+        </condition>
+        </parameters>
+        <object-name>wings_lightmap</object-name>
+    </effect>
 
 <!-- Livery select -->
 
@@ -175,9 +175,9 @@
         <object-name>rhobslat_a</object-name>
         <object-name>rhobslat_b</object-name>
         <object-name>rhobslat_c</object-name>
-	<object-name>tailchrome</object-name>
-	<object-name>lchrome</object-name>
-	<object-name>rchrome</object-name>
+    <object-name>tailchrome</object-name>
+    <object-name>lchrome</object-name>
+    <object-name>rchrome</object-name>
 </animation>
 
 <model>
@@ -195,11 +195,11 @@
 <model>
  <name>flightdeck</name>
  <path>FlightDeck/b787.flightdeck.xml</path>
-	<offsets>
-		<x-m>-3.70</x-m>
-		<y-m>0</y-m>
-		<z-m>-0.05</z-m>
-	</offsets>
+    <offsets>
+        <x-m>-3.70</x-m>
+        <y-m>0</y-m>
+        <z-m>-0.05</z-m>
+    </offsets>
 </model>
 
 <!-- Landing Gear Animations -->
@@ -708,20 +708,20 @@
 
 
 <animation>
-	<type>spin</type>
-	<object-name>R.Wheels.B</object-name>
-	<property>gear/gear[4]/rollspeed-ms</property>
-	<factor>10</factor>
-	<center>
-		<x-m>2.673</x-m>
-		<y-m>4.88</y-m>
-		<z-m>-3.595</z-m>
-	</center>
-	<axis>
-		<x>0</x>
-		<y>-1</y>
-		<z>0</z>
-	</axis>
+    <type>spin</type>
+    <object-name>R.Wheels.B</object-name>
+    <property>gear/gear[4]/rollspeed-ms</property>
+    <factor>10</factor>
+    <center>
+        <x-m>2.673</x-m>
+        <y-m>4.88</y-m>
+        <z-m>-3.595</z-m>
+    </center>
+    <axis>
+        <x>0</x>
+        <y>-1</y>
+        <z>0</z>
+    </axis>
 </animation>
 
 <!-- Left Main Gear -->
@@ -925,213 +925,168 @@
 
 <!-- Aerodynamic G Forces -->
 
-<animation>
-  <type>rotate</type>
-  <object-name>rwinga</object-name>
-  <object-name>rhlightedwinga</object-name>
-  <object-name>rhmfairing</object-name>
-  <object-name>rhobslata</object-name>
-  <object-name>rhobslat_a</object-name>
-  <object-name>rhlightedslata</object-name>
-<!--  <object-name>rhibspoilera</object-name> -->
-  <object-name>rhibaileron</object-name>
-  <object-name>rhspoilera</object-name>
-  <object-name>rhobspoilera</object-name>
-  <object-name>rhibflapa</object-name>
-  <object-name>rhobflapa</object-name>
-  <object-name>rwingb</object-name>
-  <object-name>rhobslatb</object-name>
-  <object-name>rhobslat_b</object-name>
-  <object-name>rhobspoilerb</object-name>
-  <object-name>rhobflapb</object-name>
-  <object-name>rwingc</object-name>
-  <object-name>rhobslatc</object-name>
-  <object-name>rhobslat_c</object-name>
-  <object-name>rhobaileron</object-name>
-  <object-name>rhnavlite</object-name>
-  <object-name>rwhiteflash</object-name>
-  <object-name>rhobfairing</object-name>
-  <object-name>rchrome</object-name>
-  <object-name>greennav</object-name>
-  <object-name>strobe.right</object-name>
-  <object-name>fueldump.r</object-name>
-  <property>sim/systems/wingflexer/z-m</property>
-  <factor>10.</factor>
-  <offset-deg>0</offset-deg>
-  <center>
-   <x-m>0</x-m>
-   <y-m>9.5</y-m>
-   <z-m>1.0</z-m>
-  </center>
-  <axis>
-   <x>4</x>
-   <y>-1</y>
-   <z>-0.25</z>
-  </axis>
-</animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>lwinga</object-name>
+        <object-name>lhlightedwinga</object-name>
+        <object-name>lhmfairing</object-name>
+        <object-name>lhlightedslata</object-name>
+        <object-name>lhobslata</object-name>
+        <object-name>lhobslat_a</object-name>
+        <!--  <object-name>lhibspoilera</object-name> -->
+        <object-name>lhspoilera</object-name>
+        <object-name>lhobspoilera</object-name>
+        <object-name>lhibflapa</object-name>
+        <object-name>lhibaileron</object-name>
+        <object-name>lhobflapa</object-name>
+        <object-name>lwingb</object-name>
+        <object-name>lhobslatb</object-name>
+        <object-name>lhobslat_b</object-name>
+        <object-name>lhobspoilerb</object-name>
+        <object-name>lhobflapb</object-name>
+        <object-name>lwingc</object-name>
+        <object-name>lhobslatc</object-name>
+        <object-name>lhobslat_c</object-name>
+        <object-name>lhobaileron</object-name>
+        <object-name>lhnavlite</object-name>
+        <object-name>lwhiteflash</object-name>
+        <object-name>lhobfairing</object-name>
+        <object-name>lchrome</object-name>
+        <object-name>rednav</object-name>
+        <object-name>strobe.left</object-name>
+        <object-name>fueldump.l</object-name>
+        <property>fdm/jsbsim/aero/coefficient/CLalpha</property>
+        <factor>0.00001</factor>
+        <offset-deg>0</offset-deg>
+        <center>
+            <x-m>0</x-m>
+            <y-m>-9.5</y-m>
+            <z-m>1.0</z-m>
+        </center>
+        <axis>
+            <x>-4</x>
+            <y>-1</y>
+            <z>0.25</z>
+        </axis>
+    </animation>
 
-<animation>
-  <type>rotate</type>
-  <object-name>lwinga</object-name>
-  <object-name>lhlightedwinga</object-name>
-  <object-name>lhmfairing</object-name>
-  <object-name>lhlightedslata</object-name>
-  <object-name>lhobslata</object-name>
-  <object-name>lhobslat_a</object-name>
-<!--  <object-name>lhibspoilera</object-name> -->
-  <object-name>lhspoilera</object-name>
-  <object-name>lhobspoilera</object-name>
-  <object-name>lhibflapa</object-name>
-  <object-name>lhibaileron</object-name>
-  <object-name>lhobflapa</object-name>
-  <object-name>lwingb</object-name>
-  <object-name>lhobslatb</object-name>
-  <object-name>lhobslat_b</object-name>
-  <object-name>lhobspoilerb</object-name>
-  <object-name>lhobflapb</object-name>
-  <object-name>lwingc</object-name>
-  <object-name>lhobslatc</object-name>
-  <object-name>lhobslat_c</object-name>
-  <object-name>lhobaileron</object-name>
-  <object-name>lhnavlite</object-name>
-  <object-name>lwhiteflash</object-name>
-  <object-name>lhobfairing</object-name>
-  <object-name>lchrome</object-name>
-  <object-name>rednav</object-name>
-  <object-name>strobe.left</object-name>
-  <object-name>fueldump.l</object-name>
-  <property>sim/systems/wingflexer/z-m</property>
-  <factor>10.</factor>
-  <offset-deg>0</offset-deg>
-  <center>
-   <x-m>0</x-m>
-   <y-m>-9.5</y-m>
-   <z-m>1.0</z-m>
-  </center>
-  <axis>
-   <x>-4</x>
-   <y>-1</y>
-   <z>0.25</z>
-  </axis>
-</animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>rwingb</object-name>
+        <object-name>rhobslatb</object-name>
+        <object-name>rhobslat_b</object-name>
+        <object-name>rhobspoilerb</object-name>
+        <object-name>rhobflapb</object-name>
+        <object-name>rwingc</object-name>
+        <object-name>rhobslatc</object-name>
+        <object-name>rhobslat_c</object-name>
+        <object-name>rhobaileron</object-name>
+        <object-name>rhnavlite</object-name>
+        <object-name>rwhiteflash</object-name>
+        <object-name>rhobfairing</object-name>
+        <object-name>rchrome</object-name>
+        <object-name>greennav</object-name>
+        <object-name>strobe.right</object-name>
+        <object-name>fueldump.r</object-name>
+        <property>fdm/jsbsim/aero/coefficient/CLalpha</property>
+        <factor>0.00001</factor>
+        <offset-deg>0</offset-deg>
+        <center>
+            <x-m>3.6</x-m>
+            <y-m>15.7</y-m>
+            <z-m>1.6</z-m>
+        </center>
+        <axis>
+            <x>2</x>
+            <y>-1</y>
+            <z>0.2</z>
+        </axis>
+    </animation>
 
-<animation>
-  <type>rotate</type>
-  <object-name>rwingb</object-name>
-  <object-name>rhobslatb</object-name>
-  <object-name>rhobslat_b</object-name>
-  <object-name>rhobspoilerb</object-name>
-  <object-name>rhobflapb</object-name>
-  <object-name>rwingc</object-name>
-  <object-name>rhobslatc</object-name>
-  <object-name>rhobslat_c</object-name>
-  <object-name>rhobaileron</object-name>
-  <object-name>rhnavlite</object-name>
-  <object-name>rwhiteflash</object-name>
-  <object-name>rhobfairing</object-name>
-  <object-name>rchrome</object-name>
-  <object-name>greennav</object-name>
-  <object-name>strobe.right</object-name>
-  <object-name>fueldump.r</object-name>
-  <property>sim/systems/wingflexer/z-m</property>
-  <factor>10.</factor>
-  <offset-deg>0</offset-deg>
-  <center>
-   <x-m>3.6</x-m>
-   <y-m>15.7</y-m>
-   <z-m>1.6</z-m>
-  </center>
-  <axis>
-   <x>2</x>
-   <y>-1</y>
-   <z>0.2</z>
-  </axis>
-</animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>lwingb</object-name>
+        <object-name>lhobslatb</object-name>
+        <object-name>lhobslat_b</object-name>
+        <object-name>lhobspoilerb</object-name>
+        <object-name>lhobflapb</object-name>
+        <object-name>lwingc</object-name>
+        <object-name>lhobslatc</object-name>
+        <object-name>lhobslat_c</object-name>
+        <object-name>lhobaileron</object-name>
+        <object-name>lhnavlite</object-name>
+        <object-name>lwhiteflash</object-name>
+        <object-name>lhobfairing</object-name>
+        <object-name>lchrome</object-name>
+        <object-name>rednav</object-name>
+        <object-name>strobe.left</object-name>
+        <object-name>fueldump.l</object-name>
+        <property>fdm/jsbsim/aero/coefficient/CLalpha</property>
+        <factor>0.00001</factor>
+        <offset-deg>0</offset-deg>
+        <center>
+            <x-m>3.6</x-m>
+            <y-m>-15.7</y-m>
+            <z-m>1.6</z-m>
+        </center>
+        <axis>
+            <x>-2</x>
+            <y>-1</y>
+            <z>0.2</z>
+        </axis>
+    </animation>
 
-<animation>
-  <type>rotate</type>
-  <object-name>lwingb</object-name>
-  <object-name>lhobslatb</object-name>
-  <object-name>lhobslat_b</object-name>
-  <object-name>lhobspoilerb</object-name>
-  <object-name>lhobflapb</object-name>
-  <object-name>lwingc</object-name>
-  <object-name>lhobslatc</object-name>
-  <object-name>lhobslat_c</object-name>
-  <object-name>lhobaileron</object-name>
-  <object-name>lhnavlite</object-name>
-  <object-name>lwhiteflash</object-name>
-  <object-name>lhobfairing</object-name>
-  <object-name>lchrome</object-name>
-  <object-name>rednav</object-name>
-  <object-name>strobe.left</object-name>
-  <object-name>fueldump.l</object-name>
-  <property>sim/systems/wingflexer/z-m</property>
-  <factor>10.</factor>
-  <offset-deg>0</offset-deg>
-  <center>
-   <x-m>3.6</x-m>
-   <y-m>-15.7</y-m>
-   <z-m>1.6</z-m>
-  </center>
-  <axis>
-   <x>-2</x>
-   <y>-1</y>
-   <z>0.2</z>
-  </axis>
-</animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>rwingc</object-name>
+        <object-name>rhobslatc</object-name>
+        <object-name>rhobslat_c</object-name>
+        <object-name>rhobaileron</object-name>
+        <object-name>rhnavlite</object-name>
+        <object-name>rwhiteflash</object-name>
+        <object-name>rchrome</object-name>
+        <object-name>greennav</object-name>
+        <object-name>strobe.right</object-name>
+        <property>fdm/jsbsim/aero/coefficient/CLalpha</property>
+        <factor>0.00001</factor>
+        <offset-deg>0</offset-deg>
+        <center>
+            <x-m>7.5</x-m>
+            <y-m>21.7</y-m>
+            <z-m>2.6</z-m>
+        </center>
+        <axis>
+            <x>1.6</x>
+            <y>-1</y>
+            <z>0.2</z>
+        </axis>
+    </animation>
 
-<animation>
-  <type>rotate</type>
-  <object-name>rwingc</object-name>
-  <object-name>rhobslatc</object-name>
-  <object-name>rhobslat_c</object-name>
-  <object-name>rhobaileron</object-name>
-  <object-name>rhnavlite</object-name>
-  <object-name>rwhiteflash</object-name>
-  <object-name>rchrome</object-name>
-  <object-name>greennav</object-name>
-  <object-name>strobe.right</object-name>
-  <property>sim/systems/wingflexer/z-m</property>
-  <factor>10.</factor>
-  <offset-deg>0</offset-deg>
-  <center>
-   <x-m>7.5</x-m>
-   <y-m>21.7</y-m>
-   <z-m>2.6</z-m>
-  </center>
-  <axis>
-   <x>1.6</x>
-   <y>-1</y>
-   <z>0.2</z>
-  </axis>
-</animation>
-
-<animation>
-  <type>rotate</type>
-  <object-name>lwingc</object-name>
-  <object-name>lhobslatc</object-name>
-  <object-name>lhobslat_c</object-name>
-  <object-name>lhobaileron</object-name>
-  <object-name>lhnavlite</object-name>
-  <object-name>lwhiteflash</object-name>
-  <object-name>lchrome</object-name>
-  <object-name>rednav</object-name>
-  <object-name>strobe.left</object-name>
-  <property>sim/systems/wingflexer/z-m</property>
-  <factor>10.</factor>
-  <offset-deg>0</offset-deg>
-  <center>
-   <x-m>7.5</x-m>
-   <y-m>-21.7</y-m>
-   <z-m>2.6</z-m>
-  </center>
-  <axis>
-   <x>-1.6</x>
-   <y>-1</y>
-   <z>0.2</z>
-  </axis>
-</animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>lwingc</object-name>
+        <object-name>lhobslatc</object-name>
+        <object-name>lhobslat_c</object-name>
+        <object-name>lhobaileron</object-name>
+        <object-name>lhnavlite</object-name>
+        <object-name>lwhiteflash</object-name>
+        <object-name>lchrome</object-name>
+        <object-name>rednav</object-name>
+        <object-name>strobe.left</object-name>
+        <property>fdm/jsbsim/aero/coefficient/CLalpha</property>
+        <factor>0.00001</factor>
+        <offset-deg>0</offset-deg>
+        <center>
+            <x-m>7.5</x-m>
+            <y-m>-21.7</y-m>
+            <z-m>2.6</z-m>
+        </center>
+        <axis>
+            <x>-1.6</x>
+            <y>-1</y>
+            <z>0.2</z>
+        </axis>
+    </animation>
 
 <!-- Landing Lights -->
 
@@ -1140,7 +1095,7 @@
 <name>noselanding</name>
 <condition>
  <equals>
-			             <property>gear/gear[0]/position-norm</property>
+                         <property>gear/gear[0]/position-norm</property>
                                             <value type="bool">true</value>
  </equals>
   </condition>
@@ -1157,7 +1112,7 @@
 <name>taxilight</name>
 <condition>
  <equals>
-			             <property>gear/gear[0]/position-norm</property>
+                         <property>gear/gear[0]/position-norm</property>
                                             <value type="bool">true</value>
  </equals>
   </condition>
@@ -1520,7 +1475,6 @@
    <z>1.228</z>
   </axis>
 </animation>
-
 
 <!--  Tail Animations -->
 
@@ -2379,18 +2333,18 @@
 <path>Aircraft/787-family/Models/Effects/fuel-dump.xml</path>
 <name>fueldump.l</name>
 <condition>
-	<and>
-		<equals>
-			<property>controls/jettison/arm</property>
-			<value>1</value>
-		</equals>
-	</and>
-	<and>
-		<equals>
-			<property>controls/jettison/lnozzle</property>
-			<value>1</value>
-		</equals>
-	</and>
+    <and>
+        <equals>
+            <property>controls/jettison/arm</property>
+            <value>1</value>
+        </equals>
+    </and>
+    <and>
+        <equals>
+            <property>controls/jettison/lnozzle</property>
+            <value>1</value>
+        </equals>
+    </and>
 </condition>
 <offsets>
 <x-m>9.3450</x-m>
@@ -2403,18 +2357,18 @@
 <path>Aircraft/787-family/Models/Effects/fuel-dump.xml</path>
 <name>fueldump.r</name>
 <condition>
-	<and>
-		<equals>
-			<property>controls/jettison/arm</property>
-			<value>1</value>
-		</equals>
-	</and>
-	<and>
-		<equals>
-			<property>controls/jettison/rnozzle</property>
-			<value>1</value>
-		</equals>
-	</and>
+    <and>
+        <equals>
+            <property>controls/jettison/arm</property>
+            <value>1</value>
+        </equals>
+    </and>
+    <and>
+        <equals>
+            <property>controls/jettison/rnozzle</property>
+            <value>1</value>
+        </equals>
+    </and>
 </condition>
 <offsets>
 <x-m>9.3450</x-m>
@@ -2872,30 +2826,30 @@
 <!-- Engine Surge Animation -->
 
 <animation>
-	<type>select</type>
-	<object-name>l.surge</object-name>
-	<object-name>r.surge</object-name>
-	<object-name>l.surge.smoke</object-name>
-	<object-name>r.surge.smoke</object-name>
-	<condition>
-		<equals>
-			<property>controls/surge/flash</property>
-			<value>1</value>
-		</equals>
-	</condition>
+    <type>select</type>
+    <object-name>l.surge</object-name>
+    <object-name>r.surge</object-name>
+    <object-name>l.surge.smoke</object-name>
+    <object-name>r.surge.smoke</object-name>
+    <condition>
+        <equals>
+            <property>controls/surge/flash</property>
+            <value>1</value>
+        </equals>
+    </condition>
 </animation>
 
 <!-- Ram Air Turbine -->
 
-	<model>
-		<name>RAT</name>
-		<path>Aircraft/787-family/Models/RAT.xml</path>
-		<offsets>
-			<x-m>4.511</x-m>
-			<y-m>0</y-m>
-			<z-m>-2.2368</z-m>
-		</offsets>
-	</model>
+    <model>
+        <name>RAT</name>
+        <path>Aircraft/787-family/Models/RAT.xml</path>
+        <offsets>
+            <x-m>4.511</x-m>
+            <y-m>0</y-m>
+            <z-m>-2.2368</z-m>
+        </offsets>
+    </model>
 
 <!-- Thrust Reversers -->
 
@@ -2929,30 +2883,30 @@
         <type>rotate</type>
         <object-name>wiper.l</object-name>
         <property>controls/wipers/degrees</property>
-	<factor>1.4</factor>
-		<axis>
-			<x1-m>-24.5469</x1-m>
-			<y1-m>-0.1953</y1-m>
-			<z1-m>1.7102</z1-m>
-			<x2-m>-24.5403</x2-m>
-			<y2-m>-0.1917</y2-m>
-			<z2-m>1.7049</z2-m>
-		</axis>
+    <factor>1.4</factor>
+        <axis>
+            <x1-m>-24.5469</x1-m>
+            <y1-m>-0.1953</y1-m>
+            <z1-m>1.7102</z1-m>
+            <x2-m>-24.5403</x2-m>
+            <y2-m>-0.1917</y2-m>
+            <z2-m>1.7049</z2-m>
+        </axis>
     </animation>
 
     <animation>
         <type>rotate</type>
         <object-name>wiper.r</object-name>
         <property>controls/wipers/degrees</property>
-	<factor>-1.4</factor>
-		<axis>
-			<x1-m>-24.5469</x1-m>
-			<y1-m>0.1953</y1-m>
-			<z1-m>1.7102</z1-m>
-			<x2-m>-24.5403</x2-m>
-			<y2-m>0.1917</y2-m>
-			<z2-m>1.7049</z2-m>
-		</axis>
+    <factor>-1.4</factor>
+        <axis>
+            <x1-m>-24.5469</x1-m>
+            <y1-m>0.1953</y1-m>
+            <z1-m>1.7102</z1-m>
+            <x2-m>-24.5403</x2-m>
+            <y2-m>0.1917</y2-m>
+            <z2-m>1.7049</z2-m>
+        </axis>
     </animation>
 
     <!-- Ground Stuff -->
@@ -2962,33 +2916,33 @@
 </model>
 
 <model>
-	<name>ground-lights</name>
-	<path>Ground/b787-ground-lights.xml</path>
+    <name>ground-lights</name>
+    <path>Ground/b787-ground-lights.xml</path>
 </model>
 
 <animation>
-	<type>select</type>
-	<object-name>ground-lights</object-name>
-	<condition>
-		<property>controls/lighting/landing-lights[0]</property>
-		<less-than>
-			<property>position/altitude-agl-ft</property>
-			<value>500</value>
-		</less-than>
-	</condition>
+    <type>select</type>
+    <object-name>ground-lights</object-name>
+    <condition>
+        <property>controls/lighting/landing-lights[0]</property>
+        <less-than>
+            <property>position/altitude-agl-ft</property>
+            <value>500</value>
+        </less-than>
+    </condition>
 </animation> 
 
 <!-- Window Lights -->
 
 <animation>
-	<type>select</type>
-	<object-name>windows-light</object-name>
-	<condition>
-		<greater-than-equals>
-	        <property>sim/time/sun-angle-rad</property>
-	        <value>1.57</value>
-     	</greater-than-equals>
-	</condition>
+    <type>select</type>
+    <object-name>windows-light</object-name>
+    <condition>
+        <greater-than-equals>
+            <property>sim/time/sun-angle-rad</property>
+            <value>1.57</value>
+        </greater-than-equals>
+    </condition>
 </animation>
 
 <!-- Smoke and Fire -->
@@ -2996,10 +2950,10 @@
 <model>
  <path>Aircraft/787-family/Models/Effects/fire.xml</path>
  <condition>
-	<equals>
-		<property>controls/fires/fire/phase</property>
-		<value>fire</value>
-	</equals>
+    <equals>
+        <property>controls/fires/fire/phase</property>
+        <value>fire</value>
+    </equals>
  </condition>
  <name>fire_1</name>
  <offsets>
@@ -3013,16 +2967,16 @@
 <model>
  <path>Aircraft/787-family/Models/Effects/smoke.xml</path>
  <condition>
- 	<or>
-	<equals>
-		<property>controls/fires/fire/phase</property>
-		<value>smoke</value>
-	</equals>
-	<equals>
-		<property>controls/fires/fire/phase</property>
-		<value>fire</value>
-	</equals>
-	</or>
+    <or>
+    <equals>
+        <property>controls/fires/fire/phase</property>
+        <value>smoke</value>
+    </equals>
+    <equals>
+        <property>controls/fires/fire/phase</property>
+        <value>fire</value>
+    </equals>
+    </or>
  </condition>
  <name>smoke_1</name>
  <offsets>
@@ -3036,10 +2990,10 @@
 <model>
  <path>Aircraft/787-family/Models/Effects/explode1.xml</path>
  <condition>
-	<equals>
-		<property>controls/fires/fire/phase</property>
-		<value>explode</value>
-	</equals>
+    <equals>
+        <property>controls/fires/fire/phase</property>
+        <value>explode</value>
+    </equals>
  </condition>
  <name>fire_2</name>
  <offsets>
@@ -3053,10 +3007,10 @@
 <model>
  <path>Aircraft/787-family/Models/Effects/fire.xml</path>
  <condition>
-	<equals>
-		<property>controls/fires/fire[1]/phase</property>
-		<value>fire</value>
-	</equals>
+    <equals>
+        <property>controls/fires/fire[1]/phase</property>
+        <value>fire</value>
+    </equals>
  </condition>
  <name>~fire_1</name>
  <offsets>
@@ -3070,16 +3024,16 @@
 <model>
  <path>Aircraft/787-family/Models/Effects/smoke.xml</path>
  <condition>
- 	<or>
-	<equals>
-		<property>controls/fires/fire[1]/phase</property>
-		<value>smoke</value>
-	</equals>
-	<equals>
-		<property>controls/fires/fire[1]/phase</property>
-		<value>fire</value>
-	</equals>
-	</or>
+    <or>
+    <equals>
+        <property>controls/fires/fire[1]/phase</property>
+        <value>smoke</value>
+    </equals>
+    <equals>
+        <property>controls/fires/fire[1]/phase</property>
+        <value>fire</value>
+    </equals>
+    </or>
  </condition>
  <name>~smoke_1</name>
  <offsets>
@@ -3093,10 +3047,10 @@
 <model>
  <path>Aircraft/787-family/Models/Effects/explode1.xml</path>
  <condition>
-	<equals>
-		<property>controls/fires/fire[1]/phase</property>
-		<value>explode</value>
-	</equals>
+    <equals>
+        <property>controls/fires/fire[1]/phase</property>
+        <value>explode</value>
+    </equals>
  </condition>
  <name>~fire_2</name>
  <offsets>
@@ -3110,10 +3064,10 @@
 <model>
  <path>Aircraft/787-family/Models/Effects/ext.xml</path>
  <condition>
-	<equals>
-		<property>controls/fires/fire/extinguish</property>
-		<value>1</value>
-	</equals>
+    <equals>
+        <property>controls/fires/fire/extinguish</property>
+        <value>1</value>
+    </equals>
  </condition>
  <name>ext</name>
  <offsets>
@@ -3127,10 +3081,10 @@
 <model>
  <path>Aircraft/787-family/Models/Effects/ext.xml</path>
  <condition>
-	<equals>
-		<property>controls/fires/fire[1]/extinguish</property>
-		<value>1</value>
-	</equals>
+    <equals>
+        <property>controls/fires/fire[1]/extinguish</property>
+        <value>1</value>
+    </equals>
  </condition>
  <name>ext</name>
  <offsets>
@@ -3144,136 +3098,136 @@
 <!-- Fuel Truck -->
 
 <model>
-	<path>Aircraft/787-family/Models/Ground/Services/Fuel-Truck/Fuel_Truck_Short_VolvoFM.ac</path>
-	<condition>
-		<equals>
-			<property>services/fuel-truck/enable</property>
-			<value>1</value>
-		</equals>
-	</condition>
+    <path>Aircraft/787-family/Models/Ground/Services/Fuel-Truck/Fuel_Truck_Short_VolvoFM.ac</path>
+    <condition>
+        <equals>
+            <property>services/fuel-truck/enable</property>
+            <value>1</value>
+        </equals>
+    </condition>
 </model>
 
 <animation>
-	<type>select</type>
-	<object-name>fuel_pipe</object-name>
-	<condition>
-		<equals>
-			<property>services/fuel-truck/connect</property>
-			<value>1</value>
-		</equals>
-	</condition>
+    <type>select</type>
+    <object-name>fuel_pipe</object-name>
+    <condition>
+        <equals>
+            <property>services/fuel-truck/connect</property>
+            <value>1</value>
+        </equals>
+    </condition>
 </animation>
 
 <animation>
-	<type>select</type>
-	<object-name>fuel_pipe_disconnected</object-name>
-	<condition>
-		<equals>
-			<property>services/fuel-truck/connect</property>
-			<value>0</value>
-		</equals>
-	</condition>
+    <type>select</type>
+    <object-name>fuel_pipe_disconnected</object-name>
+    <condition>
+        <equals>
+            <property>services/fuel-truck/connect</property>
+            <value>0</value>
+        </equals>
+    </condition>
 </animation>
 
 <!-- De-icing Truck -->
 
 <model>
-	<path>Aircraft/787-family/Models/Ground/Services/De-Icing/volvo_deicing_truck.xml</path>
-	<condition>
-		<equals>
-			<property>services/deicing_truck/enable</property>
-			<value>1</value>
-		</equals>
-	</condition>
-	<offsets>
-		<x-m>-17</x-m>
-		<y-m>9.5</y-m>
-		<z-m>-3.77232</z-m>
-		<heading-deg>160</heading-deg>
-	</offsets>
+    <path>Aircraft/787-family/Models/Ground/Services/De-Icing/volvo_deicing_truck.xml</path>
+    <condition>
+        <equals>
+            <property>services/deicing_truck/enable</property>
+            <value>1</value>
+        </equals>
+    </condition>
+    <offsets>
+        <x-m>-17</x-m>
+        <y-m>9.5</y-m>
+        <z-m>-3.77232</z-m>
+        <heading-deg>160</heading-deg>
+    </offsets>
 </model>
 
 <!-- Catering Truck -->
 
 <model>
-	<path>Aircraft/787-family/Models/Ground/Services/Catering/Catering_Loader_Truck_VolvoFM.xml</path>
-	<condition>
-		<equals>
-			<property>services/catering/enable</property>
-			<value>1</value>
-		</equals>
-	</condition>
+    <path>Aircraft/787-family/Models/Ground/Services/Catering/Catering_Loader_Truck_VolvoFM.xml</path>
+    <condition>
+        <equals>
+            <property>services/catering/enable</property>
+            <value>1</value>
+        </equals>
+    </condition>
 </model>
 
 <!-- Baggage Truck -->
 
 <model>
-	<path>Aircraft/787-family/Models/Ground/Services/Baggage/cargo_ramp.ac</path>
-	<condition>
-		<equals>
-			<property>services/baggage/enable</property>
-			<value>1</value>
-		</equals>
-	</condition>
+    <path>Aircraft/787-family/Models/Ground/Services/Baggage/cargo_ramp.ac</path>
+    <condition>
+        <equals>
+            <property>services/baggage/enable</property>
+            <value>1</value>
+        </equals>
+    </condition>
 </model>
 
 <animation>
-	<type>select</type>
-	<object-name>cargo_door</object-name>
-	<object-name>cargo_inside</object-name>
-	<condition>
-		<equals>
-			<property>services/baggage/enable</property>
-			<value>1</value>
-		</equals>
-	</condition>
+    <type>select</type>
+    <object-name>cargo_door</object-name>
+    <object-name>cargo_inside</object-name>
+    <condition>
+        <equals>
+            <property>services/baggage/enable</property>
+            <value>1</value>
+        </equals>
+    </condition>
 </animation>
 
 <!-- External Power -->
 
 <model>
-	<path>Aircraft/787-family/Models/Ground/Services/External-Power/ext-pwr-box.ac</path>
-	<condition>
-		<equals>
-			<property>services/ext-pwr/enable</property>
-			<value>1</value>
-		</equals>
-	</condition>
+    <path>Aircraft/787-family/Models/Ground/Services/External-Power/ext-pwr-box.ac</path>
+    <condition>
+        <equals>
+            <property>services/ext-pwr/enable</property>
+            <value>1</value>
+        </equals>
+    </condition>
 </model>
 
 <!-- Chokes -->
 
 <model>
-	<name>choke_nose</name>
-	<path>Aircraft/787-family/Models/Ground/Services/Chokes/choke_nose.ac</path>
-	<condition>
-		<equals>
-			<property>services/chokes/nose</property>
-			<value>1</value>
-		</equals>
-	</condition>
+    <name>choke_nose</name>
+    <path>Aircraft/787-family/Models/Ground/Services/Chokes/choke_nose.ac</path>
+    <condition>
+        <equals>
+            <property>services/chokes/nose</property>
+            <value>1</value>
+        </equals>
+    </condition>
 </model>
 
 <model>
-	<name>choke_left</name>
-	<path>Aircraft/787-family/Models/Ground/Services/Chokes/choke_left.ac</path>
-	<condition>
-		<equals>
-			<property>services/chokes/left</property>
-			<value>1</value>
-		</equals>
-	</condition>
+    <name>choke_left</name>
+    <path>Aircraft/787-family/Models/Ground/Services/Chokes/choke_left.ac</path>
+    <condition>
+        <equals>
+            <property>services/chokes/left</property>
+            <value>1</value>
+        </equals>
+    </condition>
 </model>
 
 <model>
-	<name>choke_right</name>
-	<path>Aircraft/787-family/Models/Ground/Services/Chokes/choke_right.ac</path>
-	<condition>
-		<equals>
-			<property>services/chokes/right</property>
-			<value>1</value>
-		</equals>
-	</condition>
+    <name>choke_right</name>
+    <path>Aircraft/787-family/Models/Ground/Services/Chokes/choke_right.ac</path>
+    <condition>
+        <equals>
+            <property>services/chokes/right</property>
+            <value>1</value>
+        </equals>
+    </condition>
 </model>
 
 </PropertyList>
