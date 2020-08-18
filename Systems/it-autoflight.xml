@@ -1476,7 +1476,7 @@
 							<property>/orientation/pitch-deg</property>
 							<value>5</value>
 						</dif>
-						<value>-10</value>
+						<value>-15</value>
 					</max>
 				</expression>
 			</u_min>
