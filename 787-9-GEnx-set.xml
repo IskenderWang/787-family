@@ -1243,6 +1243,7 @@
         </tps>
         <itaf>
             <file>Aircraft/787-family/Nasal/it-autoflight.nas</file>
+            <!--<file>Nasal/custom-fma.nas</file>-->
         </itaf>
     </nasal>
 
