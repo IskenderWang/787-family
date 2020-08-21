@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<PropertyList>
+<PropertyList include="787-common.xml">
 
-    <sim>
+    <sim n="0">
         <description>Boeing 787-9 (Trent 1000)</description>
         <flight-model>jsb</flight-model>
         <aero>787-9-Trent</aero>
@@ -93,44 +93,6 @@
             <connected type="bool">false</connected>
         </autopirep>
     </connection>
-
-    <systems>
-        <autopilot>
-            <path>Aircraft/787-family/Systems/b787-autopilot.xml</path>
-        </autopilot>
-        <autopilot>
-            <path>Aircraft/Generic/generic-autopilot-helper.xml</path>
-        </autopilot>
-
-        <!-- Vertical Navigation PID Controller -->
-
-        <autopilot>
-            <path>Aircraft/787-family/Systems/vnav.xml</path>
-        </autopilot>
-
-        <!-- Automatic Holding Pattern PID Controller -->
-
-        <autopilot>
-            <path>Aircraft/787-family/Systems/holding-pattern.xml</path>
-        </autopilot>
-
-        <!-- Fly-By-Wire Auto Stabilize PID Controller -->
-
-        <autopilot>
-            <path>Aircraft/787-family/Systems/fly-by-wire.xml</path>
-        </autopilot>
-        <autopilot>
-            <name>Spoilers</name>
-            <path>Aircraft/787-family/Systems/b787-spoilers.xml</path>
-        </autopilot>
-        
-        <!-- Wing Flexer -->
-        <wingflexer include="Systems/wingflexer-params.xml"/>
-        <property-rule n="100">
-            <name>wing flexer property rule</name>
-            <path>Aircraft/Generic/wingflexer.xml</path>
-        </property-rule>
-    </systems>
 
         <chase-distance-m>-100</chase-distance-m>
 
@@ -425,7 +387,7 @@
                         <binding>
                             <command>nasal</command>
                             <script>
-                             var ap_dialog = gui.Dialog.new("sim/gui/dialogs/ap_dialog/dialog", "Aircraft/787-family/Systems/autopilot-dlg.xml");
+                             var ap_dialog = gui.Dialog.new("sim/gui/dialogs/ap_dialog/dialog", "Aircraft/787-family/gui/dialogs/it-autoflight-dlg.xml");
                              ap_dialog.open();
                             </script>
                         </binding>
@@ -646,50 +608,7 @@
 
     </sim>
 
-    <it-autoflight>
-        <config>
-            <roll>
-                <kp-low>0.18</kp-low> <!-- Kp at low speed -->
-                <kp-high>0.09</kp-high> <!-- Kp at high speed -->
-                <ti>1.0</ti>
-                <td>0.0001</td>
-            </roll>
-            <pitch>
-                <kp-low>-0.17</kp-low> <!-- Kp at low speed -->
-                <kp-high>-0.07</kp-high> <!-- Kp at high speed -->
-                <ti>0.5</ti>
-                <td>0.001</td>
-            </pitch>
-            <cmd>
-                <hdg>1.6</hdg>
-                <vorloc>2.2</vorloc>
-                <alt-gain>-5</alt-gain>
-            </cmd>
-            <autoland> 
-                <pitch-kp>0.0051</pitch-kp>
-                <yaw-kp>-0.05</yaw-kp>
-            </autoland>
-            <rollout>
-                <roll-kp>-0.1</roll-kp>
-                <pitch-defl>0.15</pitch-defl>
-                <yaw-kp>-0.02</yaw-kp>
-            </rollout>
-        </config>
-        <settings>
-            <auto-bank-max-deg>25</auto-bank-max-deg> <!-- Maximum Auto Bank Limit -->
-            <disable-final>0</disable-final> <!-- Disable the Final Controllers, for custom FCS integration -->
-            <land-enable>1</land-enable> <!-- Enable/Disable Autoland -->
-            <land-flap>0.7</land-flap> <!-- Minimum Flap used for Landing -->
-            <retard-ft>50</retard-ft> <!-- Enable Thrust Retard -->
-            <retard-enable>1</retard-enable> <!-- AGL to Thrust Retard -->
-            <togaspd>160</togaspd> <!-- V2 + 10kts -->
-            <lat-agl-ft>50</lat-agl-ft> <!-- AGL when LNAV becomes active if armed -->
-            <reduc-agl-ft>1500</reduc-agl-ft> <!-- AGL when T/O CLB changes to SPD CLB (FLCH), set to 0 to disable -->
-            <autoland-without-ap>1</autoland-without-ap> <!-- Engage LAND and FLARE Modes even if the AP is off -->
-        </settings>
-    </it-autoflight>
-    
-    <aircraft>
+	<aircraft>
         <jetway-pos>
             <x-tra>-1</x-tra>
             <z-rot>18</z-rot>
@@ -982,7 +901,7 @@
                 <binding>
                             <command>nasal</command>
                             <script>
-                             var ap_dialog = gui.Dialog.new("sim/gui/dialogs/ap_dialog/dialog", "Aircraft/787-family/Systems/autopilot-dlg.xml");
+                             var ap_dialog = gui.Dialog.new("sim/gui/dialogs/ap_dialog/dialog", "Aircraft/787-family/gui/dialogs/it-autoflight-dlg.xml");
                              ap_dialog.open();
                             </script>
                 </binding>
@@ -1185,7 +1104,6 @@
             <file>Aircraft/787-family/Nasal/mfd-navigation.nas</file>
             <file>Aircraft/787-family/Nasal/nd-fullscreen.nas</file>
             <file>Aircraft/787-family/Nasal/tcas.nas</file>
-            <file>Aircraft/787-family/Nasal/fbw.nas</file>
             <file>Aircraft/787-family/Nasal/vnav.nas</file>
             <file>Aircraft/787-family/Nasal/efb.nas</file>
             <file>Aircraft/787-family/Nasal/chartsDB.nas</file>
@@ -1231,6 +1149,7 @@
         </tps>
         <itaf>
             <file>Aircraft/787-family/Nasal/it-autoflight.nas</file>
+            <!--<file>Nasal/custom-fma.nas</file>-->
         </itaf>
     </nasal>
 

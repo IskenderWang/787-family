@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0"?>
 
 <!-- IT-AUTOFLIGHT Autopilot Control Dialog -->
-<!-- Copyright (c) 2019 Joshua Davidson (it0uchpods) -->
+<!-- Copyright (c) 2020 Joshua Davidson (Octal450) -->
 
 <PropertyList>
 
@@ -140,32 +140,68 @@
 		</group>
 		
 		<group>
-			<layout>hbox</layout>
+			<layout>table</layout>
 			<text>
+				<row>0</row>
+				<col>0</col>
+				<visible>
+					<equals>
+						<property>/it-autoflight/mode/thr</property>
+						<value>PITCH</value>
+					</equals>
+				</visible>
+				<border>1</border>
+				<label> PITCH</label>
+				<valign>center</valign>
+			</text>
+			<text>
+				<row>0</row>
+				<col>0</col>
+				<visible>
+					<not-equals>
+						<property>/it-autoflight/mode/thr</property>
+						<value>PITCH</value>
+					</not-equals>
+				</visible>
 				<border>1</border>
 				<label>999999</label>
 				<valign>center</valign>
 				<property>/it-autoflight/mode/thr</property>
 				<live>1</live>
 			</text>
-			<vrule/>
+			<vrule>
+				<row>0</row>
+				<col>1</col>
+			</vrule>
 			<text>
+				<row>0</row>
+				<col>2</col>
 				<border>1</border>
 				<label>99999</label>
 				<valign>center</valign>
 				<property>/it-autoflight/mode/arm</property>
 				<live>1</live>
 			</text>
-			<vrule/>
+			<vrule>
+				<row>0</row>
+				<col>3</col>
+			</vrule>
 			<text>
+				<row>0</row>
+				<col>4</col>
 				<border>1</border>
 				<label>99999</label>
 				<valign>center</valign>
 				<property>/it-autoflight/mode/lat</property>
 				<live>1</live>
 			</text>
-			<vrule/>
+			<vrule>
+				<row>0</row>
+				<col>5</col>
+			</vrule>
 			<text>
+				<row>0</row>
+				<col>6</col>
 				<border>1</border>
 				<label>99999999</label>
 				<valign>center</valign>
@@ -245,7 +281,7 @@
 				</enable>
 				<binding>
 					<command>property-adjust</command>
-					<property>/it-autoflight/input/spd-kts</property>
+					<property>/it-autoflight/input/kts</property>
 					<min>100</min>
 					<max>350</max>
 					<step>-10</step>
@@ -266,7 +302,7 @@
 				</enable>
 				<binding>
 					<command>property-adjust</command>
-					<property>/it-autoflight/input/spd-kts</property>
+					<property>/it-autoflight/input/kts</property>
 					<min>100</min>
 					<max>350</max>
 					<step>-1</step>
@@ -278,7 +314,7 @@
 				<row>0</row>
 				<col>3</col>
 				<pref-width>50</pref-width>
-				<property>/it-autoflight/input/spd-kts</property>
+				<property>/it-autoflight/input/kts</property>
 				<live type="bool">true</live>
 				<enable>
 					<equals>
@@ -305,7 +341,7 @@
 				</enable>
 				<binding>
 					<command>property-adjust</command>
-					<property>/it-autoflight/input/spd-kts</property>
+					<property>/it-autoflight/input/kts</property>
 					<min>100</min>
 					<max>350</max>
 					<step>1</step>
@@ -327,7 +363,7 @@
 				</enable>
 				<binding>
 					<command>property-adjust</command>
-					<property>/it-autoflight/input/spd-kts</property>
+					<property>/it-autoflight/input/kts</property>
 					<min>100</min>
 					<max>350</max>
 					<step>10</step>
@@ -360,7 +396,7 @@
 				</enable>
 				<binding>
 					<command>property-adjust</command>
-					<property>/it-autoflight/input/spd-mach</property>
+					<property>/it-autoflight/input/mach</property>
 					<min>0.50</min>
 					<max>0.90</max>
 					<step>-0.01</step>
@@ -381,7 +417,7 @@
 				</enable>
 				<binding>
 					<command>property-adjust</command>
-					<property>/it-autoflight/input/spd-mach</property>
+					<property>/it-autoflight/input/mach</property>
 					<min>0.50</min>
 					<max>0.90</max>
 					<step>-0.001</step>
@@ -393,7 +429,7 @@
 				<row>0</row>
 				<col>3</col>
 				<pref-width>50</pref-width>
-				<property>/it-autoflight/input/spd-mach</property>
+				<property>/it-autoflight/input/mach</property>
 				<live type="bool">true</live>
 				<enable>
 					<equals>
@@ -420,7 +456,7 @@
 				</enable>
 				<binding>
 					<command>property-adjust</command>
-					<property>/it-autoflight/input/spd-mach</property>
+					<property>/it-autoflight/input/mach</property>
 					<min>0.50</min>
 					<max>0.90</max>
 					<step>0.001</step>
@@ -442,7 +478,7 @@
 				</enable>
 				<binding>
 					<command>property-adjust</command>
-					<property>/it-autoflight/input/spd-mach</property>
+					<property>/it-autoflight/input/mach</property>
 					<min>0.50</min>
 					<max>0.90</max>
 					<step>0.01</step>
@@ -615,7 +651,7 @@
 			</checkbox>
 			<checkbox>
 				<label>Use NAV2 Radio</label>
-				<property>/it-autoflight/settings/use-nav2-radio</property>
+				<property>/it-autoflight/input/use-nav2-radio</property>
 				<enable>
 					<not-equals>
 						<property>/it-autoflight/output/vert</property>
