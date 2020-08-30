@@ -11,13 +11,13 @@
             
 <name type="string">LATAM Chile</name>
             
-<texture>Liveries-9/LAN.png</texture>
+<texture>Liveries/LAN.png</texture>
         
 </livery>
         
 <lights>
             
-<texture>Liveries-9/LAN-lights.png</texture>
+<texture>Liveries/LAN-lights.png</texture>
         
 </lights>
   

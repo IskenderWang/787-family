@@ -7,10 +7,10 @@
   <model>        
     <livery>
 		<name type="string">Biman Bangladesh</name>
-      <texture>Liveries-9/BBC.png</texture>
+      <texture>Liveries/BBC.png</texture>
     </livery>
     <lights>
-      <texture>Liveries-9/BBC-lights.png</texture>
+      <texture>Liveries/BBC-lights.png</texture>
     </lights>
   </model>
 </sim>

@@ -5,10 +5,10 @@
 		<model>
 			<livery>
 				<name type="string">LOT Polish Airlines</name>
-				<texture>Liveries-9/LOT.png</texture>
+				<texture>Liveries/LOT.png</texture>
 			</livery>
 			<lights>
-				<texture>Liveries-9/LOT-lights.png</texture>
+				<texture>Liveries/LOT-lights.png</texture>
 			</lights>
 		</model>
 	</sim>

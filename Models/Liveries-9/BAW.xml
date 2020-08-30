@@ -7,10 +7,10 @@
   <model>        
     <livery>
 		<name type="string">British Airways</name>
-      <texture>Liveries-9/BAW.png</texture>
+      <texture>Liveries/BAW.png</texture>
     </livery>
     <lights>
-      <texture>Liveries-9/BAW-lights.png</texture>
+      <texture>Liveries/BAW-lights.png</texture>
     </lights>
   </model>
 </sim>

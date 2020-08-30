@@ -7,10 +7,12 @@
   <model>        
     <livery>
 		<name type="string">American Airlines</name>
-      <texture>Liveries-9/AAL.png</texture>
+      <texture>Liveries/AAL.png</texture>
+      <shininess type="float">0</shininess>
+      <fresnel>0.7</fresnel>
     </livery>
     <lights>
-      <texture>Liveries-9/AAL-lights.png</texture>
+      <texture>Liveries/AAL-lights.png</texture>
     </lights>
   </model>
 </sim>

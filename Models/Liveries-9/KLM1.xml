@@ -7,10 +7,10 @@
   <model>        
     <livery>
 		<name type="string">KLM (100 years livery)</name>
-      <texture>Liveries-9/KLM1.png</texture>
+      <texture>Liveries/KLM1.png</texture>
     </livery>
     <lights>
-      <texture>Liveries-9/KLM-lights.png</texture>
+      <texture>Liveries/KLM-lights.png</texture>
     </lights>
   </model>
 </sim>
