@@ -7,10 +7,10 @@
   <model>        
     <livery>
 		<name type="string">Turkish Airlines</name>
-      <texture>Liveries/THY.png</texture>
+      <texture>Liveries-9/THY.png</texture>
     </livery>
     <lights>
-      <texture>Liveries/THY-lights.png</texture>
+      <texture>Liveries-9/THY-lights.png</texture>
     </lights>
   </model>
 </sim>
