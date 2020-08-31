@@ -6,8 +6,8 @@
 <sim>    
   <model>        
     <livery>
-		<name type="string">American Airlines</name>
-	    <texture>Liveries-9/AAL.png</texture>
+	<name type="string">American Airlines</name>
+      <texture>Liveries-9/AAL.png</texture>
     </livery>
     <lights>
       <texture>Liveries-9/AAL-lights.png</texture>

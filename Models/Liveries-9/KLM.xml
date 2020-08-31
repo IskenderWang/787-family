@@ -7,10 +7,10 @@
   <model>        
     <livery>
 		<name type="string">KLM</name>
-      <texture>Liveries/KLM.png</texture>
+      <texture>Liveries-9/KLM.png</texture>
     </livery>
     <lights>
-      <texture>Liveries/KLM-lights.png</texture>
+      <texture>Liveries-9/KLM-lights.png</texture>
     </lights>
   </model>
 </sim>

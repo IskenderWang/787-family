@@ -7,10 +7,10 @@
   <model>        
     <livery>
 		<name type="string">Air Canada</name>
-      <texture>Liveries/ACA.png</texture>
+      <texture>Liveries-9/ACA.png</texture>
     </livery>
     <lights>
-      <texture>Liveries/ACA-lights.png</texture>
+      <texture>Liveries-9/ACA-lights.png</texture>
     </lights>
   </model>
 </sim>

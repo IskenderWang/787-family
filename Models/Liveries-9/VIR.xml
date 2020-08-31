@@ -7,10 +7,10 @@
   <model>        
     <livery>
 		<name type="string">Virgin Atlantic</name>
-      <texture>Liveries/VIR.png</texture>
+      <texture>Liveries-9/VIR.png</texture>
     </livery>
     <lights>
-      <texture>Liveries/VIR-lights.png</texture>
+      <texture>Liveries-9/VIR-lights.png</texture>
     </lights>
   </model>
 </sim>

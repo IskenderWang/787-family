@@ -9,15 +9,15 @@
         
 <livery>
             
-<name type="string">LATAM Chile</name>
+<name type="string">Qantas (VH-ZND)</name>
             
-<texture>Liveries-9/LAN.png</texture>
+<texture>Liveries-9/QFA1.png</texture>
         
 </livery>
         
 <lights>
             
-<texture>Liveries-9/LAN-lights.png</texture>
+<texture>Liveries-9/QFA-lights.png</texture>
         
 </lights>
   

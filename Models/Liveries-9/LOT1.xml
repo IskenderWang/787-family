@@ -5,10 +5,10 @@
 		<model>
 			<livery>
 				<name type="string">LOT (Proud of Polands independence)</name>
-				<texture>Liveries/LOT1.png</texture>
+				<texture>Liveries-9/LOT1.png</texture>
 			</livery>
 			<lights>
-				<texture>Liveries/LOT-lights.png</texture>
+				<texture>Liveries-9/LOT-lights.png</texture>
 			</lights>
 		</model>
 	</sim>
