@@ -6,13 +6,13 @@
 <sim>    
   <model>        
     <livery>
-		<name type="string">Air China</name>
-      <texture>Liveries/CCA.png</texture>
+      <name type="string">Air China</name>
+      <texture>Liveries-9/CCA.png</texture>
       <shininess type="float">0</shininess>
       <fresnel>0.7</fresnel>
     </livery>
     <lights>
-      <texture>Liveries/CCA-lights.png</texture>
+      <texture>Liveries-9/CCA-lights.png</texture>
     </lights>
   </model>
 </sim>
