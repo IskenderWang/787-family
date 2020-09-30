@@ -2291,7 +2291,7 @@
 		<object-name>yoke.right.roll</object-name>
 		<object-name>yokepitch</object-name>
 		<property>controls/flight/elevator</property>
-		<factor>30</factor>
+		<factor>15</factor>
 		<center>
 			<x-m>-23.2790</x-m>
 			<y-m>0</y-m>
@@ -2308,7 +2308,7 @@
 		<type>rotate</type>
 		<object-name>yoke.left.roll</object-name>
 		<property>controls/flight/aileron</property>
-		<factor>30</factor>
+		<factor>60</factor>
 		<center>
 			<x-m>0</x-m>
 			<y-m>-0.5776</y-m>
@@ -2325,7 +2325,7 @@
 		<type>rotate</type>
 		<object-name>yoke.right.roll</object-name>
 		<property>controls/flight/aileron</property>
-		<factor>30</factor>
+		<factor>60</factor>
 		<center>
 			<x-m>0</x-m>
 			<y-m>0.5776</y-m>
