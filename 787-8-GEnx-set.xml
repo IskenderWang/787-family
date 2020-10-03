@@ -1142,6 +1142,7 @@
 			<file>Aircraft/787-family/Nasal/procedures/fmsWP.nas</file>
 			<file>Aircraft/787-family/Nasal/procedures/fmsTP.nas</file>
 			<file>Aircraft/787-family/Nasal/procedures/fmsTransition.nas</file>
+			<file>Aircraft/787-family/Nasal/shake.nas</file>
 		</b787>
 		<dualcontrol>
 			<file>Aircraft/787-family/DualControl/DualControl_base.nas</file>
