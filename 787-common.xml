@@ -63,20 +63,21 @@
 			</rollout>
 		</config>
 		<settings>
-			<autoland-without-ap>0</autoland-without-ap> <!-- Engage LAND and FLARE Modes even if the AP is off -->
-			<auto-bank-max-deg>30</auto-bank-max-deg> <!-- Maximum Auto Bank Limit -->
-			<autothrottle-max>0.95</autothrottle-max> <!-- Thrust Max Limit Normalized -->
-			<autothrottle-min>0.02</autothrottle-min> <!-- Thrust Low Limit Normalized -->
-			<custom-fma>0</custom-fma> <!-- Call functions when modes change for a custom FMA to be implemented --> 
-			<disable-final>0</disable-final> <!-- Disable the Final Controllers, for custom FCS integration -->
-			<land-enable>1</land-enable> <!-- Enable/Disable Autoland -->
-			<land-flap>0.7</land-flap> <!-- Minimum Flap used for Landing -->
-			<lat-agl-ft>50</lat-agl-ft> <!-- AGL when LNAV becomes active if armed -->
-			<reduc-agl-ft>1500</reduc-agl-ft> <!-- AGL when T/O CLB changes to SPD CLB (FLCH), set to 0 to disable -->
-			<retard-enable>1</retard-enable> <!-- AGL to Thrust Retard -->
-			<retard-ft>50</retard-ft> <!-- Enable Thrust Retard -->
-			<togaspd>160</togaspd> <!-- V2 + 10kts -->
-		</settings>
+            <autoland-without-ap>0</autoland-without-ap> <!-- Engage LAND and FLARE Modes even if the AP is off -->
+            <auto-bank-max-deg>30</auto-bank-max-deg> <!-- Maximum Auto Bank Limit -->
+            <autothrottle-max>0.95</autothrottle-max> <!-- Thrust Max Limit Normalized -->
+            <autothrottle-min>0.02</autothrottle-min> <!-- Thrust Low Limit Normalized -->
+            <custom-fma>0</custom-fma> <!-- Call functions when modes change for a custom FMA to be implemented --> 
+            <disable-final>0</disable-final> <!-- Disable the Final Controllers, for custom FCS integration -->
+            <hdg-hld-separate>0</hdg-hld-separate> <!-- Separates the HDG HLD mode from the HDG SEL mode -->
+            <land-enable>1</land-enable> <!-- Enable/Disable Autoland -->
+            <land-flap>0.7</land-flap> <!-- Minimum Flap used for Landing -->
+            <lat-agl-ft>50</lat-agl-ft> <!-- AGL when LNAV becomes active if armed -->
+            <reduc-agl-ft>1500</reduc-agl-ft> <!-- AGL when T/O CLB changes to SPD CLB (FLCH), set to 0 to disable -->
+            <retard-enable>1</retard-enable> <!-- AGL to Thrust Retard -->
+            <retard-ft>50</retard-ft> <!-- Enable Thrust Retard -->
+            <togaspd>160</togaspd> <!-- V2 + 10kts -->
+        </settings>
 	</it-autoflight>
 
 </PropertyList>

@@ -1,8 +1,8 @@
 # IT-AUTOFLIGHT Custom FMA File
 # Make sure you enable custom-fma in the config
-# Copyright (c) 2020 Joshua Davidson (Octal450)
+# Copyright (c) 2020 Josh Davidson (Octal450)
 
-var updateFMA = {
+var updateFma = {
 	latText: "T/O",
 	vertText: "T/O CLB",
 	lat: func() { # Called when lateral mode changes
@@ -12,8 +12,8 @@ var updateFMA = {
 		me.vertText = Text.vert.getValue();
 	},
 	arm: func() { # Called when armed mode changes
-		# Output.lnavArm.getBoolValue()
-		# Output.locArm.getBoolValue()
-		# Output.apprArm.getBoolValue()
+		#Output.lnavArm.getBoolValue();
+		#Output.locArm.getBoolValue();
+		#Output.apprArm.getBoolValue();
 	},
 };
