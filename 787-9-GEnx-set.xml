@@ -33,7 +33,7 @@
         <engine>genx-1b-9</engine>
 
         <model>
-            <path>Aircraft/787-family/Models/787-9.xml</path>
+            <path>Aircraft/787-family/Models/787-9-GEnx.xml</path>
 
             <livery>
                <file type="string">BOE-9</file>
