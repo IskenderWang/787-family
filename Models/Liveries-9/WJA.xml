@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+
+<sim>    
+  <model>        
+    <livery>
+		<name type="string">WestJet</name>
+      <texture>Liveries-9/WJA.png</texture>
+    </livery>
+    <lights>
+      <texture>Liveries-9/BOE2-Lights.png</texture>
+    </lights>
+  </model>
+</sim>
+
+</PropertyList>
