@@ -7,9 +7,9 @@
 				<name type="string">Avianca</name>
 				<texture>Liveries-8/AVA.png</texture>
 			</livery>
-			<lights>
-				<texture>Liveries-8/AVA-lights.png</texture>
-			</lights>
+            <lights>
+                <texture>Liveries-8/AVA-lights.png</texture>
+            </lights>
 		</model>
 	</sim>
 </PropertyList>

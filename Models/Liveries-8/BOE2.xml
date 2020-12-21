@@ -9,6 +9,9 @@
       <name type="string">Boeing</name>
       <texture>Liveries-8/BOE2.png</texture>
     </livery>
+    <lights>
+      <texture>Liveries-8/BOE2-lights.png</texture>
+    </lights>
   </model>
 </sim>
 

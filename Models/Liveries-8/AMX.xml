@@ -7,9 +7,9 @@
 			<name type="string">AeroMexico</name>
 			<texture>Liveries-8/AMX.png</texture>
 		</livery>
-		<lights>   
-			<texture>Liveries-8/AMX-lights.png</texture>
-		</lights>
+        <lights>
+            <texture>Liveries-8/AMX-lights.png</texture>
+        </lights>
 	</model>
 </sim>
 </PropertyList>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+	<model>
+		<livery> 
+			<name type="string">China Southern</name>
+			<texture>Liveries-8/CSN.png</texture>
+		</livery>
+        <lights>
+            <texture>Liveries-8/CSN-lights.png</texture>
+        </lights>
+	</model>
+</sim>
+</PropertyList>

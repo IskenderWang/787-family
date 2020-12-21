@@ -4,12 +4,12 @@
 <sim>
 	<model>
 		<livery> 
-			<name type="string">Jetstar Airways</name>
+			<name type="string">Jetstar</name>
 			<texture>Liveries-8/JST.png</texture>
 		</livery>
-		<lights>   
-			<texture>Liveries-8/JST-lights.png</texture>
-		</lights>
+        <lights>
+            <texture>Liveries-8/JST-lights.png</texture>
+        </lights>
 	</model>
 </sim>
 </PropertyList>

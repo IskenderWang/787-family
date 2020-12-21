@@ -4,7 +4,7 @@
 <sim>
 	<model>
 		<livery>
-			<name type="string">All Nippon Airways (Special)</name> 
+			<name type="string">ANA (JA802A)</name> 
 			<texture>Liveries-8/JA802A.png</texture>
 		</livery>
 		<lights>

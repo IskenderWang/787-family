@@ -4,12 +4,12 @@
 <sim>
 	<model>
 		<livery> 
-			<name type="string">China Southern Airlines (B-2727)</name>
+			<name type="string">China Southern (B-2727)</name>
 			<texture>Liveries-8/B-2727.png</texture>
 		</livery>
-		<lights>   
-			<texture>Liveries-8/CSN-Lights.png</texture>
-		</lights>
+        <lights>
+            <texture>Liveries-8/CSN-lights.png</texture>
+        </lights>
 	</model>
 </sim>
 </PropertyList>

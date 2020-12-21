@@ -7,9 +7,9 @@
 			<name type="string">Air India (Star Alliance)</name>
 			<texture>Liveries-8/AIC-SA.png</texture>
 		</livery>
-		<lights>  
-			<texture>Liveries-8/AIC-lights.png</texture>
-		</lights>
+        <lights>
+            <texture>Liveries-8/AIC-lights.png</texture>
+        </lights>
 	</model>
 </sim>
 </PropertyList>
