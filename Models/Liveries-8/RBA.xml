@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-
 <PropertyList>
 <sim>
 	<model>
@@ -7,9 +6,9 @@
 			<name type="string">Royal Brunei</name>
 			<texture>Liveries-8/RBA.png</texture>
 		</livery>
-		<lights>   
-			<texture>Liveries-8/RBA-lights.png</texture>
-		</lights>
+        <lights>
+            <texture>Liveries-8/RBA-lights.png</texture>
+        </lights>
 	</model>
 </sim>
 </PropertyList>

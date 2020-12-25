@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-
 <PropertyList>
 	<sim>
 		<model>
@@ -7,9 +6,9 @@
 				<name type="string">Qatar Airways</name>
 				<texture>Liveries-8/QTR.png</texture>
 			</livery>
-			<lights>
-				<texture>Liveries-8/QTR-lights.png</texture>
-			</lights>
+            <lights>
+                <texture>Liveries-8/QTR-lights.png</texture>
+            </lights>
 		</model>
 	</sim>
 </PropertyList>

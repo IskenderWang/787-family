@@ -33,7 +33,7 @@
         <engine>trent_1000-9</engine>
 
         <model>
-            <path>Aircraft/787-family/Models/787-9.xml</path>
+            <path>Aircraft/787-family/Models/787-9-Trent1000.xml</path>
 
             <livery>
                <file type="string">BOE-9</file>

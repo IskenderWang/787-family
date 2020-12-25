@@ -1,15 +1,14 @@
 <?xml version="1.0"?>
-
 <PropertyList>
 <sim>
 	<model>
 		<livery> 
-			<name type="string">AZAL - Azerbaijan Airlines</name>
+			<name type="string">Azerbaijan Airlines</name>
 			<texture>Liveries-8/AHY.png</texture>
 		</livery>
-		<lights>   
-			<texture>Liveries-8/AHY-lights.png</texture>
-		</lights>
+        <lights>
+            <texture>Liveries-8/AHY-lights.png</texture>
+        </lights>
 	</model>
 </sim>
 </PropertyList>
