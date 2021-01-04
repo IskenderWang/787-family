@@ -33,7 +33,7 @@
         <engine>genx-1b-9</engine>
 
         <model>
-            <path>Aircraft/787-family/Models/787-9.xml</path>
+            <path>Aircraft/787-family/Models/787-9-GEnx.xml</path>
 
             <livery>
                <file type="string">BOE-9</file>
@@ -1126,6 +1126,8 @@
             <file>Aircraft/787-family/Nasal/procedures/fmsWP.nas</file>
             <file>Aircraft/787-family/Nasal/procedures/fmsTP.nas</file>
             <file>Aircraft/787-family/Nasal/procedures/fmsTransition.nas</file>
+			<file>Aircraft/787-family/Nasal/shake.nas</file>
+
         </b787>
         <dualcontrol>
             <file>Aircraft/787-family/DualControl/DualControl_base.nas</file>

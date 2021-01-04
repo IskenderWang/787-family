@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PropertyList>
+<sim>
+	<model>
+		<livery> 
+			<name type="string">Azerbaijan Airlines (Tottenham Hotspur)</name>
+			<texture>Liveries-8/AHY2.png</texture>
+		</livery>
+        <lights>
+            <texture>Liveries-8/AHY-lights.png</texture>
+        </lights>
+	</model>
+</sim>
+</PropertyList>

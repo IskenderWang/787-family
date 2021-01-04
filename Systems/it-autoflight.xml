@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <!-- IT-AUTOFLIGHT -->
-<!-- Copyright (c) 2020 Joshua Davidson (Octal450) -->
+<!-- Copyright (c) 2020 Josh Davidson (Octal450) -->
 
 <PropertyList>
 	
@@ -43,127 +43,6 @@
 	</predict-simple>
 	
 	<!-- Autopilot Helpers/Calculators -->
-	<filter>
-		<name>Knots Input Filter</name>
-		<debug>false</debug>
-		<type>noise-spike</type>
-		<feedback-if-disabled>true</feedback-if-disabled>
-		<initialize-to>output</initialize-to>
-		<input>
-			<condition>
-				<equals>
-					<property>/it-autoflight/mode/vert</property>
-					<value>T/O CLB</value>
-				</equals>
-			</condition>
-			<property>/it-autoflight/settings/togaspd</property>
-		</input>
-		<input>/it-autoflight/input/kts</input>
-		<output>/it-autoflight/internal/flch-kts</output>
-		<min>
-			<expression>
-				<difference>
-					<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
-					<value>25</value>
-				</difference>
-			</expression>
-		</min>
-		<max>
-			<expression>
-				<sum>
-					<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
-					<value>25</value>
-				</sum>
-			</expression>
-		</max>
-		<max-rate-of-change>
-			<condition>
-				<and>
-					<or>
-						<equals>
-							<property>/it-autoflight/output/vert</property>
-							<value>4</value>
-						</equals>
-						<equals>
-							<property>/it-autoflight/output/vert</property>
-							<value>7</value>
-						</equals>
-					</or>
-					<equals>
-						<property>/it-autoflight/input/kts-mach</property>
-						<value>0</value>
-					</equals>
-					<equals>
-						<property>/gear/gear[1]/wow</property>
-						<value>0</value>
-					</equals>
-					<equals>
-						<property>/gear/gear[2]/wow</property>
-						<value>0</value>
-					</equals>
-				</and>
-			</condition>
-			<value>5</value>
-		</max-rate-of-change>
-		<max-rate-of-change>100</max-rate-of-change>
-	</filter>
-	
-	<filter>
-		<name>Mach Input Filter</name>
-		<debug>false</debug>
-		<type>noise-spike</type>
-		<feedback-if-disabled>true</feedback-if-disabled>
-		<initialize-to>output</initialize-to>
-		<input>/it-autoflight/input/mach</input>
-		<output>/it-autoflight/internal/flch-mach</output>
-		<min>
-			<expression>
-				<difference>
-					<property>/instrumentation/airspeed-indicator/indicated-mach</property>
-					<value>0.045</value>
-				</difference>
-			</expression>
-		</min>
-		<max>
-			<expression>
-				<sum>
-					<property>/instrumentation/airspeed-indicator/indicated-mach</property>
-					<value>0.045</value>
-				</sum>
-			</expression>
-		</max>
-		<max-rate-of-change>
-			<condition>
-				<and>
-					<or>
-						<equals>
-							<property>/it-autoflight/output/vert</property>
-							<value>4</value>
-						</equals>
-						<equals>
-							<property>/it-autoflight/output/vert</property>
-							<value>7</value>
-						</equals>
-					</or>
-					<equals>
-						<property>/it-autoflight/input/kts-mach</property>
-						<value>1</value>
-					</equals>
-					<equals>
-						<property>/gear/gear[1]/wow</property>
-						<value>0</value>
-					</equals>
-					<equals>
-						<property>/gear/gear[2]/wow</property>
-						<value>0</value>
-					</equals>
-				</and>
-			</condition>
-			<value>0.04</value>
-		</max-rate-of-change>
-		<max-rate-of-change>1</max-rate-of-change>
-	</filter>
-	
 	<filter>
 		<name>Knots Sync</name>
 		<type>gain</type>
@@ -218,6 +97,159 @@
 			</expression>
 		</input>
 		<output>/it-autoflight/input/mach</output>
+	</filter>
+	
+	<filter>
+		<name>Knots Input Filter</name>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<feedback-if-disabled>true</feedback-if-disabled>
+		<initialize-to>output</initialize-to>
+		<input>
+			<condition>
+				<equals>
+					<property>/it-autoflight/mode/vert</property>
+					<value>T/O CLB</value>
+				</equals>
+			</condition>
+			<property>/it-autoflight/settings/togaspd</property>
+		</input>
+		<input>/it-autoflight/input/kts</input>
+		<output>/it-autoflight/internal/flch-kts</output>
+		<min>
+			<expression>
+				<difference>
+					<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+					<value>25</value>
+				</difference>
+			</expression>
+		</min>
+		<max>
+			<expression>
+				<sum>
+					<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+					<value>25</value>
+				</sum>
+			</expression>
+		</max>
+		<max-rate-of-change>
+			<condition>
+				<and>
+					<or>
+						<and>
+							<equals>
+								<property>/it-autoflight/output/vert</property>
+								<value>4</value>
+							</equals>
+							<equals>
+								<property>/it-autoflight/input/kts-mach</property>
+								<value>0</value>
+							</equals>
+						</and>
+						<equals>
+							<property>/it-autoflight/output/vert</property>
+							<value>7</value>
+						</equals>
+					</or>
+					<or>
+						<equals>
+							<property>/it-autoflight/output/ap1</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/it-autoflight/output/ap2</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/it-autoflight/output/fd1</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/it-autoflight/output/fd2</property>
+							<value>1</value>
+						</equals>
+					</or>
+					<equals>
+						<property>/gear/gear[1]/wow</property>
+						<value>0</value>
+					</equals>
+					<equals>
+						<property>/gear/gear[2]/wow</property>
+						<value>0</value>
+					</equals>
+				</and>
+			</condition>
+			<value>5</value>
+		</max-rate-of-change>
+		<max-rate-of-change>100</max-rate-of-change>
+	</filter>
+	
+	<filter>
+		<name>Mach Input Filter</name>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<feedback-if-disabled>true</feedback-if-disabled>
+		<initialize-to>output</initialize-to>
+		<input>/it-autoflight/input/mach</input>
+		<output>/it-autoflight/internal/flch-mach</output>
+		<min>
+			<expression>
+				<difference>
+					<property>/instrumentation/airspeed-indicator/indicated-mach</property>
+					<value>0.045</value>
+				</difference>
+			</expression>
+		</min>
+		<max>
+			<expression>
+				<sum>
+					<property>/instrumentation/airspeed-indicator/indicated-mach</property>
+					<value>0.045</value>
+				</sum>
+			</expression>
+		</max>
+		<max-rate-of-change>
+			<condition>
+				<and>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>4</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/input/kts-mach</property>
+						<value>1</value>
+					</equals>
+					<or>
+						<equals>
+							<property>/it-autoflight/output/ap1</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/it-autoflight/output/ap2</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/it-autoflight/output/fd1</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/it-autoflight/output/fd2</property>
+							<value>1</value>
+						</equals>
+					</or>
+					<equals>
+						<property>/gear/gear[1]/wow</property>
+						<value>0</value>
+					</equals>
+					<equals>
+						<property>/gear/gear[2]/wow</property>
+						<value>0</value>
+					</equals>
+				</and>
+			</condition>
+			<value>0.04</value>
+		</max-rate-of-change>
+		<max-rate-of-change>1</max-rate-of-change>
 	</filter>
 	
 	<filter>
@@ -291,6 +323,29 @@
 	</filter>
 	
 	<filter>
+		<name>Heading Input Switcher</name>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<equals>
+						<property>/it-autoflight/output/hdg-in-hld</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/settings/hdg-hld-separate</property>
+						<value>1</value>
+					</equals>
+				</and>
+			</condition>
+			<property>/it-autoflight/internal/hdg-hld-target</property>
+		</input>
+		<input>/it-autoflight/input/hdg</input>
+		<output>/it-autoflight/internal/hdg-target</output>
+	</filter>
+	
+	<filter>
 		<name>Heading Error Deg</name>
 		<debug>false</debug>
 		<type>gain</type>
@@ -308,7 +363,7 @@
 					</equals>
 				</and>
 			</condition>
-			<property>/it-autoflight/input/hdg</property>
+			<property>/it-autoflight/internal/hdg-target</property>
 			<offset>
 				<property>/it-autoflight/internal/heading-deg</property>
 				<scale>-1.0</scale>
@@ -327,7 +382,7 @@
 					</equals>
 				</and>
 			</condition>
-			<property>/it-autoflight/input/hdg</property>
+			<property>/it-autoflight/internal/hdg-target</property>
 			<offset>
 				<property>/it-autoflight/internal/track-deg</property>
 				<scale>-1.0</scale>
@@ -625,9 +680,9 @@
 				<sum>
 					<div>
 						<property>/it-autoflight/internal/vert-speed-fpm</property>
-						<product>
+						<product> <!-- Default 11 -->
 							<property>/it-autoflight/config/cmd/alt-gain</property>
-							<value>-1</value>
+							<value>-2.2</value>
 						</product>
 					</div>
 					<property>/instrumentation/altimeter/indicated-altitude-ft</property>
@@ -1049,10 +1104,16 @@
 		</enable>
 		<input>
 			<condition>
-				<equals>
-					<property>/it-autoflight/input/kts-mach</property>
-					<value>0</value>
-				</equals>
+				<or>
+					<equals>
+						<property>/it-autoflight/input/kts-mach</property>
+						<value>0</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>7</value>
+					</equals>
+				</or>
 			</condition>
 			<property>/it-autoflight/internal/kts-predicted-15</property>
 		</input>
@@ -1068,10 +1129,16 @@
 		</input>
 		<reference>
 			<condition>
-				<equals>
-					<property>/it-autoflight/input/kts-mach</property>
-					<value>0</value>
-				</equals>
+				<or>
+					<equals>
+						<property>/it-autoflight/input/kts-mach</property>
+						<value>0</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>7</value>
+					</equals>
+				</or>
 			</condition>
 			<property>/it-autoflight/internal/flch-kts</property>
 		</reference>
@@ -1502,7 +1569,7 @@
 							<property>/orientation/pitch-deg</property>
 							<value>5</value>
 						</sum>
-						<value>25</value>
+						<value>30</value>
 					</min>
 				</expression>
 			</u_max>

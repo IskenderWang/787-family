@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PropertyList>
+<sim>
+	<model>
+		<livery> 
+			<name type="string">AirEuropa</name>
+			<texture>Liveries-8/AEA.png</texture>
+		</livery>
+        <lights>
+            <texture>Liveries-8/BOE2-lights.png</texture>
+        </lights>
+	</model>
+</sim>
+</PropertyList>

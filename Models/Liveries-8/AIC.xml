@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Air India</name>
+				<texture>Liveries-8/AIC.png</texture>
+			</livery>
+            <lights>
+                <texture>Liveries-8/AIC-lights.png</texture>
+            </lights>
+		</model>
+	</sim>
+</PropertyList>
