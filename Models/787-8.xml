@@ -1212,7 +1212,7 @@
 <animation>
   <type>rotate</type>
   <object-name>lhobaileron</object-name>
-  <property>fdm/jsbsim/fcs/aileron-fbw-output</property>
+  <property>controls/flight/aileron</property>
   <factor>20</factor>
   <offset-deg>0</offset-deg>
   <center>
@@ -1230,7 +1230,7 @@
 <animation>
   <type>rotate</type>
   <object-name>lhibaileron</object-name>
-  <property>fdm/jsbsim/fcs/aileron-fbw-output</property>
+  <property>controls/flight/aileron</property>
   <factor>10</factor>
   <offset-deg>0</offset-deg>
   <center>
@@ -1310,7 +1310,7 @@
 <animation>
   <type>rotate</type>
   <object-name>rhobaileron</object-name>
-  <property>fdm/jsbsim/fcs/aileron-fbw-output</property>
+  <property>controls/flight/aileron</property>
   <factor>-20</factor>
   <offset-deg>0</offset-deg>
   <center>
@@ -1328,7 +1328,7 @@
 <animation>
   <type>rotate</type>
   <object-name>rhibaileron</object-name>
-  <property>fdm/jsbsim/fcs/aileron-fbw-output</property>
+  <property>controls/flight/aileron</property>
   <factor>-10</factor>
   <offset-deg>0</offset-deg>
   <center>
@@ -1582,7 +1582,7 @@
   <type>rotate</type>
   <object-name>rudder</object-name>
   <object-name>lightedrudder</object-name>
-  <property>fdm/jsbsim/fcs/rudder-fbw-output</property>
+  <property>controls/flight/rudder</property>
   <factor>-20</factor>
   <offset-deg>0</offset-deg>
   <center>
@@ -1602,7 +1602,7 @@
   <object-name>NoseGear</object-name>
   <object-name>taxilight</object-name>
   <object-name>noselanding</object-name>
-  <property>fdm/jsbsim/fcs/rudder-fbw-output</property>
+  <property>gear/gear/steering-norm</property>
   <factor>60</factor>
   <offset-deg>0</offset-deg>
   <center>
