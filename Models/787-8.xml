@@ -1545,7 +1545,7 @@
 <animation>
   <type>rotate</type>
   <object-name>lhelevator</object-name>
-  <property>fdm/jsbsim/fcs/elevator-fbw-output</property>
+  <property>controls/flight/elevator</property>
   <factor>20</factor>
   <offset-deg>0</offset-deg>
   <center>
@@ -1563,7 +1563,7 @@
 <animation>
   <type>rotate</type>
   <object-name>rhelevator</object-name>
-  <property>fdm/jsbsim/fcs/elevator-fbw-output</property>
+  <property>controls/flight/elevator</property>
   <factor>20</factor>
   <offset-deg>0</offset-deg>
   <center>
@@ -1876,7 +1876,7 @@
 <animation>
   <type>rotate</type>
   <object-name>lhobspoilerb</object-name>
-  <property>fdm/jsbsim/fcs/aileron-fbw-output</property>
+  <property>controls/flight/aileron</property>
   <interpolation>
     <entry>
       <ind>-1</ind>
@@ -1988,7 +1988,7 @@
 <animation>
   <type>rotate</type>
   <object-name>rhobspoilerb</object-name>
-  <property>fdm/jsbsim/fcs/aileron-fbw-output</property>
+  <property>controls/flight/aileron</property>
   <interpolation>
     <entry>
       <ind>-1</ind>
