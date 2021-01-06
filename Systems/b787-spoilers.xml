@@ -53,13 +53,13 @@
         <name>Ground spoilers disengage</name>
         <enable>
             <condition>
-                <equals>
-                    <property>/controls/flight/ground-spoilers-armed</property>
-                    <value type="bool">false</value>
-                </equals>
+                <property>/controls/engines/engine[0]/reverser</property>
+                <property>/controls/engines/engine[1]/reverser</property>
                 <or>
-                    <property>/controls/engines/engine[0]/reverser</property>
-                    <property>/controls/engines/engine[1]/reverser</property>
+                    <equals>
+                        <property>/controls/flight/ground-spoilers-armed</property>
+                        <value type="bool">false</value>
+                    </equals>
                 </or>
                 <or>
                     <less-than>
