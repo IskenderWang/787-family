@@ -31,6 +31,48 @@
                 <path>Aircraft/Generic/wingflexer.xml</path>
             </property-rule>
         </systems>
+        <flight-recorder>
+            <replay-config type="int">0</replay-config>
+            <config n="0" include="/Aircraft/Generic/flightrecorder/generic-jet.xml">
+                <name type="string">787 Flight Recorder</name>
+                <!-- Add custom properties here -->
+                <signal>
+                    <type>float</type>
+                    <property type="string">/controls/gear/nosegear-steering-cmd-norm</property>
+                    <interpolation>linear</interpolation>
+                </signal>
+                <signal>
+                    <type>float</type>
+                    <property type="string">/gear/gear/steering-norm</property>
+                    <interpolation>linear</interpolation>
+                </signal>
+                <signal>
+                    <type>float</type>
+                    <property type="string">/engines/engine/reverser-pos-norm</property>
+                    <interpolation>linear</interpolation>
+                </signal>
+                <signal>
+                    <type>float</type>
+                    <property type="string">/engines/engine[1]/reverser-pos-norm</property>
+                    <interpolation>linear</interpolation>
+                </signal>
+                <signal>
+                    <type>float</type>
+                    <property type="string">/sim/systems/wingflexer/</property>
+                    <interpolation>linear</interpolation>
+                </signal>
+                <signal>
+                    <type>float</type>
+                    <property type="string">/sim/systems/wingflexer/params/</property>
+                    <interpolation>linear</interpolation>
+                </signal>
+                <signal>
+                    <type>float</type>
+                    <property type="string">/sim/systems/wingflexer/z-m</property>
+                    <interpolation>linear</interpolation>
+                </signal>
+            </config>
+        </flight-recorder>
     </sim>
     
     <it-autoflight>

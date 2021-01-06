@@ -1,7 +1,10 @@
 <?xml version="1.0"?>
 
 <PropertyList>
-
+<params>
+		<groundspeed-kt>velocities/groundspeed-kt</groundspeed-kt>
+		<airspeed-kt>velocities/airspeed-kt</airspeed-kt>
+</params>
 <fx>
 
 <!-- APU Sounds -->
@@ -1197,6 +1200,34 @@
  <reference-dist>30.0</reference-dist>
  <max-dist>100.0</max-dist>
 </wheels3> -->
+   
+<callout>
+		<name>V1</name>
+		<mode>once</mode>
+		<type>avionics</type>
+		<path>Aircraft/787-family/Sounds/v1.wav</path>
+			<condition>
+				<and>
+					<or>
+						<property>gear/gear[0]/wow</property>
+						<property>gear/gear[1]/wow</property>
+						<property>gear/gear[2]/wow</property>
+					</or>
+					<less-than>
+						<property alias="/params/airspeed-kt" />
+						<property>it-autoflight/internal/lookahead-5-sec-airspeed-kt</property>
+					</less-than>
+					<greater-than-equals>
+						<property alias="/params/airspeed-kt" />
+						<property>instrumentation/fmc/vspeeds/V1</property>
+					</greater-than-equals>
+					<less-than>
+						<property alias="/params/airspeed-kt" />
+						<property>instrumentation/fmc/vspeeds/VR</property>
+					</less-than>
+				</and>
+		</condition>
+</callout>
 
 <foo include="Sounds/copilot.xml" omit-node="y" />
 
