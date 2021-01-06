@@ -620,7 +620,7 @@
 	<object-name>FD.roll</object-name>
 	<object-name>FD.pitch</object-name>
   	<condition>
-    	<property>autopilot/flightdirector</property>
+    	<property>/it-autoflight/input/fd1</property>
   	</condition>
 </animation>
 

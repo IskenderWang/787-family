@@ -34,7 +34,7 @@
         <flight-recorder>
             <replay-config type="int">0</replay-config>
             <config n="0" include="/Aircraft/Generic/flightrecorder/generic-jet.xml">
-                <name type="string">My Aircraft's Flight Recorder</name>
+                <name type="string">787 Flight Recorder</name>
                 <!-- Add custom properties here -->
                 <signal>
                     <type>float</type>
@@ -43,7 +43,17 @@
                 </signal>
                 <signal>
                     <type>float</type>
-                    <property type="string">gear/gear/steering-norm</property>
+                    <property type="string">/gear/gear/steering-norm</property>
+                    <interpolation>linear</interpolation>
+                </signal>
+                <signal>
+                    <type>float</type>
+                    <property type="string">/engines/engine/reverser-pos-norm</property>
+                    <interpolation>linear</interpolation>
+                </signal>
+                <signal>
+                    <type>float</type>
+                    <property type="string">/engines/engine[1]/reverser-pos-norm</property>
                     <interpolation>linear</interpolation>
                 </signal>
                 <signal>
@@ -58,7 +68,7 @@
                 </signal>
                 <signal>
                     <type>float</type>
-                    <property type="string">sim/systems/wingflexer/z-m</property>
+                    <property type="string">/sim/systems/wingflexer/z-m</property>
                     <interpolation>linear</interpolation>
                 </signal>
             </config>
