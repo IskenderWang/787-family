@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<PropertyList>
+    <name>reflect</name>
+    <inherits-from>Effects/model-combined</inherits-from>
+    <parameters>
+        <texture n="5">
+            <type>cubemap</type>
+            <images>
+                <positive-x>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/1.png</positive-x>
+                <negative-x>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/4.png</negative-x>
+                <positive-y>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/2.png</positive-y>
+                <negative-y>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/3.png</negative-y>
+                <positive-z>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/6.png</positive-z>
+                <negative-z>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/5.png</negative-z>
+            </images>
+        </texture>
+    </parameters>
+</PropertyList>
