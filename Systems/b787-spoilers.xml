@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- Airbus A330 speedbrake/ground spoiler configuration -->
+<!-- Boeing 787 speedbrake/ground spoiler configuration -->
 
 <PropertyList>
 
@@ -23,38 +23,52 @@
 
 	<logic>
 		<name>Ground spoilers engage</name>
-		<input>
-			<and>
-				<or>
-					<!-- Spoilers armed -->
-					<and>
-						<property>/controls/flight/ground-spoilers-armed</property>
-						<less-than>
-							<property>/controls/engines/engine[0]/throttle</property>
-							<property>/autopilot/autobrake/config/idle-throttle</property>
-						</less-than>
-						<less-than>
-							<property>/controls/engines/engine[1]/throttle</property>
-							<property>/autopilot/autobrake/config/idle-throttle</property>
-						</less-than>
-					</and>
-					<!-- Spoilers not armed -->
-					<and>
-						<not>
-							<property>/controls/flight/ground-spoilers-armed</property>
-						</not>
-						<property>/controls/engines/engine[0]/reverser</property>
-						<property>/controls/engines/engine[1]/reverser</property>
-					</and>
-				</or>
+		<enable>
+			<condition>
+                <input>
+                    <equals>
+                        <property>/controls/flight/ground-spoilers-armed</property>
+                        <value type="bool">true</value>
+                    </equals>
+                    <and>
+                        <input>
+                            <equals>
+                                <property>/controls/engines/throttle-cmd-pid</property>
+                                <value type="double">0</value>
+                            </equals>
+                        </input>
+                        <or>
+                            <property>/controls/engines/engine[0]/throttle-cmd</property>
+                        </or>
+                        <or>
+                            <less-than>
+                                <property>/controls/engines/engine[0]/throttle</property>
+                                <property>/autopilot/autobrake/config/idle-throttle</property>
+                            </less-than>
+                            <less-than>
+                                <property>/controls/engines/engine[1]/throttle</property>
+                                <property>/autopilot/autobrake/config/idle-throttle</property>
+                            </less-than>
+                        </or>
+                    </and>
+                    <and>
+                        <not>
+                            <property>/controls/engines/engine[0]/reverser</property>
+                            <property>/controls/engines/engine[1]/reverser</property>
+                        </not>
+                    </and>
+                </input>
 				<property>/gear/gear[1]/wow</property>
 				<property>/gear/gear[2]/wow</property>
 				<greater-than>
 					<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
 					<value>72</value>
 				</greater-than>
-			</and>
-		</input>
+			</condition>
+		</enable>
+        <input>
+            <true />
+        </input>
 		<output>/controls/flight/ground-spoilers</output>
 	</logic>
 
