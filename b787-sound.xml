@@ -1125,11 +1125,11 @@
  <path>Aircraft/787-family/Sounds/touchdown.wav</path>
  <mode>once</mode>
  <condition>
-    <or>
-        <property>/gear/gear[0]/wow</property>
-        <property>/gear/gear[1]/wow</property>
-        <property>/gear/gear[2]/wow</property>
-    </or>
+	<or>
+	<property>/gear/gear[0]/wow</property>
+	<property>/gear/gear[1]/wow</property>
+    	<property>/gear/gear[2]/wow</property>
+	</or>
  </condition>
         <volume>
             <factor>1</factor>
@@ -1139,7 +1139,7 @@
       <y>0.00</y>
       <z>0.00</z>
  </position>
- <reference-dist>30.0</reference-dist>
+ <reference-dist>10.0</reference-dist>
  <max-dist>100.0</max-dist>
 </wheels1>
 
