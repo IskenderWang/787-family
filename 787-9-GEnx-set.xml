@@ -48,6 +48,12 @@
                 <ias-bug-kt-norm type="double">0</ias-bug-kt-norm>
                 <mach-bug-kt-norm type="double">0</mach-bug-kt-norm>
             </b787>
+            <door>
+                <position-x-m type="float">-23.6</position-x-m>
+                <position-y-m type="float">-2.4</position-y-m>
+                <position-z-m type="float">1</position-z-m>
+                <jetway-hood-deg type="float">0</jetway-hood-deg>
+            </door>
 
             <pushback>
                 <kp type="double">300</kp>
