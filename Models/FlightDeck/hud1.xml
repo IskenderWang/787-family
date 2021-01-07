@@ -2468,7 +2468,7 @@
   <animation>
    <type>textranslate</type>
    <object-name>vs1000</object-name>
-   <property>/it-autoflight/input/vs</property>
+   <property>/it-autoflight/input/vs-abs</property>
    <factor>0.0001</factor>
    <step>1000.0</step>
    <axis>
@@ -2481,7 +2481,7 @@
   <animation>
    <type>textranslate</type>
    <object-name>vs-1000</object-name>
-   <property>/it-autoflight/input/vs</property>
+   <property>/it-autoflight/input/vs-abs</property>
    <factor>-0.0001</factor>
    <step>1000.0</step>
    <axis>
@@ -2494,7 +2494,7 @@
   <animation>
    <type>textranslate</type>
    <object-name>vs100</object-name>
-   <property>/it-autoflight/input/vs</property>
+   <property>/it-autoflight/input/vs-abs</property>
    <factor>0.001</factor>
    <step>100.0</step>
    <axis>
@@ -2507,7 +2507,7 @@
   <animation>
    <type>textranslate</type>
    <object-name>vs-100</object-name>
-   <property>/it-autoflight/input/vs</property>
+   <property>/it-autoflight/input/vs-abs</property>
    <factor>-0.001</factor>
    <step>100.0</step>
    <axis>
@@ -2520,7 +2520,7 @@
   <animation>
    <type>textranslate</type>
    <object-name>vs10</object-name>
-   <property>/it-autoflight/input/vs</property>
+   <property>/it-autoflight/input/vs-abs</property>
    <factor>0.01</factor>
    <step>10.0</step>
    <axis>
@@ -2533,7 +2533,7 @@
   <animation>
    <type>textranslate</type>
    <object-name>vs-10</object-name>
-   <property>/it-autoflight/input/vs</property>
+   <property>/it-autoflight/input/vs-abs</property>
    <factor>-0.01</factor>
    <step>10.0</step>
    <axis>

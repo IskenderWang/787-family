@@ -2745,7 +2745,7 @@
    </axis>
  </animation>
 
-    <animation>
+ <animation>
    <type>textranslate</type>
    <object-name>APalt.1</object-name>
    <property>/it-autoflight/input/alt</property>
@@ -2758,21 +2758,21 @@
    </axis>
  </animation>
 
-   <animation>
-   <type>select</type>
-   <object-name>APvsnegative</object-name>
-   <condition>
-   <less-than>
-   <property>/it-autoflight/input/vs</property>
-   <value>0</value>
-   </less-than>
-   </condition>
+ <animation>
+    <type>select</type>
+    <object-name>APvsnegative</object-name>
+    <condition>
+    <less-than>
+        <property>/it-autoflight/input/vs</property>
+        <value>0</value>
+    </less-than>
+    </condition>
  </animation>
 
 <animation>
    <type>textranslate</type>
    <object-name>APvs.1000</object-name>
-   <property>/it-autoflight/input/vs</property>
+   <property>/it-autoflight/input/vs-abs</property>
    <factor>0.0001</factor>
    <step>1000</step>
    <axis>
@@ -2785,7 +2785,7 @@
   <animation>
    <type>textranslate</type>
    <object-name>APvs.100</object-name>
-   <property>/it-autoflight/input/vs</property>
+   <property>/it-autoflight/input/vs-abs</property>
    <factor>0.001</factor>
    <step>100</step>
    <axis>
@@ -2798,7 +2798,7 @@
  <animation>
    <type>textranslate</type>
    <object-name>APvs.10</object-name>
-   <property>/it-autoflight/input/vs</property>
+   <property>/it-autoflight/input/vs-abs</property>
    <factor>0.01</factor>
    <step>10</step>
    <axis>
@@ -2811,7 +2811,7 @@
  <animation>
    <type>textranslate</type>
    <object-name>APvs.1</object-name>
-   <property>/it-autoflight/input/vs</property>
+   <property>/it-autoflight/input/vs-abs</property>
    <factor>0.1</factor>
    <step>1</step>
    <axis>
@@ -3180,7 +3180,7 @@
 				<command>property-adjust</command>
 				<property>/it-autoflight/input/vs</property>
 				<step>100</step>
-				<max>3000</max>
+				<max>6000</max>
 			</binding>
 		</action>
 		<action>
@@ -3191,7 +3191,7 @@
 				<command>property-adjust</command>
 				<property>/it-autoflight/input/vs</property>
 				<step>-100</step>
-				<min>-3000</min>
+				<min>-6000</min>
 			</binding>
 		</action>
 	</animation>
