@@ -798,7 +798,7 @@
    <type>textranslate</type>
    <object-name>hdgtext</object-name>
    <property>orientation/heading-magnetic-deg</property>
-   <factor>0.08</factor>
+   <factor>0.001</factor>
    <step>100</step>
    <axis>
      <x>0</x>
