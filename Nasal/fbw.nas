@@ -170,7 +170,7 @@ var fbw = {
 					me.stabilize = 1;
 				}
 
-				if ((airspeedkt >= 220) and (altitudeagl >= 3500) and (getprop("/autopilot/panel/master") != 1) and (getprop("/autopilot/hold/active") != 1) and (getprop("/connection/fgfscopilot/connected") != 1)) {
+				if ((airspeedkt >= 220) and (altitudeagl >= 3500) and (getprop("/it-autoflight/input/ap1") != 1) and (getprop("/autopilot/hold/active") != 1) and (getprop("/connection/fgfscopilot/connected") != 1)) {
 					setprop("/controls/fbw/autostable", 1);
 				} 
 				else {
@@ -289,7 +289,7 @@ var fbw = {
 			## PROTECTION END TRIM FIX
 
 			if (getprop("/controls/flight/elevator-trim") != nil) {
-				if ((getprop("/controls/fbw/alpha-protect") == 0) and (getprop("/autopilot/panel/master") != 1) and (getprop("/autopilot/hold/active") != 1) and (getprop("/connection/fgfscopilot/connected") != 1)) {
+				if ((getprop("/controls/fbw/alpha-protect") == 0) and (getprop("/it-autoflight/input/ap1") != 1) and (getprop("/autopilot/hold/active") != 1) and (getprop("/connection/fgfscopilot/connected") != 1)) {
 					if (getprop("/controls/flight/elevator-trim") < 0) {
 						setprop("/controls/flight/elevator-trim", getprop("/controls/flight/elevator-trim") + 0.005);
 					} elsif (getprop("/controls/flight/elevator-trim") > 0) {

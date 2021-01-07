@@ -1129,12 +1129,10 @@
 			<file>Aircraft/787-family/Nasal/vnav.nas</file>
 			<file>Aircraft/787-family/Nasal/efb.nas</file>
 			<file>Aircraft/787-family/Nasal/chartsDB.nas</file>
-			<file>Aircraft/787-family/Nasal/modecontrol.nas</file>
 			<file>Aircraft/787-family/Nasal/warnings.nas</file>
 			<file>Aircraft/787-family/Nasal/lighting.nas</file>
 			<file>Aircraft/787-family/Nasal/wxradar-ndhalf.nas</file>
 			<file>Aircraft/787-family/Nasal/wxradar-ndfull.nas</file>
-			<file>Aircraft/787-family/Nasal/holding-pattern.nas</file>
 			<file>Aircraft/787-family/Nasal/terrain-map.nas</file>
 			<file>Aircraft/787-family/Nasal/world-map.nas</file>
 			<file>Aircraft/787-family/Nasal/gear_system.nas</file>

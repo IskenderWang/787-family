@@ -315,29 +315,29 @@ elsif ((getprop("/autopilot/route-manager/wp-last/dist") != nil) and (getprop("/
 # Adjust airspeed/mach based on phase
 	
 if ((phase == 0) or (phase == 4)){
-	setprop("/autopilot/settings/target-speed-kt", 250);
-	setprop("/autopilot/panel/auto-throttle", 1);
-	setprop("/autopilot/panel/speed-mode", "ias");
+	setprop("/it-autoflight/input/kts", 250);
+	setprop("/it-autoflight/input/athr", 1);
+	setprop("/it-autoflight/input/kts-mach", 0);
 }
 elsif (phase == 1){
-	setprop("/autopilot/settings/target-speed-kt", 300);
-	setprop("/autopilot/panel/auto-throttle", 1);
-	setprop("/autopilot/panel/speed-mode", "ias");
+	setprop("/it-autoflight/input/kts", 300);
+	setprop("/it-autoflight/input/athr", 1);
+	setprop("/it-autoflight/input/kts-mach", 0);
 }
 elsif (phase == 2){
-	setprop("/autopilot/settings/mach-speed", 0.8);
-	setprop("/autopilot/panel/auto-throttle", 1);
-	setprop("/autopilot/panel/speed-mode", "mach");
+	setprop("/it-autoflight/input/mach", 0.8);
+	setprop("/it-autoflight/input/athr", 1);
+	setprop("/it-autoflight/input/kts-mach", 1);
 }
 elsif (phase == 3){
-	setprop("/autopilot/settings/mach-speed", 0.85);
-	setprop("/autopilot/panel/auto-throttle", 1);
-	setprop("/autopilot/panel/speed-mode", "mach");
+	setprop("/it-autoflight/input/mach", 0.85);
+	setprop("/it-autoflight/input/athr", 1);
+	setprop("/it-autoflight/input/kts-mach", 1);
 }
 elsif (phase == 5){
-	setprop("/autopilot/settings/target-speed-kt", getprop("/instrumentation/b787-fmc/speeds/ap"));
-	setprop("/autopilot/panel/auto-throttle", 1);
-	setprop("/autopilot/panel/speed-mode", "ias");
+	setprop("/it-autoflight/input/kts", getprop("/instrumentation/b787-fmc/speeds/ap"));
+	setprop("/it-autoflight/input/athr", 1);
+	setprop("/it-autoflight/input/kts-mach", 0);
 	if (altitude < 5000)
 		setprop("/controls/switches/copilot/airspeed", 0);
 }
@@ -352,7 +352,7 @@ if (getprop("/controls/switches/copilot/autopilot") == 1){
 	if ((airspeed != nil) and (VR != nil) and (airspeed > VR) and (altitude < 50) and (me.flightphase == 0)){
 		setprop("/autopilot/route-manager/active", 1);	#activate route manager
 		setprop("/autopilot/route-manager/current-wp", 1);	#set target to first waypoint
-		setprop("/autopilot/settings/target-pitch-deg", 10);
+		setprop("/it-autoflight/input/fpa", 10);
 		setprop("/autopilot/locks/altitude", "pitch-hold");
 		setprop("/autopilot/locks/heading", "wing-leveler");
 	}
@@ -374,7 +374,7 @@ if (getprop("/controls/switches/copilot/autopilot") == 1){
 		# Determine if LOC tracking is good enough for autoland, and land the plane if it is
 		if ((getprop("/instrumentation/nav/heading-needle-deflection-norm") > -0.25) and (getprop("/instrumentation/nav/heading-needle-deflection-norm") < 0.25)){
 			setprop("/autopilot/locks/heading", "wing-leveler");
-			setprop("/autopilot/settings/vertical-speed-fpm", -40);
+			setprop("/it-autoflight/input/vs", -40);
 			setprop("/autopilot/locks/altitude", "vertical-speed-hold");
 			setprop("/controls/autobrake/setting", 1);
 			# Reduce throttles to idle once in ground effect
@@ -397,7 +397,7 @@ if (getprop("/controls/switches/copilot/autopilot") == 1){
 	elsif ((me.flightphase == 1) and (getprop("/gear/gear[1]/rollspeed-ms") > 0) and (getprop("/gear/gear[2]/rollspeed-ms") > 0)){
 		setprop("/autopilot/locks/heading", "");
 		setprop("/autopilot/locks/altitude", "");
-		setprop("/autopilot/settings/target-speed-kt", 20);	#for easy taxiing with AT
+		setprop("/it-autoflight/input/kts", 20);	#for easy taxiing with AT
 		setprop("/controls/switches/copilot/autopilot", 0);
 	}
 }

@@ -60,8 +60,8 @@ var syscheck = {
 			"/controls/pneumatic/temp/hyd-sys2-elec",
 			"/controls/pneumatic/temp/hyd-sys3-elec",
 			"/controls/mfd/extra",
-			"/autopilot/panel/master",
-			"/autopilot/panel/auto-throttle",
+			"/it-autoflight/input/ap1",
+			"/it-autoflight/input/athr",
 			"/controls/pneumatic/equipcooling",
 			"/controls/pneumatic/pack1",	
 			"/controls/pneumatic/pack2",
@@ -268,13 +268,13 @@ var syscheck = {
 			else
 				sysinfo.log_msg("[MFD] WXRadar Mode Engaged", 0); }
 				
-		elsif (prop == "/autopilot/panel/master") {
+		elsif (prop == "/it-autoflight/input/ap1") {
 			if (getprop(prop) == 1)
 				sysinfo.log_msg("[AP] Master Autopilot Engaged", 0);
 			else
 				sysinfo.log_msg("[AP] Master Autopilot Disengaged", 1); }
 				
-		elsif (prop == "/autopilot/panel/auto-throttle") {
+		elsif (prop == "/it-autoflight/input/athr") {
 			if (getprop(prop) == 1)
 				sysinfo.log_msg("[AP] Auto-throttle Armed", 0);
 			else

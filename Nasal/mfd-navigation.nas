@@ -65,8 +65,8 @@
     setprop("/controls/navigation/nav1-defl", Deflection(nav1heading,45));
     setprop("/controls/navigation/nav2-defl", Deflection(nav2heading,45));
 
-	if (getprop("/autopilot/settings/heading-bug-deg") != nil) {
-    setprop("/controls/navigation/heading-bug", Deflection(getprop("/autopilot/settings/heading-bug-deg"), 45)); }
+	if (getprop("/it-autoflight/input/hdg") != nil) {
+    setprop("/controls/navigation/heading-bug", Deflection(getprop("/it-autoflight/input/hdg"), 45)); }
 
     # Calculate Descent glideslope
 

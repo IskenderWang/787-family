@@ -67,8 +67,8 @@ setprop("/instrumentation/ndfull/airport/yoffset", yoffset);
 
 	## Heading Bug
 
-	if (getprop("/autopilot/settings/heading-bug-deg") != nil) {
-	setprop("/instrumentation/ndfull/heading-bug", Deflection(getprop("/autopilot/settings/heading-bug-deg"), 125)); }
+	if (getprop("/it-autoflight/input/hdg") != nil) {
+	setprop("/instrumentation/ndfull/heading-bug", Deflection(getprop("/it-autoflight/input/hdg"), 125)); }
 
 	## Navigation Bugs
 

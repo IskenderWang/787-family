@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!-- Boeing 787 speedbrake/ground spoiler configuration -->
+
 <PropertyList>
 
 	<logic>
@@ -14,7 +16,7 @@
 			</condition>
 		</enable>
 		<input>
-			<false/>
+            <false/>
 		</input>
 		<output>/controls/flight/ground-spoilers-armed</output>
 	</logic>
@@ -44,13 +46,13 @@
 			</condition>
 		</enable>
 		<input>
-		    <true/>
+            <true/>
 		</input>
 		<output>/controls/flight/ground-spoilers</output>
 	</logic>
 
-    	<logic>
-        	<name>Ground spoilers disengage</name>
+    <logic>
+        <name>Ground spoilers disengage</name>
 		<enable>
 		    <condition>
 			<property>/controls/engines/engine[0]/reverser</property>
@@ -70,10 +72,10 @@
 		    </condition>
 		</enable>
 		<input>
-		    <false/>
+            <false/>
 		</input>
 		<output>/controls/flight/ground-spoilers</output>
-    	</logic>
+    </logic>
 
 	<filter>
 		<name>Main speedbrake controller</name>
