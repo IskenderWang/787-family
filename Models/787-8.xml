@@ -1583,7 +1583,7 @@
   <object-name>rudder</object-name>
   <object-name>lightedrudder</object-name>
   <property>controls/flight/rudder</property>
-  <factor>-20</factor>
+  <factor>20</factor>
   <offset-deg>0</offset-deg>
   <center>
    <x-m>26.18</x-m>
@@ -1603,7 +1603,7 @@
   <object-name>taxilight</object-name>
   <object-name>noselanding</object-name>
   <property>gear/gear/steering-norm</property>
-  <factor>60</factor>
+  <factor>-60</factor>
   <offset-deg>0</offset-deg>
   <center>
    <x-m>-20.576</x-m>
