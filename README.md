@@ -18,4 +18,4 @@ WIKI ARTICLE : http://wiki.flightgear.org/Boeing_787-8_Dreamliner
 
 IMPORTANT: To have everything working, make sure the folder is named 787-family (no -master after if downloading zip)!
 
-NOTE: The autopilot now fully operates on Octal450's excellent ITAF system – see [here](http://wiki.flightgear.org/IT-AUTOFLIGHT) for more information.
+NOTE: The autopilot now fully operates on [Octal450's excellent ITAF system](https://github.com/Octal450/IT-AUTOFLIGHT) – see [here](http://wiki.flightgear.org/IT-AUTOFLIGHT) for more information.
