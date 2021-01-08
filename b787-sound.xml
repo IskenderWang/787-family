@@ -1123,7 +1123,7 @@
 <wow>
     <mode>once</mode>
     <name>touchdown0</name>
-    <path>Aircraft/787-family/Sounds/touchdown.wav</path>
+    <path>Aircraft/787-family/Sounds/touch.wav</path>
     <condition>
         <property>/gear/gear[0]/wow</property>
     </condition>
@@ -1132,7 +1132,7 @@
 <wow>
     <mode>once</mode>
     <name>touchdown1</name>
-    <path>Aircraft/787-family/Sounds/touchdown.wav</path>
+    <path>Aircraft/787-family/Sounds/touch.wav</path>
     <condition>
         <property>/gear/gear[1]/wow</property>
     </condition>
@@ -1141,7 +1141,7 @@
 <wow>
     <mode>once</mode>
     <name>touchdown2</name>
-    <path>Aircraft/787-family/Sounds/touchdown.wav</path>
+    <path>Aircraft/787-family/Sounds/touch.wav</path>
     <condition>
         <property>/gear/gear[2]/wow</property>
     </condition>
@@ -1166,7 +1166,7 @@
     </condition>
 </roll>
 
-<roll>
+<!-- <roll>
     <mode>looped</mode>
     <name>fastroll</name>
     <path>Aircraft/787-family/Sounds/roll.wav</path>
@@ -1183,7 +1183,7 @@
             <value>45</value>
         </greater-than>
     </condition>
-</roll>
+</roll> -->
    
 <callout>
 		<name>V1</name>
@@ -1246,7 +1246,7 @@
         </condition>
 </callout>
 
-<callout>
+<!-- <callout>
         <name>V2</name>
         <mode>once</mode>
         <type>avionics</type>
@@ -1268,7 +1268,7 @@
                 </less-than>
             </and>
         </condition>
-</callout>
+</callout> -->
 
 <foo include="Sounds/copilot.xml" omit-node="y" />
 <foo include="Sounds/tcas.xml" omit-node="y" />
