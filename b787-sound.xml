@@ -1120,117 +1120,153 @@
 
 <!-- Wheels -->
 
-<wheels1>
-<name>touchdown</name>
- <path>Aircraft/787-family/Sounds/touchdown.wav</path>
- <mode>once</mode>
- <condition>
-	<or>
-	<property>/gear/gear[0]/wow</property>
-	<property>/gear/gear[1]/wow</property>
-    	<property>/gear/gear[2]/wow</property>
-	</or>
- </condition>
-        <volume>
-            <factor>1</factor>
-        </volume>
-  <position>
-      <x>0.00</x>
-      <y>0.00</y>
-      <z>0.00</z>
- </position>
- <reference-dist>10.0</reference-dist>
- <max-dist>100.0</max-dist>
-</wheels1>
+<wow>
+    <mode>once</mode>
+    <name>touchdown0</name>
+    <path>Aircraft/787-family/Sounds/touchdown.wav</path>
+    <condition>
+        <property>/gear/gear[0]/wow</property>
+    </condition>
+</wow>
 
-<wheels2>
-<name>slowroll</name>
- <path>Aircraft/787-family/Sounds/rumble.wav</path>
- <mode>looped</mode>
- <condition>
-    <and>
-        <or>
-            <property>/gear/gear[0]/wow</property>
-            <property>/gear/gear[1]/wow</property>
-            <property>/gear/gear[2]/wow</property>
-        </or>
+<wow>
+    <mode>once</mode>
+    <name>touchdown1</name>
+    <path>Aircraft/787-family/Sounds/touchdown.wav</path>
+    <condition>
+        <property>/gear/gear[1]/wow</property>
+    </condition>
+</wow>
+
+<wow>
+    <mode>once</mode>
+    <name>touchdown2</name>
+    <path>Aircraft/787-family/Sounds/touchdown.wav</path>
+    <condition>
+        <property>/gear/gear[2]/wow</property>
+    </condition>
+</wow>
+
+<roll>
+    <mode>looped</mode>
+    <name>roll</name>
+    <path>Aircraft/787-family/Sounds/rumble.wav</path>
+    <condition>
+        <and>
+            <or>
+                <property>/gear/gear[0]/wow</property>
+                <property>/gear/gear[1]/wow</property>
+                <property>/gear/gear[2]/wow</property>
+            </or>
+        </and>
         <greater-than>
             <property>/velocities/groundspeed-kt</property>
             <value>3</value>
         </greater-than>
-    </and>
- </condition>
-        <volume>
-            <factor>1</factor>
-        </volume>
-  <position>
-      <x>0.00</x>
-      <y>0.00</y>
-      <z>0.00</z>
- </position>
- <reference-dist>30.0</reference-dist>
- <max-dist>100.0</max-dist>
-</wheels2>
-<!--
-<wheels3>
-<name>fastroll</name>
- <path>Aircraft/787-family/Sounds/roll.wav</path>
- <mode>looped</mode>
- <condition>
-    <and>
-        <or>
-            <property>/gear/gear[0]/wow</property>
-            <property>/gear/gear[1]/wow</property>
-            <property>/gear/gear[2]/wow</property>
-        </or>
+    </condition>
+</roll>
+
+<roll>
+    <mode>looped</mode>
+    <name>fastroll</name>
+    <path>Aircraft/787-family/Sounds/roll.wav</path>
+    <condition>
+        <and>
+            <or>
+                <property>/gear/gear[0]/wow</property>
+                <property>/gear/gear[1]/wow</property>
+                <property>/gear/gear[2]/wow</property>
+            </or>
+        </and>
         <greater-than>
             <property>/velocities/groundspeed-kt</property>
-            <value>50</value>
+            <value>45</value>
         </greater-than>
-    </and>
- </condition>
-        <volume>
-            <factor>1</factor>
-        </volume>
-  <position>
-      <x>0.00</x>
-      <y>0.00</y>
-      <z>0.00</z>
- </position>
- <reference-dist>30.0</reference-dist>
- <max-dist>100.0</max-dist>
-</wheels3> -->
+    </condition>
+</roll>
    
 <callout>
 		<name>V1</name>
 		<mode>once</mode>
 		<type>avionics</type>
 		<path>Aircraft/787-family/Sounds/v1.wav</path>
-			<condition>
-				<and>
-					<or>
-						<property>gear/gear[0]/wow</property>
-						<property>gear/gear[1]/wow</property>
-						<property>gear/gear[2]/wow</property>
-					</or>
-					<less-than>
-						<property alias="/params/airspeed-kt" />
-						<property>it-autoflight/internal/lookahead-5-sec-airspeed-kt</property>
-					</less-than>
-					<greater-than-equals>
-						<property alias="/params/airspeed-kt" />
-						<property>instrumentation/fmc/vspeeds/V1</property>
-					</greater-than-equals>
-					<less-than>
-						<property alias="/params/airspeed-kt" />
-						<property>instrumentation/fmc/vspeeds/VR</property>
-					</less-than>
-				</and>
-		</condition>
+        <condition>
+            <greater-than-equals>
+                <property alias="/params/airspeed-kt" />
+                <property>instrumentation/fmc/vspeeds/V1</property>
+            </greater-than-equals>
+            <less-than>
+                <property alias="/params/airspeed-kt" />
+                <property>instrumentation/fmc/vspeeds/VR</property>
+            </less-than>
+            <and>
+                <!-- If you're in the air with no gears on the ground (weight on wheels), V1 & VR won't be relevant to you -->
+                <or>
+                    <property>gear/gear[0]/wow</property>
+                    <property>gear/gear[1]/wow</property>
+                    <property>gear/gear[2]/wow</property>
+                </or>
+            </and>
+            <and>
+                <!-- The thinking for this value is that it's pretty unlikely you'll be reaching V1 and proceeding to takeoff with under 40% throttle, but you also most likely won't be slowing back down to your V speeds on landing with your throttles still at 40% or more (bad practice, should be idled before TD as we know), hence this aims to prevent V speed announcement if you're probably landing -->
+                <greater-than-equals>
+                    <property>/controls/engines/throttle-cmd-pid</property>
+                    <value type="double">0.4</value>
+                </greater-than-equals>
+            </and>
+        </condition>
+</callout>
+
+<callout>
+        <name>VR</name>
+        <mode>once</mode>
+        <type>avionics</type>
+        <path>Aircraft/787-family/Sounds/vr.wav</path>
+        <condition>
+            <greater-than-equals>
+                <property alias="/params/airspeed-kt" />
+                <property>instrumentation/fmc/vspeeds/VR</property>
+            </greater-than-equals>
+            <less-than>
+                <property alias="/params/airspeed-kt" />
+                <property>instrumentation/fmc/vspeeds/V2</property>
+            </less-than>
+            <and>
+                <or>
+                    <property>gear/gear[0]/wow</property>
+                    <property>gear/gear[1]/wow</property>
+                    <property>gear/gear[2]/wow</property>
+                </or>
+            </and>
+            <and>
+                <greater-than-equals>
+                    <property>/controls/engines/throttle-cmd-pid</property>
+                    <value type="double">0.4</value>
+                </greater-than-equals>
+            </and>
+        </condition>
+</callout>
+
+<callout>
+        <name>V2</name>
+        <mode>once</mode>
+        <type>avionics</type>
+        <path>Aircraft/787-family/Sounds/v2.wav</path>
+        <condition>
+            <greater-than-equals>
+                <property alias="/params/airspeed-kt" />
+                <property>instrumentation/fmc/vspeeds/V2</property>
+            </greater-than-equals>
+            <and>
+                <greater-than-equals>
+                    <property>/controls/engines/throttle-cmd-pid</property>
+                    <value type="double">0.4</value>
+                </greater-than-equals>
+            </and>
+        </condition>
 </callout>
 
 <foo include="Sounds/copilot.xml" omit-node="y" />
-
 <foo include="Sounds/tcas.xml" omit-node="y" />
 
 </fx>
