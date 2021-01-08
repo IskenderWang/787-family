@@ -4,7 +4,7 @@
 
 	<path>pfd2.ac</path>
 
-<!-- Come on only when there's atleast 9 volts of power -->
+<!-- Come on only when there's at least 9 volts of power -->
 
 	<animation>
 		<type>select</type>
@@ -627,8 +627,8 @@
     <animation>
         <type>translate</type>
         <object-name>FD.roll</object-name>
-        <property>autopilot/internal/target-roll-deg</property>
-        <factor>0.0020222222</factor>
+        <property>/it-autoflight/fd/roll-bar</property>
+        <factor>0.004</factor>
         <axis>
             <x>0</x>
             <y>1</y>
@@ -639,8 +639,8 @@
     <animation>
         <type>translate</type>
         <object-name>FD.pitch</object-name>
-        <property>autopilot/internal/climb-rate-difference</property>
-        <factor>0.0010222222</factor>
+        <property>/it-autoflight/fd/pitch-bar</property>
+        <factor>0.002</factor>
         <axis>
             <x>0</x>
             <y>0</y>

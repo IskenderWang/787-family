@@ -2214,7 +2214,7 @@
  <animation>
    <type>rotate</type>
    <object-name>pfdhdg</object-name>
-   <property>autopilot/internal/fdm-heading-bug-error-deg</property>
+   <property>/it-autoflight/internal/nav-heading-error-deg</property>
    <interpolation>
      <entry>
        <ind>-180.0</ind>
@@ -2410,7 +2410,7 @@
  <animation>
    <type>translate</type>
    <object-name>pfdhdg.001</object-name>
-   <property>autopilot/internal/fdm-heading-bug-error-deg</property>
+   <property>/it-autoflight/internal/nav-heading-error-deg</property>
    <interpolation>
      <entry>
        <ind> -180.0</ind>

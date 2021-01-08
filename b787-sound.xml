@@ -1208,11 +1208,10 @@
                 </or>
             </and>
             <and>
-                <!-- The thinking for this value is that it's pretty unlikely you'll be reaching V1 and proceeding to takeoff with under 40% throttle, but you also most likely won't be slowing back down to your V speeds on landing with your throttles still at 40% or more (bad practice, should be idled before TD as we know), hence this aims to prevent V speed announcement if you're probably landing -->
-                <greater-than-equals>
-                    <property>/controls/engines/throttle-cmd-pid</property>
-                    <value type="double">0.4</value>
-                </greater-than-equals>
+                <less-than>
+                    <property alias="/params/airspeed-kt" />
+                    <property>/it-autoflight/internal/kts-predicted-5</property>
+                </less-than>
             </and>
         </condition>
 </callout>
@@ -1239,10 +1238,10 @@
                 </or>
             </and>
             <and>
-                <greater-than-equals>
-                    <property>/controls/engines/throttle-cmd-pid</property>
-                    <value type="double">0.4</value>
-                </greater-than-equals>
+                <less-than>
+                    <property alias="/params/airspeed-kt" />
+                    <property>/it-autoflight/internal/kts-predicted-5</property>
+                </less-than>
             </and>
         </condition>
 </callout>
@@ -1253,15 +1252,20 @@
         <type>avionics</type>
         <path>Aircraft/787-family/Sounds/v2.wav</path>
         <condition>
+            <greater-than>
+                <!-- Don't bother with a V2 callout if the gears are fully retracted, another measure to restrict to takeoff only -->
+                <property>/gear/gear/position-norm</property>
+                <value type="double">0</value>
+            </greater-than>
             <greater-than-equals>
                 <property alias="/params/airspeed-kt" />
                 <property>instrumentation/fmc/vspeeds/V2</property>
             </greater-than-equals>
             <and>
-                <greater-than-equals>
-                    <property>/controls/engines/throttle-cmd-pid</property>
-                    <value type="double">0.4</value>
-                </greater-than-equals>
+                <less-than>
+                    <property alias="/params/airspeed-kt" />
+                    <property>/it-autoflight/internal/kts-predicted-5</property>
+                </less-than>
             </and>
         </condition>
 </callout>
