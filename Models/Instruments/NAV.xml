@@ -246,7 +246,7 @@
 		<format type="string">GS %3.0f</format>
 		<property>velocities/groundspeed-kt</property>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.006</character-size>
+		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -267,7 +267,7 @@
 		<property>velocities/uBody-fps</property>
 		<scale>0.5924838</scale>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.006</character-size>
+		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -288,7 +288,7 @@
 		<format type="string">%s</format>
 		<property>autopilot/route-manager/wp[0]/id</property>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.007</character-size>
+		<character-size>0.008</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -308,7 +308,7 @@
 		<format type="string">%3.0f°</format>
 		<property>autopilot/route-manager/wp[0]/bearing-deg</property>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.007</character-size>
+		<character-size>0.008</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -328,7 +328,7 @@
 		<format type="string">%3.1f NM</format>
 		<property>autopilot/route-manager/wp[0]/dist</property>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.007</character-size>
+		<character-size>0.008</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>

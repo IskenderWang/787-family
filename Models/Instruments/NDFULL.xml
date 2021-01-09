@@ -88,7 +88,7 @@
 		<format type="string">VOR 1</format>
 		<property>instrumentation/nav[0]/in-range</property>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.007</character-size>
+		<character-size>0.008</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -108,7 +108,7 @@
 		<format type="string">%s</format>
 		<property>instrumentation/nav[0]/nav-id</property>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.007</character-size>
+		<character-size>0.008</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -129,7 +129,7 @@
 		<property>instrumentation/nav[0]/nav-distance</property>
 		<scale>0.000539</scale>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.007</character-size>
+		<character-size>0.008</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -149,7 +149,7 @@
 		<format type="string">VOR 2</format>
 		<property>instrumentation/nav[1]/in-range</property>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.007</character-size>
+		<character-size>0.008</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -169,7 +169,7 @@
 		<format type="string">%s</format>
 		<property>instrumentation/nav[1]/nav-id</property>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.007</character-size>
+		<character-size>0.008</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -190,7 +190,7 @@
 		<property>instrumentation/nav[1]/nav-distance</property>
 		<scale>0.000539</scale>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.007</character-size>
+		<character-size>0.008</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -211,7 +211,7 @@
 		<format type="string">%s</format>
 		<property>instrumentation/nav/nav-id</property>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.005</character-size>
+		<character-size>0.006</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -232,7 +232,7 @@
 		<format type="string">%s</format>
 		<property>instrumentation/nav[1]/nav-id</property>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.005</character-size>
+		<character-size>0.006</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -253,7 +253,7 @@
 		<format type="string">%s</format>
 		<property>instrumentation/ndfull/route/wp[1]/id</property>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.005</character-size>
+		<character-size>0.006</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -274,7 +274,7 @@
 		<format type="string">%s</format>
 		<property>instrumentation/ndfull/route/wp[2]/id</property>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.005</character-size>
+		<character-size>0.006</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -295,7 +295,7 @@
 		<format type="string">%s</format>
 		<property>instrumentation/ndfull/route/wp[3]/id</property>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.005</character-size>
+		<character-size>0.006</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -316,7 +316,7 @@
 		<format type="string">%s</format>
 		<property>instrumentation/ndfull/route/wp[4]/id</property>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.005</character-size>
+		<character-size>0.006</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -337,7 +337,7 @@
 		<format type="string">%s</format>
 		<property>instrumentation/ndfull/route/wp[5]/id</property>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.005</character-size>
+		<character-size>0.006</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -358,7 +358,7 @@
 		<format type="string">%s</format>
 		<property>instrumentation/ndfull/route/wp[6]/id</property>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.005</character-size>
+		<character-size>0.006</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -379,7 +379,7 @@
 		<format type="string">%s</format>
 		<property>instrumentation/ndfull/route/wp[7]/id</property>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.005</character-size>
+		<character-size>0.006</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -400,7 +400,7 @@
 		<format type="string">%s</format>
 		<property>instrumentation/ndfull/route/wp[8]/id</property>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.005</character-size>
+		<character-size>0.006</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -421,7 +421,7 @@
 		<format type="string">%s</format>
 		<property>instrumentation/ndfull/route/wp[9]/id</property>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.005</character-size>
+		<character-size>0.006</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -442,7 +442,7 @@
 		<format type="string">%s</format>
 		<property>instrumentation/ndfull/route/wp[10]/id</property>
 		<font>B612/B612-Bold.ttf</font>
-		<character-size>0.005</character-size>
+		<character-size>0.006</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
