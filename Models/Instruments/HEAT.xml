@@ -4,7 +4,7 @@
 
 	<path>heat.ac</path>
 
-<!-- Come on only when there's atleast 9 volts of power -->
+<!-- Come on only when there's at least 9 volts of power -->
 
 	<animation>
 		<type>select</type>
@@ -43,7 +43,7 @@
 		<type type="string">number-value</type>
 		<format type="string">%3.0f°</format>
 		<property>controls/window-heat/temp</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -63,7 +63,7 @@
 		<type type="string">number-value</type>
 		<format type="string">%3.0f°</format>
 		<property>controls/ice/eng1/temp</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -83,7 +83,7 @@
 		<type type="string">number-value</type>
 		<format type="string">%3.0f°</format>
 		<property>controls/ice/eng2/temp</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -103,7 +103,7 @@
 		<type type="string">number-value</type>
 		<format type="string">%3.0f°</format>
 		<property>controls/ice/wing/temp</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>

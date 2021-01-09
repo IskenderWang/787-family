@@ -4,7 +4,7 @@
 
 	<path>elec.ac</path>
 
-<!-- Come on only when there's atleast 9 volts of power -->
+<!-- Come on only when there's at least 9 volts of power -->
 
 	<animation>
 		<type>select</type>
@@ -41,9 +41,9 @@
 		<alignment>center-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
-		<format type="string">%3.0f°</format>
+		<format type="string">%3.0f</format>
 		<property>engines/APU/rpm</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.01</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
