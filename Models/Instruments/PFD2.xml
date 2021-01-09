@@ -497,7 +497,7 @@
 
 <animation>
     <type>select</type>
-	<object-name>warn.4</object-name>
+	<object-name>warn4</object-name>
   	<condition>
 	<less-than-equals>
  	   	<property>controls/ice/wing/temp</property>

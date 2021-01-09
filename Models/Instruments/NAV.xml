@@ -245,8 +245,8 @@
 		<type type="string">number-value</type>
 		<format type="string">GS %3.0f</format>
 		<property>velocities/groundspeed-kt</property>
-		<font>courier-bold.txf</font>
-		<character-size>0.006</character-size>
+		<font>B612/B612-Bold.ttf</font>
+		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -266,8 +266,8 @@
 		<format type="string">TAS %3.0f</format>
 		<property>velocities/uBody-fps</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
-		<character-size>0.006</character-size>
+		<font>B612/B612-Bold.ttf</font>
+		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -287,8 +287,8 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>autopilot/route-manager/wp[0]/id</property>
-		<font>courier-bold.txf</font>
-		<character-size>0.007</character-size>
+		<font>B612/B612-Bold.ttf</font>
+		<character-size>0.008</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -305,10 +305,11 @@
 		<alignment>right-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
-		<format type="string">%3.0f°</format>
+        <!-- <format type="string">%3.0f°</format> -->
+		<format type="string">%3.0f</format>
 		<property>autopilot/route-manager/wp[0]/bearing-deg</property>
-		<font>courier-bold.txf</font>
-		<character-size>0.007</character-size>
+		<font>B612/B612-Bold.ttf</font>
+		<character-size>0.008</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -327,8 +328,8 @@
 		<type type="string">number-value</type>
 		<format type="string">%3.1f NM</format>
 		<property>autopilot/route-manager/wp[0]/dist</property>
-		<font>courier-bold.txf</font>
-		<character-size>0.007</character-size>
+		<font>B612/B612-Bold.ttf</font>
+		<character-size>0.008</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
 			<width type="int">32</width>
@@ -370,7 +371,7 @@
 		<type type="string">text-value</type>
 		<format type="string">VOR 1</format>
 		<property>instrumentation/nav[0]/in-range</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -390,7 +391,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/nav[0]/nav-id</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -411,7 +412,7 @@
 		<format type="string">%3.1fNM</format>
 		<property>instrumentation/nav[0]/nav-distance</property>
 		<scale>0.000539</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -431,7 +432,7 @@
 		<type type="string">text-value</type>
 		<format type="string">VOR 2</format>
 		<property>instrumentation/nav[1]/in-range</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -451,7 +452,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/nav[1]/nav-id</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -472,7 +473,7 @@
 		<format type="string">%3.1fNM</format>
 		<property>instrumentation/nav[1]/nav-distance</property>
 		<scale>0.000539</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -7605,7 +7606,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>controls/navigation/vnav/wp1id</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.004</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -7626,7 +7627,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>controls/navigation/vnav/wp2id</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.004</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -7647,7 +7648,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>controls/navigation/vnav/wp3id</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.004</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -7668,7 +7669,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>controls/navigation/vnav/wp4id</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.004</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -7689,7 +7690,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>controls/navigation/vnav/wp5id</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.004</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -7710,7 +7711,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>controls/navigation/vnav/wp1alt</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.006</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -7731,7 +7732,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>controls/navigation/vnav/wp2alt</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.006</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -7752,7 +7753,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>controls/navigation/vnav/wp3alt</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.006</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -7773,7 +7774,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>controls/navigation/vnav/wp4alt</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.006</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -7794,7 +7795,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>controls/navigation/vnav/wp5alt</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.006</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -8428,7 +8429,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>controls/navigation/vnav/wp1id</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.005</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -8449,7 +8450,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>controls/navigation/vnav/wp2id</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.005</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -8470,7 +8471,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>controls/navigation/vnav/wp3id</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.005</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -8491,7 +8492,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>controls/navigation/vnav/wp4id</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.005</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -8742,7 +8743,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[0]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -8764,7 +8765,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[0]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -8786,7 +8787,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[0]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -9005,7 +9006,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[1]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -9027,7 +9028,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[1]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -9049,7 +9050,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[1]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -9268,7 +9269,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[2]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -9290,7 +9291,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[2]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -9312,7 +9313,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[2]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -9531,7 +9532,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[3]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -9553,7 +9554,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[3]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -9575,7 +9576,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[3]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -9794,7 +9795,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[4]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -9816,7 +9817,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[4]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -9838,7 +9839,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[4]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -10057,7 +10058,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[5]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -10079,7 +10080,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[5]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -10101,7 +10102,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[5]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -10320,7 +10321,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[6]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -10342,7 +10343,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[6]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -10364,7 +10365,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[6]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -10583,7 +10584,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[7]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -10605,7 +10606,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[7]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -10627,7 +10628,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[7]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -10846,7 +10847,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[8]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -10868,7 +10869,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[8]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -10890,7 +10891,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[8]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -11109,7 +11110,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[9]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -11131,7 +11132,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[9]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -11153,7 +11154,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[9]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -11372,7 +11373,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[10]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -11394,7 +11395,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[10]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -11416,7 +11417,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[10]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -11635,7 +11636,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[11]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -11657,7 +11658,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[11]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -11679,7 +11680,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[11]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -11898,7 +11899,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[12]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -11920,7 +11921,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[12]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -11942,7 +11943,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[12]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -12161,7 +12162,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[13]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -12183,7 +12184,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[13]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -12205,7 +12206,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[13]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -12424,7 +12425,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[14]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -12446,7 +12447,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[14]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -12468,7 +12469,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[14]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -12687,7 +12688,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[15]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -12709,7 +12710,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[15]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -12731,7 +12732,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[15]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -12950,7 +12951,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[16]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -12972,7 +12973,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[16]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -12994,7 +12995,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[16]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -13213,7 +13214,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[17]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -13235,7 +13236,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[17]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -13257,7 +13258,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[17]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -13476,7 +13477,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[18]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -13498,7 +13499,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[18]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -13520,7 +13521,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[18]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -13739,7 +13740,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[19]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -13761,7 +13762,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[19]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -13783,7 +13784,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[19]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -14002,7 +14003,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[20]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -14024,7 +14025,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[20]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -14046,7 +14047,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[20]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -14265,7 +14266,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[21]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -14287,7 +14288,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[21]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -14309,7 +14310,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[21]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -14528,7 +14529,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[22]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -14550,7 +14551,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[22]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -14572,7 +14573,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[22]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -14791,7 +14792,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[23]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -14813,7 +14814,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[23]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -14835,7 +14836,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[23]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -15054,7 +15055,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[24]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -15076,7 +15077,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[24]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -15098,7 +15099,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[24]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -15317,7 +15318,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[25]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -15339,7 +15340,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[25]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -15361,7 +15362,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[25]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -15580,7 +15581,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[26]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -15602,7 +15603,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[26]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -15624,7 +15625,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[26]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -15843,7 +15844,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[27]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -15865,7 +15866,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[27]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -15887,7 +15888,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[27]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -16106,7 +16107,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[28]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -16128,7 +16129,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[28]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -16150,7 +16151,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[28]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -16369,7 +16370,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/mp[29]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -16391,7 +16392,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/mp[29]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -16413,7 +16414,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/mp[29]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -16634,7 +16635,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[0]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -16656,7 +16657,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[0]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -16678,7 +16679,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[0]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -16897,7 +16898,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[1]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -16919,7 +16920,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[1]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -16941,7 +16942,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[1]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -17160,7 +17161,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[2]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -17182,7 +17183,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[2]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -17204,7 +17205,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[2]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -17423,7 +17424,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[3]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -17445,7 +17446,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[3]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -17467,7 +17468,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[3]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -17686,7 +17687,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[4]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -17708,7 +17709,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[4]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -17730,7 +17731,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[4]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -17949,7 +17950,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[5]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -17971,7 +17972,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[5]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -17993,7 +17994,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[5]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -18212,7 +18213,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[6]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -18234,7 +18235,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[6]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -18256,7 +18257,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[6]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -18475,7 +18476,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[7]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -18497,7 +18498,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[7]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -18519,7 +18520,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[7]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -18738,7 +18739,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[8]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -18760,7 +18761,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[8]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -18782,7 +18783,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[8]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -19001,7 +19002,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[9]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -19023,7 +19024,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[9]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -19045,7 +19046,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[9]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -19264,7 +19265,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[10]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -19286,7 +19287,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[10]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -19308,7 +19309,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[10]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -19527,7 +19528,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[11]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -19549,7 +19550,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[11]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -19571,7 +19572,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[11]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -19790,7 +19791,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[12]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -19812,7 +19813,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[12]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -19834,7 +19835,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[12]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -20053,7 +20054,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[13]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -20075,7 +20076,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[13]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -20097,7 +20098,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[13]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -20316,7 +20317,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[14]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -20338,7 +20339,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[14]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -20360,7 +20361,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[14]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -20579,7 +20580,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[15]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -20601,7 +20602,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[15]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -20623,7 +20624,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[15]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -20842,7 +20843,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[16]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -20864,7 +20865,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[16]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -20886,7 +20887,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[16]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -21105,7 +21106,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[17]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -21127,7 +21128,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[17]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -21149,7 +21150,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[17]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -21368,7 +21369,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[18]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -21390,7 +21391,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[18]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -21412,7 +21413,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[18]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -21631,7 +21632,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[19]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -21653,7 +21654,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[19]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -21675,7 +21676,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[19]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -21892,7 +21893,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[20]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -21914,7 +21915,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[20]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -21936,7 +21937,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[20]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -22155,7 +22156,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[21]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -22177,7 +22178,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[21]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -22199,7 +22200,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[21]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -22418,7 +22419,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[22]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -22440,7 +22441,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[22]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -22462,7 +22463,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[22]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -22681,7 +22682,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[23]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -22703,7 +22704,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[23]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -22725,7 +22726,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[23]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -22944,7 +22945,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[24]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -22966,7 +22967,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[24]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -22988,7 +22989,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[24]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -23207,7 +23208,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[25]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -23229,7 +23230,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[25]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -23251,7 +23252,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[25]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -23470,7 +23471,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[26]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -23492,7 +23493,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[26]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -23514,7 +23515,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[26]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -23733,7 +23734,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[27]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -23755,7 +23756,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[27]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -23777,7 +23778,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[27]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -23996,7 +23997,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[28]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -24018,7 +24019,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[28]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -24040,7 +24041,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[28]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -24259,7 +24260,7 @@
 		<type type="string">text-value</type>
 		<format type="string">%s</format>
 		<property>instrumentation/mptcas/ai[29]/callsign</property>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -24281,7 +24282,7 @@
 		<format type="string">%3.0f ft</format>
 		<property>instrumentation/mptcas/ai[29]/altitude-ft</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>
@@ -24303,7 +24304,7 @@
 		<format type="string">%3.0f kts</format>
 		<property>instrumentation/mptcas/ai[29]/tas-kt</property>
 		<scale>0.5924838</scale>
-		<font>courier-bold.txf</font>
+		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.003</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
 		<font-resolution>

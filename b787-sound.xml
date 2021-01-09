@@ -1,13 +1,14 @@
 <?xml version="1.0"?>
-
 <PropertyList>
+
 <params>
 		<groundspeed-kt>velocities/groundspeed-kt</groundspeed-kt>
 		<airspeed-kt>velocities/airspeed-kt</airspeed-kt>
 </params>
+
 <fx>
 
-<!-- APU Sounds -->
+<!-- APU sounds -->
 
     <apu-start>
         <name>apu-strt</name>
@@ -138,7 +139,7 @@
         <volume>0.5</volume>
     </apu-shutdown2>    
 
-<!-- Engine External Sounds -->
+<!-- Engine external sounds -->
 
     <engine>
         <name>left n1 external</name>
@@ -300,7 +301,7 @@
         <max-dist>125.0</max-dist>
     </engine3>  
 
-<!-- Engine Internal Sounds -->
+<!-- Engine internal sounds -->
 
     <enginei>
         <name>internal left n1</name>
@@ -685,7 +686,8 @@
  <max-dist>100.0</max-dist>
 </announcement>
 
-<!-- Engine Surge -->
+<!-- Engine surge -->
+
     <surge>
         <name>Engine Surge</name>
         <path>Aircraft/787-family/Sounds/surge.wav</path>
@@ -708,7 +710,7 @@
         <max-dist>100</max-dist>
     </surge>
     
-<!-- Engine Explode -->
+<!-- Engine explode -->
 
     <explode0>
         <name>Explosion</name>
@@ -892,7 +894,7 @@
         <max-dist>200</max-dist>
     </master-warn>
 
-<!-- Seat Belt -->
+<!-- Seat belt -->
 
 <announcement>
 <name>seatbelt</name>
@@ -913,7 +915,7 @@
  <max-dist>100.0</max-dist>
 </announcement>
 
-<!-- No Smoking, Idiots! -->
+<!-- No smoking, idiots! -->
 
 <announcement>
 <name>no smoking</name>
@@ -934,7 +936,7 @@
  <max-dist>100.0</max-dist>
 </announcement>
 
-<!-- Other Sounds -->
+<!-- Other sounds -->
 
     <flap>
         <name>flaps</name>
@@ -1118,7 +1120,6 @@
         <max-dist>10.0</max-dist>
     </gear1>
 
-
 <!-- Wheels -->
 
 <wow>
@@ -1193,11 +1194,11 @@
 		<path>Aircraft/787-family/Sounds/v1.wav</path>
         <condition>
             <greater-than-equals>
-                <property alias="/params/airspeed-kt" />
+                <property alias="/params/airspeed-kt"/>
                 <property>instrumentation/fmc/vspeeds/V1</property>
             </greater-than-equals>
             <less-than>
-                <property alias="/params/airspeed-kt" />
+                <property alias="/params/airspeed-kt"/>
                 <property>instrumentation/fmc/vspeeds/VR</property>
             </less-than>
             <and>
@@ -1210,7 +1211,7 @@
             </and>
             <and>
                 <less-than>
-                    <property alias="/params/airspeed-kt" />
+                    <property alias="/params/airspeed-kt"/>
                     <property>/it-autoflight/internal/kts-predicted-5</property>
                 </less-than>
             </and>
@@ -1224,11 +1225,11 @@
         <path>Aircraft/787-family/Sounds/vr.wav</path>
         <condition>
             <greater-than-equals>
-                <property alias="/params/airspeed-kt" />
+                <property alias="/params/airspeed-kt"/>
                 <property>instrumentation/fmc/vspeeds/VR</property>
             </greater-than-equals>
             <less-than>
-                <property alias="/params/airspeed-kt" />
+                <property alias="/params/airspeed-kt"/>
                 <property>instrumentation/fmc/vspeeds/V2</property>
             </less-than>
             <and>
@@ -1240,7 +1241,7 @@
             </and>
             <and>
                 <less-than>
-                    <property alias="/params/airspeed-kt" />
+                    <property alias="/params/airspeed-kt"/>
                     <property>/it-autoflight/internal/kts-predicted-5</property>
                 </less-than>
             </and>
@@ -1259,21 +1260,20 @@
                 <value type="double">0</value>
             </greater-than>
             <greater-than-equals>
-                <property alias="/params/airspeed-kt" />
+                <property alias="/params/airspeed-kt"/>
                 <property>instrumentation/fmc/vspeeds/V2</property>
             </greater-than-equals>
             <and>
                 <less-than>
-                    <property alias="/params/airspeed-kt" />
+                    <property alias="/params/airspeed-kt"/>
                     <property>/it-autoflight/internal/kts-predicted-5</property>
                 </less-than>
             </and>
         </condition>
 </callout>
 
-<foo include="Sounds/copilot.xml" omit-node="y" />
-
-<foo include="Sounds/tcas.xml" omit-node="y" />
+<foo include="Sounds/copilot.xml" omit-node="y"/>
+<foo include="Sounds/tcas.xml" omit-node="y"/>
 
 </fx>
 
