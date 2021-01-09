@@ -41,7 +41,7 @@
 		<alignment>center-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
-		<format type="string">%3.0f°</format>
+		<format type="string">%3.0fC</format>
 		<property>controls/pneumatic/temp/hyd-sys2-elec</property>
 		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.01</character-size>
@@ -61,7 +61,7 @@
 		<alignment>center-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
-		<format type="string">%3.0f°</format>
+		<format type="string">%3.0fC</format>
 		<property>controls/pneumatic/temp/hyd-sys3-elec</property>
 		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.01</character-size>
@@ -81,7 +81,7 @@
 		<alignment>center-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
-		<format type="string">%3.0f°</format>
+		<format type="string">%3.0fC</format>
 		<property>controls/pneumatic/temp/hyd-sys0-eng</property>
 		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.01</character-size>
@@ -101,7 +101,7 @@
 		<alignment>center-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
-		<format type="string">%3.0f°</format>
+		<format type="string">%3.0fC</format>
 		<property>controls/pneumatic/temp/hyd-sys1-eng</property>
 		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.01</character-size>
@@ -121,7 +121,7 @@
 		<alignment>center-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
-		<format type="string">%3.0f°</format>
+		<format type="string">%3.0fC</format>
 		<property>controls/pneumatic/temp/fuel-pump-left</property>
 		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.01</character-size>
@@ -141,7 +141,7 @@
 		<alignment>center-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
-		<format type="string">%3.0f°</format>
+		<format type="string">%3.0fC</format>
 		<property>controls/pneumatic/temp/fuel-pump-center</property>
 		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.01</character-size>
@@ -161,7 +161,7 @@
 		<alignment>center-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
-		<format type="string">%3.0f°</format>
+		<format type="string">%3.0fC</format>
 		<property>controls/pneumatic/temp/fuel-pump-right</property>
 		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.01</character-size>

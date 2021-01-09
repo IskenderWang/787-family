@@ -41,7 +41,7 @@
 		<alignment>center-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
-		<format type="string">%3.0f°</format>
+		<format type="string">%3.0fC</format>
 		<property>controls/window-heat/temp</property>
 		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.007</character-size>
@@ -61,7 +61,7 @@
 		<alignment>center-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
-		<format type="string">%3.0f°</format>
+		<format type="string">%3.0fC</format>
 		<property>controls/ice/eng1/temp</property>
 		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.007</character-size>
@@ -81,7 +81,7 @@
 		<alignment>center-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
-		<format type="string">%3.0f°</format>
+		<format type="string">%3.0fC</format>
 		<property>controls/ice/eng2/temp</property>
 		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.007</character-size>
@@ -101,7 +101,7 @@
 		<alignment>center-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
-		<format type="string">%3.0f°</format>
+		<format type="string">%3.0fC</format>
 		<property>controls/ice/wing/temp</property>
 		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.007</character-size>
