@@ -16,7 +16,7 @@
 			</condition>
 		</enable>
 		<input>
-            <false/>
+			<false/>
 		</input>
 		<output>/controls/flight/ground-spoilers-armed</output>
 	</logic>
@@ -26,16 +26,16 @@
 		<enable>
 			<condition>
 				<equals>
-				    <property>/controls/flight/ground-spoilers-armed</property>
-				    <value type="bool">true</value>
+					<property>/controls/flight/ground-spoilers-armed</property>
+					<value type="bool">true</value>
 				</equals>
 				<equals>
-				    <property>/controls/engines/throttle-cmd-pid</property>
-				    <value type="double">0</value>
+					<property>/controls/engines/throttle-cmd-pid</property>
+					<value type="double">0</value>
 				</equals>
 				<not>
-				    <property>/controls/engines/engine[0]/reverser</property>
-				    <property>/controls/engines/engine[1]/reverser</property>
+					<property>/controls/engines/engine[0]/reverser</property>
+					<property>/controls/engines/engine[1]/reverser</property>
 				</not>
 				<property>/gear/gear[1]/wow</property>
 				<property>/gear/gear[2]/wow</property>
@@ -46,7 +46,7 @@
 			</condition>
 		</enable>
 		<input>
-            <true/>
+			<true/>
 		</input>
 		<output>/controls/flight/ground-spoilers</output>
 	</logic>
@@ -54,23 +54,23 @@
 	<logic>
 		<name>Ground spoilers disengage</name>
 		<enable>
-            <condition>
-                <or>
-                    <equals>
-                        <property>/controls/flight/ground-spoilers-armed</property>
-                        <value type="bool">false</value>
-                    </equals>
-                    <property>/controls/engines/engine[0]/reverser</property>
-                    <property>/controls/engines/engine[1]/reverser</property>
-                    <less-than>
-                        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
-                        <value>72</value>
-                    </less-than>
-                </or>
-            </condition>
+			<condition>
+				<or>
+					<equals>
+						<property>/controls/flight/ground-spoilers-armed</property>
+						<value type="bool">false</value>
+					</equals>
+					<property>/controls/engines/engine[0]/reverser</property>
+					<property>/controls/engines/engine[1]/reverser</property>
+					<less-than>
+						<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+						<value>72</value>
+					</less-than>
+				</or>
+			</condition>
 		</enable>
 		<input>
-            <false/>
+			<false/>
 		</input>
 		<output>/controls/flight/ground-spoilers</output>
 	</logic>
