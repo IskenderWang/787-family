@@ -50,30 +50,30 @@
 		</input>
 		<output>/controls/flight/ground-spoilers</output>
 	</logic>
-
-    <logic>
-        <name>Ground spoilers disengage</name>
+	
+	<logic>
+		<name>Ground spoilers disengage</name>
 		<enable>
-            <condition>
-                <or>
-                    <equals>
-                        <property>/controls/flight/ground-spoilers-armed</property>
-                        <value type="bool">false</value>
-                    </equals>
-                    <property>/controls/engines/engine[0]/reverser</property>
-                    <property>/controls/engines/engine[1]/reverser</property>
-                    <less-than>
-                        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
-                        <value>72</value>
-                    </less-than>
-                </or>
-            </condition>
+			<condition>
+				<or>
+				    <equals>
+					<property>/controls/flight/ground-spoilers-armed</property>
+					<value type="bool">false</value>
+				    </equals>
+				    <property>/controls/engines/engine[0]/reverser</property>
+				    <property>/controls/engines/engine[1]/reverser</property>
+				    <less-than>
+					<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+					<value>72</value>
+				    </less-than>
+                		</or>
+			</condition>
 		</enable>
 		<input>
             <false/>
 		</input>
 		<output>/controls/flight/ground-spoilers</output>
-    </logic>
+	</logic>
 
 	<filter>
 		<name>Main speedbrake controller</name>
