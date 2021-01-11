@@ -48,6 +48,21 @@
                 </signal>
                 <signal>
                     <type>float</type>
+                    <property type="string">/gear/gear[0]/tyre-smoke</property>
+                    <interpolation>linear</interpolation>
+                </signal>
+                <signal>
+                    <type>float</type>
+                    <property type="string">/gear/gear[1]/tyre-smoke</property>
+                    <interpolation>linear</interpolation>
+                </signal>
+                <signal>
+                    <type>float</type>
+                    <property type="string">/gear/gear[2]/tyre-smoke</property>
+                    <interpolation>linear</interpolation>
+                </signal>
+                <signal>
+                    <type>float</type>
                     <property type="string">/engines/engine/reverser-pos-norm</property>
                     <interpolation>linear</interpolation>
                 </signal>
