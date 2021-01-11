@@ -1259,6 +1259,10 @@
                 <property>/gear/gear/position-norm</property>
                 <value type="double">0</value>
             </greater-than>
+            <greater-than>
+                <property>/it-autoflight/internal/vs</property>
+                <value type="double">0</value>
+            </greater-than>
             <greater-than-equals>
                 <property alias="/params/airspeed-kt"/>
                 <property>instrumentation/fmc/vspeeds/V2</property>
