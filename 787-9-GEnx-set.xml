@@ -251,6 +251,7 @@
             <z-offset-m archive="y" type="double">125.0</z-offset-m>
         </config>
     </view>
+
     <view n="101">
         <name>Gear View</name>
         <type>lookfrom</type>
@@ -296,7 +297,7 @@
             <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
             <x-offset-m type="double">0</x-offset-m>
             <y-offset-m type="double">2.242</y-offset-m>
-            <z-offset-m type="double">-26.3</z-offset-m>
+            <z-offset-m type="double">-21.9652</z-offset-m>
             <pitch-offset-deg>-14.5</pitch-offset-deg>
             <default-field-of-view-deg type="double">105</default-field-of-view-deg>
         </config>
@@ -312,11 +313,11 @@
             <from-model-idx type="int">0</from-model-idx>
             <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
             <x-offset-m type="double">-0.955</x-offset-m>
-            <y-offset-m type="double">1.75</y-offset-m>
-            <z-offset-m type="double">-26.9902</z-offset-m>
+            <y-offset-m type="double">1.8</y-offset-m>
+            <z-offset-m type="double">-23.2902</z-offset-m>
             <pitch-offset-deg>-48.6</pitch-offset-deg>
             <heading-offset-deg>48.6</heading-offset-deg>
-            <default-field-of-view-deg type="double">75</default-field-of-view-deg>
+            <default-field-of-view-deg type="double">45.9</default-field-of-view-deg>
         </config>
     </view>
 
@@ -330,10 +331,10 @@
             <from-model-idx type="int">0</from-model-idx>
             <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
             <x-offset-m type="double">0</x-offset-m>
-            <y-offset-m type="double">2.4</y-offset-m>
-            <z-offset-m type="double">-27.3</z-offset-m>
+            <y-offset-m type="double">2.2</y-offset-m>
+            <z-offset-m type="double">-22.95167</z-offset-m>
             <pitch-offset-deg>-90</pitch-offset-deg>
-            <default-field-of-view-deg type="double">37</default-field-of-view-deg>
+            <default-field-of-view-deg type="double">18</default-field-of-view-deg>
         </config>
     </view>
 
@@ -347,8 +348,8 @@
             <from-model-idx type="int">0</from-model-idx>
             <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
             <x-offset-m type="double">0</x-offset-m>
-            <y-offset-m type="double">1.5</y-offset-m>
-            <z-offset-m type="double">26.0517</z-offset-m>
+            <y-offset-m type="double">1.8</y-offset-m>
+            <z-offset-m type="double">-22.45167</z-offset-m>
             <pitch-offset-deg>53.1</pitch-offset-deg>
             <default-field-of-view-deg type="double">70</default-field-of-view-deg>
         </config>
@@ -375,8 +376,8 @@
             <right-direction-deg type="double">270</right-direction-deg>
             <front-right-direction-deg type="double">315</front-right-direction-deg>
             <x-offset-m type="double">0.603</x-offset-m>
-            <y-offset-m type="double">2.08</y-offset-m>
-            <z-offset-m type="double">-26.2</z-offset-m>
+            <y-offset-m type="double">2.242</y-offset-m>
+            <z-offset-m type="double">-22.612</z-offset-m>
             <pitch-offset-deg>-10.3</pitch-offset-deg>
         </config>
         <dynamic>
