@@ -71,6 +71,9 @@
                     <property type="string">/sim/systems/wingflexer/z-m</property>
                     <interpolation>linear</interpolation>
                 </signal>
+				<signal>
+                    <type>double</type><property>systems/shake/shaking</property>
+               </signal>
             </config>
         </flight-recorder>
     </sim>
