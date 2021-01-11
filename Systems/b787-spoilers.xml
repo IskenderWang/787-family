@@ -57,14 +57,14 @@
 			<condition>
 				<or>
 				    <equals>
-					<property>/controls/flight/ground-spoilers-armed</property>
-					<value type="bool">false</value>
+                        <property>/controls/flight/ground-spoilers-armed</property>
+                        <value type="bool">false</value>
 				    </equals>
 				    <property>/controls/engines/engine[0]/reverser</property>
 				    <property>/controls/engines/engine[1]/reverser</property>
 				    <less-than>
-					<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
-					<value>72</value>
+                        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                        <value>72</value>
 				    </less-than>
 				</or>
 			</condition>
