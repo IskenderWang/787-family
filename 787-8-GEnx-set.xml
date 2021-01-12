@@ -551,8 +551,8 @@
 				<desc>Set idle thrust</desc>
 			</key>
 			<key>
-            	<name>r</name>
-            	<desc>Set TOGA thrust</desc>
+                <name>r</name>
+                <desc>Set TOGA thrust</desc>
 			</key>
 			<key>
 				<name>Ctrl-f</name>

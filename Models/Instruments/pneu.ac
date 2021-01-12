@@ -9,7 +9,7 @@ kids 1
 OBJECT poly
 name "pneu"
 loc 0 -0.134981 -0.240537
-texture "presure.png"
+texture "pressure.png"
 crease 45.000000
 numvert 4
 0 0.213494 0.372888
