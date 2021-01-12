@@ -11,7 +11,7 @@ setprop("/controls/autobrake/setting", 0);
 
 var absetting = getprop("/controls/autobrake/setting");
 
-if ((getprop("/velocities/airspeed-kt") >= 40) and (getprop("gear/gear[0]/rollspeed-ms") > 5)) {
+if ((getprop("/velocities/airspeed-kt") >= 40) and (getprop("/gear/gear[0]/rollspeed-ms") > 5)) {
 
 # ABS LOW 1
 if (absetting == 1) {
@@ -55,6 +55,10 @@ setprop("controls/gear/brake-right", 1);
 me.fullthrottle = 0;
 }
 
+}
+
+if (getprop("/velocities/airspeed-kt") < 40) {
+    setprop("/controls/autobrake/setting", 0);
 }
 
 }

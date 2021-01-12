@@ -1,9 +1,0 @@
-After discovering that my own mistake with adding one seemingly "missing" piece of the "Aerodynamic G Forces" section of the XML for the 787-8 into the -9 was what caused its wingflex to become unequal, I came to a realization – that the 787-9 from Github and the -8 from FGAddon were using two different frameworks for wing flex: 1) a more static approach with JSBsim's CLalpha library (what the -9 was using) & 2) what's thought to be a more dynamic and realistic wing flex generating module dedicated solely to that task, called Wingflexer (used in the more up-to-date -8).
-
-Clearly, it's best to not mix the two, especially not unequally so to not receive wonky results. If, for whatever reason, anyone is interested in the "legacy" XML file that uses the CLalpha version of the wing flex, it is available for you to use here. Having that extra choice might make some people happy, who knows!
-
-To test it, simply remove the -cl from the end of the title and then move and replace the main 787-9.xml file in Models. The other file, 787-9-wf.xml, is actually the default I have switched the -9 to (so identical to the main 787-9.xml if you change nothing), and is intended as a backup for if you do that and then wish to go back after replacing it earlier. Thanks for reading, and have fun!
-
-If you'd like more info on what I'm talking about, have a look at this page: http://wiki.flightgear.org/Howto:Implement_wing_flex 
-
-– IskenderWang

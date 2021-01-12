@@ -71,7 +71,7 @@ if (getprop("/controls/window-heat/temp") < 0) caution = 1;
 
 ## Mach Trim Error
 
-if (getprop("/controls/fbw/active") != 1) caution = 1;
+## if (getprop("/controls/fbw/active") != 1) caution = 1;
  
 ## Low (not yet critical) Fuel
 

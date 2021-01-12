@@ -544,35 +544,43 @@
 			<title>Boeing 787-8</title>
 			<key>
 				<name>Delete</name>
-				<desc>toggle thrust reversers</desc>
+				<desc>Toggle thrust reversers</desc>
+			</key>
+			<key>
+				<name>e</name>
+				<desc>Set idle thrust</desc>
+			</key>
+			<key>
+            	<name>r</name>
+            	<desc>Set TOGA thrust</desc>
 			</key>
 			<key>
 				<name>Ctrl-f</name>
-				<desc>Toggle FBW Override</desc>
+				<desc>Toggle FBW override</desc>
 			</key>
 			<key>
 				<name>Ctrl-y</name>
-				<desc>Toggle Yaw Damper</desc>
+				<desc>Toggle yaw damper</desc>
 			</key>
 			<key>
 				<name>Ctrl-b</name>
-				<desc>cycle speedbrake lever setting</desc>
+				<desc>Cycle speedbrake lever setting</desc>
 			</key>
 			<key>
 				<name>Ctrl-k</name>
-				<desc>arm/disarm ground spoilers</desc>
+				<desc>Arm/disarm ground spoilers</desc>
 			</key>
 			<key>
 				<name>w</name>
-				<desc>walk forward toward view direction</desc>
+				<desc>Walk forward toward view direction</desc>
 			</key>
 			<key>
 				<name>W</name>
-				<desc>run forward toward view direction</desc>
+				<desc>Run forward toward view direction</desc>
 			</key>
 			<key>
 				<name>s</name>
-				<desc>walk backward from view direction</desc>
+				<desc>Walk backward from view direction</desc>
 			</key>
 		</help>
 
@@ -598,20 +606,20 @@
             <float n="2" alias="gear/gear[2]/position-norm"/>
             <float n="3" alias="engines/engine[0]/n1"/>
             <float n="4" alias="engines/engine[1]/n1"/>
-            <float n="5" alias="fdm/jsbsim/aero/coefficient/CLalpha"/>
-            <float n="6" alias="/fdm/jsbsim/fcs/aileron-fbw-output"/>
+            <float n="5" alias="sim/systems/wingflexer/z-m"/>
+            <float n="6" alias="/fdm/jsbsim/fcs/aileron-cmd-norm"/>
             <float n="7" alias="surface-positions/flap-pos-norm"/>
             <float n="8" alias="controls/flight/elevator-trim"/>
-            <float n="9" alias="/fdm/jsbsim/fcs/elevator-fbw-output"/>
-            <float n="10" alias="/fdm/jsbsim/fcs/rudder-fbw-output"/>
+            <float n="9" alias="/fdm/jsbsim/fcs/elevator-cmd-norm"/>
+            <float n="10" alias="/fdm/jsbsim/fcs/rudder-cmd-norm"/>
             <float n="11" alias="surface-positions/speedbrake-pos-norm"/>
             <float n="12" alias="controls/switches/contrails"/>
-            <float n="13" alias="gear/gear[0]/compression-norm"/>
-            <float n="14" alias="gear/gear[1]/compression-norm"/>
-            <float n="15" alias="gear/gear[2]/compression-norm"/>
-            <float n="16" alias="gear/gear[0]/rollspeed-ms"/>
-            <float n="17" alias="gear/gear[1]/rollspeed-ms"/>
-            <float n="18" alias="gear/gear[2]/rollspeed-ms"/>
+            <float n="13" alias="/gear/gear[0]/compression-norm"/>
+            <float n="14" alias="/gear/gear[1]/compression-norm"/>
+            <float n="15" alias="/gear/gear[2]/compression-norm"/>
+            <float n="16" alias="/gear/gear[0]/rollspeed-ms"/>
+            <float n="17" alias="/gear/gear[1]/rollspeed-ms"/>
+            <float n="18" alias="/gear/gear[2]/rollspeed-ms"/>
             <float n="19" alias="engines/engine[0]/reverser-pos-norm"/>
             <float n="20" alias="engines/engine[1]/reverser-pos-norm"/>
 
@@ -830,27 +838,6 @@
 		</engine>
 	</engines>
 
-	<gear>
-		<gear n="0">
-			<tyre-smoke type="int">0</tyre-smoke>
-			<sprayspeed-ms type="double">0</sprayspeed-ms>
-			<spray-density type="double">0</spray-density>
-			<caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
-		</gear>
-		<gear n="1">
-			<tyre-smoke type="int">0</tyre-smoke>
-			<sprayspeed-ms type="double">0</sprayspeed-ms>
-			<spray-density type="double">0</spray-density>
-			<caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
-		</gear>
-		<gear n="2">
-			<tyre-smoke type="int">0</tyre-smoke>
-			<sprayspeed-ms type="double">0</sprayspeed-ms>
-			<spray-density type="double">0</spray-density>
-			<caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
-		</gear>
-	</gear>
-
 	<instrumentation>
 		<ndfull>
 			<active type="int">0</active>
@@ -937,6 +924,34 @@
 					 reversethrust.togglereverser();
 					</script>
 				</binding>
+			</key>
+			<key n="101">
+                <name>e</name>
+                <desc>Set idle thrust</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        if (getprop("/it-autoflight/input/athr") == 1) {
+                            setprop("/it-autoflight/input/athr", 0);
+                        }
+                        setprop("controls/engines/engine[0]/throttle", 0);
+                        setprop("controls/engines/engine[1]/throttle", 0);
+                    </script>
+                </binding>
+            </key>
+            <key n="114">
+                <name>r</name>
+                <desc>Set TOGA thrust</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        if (getprop("/it-autoflight/input/athr") == 1) {
+                            setprop("/it-autoflight/input/athr", 0);
+                        }
+                        setprop("controls/engines/engine[0]/throttle", 1);
+                        setprop("controls/engines/engine[1]/throttle", 1);
+                    </script>
+                </binding>
 			</key>
 			<key n="6">
 				<name>Ctrl-f</name>
@@ -1108,6 +1123,7 @@
 			<file>Aircraft/Instruments-3d/cdu/boeing.nas</file>
 		</cdu>
 		<b787>
+			<file>Aircraft/787-family/Nasal/brakesystem.nas</file>
 			<file>Aircraft/787-family/Nasal/pneumatics.nas</file>
 			<file>Aircraft/787-family/Nasal/hydraulics.nas</file>
 			<file>Aircraft/787-family/Nasal/doors.nas</file>
@@ -1126,6 +1142,7 @@
 			<file>Aircraft/787-family/Nasal/mfd-navigation.nas</file>
 			<file>Aircraft/787-family/Nasal/nd-fullscreen.nas</file>
 			<file>Aircraft/787-family/Nasal/tcas.nas</file>
+			<!-- <file>Aircraft/787-family/Nasal/fbw.nas</file> -->
 			<file>Aircraft/787-family/Nasal/vnav.nas</file>
 			<file>Aircraft/787-family/Nasal/efb.nas</file>
 			<file>Aircraft/787-family/Nasal/chartsDB.nas</file>
@@ -1154,7 +1171,9 @@
         <dialogs>
             <file>Aircraft/787-family/Nasal/radio.nas</file>
         </dialogs>
-<!-- Animations Creators -->
+
+<!-- Animation creators -->
+
 		<helpers>
 <!--			<file>Aircraft/787-family/Devel/wxradar-echo-animations.nas</file>
 			<file>Aircraft/787-family/Devel/wxradar-pixel-animations.nas</file>

@@ -310,7 +310,7 @@
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">text-value</type>
 		<format type="string">%3.0f</format>
-		<property>gear/gear[1]/rollspeed-ms</property>
+		<property>/gear/gear[1]/rollspeed-ms</property>
   <truncate type="bool">false</truncate>
   <font type="string">Helvetica.txf</font>
   <draw-text type="bool">true</draw-text>
@@ -454,7 +454,7 @@
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">text-value</type>
 		<format type="string">%3.0f</format>
-		<property>gear/gear[2]/rollspeed-ms</property>
+		<property>/gear/gear[2]/rollspeed-ms</property>
   <truncate type="bool">false</truncate>
   <font type="string">Helvetica.txf</font>
   <draw-text type="bool">true</draw-text>
@@ -598,7 +598,7 @@
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">text-value</type>
 		<format type="string">%3.0f</format>
-		<property>gear/gear/rollspeed-ms</property>
+		<property>/gear/gear[0]/rollspeed-ms</property>
   <truncate type="bool">false</truncate>
   <font type="string">Helvetica.txf</font>
   <draw-text type="bool">true</draw-text>

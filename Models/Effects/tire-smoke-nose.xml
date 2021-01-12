@@ -15,8 +15,10 @@
         </offsets>
 
         <condition>
+            <or>
                 <property>gear/gear[0]/tyre-smoke</property>
-                <value>1</value>
+                <property>gear/brake-smoke</property>
+            </or>
         </condition>
 
         <attach>world</attach>
@@ -46,8 +48,7 @@
 
         <counter>
             <particles-per-sec>
-				<property>velocities/speed-down-fps</property>
-				<factor>1</factor>
+                <value>25</value>
                 <spread>50</spread>
             </particles-per-sec>
         </counter>

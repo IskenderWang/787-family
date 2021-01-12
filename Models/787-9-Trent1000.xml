@@ -707,23 +707,6 @@
 </animation>
 
 
-<animation>
-	<type>spin</type>
-	<object-name>R.Wheels.B</object-name>
-	<property>gear/gear[4]/rollspeed-ms</property>
-	<factor>10</factor>
-	<center>
-		<x-m>2.673</x-m>
-		<y-m>4.88</y-m>
-		<z-m>-3.595</z-m>
-	</center>
-	<axis>
-		<x>0</x>
-		<y>-1</y>
-		<z>0</z>
-	</axis>
-</animation>
-
 <!-- Left Main Gear -->
 
 <animation>
@@ -1218,7 +1201,7 @@
 <animation>
   <type>rotate</type>
   <object-name>lhobaileron</object-name>
-  <property>controls/flight/aileron</property>
+  <property>/fdm/jsbsim/fcs/aileron-cmd-norm</property>
   <factor>20</factor>
   <offset-deg>0</offset-deg>
   <center>
@@ -1236,7 +1219,7 @@
 <animation>
   <type>rotate</type>
   <object-name>lhibaileron</object-name>
-  <property>controls/flight/aileron</property>
+  <property>/fdm/jsbsim/fcs/aileron-cmd-norm</property>
   <factor>10</factor>
   <offset-deg>0</offset-deg>
   <center>
@@ -1316,7 +1299,7 @@
 <animation>
   <type>rotate</type>
   <object-name>rhobaileron</object-name>
-  <property>controls/flight/aileron</property>
+  <property>/fdm/jsbsim/fcs/aileron-cmd-norm</property>
   <factor>-20</factor>
   <offset-deg>0</offset-deg>
   <center>
@@ -1334,7 +1317,7 @@
 <animation>
   <type>rotate</type>
   <object-name>rhibaileron</object-name>
-  <property>controls/flight/aileron</property>
+  <property>/fdm/jsbsim/fcs/aileron-cmd-norm</property>
   <factor>-10</factor>
   <offset-deg>0</offset-deg>
   <center>
@@ -1551,7 +1534,7 @@
 <animation>
   <type>rotate</type>
   <object-name>lhelevator</object-name>
-  <property>controls/flight/elevator</property>
+  <property>/fdm/jsbsim/fcs/elevator-cmd-norm</property>
   <factor>20</factor>
   <offset-deg>0</offset-deg>
   <center>
@@ -1569,7 +1552,7 @@
 <animation>
   <type>rotate</type>
   <object-name>rhelevator</object-name>
-  <property>controls/flight/elevator</property>
+  <property>/fdm/jsbsim/fcs/elevator-cmd-norm</property>
   <factor>20</factor>
   <offset-deg>0</offset-deg>
   <center>
@@ -1588,7 +1571,7 @@
   <type>rotate</type>
   <object-name>rudder</object-name>
   <object-name>lightedrudder</object-name>
-  <property>controls/flight/rudder</property>
+  <property>/fdm/jsbsim/fcs/rudder-cmd-norm</property>
   <factor>20</factor>
   <offset-deg>0</offset-deg>
   <center>
@@ -1882,7 +1865,7 @@
 <animation>
   <type>rotate</type>
   <object-name>lhobspoilerb</object-name>
-  <property>controls/flight/aileron</property>
+  <property>/fdm/jsbsim/fcs/aileron-cmd-norm</property>
   <interpolation>
     <entry>
       <ind>-1</ind>
@@ -1994,7 +1977,7 @@
 <animation>
   <type>rotate</type>
   <object-name>rhobspoilerb</object-name>
-  <property>controls/flight/aileron</property>
+  <property>/fdm/jsbsim/fcs/aileron-cmd-norm</property>
   <interpolation>
     <entry>
       <ind>-1</ind>
@@ -2294,7 +2277,7 @@
 </model>
 
 <model>
- <path>Aircraft/787-family/Models/Effects/wet-runway.xml</path>
+ <path>Aircraft/787-family/Models/Effects/wet-runway-nose.xml</path>
  <name>tyre-smoke-n</name>
  <offsets>
   <x-m>-20.56</x-m>
@@ -2462,7 +2445,7 @@
          <object-name>NGearStrut</object-name>
          <object-name>NoseWheel</object-name>
          <object-name>choke_nose</object-name>
-        <property>gear/gear[0]/compression-norm</property>
+        <property>/gear/gear[0]/compression-norm</property>
         <interpolation>
             <entry><ind>0.00</ind><dep>0</dep></entry>
             <entry><ind>0.32</ind><dep>0.25</dep></entry>
@@ -2547,7 +2530,7 @@
         <object-name>LeftGearCompressor1</object-name>
         <object-name>LeftGearBaseRod</object-name>
         <object-name>choke_left</object-name>
-        <property>gear/gear[1]/compression-norm</property>
+        <property>/gear/gear[1]/compression-norm</property>
         <interpolation>
             <entry><ind>0.00</ind><dep>0</dep></entry>
             <entry><ind>1</ind><dep>1.2</dep></entry>
@@ -2562,7 +2545,7 @@
     <animation>
         <type>rotate</type>
         <object-name>LeftGearCompressor1</object-name>
-        <property>gear/gear[1]/compression-norm</property>
+        <property>/gear/gear[1]/compression-norm</property>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
             <entry><ind>0.5</ind><dep>15</dep></entry>
@@ -2582,7 +2565,7 @@
     <animation>
         <type>rotate</type>
         <object-name>LeftGearCompressor2</object-name>
-        <property>gear/gear[1]/compression-norm</property>
+        <property>/gear/gear[1]/compression-norm</property>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
             <entry><ind>0.5</ind><dep>-15</dep></entry>
@@ -2672,7 +2655,7 @@
         <object-name>RightGearCompressor1</object-name>
         <object-name>RightGearBaseRod</object-name>
         <object-name>choke_right</object-name>
-        <property>gear/gear[2]/compression-norm</property>
+        <property>/gear/gear[2]/compression-norm</property>
         <interpolation>
             <entry><ind>0.00</ind><dep>0</dep></entry>
             <entry><ind>1</ind><dep>1.2</dep></entry>
@@ -2687,7 +2670,7 @@
     <animation>
         <type>rotate</type>
         <object-name>RightGearCompressor1</object-name>
-        <property>gear/gear[2]/compression-norm</property>
+        <property>/gear/gear[2]/compression-norm</property>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
             <entry><ind>0.5</ind><dep>15</dep></entry>
@@ -2707,7 +2690,7 @@
     <animation>
         <type>rotate</type>
         <object-name>RightGearCompressor2</object-name>
-        <property>gear/gear[2]/compression-norm</property>
+        <property>/gear/gear[2]/compression-norm</property>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
             <entry><ind>0.5</ind><dep>-15</dep></entry>
@@ -2753,7 +2736,7 @@
         <object-name>LeftGearBaseRod</object-name>
         <object-name>LeftWheelFront</object-name>
         <object-name>LeftWheelBack</object-name>
-        <property>gear/gear[1]/compression-norm</property>
+        <property>/gear/gear[1]/compression-norm</property>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
             <entry><ind>0.15</ind><dep>20</dep></entry>
@@ -2797,7 +2780,7 @@
         <object-name>RightGearBaseRod</object-name>
         <object-name>RightWheelFront</object-name>
         <object-name>RightWheelBack</object-name>
-        <property>gear/gear[2]/compression-norm</property>
+        <property>/gear/gear[2]/compression-norm</property>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
             <entry><ind>0.15</ind><dep>20</dep></entry>
@@ -2819,7 +2802,7 @@
     <animation>
         <type>spin</type>
         <object-name>NoseWheel</object-name>
-        <property>gear/gear[0]/rollspeed-ms</property>
+        <property>/gear/gear[0]/rollspeed-ms</property>
         <factor>10</factor>
         <axis>
             <x>0</x>
@@ -2837,7 +2820,7 @@
         <type>spin</type>
         <object-name>LeftWheelFront</object-name>
         <object-name>RightWheelFront</object-name>
-        <property>gear/gear[0]/rollspeed-ms</property>
+        <property>/gear/gear[1]/rollspeed-ms</property>
         <factor>10</factor>
         <axis>
             <x>0</x>
@@ -2855,7 +2838,7 @@
         <type>spin</type>
         <object-name>LeftWheelBack</object-name>
         <object-name>RightWheelBack</object-name>
-        <property>gear/gear[0]/rollspeed-ms</property>
+        <property>/gear/gear[2]/rollspeed-ms</property>
         <factor>10</factor>
         <axis>
             <x>0</x>

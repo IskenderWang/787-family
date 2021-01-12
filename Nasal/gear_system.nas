@@ -63,14 +63,14 @@ var g_tree = "/systems/gears/";
 				
 			## Compression based failures
 			
-			### Burst tires if compression exceeds 1.5 (wow, that's a hard landing!)
+			### Burst tires if compression exceeds 5 (whoa there)
 			
-			if (getprop("/fdm/jsbsim/gear/unit[" ~ n ~ "]/compression-ft") >= 1.8)
+			if (getprop("/fdm/jsbsim/gear/unit[" ~ n ~ "]/compression-ft") >= 5)
 				setprop("/controls/gear-failures/gear[" ~ n ~ "]/burst", 1);
 			
-			### Break off if compression exceeds 2.2 (DUDE, THAT'S LIKE A CRASH!)
+			### Break off if compression exceeds 10 (oh my days)
 			
-			if (getprop("/fdm/jsbsim/gear/unit[" ~ n ~ "]/compression-ft") >= 3)
+			if (getprop("/fdm/jsbsim/gear/unit[" ~ n ~ "]/compression-ft") >= 10)
 				setprop("/controls/gear-failures/gear[" ~ n ~ "]/break", 1);
 				
 			## Wow and Speed based failures
