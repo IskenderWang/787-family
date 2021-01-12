@@ -5,7 +5,7 @@
   <model>        
     <livery>
 		<name type="string">Boeing</name>
-      <texture>Liveries-9/BOE.png</texture>
+      <texture>BOE-9.png</texture>
     </livery>
     <lights>
       <texture>Liveries-9/BOE2-Lights.png</texture>
