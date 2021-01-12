@@ -33,7 +33,7 @@
 		<engine>genx-1b-8</engine>
 
 		<model>
-			<path>Aircraft/787-family/Models/787-8.xml</path>
+			<path>Aircraft/787-family/Models/787-8-GEnx.xml</path>
 			<fallback-model-index type="int">253</fallback-model-index>
 
             <livery>
@@ -48,12 +48,6 @@
 				<ias-bug-kt-norm type="double">0</ias-bug-kt-norm>
 				<mach-bug-kt-norm type="double">0</mach-bug-kt-norm>
 			</b787>
-            <door>
-                <position-x-m type="float">-19.6</position-x-m>
-                <position-y-m type="float">-2.6</position-y-m>
-                <position-z-m type="float">1</position-z-m>
-                <jetway-hood-deg type="float">0</jetway-hood-deg>
-            </door>
 
 			<pushback>
 				<kp type="double">300</kp>
