@@ -8,8 +8,8 @@ After gitorious closed down and former maintainer Omega95 retired, islandmonkey 
 This package contains the following models:
 -------
 
-- 787-8 (RR Trent)
-- 787-9 (RR Trent and GEnx)
+- 787-8 (GEnx & RR Trent)
+- 787-9 (GEnx & RR Trent)
 
 Install
 -------
