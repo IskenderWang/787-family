@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <!-- IT-AUTOFLIGHT -->
-<!-- Copyright (c) 2020 Josh Davidson (Octal450) -->
+<!-- Copyright (c) 2021 Josh Davidson (Octal450) -->
 
 <PropertyList>
 	
@@ -531,23 +531,17 @@
 			<condition>
 				<equals>
 					<property>/it-autoflight/input/use-nav2-radio</property>
-					<value>0</value>
+					<value>1</value>
 				</equals>
 			</condition>
-			<property>/instrumentation/nav[0]/radials/target-auto-hdg-deg</property>
+			<property>/instrumentation/nav[1]/radials/target-auto-hdg-deg</property>
 			<offset>
 				<property>/orientation/heading-deg</property>
 				<scale>-1.0</scale>
 			</offset>
 		</input>
 		<input>
-			<condition>
-				<equals>
-					<property>/it-autoflight/input/use-nav2-radio</property>
-					<value>1</value>
-				</equals>
-			</condition>
-			<property>/instrumentation/nav[1]/radials/target-auto-hdg-deg</property>
+			<property>/instrumentation/nav[0]/radials/target-auto-hdg-deg</property>
 			<offset>
 				<property>/orientation/heading-deg</property>
 				<scale>-1.0</scale>
@@ -570,23 +564,21 @@
 	</filter>
 	
 	<filter>
-		<name>Nav1 G/S FPM Calc</name>
+		<name>Nav G/S FPM Calc</name>
 		<debug>false</debug>
 		<type>gain</type>
 		<gain>1.0</gain>
+		<input>
+			<condition>
+				<equals>
+					<property>/it-autoflight/input/use-nav2-radio</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<property>/instrumentation/nav[1]/gs-rate-of-climb-fpm</property>
+		</input>
 		<input>/instrumentation/nav[0]/gs-rate-of-climb-fpm</input>
-		<output>/it-autoflight/internal/nav1-rate-of-climb-fpm</output>
-		<min>-1200</min>
-		<max>0</max>
-	</filter>
-	
-	<filter>
-		<name>Nav2 G/S FPM Calc</name>
-		<debug>false</debug>
-		<type>gain</type>
-		<gain>1.0</gain>
-		<input>/instrumentation/nav[1]/gs-rate-of-climb-fpm</input>
-		<output>/it-autoflight/internal/nav2-rate-of-climb-fpm</output>
+		<output>/it-autoflight/internal/nav-rate-of-climb-fpm</output>
 		<min>-1200</min>
 		<max>0</max>
 	</filter>
@@ -1421,33 +1413,12 @@
 		</input>
 		<input>
 			<condition>
-				<and>
-					<equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>2</value>
-					</equals>
-					<equals>
-						<property>/it-autoflight/input/use-nav2-radio</property>
-						<value>0</value>
-					</equals>
-				</and>
+				<equals>
+					<property>/it-autoflight/output/vert</property>
+					<value>2</value>
+				</equals>
 			</condition>
-			<property>/it-autoflight/internal/nav1-rate-of-climb-fpm</property>
-		</input>
-		<input>
-			<condition>
-				<and>
-					<equals>
-						<property>/it-autoflight/output/vert</property>
-						<value>2</value>
-					</equals>
-					<equals>
-						<property>/it-autoflight/input/use-nav2-radio</property>
-						<value>1</value>
-					</equals>
-				</and>
-			</condition>
-			<property>/it-autoflight/internal/nav2-rate-of-climb-fpm</property>
+			<property>/it-autoflight/internal/nav-rate-of-climb-fpm</property>
 		</input>
 		<output>/it-autoflight/internal/target-common-fpm</output>
 	</filter>
