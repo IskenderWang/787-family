@@ -19,6 +19,9 @@
         <object-name>lhnosedoor</object-name>
         <object-name>lhobdoor</object-name>
         <object-name>lhreverser</object-name>
+        <object-name>lhelevator</object-name>
+        <object-name>lstab</object-name>
+        <object-name>lstab.lead2</object-name>
         <object-name>lreverse</object-name>
         <object-name>mgearbay</object-name>
         <object-name>no1enge</object-name>
@@ -34,6 +37,9 @@
         <object-name>rhnosedoor</object-name>
         <object-name>rhobdoor</object-name>
         <object-name>rhreverser</object-name>
+        <object-name>rhelevator</object-name>
+        <object-name>rstab</object-name>
+        <object-name>rstab.lead2</object-name>
         <object-name>rreverse</object-name>
         <object-name>rudder</object-name>
         <object-name>cargo_door</object-name>
@@ -159,8 +165,6 @@
         <object-name>rhgearltorque</object-name>
         <object-name>rhgearutorque</object-name>
         <object-name>Rknuckle</object-name>
-        <object-name>lstab.lead</object-name>
-        <object-name>rstab.lead</object-name>
         <object-name>lhibslat_</object-name>
         <object-name>lhobslat_a</object-name>
         <object-name>lhobslat_b</object-name>
