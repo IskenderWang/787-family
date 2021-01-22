@@ -190,7 +190,8 @@
 <!-- Flight Deck -->
 
 <model>
- <path>FlightDeck/b787.flightdeck.xml</path>
+    <name>flightdeck</name>
+    <path>FlightDeck/b787.flightdeck.xml</path>
 </model>
 
 <!-- Landing Gear Animations -->
@@ -2930,10 +2931,6 @@
     </animation>
 
     <!-- Ground Stuff -->
-
-<model>
-	<path>Ground/b787-shadow.xml</path>
-</model>
 
 <model>
 	<name>ground-lights</name>

@@ -2939,10 +2939,6 @@
     <!-- Ground Stuff -->
 
 <model>
-    <path>Ground/b787-shadow.xml</path>
-</model>
-
-<model>
 	<name>ground-lights</name>
 	<path>Ground/b787-ground-lights.xml</path>
 </model>
