@@ -2,104 +2,98 @@
 <PropertyList>
 
   <path>787-9-Trent1000.ac</path>
-
-	<!-- Lightmaps -->
-	<effect>
-		<inherits-from>Effects/lightmap</inherits-from>
-		<parameters>
-			<texture n="1">
-				<image>Aircraft/787-family/Models/Effects/rudder_lightmap.png</image>
-			</texture>
-			<condition>
-				<use>controls/lighting/logo</use>
-			</condition>
-		</parameters>
-		<object-name>rudder</object-name>
-		<object-name>fin</object-name>
-	</effect>
-
-	<effect>
-		<inherits-from>Effects/lightmap</inherits-from>
-		<parameters>
-			<texture n="1">
-				<image>Aircraft/787-family/Models/Effects/fuselage_lightmap-9.png</image>
-			</texture>
-			<condition>
-				<use>controls/lighting/landing-lights[0]</use>
-			</condition>
-		</parameters>
-		<object-name>bodyfairing</object-name>
-		<object-name>fuselage.001</object-name>
-	</effect>
-
-	<effect>
-		<inherits-from>Effects/lightmap</inherits-from>
-		<parameters>
-			<texture n="1">
-				<image>Aircraft/787-family/Models/Effects/engines_lightmap.png</image>
-			</texture>
-			<condition>
-				<use>controls/lighting/wing-lights</use>
-			</condition>
-		</parameters>
-		<object-name>no2enge</object-name>
-		<object-name>rhreverser</object-name>
-		<object-name>rhvortexdev</object-name>
-		<object-name>no1enge</object-name>
-		<object-name>lhreverser</object-name>
-		<object-name>lhvortexdev</object-name>
-	</effect>
-
-	<effect>
-		<inherits-from>Effects/lightmap</inherits-from>
-		<parameters>
-			<texture n="1">
-				<image>Aircraft/787-family/Models/Effects/wings_lightmap.png</image>
-			</texture>
-			<condition>
-				<use>controls/lighting/wing-lights</use>
-			</condition>
-		</parameters>
-		<object-name>wings_lightmap</object-name>
-	</effect>
-
-<animation>
-  <type>select</type>
-  <object-name>winglts</object-name>
-  <condition>
-    <equals>
-      <property>controls/lighting/wing-lights</property>
-      <value>1</value>
-    </equals>
-  </condition>
-</animation>
-
-<!-- Beacon Lightmaps -->
-
-	<effect>
-		<inherits-from>Effects/lightmap</inherits-from>
-		<parameters>
-			<texture n="1">
-				<image>Aircraft/787-family/Models/Effects/beacon-lightmap-fuselage.png</image>
-			</texture>
-		<condition>
-			<property>sim/model/lights/beacon/state</property>
-		</condition>
-		</parameters>
-	</effect>
-
-	<effect>
-		<inherits-from>Effects/lightmap</inherits-from>
-		<parameters>
-			<texture n="1">
-				<image>Aircraft/787-family/Models/Effects/beacon-lightmap-wings.png</image>
-			</texture>
-		<condition>
-			<property>sim/model/lights/beacon/state</property>
-		</condition>
-		</parameters>
-		<object-name>wings_lightmap</object-name>
-	</effect>
+    <effect>
+        <inherits-from>Aircraft/787-family/Models/Effects/reflect-9</inherits-from>
+        <object-name>fin</object-name>
+        <object-name>bodyfairing</object-name>
+        <object-name>eng1fan</object-name>
+        <object-name>eng1fanb</object-name>
+        <object-name>eng2fan</object-name>
+        <object-name>eng2fanb</object-name>
+        <object-name>fuselage</object-name>
+        <object-name>fuselage.001</object-name>
+        <object-name>lhfdoor</object-name>
+        <object-name>lhfnosedoor</object-name>
+        <object-name>lhgearibdoor</object-name>
+        <object-name>lhibdoor</object-name>
+        <object-name>lhnosedoor</object-name>
+        <object-name>lhobdoor</object-name>
+        <object-name>lhreverser</object-name>
+        <object-name>lreverse</object-name>
+        <object-name>mgearbay</object-name>
+        <object-name>no1enge</object-name>
+        <object-name>no1engl</object-name>
+        <object-name>no2enge</object-name>
+        <object-name>no2engl</object-name>
+        <object-name>no1pylon</object-name>
+        <object-name>no2pylon</object-name>
+        <object-name>rhfdoor</object-name>
+        <object-name>rhfnosedoor</object-name>
+        <object-name>rhgearibdoor</object-name>
+        <object-name>rhibdoor</object-name>
+        <object-name>rhnosedoor</object-name>
+        <object-name>rhobdoor</object-name>
+        <object-name>rhreverser</object-name>
+        <object-name>rreverse</object-name>
+        <object-name>rudder</object-name>
+        <object-name>cargo_door</object-name>
+        <object-name>lwing</object-name>
+        <object-name>lhibflap</object-name>
+        <object-name>lhibfairing</object-name>
+        <object-name>lhibspoilera.001</object-name>
+        <object-name>lhibslat</object-name>
+        <object-name>lhibslat_</object-name>
+        <object-name>lwinga</object-name>
+        <object-name>lhlightedwinga</object-name>
+        <object-name>lhmfairing</object-name>
+        <object-name>lhlightedslata</object-name>
+        <object-name>lhobslata</object-name>
+        <object-name>lhobslat_a</object-name>
+        <object-name>lhibspoilera</object-name>
+        <object-name>lhspoilera</object-name>
+        <object-name>lhobspoilera</object-name>
+        <object-name>lhibflapa</object-name>
+        <object-name>lhibaileron</object-name>
+        <object-name>lhobflapa</object-name>
+        <object-name>lwingb</object-name>
+        <object-name>lhobslatb</object-name>
+        <object-name>lhobslat_b</object-name>
+        <object-name>lhobspoilerb</object-name>
+        <object-name>lhobflapb</object-name>
+        <object-name>lwingc</object-name>
+        <object-name>lhobslatc</object-name>
+        <object-name>lhobslat_c</object-name>
+        <object-name>lhobaileron</object-name>
+        <object-name>lhobfairing</object-name>
+        <object-name>rwing</object-name>
+        <object-name>rhibflap</object-name>
+        <object-name>rhibfairing</object-name>
+        <object-name>rhibspoilera.001</object-name>
+        <object-name>rhibslat</object-name>
+        <object-name>rhibslat_</object-name>
+        <object-name>rwinga</object-name>
+        <object-name>rhlightedwinga</object-name>
+        <object-name>rhmfairing</object-name>
+        <object-name>rhlightedslata</object-name>
+        <object-name>rhobslata</object-name>
+        <object-name>rhobslat_a</object-name>
+        <object-name>rhibspoilera</object-name>
+        <object-name>rhspoilera</object-name>
+        <object-name>rhobspoilera</object-name>
+        <object-name>rhibflapa</object-name>
+        <object-name>rhibaileron</object-name>
+        <object-name>rhobflapa</object-name>
+        <object-name>rwingb</object-name>
+        <object-name>rhobslatb</object-name>
+        <object-name>rhobslat_b</object-name>
+        <object-name>rhobspoilerb</object-name>
+        <object-name>rhobflapb</object-name>
+        <object-name>rwingc</object-name>
+        <object-name>rhobslatc</object-name>
+        <object-name>rhobslat_c</object-name>
+        <object-name>rhobaileron</object-name>
+        <object-name>rhobfairing</object-name>
+    </effect>
 
 <!-- Livery select -->
 
@@ -916,7 +910,7 @@
   <object-name>rhobslata</object-name>
   <object-name>rhobslat_a</object-name>
   <object-name>rhlightedslata</object-name>
-<!--  <object-name>rhibspoilera</object-name> -->
+  <object-name>rhibspoilera</object-name>
   <object-name>rhibaileron</object-name>
   <object-name>rhspoilera</object-name>
   <object-name>rhobspoilera</object-name>
@@ -961,7 +955,7 @@
   <object-name>lhlightedslata</object-name>
   <object-name>lhobslata</object-name>
   <object-name>lhobslat_a</object-name>
-<!--  <object-name>lhibspoilera</object-name> -->
+  <object-name>lhibspoilera</object-name>
   <object-name>lhspoilera</object-name>
   <object-name>lhobspoilera</object-name>
   <object-name>lhibflapa</object-name>
@@ -2110,6 +2104,58 @@
 
 <animation>
   <type>rotate</type>
+  <object-name>lhibspoilera.001</object-name>
+  <property>surface-positions/speedbrake-pos-norm</property>
+  <interpolation>
+    <entry>
+      <ind>0</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>1</ind>
+      <dep>-50</dep>
+    </entry>
+  </interpolation>
+  <center>
+   <x-m>2.71</x-m>
+   <y-m>-6.75</y-m>
+   <z-m>0.7</z-m>
+  </center>
+  <axis>
+   <x>-0.33</x>
+   <y>6</y>
+   <z>-1.02</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>rhibspoilera.001</object-name>
+  <property>surface-positions/speedbrake-pos-norm</property>
+  <interpolation>
+    <entry>
+      <ind>0</ind>
+      <dep>0.0</dep>
+    </entry>
+    <entry>
+      <ind>1</ind>
+      <dep>-50</dep>
+    </entry>
+  </interpolation>
+  <center>
+   <x-m>2.71</x-m>
+   <y-m>6.75</y-m>
+   <z-m>0.7</z-m>
+  </center>
+  <axis>
+   <x>0.33</x>
+   <y>6</y>
+   <z>1.02</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>rotate</type>
   <object-name>lhibspoilera</object-name>
   <property>surface-positions/speedbrake-pos-norm</property>
   <interpolation>
@@ -2137,58 +2183,6 @@
 <animation>
   <type>rotate</type>
   <object-name>rhibspoilera</object-name>
-  <property>surface-positions/speedbrake-pos-norm</property>
-  <interpolation>
-    <entry>
-      <ind>0</ind>
-      <dep>0.0</dep>
-    </entry>
-    <entry>
-      <ind>1</ind>
-      <dep>-50</dep>
-    </entry>
-  </interpolation>
-  <center>
-   <x-m>2.71</x-m>
-   <y-m>6.75</y-m>
-   <z-m>0.7</z-m>
-  </center>
-  <axis>
-   <x>0.33</x>
-   <y>6</y>
-   <z>1.02</z>
-  </axis>
-</animation>
-
-<animation>
-  <type>rotate</type>
-  <object-name>lhibspoiler</object-name>
-  <property>surface-positions/speedbrake-pos-norm</property>
-  <interpolation>
-    <entry>
-      <ind>0</ind>
-      <dep>0.0</dep>
-    </entry>
-    <entry>
-      <ind>1</ind>
-      <dep>-50</dep>
-    </entry>
-  </interpolation>
-  <center>
-   <x-m>2.71</x-m>
-   <y-m>-6.75</y-m>
-   <z-m>0.7</z-m>
-  </center>
-  <axis>
-   <x>-0.33</x>
-   <y>6</y>
-   <z>-1.02</z>
-  </axis>
-</animation>
-
-<animation>
-  <type>rotate</type>
-  <object-name>rhibspoiler</object-name>
   <property>surface-positions/speedbrake-pos-norm</property>
   <interpolation>
     <entry>
