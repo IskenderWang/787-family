@@ -6,9 +6,9 @@
         <reflection-enabled type="int">1</reflection-enabled>
         <reflection-dynamic type="int">1</reflection-dynamic>
         <reflect_map-enabled type="int">1</reflect_map-enabled>
-        <reflection-correction type="float">-0.05</reflection-correction>
+        <reflection-correction type="float">-0.25</reflection-correction>
         <reflection-type type="int">2</reflection-type>
-        <ambient-correction type="float">0.1</ambient-correction>
+        <ambient-correction type="float">0.25</ambient-correction>
         <lightmap-enabled type="int">1</lightmap-enabled>
         <lightmap-multi type="int">1</lightmap-multi>
         <lightmap-factor type="float" n="0"><use>controls/lighting/logo</use></lightmap-factor>
@@ -41,5 +41,7 @@
         <reflection-fresnel type="float">0.0</reflection-fresnel>
         <reflection-fresnel-factor type="float">0.5</reflection-fresnel-factor>
         <ambient_correction>0.5</ambient_correction>
+        <dirt-enabled type="int">1</dirt-enabled>
+        <dirt-factor type="float"><use>/environment/surface/dust-cover-factor</use></dirt-factor>
     </parameters>
 </PropertyList>
