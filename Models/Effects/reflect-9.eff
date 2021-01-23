@@ -29,12 +29,12 @@
         <texture n="5">
             <type>cubemap</type>
             <images>
-                <positive-x>Aircraft/Generic/Effects/CubeMaps/fair-sky/fair-sky_px.png</positive-x>
-                <negative-x>Aircraft/Generic/Effects/CubeMaps/fair-sky/fair-sky_nx.png</negative-x>
-                <positive-y>Aircraft/Generic/Effects/CubeMaps/fair-sky/fair-sky_py.png</positive-y>
-                <negative-y>Aircraft/Generic/Effects/CubeMaps/fair-sky/fair-sky_ny.png</negative-y>
-                <positive-z>Aircraft/Generic/Effects/CubeMaps/fair-sky/fair-sky_pz.png</positive-z>
-                <negative-z>Aircraft/Generic/Effects/CubeMaps/fair-sky/fair-sky_nz.png</negative-z>
+                <positive-x>Aircraft/787-family/Models/Developer/fair-sky/fair-sky_px.png</positive-x>
+                <negative-x>Aircraft/787-family/Models/Developer/fair-sky/fair-sky_nx.png</negative-x>
+                <positive-y>Aircraft/787-family/Models/Developer/fair-sky/fair-sky_py.png</positive-y>
+                <negative-y>Aircraft/787-family/Models/Developer/fair-sky/fair-sky_ny.png</negative-y>
+                <positive-z>Aircraft/787-family/Models/Developer/fair-sky/fair-sky_pz.png</positive-z>
+                <negative-z>Aircraft/787-family/Models/Developer/fair-sky/fair-sky_nz.png</negative-z>
             </images>
         </texture>
         <reflection-rainbow type="float">0.0</reflection-rainbow>
