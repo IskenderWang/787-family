@@ -10,17 +10,11 @@
         <reflection-type type="int">2</reflection-type>
         <ambient-correction type="float">0.1</ambient-correction>
         <lightmap-enabled type="int">1</lightmap-enabled>
-        <lightmap-multi type="int">1</lightmap-multi>
-        <lightmap-factor type="float" n="0"><use>controls/lighting/logo</use></lightmap-factor>
-        <lightmap-color type="vec3d" n="0">0.03 0.03 0.03</lightmap-color>
-        <lightmap-factor type="float" n="1"><use>controls/lighting/landing-lights[0]</use></lightmap-factor>
-        <lightmap-color type="vec3d" n="1">0.03 0.03 0.03</lightmap-color>
-        <lightmap-factor type="float" n="2"><use>controls/lighting/wing-lights</use></lightmap-factor>
-        <lightmap-color type="vec3d" n="2">0.03 0.03 0.03</lightmap-color>
-        <lightmap-factor type="float" n="3"><use>sim/model/lights/beacon/state</use></lightmap-factor>
-        <lightmap-color type="vec3d" n="3">0.03 0.00 0.00</lightmap-color>
+        <lightmap-multi type="int">0</lightmap-multi>
+        <lightmap-color type="vec3d">1 1 1</lightmap-color>
+        <lightmap-factor type="float"><use>controls/lighting/landing-lights[0]</use></lightmap-factor>
         <texture n="3">
-            <image>Aircraft/787-family/Models/Effects/lightmap-9.png</image>
+            <image>Aircraft/787-family/Models/Effects/fuselage_lightmap-9.png</image>
             <filter>linear-mipmap-linear</filter>
             <wrap-s>clamp</wrap-s>
             <wrap-t>clamp</wrap-t>

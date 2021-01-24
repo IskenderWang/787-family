@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertyList>
-    <name>reflect-8</name>
+    <name>reflect-9</name>
     <inherits-from>Effects/model-combined</inherits-from>
     <parameters>
         <reflection-enabled type="int">1</reflection-enabled>
@@ -12,9 +12,9 @@
         <lightmap-enabled type="int">1</lightmap-enabled>
         <lightmap-multi type="int">0</lightmap-multi>
         <lightmap-color type="vec3d">1 1 1</lightmap-color>
-        <lightmap-factor type="float"><use>controls/lighting/landing-lights[0]</use></lightmap-factor>
+        <lightmap-factor type="float"><use>controls/lighting/logo</use></lightmap-factor>
         <texture n="3">
-            <image>Aircraft/787-family/Models/Effects/fuselage_lightmap-8.png</image>
+            <image>Aircraft/787-family/Models/Effects/rudder_lightmap.png</image>
             <filter>linear-mipmap-linear</filter>
             <wrap-s>clamp</wrap-s>
             <wrap-t>clamp</wrap-t>

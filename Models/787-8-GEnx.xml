@@ -2,9 +2,9 @@
 <PropertyList>
 
   <path>787-8-GEnx.ac</path>
+
     <effect>
         <inherits-from>Aircraft/787-family/Models/Effects/reflect-8</inherits-from>
-        <object-name>fin</object-name>
         <object-name>bodyfairing</object-name>
         <object-name>eng1fan</object-name>
         <object-name>eng1fanb</object-name>
@@ -17,88 +17,52 @@
         <object-name>lhgearibdoor</object-name>
         <object-name>lhibdoor</object-name>
         <object-name>lhnosedoor</object-name>
-        <object-name>lhobdoor</object-name>
-        <object-name>lhreverser</object-name>
-        <object-name>lhelevator</object-name>
-        <object-name>lstab</object-name>
-        <object-name>lstab.lead2</object-name>
         <object-name>lreverse</object-name>
         <object-name>mgearbay</object-name>
-        <object-name>no1enge</object-name>
         <object-name>no1engl</object-name>
-        <object-name>no2enge</object-name>
         <object-name>no2engl</object-name>
-        <object-name>no1pylon</object-name>
-        <object-name>no2pylon</object-name>
         <object-name>rhfdoor</object-name>
         <object-name>rhfnosedoor</object-name>
         <object-name>rhgearibdoor</object-name>
         <object-name>rhibdoor</object-name>
         <object-name>rhnosedoor</object-name>
         <object-name>rhobdoor</object-name>
-        <object-name>rhreverser</object-name>
-        <object-name>rhelevator</object-name>
-        <object-name>rstab</object-name>
-        <object-name>rstab.lead2</object-name>
         <object-name>rreverse</object-name>
-        <object-name>rudder</object-name>
         <object-name>cargo_door</object-name>
-        <object-name>lwing</object-name>
-        <object-name>lhibflap</object-name>
-        <object-name>lhibfairing</object-name>
-        <object-name>lhibspoilera.001</object-name>
-        <object-name>lhibslat</object-name>
-        <object-name>lhibslat_</object-name>
-        <object-name>lwinga</object-name>
-        <object-name>lhlightedwinga</object-name>
-        <object-name>lhmfairing</object-name>
-        <object-name>lhlightedslata</object-name>
-        <object-name>lhobslata</object-name>
-        <object-name>lhobslat_a</object-name>
-        <object-name>lhibspoilera</object-name>
-        <object-name>lhspoilera</object-name>
-        <object-name>lhobspoilera</object-name>
-        <object-name>lhibflapa</object-name>
-        <object-name>lhibaileron</object-name>
-        <object-name>lhobflapa</object-name>
-        <object-name>lwingb</object-name>
-        <object-name>lhobslatb</object-name>
-        <object-name>lhobslat_b</object-name>
-        <object-name>lhobspoilerb</object-name>
-        <object-name>lhobflapb</object-name>
-        <object-name>lwingc</object-name>
-        <object-name>lhobslatc</object-name>
-        <object-name>lhobslat_c</object-name>
-        <object-name>lhobaileron</object-name>
-        <object-name>lhobfairing</object-name>
-        <object-name>rwing</object-name>
-        <object-name>rhibflap</object-name>
-        <object-name>rhibfairing</object-name>
-        <object-name>rhibspoilera.001</object-name>
-        <object-name>rhibslat</object-name>
-        <object-name>rhibslat_</object-name>
-        <object-name>rwinga</object-name>
-        <object-name>rhlightedwinga</object-name>
-        <object-name>rhmfairing</object-name>
-        <object-name>rhlightedslata</object-name>
-        <object-name>rhobslata</object-name>
-        <object-name>rhobslat_a</object-name>
-        <object-name>rhibspoilera</object-name>
-        <object-name>rhspoilera</object-name>
-        <object-name>rhobspoilera</object-name>
-        <object-name>rhibflapa</object-name>
-        <object-name>rhibaileron</object-name>
-        <object-name>rhobflapa</object-name>
-        <object-name>rwingb</object-name>
-        <object-name>rhobslatb</object-name>
-        <object-name>rhobslat_b</object-name>
-        <object-name>rhobspoilerb</object-name>
-        <object-name>rhobflapb</object-name>
-        <object-name>rwingc</object-name>
-        <object-name>rhobslatc</object-name>
-        <object-name>rhobslat_c</object-name>
-        <object-name>rhobaileron</object-name>
-        <object-name>rhobfairing</object-name>
+    </effect>
+
+<!-- Lightmaps -->
+
+    <effect>
+      <inherits-from>Aircraft/787-family/Models/Effects/reflect-logo</inherits-from>
+      <object-name>rudder</object-name>
+      <object-name>fin</object-name>
+    </effect>
+
+    <effect>
+      <inherits-from>Aircraft/787-family/Models/Effects/reflect-el</inherits-from>
+      <object-name>lhelevator</object-name>
+      <object-name>lstab</object-name>
+      <object-name>lstab.lead2</object-name>
+      <object-name>rhelevator</object-name>
+      <object-name>rstab</object-name>
+      <object-name>rstab.lead2</object-name>
+      <object-name>no2enge</object-name>
+      <object-name>rhreverser</object-name>
+      <object-name>rhvortexdev</object-name>
+      <object-name>no1enge</object-name>
+      <object-name>lhreverser</object-name>
+      <object-name>lhvortexdev</object-name>
+    </effect>
+
+    <effect>
+      <inherits-from>Aircraft/787-family/Models/Effects/reflect-wl</inherits-from>
+      <object-name>wings_lightmap</object-name>
+    </effect>
+
+    <effect>
+      <inherits-from>Aircraft/787-family/Models/Effects/reflect-beacon</inherits-from>
+      <object-name>fuselage</object-name>
     </effect>
 
 <!-- Livery select -->
