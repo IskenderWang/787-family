@@ -662,7 +662,6 @@
   </axis>
 </animation>
 
-
 <!-- Left Main Gear -->
 
 <animation>
@@ -2303,7 +2302,7 @@
 <!-- Right Strobe light -->
 
 <model>
-<path>Aircraft/787-family/Models/Effects/strobe.xml</path>
+<path>Aircraft/787-family/Models/Lights/strobe.xml</path>
 <name>strobe.right</name>
 <offsets>
 <x-m>9.6840</x-m>
@@ -2894,11 +2893,11 @@
 		</axis>
     </animation>
 
-    <!-- Ground Stuff -->
+<!-- Ground stuff -->
 
 <model>
 	<name>ground-lights</name>
-	<path>Ground/b787-ground-lights.xml</path>
+	<path>Ground/landing-ground-lights.xml</path>
 </model>
 
 <animation>
@@ -2911,7 +2910,28 @@
 			<value>500</value>
 		</less-than>
 	</condition>
-</animation> 
+</animation>
+
+<model>
+  <name>taxi-lights</name>
+  <path>Ground/taxi-ground-lights.xml</path>
+</model>
+
+<animation>
+  <type>select</type>
+  <object-name>taxi-lights</object-name>
+  <condition>
+    <property>controls/lighting/taxi-lights</property>
+    <less-than>
+      <property>position/altitude-agl-ft</property>
+      <value>500</value>
+    </less-than>
+    <equals>
+      <property>gear/gear[0]/position-norm</property>
+      <value>1</value>
+    </equals>
+  </condition>
+</animation>
 
 <!-- Window Lights -->
 

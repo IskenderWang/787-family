@@ -86,4 +86,15 @@
 		</center>
 	</animation>
 
+	<!-- Light em up -->
+	<animation>
+	  <type>material</type>
+	  <object-name>Light</object-name>
+	  <emission>
+	    <red>   2 </red>
+	    <green> 2 </green>
+	    <blue>  2 </blue>
+	  </emission>
+	</animation>
+
 </PropertyList>

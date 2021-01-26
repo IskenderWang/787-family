@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>taxi-ground-lights.ac</path>
+
+    <animation>
+        <!-- opaque objects -->
+        <!-- transparent objects -->
+        <object-name>taxi-lights</object-name>
+        <type>select</type>
+        <condition>
+        <not>
+            <property>sim/rendering/rembrandt/enabled</property>
+        </not>
+        </condition>
+    </animation>
+
+    
+<animation>
+  <type>translate</type>
+  <object-name>taxi-lights</object-name>
+  <property>controls/lighting/shad-light-alt</property>
+  <factor>0.301</factor>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>-1</z>
+    </axis>
+</animation>
+
+<animation>
+  <type>translate</type>
+  <object-name>taxi-lights</object-name>
+  <property>controls/lighting/shad-light-alt</property>
+  <factor>0.8</factor>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>taxi-lights</object-name>
+  <property>orientation/roll-deg</property>
+  <center>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+  </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>taxi-lights</object-name>
+  <property>orientation/pitch-deg</property>
+  <center>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+  </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+</animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>taxi-lights</object-name>
+    <emission>
+        <red>   0.54 </red>
+        <green> 0.54 </green>
+        <blue>  0.54 </blue>
+        <factor-prop>/controls/lighting/landing-ground</factor-prop>
+    </emission>
+  </animation>
+
+ <animation>
+  <type>scale</type>
+  <object-name>taxi-lights</object-name>
+  <property>controls/lighting/ground-scale-factor</property>
+  <x-min>1.0</x-min>
+  <y-min>1.0</y-min>
+  <z-min>1.0</z-min>
+  <x-factor>5</x-factor>
+  <y-factor>3</y-factor>
+  <z-factor>0</z-factor>
+ </animation>
+
+</PropertyList>
