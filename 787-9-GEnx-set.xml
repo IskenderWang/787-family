@@ -1070,6 +1070,15 @@
                     <script>b787.toggle_parkingbrakes();</script>
                 </binding>
             </key>
+            <key n="68">
+				<name>D</name>
+				<desc>Autopilot Disconnect</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>it-autoflight/input/ap1</property>
+					<value>0</value>
+				</binding>
+			</key>
         </keyboard>
     </input>
 
