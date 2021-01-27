@@ -892,6 +892,8 @@
   <object-name>rchrome</object-name>
   <object-name>greennav</object-name>
   <object-name>strobe.right</object-name>
+  <object-name>greennav-ALS</object-name>
+  <object-name>strobe.right-ALS</object-name>
   <object-name>fueldump.r</object-name>
   <property>sim/systems/wingflexer/z-m</property>
   <factor>10.</factor>
@@ -937,6 +939,8 @@
   <object-name>lchrome</object-name>
   <object-name>rednav</object-name>
   <object-name>strobe.left</object-name>
+  <object-name>rednav-ALS</object-name>
+  <object-name>strobe.left-ALS</object-name>
   <object-name>fueldump.l</object-name>
   <property>sim/systems/wingflexer/z-m</property>
   <factor>10.</factor>
@@ -970,6 +974,8 @@
   <object-name>rchrome</object-name>
   <object-name>greennav</object-name>
   <object-name>strobe.right</object-name>
+  <object-name>greennav-ALS</object-name>
+  <object-name>strobe.right-ALS</object-name>
   <object-name>fueldump.r</object-name>
   <property>sim/systems/wingflexer/z-m</property>
   <factor>10.</factor>
@@ -1003,6 +1009,8 @@
   <object-name>lchrome</object-name>
   <object-name>rednav</object-name>
   <object-name>strobe.left</object-name>
+  <object-name>rednav-ALS</object-name>
+  <object-name>strobe.left-ALS</object-name>
   <object-name>fueldump.l</object-name>
   <property>sim/systems/wingflexer/z-m</property>
   <factor>10.</factor>
@@ -1030,6 +1038,8 @@
   <object-name>rchrome</object-name>
   <object-name>greennav</object-name>
   <object-name>strobe.right</object-name>
+  <object-name>greennav-ALS</object-name>
+  <object-name>strobe.right-ALS</object-name>
   <property>sim/systems/wingflexer/z-m</property>
   <factor>10.</factor>
   <offset-deg>0</offset-deg>
@@ -1056,6 +1066,8 @@
   <object-name>lchrome</object-name>
   <object-name>rednav</object-name>
   <object-name>strobe.left</object-name>
+  <object-name>rednav-ALS</object-name>
+  <object-name>strobe.left-ALS</object-name>
   <property>sim/systems/wingflexer/z-m</property>
   <factor>10.</factor>
   <offset-deg>0</offset-deg>
@@ -1074,80 +1086,149 @@
 <!-- Landing Lights -->
 
 <model>
-<path>Aircraft/787-family/Models/Lights/landing-nose.xml</path>
-<name>noselanding</name>
-<condition>
- <equals>
-			             <property>gear/gear[0]/position-norm</property>
-                                            <value type="bool">true</value>
- </equals>
-  </condition>
-
-<offsets>
-<x-m> -21.0353</x-m>
-<y-m>  0.00</y-m>
-<z-m> -1.9979</z-m>
-</offsets>
+    <name>NoseLandingLight</name>
+    <path>Aircraft/787-family/Models/Lights/landing-nose.xml</path>
+    <condition>
+      <equals>
+        <property>gear/gear[0]/position-norm</property>
+        <value type="bool">true</value>
+      </equals>
+    </condition>
+    <offsets>
+        <x-m> -21.0353</x-m>
+        <y-m>  0.00</y-m>
+        <z-m> -2</z-m>
+    </offsets>
 </model>
 
 <model>
-<path>Aircraft/787-family/Models/Lights/taxi.xml</path>
-<name>taxilight</name>
-<condition>
- <equals>
-			             <property>gear/gear[0]/position-norm</property>
-                                            <value type="bool">true</value>
- </equals>
-  </condition>
-
-<offsets>
-<x-m> -21.0353</x-m>
-<y-m>  0.00</y-m>
-<z-m> -2</z-m>
-</offsets>
-</model>
-
-
-<model>
-<path>Aircraft/787-family/Models/Lights/landing-port.xml</path>
-<name>LeftWingLandinglight</name>
-<offsets>
-<x-m>-6.9776</x-m>
-<y-m>-3.3768</y-m>
-<z-m> 0.3411</z-m>
-</offsets>
+    <name>NoseLandingLight-ALS</name>
+    <path>Aircraft/787-family/Models/Lights/ALS/landinglightF.xml</path>
+    <condition>
+      <equals>
+        <property>gear/gear[0]/position-norm</property>
+        <value type="bool">true</value>
+      </equals>
+    </condition>
+    <offsets>
+        <x-m> -21.0353</x-m>
+        <y-m>  0.00</y-m>
+        <z-m> -2</z-m>
+    </offsets>
 </model>
 
 <model>
-<path>Aircraft/787-family/Models/Lights/landing-stbd.xml</path>
-<name>RightWingLandinglight</name>
-<offsets>
-<x-m>-6.9776</x-m>
-<y-m> 3.3768</y-m>
-<z-m> 0.3411</z-m>
-</offsets>
+    <name>taxilight</name>
+    <path>Aircraft/787-family/Models/Lights/taxi.xml</path>
+    <condition>
+      <equals>
+        <property>gear/gear[0]/position-norm</property>
+        <value type="bool">true</value>
+      </equals>
+    </condition>
+    <offsets>
+        <x-m> -21.0353</x-m>
+        <y-m>  0.00</y-m>
+        <z-m> -2</z-m>
+    </offsets>
+</model>
+
+<model>
+    <name>taxilight-ALS</name>
+    <path>Aircraft/787-family/Models/Lights/ALS/taxilight.xml</path>
+    <condition>
+      <equals>
+        <property>gear/gear[0]/position-norm</property>
+        <value type="bool">true</value>
+      </equals>
+    </condition>
+    <offsets>
+        <x-m> -21.0353</x-m>
+        <y-m>  0.00</y-m>
+        <z-m> -2</z-m>
+    </offsets>
+</model>
+
+<model>
+  <path>Aircraft/787-family/Models/Lights/landing-port.xml</path>
+  <name>LeftWingLandinglight</name>
+  <offsets>
+    <x-m>-6.9776</x-m>
+    <y-m>-3.3768</y-m>
+    <z-m> 0.3411</z-m>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/787-family/Models/Lights/ALS/landinglightL.xml</path>
+  <name>LeftWingLandinglight-ALS</name>
+  <offsets>
+    <x-m>-6.9776</x-m>
+    <y-m>-3.3768</y-m>
+    <z-m> 0.3411</z-m>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/787-family/Models/Lights/landing-stbd.xml</path>
+  <name>RightWingLandinglight</name>
+  <offsets>
+    <x-m>-6.9776</x-m>
+    <y-m> 3.3768</y-m>
+    <z-m> 0.3411</z-m>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/787-family/Models/Lights/ALS/landinglightR.xml</path>
+  <name>RightWingLandinglight-ALS</name>
+  <offsets>
+    <x-m>-6.9776</x-m>
+    <y-m> 3.3768</y-m>
+    <z-m> 0.3411</z-m>
+  </offsets>
 </model>
 
 <!-- Beacon Lights -->
 
 <model>
-<path>Aircraft/787-family/Models/Lights/beacon.xml</path>
-<name>Beaconlight.top</name>
-<offsets>
-<x-m>-11.1355</x-m>
-<y-m>0.00</y-m>
-<z-m>4.4910</z-m>
-</offsets>
+  <path>Aircraft/787-family/Models/Lights/beacon.xml</path>
+  <name>Beaconlight.top</name>
+  <offsets>
+    <x-m>-11.1355</x-m>
+    <y-m>0.00</y-m>
+    <z-m>4.4910</z-m>
+  </offsets>
 </model>
 
 <model>
-<path>Aircraft/787-family/Models/Lights/beacon.xml</path>
-<name>Beaconlight.bottom</name>
-<offsets>
-<x-m>-3.9956</x-m>
-<y-m> 0.00</y-m>
-<z-m>-1.8719</z-m>
-</offsets>
+  <path>Aircraft/787-family/Models/Lights/ALS/beacon.xml</path>
+  <name>Beaconlight.top-ALS</name>
+  <offsets>
+    <x-m>-11.1355</x-m>
+    <y-m>0.00</y-m>
+    <z-m>4.4910</z-m>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/787-family/Models/Lights/beacon.xml</path>
+  <name>Beaconlight.bottom</name>
+  <offsets>
+    <x-m>-3.9956</x-m>
+    <y-m> 0.00</y-m>
+    <z-m>-1.8719</z-m>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/787-family/Models/Lights/ALS/beacon.xml</path>
+  <name>Beaconlight.bottom-ALS</name>
+  <offsets>
+    <x-m>-3.9956</x-m>
+    <y-m> 0.00</y-m>
+    <z-m>-1.8719</z-m>
+  </offsets>
 </model>
 
 
@@ -2263,53 +2344,158 @@
 
 <!-- Aircraft Lighting -->
 
-<!-- Green Naviagation Light -->
+<!-- Green Navigation Light -->
 
 <model>
-<path>Aircraft/787-family/Models/Lights/greennav.xml</path>
-<name>greennav</name>
-<offsets>
-<x-m>9.6840</x-m>
-<y-m>27.2495</y-m>
-<z-m>3.4275</z-m>
-</offsets>
+  <path>Aircraft/787-family/Models/Lights/greennav.xml</path>
+  <name>greennav</name>
+  <offsets>
+    <x-m>9.6840</x-m>
+    <y-m>27.2495</y-m>
+    <z-m>3.4275</z-m>
+  </offsets>
 </model>
 
-<!-- Red Naviagation Light -->
+<model>
+  <path>Aircraft/787-family/Models/Lights/ALS/green-navlight.xml</path>
+  <name>greennav-ALS</name>
+  <offsets>
+    <x-m>9.6840</x-m>
+    <y-m>27.2495</y-m>
+    <z-m>3.2275</z-m>
+  </offsets>
+</model>
+
+<!-- Red Navigation Light -->
 
 <model>
-<path>Aircraft/787-family/Models/Lights/rednav.xml</path>
-<name>rednav</name>
-<offsets>
-<x-m>9.6840</x-m>
-<y-m>-27.2495</y-m>
-<z-m>3.4275</z-m>
-</offsets>
+  <path>Aircraft/787-family/Models/Lights/rednav.xml</path>
+  <name>rednav</name>
+  <offsets>
+    <x-m>9.6840</x-m>
+    <y-m>-27.2495</y-m>
+    <z-m>3.4275</z-m>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/787-family/Models/Lights/ALS/red-navlight.xml</path>
+  <name>rednav-ALS</name>
+  <offsets>
+    <x-m>9.6840</x-m>
+    <y-m>-27.2495</y-m>
+    <z-m>3.2275</z-m>
+  </offsets>
 </model>
 
 <!-- Left Strobe light -->
 
 <model>
-<path>Aircraft/787-family/Models/Lights/strobe.xml</path>
-<name>strobe.left</name>
-<offsets>
-<x-m>9.6840</x-m>
-<y-m>-27.4363</y-m>
-<z-m>3.4601</z-m>
-</offsets>
+  <path>Aircraft/787-family/Models/Lights/strobe.xml</path>
+  <name>strobe.left</name>
+  <offsets>
+    <x-m>9.6840</x-m>
+    <y-m>-27.4363</y-m>
+    <z-m>3.4601</z-m>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/787-family/Models/Lights/ALS/left-strobe.xml</path>
+  <name>strobe.left-ALS</name>
+  <offsets>
+    <x-m>9.6840</x-m>
+    <y-m>-27.4363</y-m>
+    <z-m>3.2601</z-m>
+  </offsets>
 </model>
 
 <!-- Right Strobe light -->
 
 <model>
-<path>Aircraft/787-family/Models/Lights/strobe.xml</path>
-<name>strobe.right</name>
-<offsets>
-<x-m>9.6840</x-m>
-<y-m>27.4363</y-m>
-<z-m>3.4601</z-m>
-</offsets>
+  <path>Aircraft/787-family/Models/Lights/strobe.xml</path>
+  <name>strobe.right</name>
+  <offsets>
+    <x-m>9.6840</x-m>
+    <y-m>27.4363</y-m>
+    <z-m>3.4601</z-m>
+  </offsets>
 </model>
+
+<model>
+  <path>Aircraft/787-family/Models/Lights/ALS/right-strobe.xml</path>
+  <name>strobe.right-ALS</name>
+  <offsets>
+    <x-m>9.6840</x-m>
+    <y-m>27.4363</y-m>
+    <z-m>3.2601</z-m>
+  </offsets>
+</model>
+
+<!-- No shadow for lights -->
+
+<animation>
+  <type>noshadow</type>
+  <object-name>ground-lights</object-name>
+  <object-name>taxi-lights</object-name>
+  <object-name>NoseLandingLight</object-name>
+  <object-name>taxilight</object-name>
+  <object-name>LeftWingLandingLight</object-name>
+  <object-name>RightWingLandingLight</object-name>
+  <object-name>Beaconlight.top</object-name>
+  <object-name>Beaconlight.bottom</object-name>
+  <object-name>greennav</object-name>
+  <object-name>rednav</object-name>
+  <object-name>strobe.left</object-name>
+  <object-name>strobe.right</object-name>
+  <object-name>NoseLandingLight-ALS</object-name>
+  <object-name>taxilight-ALS</object-name>
+  <object-name>LeftWingLandingLight-ALS</object-name>
+  <object-name>RightWingLandingLight-ALS</object-name>
+  <object-name>Beaconlight.top-ALS</object-name>
+  <object-name>Beaconlight.bottom-ALS</object-name>
+  <object-name>greennav-ALS</object-name>
+  <object-name>rednav-ALS</object-name>
+  <object-name>strobe.left-ALS</object-name>
+  <object-name>strobe.right-ALS</object-name>
+</animation>
+
+<!-- Light selection based on renderer -->
+
+<animation>
+    <type>select</type>
+    <object-name>NoseLandingLight</object-name>
+    <object-name>taxilight</object-name>
+    <object-name>LeftWingLandingLight</object-name>
+    <object-name>RightWingLandingLight</object-name>
+    <object-name>Beaconlight.top</object-name>
+    <object-name>Beaconlight.bottom</object-name>
+    <object-name>greennav</object-name>
+    <object-name>rednav</object-name>
+    <object-name>strobe.left</object-name>
+    <object-name>strobe.right</object-name>
+    <condition>
+        <not>
+            <property>/sim/rendering/shaders/skydome</property>
+        </not>
+    </condition>
+</animation>
+<animation>
+    <type>select</type>
+    <object-name>NoseLandingLight-ALS</object-name>
+    <object-name>taxilight-ALS</object-name>
+    <object-name>LeftWingLandingLight-ALS</object-name>
+    <object-name>RightWingLandingLight-ALS</object-name>
+    <object-name>Beaconlight.top-ALS</object-name>
+    <object-name>Beaconlight.bottom-ALS</object-name>
+    <object-name>greennav-ALS</object-name>
+    <object-name>rednav-ALS</object-name>
+    <object-name>strobe.left-ALS</object-name>
+    <object-name>strobe.right-ALS</object-name>
+    <condition>
+        <property>/sim/rendering/shaders/skydome</property>
+    </condition>
+</animation>
 
 <!-- Fuel Dump -->
 
