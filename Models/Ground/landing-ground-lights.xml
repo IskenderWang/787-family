@@ -2,9 +2,9 @@
 
 <PropertyList>
 
-	<path>b787-ground-lights.ac</path>
+	<path>landing-ground-lights.ac</path>
 
-        <animation>
+    <animation>
         <!-- opaque objects -->
         <!-- transparent objects -->
         <object-name>landing-lights</object-name>
@@ -74,15 +74,15 @@
 </animation>
 
  	<animation>
-    	<type>material</type>
+    <type>material</type>
 		<object-name>landing-lights</object-name>
-    	<emission>
-      		<red>   0.42 </red>
-      		<green> 0.42 </green>
-      		<blue>  0.42 </blue>
-			<factor-prop>/controls/lighting/landing-ground</factor-prop>
-    	</emission>
-  	</animation>
+    <emission>
+      	<red>   0.62 </red>
+      	<green> 0.62 </green>
+      	<blue>  0.62 </blue>
+        <factor-prop>/controls/lighting/landing-ground</factor-prop>
+    </emission>
+  </animation>
 
  <animation>
   <type>scale</type>

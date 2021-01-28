@@ -36,7 +36,13 @@ var light = {
             setprop("/sim/rendering/als-secondary-lights/use-alt-landing-light", 0);
         }
 
-        
+        if (getprop("/controls/lighting/taxi-lights") and (getprop("/sim/current-view/internal"))) {
+            setprop("/sim/rendering/als-secondary-lights/use-searchlight", 1);
+        } else {
+            setprop("/sim/rendering/als-secondary-lights/use-searchlight", 0);
+        }
+
+
         # Ground Landing Lights
 
         if (getprop("/position/altitude-agl-ft") <= 300) setprop("/controls/lighting/landing-ground", 1 - (0.0033333 * getprop("/position/altitude-agl-ft")));

@@ -1,25 +1,25 @@
 <PropertyList>
 
 <particlesystem>
-   <name>wingtiptrails</name>
-   <texture>wingtip-trails.png</texture>
+   <name>vortices</name>
+   <texture>vortices.png</texture>
 
    <emissive type="bool">false</emissive>
    <lighting type="bool">false</lighting>
 
    <condition>
-        <greater-than>
-        	<property>velocities/airspeed-kt</property>
-        	<value>1000</value>
-        </greater-than>
+        <greater-than-equals>
+        	<property>/fdm/jsbsim/aero/force/Drag_induced</property>
+        	<value>18000</value>
+        </greater-than-equals>
    </condition>
 
    <attach>world</attach>
-
+ 
    <placer>
      <type>point</type> 
    </placer>
-
+ 
    <shooter>
      <theta-min-deg>-1.5</theta-min-deg>
      <theta-max-deg>1.5</theta-max-deg>
@@ -32,62 +32,62 @@
      <rotation-speed>
        <x-min-deg-sec>0</x-min-deg-sec>
        <y-min-deg-sec>0</y-min-deg-sec>
-       <z-min-deg-sec>180</z-min-deg-sec>
+       <z-min-deg-sec>0</z-min-deg-sec>
        <x-max-deg-sec>0</x-max-deg-sec>
        <y-max-deg-sec>0</y-max-deg-sec>
-       <z-max-deg-sec>180</z-max-deg-sec>
+       <z-max-deg-sec>0</z-max-deg-sec>
      </rotation-speed>
    </shooter>
-
+ 
    <counter>
      <particles-per-sec>
-       <value>1</value>
+       <value>60</value>
        <spread>0</spread>
      </particles-per-sec>
    </counter>
       
    <align>billboard</align>
-
+ 
    <particle>
      <start>
        <color>
-         <red><value>0.8</value></red>
-         <green><value>0.8</value></green>
-         <blue><value>0.8</value></blue>
-         <alpha><value>0.5</value></alpha>
+         <red><property>/rendering/scene/diffuse/red</property></red>
+         <green><property>/rendering/scene/diffuse/green</property></green>
+         <blue><property>/rendering/scene/diffuse/blue</property></blue>
+         <alpha><value> 1.0 </value></alpha>
        </color>
        <size>
-         <value>2</value>
+         <value>2.45</value>
        </size>
      </start>
-
+ 
      <end>
        <color>
-         <red><value>1.0</value></red>
-         <green><value>1.0</value></green>
-         <blue><value>1.0</value></blue>
-         <alpha><value>0.001</value></alpha>
+         <red><property>/rendering/scene/diffuse/red</property></red>
+         <green><property>/rendering/scene/diffuse/green</property></green>
+         <blue><property>/rendering/scene/diffuse/blue</property></blue>
+         <alpha><value> 1.0 </value></alpha>
        </color>
        <size>
-         <value>18</value>
+         <value>4</value>
        </size>
      </end>
-
+ 
      <life-sec>
-       <value>10</value>
+       <value>1</value>
      </life-sec>
         
-     <mass-kg>0.5</mass-kg>
-     <radius-m>0.5</radius-m>
+     <mass-kg>  0.5 </mass-kg>
+     <radius-m> 0.5 </radius-m>
    </particle>
-
+ 
    <program>
-     <fluid>air</fluid>
-     <gravity type="bool">false</gravity>
-     <wind typ="bool">true</wind>
+     <fluid>               air  </fluid>
+     <gravity type="bool"> true </gravity>
+     <wind typ="bool">     true </wind>
    </program>
-
+ 
  </particlesystem>
-
+ 
 </PropertyList>
 
