@@ -1,5 +1,5 @@
 # IT-AUTOFLIGHT System Controller V4.0.6
-# Copyright (c) 2020 Josh Davidson (Octal450)
+# Copyright (c) 2021 Josh Davidson (Octal450)
 
 setprop("/it-autoflight/config/tuning-mode", 0); # Not used by controller
 
@@ -239,8 +239,8 @@ var ITAF = {
 			Output.fd2.setBoolValue(0);
 		}
 		Output.hdgInHld.setBoolValue(0);
-		Output.lnavArm.setBoolValue(0);
-		Output.locArm.setBoolValue(0);
+		me.updateLnavArm(0);
+		me.updateLocArm(0);
 		Output.apprArm.setBoolValue(0);
 		Output.thrMode.setValue(2);
 		Output.lat.setValue(5);
