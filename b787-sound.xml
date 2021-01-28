@@ -31,7 +31,7 @@
         </position>     
         <reference-dist>10</reference-dist> 
         <max-dist>30</max-dist> 
-        <volume>0.3</volume>        
+        <volume>0.6</volume>        
     </apu-start>
 
     <apu-running2>
@@ -55,7 +55,7 @@
         </position> 
         <reference-dist>10</reference-dist>
         <max-dist>30</max-dist>
-        <volume>0.3</volume>
+        <volume>0.6</volume>
     </apu-running2>
     
     
@@ -80,7 +80,7 @@
         </position> 
         <reference-dist>10</reference-dist>
         <max-dist>30</max-dist>
-        <volume>0.3</volume>
+        <volume>0.6</volume>
     </apu-running>
 
     <apu-shutdown>
@@ -108,7 +108,7 @@
         </position> 
         <reference-dist>10</reference-dist>
         <max-dist>30</max-dist>
-        <volume>0.5</volume>
+        <volume>0.6</volume>
     </apu-shutdown> 
 
     <apu-shutdown2>
@@ -136,7 +136,7 @@
         </position> 
         <reference-dist>10</reference-dist>
         <max-dist>30</max-dist>
-        <volume>0.5</volume>
+        <volume>0.6</volume>
     </apu-shutdown2>    
 
 <!-- Engine external sounds -->
