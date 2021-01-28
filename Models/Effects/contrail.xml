@@ -19,10 +19,16 @@ Contrail particle system by Lauri Peltonen A.K.A. Zan
 	 </offsets>
 
 	<condition>
-		 <less-than-equals>
-			 <property>environment/temperature-degc</property>
-			 <value>-36</value>
-		 </less-than-equals>
+		 <and>
+		 	<greater-than-equals>
+		 	  <property>engines/engine[0]/n2</property>
+		 	  <value>50</value>
+		 	</greater-than-equals>
+		 	<less-than-equals>
+		 	  <property>environment/temperature-degc</property>
+		 	  <value>-36</value>
+		 	</less-than-equals>
+		 </and>
 	</condition>
 		 
 	 <attach>world</attach>

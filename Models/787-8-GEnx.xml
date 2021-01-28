@@ -2250,12 +2250,6 @@
 
 <model>
  <path>Aircraft/787-family/Models/Effects/contrail.xml</path>
- <condition>
-  <equals>
-   <property>controls/switches/contrails</property>
-   <value type="bool">true</value>
-  </equals>
- </condition>
  <name>LContrail</name>
  <offsets>
   <x-m>20</x-m>
@@ -2267,17 +2261,33 @@
 
 <model>
  <path>Aircraft/787-family/Models/Effects/contrail.xml</path>
- <condition>
-  <equals>
-   <property>controls/switches/contrails</property>
-   <value type="bool">true</value>
-  </equals>
- </condition>
  <name>RContrail</name>
  <offsets>
   <x-m>20</x-m>
   <y-m>9.63</y-m>
   <z-m>-.085</z-m>
+  <heading-deg>0</heading-deg>
+ </offsets>
+</model>
+
+<model>
+ <path>Aircraft/787-family/Models/Effects/vortices.xml</path>
+ <name>LVortex</name>
+ <offsets>
+  <x-m>14</x-m>
+  <y-m>-29.74</y-m>
+  <z-m>3.92</z-m>
+  <heading-deg>0</heading-deg>
+ </offsets>
+</model>
+
+<model>
+ <path>Aircraft/787-family/Models/Effects/vortices.xml</path>
+ <name>RVortex</name>
+ <offsets>
+  <x-m>14</x-m>
+  <y-m>29.74</y-m>
+  <z-m>3.92</z-m>
   <heading-deg>0</heading-deg>
  </offsets>
 </model>
@@ -2362,7 +2372,7 @@
   <offsets>
     <x-m>9.6840</x-m>
     <y-m>27.2495</y-m>
-    <z-m>3.2275</z-m>
+    <z-m>3.4275</z-m>
   </offsets>
 </model>
 
@@ -2384,7 +2394,7 @@
   <offsets>
     <x-m>9.6840</x-m>
     <y-m>-27.2495</y-m>
-    <z-m>3.2275</z-m>
+    <z-m>3.4275</z-m>
   </offsets>
 </model>
 
@@ -2406,7 +2416,7 @@
   <offsets>
     <x-m>9.6840</x-m>
     <y-m>-27.4363</y-m>
-    <z-m>3.2601</z-m>
+    <z-m>3.4601</z-m>
   </offsets>
 </model>
 
@@ -2428,7 +2438,7 @@
   <offsets>
     <x-m>9.6840</x-m>
     <y-m>27.4363</y-m>
-    <z-m>3.2601</z-m>
+    <z-m>3.4601</z-m>
   </offsets>
 </model>
 
