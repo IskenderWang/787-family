@@ -23,6 +23,64 @@
         <!-- Add custom properties here -->
 
         <signal>
+            <type>bool</type>
+            <property>controls/lighting/nav-lights</property>
+        </signal>
+        <signal>
+            <type>bool</type>
+            <property>controls/lighting/beacon</property>
+        </signal>
+        <signal>
+            <type>bool</type>
+            <property>controls/lighting/strobe</property>
+        </signal>
+        <signal>
+            <type>bool</type>
+            <property>sim/model/lights/beacon/state</property>
+        </signal>
+        <signal>
+            <type>bool</type>
+            <property>sim/model/lights/strobe/state</property>
+        </signal>
+        <signal>
+            <type>bool</type>
+            <property>controls/lighting/wing-lights</property>
+        </signal>
+        <signal>
+            <type>bool</type>
+            <property>controls/lighting/taxi-lights</property>
+        </signal>
+        <signal>
+            <type>bool</type>
+            <property>controls/lighting/logo-lights</property>
+        </signal>
+        <signal>
+            <type>bool</type>
+            <property>controls/lighting/landing-light[0]</property>
+        </signal>
+        <signal>
+            <type>bool</type>
+            <property>controls/lighting/landing-light[1]</property>
+        </signal>
+        <signal>
+            <type>bool</type>
+            <property>controls/lighting/landing-light[2]</property>
+        </signal>
+        <signal>
+            <type>bool</type>
+            <property>controls/lighting/cockpit</property>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property>environment/temperature-degc</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property>/fdm/jsbsim/aero/force/Drag_induced</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
             <type>float</type>
             <property>/gear/gear/steering-norm</property>
             <interpolation>linear</interpolation>
