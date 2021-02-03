@@ -25,13 +25,13 @@
             </less-than>
         </condition>
         <position>
-            <x>26</x>
+            <x>0</x>
             <y>0</y>
-            <z>4</z>
+            <z>0</z>
         </position>     
         <reference-dist>10</reference-dist> 
         <max-dist>30</max-dist> 
-        <volume>0.3</volume>        
+        <volume>0.5</volume>        
     </apu-start>
 
     <apu-running2>
@@ -49,13 +49,13 @@
             </equals>
         </condition>
         <position>
-            <x>26</x>
+            <x>0</x>
             <y>0</y>
-            <z>4</z>
+            <z>0</z>
         </position> 
         <reference-dist>10</reference-dist>
         <max-dist>30</max-dist>
-        <volume>0.3</volume>
+        <volume>0.4</volume>
     </apu-running2>
     
     
@@ -74,13 +74,13 @@
             </greater-than-equals>
         </condition>
         <position>
-            <x>26</x>
+            <x>0</x>
             <y>0</y>
-            <z>4</z>
+            <z>0</z>
         </position> 
         <reference-dist>10</reference-dist>
         <max-dist>30</max-dist>
-        <volume>0.3</volume>
+        <volume>0.4</volume>
     </apu-running>
 
     <apu-shutdown>
@@ -102,9 +102,9 @@
             </greater-than> 
         </condition>
         <position>
-            <x>26</x>
+            <x>0</x>
             <y>0</y>
-            <z>4</z>
+            <z>0</z>
         </position> 
         <reference-dist>10</reference-dist>
         <max-dist>30</max-dist>
@@ -130,9 +130,9 @@
             </greater-than> 
         </condition>
         <position>
-            <x>26</x>
+            <x>0</x>
             <y>0</y>
-            <z>4</z>
+            <z>0</z>
         </position> 
         <reference-dist>10</reference-dist>
         <max-dist>30</max-dist>

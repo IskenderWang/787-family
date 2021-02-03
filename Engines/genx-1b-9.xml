@@ -1,15 +1,4 @@
 <?xml version="1.0"?>
-<!--
-  File:     genx-1b-9.xml
-  Author:   Aero-Matic v 0.82
-
-  Inputs:
-    name:           genx-1b67
-    type:           turbine
-    thrust:         69400 lb
-    augmented?      no
-    injected?       no
--->
 
 <turbine_engine name="genx-1b">
   <milthrust> 74100.0 </milthrust> <!-- based on GEnx-1b75 -->

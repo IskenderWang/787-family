@@ -1,2 +1,8 @@
 
+# ignore generated backup files
+*.*~
+.*~
+# ignore swap files
+*.swp
+*.swo
 **/.DS_Store

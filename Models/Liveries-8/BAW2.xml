@@ -4,7 +4,7 @@
 	<model>
 		<livery> 
 			<name type="string">British Airways (G-ZBJA)</name>
-			<texture>Liveries-8/BAW.png</texture>
+			<texture>Liveries-8/BAW2.png</texture>
 		</livery>
         <lights>
             <texture>Liveries-8/BAW-lights.png</texture>
