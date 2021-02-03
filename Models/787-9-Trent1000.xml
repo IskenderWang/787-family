@@ -2277,7 +2277,7 @@
 </model>
 
 <model>
- <path>Aircraft/787-family/Models/Effects/vortices.xml</path>
+ <path>Aircraft/787-family/Models/Effects/tiptrail.xml</path>
  <name>LVortex</name>
  <offsets>
   <x-m>14</x-m>
@@ -2288,7 +2288,7 @@
 </model>
 
 <model>
- <path>Aircraft/787-family/Models/Effects/vortices.xml</path>
+ <path>Aircraft/787-family/Models/Effects/tiptrail.xml</path>
  <name>RVortex</name>
  <offsets>
   <x-m>14</x-m>
