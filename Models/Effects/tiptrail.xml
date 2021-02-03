@@ -9,17 +9,17 @@
         <emissive type="bool">false</emissive>
         <lighting type="bool">false</lighting>
 
-        <!--<condition>
+        <condition>
 			<and>
 			   <greater-than-equals>
 					<expression>
 						<sum>
 							<product>
-								<property>environment/relative-humidity</property>								
+								<property>environment/relative-humidity</property>
 								<value>0.09</value>
 							</product>
-							<property>fdm/jsbsim/aero/alpha-deg</property>									
-						 </sum>
+							<property>fdm/jsbsim/aero/alpha-deg</property>
+						</sum>
 					</expression>			  
 					<value>12.5</value>
 			   </greater-than-equals>
@@ -48,7 +48,7 @@
 					<value>0</value>
 				</greater-than>
 			</and>
-        </condition>-->
+        </condition>
 
         <attach>world</attach>
 
