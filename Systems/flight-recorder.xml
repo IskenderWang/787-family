@@ -77,17 +77,17 @@
         </signal>
         <signal>
             <type>float</type>
-            <property>/fdm/jsbsim/aero/force/Drag_induced</property>
+            <property>environment/relative-humidity</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property>/fdm/jsbsim/aero/alpha-deg</property>
             <interpolation>linear</interpolation>
         </signal>
         <signal>
             <type>float</type>
             <property>/gear/gear/steering-norm</property>
-            <interpolation>linear</interpolation>
-        </signal>
-        <signal>
-            <type>float</type>
-            <property>/gear/brake-thermal-energy</property>
             <interpolation>linear</interpolation>
         </signal>
         <signal>
