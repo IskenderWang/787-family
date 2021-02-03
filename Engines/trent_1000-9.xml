@@ -1,19 +1,8 @@
 <?xml version="1.0"?>
-<!--
-  File:     trent_1000-9.xml
-  Author:   Aero-Matic v 0.82
-
-  Inputs:
-    name:           trent_1000
-    type:           turbine
-    thrust:         75239 lb
-    augmented?      no
-    injected?       no
--->
 
 <turbine_engine name="trent_1000">
   <milthrust> 75239.0 </milthrust> <!-- based on Trent 1000 D -->
-  <bypassratio>     9.2 </bypassratio>
+  <bypassratio>     10.0 </bypassratio>
   <tsfc>            0.271 </tsfc>
   <bleed>           0.02 </bleed>
   <idlen1>         30.0 </idlen1>

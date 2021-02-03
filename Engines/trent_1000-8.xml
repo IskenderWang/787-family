@@ -2,7 +2,7 @@
 
 <turbine_engine name="trent_1000">
   <milthrust> 69885.0 	</milthrust> <!-- based on Trent 1000 A -->
-  <bypassratio>     10	</bypassratio>
+  <bypassratio>     10.8	</bypassratio>
   <tsfc>            0.27 	</tsfc>
   <bleed>           0.04	</bleed>
   <idlen1>         30.0 	</idlen1>
