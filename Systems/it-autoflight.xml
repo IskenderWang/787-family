@@ -115,7 +115,7 @@
 			<condition>
 				<less-than>
 					<property>/velocities/airspeed-kt</property>
-					<value>60</value>
+					<value>80</value>
 				</less-than>
 			</condition>
 			<value>0</value>
@@ -1914,9 +1914,9 @@
 						<property>/it-autoflight/internal/vert-speed-fpm</property>
 					</difference>
 					<table>
-						<property>/instrumentation/airspeed-indicator/indicated-mach</property> 
-						<entry><ind>0.20</ind><dep>0.004</dep></entry>
-						<entry><ind>0.95</ind><dep>0.002</dep></entry>
+						<property>/velocities/airspeed-kt</property>
+						<entry><ind>140</ind><dep>0.001848350</dep></entry>
+						<entry><ind>360</ind><dep>0.000924175</dep></entry>
 					</table>
 				</product>
 			</expression>
