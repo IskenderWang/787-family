@@ -78,7 +78,7 @@
 		<setting>0.033</setting>  <!-- flaps 1  -->
 		<setting>0.220</setting>  <!-- flaps 5  -->
 		<setting>0.500</setting>  <!-- flaps 15 -->
-		<setting>0.666</setting>  <!-- flaps 20 -->
+		<setting>0.667</setting>  <!-- flaps 20 -->
 		<setting>0.833</setting>  <!-- flaps 25 -->
 		<setting>1.000</setting>  <!-- flaps 30 -->
 	</flaps>
