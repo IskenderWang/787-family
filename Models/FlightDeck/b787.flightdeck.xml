@@ -456,6 +456,19 @@
 		</axis>
 	</animation>
 
+    <!--Park Brakes-->
+    <animation>
+        <type>translate</type>
+        <object-name>park.brake</object-name>
+        <property>controls/gear/brake-parking</property>
+        <factor>0.015</factor>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
 <!-- Rudder Foot Pedal Animations -->
 
 	<animation>
