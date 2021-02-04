@@ -87,6 +87,11 @@
         </signal>
         <signal>
             <type>float</type>
+            <property>/gear/gear/brake-thermal-energy</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
             <property>/gear/gear/steering-norm</property>
             <interpolation>linear</interpolation>
         </signal>
@@ -185,6 +190,11 @@
         <signal>
             <type>float</type>
             <property>/systems/shake/shaking</property>
+            <interpolation>linear</interpolation>
+        </signal>
+        <signal>
+            <type>float</type>
+            <property>/it-autoflight/internal/kts-predicted-5</property>
             <interpolation>linear</interpolation>
         </signal>
 

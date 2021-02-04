@@ -19,6 +19,12 @@
                 <property>gear/gear[0]/tyre-smoke</property>
                 <property>gear/brake-smoke</property>
             </or>
+            <and>
+                <greater-than>
+                    <property alias="/params/airspeed-kt"/>
+                    <property>/it-autoflight/internal/kts-predicted-5</property>
+                </greater-than>
+            </and>
         </condition>
 
         <attach>world</attach>
