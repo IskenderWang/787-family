@@ -87,12 +87,9 @@
         <object-name>eng2fanb</object-name>
         <object-name>fuselage</object-name>
         <object-name>fuselage.001</object-name>
-        <object-name>lhfdoor</object-name>
         <object-name>lhfnosedoor</object-name>
         <object-name>lhgearibdoor</object-name>
-        <object-name>lhibdoor</object-name>
         <object-name>lhnosedoor</object-name>
-        <object-name>lhobdoor</object-name>
         <object-name>lhreverser</object-name>
         <object-name>lreverse</object-name>
         <object-name>mgearbay</object-name>
@@ -100,8 +97,8 @@
         <object-name>no1engl</object-name>
         <object-name>no2enge</object-name>
         <object-name>no2engl</object-name>
-        <object-name>rhfdoor</object-name>
         <object-name>rhfnosedoor</object-name>
+        <object-name>rhnosedoor</object-name>
         <object-name>rhgearibdoor</object-name>
         <object-name>rhreverser</object-name>
         <object-name>rreverse</object-name>
@@ -111,6 +108,19 @@
         <texture-prop>texture</texture-prop>
         <texture>BOE-9.png</texture>
     </animation>
+
+<animation>
+        <type>material</type>
+        <object-name>lhobdoor</object-name>
+        <object-name>lhibdoor</object-name>
+        <object-name>lhfdoor</object-name>
+        <object-name>rhobdoor</object-name>
+        <object-name>rhibdoor</object-name>
+        <object-name>rhfdoor</object-name>
+        <property-base>sim/model</property-base>
+	<texture-prop>texture</texture-prop>
+        <texture>wings.png</texture>
+</animation>
 
 
 <animation>
