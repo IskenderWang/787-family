@@ -17,6 +17,7 @@
         <object-name>lhgearibdoor</object-name>
         <object-name>lhibdoor</object-name>
         <object-name>lhnosedoor</object-name>
+        <object-name>lhobdoor</object-name>
         <object-name>lreverse</object-name>
         <object-name>mgearbay</object-name>
         <object-name>no1engl</object-name>
@@ -57,6 +58,69 @@
 
     <effect>
       <inherits-from>Aircraft/787-family/Models/Effects/reflect-wl</inherits-from>
+      <object-name>lhibaileron</object-name>
+      <object-name>lhibfairing</object-name>
+      <object-name>lhibflap</object-name>
+      <object-name>lhibflap1_</object-name>
+      <object-name>lhibflap1_0</object-name>
+      <object-name>lhibflapa</object-name>
+      <object-name>lhibslat</object-name>
+      <object-name>lhibspoilera</object-name>
+      <object-name>lhibspoilera.001</object-name>
+      <object-name>lhkflap</object-name>
+      <object-name>lhkflap.001</object-name>
+      <object-name>lhmfairing</object-name>
+      <object-name>lhobaileron</object-name>
+      <object-name>lhobfairing</object-name>
+      <object-name>lhobflapa</object-name>
+      <object-name>lhobflapb</object-name>
+      <object-name>lhobslata</object-name>
+      <object-name>lhobslatb</object-name>
+      <object-name>lhobslatc</object-name>
+      <object-name>lhobspoilera</object-name>
+      <object-name>lhobspoilerb</object-name>
+      <object-name>lhspoilera</object-name>
+      <object-name>lhturnoffl</object-name>
+      <object-name>lhturnofflt</object-name>
+      <object-name>llandlt</object-name>
+      <object-name>llandlt.001</object-name>
+      <object-name>lltcover</object-name>
+      <object-name>lltcover.0</object-name>
+      <object-name>lltcover.001</object-name>
+      <object-name>lltcover.002</object-name>
+      <object-name>lwing</object-name>
+      <object-name>lwinga</object-name>
+      <object-name>lwingb</object-name>
+      <object-name>lwingc</object-name>
+      <object-name>rhibaileron</object-name>
+      <object-name>rhibfairing</object-name>
+      <object-name>rhibflap</object-name>
+      <object-name>rhibflapa</object-name>
+      <object-name>rhibslat</object-name>
+      <object-name>rhibspoilera</object-name>
+      <object-name>rhibspoilera.001</object-name>
+      <object-name>rhkflap</object-name>
+      <object-name>rhkflap.001</object-name>
+      <object-name>rhlight</object-name>
+      <object-name>rhmfairing</object-name>
+      <object-name>rhobaileron</object-name>
+      <object-name>rhobfairing</object-name>
+      <object-name>rhobflapa</object-name>
+      <object-name>rhobflapb</object-name>
+      <object-name>rhobslata</object-name>
+      <object-name>rhobslatb</object-name>
+      <object-name>rhobslatc</object-name>
+      <object-name>rhobspoilera</object-name>
+      <object-name>rhobspoilerb</object-name>
+      <object-name>rhspoilera</object-name>
+      <object-name>rhturnoffl</object-name>
+      <object-name>rhturnofflt</object-name>
+      <object-name>rlandlt</object-name>
+      <object-name>rlandlt.001</object-name>
+      <object-name>rwing</object-name>
+      <object-name>rwinga</object-name>
+      <object-name>rwingb</object-name>
+      <object-name>rwingc</object-name>
       <object-name>wings_lightmap</object-name>
     </effect>
 
@@ -87,12 +151,9 @@
         <object-name>eng2fanb</object-name>
         <object-name>fuselage</object-name>
         <object-name>fuselage.001</object-name>
-        <object-name>lhfdoor</object-name>
         <object-name>lhfnosedoor</object-name>
         <object-name>lhgearibdoor</object-name>
-        <object-name>lhibdoor</object-name>
         <object-name>lhnosedoor</object-name>
-        <object-name>lhobdoor</object-name>
         <object-name>lhreverser</object-name>
         <object-name>lreverse</object-name>
         <object-name>mgearbay</object-name>
@@ -100,8 +161,8 @@
         <object-name>no1engl</object-name>
         <object-name>no2enge</object-name>
         <object-name>no2engl</object-name>
-        <object-name>rhfdoor</object-name>
         <object-name>rhfnosedoor</object-name>
+        <object-name>rhnosedoor</object-name>
         <object-name>rhgearibdoor</object-name>
         <object-name>rhreverser</object-name>
         <object-name>rreverse</object-name>
@@ -109,7 +170,20 @@
         <object-name>cargo_door</object-name>
         <property-base>sim/model/livery</property-base>
         <texture-prop>texture</texture-prop>
-        <texture>BOE-8.png</texture>
+        <texture>BOE-9.png</texture>
+</animation>
+
+<animation>
+        <type>material</type>
+        <object-name>lhobdoor</object-name>
+        <object-name>lhibdoor</object-name>
+        <object-name>lhfdoor</object-name>
+        <object-name>rhobdoor</object-name>
+        <object-name>rhibdoor</object-name>
+        <object-name>rhfdoor</object-name>
+        <property-base>sim/model</property-base>
+        <texture-prop>texture</texture-prop>
+        <texture>wings.png</texture>
 </animation>
 
 <animation>
@@ -136,9 +210,9 @@
         <object-name>rhobslat_a</object-name>
         <object-name>rhobslat_b</object-name>
         <object-name>rhobslat_c</object-name>
-	<object-name>tailchrome</object-name>
-	<object-name>lchrome</object-name>
-	<object-name>rchrome</object-name>
+        <object-name>tailchrome</object-name>
+        <object-name>lchrome</object-name>
+        <object-name>rchrome</object-name>
 </animation>
 
 <model>
