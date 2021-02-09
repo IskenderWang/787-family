@@ -2370,7 +2370,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>tiller.l</object-name>
-		<property>controls/flight/rudder</property>
+		<property>/gear/gear[0]/steering-norm</property>
 		<factor>45</factor>
 		<axis>
 			<x1-m>-23.1922</x1-m>
@@ -2385,7 +2385,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>tiller.r</object-name>
-		<property>controls/flight/rudder</property>
+		<property>/gear/gear[0]/steering-norm</property>
 		<factor>45</factor>
 		<axis>
 			<x1-m>-23.1922</x1-m>

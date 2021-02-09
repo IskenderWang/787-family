@@ -71,7 +71,7 @@
 	<hrule />
 	
 	<text>
-		<label>Landing Gear Chokes</label>
+		<label>Landing Gear Chocks</label>
 	</text>
 	
 	<group>
@@ -98,7 +98,7 @@
 	<checkbox>
 		<row>1</row>
 		<col>0</col>
-		<property>services/chokes/left</property>
+		<property>services/chocks/left</property>
 		<binding>
 			<command>dialog-apply</command>
 		</binding>
@@ -108,7 +108,7 @@
 	<checkbox>
 		<row>1</row>
 		<col>1</col>
-		<property>services/chokes/nose</property>
+		<property>services/chocks/nose</property>
 		<binding>
 			<command>dialog-apply</command>
 		</binding>
@@ -118,7 +118,7 @@
 	<checkbox>
 		<row>1</row>
 		<col>2</col>
-		<property>services/chokes/right</property>
+		<property>services/chocks/right</property>
 		<binding>
 			<command>dialog-apply</command>
 		</binding>

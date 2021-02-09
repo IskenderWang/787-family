@@ -25,13 +25,16 @@
             </less-than>
         </condition>
         <position>
-            <x>0</x>
+            <x>30</x>
             <y>0</y>
-            <z>0</z>
-        </position>     
-        <reference-dist>10</reference-dist> 
-        <max-dist>30</max-dist> 
-        <volume>0.5</volume>        
+            <z>2</z>
+        </position> 
+        <reference-dist>30</reference-dist>
+        <max-dist>100</max-dist>
+        <volume>
+            <property>engines/APU/rpm</property>
+            <factor>0.01</factor>
+        </volume>
     </apu-start>
 
     <apu-running2>
@@ -49,13 +52,16 @@
             </equals>
         </condition>
         <position>
-            <x>0</x>
+            <x>30</x>
             <y>0</y>
-            <z>0</z>
+            <z>2</z>
         </position> 
-        <reference-dist>10</reference-dist>
-        <max-dist>30</max-dist>
-        <volume>0.4</volume>
+        <reference-dist>30</reference-dist>
+        <max-dist>100</max-dist>
+        <volume>
+            <property>engines/APU/rpm</property>
+            <factor>0.01</factor>
+        </volume>
     </apu-running2>
     
     
@@ -74,13 +80,16 @@
             </greater-than-equals>
         </condition>
         <position>
-            <x>0</x>
+            <x>30</x>
             <y>0</y>
-            <z>0</z>
+            <z>2</z>
         </position> 
-        <reference-dist>10</reference-dist>
-        <max-dist>30</max-dist>
-        <volume>0.4</volume>
+        <reference-dist>30</reference-dist>
+        <max-dist>100</max-dist>
+        <volume>
+            <property>engines/APU/rpm</property>
+            <factor>0.01</factor>
+        </volume>
     </apu-running>
 
     <apu-shutdown>
@@ -102,13 +111,16 @@
             </greater-than> 
         </condition>
         <position>
-            <x>0</x>
+            <x>30</x>
             <y>0</y>
-            <z>0</z>
+            <z>2</z>
         </position> 
-        <reference-dist>10</reference-dist>
-        <max-dist>30</max-dist>
-        <volume>0.5</volume>
+        <reference-dist>30</reference-dist>
+        <max-dist>100</max-dist>
+        <volume>
+            <property>engines/APU/rpm</property>
+            <factor>0.01</factor>
+        </volume>
     </apu-shutdown> 
 
     <apu-shutdown2>
@@ -130,13 +142,16 @@
             </greater-than> 
         </condition>
         <position>
-            <x>0</x>
+            <x>30</x>
             <y>0</y>
-            <z>0</z>
+            <z>2</z>
         </position> 
-        <reference-dist>10</reference-dist>
-        <max-dist>30</max-dist>
-        <volume>0.5</volume>
+        <reference-dist>30</reference-dist>
+        <max-dist>100</max-dist>
+        <volume>
+            <property>engines/APU/rpm</property>
+            <factor>0.01</factor>
+        </volume>
     </apu-shutdown2>    
 
 <!-- Engine external sounds -->

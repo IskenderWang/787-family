@@ -465,11 +465,19 @@
 						</binding>
 					</item>
 					<item>
-						<name>pushback</name>
-						<label>Request for Pushback</label>
+						<name>autopush</name>
+						<label>Pushback</label>
 						<binding>
 							<command>dialog-show</command>
-							<dialog-name>pushback</dialog-name>
+							<dialog-name>autopush</dialog-name>
+						</binding>
+					</item>
+					<item>
+						<name>tiller</name>
+						<label>Tiller Steering</label>
+						<binding>
+							<command>dialog-show</command>
+							<dialog-name>tiller-dlg</dialog-name>
 						</binding>
 					</item>
 					<item>

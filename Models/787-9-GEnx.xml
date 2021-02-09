@@ -218,7 +218,7 @@
 
 <model>
  <name>Pushback</name>
- <path>Models/Airport/Pushback/Goldhofert.xml</path>
+ <path>Autopush/Goldhofert.xml</path>
  <offsets>
   <x-m>-24.2</x-m>
   <y-m>0</y-m>
@@ -2681,7 +2681,7 @@
         <type>translate</type>
          <object-name>NGearStrut</object-name>
          <object-name>NoseWheel</object-name>
-         <object-name>choke_nose</object-name>
+         <object-name>chock_nose</object-name>
         <property>/gear/gear[0]/compression-norm</property>
         <interpolation>
             <entry><ind>0.00</ind><dep>0</dep></entry>
@@ -2766,7 +2766,7 @@
         <object-name>LeftGearCompressor</object-name>
         <object-name>LeftGearCompressor1</object-name>
         <object-name>LeftGearBaseRod</object-name>
-        <object-name>choke_left</object-name>
+        <object-name>chock_left</object-name>
         <property>/gear/gear[1]/compression-norm</property>
         <interpolation>
             <entry><ind>0.00</ind><dep>0</dep></entry>
@@ -2891,7 +2891,7 @@
         <object-name>RightGearCompressor</object-name>
         <object-name>RightGearCompressor1</object-name>
         <object-name>RightGearBaseRod</object-name>
-        <object-name>choke_right</object-name>
+        <object-name>chock_right</object-name>
         <property>/gear/gear[2]/compression-norm</property>
         <interpolation>
             <entry><ind>0.00</ind><dep>0</dep></entry>
@@ -3478,36 +3478,36 @@
 	</condition>
 </model>
 
-<!-- Chokes -->
+<!-- Chocks -->
 
 <model>
-	<name>choke_nose</name>
-	<path>Aircraft/787-family/Models/Ground/Services/Chokes-9/choke_nose.ac</path>
+	<name>chock_nose</name>
+	<path>Aircraft/787-family/Models/Ground/Services/Chocks-9/chock_nose.ac</path>
 	<condition>
 		<equals>
-			<property>services/chokes/nose</property>
+			<property>services/chocks/nose</property>
 			<value>1</value>
 		</equals>
 	</condition>
 </model>
 
 <model>
-	<name>choke_left</name>
-	<path>Aircraft/787-family/Models/Ground/Services/Chokes-9/choke_left.ac</path>
+	<name>chock_left</name>
+	<path>Aircraft/787-family/Models/Ground/Services/Chocks-9/chock_left.ac</path>
 	<condition>
 		<equals>
-			<property>services/chokes/left</property>
+			<property>services/chocks/left</property>
 			<value>1</value>
 		</equals>
 	</condition>
 </model>
 
 <model>
-	<name>choke_right</name>
-	<path>Aircraft/787-family/Models/Ground/Services/Chokes-9/choke_right.ac</path>
+	<name>chock_right</name>
+	<path>Aircraft/787-family/Models/Ground/Services/Chocks-9/chock_right.ac</path>
 	<condition>
 		<equals>
-			<property>services/chokes/right</property>
+			<property>services/chocks/right</property>
 			<value>1</value>
 		</equals>
 	</condition>
