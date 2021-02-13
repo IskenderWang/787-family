@@ -1031,20 +1031,9 @@
 
     <speedbrake>
         <name>speedbrake</name>
-        <mode>in-transit</mode>
-        <path>Aircraft/787-family/Sounds/Flaps.wav</path>
+        <mode>once</mode>
+        <path>Aircraft/787-family/Sounds/speedbrake.wav</path>
         <property>/surface-positions/speedbrake-pos-norm</property>
-        <volume>
-            <property>sim/sound/effects/volume</property>
-            <factor>2.0</factor>
-        </volume>
-        <position>
-            <x>-24</x>
-            <y>0</y>
-            <z>0.18</z>
-        </position>
-        <reference-dist>0.5</reference-dist>
-        <max-dist>1.0</max-dist>
     </speedbrake>
 
     <enginesr1>
