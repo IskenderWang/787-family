@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <path>Aircraft/787-family/Models/Effects/condensation.ac</path>
+ <nopreview/>
+
+ <effect>
+  <inherits-from>Aircraft/Airbus_A330/Models/Effects/condensation</inherits-from>
+  <object-name>Bounding_box1</object-name>
+ </effect>
+ <animation>
+  <type>scale</type>
+  <object-name>Bounding_box1</object-name>
+  <property>orientation/alpha-deg</property><!-- orientation/alpha-deg -->
+  <x-min>2.2</x-min>
+  <y-min>35</y-min>
+  <z-min>7.5</z-min>
+  <x-factor>0</x-factor>
+  <y-factor>0</y-factor>
+  <z-factor>0.07</z-factor>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Bounding_box1</object-name>
+  <property>sim/multiplay/generic/float[17]</property><!-- orientation/alpha-deg -->
+  <offset-deg>-10</offset-deg>
+  <factor>-0.03</factor>
+  <center>
+   <x-m>0.</x-m>
+   <y-m>0.1</y-m>
+   <z-m>0.</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+</PropertyList>
