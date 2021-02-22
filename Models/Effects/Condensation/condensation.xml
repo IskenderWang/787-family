@@ -6,7 +6,7 @@
  <nopreview/>
 
  <effect>
-  <inherits-from>Aircraft/Airbus_A330/Models/Effects/condensation</inherits-from>
+  <inherits-from>Aircraft/787-family/Models/Effects/condensation</inherits-from>
   <object-name>Bounding_box1</object-name>
  </effect>
  <animation>
