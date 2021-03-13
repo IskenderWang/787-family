@@ -2379,6 +2379,17 @@
 </model>
 
 <model>
+ <path>Aircraft/787-family/Models/Effects/Condensation/condensation.xml</path>
+ <name>Condensation</name>
+ <offsets>
+  <x-m>-2</x-m>
+  <y-m>0</y-m>
+  <z-m>-1</z-m>
+  <heading-deg>0</heading-deg>
+ </offsets>
+</model>
+
+<model>
  <path>Aircraft/787-family/Models/Effects/tire-smoke-nose.xml</path>
  <name>tyre-smoke-n</name>
  <offsets>
