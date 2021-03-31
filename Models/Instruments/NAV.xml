@@ -3,6 +3,18 @@
 <PropertyList>
 
 	<path>mfd-nav.ac</path>
+	<!-- Come on only when there's atleast 9 volts of power -->
+
+	<animation>
+		<type>select</type>
+		<!-- <object-name>menu</object-name> -->
+		<condition>
+			<greater-than>
+				<property>systems/electrical/outputs/efis</property>
+				<value>9</value>
+			</greater-than>
+		</condition>
+	</animation>
 
 	<!-- HSI arc -->
 	<animation>

@@ -10,7 +10,7 @@ loc 0.00683051 0.0432109 0.0349508
 kids 50
 OBJECT poly
 name "horizon"
-loc 0.111385 -0.0923293 -0.561107
+loc 0.111385 -0.0923293 -0.5595000
 texture "horizon.png"
 crease 45.000000
 numvert 4
@@ -379,7 +379,7 @@ refs 4
 kids 0
 OBJECT poly
 name "gspointer"
-loc -0.00683051 -0.0232185 -0.0910078
+loc -0.00683051 -0.0238000 -0.0906078
 data 9
 Plane.015
 crease 30.000000
@@ -399,7 +399,7 @@ refs 4
 kids 0
 OBJECT poly
 name "gsscale"
-loc -0.00683051 -0.0232185 -0.0910078
+loc -0.00683051 -0.0238000 -0.0910078
 data 9
 Plane.010
 texture "ati.png"
@@ -420,7 +420,7 @@ refs 4
 kids 0
 OBJECT poly
 name "locpointer"
-loc -0.00683051 -0.0402729 -0.0867398
+loc -0.00683051 -0.0404000 -0.0867200
 data 9
 Plane.016
 crease 30.000000
@@ -440,7 +440,7 @@ refs 4
 kids 0
 OBJECT poly
 name "loc.scale"
-loc -0.00683051 -0.0402729 -0.0873218
+loc -0.00683051 -0.0408000 -0.0867200
 data 9
 Plane.008
 texture "ati.png"

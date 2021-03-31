@@ -4,6 +4,8 @@ Current maintainers:
 * IskenderWang
 * Marsdolphin
 
+Special thanks to Pilot2938, Wesley, Zac, and all other contributors+helpers
+
 787-8
 -----
 

@@ -58,8 +58,8 @@ Contrail particle system by Lauri Peltonen A.K.A. Zan
 	 
 	 <counter>
 		 <particles-per-sec>
-                         <property>sim/model/contrail/particles-per-second</property>
-			 <spread>15</spread>
+            <property>sim/model/contrail/particles-per-second</property>
+            <spread>15</spread>
 		 </particles-per-sec>
 	 </counter>
 	 
@@ -70,12 +70,15 @@ Contrail particle system by Lauri Peltonen A.K.A. Zan
 			 <color>
 				 <red>
 					 <value>1</value>
+					 <property>/rendering/scene/diffuse/red</property>
 				 </red>
 				 <green>
 					 <value>1</value>
+					 <property>/rendering/scene/diffuse/green</property>
 				 </green>
 				 <blue>
 					 <value>1</value>
+					 <property>/rendering/scene/diffuse/blue</property>
 				 </blue>
 				 <alpha>
 					 <property>sim/model/contrail/density</property>
@@ -89,19 +92,22 @@ Contrail particle system by Lauri Peltonen A.K.A. Zan
 			 <color>
 				 <red>
 					 <value>1</value>
+					 <property>/rendering/scene/diffuse/red</property>
 				 </red>
 				 <green>
 					 <value>1</value>
+					 <property>/rendering/scene/diffuse/green</property>
 				 </green>
 				 <blue>
 					 <value>1</value>
+					 <property>/rendering/scene/diffuse/blue</property>
 				 </blue>
 				 <alpha>
 					 <value>0</value>
 				 </alpha>
 			 </color>
 			 <size>
-                               <property>sim/model/contrail/maximum-size</property>
+                <property>sim/model/contrail/maximum-size</property>
 			 </size>
 		 </end>
 		 <life-sec>

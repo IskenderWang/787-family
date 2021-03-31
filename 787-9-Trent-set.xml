@@ -79,9 +79,9 @@
         <setting>0.220</setting>  <!-- flaps 5  -->
         <setting>0.360</setting>  <!-- flaps 10  -->
         <setting>0.500</setting>  <!-- flaps 15 -->
-        <setting>0.570</setting>  <!-- flaps 17 -->
-        <setting>0.620</setting>  <!-- flaps 18 -->
-        <setting>0.690</setting>  <!-- flaps 20 -->
+        <setting>0.567</setting>  <!-- flaps 17 -->
+        <setting>0.600</setting>  <!-- flaps 18 -->
+        <setting>0.667</setting>  <!-- flaps 20 -->
         <setting>0.833</setting>  <!-- flaps 25 -->
         <setting>1.000</setting>  <!-- flaps 30 -->
     </flaps>
@@ -452,13 +452,21 @@
                         </binding>
                     </item>
                     <item>
-                        <name>pushback</name>
-                        <label>Request for Pushback</label>
+                        <name>autopush</name>
+                        <label>Pushback</label>
                         <binding>
                             <command>dialog-show</command>
-                            <dialog-name>pushback</dialog-name>
+                            <dialog-name>autopush</dialog-name>
                         </binding>
                     </item>
+                    <item>
+						<name>tiller</name>
+						<label>Tiller Steering</label>
+						<binding>
+							<command>dialog-show</command>
+							<dialog-name>tiller-dlg</dialog-name>
+						</binding>
+					</item>
                     <item>
                         <name>lights</name>
                         <label>Control Aircraft Lights</label>

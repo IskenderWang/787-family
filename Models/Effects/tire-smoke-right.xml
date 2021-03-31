@@ -19,6 +19,12 @@
                 <property>gear/gear[2]/tyre-smoke</property>
                 <property>gear/brake-smoke</property>
             </or>
+            <and>
+                <greater-than>
+                    <property alias="/params/airspeed-kt"/>
+                    <property>/it-autoflight/internal/kts-predicted-5</property>
+                </greater-than>
+            </and>
         </condition>
 
         <attach>world</attach>
@@ -60,12 +66,15 @@
                 <color>
                     <red>
                         <value>0.8</value>
+                        <property>/rendering/scene/diffuse/red</property>
                     </red>
                     <green>
                         <value>0.8</value>
+                        <property>/rendering/scene/diffuse/green</property>
                     </green>
                     <blue>
                         <value>0.8</value>
+                        <property>/rendering/scene/diffuse/blue</property>
                     </blue>
                     <alpha>
                         <value>0.5</value>
@@ -79,12 +88,15 @@
                 <color>
                     <red>
                         <value>0.7</value>
+                        <property>/rendering/scene/diffuse/red</property>
                     </red>
                     <green>
                         <value>0.7</value>
+                        <property>/rendering/scene/diffuse/green</property>
                     </green>
                     <blue>
                         <value>0.7</value>
+                        <property>/rendering/scene/diffuse/blue</property>
                     </blue>
                     <alpha>
                         <value>0.005</value>
