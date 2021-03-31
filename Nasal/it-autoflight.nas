@@ -183,7 +183,7 @@ var Settings = {
 };
 
 var Sound = {
-	apOff: props.globals.initNode("/it-autoflight/sound/apoffsound", 0, "BOOL"),
+	apOff: props.globals.initNode("/it-autoflight/sound/apoff", 0, "BOOL"),
 	enableApOff: 0,
 };
 
