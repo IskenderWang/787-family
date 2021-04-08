@@ -1694,7 +1694,7 @@
   <object-name>rudder</object-name>
   <object-name>lightedrudder</object-name>
   <property>/fdm/jsbsim/fcs/rudder-cmd-norm</property>
-  <factor>20</factor>
+  <factor>-20</factor>
   <offset-deg>0</offset-deg>
   <center>
    <x-m>30.01</x-m>
