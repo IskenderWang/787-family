@@ -335,3 +335,43 @@ setlistener("/sim/signals/fdm-initialized",func{
   sim_ready_tmr.singleShot = 1;
   sim_ready_tmr.start();
 },0,0);
+
+## REPLAY
+#######
+
+# disable wingflexer autopilot configuration when in replay
+
+setlistener("sim/replay/replay-state", func(replay_state_node)
+ {
+  var autopilots = props.globals.getNode("/sim/systems").getChildren("autopilot");
+  var autopilot = nil;
+  var found = 0;
+  
+  for (i = 0; i < size(autopilots); i += 1) {
+
+    if (autopilots[i].getChild("name").getValue() == "wing flexer property rule") {
+      autopilot = autopilots[i];
+      found = 1;
+      break;
+    }
+   }
+   
+   if (!found) {
+     print("wingflexer autopilot not found!");
+     return;
+   }
+   
+ 
+   var wingflexer_enabled = autopilot.getChild('serviceable');
+ 
+   var replay_state = replay_state_node.getIntValue();
+ 
+   if (replay_state == 0 or replay_state == 3)
+   { 
+     wingflexer_enabled.setBoolValue(1);
+   }
+   else
+   { 
+     wingflexer_enabled.setBoolValue(0);
+   }
+ }, 0, 0);

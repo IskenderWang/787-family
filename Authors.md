@@ -1,12 +1,14 @@
 # Boeing 787 Dreamliner Authors
 
-Current maintainers: 
+Current maintainers:
+
 * IskenderWang
 * Marsdolphin
 
 Special thanks to Pilot2938, Wesley, Zac, and all other contributors+helpers
 
-787-8
+## 787-8
+
 -----
 
 * Omega95: Cockpit, FDM, Nasal, Instruments, Ground, Database, Sounds, Systems
@@ -25,7 +27,8 @@ Special thanks to Pilot2938, Wesley, Zac, and all other contributors+helpers
 * Thomas Albrecht (radi): Wingflexer, ALS lights+shadows
 * Jonathan Redpath: misc bugfixes (Nasal, sounds)
 
-787-9
+## 787-9
+
 -----
 
 * MSA-S23: Some 3D
