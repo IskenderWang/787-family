@@ -33,10 +33,6 @@
 					<property>/controls/engines/throttle-cmd-pid</property>
 					<value type="double">0</value>
 				</equals>
-				<not>
-					<property>/controls/engines/engine[0]/reverser</property>
-					<property>/controls/engines/engine[1]/reverser</property>
-				</not>
 				<property>/gear/gear[1]/wow</property>
 				<property>/gear/gear[2]/wow</property>
 				<greater-than>
@@ -60,8 +56,6 @@
 						<property>/controls/flight/ground-spoilers-armed</property>
 						<value type="bool">false</value>
 					</equals>
-					<property>/controls/engines/engine[0]/reverser</property>
-					<property>/controls/engines/engine[1]/reverser</property>
 					<less-than>
 						<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
 						<value>72</value>
