@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<sim>    
+  <model>        
+    <livery>
+	<name type="string">ANA (JA783A)</name>
+      <texture>Liveries-9/ANA1.png</texture>
+    </livery>
+    <lights>
+      <texture>Liveries-9/787-lights.png</texture>
+    </lights>
+  </model>
+</sim>
+
+</PropertyList>
