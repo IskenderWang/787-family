@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Norwegian</name>
+				<texture>Liveries-9/NRS.png</texture>
+			</livery>
+			<lights>
+				<texture>Liveries-9/787-lights.png</texture>
+			</lights>
+		</model>
+	</sim>
+</PropertyList>

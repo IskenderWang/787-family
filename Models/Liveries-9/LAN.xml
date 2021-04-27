@@ -1,26 +1,16 @@
 <?xml version="1.0"?>
 <PropertyList>
 
-<sim>
-    
-<model>
-        
-<livery>
-            
-<name type="string">LATAM Chile</name>
-            
-<texture>Liveries-9/LAN.png</texture>
-        
-</livery>
-        
-<lights>
-            
-<texture>Liveries-9/LAN-lights.png</texture>
-        
-</lights>
-  
-</model>
-
+<sim>    
+  <model>        
+    <livery>
+	<name type="string">LATAM</name>
+      <texture>Liveries-9/LAN.png</texture>
+    </livery>
+    <lights>
+      <texture>Liveries-9/787-lights.png</texture>
+    </lights>
+  </model>
 </sim>
 
 </PropertyList>
