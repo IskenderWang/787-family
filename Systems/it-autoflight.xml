@@ -133,23 +133,6 @@
 		<input>
 			<condition>
 				<equals>
-					<property>/it-autoflight/input/kts-mach</property>
-					<value>1</value>
-				</equals>
-			</condition>
-			<expression>
-				<product>
-					<difference>
-						<property>/it-autoflight/input/mach</property>
-						<property>/instrumentation/airspeed-indicator/indicated-mach</property>
-					</difference>
-					<value>80</value>
-				</product>
-			</expression>
-		</input>
-		<input>
-			<condition>
-				<equals>
 					<property>/it-autoflight/mode/vert</property>
 					<value>T/O CLB</value>
 				</equals>
@@ -161,6 +144,23 @@
 						<property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
 					</difference>
 					<value>0.08</value>
+				</product>
+			</expression>
+		</input>
+		<input>
+			<condition>
+				<equals>
+					<property>/it-autoflight/input/kts-mach</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<expression>
+				<product>
+					<difference>
+						<property>/it-autoflight/input/mach</property>
+						<property>/instrumentation/airspeed-indicator/indicated-mach</property>
+					</difference>
+					<value>80</value>
 				</product>
 			</expression>
 		</input>
@@ -1107,16 +1107,10 @@
 			</u_min>
 			<u_min>
 				<condition>
-					<and>
-						<equals>
-							<property>/it-autoflight/output/thr-mode</property>
-							<value>2</value>
-						</equals>
-						<equals>
-							<property>/it-autoflight/output/spd-prot</property>
-							<value>0</value>
-						</equals>
-					</and>
+					<equals>
+						<property>/it-autoflight/output/thr-mode</property>
+						<value>2</value>
+					</equals>
 				</condition>
 				<expression>
 					<max>
@@ -1153,16 +1147,10 @@
 			</u_max>
 			<u_max>
 				<condition>
-					<and>
-						<equals>
-							<property>/it-autoflight/output/thr-mode</property>
-							<value>1</value>
-						</equals>
-						<equals>
-							<property>/it-autoflight/output/spd-prot</property>
-							<value>0</value>
-						</equals>
-					</and>
+					<equals>
+						<property>/it-autoflight/output/thr-mode</property>
+						<value>1</value>
+					</equals>
 				</condition>
 				<expression>
 					<min>
