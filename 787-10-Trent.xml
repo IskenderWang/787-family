@@ -75,7 +75,7 @@
 	accessories for each seat. Min 360 Max 15840 Default 7200-->
 
 	<pointmass name="first-class">
-		<weight unit="LBS">7200</weight>
+		<weight unit="LBS">15840</weight>
 		<location name="POINTMASS" unit="IN">
 			<x>-591</x>
 			<y>0</y>
@@ -86,7 +86,7 @@
 	<!--Business class. 66 seats. Min 0 Max 23760 Default 10800-->
 
 	<pointmass name="business-class">
-		<weight unit="LBS">10800</weight>
+		<weight unit="LBS">23760</weight>
 		<location name="POINTMASS" unit="IN">
 			<x>-216.7</x>
 			<y>0</y>
@@ -97,7 +97,7 @@
 	<!--Economy class. 216 seats. Min 0 Max 77760 Default 36000-->
 
 	<pointmass name="economy-class">
-		<weight unit="LBS">36000</weight>
+		<weight unit="LBS">77760</weight>
 		<location name="POINTMASS" unit="IN">
 			<x>157.6</x>
 			<y>0</y>
@@ -134,7 +134,7 @@
 <!-- Nose Gear Contact Point -->
   <contact type="BOGEY" name="NOSE_GEAR">
    <location unit="IN">
-     <x> -809.50058 </x>
+     <x> -810.84326 </x>
      <y> 0.00 </y>
      <z> -143.36872 </z>
    </location>
@@ -215,7 +215,7 @@
 <!-- Tail (in case of a tail strike) Contact Point -->
   <contact type="STRUCTURE" name="TAIL_STRIKE">
     <location unit="IN">
-     <x> 924.93864 </x>
+     <x> 929.28424 </x>
      <y> 0 </y>
      <z> 3.41992 </z>
     </location>
@@ -230,7 +230,7 @@
 <!-- Nose (used for Ditching) Contact Point -->
   <contact type="STRUCTURE" name="NOSE">
     <location unit="IN">
-     <x> -984.2908 </x>
+     <x> -985.63348 </x>
      <y> 0 </y>
      <z> -29.8455 </z>
     </location>
@@ -1053,7 +1053,7 @@
 	<external_reactions>
 		<force name="pushback" frame="BODY">
 			<location unit="IN">
-				<x>-612.06718</x>
+				<x>-613.40986</x>
 				<y>0</y>
 				<z>-100</z>
 			</location>
@@ -1065,7 +1065,7 @@
 		</force>
 		<force name="tractor" frame="BODY">
 		  <location unit="IN">
-		    <x>-612.06718</x>
+		    <x>-613.40986</x>
 		    <y>0</y>
 		    <z>-100</z>
 		  </location>
