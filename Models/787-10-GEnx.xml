@@ -220,7 +220,7 @@
  <name>Pushback</name>
  <path>Autopush/Goldhofert.xml</path>
  <offsets>
-  <x-m>-24.2</x-m>
+  <x-m>-25.54268</x-m>
   <y-m>0</y-m>
   <z-m>-3.55</z-m>
  </offsets>
@@ -1181,7 +1181,7 @@
       </equals>
     </condition>
     <offsets>
-        <x-m> -23.9012</x-m>
+        <x-m> -25.24388</x-m>
         <y-m>  0.00</y-m>
         <z-m> -2</z-m>
     </offsets>
@@ -1197,7 +1197,7 @@
       </equals>
     </condition>
     <offsets>
-        <x-m> -23.9012</x-m>
+        <x-m> -23.24388</x-m>
         <y-m>  0.00</y-m>
         <z-m> -2</z-m>
     </offsets>
@@ -1213,7 +1213,7 @@
       </equals>
     </condition>
     <offsets>
-        <x-m> -23.9012</x-m>
+        <x-m> -23.24388</x-m>
         <y-m>  0.00</y-m>
         <z-m> -2</z-m>
     </offsets>
@@ -1229,7 +1229,7 @@
       </equals>
     </condition>
     <offsets>
-        <x-m> -23.9012</x-m>
+        <x-m> -23.24388</x-m>
         <y-m>  0.00</y-m>
         <z-m> -2</z-m>
     </offsets>
@@ -1642,7 +1642,7 @@
   <factor>15</factor>
   <offset-deg>0</offset-deg>
   <center>
-   <x-m>25.111</x-m>
+   <x-m>27.3423</x-m>
    <y-m>0</y-m>
    <z-m>2</z-m>
   </center>
@@ -1660,7 +1660,7 @@
   <factor>20</factor>
   <offset-deg>0</offset-deg>
   <center>
-   <x-m>33.011</x-m>
+   <x-m>35.2423</x-m>
    <y-m>-5.5</y-m>
    <z-m>2.6</z-m>
   </center>
@@ -1678,7 +1678,7 @@
   <factor>20</factor>
   <offset-deg>0</offset-deg>
   <center>
-   <x-m>33.011</x-m>
+   <x-m>35.2423</x-m>
    <y-m>5.5</y-m>
    <z-m>2.6</z-m>
   </center>
@@ -1697,7 +1697,7 @@
   <factor>-20</factor>
   <offset-deg>0</offset-deg>
   <center>
-   <x-m>30.01</x-m>
+   <x-m>34.372</x-m>
    <y-m>0.0</y-m>
    <z-m>7.1</z-m>
   </center>
@@ -1717,7 +1717,7 @@
   <factor>-60</factor>
   <offset-deg>0</offset-deg>
   <center>
-   <x-m>-23.405</x-m>
+   <x-m>-24.74768</x-m>
    <y-m>0.0</y-m>
    <z-m>-1.164</z-m>
   </center>
@@ -2666,7 +2666,7 @@
             </entry>
         </interpolation>
         <center>
-            <x-m>-23.25</x-m>
+            <x-m>-24.59268</x-m>
             <y-m>0.0</y-m>
             <z-m>-1.063</z-m>
         </center>
@@ -3047,7 +3047,7 @@
             <z>0</z>
         </axis>
         <center>
-            <x-m>-23.60</x-m>
+            <x-m>-24.94268</x-m>
             <y-m>0</y-m>
             <z-m>-3.2644</z-m>
         </center>
