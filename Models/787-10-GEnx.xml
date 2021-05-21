@@ -3482,7 +3482,7 @@
 
 <model>
 	<name>chock_nose</name>
-	<path>Aircraft/787-family/Models/Ground/Services/Chocks-9/chock_nose.ac</path>
+	<path>Aircraft/787-family/Models/Ground/Services/Chocks-10/chock_nose.ac</path>
 	<condition>
 		<equals>
 			<property>services/chocks/nose</property>
