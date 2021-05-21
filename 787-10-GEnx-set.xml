@@ -6,7 +6,7 @@
         <description>Boeing 787-10 (GEnx-1B76)</description>
         <flight-model>jsb</flight-model>
         <aero>787-10-GEnx</aero>
-        <variant-of>787-9-GEnx</variant-of>
+        <primary-set type="bool">true</primary-set>
         <authors>
           See Authors.md for details.
         </authors>

@@ -6,7 +6,7 @@
         <description>Boeing 787-10 (Trent 1000)</description>
         <flight-model>jsb</flight-model>
         <aero>787-10-Trent</aero>
-        <variant-of>787-9-GEnx</variant-of>
+        <variant-of>787-10-GEnx</variant-of>
         <authors>
           See Authors.md for details.
         </authors>
