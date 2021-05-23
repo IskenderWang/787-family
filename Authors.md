@@ -31,5 +31,6 @@ Special thanks to Pilot2938, Wesley, Zac, and all other contributors+helpers
 * Jonathan Redpath: 3D, changing '787-8' to '787-9', FDM, general improvements
 * evaair: Misc fixes
 * gabrielyv: Misc fixes
+* Pilot2938
 
 Systems include dialogs, autopilot, vnav, holding, pushback and extras

@@ -75,7 +75,7 @@
 	accessories for each seat. Min 360 Max 15840 Default 7200-->
 
 	<pointmass name="first-class">
-		<weight unit="LBS">15840</weight>
+		<weight unit="LBS">7200</weight>
 		<location name="POINTMASS" unit="IN">
 			<x>-591</x>
 			<y>0</y>
@@ -86,7 +86,7 @@
 	<!--Business class. 66 seats. Min 0 Max 23760 Default 10800-->
 
 	<pointmass name="business-class">
-		<weight unit="LBS">23760</weight>
+		<weight unit="LBS">10800</weight>
 		<location name="POINTMASS" unit="IN">
 			<x>-216.7</x>
 			<y>0</y>
@@ -97,7 +97,7 @@
 	<!--Economy class. 216 seats. Min 0 Max 77760 Default 36000-->
 
 	<pointmass name="economy-class">
-		<weight unit="LBS">77760</weight>
+		<weight unit="LBS">36000</weight>
 		<location name="POINTMASS" unit="IN">
 			<x>157.6</x>
 			<y>0</y>
