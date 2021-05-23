@@ -1281,7 +1281,7 @@
   <path>Aircraft/787-family/Models/Lights/beacon.xml</path>
   <name>Beaconlight.top</name>
   <offsets>
-    <x-m>-11.1355</x-m>
+    <x-m>-7.36832</x-m>
     <y-m>0.00</y-m>
     <z-m>4.4910</z-m>
   </offsets>
@@ -1291,7 +1291,7 @@
   <path>Aircraft/787-family/Models/Lights/ALS/beacon.xml</path>
   <name>Beaconlight.top-ALS</name>
   <offsets>
-    <x-m>-11.1355</x-m>
+    <x-m>-7.36832</x-m>
     <y-m>0.00</y-m>
     <z-m>4.4910</z-m>
   </offsets>
@@ -1301,7 +1301,7 @@
   <path>Aircraft/787-family/Models/Lights/beacon.xml</path>
   <name>Beaconlight.bottom</name>
   <offsets>
-    <x-m>-3.9956</x-m>
+    <x-m>-0.22842</x-m>
     <y-m> 0.00</y-m>
     <z-m>-1.8719</z-m>
   </offsets>
@@ -1311,7 +1311,7 @@
   <path>Aircraft/787-family/Models/Lights/ALS/beacon.xml</path>
   <name>Beaconlight.bottom-ALS</name>
   <offsets>
-    <x-m>-3.9956</x-m>
+    <x-m>-0.22842</x-m>
     <y-m> 0.00</y-m>
     <z-m>-1.8719</z-m>
   </offsets>
