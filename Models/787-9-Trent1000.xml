@@ -122,6 +122,8 @@
       <object-name>rwingb</object-name>
       <object-name>rwingc</object-name>
       <object-name>wings_lightmap</object-name>
+      <object-name>rhcowling</object-name>
+      <object-name>lhcowling</object-name>
     </effect>
 
     <effect>
