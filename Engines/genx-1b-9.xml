@@ -3,7 +3,7 @@
 <turbine_engine name="genx-1b">
   <milthrust> 74100.0 </milthrust> <!-- based on GEnx-1b75 -->
   <bypassratio>     8.8 </bypassratio>
-  <tsfc>            0.271 </tsfc>
+  <tsfc>            0.528 </tsfc>
   <bleed>           0.035 </bleed>
   <idlen1>         30.0 </idlen1>
   <idlen2>         60.0 </idlen2>

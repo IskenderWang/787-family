@@ -10,6 +10,7 @@ This package contains the following models:
 
 - 787-8 (GEnx & RR Trent)
 - 787-9 (GEnx & RR Trent)
+- 787-10 (GEnx & RR Trent)
 
 Install
 -------

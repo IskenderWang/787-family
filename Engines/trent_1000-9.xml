@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 
 <turbine_engine name="trent_1000">
-  <milthrust> 75239.0 </milthrust> <!-- based on Trent 1000 D -->
+  <milthrust> 74880.0 </milthrust> <!-- based on Trent 1000 P -->
   <bypassratio>     10.0 </bypassratio>
-  <tsfc>            0.271 </tsfc>
-  <bleed>           0.02 </bleed>
+  <tsfc>            0.506 </tsfc>
+  <bleed>           0.025 </bleed>
   <idlen1>         30.0 </idlen1>
   <idlen2>         60.0 </idlen2>
   <maxn1>         100.0 </maxn1>
