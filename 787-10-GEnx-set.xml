@@ -411,8 +411,8 @@
                     </item>
                 </menu>
                 <menu n="100">
-                    <label>Boeing 787-9</label>
-<enabled type="bool">true</enabled>
+                    <label>Boeing 787-10</label>
+                    <enabled type="bool">true</enabled>
                     <item>
                         <name>autostart</name>
                         <label>Autostart Aircraft Engines</label>
