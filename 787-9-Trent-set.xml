@@ -215,7 +215,7 @@
         <cockpit type="bool">true</cockpit>
         <config>
             <x-offset-m type="double">-0.603</x-offset-m>
-            <y-offset-m type="double">2.08</y-offset-m>
+            <y-offset-m type="double">2.11</y-offset-m>
             <z-offset-m type="double">-26.20</z-offset-m>
             <pitch-offset-deg>-10.3</pitch-offset-deg>
             <default-field-of-view-deg type="double">60.0</default-field-of-view-deg>
@@ -265,7 +265,7 @@
             <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
             <x-offset-m type="double">0</x-offset-m>
             <y-offset-m type="double">-2.3146</y-offset-m>
-            <z-offset-m type="double">10.1193</z-offset-m>
+            <z-offset-m type="double">10.1192</z-offset-m>
             <default-field-of-view-deg type="double">60</default-field-of-view-deg>
         </config>
     </view>

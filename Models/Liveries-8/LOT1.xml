@@ -3,11 +3,11 @@
 	<sim>
 		<model>
 			<livery>
-				<name type="string">LOT Polish Airlines (SP-LRH)</name>
+				<name type="string">LOT Polish Airlines (SP-LRB)</name>
 				<texture>Liveries-8/LOT1.png</texture>
 			</livery>
 			<lights>
-				<texture>Liveries-8/LOT-lights.png</texture>
+				<texture>Liveries-8/787-lights.png</texture>
 			</lights>
 		</model>
 	</sim>
