@@ -16,7 +16,7 @@ NOTE: The autopilot now fully operates on [Octal450's excellent ITAF system](htt
 
 ## Install
 
-As easy as downloading or cloning this repo and placing it in your folder for custom aircraft in FG. For more information, you can have a look at the [Wiki article](https://wiki.flightgear.org/Boeing_787-8_Dreamliner). We intend to update it in short order with new information about all the work we've done here :)
+As easy as downloading or cloning this repo and placing it in your folder for custom aircraft in FG (you should make sure this folder you place it in is named Aircraft – the path in which you have this "Aircraft" folder is entirely up to you though). For more information, you can have a look at the [Wiki article](https://wiki.flightgear.org/Boeing_787-8_Dreamliner). We intend to update it in short order with new information about all the work we've done here :)
 
 ### Troubleshooting
 
