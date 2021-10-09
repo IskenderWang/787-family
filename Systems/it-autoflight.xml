@@ -256,10 +256,10 @@
 			<condition>
 				<and>
 					<property>/it-autoflight/input/true-course</property>
-					<greater-than>
+					<greater-than-equals>
 						<property>/velocities/groundspeed-kt</property>
 						<value>1</value>
-					</greater-than>
+					</greater-than-equals>
 				</and>
 			</condition>
 			<property>/orientation/track-deg</property>
@@ -268,10 +268,10 @@
 			<condition>
 				<and>
 					<not><property>/it-autoflight/input/true-course</property></not>
-					<greater-than>
+					<greater-than-equals>
 						<property>/velocities/groundspeed-kt</property>
 						<value>1</value>
-					</greater-than>
+					</greater-than-equals>
 				</and>
 			</condition>
 			<property>/orientation/track-magnetic-deg</property>
@@ -287,10 +287,10 @@
 		<gain>1.0</gain>
 		<input>
 			<condition>
-				<less-than-equals>
+				<less-than>
 					<property>/velocities/groundspeed-kt</property>
 					<value>1</value>
-				</less-than-equals>
+				</less-than>
 			</condition>
 			<property>/orientation/heading-magnetic-deg</property>
 		</input>
@@ -399,6 +399,15 @@
 	</filter>
 	
 	<filter>
+		<name>Internal Vertical Speed</name>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>/instrumentation/gps/indicated-vertical-speed</input>
+		<output>/it-autoflight/internal/vert-speed-fpm</output>
+	</filter>
+	
+	<filter>
 		<name>Vertical Speed Sync</name>
 		<debug>false</debug>
 		<type>gain</type>
@@ -430,7 +439,36 @@
 		<type>noise-spike</type>
 		<feedback-if-disabled>true</feedback-if-disabled>
 		<initialize-to>output</initialize-to>
-		<input>/it-autoflight/input/vs</input>
+		<input>
+			<condition>
+				<and>
+					<or>
+						<equals>
+							<property>/it-autoflight/output/ap1</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/it-autoflight/output/ap2</property>
+							<value>1</value>
+						</equals>
+					</or>
+					<equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>/gear/gear[1]/wow</property>
+						<value>0</value>
+					</equals>
+					<equals>
+						<property>/gear/gear[2]/wow</property>
+						<value>0</value>
+					</equals>
+				</and>
+			</condition>
+			<property>/it-autoflight/input/vs</property>
+		</input>
+		<input>/it-autoflight/internal/vert-speed-fpm</input>
 		<output>/it-autoflight/internal/vs</output>
 		<max-rate-of-change>
 			<condition>
@@ -504,23 +542,10 @@
 	</filter>
 	
 	<filter>
-		<name>Nav Error Deg</name>
+		<name>Nav1 Error Deg</name>
 		<debug>false</debug>
 		<type>gain</type>
 		<gain>1.0</gain>
-		<input>
-			<condition>
-				<equals>
-					<property>/it-autoflight/input/use-nav2-radio</property>
-					<value>1</value>
-				</equals>
-			</condition>
-			<property>/instrumentation/nav[1]/radials/target-auto-hdg-deg</property>
-			<offset>
-				<property>/orientation/heading-deg</property>
-				<scale>-1.0</scale>
-			</offset>
-		</input>
 		<input>
 			<property>/instrumentation/nav[0]/radials/target-auto-hdg-deg</property>
 			<offset>
@@ -528,7 +553,7 @@
 				<scale>-1.0</scale>
 			</offset>
 		</input>
-		<output>/it-autoflight/internal/nav-heading-error-deg</output>
+		<output>/it-autoflight/internal/nav1-heading-error-deg</output>
 		<period>
 			<min>-180</min>
 			<max>180</max>
@@ -536,12 +561,125 @@
 	</filter>
 	
 	<filter>
-		<name>Internal Vertical Speed</name>
+		<name>Nav2 Error Deg</name>
 		<debug>false</debug>
 		<type>gain</type>
 		<gain>1.0</gain>
-		<input>/instrumentation/gps/indicated-vertical-speed</input>
-		<output>/it-autoflight/internal/vert-speed-fpm</output>
+		<input>
+			<property>/instrumentation/nav[1]/radials/target-auto-hdg-deg</property>
+			<offset>
+				<property>/orientation/heading-deg</property>
+				<scale>-1.0</scale>
+			</offset>
+		</input>
+		<output>/it-autoflight/internal/nav2-heading-error-deg</output>
+		<period>
+			<min>-180</min>
+			<max>180</max>
+		</period>
+	</filter>
+	
+	<filter>
+		<name>Nav3 Error Deg</name>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<property>/instrumentation/nav[2]/radials/target-auto-hdg-deg</property>
+			<offset>
+				<property>/orientation/heading-deg</property>
+				<scale>-1.0</scale>
+			</offset>
+		</input>
+		<output>/it-autoflight/internal/nav3-heading-error-deg</output>
+		<period>
+			<min>-180</min>
+			<max>180</max>
+		</period>
+	</filter>
+	
+	<filter>
+		<name>Nav Error Deg</name>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<equals>
+					<property>/it-autoflight/input/radio-sel</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<property>/it-autoflight/internal/nav2-heading-error-deg</property>
+		</input>
+		<input>
+			<condition>
+				<equals>
+					<property>/it-autoflight/input/radio-sel</property>
+					<value>2</value>
+				</equals>
+			</condition>
+			<property>/it-autoflight/internal/nav3-heading-error-deg</property>
+		</input>
+		<input>/it-autoflight/internal/nav1-heading-error-deg</input>
+		<output>/it-autoflight/internal/nav-heading-error-deg</output>
+	</filter>
+	
+	<filter>
+		<name>Nav1 Course Error Deg</name>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<property>/instrumentation/nav[0]/radials/selected-deg</property>
+			<offset>
+				<property>/orientation/track-magnetic-deg</property>
+				<scale>-1.0</scale>
+			</offset>
+		</input>
+		<output>/it-autoflight/internal/nav1-course-track-error-deg</output>
+		<period>
+			<min>-180</min>
+			<max>180</max>
+		</period>
+	</filter>
+	
+	<filter>
+		<name>Nav2 Course Error Deg</name>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<property>/instrumentation/nav[1]/radials/selected-deg</property>
+			<offset>
+				<property>/orientation/track-magnetic-deg</property>
+				<scale>-1.0</scale>
+			</offset>
+		</input>
+		<output>/it-autoflight/internal/nav2-course-track-error-deg</output>
+		<period>
+			<min>-180</min>
+			<max>180</max>
+		</period>
+	</filter>
+	
+	<filter>
+		<name>Nav3 Course Error Deg</name>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<property>/instrumentation/nav[2]/radials/selected-deg</property>
+			<offset>
+				<property>/orientation/track-magnetic-deg</property>
+				<scale>-1.0</scale>
+			</offset>
+		</input>
+		<output>/it-autoflight/internal/nav3-course-track-error-deg</output>
+		<period>
+			<min>-180</min>
+			<max>180</max>
+		</period>
 	</filter>
 	
 	<filter>
@@ -549,6 +687,32 @@
 		<debug>false</debug>
 		<type>gain</type>
 		<gain>1.0</gain>
+		<input> <!-- Under 110ft glideslope data starts to become unusable -->
+			<condition>
+				<and>
+					<or>
+						<equals>
+							<property>/it-autoflight/output/vert</property>
+							<value>2</value>
+						</equals>
+						<equals>
+							<property>/it-autoflight/output/vert</property>
+							<value>6</value>
+						</equals>
+					</or>
+					<less-than-equals>
+						<property>/position/gear-agl-ft</property>
+						<value>110</value>
+					</less-than-equals>
+				</and>
+			</condition>
+			<expression>
+				<min>
+					<property>/it-autoflight/internal/nav-rate-of-climb-fpm</property>
+					<value>-500</value>
+				</min>
+			</expression>
+		</input>
 		<input>
 			<condition>
 				<equals>
@@ -777,7 +941,8 @@
 	<filter>
 		<name>IT-CONTROLLER: Align/Rollout/Takeoff</name>
 		<debug>false</debug>
-		<type>noise-spike</type>
+		<type>gain</type>
+		<gain>1.0</gain>
 		<enable>
 			<condition>
 				<or>
@@ -1288,32 +1453,34 @@
 		<gain>1.0</gain>
 		<input>
 			<expression>
-				<sum>
-					<difference> <!-- Fix an issue with the calculation -->
-						<property>/it-autoflight/internal/vert-speed-fpm</property>
+				<max>
+					<property>/it-autoflight/internal/nav-rate-of-climb-fpm</property>
+					<sum>
+						<difference> <!-- Fix an issue with the calculation -->
+							<property>/it-autoflight/internal/vert-speed-fpm</property>
+							<product>
+								<property>/velocities/vertical-speed-fps</property>
+								<value>60</value>
+							</product>
+						</difference>
 						<product>
-							<property>/velocities/vertical-speed-fps</property>
-							<value>60</value>
+							<sin>
+								<deg2rad>
+									<table>
+										<property>/position/gear-agl-ft</property>
+										<entry><ind>50</ind><dep>-3.0</dep></entry>
+										<entry><ind>40</ind><dep>-1.8</dep></entry>
+										<entry><ind>30</ind><dep>-1.5</dep></entry>
+										<entry><ind>20</ind><dep>-1.2</dep></entry>
+										<entry><ind> 5</ind><dep>-0.7</dep></entry>
+									</table>
+								</deg2rad>
+							</sin>
+							<property>/instrumentation/airspeed-indicator/true-speed-kt</property>
+							<value>101.26859142607174</value> <!-- FPM to Knot -->
 						</product>
-					</difference>
-					<product>
-						<sin>
-							<deg2rad>
-								<table>
-									<property>/position/gear-agl-ft</property>
-									<entry><ind>100</ind><dep>-2.80</dep></entry>
-									<entry><ind> 50</ind><dep>-2.12</dep></entry>
-									<entry><ind> 40</ind><dep>-1.58</dep></entry>
-									<entry><ind> 30</ind><dep>-1.23</dep></entry>
-									<entry><ind> 20</ind><dep>-0.92</dep></entry>
-									<entry><ind> 10</ind><dep>-0.61</dep></entry>
-								</table>
-							</deg2rad>
-						</sin>
-						<property>/instrumentation/airspeed-indicator/true-speed-kt</property>
-						<value>101.26859142607174</value> <!-- FPM to Knot -->
-					</product>
-				</sum>
+					</sum>
+				</max>
 			</expression>
 		</input>
 		<output>/it-autoflight/internal/target-fpm-land</output>
