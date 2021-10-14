@@ -6,7 +6,7 @@ This is the official home of the unified 787 family, based on the two models lis
 
 After gitorious closed down and former maintainer Omega95 retired, islandmonkey created a GitHub repo, which was subsequently merged into FGAddon. Now, IskenderWang and Marsdolphin, among others, are collaborating on a project that aims to improve the quality of the 787 and several of its variants.
 
-NOTE: The autopilot now fully operates on [Octal450's excellent ITAF system](https://github.com/Octal450/IT-AUTOFLIGHT) – see [here](http://wiki.flightgear.org/IT-AUTOFLIGHT) for more information.
+NOTE: The autopilot now fully operates on the latest version of [Octal450's excellent ITAF system](https://github.com/Octal450/IT-AUTOFLIGHT) – see [here](http://wiki.flightgear.org/IT-AUTOFLIGHT) for more information.
 
 ## This package contains the following models:
 
