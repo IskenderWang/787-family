@@ -939,7 +939,7 @@
 	</filter>
 	
 	<filter>
-		<name>IT-CONTROLLER: Align/Rollout/Takeoff</name>
+		<name>IT-CONTROLLER: Align/Rollout/Takeoff/Wings Level</name>
 		<debug>false</debug>
 		<type>gain</type>
 		<gain>1.0</gain>
@@ -953,6 +953,10 @@
 					<equals>
 						<property>/it-autoflight/output/lat</property>
 						<value>5</value>
+					</equals>
+					<equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>6</value>
 					</equals>
 				</or>
 			</condition>
@@ -968,24 +972,30 @@
 		<gain>1.0</gain>
 		<enable>
 			<condition>
-				<and>
-					<not-equals>
-						<property>/it-autoflight/output/ap1</property>
-						<value>1</value>
-					</not-equals>
-					<not-equals>
-						<property>/it-autoflight/output/ap2</property>
-						<value>1</value>
-					</not-equals>
-					<not-equals>
-						<property>/it-autoflight/output/fd1</property>
-						<value>1</value>
-					</not-equals>
-					<not-equals>
-						<property>/it-autoflight/output/fd2</property>
-						<value>1</value>
-					</not-equals>
-				</and>
+				<or>
+					<and>
+						<not-equals>
+							<property>/it-autoflight/output/ap1</property>
+							<value>1</value>
+						</not-equals>
+						<not-equals>
+							<property>/it-autoflight/output/ap2</property>
+							<value>1</value>
+						</not-equals>
+						<not-equals>
+							<property>/it-autoflight/output/fd1</property>
+							<value>1</value>
+						</not-equals>
+						<not-equals>
+							<property>/it-autoflight/output/fd2</property>
+							<value>1</value>
+						</not-equals>
+					</and>
+					<equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>9</value>
+					</equals>
+				</or>
 			</condition>
 		</enable>
 		<input>/orientation/roll-deg</input>
@@ -1005,26 +1015,32 @@
 		<output>/it-autoflight/internal/target-roll</output>
 		<max-rate-of-change>
 			<condition>
-				<and>
-					<not-equals>
-						<property>/it-autoflight/output/ap1</property>
-						<value>1</value>
-					</not-equals>
-					<not-equals>
-						<property>/it-autoflight/output/ap2</property>
-						<value>1</value>
-					</not-equals>
-					<not-equals>
-						<property>/it-autoflight/output/fd1</property>
-						<value>1</value>
-					</not-equals>
-					<not-equals>
-						<property>/it-autoflight/output/fd2</property>
-						<value>1</value>
-					</not-equals>
-				</and>
+				<or>
+					<and>
+						<not-equals>
+							<property>/it-autoflight/output/ap1</property>
+							<value>1</value>
+						</not-equals>
+						<not-equals>
+							<property>/it-autoflight/output/ap2</property>
+							<value>1</value>
+						</not-equals>
+						<not-equals>
+							<property>/it-autoflight/output/fd1</property>
+							<value>1</value>
+						</not-equals>
+						<not-equals>
+							<property>/it-autoflight/output/fd2</property>
+							<value>1</value>
+						</not-equals>
+					</and>
+					<equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>9</value>
+					</equals>
+				</or>
 			</condition>
-			<value>50</value>
+			<value>1000</value>
 		</max-rate-of-change>
 		<max-rate-of-change>
 			<condition>
@@ -1089,6 +1105,10 @@
 						</equals>
 					</or>
 					<not-equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>9</value>
+					</not-equals>
+					<not-equals>
 						<property>/it-autoflight/settings/disable-final</property>
 						<value>1</value>
 					</not-equals>
@@ -1149,6 +1169,10 @@
 							<value>1</value>
 						</equals>
 					</or>
+					<not-equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>9</value>
+					</not-equals>
 					<not-equals>
 						<property>/it-autoflight/settings/disable-final</property>
 						<value>1</value>
@@ -1553,6 +1577,15 @@
 			</condition>
 			<property>/it-autoflight/internal/nav-rate-of-climb-fpm</property>
 		</input>
+		<input>
+			<condition>
+				<equals>
+					<property>/it-autoflight/output/vert</property>
+					<value>9</value>
+				</equals>
+			</condition>
+			<property>/it-autoflight/internal/vert-speed-fpm</property>
+		</input>
 		<output>/it-autoflight/internal/target-common-fpm</output>
 	</filter>
 	
@@ -1580,6 +1613,10 @@
 							<value>1</value>
 						</equals>
 					</or>
+					<not-equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>9</value>
+					</not-equals>
 				</and>
 			</condition>
 		</enable>
@@ -1707,6 +1744,10 @@
 								<value>1</value>
 							</equals>
 						</or>
+						<not-equals>
+							<property>/it-autoflight/output/vert</property>
+							<value>9</value>
+						</not-equals>
 					</and>
 				</not>
 			</condition>
@@ -1757,6 +1798,10 @@
 							<value>1</value>
 						</equals>
 					</or>
+					<not-equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>9</value>
+					</not-equals>
 					<not-equals>
 						<property>/it-autoflight/settings/disable-final</property>
 						<value>1</value>
@@ -1810,6 +1855,10 @@
 							<value>1</value>
 						</equals>
 					</or>
+					<not-equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>9</value>
+					</not-equals>
 					<not-equals>
 						<property>/it-autoflight/settings/disable-final</property>
 						<value>1</value>
@@ -1873,6 +1922,10 @@
 							<value>-0.01</value>
 						</less-than>
 					</or>
+					<not-equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>9</value>
+					</not-equals>
 					<not-equals>
 						<property>/it-autoflight/settings/disable-final</property>
 						<value>1</value>
@@ -1994,6 +2047,10 @@
 						</equals>
 					</or>
 					<not-equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>9</value>
+					</not-equals>
+					<not-equals>
 						<property>/it-autoflight/settings/disable-final</property>
 						<value>1</value>
 					</not-equals>
@@ -2023,18 +2080,24 @@
 		<output>/it-autoflight/internal/target-roll-fd</output>
 		<max-rate-of-change>
 			<condition>
-				<and>
-					<not-equals>
-						<property>/it-autoflight/output/fd1</property>
-						<value>1</value>
-					</not-equals>
-					<not-equals>
-						<property>/it-autoflight/output/fd1</property>
-						<value>1</value>
-					</not-equals>
-				</and>
+				<or>
+					<and>
+						<not-equals>
+							<property>/it-autoflight/output/fd1</property>
+							<value>1</value>
+						</not-equals>
+						<not-equals>
+							<property>/it-autoflight/output/fd1</property>
+							<value>1</value>
+						</not-equals>
+					</and>
+					<equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>9</value>
+					</equals>
+				</or>
 			</condition>
-			<value>50</value>
+			<value>1000</value>
 		</max-rate-of-change>
 		<max-rate-of-change>15</max-rate-of-change>
 	</filter>

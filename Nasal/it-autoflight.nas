@@ -670,12 +670,22 @@ var ITAF = {
 			me.updateApprArm(0);
 			Output.lat.setValue(5);
 			me.updateLatText("T/O");
+		} else if (n == 6) { # LVL
+			me.updateLnavArm(0);
+			me.updateLocArm(0);
+			me.updateApprArm(0);
+			Output.lat.setValue(6);
+			me.updateLatText("LVL");
 		} else if (n == 9) { # Blank
 			me.updateLnavArm(0);
 			me.updateLocArm(0);
 			me.updateApprArm(0);
 			Output.lat.setValue(9);
 			me.updateLatText("");
+			if (!Settings.disableFinal.getBoolValue()) {
+				Controls.aileron.setValue(0);
+				Controls.rudder.setValue(0);
+			}
 		}
 	},
 	setLatArm: func(n) {
@@ -787,6 +797,9 @@ var ITAF = {
 			Output.vert.setValue(9);
 			me.updateVertText("");
 			me.updateThrustMode();
+			if (!Settings.disableFinal.getBoolValue()) {
+				Controls.elevator.setValue(0);
+			}
 		}
 	},
 	updateThrustMode: func() {
