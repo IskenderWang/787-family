@@ -4,11 +4,11 @@
 <sim>    
   <model>        
     <livery>
-		<name type="string">ANA R2-D2</name>
+	<name type="string">ANA (JA783A)</name>
       <texture>Liveries-9/ANA.png</texture>
     </livery>
     <lights>
-      <texture>Liveries-9/BOE2-Lights.png</texture>
+      <texture>Liveries-9/787-lights.png</texture>
     </lights>
   </model>
 </sim>
