@@ -1,20 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8' ?>
 <PropertyList>
 
-  <path>787-8-GEnx.ac</path>
+  <path>787-8.ac</path>
 
     <effect>
         <inherits-from>Aircraft/787-family/Models/Effects/windscreen</inherits-from>
-        <object-name>front window</object-name>
+        <object-name>Window</object-name>
     </effect>
 
     <effect>
         <inherits-from>Aircraft/787-family/Models/Effects/reflect</inherits-from>
         <object-name>bodyfairing</object-name>
-        <object-name>eng1fan</object-name>
-        <object-name>eng1fanb</object-name>
-        <object-name>eng2fan</object-name>
-        <object-name>eng2fanb</object-name>
         <object-name>fuselage</object-name>
         <object-name>fuselage.001</object-name>
         <object-name>lhfdoor</object-name>
@@ -25,8 +21,6 @@
         <object-name>lhobdoor</object-name>
         <object-name>lreverse</object-name>
         <object-name>mgearbay</object-name>
-        <object-name>no1engl</object-name>
-        <object-name>no2engl</object-name>
         <object-name>rhfdoor</object-name>
         <object-name>rhfnosedoor</object-name>
         <object-name>rhgearibdoor</object-name>
@@ -34,7 +28,14 @@
         <object-name>rhnosedoor</object-name>
         <object-name>rhobdoor</object-name>
         <object-name>rreverse</object-name>
-        <object-name>cargo_door</object-name>
+	<object-name>aftcargodoor</object-name>
+	<object-name>bulkcargodoor</object-name>
+	<object-name>cac</object-name>
+	<object-name>cacdeflectorbackground</object-name>
+	<object-name>fwdcargodoor</object-name>
+	<object-name>pitot_tubes</object-name>
+	<object-name>lhcacdeflector</object-name>
+	<object-name>rhcacdeflector</object-name>
     </effect>
 
 <!-- Lightmaps -->
@@ -53,11 +54,7 @@
       <object-name>rhelevator</object-name>
       <object-name>rstab</object-name>
       <object-name>rstab.lead2</object-name>
-      <object-name>no2enge</object-name>
-      <object-name>rhreverser</object-name>
       <object-name>rhvortexdev</object-name>
-      <object-name>no1enge</object-name>
-      <object-name>lhreverser</object-name>
       <object-name>lhvortexdev</object-name>
     </effect>
 
@@ -142,7 +139,7 @@
 
     <nasal>
         <load>
-         var livery_update = aircraft.livery_update.new("Aircraft/787-family/Models/Liveries-8", 10);
+         var livery_update = aircraft.livery_update.new("Aircraft/787-family/Models/Liveries-10", 10);
         </load>
 
         <unload>
@@ -151,35 +148,90 @@
     </nasal>
 
 <animation>
-        <type>material</type>
-        <object-name>fin</object-name>
-        <object-name>bodyfairing</object-name>
-        <object-name>eng1fan</object-name>
-        <object-name>eng1fanb</object-name>
-        <object-name>eng2fan</object-name>
-        <object-name>eng2fanb</object-name>
-        <object-name>fuselage</object-name>
-        <object-name>fuselage.001</object-name>
-        <object-name>lhfnosedoor</object-name>
-        <object-name>lhgearibdoor</object-name>
-        <object-name>lhnosedoor</object-name>
-        <object-name>lhreverser</object-name>
-        <object-name>lreverse</object-name>
-        <object-name>mgearbay</object-name>
-        <object-name>no1enge</object-name>
-        <object-name>no1engl</object-name>
-        <object-name>no2enge</object-name>
-        <object-name>no2engl</object-name>
-        <object-name>rhfnosedoor</object-name>
-        <object-name>rhnosedoor</object-name>
-        <object-name>rhgearibdoor</object-name>
-        <object-name>rhreverser</object-name>
-        <object-name>rreverse</object-name>
-        <object-name>rudder</object-name>
-        <object-name>cargo_door</object-name>
+       <type>material</type>
+	<object-name>aftcargodoor</object-name>
+	<object-name>antennae</object-name>
+	<object-name>bodyfairing</object-name>
+	<object-name>bulkcargodoor</object-name>
+	<object-name>cac</object-name>
+	<object-name>cacdeflectorbackground</object-name>
+	<object-name>fin</object-name>
+	<object-name>fuselage</object-name>
+	<object-name>fuselage.001</object-name>
+	<object-name>fuselage.004</object-name>
+	<object-name>fwdcargodoor</object-name>
+	<object-name>gearbay</object-name>
+	<object-name>lhcacdeflector</object-name>
+	<object-name>lhelevator</object-name>
+	<object-name>lhfdoor</object-name>
+	<object-name>lhfnosedoor</object-name>
+	<object-name>lhgearibdoor</object-name>
+	<object-name>lhibaileron</object-name>
+	<object-name>lhibdoor</object-name>
+	<object-name>lhibfairing</object-name>
+	<object-name>lhibflap</object-name>
+	<object-name>lhibflapa</object-name>
+	<object-name>lhibslat</object-name>
+	<object-name>lhibspoilera</object-name>
+	<object-name>lhibspoilera.001</object-name>
+	<object-name>lhkflap</object-name>
+	<object-name>lhkflap.001</object-name>
+	<object-name>lhmfairing</object-name>
+	<object-name>lhnosedoor</object-name>
+	<object-name>lhobaileron</object-name>
+	<object-name>lhobdoor</object-name>
+	<object-name>lhobfairing</object-name>
+	<object-name>lhobflapa</object-name>
+	<object-name>lhobflapb</object-name>
+	<object-name>lhobslata</object-name>
+	<object-name>lhobslatb</object-name>
+	<object-name>lhobslatc</object-name>
+	<object-name>lhobspoilera</object-name>
+	<object-name>lhobspoilerb</object-name>
+	<object-name>lhspoilera</object-name>
+	<object-name>lstab</object-name>
+	<object-name>lwing</object-name>
+	<object-name>lwinga</object-name>
+	<object-name>lwingb</object-name>
+	<object-name>lwingc</object-name>
+	<object-name>pitot_tubes</object-name>
+	<object-name>rhcacdeflector</object-name>
+	<object-name>rhelevator</object-name>
+	<object-name>rhfdoor</object-name>
+	<object-name>rhfnosedoor</object-name>
+	<object-name>rhgearibdoor</object-name>
+	<object-name>rhibaileron</object-name>
+	<object-name>rhibdoor</object-name>
+	<object-name>rhibfairing</object-name>
+	<object-name>rhibflap</object-name>
+	<object-name>rhibflapa</object-name>
+	<object-name>rhibslat</object-name>
+	<object-name>rhibspoilera</object-name>
+	<object-name>rhibspoilera.001</object-name>
+	<object-name>rhkflap</object-name>
+	<object-name>rhkflap.001</object-name>
+	<object-name>rhmfairing</object-name>
+	<object-name>rhnosedoor</object-name>
+	<object-name>rhobaileron</object-name>
+	<object-name>rhobdoor</object-name>
+	<object-name>rhobfairing</object-name>
+	<object-name>rhobflapa</object-name>
+	<object-name>rhobflapb</object-name>
+	<object-name>rhobslata</object-name>
+	<object-name>rhobslatb</object-name>
+	<object-name>rhobslatc</object-name>
+	<object-name>rhobspoilera</object-name>
+	<object-name>rhobspoilerb</object-name>
+	<object-name>rhspoilera</object-name>
+	<object-name>rstab</object-name>
+	<object-name>rudder</object-name>
+	<object-name>rwing</object-name>
+	<object-name>rwinga</object-name>
+	<object-name>rwingb</object-name>
+	<object-name>rwingc</object-name>
         <property-base>sim/model/livery</property-base>
-        <texture-prop>texture</texture-prop>
-        <texture>BOE-9.png</texture>
+        <texture-prop>texture-fuselage</texture-prop>
+        <texture>BOE-10.png</texture>
 </animation>
 
 <animation>
@@ -194,6 +246,7 @@
         <texture-prop>texture</texture-prop>
         <texture>wings.png</texture>
 </animation>
+
 
 <animation>
         <type>shader</type>
@@ -228,17 +281,29 @@
  <name>Pushback</name>
  <path>Autopush/Goldhofert.xml</path>
  <offsets>
-  <x-m>-20.56</x-m>
+  <x-m>-25.54268</x-m>
   <y-m>0</y-m>
-  <z-m>-3.65</z-m>
+  <z-m>-3.55</z-m>
  </offsets>
 </model>
 
 <!-- Flight Deck -->
 
 <model>
-    <name>flightdeck</name>
-    <path>FlightDeck/b787.flightdeck.xml</path>
+ <name>flightdeck</name>
+ <path>FlightDeck/b787.flightdeck.xml</path>
+	<offsets>
+		<x-m>0.263752</x-m>
+		<y-m>0</y-m>
+		<z-m>0.09158</z-m>
+	</offsets>
+</model>
+
+<!-- Engine -->
+
+<model>
+    <name>genx</name>
+    <path>GEnx.xml</path>
 </model>
 
 <!-- Landing Gear Animations -->
@@ -3050,9 +3115,9 @@
             <z>0</z>
         </axis>
         <center>
-            <x-m>-20.7626</x-m>
+            <x-m>-20.5891</x-m>
             <y-m>0</y-m>
-            <z-m>-3.2644</z-m>
+            <z-m>-3.26425</z-m>
         </center>
     </animation>
 
