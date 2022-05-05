@@ -774,41 +774,6 @@
   </axis>
 </animation>
 
-<animation>
-  <type>spin</type>
-  <object-name>eng1fan</object-name>
-  <object-name>eng1fanb</object-name>
-  <property>engines/engine[0]/n1</property>
-  <factor>10</factor>
-  <center>
-   <x-m>-6.6891</x-m>
-   <y-m>-9.5441</y-m>
-   <z-m>-0.76823</z-m>
-  </center>
-  <axis>
-   <x>1</x>
-   <y>0</y>
-   <z>0</z>
-  </axis>
-</animation>
-
-<animation>
-  <type>spin</type>
-  <object-name>eng2fan</object-name>
-  <object-name>eng2fanb</object-name>
-  <property>engines/engine[1]/n1</property>
-  <factor>10</factor>
-  <center>
-   <x-m>-6.6891</x-m>
-   <y-m>9.5441</y-m>
-   <z-m>-0.76823</z-m>
-  </center>
-  <axis>
-   <x>1</x>
-   <y>0</y>
-   <z>0</z>
-  </axis>
-</animation>
 
 <!-- Left Main Gear -->
 
@@ -831,7 +796,6 @@
     </greater-than>
   </condition>
 </animation>
-
 
 <animation>
   <type>rotate</type>
@@ -3184,32 +3148,6 @@
 			<z-m>-2.2368</z-m>
 		</offsets>
 	</model>
-
-<!-- Thrust Reversers -->
-
-    <animation>
-        <type>translate</type>
-        <object-name>lhreverser</object-name>
-        <property>engines/engine[0]/reverser-pos-norm</property>
-        <factor>1</factor>
-        <axis>
-            <x>1.0</x>
-            <y>0.0</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>translate</type>
-        <object-name>rhreverser</object-name>
-        <property>engines/engine[1]/reverser-pos-norm</property>
-        <factor>1</factor>
-        <axis>
-            <x>1.0</x>
-            <y>0.0</y>
-            <z>0</z>
-        </axis>
-    </animation>
 
 <!-- Windshield Wipers :P -->
 
