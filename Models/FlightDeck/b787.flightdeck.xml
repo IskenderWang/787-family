@@ -219,7 +219,6 @@
 		</offsets>
 	</model>
 
-
 	<!-- Compass -->
 
 	<model>
@@ -2402,18 +2401,18 @@
 	<model>
 		<path>hud.xml</path>
 		<offsets>
-			<x-m>-23.4866</x-m>
-			<y-m>-0.61</y-m>
-			<z-m>2.17934</z-m>
+			<x-m>-23.4747</x-m>
+			<y-m>-0.569308</y-m>
+			<z-m>2.20525</z-m>
 		</offsets>
 	</model>
 
 	<model>
 		<path>hud1.xml</path>
 		<offsets>
-			<x-m>-23.4866</x-m>
-			<y-m>0.61</y-m>
-			<z-m>2.17934</z-m>
+			<x-m>-23.4747</x-m>
+			<y-m>0.569308</y-m>
+			<z-m>2.15525</z-m>
 		</offsets>
 	</model>
 
