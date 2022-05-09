@@ -23,7 +23,7 @@
 
     <effect>
       <inherits-from>Aircraft/787-family/Models/Effects/reflect-wl</inherits-from>
-
+      <object-name>front</object-name>
       <object-name>no1pylon</object-name>
       <object-name>no2pylon</object-name>
     </effect>
