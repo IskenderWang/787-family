@@ -30,7 +30,9 @@
           <tag>jet</tag>
           <tag>twin-engine</tag>
         </tags>
-		<engine>trent_1000-8</engine>
+	<engine>trent_1000-8</engine>
+	<aircraft-variant>Boeing 787-8</aircraft-variant>
+	<engine-type>RR-Trent-1000-A</engine-type>
 
 		<model>
 			<path>Aircraft/787-family/Models/787-8-Trent1000.xml</path>
