@@ -30,7 +30,9 @@
           <tag>jet</tag>
           <tag>twin-engine</tag>
         </tags>
-		<engine>genx-1b-8</engine>
+	<engine>genx-1b-8</engine>
+	<aircraft-variant>Boeing 787-8</aircraft-variant>
+	<engine-type>GEnx-1B70</engine-type>
 
 		<model>
 			<path>Aircraft/787-family/Models/787-8-GEnx.xml</path>
