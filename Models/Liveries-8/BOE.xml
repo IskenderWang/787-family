@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<sim>    
+  <model>        
+    <livery>
+	<name type="string">BOE House Livery (N787ZA)</name>
+      <texture-fuselage>Liveries-8/BOE.png</texture-fuselage>
+      <texture-engines>Liveries-engines/STDGE.png</texture-engines>
+    </livery>
+  </model>
+</sim>
+
+</PropertyList>
