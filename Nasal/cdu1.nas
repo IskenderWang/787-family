@@ -225,7 +225,7 @@ setprop("/controls/cdu/display/r5-label", "");
 setprop("/controls/cdu/display/r6-label", "");
 setprop("/controls/cdu/display/r7-label", "");
 
-setprop("/controls/cdu/display/l1", "Boeing 787-8");
+setprop("/controls/cdu/display/l1", getprop("/sim/aircraft-variant"));
 setprop("/controls/cdu/display/l2", "");
 setprop("/controls/cdu/display/l3", "");
 setprop("/controls/cdu/display/l4", "");
@@ -233,7 +233,7 @@ setprop("/controls/cdu/display/l5", "");
 setprop("/controls/cdu/display/l6", "");
 setprop("/controls/cdu/display/l7", "INDEX");
 
-setprop("/controls/cdu/display/r1", "RR Trent_1000");
+setprop("/controls/cdu/display/r1", getprop("/sim/engine-type"));
 setprop("/controls/cdu/display/r2", getprop("/sim/multiplay/callsign"));
 setprop("/controls/cdu/display/r3", "");
 setprop("/controls/cdu/display/r4", "");
