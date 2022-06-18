@@ -31,6 +31,8 @@
           <tag>twin-engine</tag>
         </tags>
         <engine>genx-1b-9</engine>
+	<aircraft-variant>Boeing 787-9</aircraft-variant>
+	<engine-type>GEnx-1B75</engine-type>
 
         <model>
             <path>Aircraft/787-family/Models/787-9-GEnx.xml</path>
