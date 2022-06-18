@@ -31,6 +31,8 @@
           <tag>twin-engine</tag>
         </tags>
         <engine>trent_1000-10</engine>
+	<aircraft-variant>Boeing 787-10</aircraft-variant>
+	<engine-type>RR-Trent-1000-R</engine-type>
 
         <model>
             <path>Aircraft/787-family/Models/787-10-Trent1000.xml</path>
