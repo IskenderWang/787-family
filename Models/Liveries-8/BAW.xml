@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<sim>    
+  <model>        
+    <livery>
+	<name type="string">BAW British Airways (G-ZBJM)</name>
+      <texture-fuselage>Liveries-8/BAW.png</texture-fuselage>
+      <texture-engines>Liveries-engines/BAW.png</texture-engines>
+    </livery>
+  </model>
+</sim>
+
+</PropertyList>
