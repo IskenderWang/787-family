@@ -306,17 +306,17 @@
 		<object-name>APU.knob</object-name>
 		<property>controls/APU/off-start-run</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>-60</dep></entry>
-			<entry><ind>1</ind><dep>60</dep></entry>
+			<entry><ind>0</ind><dep>-45</dep></entry>
+			<entry><ind>1</ind><dep>45</dep></entry>
 			<entry><ind>2</ind><dep>0</dep></entry>
 		</interpolation>
 		<axis>
 			<x1-m>1</x1-m>
-			<y1-m>-0.2605</y1-m>
-			<z1-m>-0.0349</z1-m>
+			<y1-m>-0.25942</y1-m>
+			<z1-m>-0.063773</z1-m>
 			<x2-m>0</x2-m>
-			<y2-m>-0.2605</y2-m>
-			<z2-m>-0.0349</z2-m>
+			<y2-m>-0.25942</y2-m>
+			<z2-m>-0.063773</z2-m>
 		</axis>
 	</animation>
 
@@ -522,17 +522,17 @@
 		<object-name>hyd.c1.knob</object-name>
 		<property>controls/hydraulic/system[2]/setting</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
+			<entry><ind>0</ind><dep>-45</dep></entry>
 			<entry><ind>1</ind><dep>0</dep></entry>
-			<entry><ind>2</ind><dep>30</dep></entry>
+			<entry><ind>2</ind><dep>45</dep></entry>
 		</interpolation>
 		<axis>
 			<x1-m>1</x1-m>
-			<y1-m>-0.1353</y1-m>
-			<z1-m>-0.1579</z1-m>
+			<y1-m>-0.136417</y1-m>
+			<z1-m>-0.165238</z1-m>
 			<x2-m>0</x2-m>
-			<y2-m>-0.1353</y2-m>
-			<z2-m>-0.1579</z2-m>
+			<y2-m>-0.136417</y2-m>
+			<z2-m>-0.165238</z2-m>
 		</axis>
 	</animation>
 
@@ -541,17 +541,17 @@
 		<object-name>hyd.c2.knob</object-name>
 		<property>controls/hydraulic/system[3]/setting</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
+			<entry><ind>0</ind><dep>-45</dep></entry>
 			<entry><ind>1</ind><dep>0</dep></entry>
-			<entry><ind>2</ind><dep>30</dep></entry>
+			<entry><ind>2</ind><dep>45</dep></entry>
 		</interpolation>
 		<axis>
 			<x1-m>1</x1-m>
-			<y1-m>-0.0891</y1-m>
-			<z1-m>-0.1579</z1-m>
+			<y1-m>-0.086627</y1-m>
+			<z1-m>-0.165238</z1-m>
 			<x2-m>0</x2-m>
-			<y2-m>-0.0891</y2-m>
-			<z2-m>-0.1579</z2-m>
+			<y2-m>-0.086627</y2-m>
+			<z2-m>-0.165238</z2-m>
 		</axis>
 	</animation>
 
@@ -665,11 +665,11 @@
 		</interpolation>
 		<axis>
 			<x1-m>1</x1-m>
-			<y1-m>0.1247</y1-m>
-			<z1-m>-0.0311</z1-m>
+			<y1-m>0.119923</y1-m>
+			<z1-m>-0.0607</z1-m>
 			<x2-m>0</x2-m>
-			<y2-m>0.1247</y2-m>
-			<z2-m>-0.0311</z2-m>
+			<y2-m>0.119923</y2-m>
+			<z2-m>-0.0607</z2-m>
 		</axis>
 	</animation>
 
@@ -1106,15 +1106,15 @@ setprop("/controls/engines/engine[0]/starter", 0);
 		<property>controls/engines/engine[0]/starter</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>1</ind><dep>-30</dep></entry>
+			<entry><ind>1</ind><dep>-45</dep></entry>
 		</interpolation>
 		<axis>
 			<x1-m>1</x1-m>
-			<y1-m>0.0615</y1-m>
-			<z1-m>0.0546</z1-m>
+			<y1-m>0.046861</y1-m>
+			<z1-m>0.014876</z1-m>
 			<x2-m>0</x2-m>
-			<y2-m>0.0615</y2-m>
-			<z2-m>0.0546</z2-m>
+			<y2-m>0.046861</y2-m>
+			<z2-m>0.014876</z2-m>
 		</axis>
 	</animation>
 
@@ -1150,15 +1150,15 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		<property>controls/engines/engine[1]/starter</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>1</ind><dep>-30</dep></entry>
+			<entry><ind>1</ind><dep>-45</dep></entry>
 		</interpolation>
 		<axis>
 			<x1-m>1</x1-m>
-			<y1-m>0.1487</y1-m>
-			<z1-m>0.0546</z1-m>
+			<y1-m>0.157732</y1-m>
+			<z1-m>0.01482</z1-m>
 			<x2-m>0</x2-m>
-			<y2-m>0.1487</y2-m>
-			<z2-m>0.0546</z2-m>
+			<y2-m>0.157732</y2-m>
+			<z2-m>0.01482</z2-m>
 		</axis>
 	</animation>
 
@@ -1187,17 +1187,17 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		<object-name>wing.anti-ice</object-name>
 		<property>controls/ice/wing/anti-ice-setting</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
+			<entry><ind>0</ind><dep>-45</dep></entry>
 			<entry><ind>1</ind><dep>0</dep></entry>
-			<entry><ind>2</ind><dep>30</dep></entry>
+			<entry><ind>2</ind><dep>45</dep></entry>
 		</interpolation>
 		<axis>
 			<x1-m>1</x1-m>
-			<y1-m>0.0431</y1-m>
-			<z1-m>-0.3196</z1-m>
+			<y1-m>0.045319</y1-m>
+			<z1-m>-0.32778</z1-m>
 			<x2-m>0</x2-m>
-			<y2-m>0.0431</y2-m>
-			<z2-m>-0.3196</z2-m>
+			<y2-m>0.045319</y2-m>
+			<z2-m>-0.32778</z2-m>
 		</axis>
 	</animation>
 
@@ -1222,17 +1222,17 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		<object-name>eng1.anti-ice</object-name>
 		<property>controls/ice/eng1/anti-ice-setting</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
+			<entry><ind>0</ind><dep>-45</dep></entry>
 			<entry><ind>1</ind><dep>0</dep></entry>
-			<entry><ind>2</ind><dep>30</dep></entry>
+			<entry><ind>2</ind><dep>45</dep></entry>
 		</interpolation>
 		<axis>
 			<x1-m>1</x1-m>
-			<y1-m>0.1040</y1-m>
-			<z1-m>-0.3196</z1-m>
+			<y1-m>0.106617</y1-m>
+			<z1-m>-0.32778</z1-m>
 			<x2-m>0</x2-m>
-			<y2-m>0.1040</y2-m>
-			<z2-m>-0.3196</z2-m>
+			<y2-m>0.106617</y2-m>
+			<z2-m>-0.32778</z2-m>
 		</axis>
 	</animation>
 
@@ -1257,17 +1257,17 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		<object-name>eng2.anti-ice</object-name>
 		<property>controls/ice/eng2/anti-ice-setting</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
+			<entry><ind>0</ind><dep>-45</dep></entry>
 			<entry><ind>1</ind><dep>0</dep></entry>
-			<entry><ind>2</ind><dep>30</dep></entry>
+			<entry><ind>2</ind><dep>45</dep></entry>
 		</interpolation>
 		<axis>
 			<x1-m>1</x1-m>
-			<y1-m>0.1624</y1-m>
-			<z1-m>-0.3196</z1-m>
+			<y1-m>0.161537</y1-m>
+			<z1-m>-0.32778</z1-m>
 			<x2-m>0</x2-m>
-			<y2-m>0.1624</y2-m>
-			<z2-m>-0.3196</z2-m>
+			<y2-m>0.161537</y2-m>
+			<z2-m>-0.32778</z2-m>
 		</axis>
 	</animation>
 
@@ -1540,8 +1540,8 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		<object-name>SeatbeltSwtch</object-name>
 		<property>controls/switches/seatbelt-sign</property>
 		<interpolation>
-			<entry><ind>0</ind><dep>65</dep></entry>
-			<entry><ind>1</ind><dep>-65</dep></entry>
+			<entry><ind>0</ind><dep>45</dep></entry>
+			<entry><ind>1</ind><dep>-45</dep></entry>
 		</interpolation>
 		<axis>
 			<x>1</x>
@@ -1550,8 +1550,8 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		</axis>
 		<center>
 			<x-m>0</x-m>
-			<y-m>-0.1138</y-m>
-			<z-m>-0.3193</z-m>
+			<y-m>-0.102983</y-m>
+			<z-m>-0.329531</z-m>
 		</center>
 	</animation>
 
@@ -1580,16 +1580,16 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		<property>controls/wipers/speed</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>1</ind><dep>30</dep></entry>
-			<entry><ind>2</ind><dep>90</dep></entry>
+			<entry><ind>1</ind><dep>90</dep></entry>
+			<entry><ind>2</ind><dep>135</dep></entry>
 		</interpolation>
 		<axis>
 			<x1-m>1</x1-m>
-			<y1-m>-0.2699</y1-m>
-			<z1-m>-0.3283</z1-m>
+			<y1-m>-0.277468</y1-m>
+			<z1-m>-0.334146</z1-m>
 			<x2-m>0</x2-m>
-			<y2-m>-0.2699</y2-m>
-			<z2-m>-0.3283</z2-m>
+			<y2-m>-0.277468</y2-m>
+			<z2-m>-0.334146</z2-m>
 		</axis>
 	</animation>
 
@@ -1599,17 +1599,17 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		<property>controls/wipers/speed</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>1</ind><dep>30</dep></entry>
-			<entry><ind>2</ind><dep>60</dep></entry>
+			<entry><ind>1</ind><dep>90</dep></entry>
+			<entry><ind>2</ind><dep>135</dep></entry>
 			<entry><ind>3</ind><dep>90</dep></entry>
 		</interpolation>
 		<axis>
 			<x1-m>1</x1-m>
-			<y1-m>0.2526</y1-m>
-			<z2-m>-0.3366</z2-m>
+			<y1-m>0.253686</y1-m>
+			<z2-m>-0.349456</z2-m>
 			<x2-m>0</x2-m>
-			<y2-m>0.2526</y2-m>
-			<z2-m>-0.3366</z2-m>
+			<y2-m>0.253686</y2-m>
+			<z2-m>-0.349456</z2-m>
 		</axis>
 	</animation>
 
@@ -1776,11 +1776,11 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		</interpolation>
 		<axis>
 			<x1-m>1</x1-m>
-			<y1-m>-0.1333</y1-m>
-			<z1-m>-0.3967</z1-m>
+			<y1-m>-0.135824</y1-m>
+			<z1-m>-0.388015</z1-m>
 			<x2-m>0</x2-m>
-			<y2-m>-0.1333</y2-m>
-			<z2-m>-0.3967</z2-m>
+			<y2-m>-0.135824</y2-m>
+			<z2-m>-0.388015</z2-m>
 		</axis>
 	</animation>
 
@@ -1794,11 +1794,11 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		</interpolation>
 		<axis>
 			<x1-m>1</x1-m>
-			<y1-m>-0.1817</y1-m>
-			<z1-m>-0.3972</z1-m>
+			<y1-m>-0.182448</y1-m>
+			<z1-m>-0.387872</z1-m>
 			<x2-m>0</x2-m>
-			<y2-m>-0.1817</y2-m>
-			<z2-m>-0.3972</z2-m>
+			<y2-m>-0.182448</y2-m>
+			<z2-m>-0.387872</z2-m>
 		</axis>
 	</animation>
 
@@ -1812,11 +1812,11 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		</interpolation>
 		<axis>
 			<x1-m>1</x1-m>
-			<y1-m>-0.0455</y1-m>
-			<z1-m>-0.3951</z1-m>
+			<y1-m>-0.044945</y1-m>
+			<z1-m>-0.388044</z1-m>
 			<x2-m>0</x2-m>
-			<y2-m>-0.0455</y2-m>
-			<z2-m>-0.3951</z2-m>
+			<y2-m>-0.044945</y2-m>
+			<z2-m>-0.388044</z2-m>
 		</axis>
 	</animation>
 

@@ -212,9 +212,9 @@
 	<model>
 		<path>Aircraft/787-family/Models/FlightDeck/OHpanel.xml</path>
         <offsets>
-			<x-m>-23.1092</x-m>
+			<x-m>-23.1083</x-m>
 			<y-m>0</y-m>
-			<z-m>2.5412</z-m>
+			<z-m>2.57767</z-m>
 			<pitch-deg>70.5</pitch-deg>
 		</offsets>
 	</model>
