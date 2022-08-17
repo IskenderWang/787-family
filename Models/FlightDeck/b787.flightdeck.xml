@@ -3310,16 +3310,16 @@
 		<type>rotate</type>
 		<object-name>FD.toggle</object-name>
 		<property>/it-autoflight/input/fd1</property>
-		<factor>45</factor>
+		<factor>-40</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
 			<z>0</z>
 		</axis>
 		<center>
-			<x-m>-23.7578</x-m>
+			<x-m>-23.7116</x-m>
 			<y-m>0</y-m>
-			<z-m>1.9395</z-m>
+			<z-m>1.92734</z-m>
 		</center>
 	</animation>
 
@@ -3329,32 +3329,32 @@
 		<type>rotate</type>
 		<object-name>larm</object-name>
 		<property>autopilot/panel/larm</property>
-		<factor>20</factor>
+		<factor>40</factor>
 		<axis>
 			<x>0</x>
 			<y>-1</y>
 			<z>0</z>
 		</axis>
 		<center>
-			<x-m>-23.7694</x-m>
+			<x-m>-23.7315</x-m>
 			<y-m>0</y-m>
-			<z-m>1.9843</z-m>
+			<z-m>1.97778</z-m>
 		</center>
 	</animation>
 	<animation>
 		<type>rotate</type>
 		<object-name>rarm</object-name>
 		<property>autopilot/panel/rarm</property>
-		<factor>20</factor>
+		<factor>40</factor>
 		<axis>
 			<x>0</x>
 			<y>-1</y>
 			<z>0</z>
 		</axis>
 		<center>
-			<x-m>-23.7694</x-m>
+			<x-m>-23.7315</x-m>
 			<y-m>0</y-m>
-			<z-m>1.9843</z-m>
+			<z-m>1.97778</z-m>
 		</center>
 	</animation>
 
@@ -3700,12 +3700,12 @@
 			<entry><ind>250</ind><dep>120</dep></entry>
 		</interpolation>
 		<axis>
-			<x1-m>-23.7522</x1-m>
-			<y1-m>-0.3519</y1-m>
-			<z1-m>1.9529</z1-m>
-			<x2-m>-23.7614</x2-m>
-			<y2-m>-0.3519</y2-m>
-			<z2-m>1.9502</z2-m>
+			<x1-m>-23.7021</x1-m>
+			<y1-m>-0.338101</y1-m>
+			<z1-m>1.94842</z1-m>
+			<x2-m>-23.6891</x2-m>
+			<y2-m>-0.338101</y2-m>
+			<z2-m>1.9524</z2-m>
 		</axis>
 	</animation>
 	
@@ -3725,12 +3725,12 @@
 			<entry><ind>250</ind><dep>120</dep></entry>
 		</interpolation>
 		<axis>
-			<x1-m>-23.7522</x1-m>
-			<y1-m>0.3137</y1-m>
-			<z1-m>1.9522</z1-m>
-			<x2-m>-23.7614</x2-m>
-			<y2-m>0.3137</y2-m>
-			<z2-m>1.9494</z2-m>
+			<x1-m>-23.7021</x1-m>
+			<y1-m>0.377993</y1-m>
+			<z1-m>1.94842</z1-m>
+			<x2-m>-23.6891</x2-m>
+			<y2-m>0.377993</y2-m>
+			<z2-m>1.9524</z2-m>
 		</axis>
 	</animation>
 	
