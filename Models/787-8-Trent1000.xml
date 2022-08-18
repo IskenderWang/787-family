@@ -139,7 +139,7 @@
 
     <nasal>
         <load>
-         var livery_update = aircraft.livery_update.new("Aircraft/787-family/Models/Liveries-10", 10);
+         var livery_update = aircraft.livery_update.new("Aircraft/787-family/Models/Liveries-8/Trent1000", 10);
         </load>
 
         <unload>
@@ -231,7 +231,7 @@
 	<object-name>rwingc</object-name>
         <property-base>sim/model/livery</property-base>
         <texture-prop>texture-fuselage</texture-prop>
-        <texture>BOE-10.png</texture>
+        <texture>787-8.png</texture>
 </animation>
 
 <animation>
