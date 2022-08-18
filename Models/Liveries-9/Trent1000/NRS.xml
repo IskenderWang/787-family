@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<sim>    
+  <model>        
+    <livery>
+	<name type="string">NRS Norwegian Air UK (G-CKWE)</name>
+      <texture-fuselage>Liveries-9/Trent1000/NRS.png</texture-fuselage>
+      <texture-engines>Liveries-engines/NRS.png</texture-engines>
+    </livery>
+  </model>
+</sim>
+
+</PropertyList>
