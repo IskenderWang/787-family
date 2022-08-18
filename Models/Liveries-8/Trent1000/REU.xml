@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<sim>    
+  <model>        
+    <livery>
+	<name type="string">REU Air Austral (F-OLRB)</name>
+      <texture-fuselage>Liveries-8/Trent1000/REU.png</texture-fuselage>
+      <texture-engines>Liveries-engines/REU.png</texture-engines>
+    </livery>
+  </model>
+</sim>
+
+</PropertyList>
