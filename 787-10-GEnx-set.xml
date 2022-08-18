@@ -31,8 +31,6 @@
           <tag>twin-engine</tag>
         </tags>
         <engine>genx-1b-10</engine>
-	<aircraft-variant>Boeing 787-10</aircraft-variant>
-	<engine-type>GEnx-1B76</engine-type>
 
         <model>
             <path>Aircraft/787-family/Models/787-10-GEnx.xml</path>
@@ -910,7 +908,7 @@
             <file>Aircraft/787-family/Nasal/sysinfo.nas</file>
         </b787>
         <systems>
-            <file>Aircraft/787-family/Nasal/systems-10.nas</file>
+            <file>Aircraft/787-family/Nasal/systems-10-GEnx.nas</file>
         </systems>
         <electrical>
             <file>Aircraft/787-family/Nasal/electrical.nas</file>

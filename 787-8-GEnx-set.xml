@@ -30,9 +30,7 @@
           <tag>jet</tag>
           <tag>twin-engine</tag>
         </tags>
-	<engine>genx-1b-8</engine>
-	<aircraft-variant>Boeing 787-8</aircraft-variant>
-	<engine-type>GEnx-1B70</engine-type>
+		<engine>genx-1b-8</engine>
 
 		<model>
 			<path>Aircraft/787-family/Models/787-8-GEnx.xml</path>
@@ -924,7 +922,7 @@
 			<file>Aircraft/787-family/Nasal/sysinfo.nas</file>
 		</b787>
 		<systems>
-			<file>Aircraft/787-family/Nasal/systems.nas</file>
+			<file>Aircraft/787-family/Nasal/systems-8-GEnx.nas</file>
 		</systems>
 		<electrical>
 			<file>Aircraft/787-family/Nasal/electrical.nas</file>
