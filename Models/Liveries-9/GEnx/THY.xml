@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<sim>    
+  <model>        
+    <livery>
+	<name type="string">THY Turkish Airlines (TC-LLG)</name>
+      <texture-fuselage>Liveries-9/GEnx/THY.png</texture-fuselage>
+      <texture-engines>Liveries-engines/GEnx.png</texture-engines>
+    </livery>
+  </model>
+</sim>
+
+</PropertyList>
