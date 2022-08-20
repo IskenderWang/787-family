@@ -3221,6 +3221,38 @@
   </condition>
 </animation>
 
+<!-- CAC Deflector Door -->
+
+ <animation>
+  <object-name>lhcacdeflector</object-name>
+  <type>rotate</type>
+  <property>/systems/cac/inlet-deflector-door-pos</property>
+  <factor>-22</factor>
+  <axis>   
+   <x1-m>-8.09845</x1-m>
+   <y1-m>-2.14714</y1-m>
+   <z1-m>-1.04714</z1-m>
+   <x2-m>-8.10903</x2-m>
+   <y2-m>-2.39584</y2-m>
+   <z2-m>-0.777</z2-m>
+  </axis>
+ </animation>
+
+<animation>
+  <object-name>rhcacdeflector</object-name>
+  <type>rotate</type>
+  <property>/systems/cac/inlet-deflector-door-pos</property>
+  <factor>22</factor>
+  <axis>   
+   <x1-m>-8.09845</x1-m>
+   <y1-m>2.14714</y1-m>
+   <z1-m>-1.04714</z1-m>
+   <x2-m>-8.10903</x2-m>
+   <y2-m>2.39584</y2-m>
+   <z2-m>-0.777</z2-m>
+  </axis>
+ </animation>
+
 <!-- Window Lights -->
 
 <animation>
