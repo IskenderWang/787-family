@@ -33,13 +33,48 @@
     	</emission>
   	</animation>
 
+<!-- IND -->
+
+
+ <animation>
+   <type>pick</type>
+   <object-name>IND_LTS_Test</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+	<binding>
+		<command>property-toggle</command>
+		<property>controls/ind</property>
+	</binding>
+	</action>
+ </animation>
+
+ <animation>
+  <object-name>IND_LTS_Test</object-name>
+  <type>rotate</type>
+  <property>controls/ind</property>
+  <factor>-30</factor>
+  <center>
+   <x-m>0.004406</x-m>
+   <y-m>10</y-m>
+   <z-m>-0.403615</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+
+
 <!-- ELECTRICAL CONTROL PANEL -->
 
 <!-- Battery Switch -->
 
  <animation>
    <type>pick</type>
-   <object-name>BATT.btn</object-name>
+   <object-name>Battery</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -52,101 +87,87 @@
 
  <animation>
    <type>textranslate</type>
-   <object-name>BATT.btn</object-name>
+   <object-name>Battery</object-name>
 <property>controls/electric/battery-switch</property>
-   <factor>-0.25</factor>
+   <factor>-0.0625</factor>
    <axis>
      <x>0</x>
      <y>1</y>
      <z>0</z>
    </axis>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+  <object-name>Battery</object-name>
+  <object-name>Battery.001</object-name>
+  <property>controls/electric/battery-switch</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
  </animation>
 
 <!-- APU Generator Switch -->
 
  <animation>
    <type>pick</type>
-   <object-name>APU.btn</object-name>		<action>
+   <object-name>APU_GEN_L</object-name>
+   <object-name>APU_GEN_R</object-name>			<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
 	<binding>
-		<command>property-toggle</command>
-		<property>controls/electric/APU-generator</property>
+		<command>nasal</command>
+		<script>
+		if (getprop("controls/electric/APU-generator") == 0) {
+		if (getprop("controls/APU/off-start-run") == 2)
+			setprop("controls/electric/APU-generator", 1);
+		else
+			screen.log.write("Please turn the APU on first...", 1, 0, 0);
+		} else {
+			setprop("controls/electric/APU-generator", 0);
+		}
+		</script>
 	</binding>
 	</action>
  </animation>
 
  <animation>
    <type>textranslate</type>
-   <object-name>APU.btn</object-name>
+   <object-name>APU_GEN_L</object-name>
+   <object-name>APU_GEN_R</object-name>	
+   <property>controls/electric/APU-generator</property>
+   <factor>-0.0625</factor>
+   <axis>
+     <x>0</x>
+     <y>1</y>
+     <z>0</z>
+   </axis>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+   <object-name>APU_GEN_L</object-name>
+   <object-name>APU_GEN_R</object-name>	
+   <object-name>APU_GEN_L.001</object-name>
+   <object-name>APU_GEN_R.001</object-name>
 <property>controls/electric/APU-generator</property>
-   <factor>-0.25</factor>
-   <axis>
-     <x>0</x>
-     <y>1</y>
-     <z>0</z>
-   </axis>
- </animation>
-
-<!-- Left Bus Switch -->
-
- <animation>
-   <type>pick</type>
-   <object-name>LBUS.btn</object-name>
-		<action>
-			<button>0</button>
-			<repeatable type="bool">false</repeatable>
-	<binding>
-		<command>property-toggle</command>
-		<property>controls/electric/engine[0]/bus-tie</property>
-	</binding>
-	</action>
- </animation>
-
- <animation>
-   <type>textranslate</type>
-   <object-name>LBUS.btn</object-name>
-<property>controls/electric/engine[0]/bus-tie</property>
-   <factor>-0.25</factor>
-   <axis>
-     <x>0</x>
-     <y>1</y>
-     <z>0</z>
-   </axis>
- </animation>
-
-<!-- Right Bus Switch -->
-
- <animation>
-   <type>pick</type>
-   <object-name>RBUS.btn</object-name>
-		<action>
-			<button>0</button>
-			<repeatable type="bool">false</repeatable>
-	<binding>
-		<command>property-toggle</command>
-		<property>controls/electric/engine[1]/bus-tie</property>
-	</binding>
-	</action>
- </animation>
-
- <animation>
-   <type>textranslate</type>
-   <object-name>RBUS.btn</object-name>
-<property>controls/electric/engine[1]/bus-tie</property>
-   <factor>-0.25</factor>
-   <axis>
-     <x>0</x>
-     <y>1</y>
-     <z>0</z>
-   </axis>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
  </animation>
 
 <!-- External Power Switches -->
 
  <animation>
    <type>pick</type>
-   <object-name>EXT.btn</object-name>
+   <object-name>FWD_EXT_PWR_L</object-name>
+   <object-name>FWD_EXT_PWR_R</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -168,9 +189,10 @@
 
  <animation>
    <type>textranslate</type>
-   <object-name>EXT.btn</object-name>
+   <object-name>FWD_EXT_PWR_L</object-name>
+   <object-name>FWD_EXT_PWR_R</object-name>
 <property>controls/electric/external-power</property>
-   <factor>-0.25</factor>
+   <factor>-0.0625</factor>
    <axis>
      <x>0</x>
      <y>1</y>
@@ -178,11 +200,26 @@
    </axis>
  </animation>
 
+ <animation>
+  <type>translate</type>
+   <object-name>FWD_EXT_PWR_L</object-name>
+   <object-name>FWD_EXT_PWR_R</object-name>
+   <object-name>FWD_EXT_PWR_L.001</object-name>
+   <object-name>FWD_EXT_PWR_R.001</object-name>
+<property>controls/electric/external-power</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
 <!-- Generator Switches -->
 
  <animation>
    <type>pick</type>
-   <object-name>LGEN.btn</object-name>
+   <object-name>GEN_CTRL_L1</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -195,9 +232,9 @@
 
  <animation>
    <type>textranslate</type>
-   <object-name>LGEN.btn</object-name>
+   <object-name>GEN_CTRL_L1</object-name>
 <property>controls/electric/engine/generator</property>
-   <factor>-0.25</factor>
+   <factor>-0.0625</factor>
    <axis>
      <x>0</x>
      <y>1</y>
@@ -206,8 +243,21 @@
  </animation>
 
  <animation>
+  <type>translate</type>
+   <object-name>GEN_CTRL_L1</object-name>
+   <object-name>GEN_CTRL_L1.001</object-name>
+<property>controls/electric/engine/generator</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
    <type>pick</type>
-   <object-name>RGEN.btn</object-name>
+   <object-name>GEN_CTRL_R1</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -220,9 +270,9 @@
 
  <animation>
    <type>textranslate</type>
-   <object-name>RGEN.btn</object-name>
+   <object-name>GEN_CTRL_R1</object-name>
 <property>controls/electric/engine[1]/generator</property>
-   <factor>-0.25</factor>
+   <factor>-0.0625</factor>
    <axis>
      <x>0</x>
      <y>1</y>
@@ -230,11 +280,24 @@
    </axis>
  </animation>
 
+ <animation>
+  <type>translate</type>
+   <object-name>GEN_CTRL_R1</object-name>
+   <object-name>GEN_CTRL_R1.001</object-name>
+<property>controls/electric/engine[1]/generator</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
 <!-- Back Up Generators -->
 
  <animation>
    <type>pick</type>
-   <object-name>LBUGen</object-name>
+   <object-name>GEN_CTRL_L2</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -247,9 +310,9 @@
 
  <animation>
    <type>textranslate</type>
-   <object-name>LBUGen</object-name>
+   <object-name>GEN_CTRL_L2</object-name>
 <property>controls/electric/engine/backup-generator</property>
-   <factor>-0.25</factor>
+   <factor>-0.0625</factor>
    <axis>
      <x>0</x>
      <y>1</y>
@@ -258,8 +321,21 @@
  </animation>
 
  <animation>
+  <type>translate</type>
+   <object-name>GEN_CTRL_L2</object-name>
+   <object-name>GEN_CTRL_L2.001</object-name>
+<property>controls/electric/engine/backup-generator</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
    <type>pick</type>
-   <object-name>RBUGen</object-name>
+   <object-name>GEN_CTRL_R2</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -272,14 +348,27 @@
 
  <animation>
    <type>textranslate</type>
-   <object-name>RBUGen</object-name>
+   <object-name>GEN_CTRL_R2</object-name>
 <property>controls/electric/engine[1]/backup-generator</property>
-   <factor>-0.25</factor>
+   <factor>-0.0625</factor>
    <axis>
      <x>0</x>
      <y>1</y>
      <z>0</z>
    </axis>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+   <object-name>GEN_CTRL_R2</object-name>
+   <object-name>GEN_CTRL_R2.001</object-name>
+<property>controls/electric/engine[1]/backup-generator</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
  </animation>
 
 <!-- APU Starter Knob -->
@@ -324,12 +413,12 @@
 
  <animation>
    <type>textranslate</type>
-   <object-name>APU.fault</object-name>
+   <object-name>Fault5</object-name>
 <property>engines/APU/servicable</property>
-   <factor>-0.25</factor>
+   <factor>0.03369140625</factor>
    <axis>
-     <x>1</x>
-     <y>0</y>
+     <x>0</x>
+     <y>1</y>
      <z>0</z>
    </axis>
  </animation>
@@ -342,7 +431,7 @@
 
  <animation>
    <type>pick</type>
-   <object-name>RAT.btn</object-name>
+   <object-name>RAM_Air_Turbine</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -355,9 +444,9 @@
 
  <animation>
    <type>textranslate</type>
-   <object-name>RAT.btn</object-name>
+   <object-name>RAM_Air_Turbine</object-name>
 <property>controls/electric/ram-air-turbine</property>
-   <factor>-0.25</factor>
+   <factor>-0.0625</factor>
    <axis>
      <x>0</x>
      <y>1</y>
@@ -365,11 +454,24 @@
    </axis>
  </animation>
 
+ <animation>
+  <type>translate</type>
+   <object-name>RAM_Air_Turbine</object-name>
+   <object-name>RAM_Air_Turbine.001</object-name>
+<property>controls/electric/ram-air-turbine</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
 <!-- Hydraulic Control Lights Translate -->
 
  <animation>
    <type>pick</type>
-   <object-name>hyd.leng</object-name>
+   <object-name>L_ENG</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -385,7 +487,7 @@
 
  <animation>
    <type>pick</type>
-   <object-name>hyd.reng</object-name>
+   <object-name>R_ENG</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -401,9 +503,9 @@
 
  <animation>
    <type>textranslate</type>
-   <object-name>hyd.leng</object-name>
+   <object-name>L_ENG</object-name>
 <property>controls/hydraulic/system/engine-pump</property>
-   <factor>-0.25</factor>
+   <factor>-0.0625</factor>
    <axis>
      <x>0</x>
      <y>1</y>
@@ -413,43 +515,47 @@
 
  <animation>
    <type>textranslate</type>
-   <object-name>hyd.reng</object-name>
+   <object-name>R_ENG</object-name>
 <property>controls/hydraulic/system[1]/engine-pump</property>
-   <factor>-0.25</factor>
+   <factor>-0.0625</factor>
    <axis>
      <x>0</x>
      <y>1</y>
      <z>0</z>
    </axis>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+   <object-name>L_ENG</object-name>
+   <object-name>L_ENG.001</object-name>
+<property>controls/hydraulic/system/engine-pump</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+   <object-name>R_ENG</object-name>
+   <object-name>R_ENG.001</object-name>
+<property>controls/hydraulic/system[1]/engine-pump</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
  </animation>
 
 <!-- Hydraulic Fault Lights -->
 
-<animation>
-	<type>select</type>
-	<object-name>fault.leng</object-name>
-	<condition>
-		<greater-than>
-			<property>controls/pneumatic/temp/hyd-sys0-eng</property>
-			<value>120</value>
-		</greater-than>
-	</condition>
-</animation>
-
-<animation>
-	<type>select</type>
-	<object-name>fault.reng</object-name>
-	<condition>
-		<greater-than>
-			<property>controls/pneumatic/temp/hyd-sys1-eng</property>
-			<value>120</value>
-		</greater-than>
-	</condition>
-</animation>
-
  <animation>
    <type>textranslate</type>
-   <object-name>C1.fault</object-name>
+   <object-name>Fault2</object-name>
 <property>controls/pneumatic/temp/hyd-sys2-elec</property>
 <interpolation>
 	<entry><ind>0</ind><dep>0</dep></entry>
@@ -466,7 +572,7 @@
 
  <animation>
    <type>textranslate</type>
-   <object-name>C2.fault</object-name>
+   <object-name>Fault3</object-name>
 <property>controls/pneumatic/temp/hyd-sys3-elec</property>
 <interpolation>
 	<entry><ind>0</ind><dep>0</dep></entry>
@@ -563,7 +669,7 @@
 
  <animation>
    <type>pick</type>
-   <object-name>jettison</object-name>
+   <object-name>ARM</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -576,9 +682,9 @@
 
  <animation>
    <type>textranslate</type>
-   <object-name>jettison</object-name>
+   <object-name>ARM</object-name>
 <property>controls/jettison/arm</property>
-   <factor>-0.25</factor>
+   <factor>-0.0625</factor>
    <axis>
      <x>0</x>
      <y>1</y>
@@ -587,8 +693,21 @@
  </animation>
 
  <animation>
+  <type>translate</type>
+   <object-name>ARM</object-name>
+   <object-name>ARM.001</object-name>
+<property>controls/jettison/arm</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
    <type>pick</type>
-   <object-name>rnozzle</object-name>
+   <object-name>Nozzle_R</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -601,9 +720,9 @@
 
  <animation>
    <type>textranslate</type>
-   <object-name>rnozzle</object-name>
+   <object-name>Nozzle_R</object-name>
 <property>controls/jettison/rnozzle</property>
-   <factor>-0.25</factor>
+   <factor>-0.0625</factor>
    <axis>
      <x>0</x>
      <y>1</y>
@@ -612,8 +731,21 @@
  </animation>
 
  <animation>
+  <type>translate</type>
+   <object-name>Nozzle_R</object-name>
+   <object-name>Nozzle_R.001</object-name>
+<property>controls/jettison/rnozzle</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
    <type>pick</type>
-   <object-name>lnozzle</object-name>
+   <object-name>Nozzle_L</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -626,14 +758,27 @@
 
  <animation>
    <type>textranslate</type>
-   <object-name>lnozzle</object-name>
+   <object-name>Nozzle_L</object-name>
 <property>controls/jettison/lnozzle</property>
-   <factor>-0.25</factor>
+   <factor>-0.0625</factor>
    <axis>
      <x>0</x>
      <y>1</y>
      <z>0</z>
    </axis>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+   <object-name>Nozzle_L</object-name>
+   <object-name>Nozzle_L.001</object-name>
+<property>controls/jettison/lnozzle</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
  </animation>
 
 <!-- Jettison Knob Setting -->
@@ -679,7 +824,7 @@
 
 	<animation>
 		<type>pick</type>
-		<object-name>xfeed</object-name>
+		<object-name>Crossfeed</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -691,9 +836,9 @@
 	</animation>
 	<animation>
 		<type>textranslate</type>
-		<object-name>xfeed</object-name>
+		<object-name>Crossfeed</object-name>
 		<property>controls/fuel/x-feed</property>
-		<factor>-0.25</factor>
+		<factor>-0.0625</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -701,10 +846,24 @@
 		</axis>
 	</animation>
 
+ <animation>
+  <type>translate</type>
+   <object-name>Crossfeed</object-name>
+   <object-name>Crossfeed.001</object-name>
+<property>controls/fuel/x-feed</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
 	<animation>
 		<name>Left fuel pump button pick</name>
 		<type>pick</type>
-		<object-name>tank.0</object-name>
+		<object-name>L_Pumps_FWD</object-name>
+		<object-name>L_Pumps_AFT</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -717,9 +876,10 @@
 	<animation>
 		<name>Left fuel pump button textranslate</name>
 		<type>textranslate</type>
-		<object-name>tank.0</object-name>
+		<object-name>L_Pumps_FWD</object-name>
+		<object-name>L_Pumps_AFT</object-name>
 		<property>consumables/fuel/tank[0]/selected</property>
-		<factor>-0.25</factor>
+		<factor>-0.0625</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -727,10 +887,26 @@
 		</axis>
 	</animation>
 
+ <animation>
+  <type>translate</type>
+   <object-name>L_Pumps_FWD</object-name>
+   <object-name>L_Pumps_AFT</object-name>
+   <object-name>L_Pumps_FWD.001</object-name>
+   <object-name>L_Pumps_AFT.001</object-name>
+<property>consumables/fuel/tank[0]/selected</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
 	<animation>
 		<name>Center fuel pump button pick</name>
 		<type>pick</type>
-		<object-name>tank.2</object-name>
+		<object-name>Center_Pumps_L</object-name>
+		<object-name>Center_Pumps_R</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -743,9 +919,10 @@
 	<animation>
 		<name>Center fuel pump button textranslate</name>
 		<type>textranslate</type>
-		<object-name>tank.2</object-name>
+		<object-name>Center_Pumps_L</object-name>
+		<object-name>Center_Pumps_R</object-name>
 		<property>consumables/fuel/tank[2]/selected</property>
-		<factor>-0.25</factor>
+		<factor>-0.0625</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -753,10 +930,26 @@
 		</axis>
 	</animation>
 
+ <animation>
+  <type>translate</type>
+   <object-name>Center_Pumps_L</object-name>
+   <object-name>Center_Pumps_R</object-name>
+   <object-name>Center_Pumps_L.001</object-name>
+   <object-name>Center_Pumps_R.001</object-name>
+<property>consumables/fuel/tank[2]/selected</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
 	<animation>
 		<name>Right fuel pump button pick</name>
 		<type>pick</type>
-		<object-name>tank.1</object-name>
+		<object-name>R_Pumps_FWD</object-name>
+		<object-name>R_Pumps_AFT</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -769,15 +962,31 @@
 	<animation>
 		<name>Right fuel pump button textranslate</name>
 		<type>textranslate</type>
-		<object-name>tank.1</object-name>
+		<object-name>R_Pumps_FWD</object-name>
+		<object-name>R_Pumps_AFT</object-name>
 		<property>consumables/fuel/tank[1]/selected</property>
-		<factor>-0.25</factor>
+		<factor>-0.0625</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
 			<z>0</z>
 		</axis>
 	</animation>
+
+ <animation>
+  <type>translate</type>
+   <object-name>R_Pumps_FWD</object-name>
+   <object-name>R_Pumps_AFT</object-name>
+   <object-name>R_Pumps_FWD.001</object-name>
+   <object-name>R_Pumps_AFT.001</object-name>
+<property>consumables/fuel/tank[1]/selected</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
 
 <!-- END OF FUEL SYSTEM CONTROL PANEL -->
 
@@ -787,7 +996,8 @@
 
 	<animation>
 		<type>pick</type>
-		<object-name>equip.cooling</object-name>
+		<object-name>Equip_Cooling_FWD</object-name>
+		<object-name>Equip_Cooling_AFT</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -799,9 +1009,10 @@
 	</animation>
 	<animation>
 		<type>textranslate</type>
-		<object-name>equip.cooling</object-name>
+		<object-name>Equip_Cooling_FWD</object-name>
+		<object-name>Equip_Cooling_AFT</object-name>
 		<property>controls/pneumatic/equipcooling</property>
-		<factor>-0.25</factor>
+		<factor>-0.0625</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -809,9 +1020,25 @@
 		</axis>
 	</animation>
 
+ <animation>
+  <type>translate</type>
+		<object-name>Equip_Cooling_FWD</object-name>
+		<object-name>Equip_Cooling_AFT</object-name>
+		<object-name>Equip_Cooling_FWD.001</object-name>
+		<object-name>Equip_Cooling_AFT.001</object-name>
+		<property>controls/pneumatic/equipcooling</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
 	<animation>
 		<type>pick</type>
-		<object-name>gasper</object-name>
+		<object-name>Recirc_Fans_Upper</object-name>
+		<object-name>Recirc_Fans_Lower</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -823,15 +1050,31 @@
 	</animation>
 	<animation>
 		<type>textranslate</type>
-		<object-name>gasper</object-name>
+		<object-name>Recirc_Fans_Upper</object-name>
+		<object-name>Recirc_Fans_Lower</object-name>
 		<property>controls/pneumatic/gasper</property>
-		<factor>-0.25</factor>
+		<factor>-0.0625</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
 			<z>0</z>
 		</axis>
 	</animation>
+
+ <animation>
+  <type>translate</type>
+		<object-name>Recirc_Fans_Upper</object-name>
+		<object-name>Recirc_Fans_Lower</object-name>
+		<object-name>Recirc_Fans_Upper.001</object-name>
+		<object-name>Recirc_Fans_Lower.001</object-name>
+		<property>controls/pneumatic/gasper</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
 
 	<animation>
 		<type>pick</type>
@@ -856,7 +1099,7 @@
 
 	<animation>
 		<type>pick</type>
-		<object-name>pack.1</object-name>
+		<object-name>L_PACK</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -868,9 +1111,9 @@
 	</animation>
 	<animation>
 		<type>textranslate</type>
-		<object-name>pack.1</object-name>
+		<object-name>L_PACK</object-name>
 		<property>controls/pneumatic/pack1</property>
-		<factor>-0.25</factor>
+		<factor>-0.0625</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -878,9 +1121,22 @@
 		</axis>
 	</animation>
 
+ <animation>
+  <type>translate</type>
+		<object-name>L_PACK</object-name>
+		<object-name>L_PACK.001</object-name>
+		<property>controls/pneumatic/pack1</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
 	<animation>
 		<type>pick</type>
-		<object-name>pack.2</object-name>
+		<object-name>R_PACK</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -892,9 +1148,9 @@
 	</animation>
 	<animation>
 		<type>textranslate</type>
-		<object-name>pack.2</object-name>
+		<object-name>R_PACK</object-name>
 		<property>controls/pneumatic/pack2</property>
-		<factor>-0.25</factor>
+		<factor>-0.0625</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -902,9 +1158,22 @@
 		</axis>
 	</animation>
 
+ <animation>
+  <type>translate</type>
+		<object-name>R_PACK</object-name>
+		<object-name>R_PACK.001</object-name>
+		<property>controls/pneumatic/pack2</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
 	<animation>
 		<type>pick</type>
-		<object-name>trim.1</object-name>
+		<object-name>Trim_Air_L</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -916,9 +1185,9 @@
 	</animation>
 	<animation>
 		<type>textranslate</type>
-		<object-name>trim.1</object-name>
+		<object-name>Trim_Air_L</object-name>
 		<property>controls/pneumatic/trim1</property>
-		<factor>-0.25</factor>
+		<factor>-0.0625</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -926,9 +1195,22 @@
 		</axis>
 	</animation>
 
+ <animation>
+  <type>translate</type>
+		<object-name>Trim_Air_L</object-name>
+		<object-name>Trim_Air_L.001</object-name>
+		<property>controls/pneumatic/trim1</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
 	<animation>
 		<type>pick</type>
-		<object-name>trim.2</object-name>
+		<object-name>Trim_Air_R</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -940,15 +1222,28 @@
 	</animation>
 	<animation>
 		<type>textranslate</type>
-		<object-name>trim.2</object-name>
+		<object-name>Trim_Air_R</object-name>
 		<property>controls/pneumatic/trim2</property>
-		<factor>-0.25</factor>
+		<factor>-0.0625</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
 			<z>0</z>
 		</axis>
 	</animation>
+
+ <animation>
+  <type>translate</type>
+		<object-name>Trim_Air_R</object-name>
+		<object-name>Trim_Air_R.001</object-name>
+		<property>controls/pneumatic/trim2</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
 
 	<animation>
 		<type>pick</type>
@@ -1028,7 +1323,7 @@
 
 	<animation>
 		<type>pick</type>
-		<object-name>eec.1</object-name>
+		<object-name>Engine_EEC_Mode_L</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -1040,9 +1335,9 @@
 	</animation>
 	<animation>
 		<type>textranslate</type>
-		<object-name>eec.1</object-name>
+		<object-name>Engine_EEC_Mode_L</object-name>
 		<property>controls/engines/eec1</property>
-		<factor>-0.25</factor>
+		<factor>-0.0625</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -1050,9 +1345,22 @@
 		</axis>
 	</animation>
 
+ <animation>
+  <type>translate</type>
+		<object-name>Engine_EEC_Mode_L</object-name>
+		<object-name>Engine_EEC_Mode_L.001</object-name>
+		<property>controls/engines/eec1</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
 	<animation>
 		<type>pick</type>
-		<object-name>eec.2</object-name>
+		<object-name>Engine_EEC_Mode_R</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -1064,15 +1372,28 @@
 	</animation>
 	<animation>
 		<type>textranslate</type>
-		<object-name>eec.2</object-name>
+		<object-name>Engine_EEC_Mode_R</object-name>
 		<property>controls/engines/eec2</property>
-		<factor>-0.25</factor>
+		<factor>-0.0625</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
 			<z>0</z>
 		</axis>
 	</animation>
+
+ <animation>
+  <type>translate</type>
+		<object-name>Engine_EEC_Mode_R</object-name>
+		<object-name>Engine_EEC_Mode_R.001</object-name>
+		<property>controls/engines/eec2</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
 
  <animation>
    <type>pick</type>
@@ -1277,7 +1598,7 @@ setprop("/controls/engines/engine[1]/starter", 0);
 
 	<animation>
 		<type>pick</type>
-		<object-name>beacon</object-name>
+		<object-name>Beacon</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -1289,9 +1610,9 @@ setprop("/controls/engines/engine[1]/starter", 0);
 	</animation>
 	<animation>
 		<type>textranslate</type>
-		<object-name>beacon</object-name>
+		<object-name>Beacon</object-name>
 		<property>controls/lighting/beacon</property>
-		<factor>-0.25</factor>
+		<factor>-0.125</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -1299,9 +1620,22 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		</axis>
 	</animation>
 
+ <animation>
+  <type>translate</type>
+		<object-name>Beacon</object-name>
+		<object-name>Beacon.001</object-name>
+		<property>controls/lighting/beacon</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
 	<animation>
 		<type>pick</type>
-		<object-name>nav-lights</object-name>
+		<object-name>NAV</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -1313,9 +1647,9 @@ setprop("/controls/engines/engine[1]/starter", 0);
 	</animation>
 	<animation>
 		<type>textranslate</type>
-		<object-name>nav-lights</object-name>
+		<object-name>NAV</object-name>
 		<property>controls/lighting/nav-lights</property>
-		<factor>-0.25</factor>
+		<factor>-0.125</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -1323,9 +1657,22 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		</axis>
 	</animation>
 
+ <animation>
+  <type>translate</type>
+		<object-name>NAV</object-name>
+		<object-name>NAV.001</object-name>
+		<property>controls/lighting/nav-lights</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
 	<animation>
 		<type>pick</type>
-		<object-name>logo-lights</object-name>
+		<object-name>Logo</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -1337,9 +1684,9 @@ setprop("/controls/engines/engine[1]/starter", 0);
 	</animation>
 	<animation>
 		<type>textranslate</type>
-		<object-name>logo-lights</object-name>
+		<object-name>Logo</object-name>
 		<property>controls/lighting/logo</property>
-		<factor>-0.25</factor>
+		<factor>-0.125</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -1347,9 +1694,22 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		</axis>
 	</animation>
 
+ <animation>
+  <type>translate</type>
+		<object-name>Logo</object-name>
+		<object-name>Logo.001</object-name>
+		<property>controls/lighting/logo</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
 	<animation>
 		<type>pick</type>
-		<object-name>wing-lights</object-name>
+		<object-name>Wing</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -1361,9 +1721,9 @@ setprop("/controls/engines/engine[1]/starter", 0);
 	</animation>
 	<animation>
 		<type>textranslate</type>
-		<object-name>wing-lights</object-name>
+		<object-name>Wing</object-name>
 		<property>controls/lighting/wing-lights</property>
-		<factor>-0.25</factor>
+		<factor>-0.125</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -1371,9 +1731,22 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		</axis>
 	</animation>
 
+ <animation>
+  <type>translate</type>
+		<object-name>Wing</object-name>
+		<object-name>Wing.001</object-name>
+		<property>controls/lighting/wing-lights</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
 	<animation>
 		<type>pick</type>
-		<object-name>cockpit-lights</object-name>
+		<object-name>Storm</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -1385,15 +1758,28 @@ setprop("/controls/engines/engine[1]/starter", 0);
 	</animation>
 	<animation>
 		<type>textranslate</type>
-		<object-name>cockpit-lights</object-name>
+		<object-name>Storm</object-name>
 		<property>controls/lighting/cockpit</property>
-		<factor>-0.25</factor>
+		<factor>-0.125</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
 			<z>0</z>
 		</axis>
 	</animation>
+
+ <animation>
+  <type>translate</type>
+		<object-name>Storm</object-name>
+		<object-name>Storm.001</object-name>
+		<property>controls/lighting/cockpit</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
 
  <animation>
    <type>pick</type>
@@ -1617,7 +2003,10 @@ setprop("/controls/engines/engine[1]/starter", 0);
 
 	<animation>
 		<type>pick</type>
-		<object-name>windowheat</object-name>
+		<object-name>Primary_L_Side</object-name>
+		<object-name>Primary_R_Side</object-name>
+		<object-name>Primary_L_FWD</object-name>
+		<object-name>Primary_R_FWD</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -1630,15 +2019,37 @@ setprop("/controls/engines/engine[1]/starter", 0);
 
 	<animation>
 		<type>textranslate</type>
-		<object-name>windowheat</object-name>
+		<object-name>Primary_L_Side</object-name>
+		<object-name>Primary_R_Side</object-name>
+		<object-name>Primary_L_FWD</object-name>
+		<object-name>Primary_R_FWD</object-name>
 		<property>controls/window-heat/engage</property>
-		<factor>-0.25</factor>
+		<factor>-0.0625</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
 			<z>0</z>
 		</axis>
 	</animation>
+
+ <animation>
+  <type>translate</type>
+		<object-name>Primary_L_Side</object-name>
+		<object-name>Primary_R_Side</object-name>
+		<object-name>Primary_L_FWD</object-name>
+		<object-name>Primary_R_FWD</object-name>
+		<object-name>Primary_L_Side.001</object-name>
+		<object-name>Primary_R_Side.001</object-name>
+		<object-name>Primary_L_FWD.001</object-name>
+		<object-name>Primary_R_FWD.001</object-name>
+		<property>controls/window-heat/engage</property>
+  <factor>-0.007</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
 
 <!-- OHP Light Bulbs -->
 
@@ -1819,5 +2230,557 @@ setprop("/controls/engines/engine[1]/starter", 0);
 			<z2-m>-0.388044</z2-m>
 		</axis>
 	</animation>
+
+<!-- Safety Switches -->
+
+ <animation>
+   <type>pick</type>
+   <object-name>Safety</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+	<binding>
+		<command>property-toggle</command>
+		<property>controls/safety/safety_switch</property>
+	</binding>
+	</action>
+ </animation>
+
+ <animation>
+  <object-name>Safety</object-name>
+  <type>rotate</type>
+  <property>controls/safety/safety_switch</property>
+  <factor>-90</factor>
+  <center>
+   <x-m>0.018571</x-m>
+   <y-m>10</y-m>
+   <z-m>-0.236656</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>Safety.001</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+	<binding>
+		<command>property-toggle</command>
+		<property>controls/safety/safety_switch1</property>
+	</binding>
+	</action>
+ </animation>
+
+
+
+ <animation>
+  <object-name>Safety.001</object-name>
+  <type>rotate</type>
+  <property>controls/safety/safety_switch1</property>
+  <factor>-90</factor>
+  <center>
+   <x-m>0.018571</x-m>
+   <y-m>10</y-m>
+   <z-m>-0.236656</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>Safety.002</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+	<binding>
+		<command>property-toggle</command>
+		<property>controls/safety/safety_switch2</property>
+	</binding>
+	</action>
+ </animation>
+
+ <animation>
+  <object-name>Safety.002</object-name>
+  <type>rotate</type>
+  <property>controls/safety/safety_switch2</property>
+  <factor>-90</factor>
+  <center>
+   <x-m>0.018571</x-m>
+   <y-m>10</y-m>
+   <z-m>-0.236656</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>Safety.003</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+	<binding>
+		<command>property-toggle</command>
+		<property>controls/safety/safety_switch3</property>
+	</binding>
+	</action>
+ </animation>
+
+ <animation>
+  <object-name>Safety.003</object-name>
+  <type>rotate</type>
+  <property>controls/safety/safety_switch3</property>
+  <factor>-90</factor>
+  <center>
+   <x-m>0.018571</x-m>
+   <y-m>10</y-m>
+   <z-m>-0.236656</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>Safety.004</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+	<binding>
+		<command>property-toggle</command>
+		<property>controls/safety/safety_switch4</property>
+	</binding>
+	</action>
+ </animation>
+
+ <animation>
+  <object-name>Safety.004</object-name>
+  <type>rotate</type>
+  <property>controls/safety/safety_switch4</property>
+  <factor>-90</factor>
+  <center>
+   <x-m>0.018571</x-m>
+   <y-m>10</y-m>
+   <z-m>0.330645</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>Safety.005</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+	<binding>
+		<command>property-toggle</command>
+		<property>controls/safety/safety_switch5</property>
+	</binding>
+	</action>
+ </animation>
+
+ <animation>
+  <object-name>Safety.005</object-name>
+  <type>rotate</type>
+  <property>controls/safety/safety_switch5</property>
+  <factor>-90</factor>
+  <center>
+   <x-m>0.018571</x-m>
+   <y-m>10</y-m>
+   <z-m>0.330645</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>Safety.006</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+	<binding>
+		<command>property-toggle</command>
+		<property>controls/safety/safety_switch6</property>
+	</binding>
+	</action>
+ </animation>
+
+ <animation>
+  <object-name>Safety.006</object-name>
+  <type>rotate</type>
+  <property>controls/safety/safety_switch6</property>
+  <factor>-90</factor>
+  <center>
+   <x-m>0.018571</x-m>
+   <y-m>10</y-m>
+   <z-m>-0.039499</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>Safety.007</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+	<binding>
+		<command>property-toggle</command>
+		<property>controls/safety/safety_switch7</property>
+	</binding>
+	</action>
+ </animation>
+
+ <animation>
+  <object-name>Safety.007</object-name>
+  <type>rotate</type>
+  <property>controls/safety/safety_switch7</property>
+  <factor>-90</factor>
+  <center>
+   <x-m>0.018571</x-m>
+   <y-m>10</y-m>
+   <z-m>0.196169</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>Safety.008</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+	<binding>
+		<command>property-toggle</command>
+		<property>controls/safety/safety_switch8</property>
+	</binding>
+	</action>
+ </animation>
+
+ <animation>
+  <object-name>Safety.008</object-name>
+  <type>rotate</type>
+  <property>controls/safety/safety_switch8</property>
+  <factor>-90</factor>
+  <center>
+   <x-m>0.018571</x-m>
+   <y-m>10</y-m>
+   <z-m>0.25789</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>Safety.009</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+	<binding>
+		<command>property-toggle</command>
+		<property>controls/safety/safety_switch9</property>
+	</binding>
+	</action>
+ </animation>
+
+ <animation>
+  <object-name>Safety.009</object-name>
+  <type>rotate</type>
+  <property>controls/safety/safety_switch9</property>
+  <factor>-90</factor>
+  <center>
+   <x-m>0.018571</x-m>
+   <y-m>10</y-m>
+   <z-m>0.25789</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>Safety.010</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+	<binding>
+		<command>property-toggle</command>
+		<property>controls/safety/safety_switch10</property>
+	</binding>
+	</action>
+ </animation>
+
+ <animation>
+  <object-name>Safety.010</object-name>
+  <type>rotate</type>
+  <property>controls/safety/safety_switch10</property>
+  <factor>-90</factor>
+  <center>
+   <x-m>0.018571</x-m>
+   <y-m>10</y-m>
+   <z-m>-0.04591</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>Safety.011</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+	<binding>
+		<command>property-toggle</command>
+		<property>controls/safety/safety_switch11</property>
+	</binding>
+	</action>
+ </animation>
+
+ <animation>
+  <object-name>Safety.011</object-name>
+  <type>rotate</type>
+  <property>controls/safety/safety_switch11</property>
+  <factor>-90</factor>
+  <center>
+   <x-m>0.018571</x-m>
+   <y-m>10</y-m>
+   <z-m>-0.04591</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>Safety.012</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+	<binding>
+		<command>property-toggle</command>
+		<property>controls/safety/safety_switch12</property>
+	</binding>
+	</action>
+ </animation>
+
+ <animation>
+  <object-name>Safety.012</object-name>
+  <type>rotate</type>
+  <property>controls/safety/safety_switch12</property>
+  <factor>-90</factor>
+  <center>
+   <x-m>0.018571</x-m>
+   <y-m>10</y-m>
+   <z-m>0.089867</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>Safety.013</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+	<binding>
+		<command>property-toggle</command>
+		<property>controls/safety/safety_switch13</property>
+	</binding>
+	</action>
+ </animation>
+
+ <animation>
+  <object-name>Safety.013</object-name>
+  <type>rotate</type>
+  <property>controls/safety/safety_switch13</property>
+  <factor>-90</factor>
+  <center>
+   <x-m>0.018571</x-m>
+   <y-m>10</y-m>
+   <z-m>0.089867</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>Safety.014</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+	<binding>
+		<command>property-toggle</command>
+		<property>controls/safety/safety_switch14</property>
+	</binding>
+	</action>
+ </animation>
+
+ <animation>
+  <object-name>Safety.014</object-name>
+  <type>rotate</type>
+  <property>controls/safety/safety_switch14</property>
+  <factor>-90</factor>
+  <center>
+   <x-m>0.018571</x-m>
+   <y-m>10</y-m>
+   <z-m>0.170197</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>Safety.015</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+	<binding>
+		<command>property-toggle</command>
+		<property>controls/safety/safety_switch15</property>
+	</binding>
+	</action>
+ </animation>
+
+ <animation>
+  <object-name>Safety.015</object-name>
+  <type>rotate</type>
+  <property>controls/safety/safety_switch15</property>
+  <factor>-90</factor>
+  <center>
+   <x-m>0.018571</x-m>
+   <y-m>10</y-m>
+   <z-m>-0.138305</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <animation> 
+  <type>material</type> 
+   <object-name>Safety</object-name>
+   <object-name>Safety.001</object-name>
+   <object-name>Safety.002</object-name>
+   <object-name>Safety.003</object-name>
+   <object-name>Safety.004</object-name>
+   <object-name>Safety.005</object-name>
+   <object-name>Safety.006</object-name>
+   <object-name>Safety.007</object-name>
+   <object-name>Safety.008</object-name>
+   <object-name>Safety.009</object-name>
+   <object-name>Safety.010</object-name>
+   <object-name>Safety.011</object-name>
+   <object-name>Safety.012</object-name>
+   <object-name>Safety.013</object-name>
+   <object-name>Safety.014</object-name>
+   <object-name>Safety.015</object-name>
+  <property-base>controls/constant/const</property-base>
+  <transparency>
+   <alpha-prop>rotors/tail/rpm</alpha-prop>
+   <factor>-0.0015</factor>
+   <offset>1</offset>
+  </transparency>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>IND_LTS_Test</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+	<binding>
+		<command>property-toggle</command>
+		<property>controls/ind</property>
+	</binding>
+	</action>
+ </animation>
 
 </PropertyList>
