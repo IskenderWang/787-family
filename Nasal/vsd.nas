@@ -169,90 +169,87 @@ var sqr = func(n) return n * n;
 			
 			if (getprop(rte_tree~ "route/num") > 0) {
 
-			var current_wp = getprop(rte_tree~ "current-wp");
+				var current_wp = getprop(rte_tree~ "current-wp");
 			
-			if (getprop(rte_tree~ "route/wp[" ~ current_wp ~ "]/id") != nil) {
-				
-				setprop(vsd_tree~ "vnav/wp[" ~ current_wp ~ "]/id", getprop(rte_tree~ "route/wp[" ~ current_wp ~ "]/id"));
-				
-				var wp_altitude = getprop(rte_tree~ "route/wp[" ~ current_wp ~ "]/altitude-ft");
-				
-				setprop(vsd_tree~ "vnav/wp[" ~ current_wp ~ "]/altitude-ft", wp_altitude);
-				
-				var y_norm = wp_altitude / alt_range;
-				
-				setprop(vsd_tree~ "vnav/wp[" ~ current_wp ~ "]/y_norm", y_norm);
-				
-				var gps_distance = getprop("/instrumentation/gps/wp/leg-distance-nm");
-				
-				var x_norm = gps_distance / range;
-				
-				setprop(vsd_tree~ "vnav/wp[" ~ current_wp ~ "]/x_norm", x_norm);
-				
-				var angle = RAD2DEG * math.atan2(x_norm * xy_scale, y_norm);
-				
-				setprop(vsd_tree~ "vnav/wp[" ~ current_wp ~ "]/angle", angle);
-				
-				var length = math.sqrt(sqr(x_norm) + sqr(y_norm));
-				
-				setprop(vsd_tree~ "vnav/wp[" ~ current_wp ~ "]/length", length);
-				
-				# Check for visibility
-				
-				if ((x_norm <= 1) and (y_norm) <= 1)
-					setprop(vsd_tree~ "vnav/wp[0]/visible", 1);
-				else
-					setprop(vsd_tree~ "vnav/wp[0]/visible", 0);
-				
-				for (var n = (current_wp + 1); n < (current_wp + 7); n += 1) {
-			
-					if (getprop(rte_tree~ "route/wp[" ~ n ~ "]/id") != nil) {
+				if (current_wp != nil and current_wp != -1 and getprop(rte_tree~ "route/wp[" ~ current_wp ~ "]/id") != nil) {
 					
-						setprop(vsd_tree~ "vnav/wp[" ~ n ~ "]/id", getprop(rte_tree~ "route/wp[" ~ n ~ "]/id"));
+					setprop(vsd_tree~ "vnav/wp[" ~ current_wp ~ "]/id", getprop(rte_tree~ "route/wp[" ~ current_wp ~ "]/id"));
 					
-						var wp_altitude = getprop(rte_tree~ "route/wp[" ~ n ~ "]/altitude-ft");
+					var wp_altitude = getprop(rte_tree~ "route/wp[" ~ current_wp ~ "]/altitude-ft");
+					
+					setprop(vsd_tree~ "vnav/wp[" ~ current_wp ~ "]/altitude-ft", wp_altitude);
+					
+					var y_norm = wp_altitude / alt_range;
+					
+					setprop(vsd_tree~ "vnav/wp[" ~ current_wp ~ "]/y_norm", y_norm);
+					
+					var gps_distance = getprop("/instrumentation/gps/wp/leg-distance-nm");
+					
+					var x_norm = gps_distance / range;
+					
+					setprop(vsd_tree~ "vnav/wp[" ~ current_wp ~ "]/x_norm", x_norm);
+					
+					var angle = RAD2DEG * math.atan2(x_norm * xy_scale, y_norm);
+					
+					setprop(vsd_tree~ "vnav/wp[" ~ current_wp ~ "]/angle", angle);
+					
+					var length = math.sqrt(sqr(x_norm) + sqr(y_norm));
+					
+					setprop(vsd_tree~ "vnav/wp[" ~ current_wp ~ "]/length", length);
+					
+					# Check for visibility
+					
+					if ((x_norm <= 1) and (y_norm) <= 1)
+						setprop(vsd_tree~ "vnav/wp[0]/visible", 1);
+					else
+						setprop(vsd_tree~ "vnav/wp[0]/visible", 0);
+					
+					for (var n = (current_wp + 1); n < (current_wp + 7); n += 1) {
 				
-						setprop(vsd_tree~ "vnav/wp[" ~ n ~ "]/altitude-ft", wp_altitude);
-				
-						var y_norm = wp_altitude / alt_range;
-				
-						setprop(vsd_tree~ "vnav/wp[" ~ n ~ "]/y_norm", y_norm);
-				
-						var wp_distance = getprop(rte_tree~ "route/wp[" ~ (n - 1) ~ "]/leg-distance-nm");
-				
-						var last_norm = getprop(vsd_tree~ "vnav/wp[" ~ (n - 1) ~ "]/x_norm");
-				
-						var x_norm = (wp_distance / range) + last_norm;
-				
-						setprop(vsd_tree~ "vnav/wp[" ~ n ~ "]/x_norm", x_norm);
-				
-						var angle = RAD2DEG * math.atan2(x_norm * xy_scale, y_norm);
-				
-						setprop(vsd_tree~ "vnav/wp[" ~ n ~ "]/angle", angle);
-				
-						var length = math.sqrt(sqr(xy_scale * x_norm) + sqr(y_norm));
-				
-						setprop(vsd_tree~ "vnav/wp[" ~ n ~ "]/length", length);
+						if (getprop(rte_tree~ "route/wp[" ~ n ~ "]/id") != nil) {
 						
-						# Check for visibility
+							setprop(vsd_tree~ "vnav/wp[" ~ n ~ "]/id", getprop(rte_tree~ "route/wp[" ~ n ~ "]/id"));
 						
-						if ((x_norm <= 1) and (y_norm) <= 1)
-							setprop(vsd_tree~ "vnav/wp[" ~ n ~ "]/visible", 1);
-						else
-							setprop(vsd_tree~ "vnav/wp[" ~ n ~ "]/visible", 0);
+							var wp_altitude = getprop(rte_tree~ "route/wp[" ~ n ~ "]/altitude-ft");
+					
+							setprop(vsd_tree~ "vnav/wp[" ~ n ~ "]/altitude-ft", wp_altitude);
+					
+							var y_norm = wp_altitude / alt_range;
+					
+							setprop(vsd_tree~ "vnav/wp[" ~ n ~ "]/y_norm", y_norm);
+					
+							var wp_distance = getprop(rte_tree~ "route/wp[" ~ (n - 1) ~ "]/leg-distance-nm");
+					
+							var last_norm = getprop(vsd_tree~ "vnav/wp[" ~ (n - 1) ~ "]/x_norm");
+					
+							var x_norm = (wp_distance / range) + last_norm;
+					
+							setprop(vsd_tree~ "vnav/wp[" ~ n ~ "]/x_norm", x_norm);
+					
+							var angle = RAD2DEG * math.atan2(x_norm * xy_scale, y_norm);
+					
+							setprop(vsd_tree~ "vnav/wp[" ~ n ~ "]/angle", angle);
+					
+							var length = math.sqrt(sqr(xy_scale * x_norm) + sqr(y_norm));
+					
+							setprop(vsd_tree~ "vnav/wp[" ~ n ~ "]/length", length);
+							
+							# Check for visibility
+							
+							if ((x_norm <= 1) and (y_norm) <= 1)
+								setprop(vsd_tree~ "vnav/wp[" ~ n ~ "]/visible", 1);
+							else
+								setprop(vsd_tree~ "vnav/wp[" ~ n ~ "]/visible", 0);
+						
+						}
 					
 					}
-				
+					
+				} else {
+					for (var n = 0; n < 6; n += 1)	{
+						setprop(vsd_tree~ "vnav/wp[" ~ n ~ "]/visible", 0);
+					}
 				}
-				
-			} else {
-			
-			for (var n = 0; n < 6; n += 1)
-				
-				setprop(vsd_tree~ "vnav/wp[" ~ n ~ "]/visible", 0);
-			
-			}
-			
 			}
 			
 			me.incr_count();

@@ -71,12 +71,12 @@ var BrakeSystem =
             if (getprop("controls/gear/brake-parking"))
                 var BrakeLevel=1.0;
             else
-                var BrakeLevel = (getprop("autopilot/autobrake/left-brake-output")+getprop("autopilot/autobrake/right-brake-output"))/2;
+                var BrakeLevel = (getprop("controls/gear/brake-left")+getprop("controls/gear/brake-right"))/2;
             if ((OnGround)and(BrakeLevel>0))
             {
                 # absorb more energy
                 var V1 = getprop("velocities/groundspeed-kt");
-                var Mass = getprop("yasim/gross-weight-lbs")/me.ScalingDivisor;
+                var Mass = getprop("/fdm/jsbsim/inertia/weight-lbs")/me.ScalingDivisor;
                 # absorb some kinetic energy:
                 # dE= 1/2 * m * V1^2 - 1/2 * m * V2^2) 
                 var V2 = V1 - me.BrakeDecel*dt * BrakeLevel;
