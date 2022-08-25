@@ -360,16 +360,16 @@
 		<type>rotate</type>
 		<object-name>throttle.l</object-name>
 		<property>controls/engines/engine[0]/throttle</property>
-		<factor>40</factor>
+		<factor>50</factor>
 		<axis>
 			<x>0</x>
 			<y>-1</y>
 			<z>0</z>
 		</axis>
 		<center>
-			<x-m>-23.3103</x-m>
+			<x-m>-23.2606 m</x-m>
 			<y-m>0</y-m>
-			<z-m>1.3439</z-m>
+			<z-m>1.28486 m</z-m>
 		</center>
 	</animation>
 	<animation>
@@ -404,16 +404,16 @@
 		<type>rotate</type>
 		<object-name>throttle.r</object-name>
 		<property>controls/engines/engine[1]/throttle</property>
-		<factor>40</factor>
+		<factor>50</factor>
 		<axis>
 			<x>0</x>
 			<y>-1</y>
 			<z>0</z>
 		</axis>
 		<center>
-			<x-m>-23.3103</x-m>
+			<x-m>-23.2606 m</x-m>
 			<y-m>0</y-m>
-			<z-m>1.3439</z-m>
+			<z-m>1.28486 m</z-m>
 		</center>
 	</animation>
 
@@ -423,16 +423,16 @@
 		<type>rotate</type>
 		<object-name>flaps.lever</object-name>
 		<property>controls/flight/flaps</property>
-		<factor>70</factor>
+		<factor>54.6</factor>
 		<axis>
 			<x>0</x>
 			<y>1</y>
 			<z>0</z>
 		</axis>
 		<center>
-			<x-m>-23.3103</x-m>
+			<x-m>-23.2606 m</x-m>
 			<y-m>0</y-m>
-			<z-m>1.3439</z-m>
+			<z-m>1.28486 m</z-m>
 		</center>
 	</animation>
 
@@ -442,11 +442,11 @@
 		<type>rotate</type>
 		<object-name>spdbrk.lever</object-name>
 		<property>controls/flight/speedbrake</property>
-		<factor>60</factor>
+		<factor>58.4</factor>
 		<center>
-			<x-m>-23.3103</x-m>
+			<x-m>-23.2606 m</x-m>
 			<y-m>0</y-m>
-			<z-m>1.3439</z-m>
+			<z-m>1.28486 m</z-m>
 		</center>
 		<axis>
 			<x>0</x>
@@ -502,9 +502,9 @@
         <property>controls/engines/engine[0]/cutoff</property>
         <factor>40</factor>
         <center>
-            <x-m>-23.1905</x-m>
+            <x-m>-23.1208</x-m>
             <y-m>0</y-m>
-            <z-m>1.3616</z-m>
+            <z-m>1.36516</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -519,9 +519,9 @@
         <property>controls/engines/engine[1]/cutoff</property>
         <factor>40</factor>
         <center>
-            <x-m>-23.1905</x-m>
+            <x-m>-23.1208</x-m>
             <y-m>0</y-m>
-            <z-m>1.3616</z-m>
+            <z-m>1.36516</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -2486,11 +2486,11 @@
 		<type>rotate</type>
 		<object-name>gearlever</object-name>
 		<property>controls/gear/gear-down</property>
-		<factor>60</factor>
+		<factor>50</factor>
 		<center>
-			<x-m>-23.767</x-m>
+			<x-m>-23.7894</x-m>
 			<y-m>0</y-m>
-			<z-m>1.6510</z-m>
+			<z-m>1.6466</z-m>
 		</center>
 		<axis>
 			<x>0</x>
@@ -2548,12 +2548,12 @@
 			<entry><ind>6</ind><dep>-120</dep></entry>
 		</interpolation>
 		<axis>
-			<x1-m>-23.7159</x1-m>
-			<y1-m>-0.0094</y1-m>
-			<z1-m>1.5691</z1-m>
-			<x2-m>-23.7334</x2-m>
-			<y2-m>-0.0094</y2-m>
-			<z2-m>1.5641</z2-m>
+			<x1-m>-23.7217</x1-m>
+			<y1-m>0.006005</y1-m>
+			<z1-m>1.55999</z1-m>
+			<x2-m>-23.7392</x2-m>
+			<y2-m>0.006005</y2-m>
+			<z2-m>1.55499</z2-m>
 		</axis>
 	</animation>
 
