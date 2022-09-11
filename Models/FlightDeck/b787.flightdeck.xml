@@ -21,6 +21,7 @@
     <object-name>box.014</object-name>
     <object-name>box.019</object-name>
     <object-name>box.020</object-name>
+    <object-name>Cube.004</object-name>
     <object-name>cockpitshell</object-name>
     <object-name>cockpit.04</object-name>
     <object-name>carpet</object-name>
@@ -40,6 +41,7 @@
     <object-name>modecontrolswitches</object-name>
     <object-name>ohp1</object-name>
     <object-name>pedestal</object-name>
+    <object-name>pedestal.002</object-name>
     <object-name>pedestalswitches</object-name>
     <object-name>pedalbase</object-name>
     <object-name>park.brake</object-name>
@@ -55,6 +57,7 @@
     <object-name>shell3</object-name>
     <object-name>shell3.001</object-name>
     <object-name>shell3.002</object-name>
+    <object-name>shell3.004</object-name>
     <object-name>spdbrk.lever</object-name>
     <object-name>tiller.l</object-name>
     <object-name>tiller.r</object-name>
@@ -628,10 +631,10 @@
 		<path>Aircraft/787-family/EFB-DB/EFB.xml</path>
 		<offsets>
 			<x-m>-23.4</x-m>
-			<y-m>-1.08</y-m>
+			<y-m>-1.03</y-m>
 			<z-m>1.6</z-m>
-			<pitch-deg>42</pitch-deg>
-			<heading-deg>46</heading-deg>
+			<pitch-deg>45.5</pitch-deg>
+			<heading-deg>49.3</heading-deg>
 		</offsets>
 	</model>
 
@@ -639,10 +642,10 @@
 		<path>Aircraft/787-family/EFB-DB/EFB.xml</path>
 		<offsets>
 			<x-m>-23.4</x-m>
-			<y-m>1.08</y-m>
+			<y-m>1.03</y-m>
 			<z-m>1.6</z-m>
-			<pitch-deg>42</pitch-deg>
-			<heading-deg>-46</heading-deg>
+			<pitch-deg>45.5</pitch-deg>
+			<heading-deg>-49.3</heading-deg>
 		</offsets>
 	</model>
 
