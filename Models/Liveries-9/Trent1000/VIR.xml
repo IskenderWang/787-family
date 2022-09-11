@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<sim>    
+  <model>        
+    <livery>
+	<name type="string">VIR Virgin Atlantic (G-VZIG)</name>
+      <texture-fuselage>Liveries-9/Trent1000/VIR.png</texture-fuselage>
+      <texture-engines>Liveries-engines/VIR.png</texture-engines>
+    </livery>
+  </model>
+</sim>
+
+</PropertyList>

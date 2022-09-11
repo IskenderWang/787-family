@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8' ?>
 <PropertyList>
 
-  <path>787-10-GEnx.ac</path>
+  <path>787-10.ac</path>
 
     <effect>
         <inherits-from>Aircraft/787-family/Models/Effects/windscreen</inherits-from>
@@ -11,10 +11,6 @@
     <effect>
         <inherits-from>Aircraft/787-family/Models/Effects/reflect</inherits-from>
         <object-name>bodyfairing</object-name>
-        <object-name>eng1fan</object-name>
-        <object-name>eng1fanb</object-name>
-        <object-name>eng2fan</object-name>
-        <object-name>eng2fanb</object-name>
         <object-name>fuselage</object-name>
         <object-name>fuselage.001</object-name>
         <object-name>lhfdoor</object-name>
@@ -25,8 +21,6 @@
         <object-name>lhobdoor</object-name>
         <object-name>lreverse</object-name>
         <object-name>mgearbay</object-name>
-        <object-name>no1engl</object-name>
-        <object-name>no2engl</object-name>
         <object-name>rhfdoor</object-name>
         <object-name>rhfnosedoor</object-name>
         <object-name>rhgearibdoor</object-name>
@@ -34,7 +28,14 @@
         <object-name>rhnosedoor</object-name>
         <object-name>rhobdoor</object-name>
         <object-name>rreverse</object-name>
-        <object-name>cargo_door</object-name>
+	<object-name>aftcargodoor</object-name>
+	<object-name>bulkcargodoor</object-name>
+	<object-name>cac</object-name>
+	<object-name>cacdeflectorbackground</object-name>
+	<object-name>fwdcargodoor</object-name>
+	<object-name>pitot_tubes</object-name>
+	<object-name>lhcacdeflector</object-name>
+	<object-name>rhcacdeflector</object-name>
     </effect>
 
 <!-- Lightmaps -->
@@ -53,11 +54,7 @@
       <object-name>rhelevator</object-name>
       <object-name>rstab</object-name>
       <object-name>rstab.lead2</object-name>
-      <object-name>no2enge</object-name>
-      <object-name>rhreverser</object-name>
       <object-name>rhvortexdev</object-name>
-      <object-name>no1enge</object-name>
-      <object-name>lhreverser</object-name>
       <object-name>lhvortexdev</object-name>
     </effect>
 
@@ -142,7 +139,7 @@
 
     <nasal>
         <load>
-         var livery_update = aircraft.livery_update.new("Aircraft/787-family/Models/Liveries-10", 10);
+         var livery_update = aircraft.livery_update.new("Aircraft/787-family/Models/Liveries-10/GEnx", 10);
         </load>
 
         <unload>
@@ -151,35 +148,90 @@
     </nasal>
 
 <animation>
-        <type>material</type>
-        <object-name>fin</object-name>
-        <object-name>bodyfairing</object-name>
-        <object-name>eng1fan</object-name>
-        <object-name>eng1fanb</object-name>
-        <object-name>eng2fan</object-name>
-        <object-name>eng2fanb</object-name>
-        <object-name>fuselage</object-name>
-        <object-name>fuselage.001</object-name>
-        <object-name>lhfnosedoor</object-name>
-        <object-name>lhgearibdoor</object-name>
-        <object-name>lhnosedoor</object-name>
-        <object-name>lhreverser</object-name>
-        <object-name>lreverse</object-name>
-        <object-name>mgearbay</object-name>
-        <object-name>no1enge</object-name>
-        <object-name>no1engl</object-name>
-        <object-name>no2enge</object-name>
-        <object-name>no2engl</object-name>
-        <object-name>rhfnosedoor</object-name>
-        <object-name>rhnosedoor</object-name>
-        <object-name>rhgearibdoor</object-name>
-        <object-name>rhreverser</object-name>
-        <object-name>rreverse</object-name>
-        <object-name>rudder</object-name>
-        <object-name>cargo_door</object-name>
+       <type>material</type>
+	<object-name>aftcargodoor</object-name>
+	<object-name>antennae</object-name>
+	<object-name>bodyfairing</object-name>
+	<object-name>bulkcargodoor</object-name>
+	<object-name>cac</object-name>
+	<object-name>cacdeflectorbackground</object-name>
+	<object-name>fin</object-name>
+	<object-name>fuselage</object-name>
+	<object-name>fuselage.001</object-name>
+	<object-name>fuselage.004</object-name>
+	<object-name>fwdcargodoor</object-name>
+	<object-name>gearbay</object-name>
+	<object-name>lhcacdeflector</object-name>
+	<object-name>lhelevator</object-name>
+	<object-name>lhfdoor</object-name>
+	<object-name>lhfnosedoor</object-name>
+	<object-name>lhgearibdoor</object-name>
+	<object-name>lhibaileron</object-name>
+	<object-name>lhibdoor</object-name>
+	<object-name>lhibfairing</object-name>
+	<object-name>lhibflap</object-name>
+	<object-name>lhibflapa</object-name>
+	<object-name>lhibslat</object-name>
+	<object-name>lhibspoilera</object-name>
+	<object-name>lhibspoilera.001</object-name>
+	<object-name>lhkflap</object-name>
+	<object-name>lhkflap.001</object-name>
+	<object-name>lhmfairing</object-name>
+	<object-name>lhnosedoor</object-name>
+	<object-name>lhobaileron</object-name>
+	<object-name>lhobdoor</object-name>
+	<object-name>lhobfairing</object-name>
+	<object-name>lhobflapa</object-name>
+	<object-name>lhobflapb</object-name>
+	<object-name>lhobslata</object-name>
+	<object-name>lhobslatb</object-name>
+	<object-name>lhobslatc</object-name>
+	<object-name>lhobspoilera</object-name>
+	<object-name>lhobspoilerb</object-name>
+	<object-name>lhspoilera</object-name>
+	<object-name>lstab</object-name>
+	<object-name>lwing</object-name>
+	<object-name>lwinga</object-name>
+	<object-name>lwingb</object-name>
+	<object-name>lwingc</object-name>
+	<object-name>pitot_tubes</object-name>
+	<object-name>rhcacdeflector</object-name>
+	<object-name>rhelevator</object-name>
+	<object-name>rhfdoor</object-name>
+	<object-name>rhfnosedoor</object-name>
+	<object-name>rhgearibdoor</object-name>
+	<object-name>rhibaileron</object-name>
+	<object-name>rhibdoor</object-name>
+	<object-name>rhibfairing</object-name>
+	<object-name>rhibflap</object-name>
+	<object-name>rhibflapa</object-name>
+	<object-name>rhibslat</object-name>
+	<object-name>rhibspoilera</object-name>
+	<object-name>rhibspoilera.001</object-name>
+	<object-name>rhkflap</object-name>
+	<object-name>rhkflap.001</object-name>
+	<object-name>rhmfairing</object-name>
+	<object-name>rhnosedoor</object-name>
+	<object-name>rhobaileron</object-name>
+	<object-name>rhobdoor</object-name>
+	<object-name>rhobfairing</object-name>
+	<object-name>rhobflapa</object-name>
+	<object-name>rhobflapb</object-name>
+	<object-name>rhobslata</object-name>
+	<object-name>rhobslatb</object-name>
+	<object-name>rhobslatc</object-name>
+	<object-name>rhobspoilera</object-name>
+	<object-name>rhobspoilerb</object-name>
+	<object-name>rhspoilera</object-name>
+	<object-name>rstab</object-name>
+	<object-name>rudder</object-name>
+	<object-name>rwing</object-name>
+	<object-name>rwinga</object-name>
+	<object-name>rwingb</object-name>
+	<object-name>rwingc</object-name>
         <property-base>sim/model/livery</property-base>
-        <texture-prop>texture</texture-prop>
-        <texture>BOE-10.png</texture>
+        <texture-prop>texture-fuselage</texture-prop>
+        <texture>787-10.png</texture>
 </animation>
 
 <animation>
@@ -241,10 +293,17 @@
  <name>flightdeck</name>
  <path>FlightDeck/b787.flightdeck.xml</path>
 	<offsets>
-		<x-m>-5.04268</x-m>
+		<x-m>-6.002498</x-m>
 		<y-m>0</y-m>
-		<z-m>-0.05</z-m>
+		<z-m>0.09158</z-m>
 	</offsets>
+</model>
+
+<!-- Engine -->
+
+<model>
+    <name>genx</name>
+    <path>GEnx.xml</path>
 </model>
 
 <!-- Landing Gear Animations -->
@@ -280,7 +339,7 @@
     </entry>
   </interpolation>
   <center>
-   <x-m>-24.25</x-m>
+   <x-m>-27.26625</x-m>
    <y-m>-0.6</y-m>
    <z-m>-1.35</z-m>
   </center>
@@ -364,7 +423,7 @@
     </entry>
   </interpolation>
   <center>
-   <x-m>-24.25</x-m>
+   <x-m>-27.26625</x-m>
    <y-m>0.6</y-m>
    <z-m>-1.35</z-m>
   </center>
@@ -440,7 +499,7 @@
     </entry>
   </interpolation>
   <center>
-   <x-m>-25.95</x-m>
+   <x-m>-28.76625</x-m>
    <y-m>-0.85</y-m>
    <z-m>-1.07</z-m>
   </center>
@@ -508,7 +567,7 @@
     </entry>
   </interpolation>
   <center>
-   <x-m>-25.95</x-m>
+   <x-m>-28.76625</x-m>
    <y-m>0.85</y-m>
    <z-m>-1.07</z-m>
   </center>
@@ -707,42 +766,6 @@
    <x-m>2</x-m>
    <y-m>0.8</y-m>
    <z-m>-1.25</z-m>
-  </center>
-  <axis>
-   <x>1</x>
-   <y>0</y>
-   <z>0</z>
-  </axis>
-</animation>
-
-<animation>
-  <type>spin</type>
-  <object-name>eng1fan</object-name>
-  <object-name>eng1fanb</object-name>
-  <property>engines/engine[0]/n1</property>
-  <factor>10</factor>
-  <center>
-   <x-m>-6.6891</x-m>
-   <y-m>-9.5441</y-m>
-   <z-m>-0.76823</z-m>
-  </center>
-  <axis>
-   <x>1</x>
-   <y>0</y>
-   <z>0</z>
-  </axis>
-</animation>
-
-<animation>
-  <type>spin</type>
-  <object-name>eng2fan</object-name>
-  <object-name>eng2fanb</object-name>
-  <property>engines/engine[1]/n1</property>
-  <factor>10</factor>
-  <center>
-   <x-m>-6.6891</x-m>
-   <y-m>9.5441</y-m>
-   <z-m>-0.76823</z-m>
   </center>
   <axis>
    <x>1</x>
@@ -1290,9 +1313,9 @@
   <path>Aircraft/787-family/Models/Lights/beacon.xml</path>
   <name>Beaconlight.top</name>
   <offsets>
-    <x-m>-7.36832</x-m>
+    <x-m>-20.061</x-m>
     <y-m>0.00</y-m>
-    <z-m>4.4910</z-m>
+    <z-m>4.48228</z-m>
   </offsets>
 </model>
 
@@ -1300,9 +1323,9 @@
   <path>Aircraft/787-family/Models/Lights/ALS/beacon.xml</path>
   <name>Beaconlight.top-ALS</name>
   <offsets>
-    <x-m>-7.36832</x-m>
+    <x-m>-20.061</x-m>
     <y-m>0.00</y-m>
-    <z-m>4.4910</z-m>
+    <z-m>4.48228</z-m>
   </offsets>
 </model>
 
@@ -1310,9 +1333,9 @@
   <path>Aircraft/787-family/Models/Lights/beacon.xml</path>
   <name>Beaconlight.bottom</name>
   <offsets>
-    <x-m>-0.22842</x-m>
+    <x-m>-10.3142</x-m>
     <y-m> 0.00</y-m>
-    <z-m>-1.8719</z-m>
+    <z-m>-1.67715</z-m>
   </offsets>
 </model>
 
@@ -1320,9 +1343,9 @@
   <path>Aircraft/787-family/Models/Lights/ALS/beacon.xml</path>
   <name>Beaconlight.bottom-ALS</name>
   <offsets>
-    <x-m>-0.22842</x-m>
+    <x-m>-10.3142</x-m>
     <y-m> 0.00</y-m>
-    <z-m>-1.8719</z-m>
+    <z-m>-1.67715</z-m>
   </offsets>
 </model>
 
@@ -1669,8 +1692,8 @@
   <factor>20</factor>
   <offset-deg>0</offset-deg>
   <center>
-   <x-m>35.2423</x-m>
-   <y-m>-5.5</y-m>
+   <x-m>33.35848</x-m>
+   <y-m>-5.716487</y-m>
    <z-m>2.6</z-m>
   </center>
   <axis>
@@ -1687,8 +1710,8 @@
   <factor>20</factor>
   <offset-deg>0</offset-deg>
   <center>
-   <x-m>35.2423</x-m>
-   <y-m>5.5</y-m>
+   <x-m>33.35848</x-m>
+   <y-m>5.716487</y-m>
    <z-m>2.6</z-m>
   </center>
   <axis>
@@ -1706,7 +1729,7 @@
   <factor>-20</factor>
   <offset-deg>0</offset-deg>
   <center>
-   <x-m>34.372</x-m>
+   <x-m>31.24126</x-m>
    <y-m>0.0</y-m>
    <z-m>7.1</z-m>
   </center>
@@ -1726,7 +1749,7 @@
   <factor>-60</factor>
   <offset-deg>0</offset-deg>
   <center>
-   <x-m>-24.74768</x-m>
+   <x-m>-26.85535</x-m>
    <y-m>0.0</y-m>
    <z-m>-1.164</z-m>
   </center>
@@ -3056,9 +3079,9 @@
             <z>0</z>
         </axis>
         <center>
-            <x-m>-24.94268</x-m>
+            <x-m>-26.85535</x-m>
             <y-m>0</y-m>
-            <z-m>-3.2644</z-m>
+            <z-m>-3.26425</z-m>
         </center>
     </animation>
 
@@ -3125,32 +3148,6 @@
 			<z-m>-2.2368</z-m>
 		</offsets>
 	</model>
-
-<!-- Thrust Reversers -->
-
-    <animation>
-        <type>translate</type>
-        <object-name>lhreverser</object-name>
-        <property>engines/engine[0]/reverser-pos-norm</property>
-        <factor>1</factor>
-        <axis>
-            <x>1.0</x>
-            <y>0.0</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>translate</type>
-        <object-name>rhreverser</object-name>
-        <property>engines/engine[1]/reverser-pos-norm</property>
-        <factor>1</factor>
-        <axis>
-            <x>1.0</x>
-            <y>0.0</y>
-            <z>0</z>
-        </axis>
-    </animation>
 
 <!-- Windshield Wipers :P -->
 
@@ -3223,6 +3220,38 @@
     </equals>
   </condition>
 </animation>
+
+<!-- CAC Deflector Door -->
+
+ <animation>
+  <object-name>lhcacdeflector</object-name>
+  <type>rotate</type>
+  <property>/systems/cac/inlet-deflector-door-pos</property>
+  <factor>-22</factor>
+  <axis>   
+   <x1-m>-8.09845</x1-m>
+   <y1-m>-2.14714</y1-m>
+   <z1-m>-1.04714</z1-m>
+   <x2-m>-8.10903</x2-m>
+   <y2-m>-2.39584</y2-m>
+   <z2-m>-0.777</z2-m>
+  </axis>
+ </animation>
+
+<animation>
+  <object-name>rhcacdeflector</object-name>
+  <type>rotate</type>
+  <property>/systems/cac/inlet-deflector-door-pos</property>
+  <factor>22</factor>
+  <axis>   
+   <x1-m>-8.09845</x1-m>
+   <y1-m>2.14714</y1-m>
+   <z1-m>-1.04714</z1-m>
+   <x2-m>-8.10903</x2-m>
+   <y2-m>2.39584</y2-m>
+   <z2-m>-0.777</z2-m>
+  </axis>
+ </animation>
 
 <!-- Window Lights -->
 

@@ -755,6 +755,27 @@
         <electric>
             <avionics-switch type="bool">true</avionics-switch>
         </electric>
+	<safety>
+	    <safety_switch type="bool">0</safety_switch>
+	    <safety_switch1 type="bool">0</safety_switch1>
+	    <safety_switch2 type="bool">0</safety_switch2>
+	    <safety_switch3 type="bool">0</safety_switch3>
+	    <safety_switch4 type="bool">0</safety_switch4>
+	    <safety_switch5 type="bool">0</safety_switch5>
+	    <safety_switch6 type="bool">0</safety_switch6>
+	    <safety_switch7 type="bool">0</safety_switch7>
+	    <safety_switch8 type="bool">0</safety_switch8>
+	    <safety_switch9 type="bool">0</safety_switch9>
+	    <safety_switch10 type="bool">0</safety_switch10>
+	    <safety_switch11 type="bool">0</safety_switch11>
+	    <safety_switch12 type="bool">0</safety_switch12>
+	    <safety_switch13 type="bool">0</safety_switch13>
+	    <safety_switch14 type="bool">0</safety_switch14>
+	    <safety_switch15 type="bool">0</safety_switch15>
+	</safety>
+	<constant>
+	    <const type="bool">1</const>
+	</constant>
         <engines>
             <engine-start-switch type="int">1</engine-start-switch>
             <engine n="0">
@@ -803,6 +824,7 @@
                 <announce type="bool">true</announce>
                 <active type="bool">false</active>
             </copilot>
+	    <ind type="bool">1</ind>
         </switches>
     </controls>
 
@@ -908,7 +930,7 @@
             <file>Aircraft/787-family/Nasal/sysinfo.nas</file>
         </b787>
         <systems>
-            <file>Aircraft/787-family/Nasal/systems-10.nas</file>
+            <file>Aircraft/787-family/Nasal/systems-10-GEnx.nas</file>
         </systems>
         <electrical>
             <file>Aircraft/787-family/Nasal/electrical.nas</file>

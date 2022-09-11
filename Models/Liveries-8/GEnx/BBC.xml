@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<sim>    
+  <model>        
+    <livery>
+	<name type="string">BBC Biman Bangladesh (S2-AJS)</name>
+      <texture-fuselage>Liveries-8/GEnx/BBC.png</texture-fuselage>
+      <texture-engines>Liveries-engines/BBC.png</texture-engines>
+    </livery>
+  </model>
+</sim>
+
+</PropertyList>

@@ -1,0 +1,393 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<PropertyList>
+
+  <path>GEnx.ac</path>
+
+    <effect>
+        <inherits-from>Aircraft/787-family/Models/Effects/reflect</inherits-from>
+        <object-name>eng1fan</object-name>
+        <object-name>eng1fan1</object-name>
+        <object-name>eng1fan2</object-name>
+        <object-name>eng1fanb</object-name>
+        <object-name>eng2fan</object-name>
+        <object-name>eng2fan1</object-name>
+        <object-name>eng2fan2</object-name>
+        <object-name>eng2fanb</object-name>
+    </effect>
+
+<!-- Lightmaps -->
+
+    <effect>
+      <inherits-from>Aircraft/787-family/Models/Effects/reflect-el</inherits-from>
+      <object-name>no2enge</object-name>
+      <object-name>no1enge</object-name>
+      <object-name>lhreverser</object-name>
+      <object-name>rhreverser</object-name>
+    </effect>
+
+    <effect>
+      <inherits-from>Aircraft/787-family/Models/Effects/reflect-wl</inherits-from>
+      <object-name>front</object-name>
+      <object-name>no1pylon</object-name>
+      <object-name>no2pylon</object-name>
+    </effect>
+
+<!-- Livery select -->
+
+    <nasal>
+        <load>
+         var livery_update = aircraft.livery_update.new("Aircraft/787-family/Models/Liveries-engines", 10);
+        </load>
+
+        <unload>
+         livery_update.stop();
+        </unload>
+    </nasal>
+
+<animation>
+        <type>material</type>
+        <object-name>eng1fan</object-name>
+        <object-name>eng1fan1</object-name>
+        <object-name>eng1fan2</object-name>
+        <object-name>eng1fanb</object-name>
+        <object-name>eng2fan</object-name>
+        <object-name>eng2fan1</object-name>
+        <object-name>eng2fan2</object-name>
+        <object-name>eng2fanb</object-name>
+        <object-name>front</object-name>
+        <object-name>lhcone</object-name>
+        <object-name>lhenginecore</object-name>
+        <object-name>lhfan</object-name>
+        <object-name>lhfancasing</object-name>
+        <object-name>lhfans</object-name>
+        <object-name>lhinside</object-name>
+        <object-name>lhreverser</object-name>
+        <object-name>lhreversergrid</object-name>
+        <object-name>lhring</object-name>
+        <object-name>no1pylon</object-name>
+        <object-name>no2pylon</object-name>
+        <object-name>rhcone</object-name>
+        <object-name>rhenginecore</object-name>
+        <object-name>rhfan</object-name>
+        <object-name>rhfancasing</object-name>
+        <object-name>rhfans</object-name>
+        <object-name>rhinside</object-name>
+        <object-name>rhreverser</object-name>
+        <object-name>rhreversergrid</object-name>
+        <object-name>rhring</object-name>
+        <object-name>wing</object-name>
+        <object-name>no1enge</object-name>
+        <object-name>no2enge</object-name>
+        <property-base>sim/model/livery</property-base>
+        <texture-prop>texture-engines</texture-prop>
+        <texture>BOE-9.png</texture>
+</animation>
+
+<animation>
+  <type>spin</type>
+  <object-name>eng1fan</object-name>
+  <object-name>eng1fanb</object-name>
+  <object-name>eng1fan1</object-name>
+  <property>engines/engine[0]/n1</property>
+  <factor>10</factor>
+  <center>
+   <x-m>-7.5616</x-m>
+   <y-m>-9.41336</y-m>
+   <z-m>-1.12702</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>spin</type>
+  <object-name>eng2fan</object-name>
+  <object-name>eng2fanb</object-name>
+  <object-name>eng2fan1</object-name>
+  <property>engines/engine[1]/n1</property>
+  <factor>10</factor>
+  <center>
+   <x-m>-7.5616</x-m>
+   <y-m>9.41336</y-m>
+   <z-m>-1.12702</z-m>
+  </center>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+</animation>
+
+<!-- Engine spinning animation -->
+
+ <animation>
+  <object-name>eng1fan</object-name>
+  <object-name>eng1fanb</object-name>
+  <type>select</type>
+  <condition>
+   <less-than>
+    <property>engines/engine[0]/n1</property>
+    <value>35</value>
+   </less-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <object-name>eng2fan</object-name>
+  <object-name>eng2fanb</object-name>
+  <type>select</type>
+  <condition>
+   <less-than>
+    <property>engines/engine[1]/n1</property>
+    <value>35</value>
+   </less-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <object-name>eng1fan1</object-name>
+  <type>select</type>
+  <condition>
+   <greater-than>
+    <property>engines/engine[0]/n1</property>
+    <value>25</value>
+   </greater-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <object-name>eng2fan1</object-name>
+  <type>select</type>
+  <condition>
+   <greater-than>
+    <property>engines/engine[1]/n1</property>
+    <value>25</value>
+   </greater-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>eng1fan1</object-name>
+  <property>engines/engine[0]/n1</property>
+  <bias>0.001</bias>
+  <factor>0.025</factor>
+  <step>70</step>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>textranslate</type>
+  <object-name>eng2fan1</object-name>
+  <property>engines/engine[1]/n1</property>
+  <bias>0.001</bias>
+  <factor>0.025</factor>
+  <step>70</step>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+  </axis>
+ </animation>
+
+<!-- Engine Surge Animation -->
+
+<animation>
+	<type>select</type>
+	<object-name>l.surge</object-name>
+	<object-name>r.surge</object-name>
+	<object-name>l.surge.smoke</object-name>
+	<object-name>r.surge.smoke</object-name>
+	<condition>
+		<equals>
+			<property>controls/surge/flash</property>
+			<value>1</value>
+		</equals>
+	</condition>
+</animation>
+
+<!-- Thrust Reversers -->
+
+    <animation>
+        <type>translate</type>
+        <object-name>lhreverser</object-name>
+        <object-name>lhreverser.001</object-name>
+        <property>engines/engine[0]/reverser-pos-norm</property>
+        <factor>1</factor>
+        <axis>
+            <x>0.704755</x>
+            <y>0.0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>rhreverser</object-name>
+        <object-name>rhreverser.001</object-name>
+        <property>engines/engine[1]/reverser-pos-norm</property>
+        <factor>1</factor>
+        <axis>
+            <x>0.704755</x>
+            <y>0.0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+<!-- Smoke and Fire -->
+
+<model>
+ <path>Aircraft/787-family/Models/Effects/fire.xml</path>
+ <condition>
+	<equals>
+		<property>controls/fires/fire/phase</property>
+		<value>fire</value>
+	</equals>
+ </condition>
+ <name>fire_1</name>
+ <offsets>
+  <x-m>-4</x-m>
+  <y-m>-9.63</y-m>
+  <z-m>-.085</z-m>
+  <heading-deg>0</heading-deg>
+ </offsets>
+</model>
+
+<model>
+ <path>Aircraft/787-family/Models/Effects/smoke.xml</path>
+ <condition>
+ 	<or>
+	<equals>
+		<property>controls/fires/fire/phase</property>
+		<value>smoke</value>
+	</equals>
+	<equals>
+		<property>controls/fires/fire/phase</property>
+		<value>fire</value>
+	</equals>
+	</or>
+ </condition>
+ <name>smoke_1</name>
+ <offsets>
+  <x-m>-4</x-m>
+  <y-m>-9.63</y-m>
+  <z-m>-.085</z-m>
+  <heading-deg>0</heading-deg>
+ </offsets>
+</model>
+
+<model>
+ <path>Aircraft/787-family/Models/Effects/explode1.xml</path>
+ <condition>
+	<equals>
+		<property>controls/fires/fire/phase</property>
+		<value>explode</value>
+	</equals>
+ </condition>
+ <name>fire_2</name>
+ <offsets>
+  <x-m>-3.5</x-m>
+  <y-m>-9.63</y-m>
+  <z-m>-.085</z-m>
+  <heading-deg>0</heading-deg>
+ </offsets>
+</model>
+
+<model>
+ <path>Aircraft/787-family/Models/Effects/fire.xml</path>
+ <condition>
+	<equals>
+		<property>controls/fires/fire[1]/phase</property>
+		<value>fire</value>
+	</equals>
+ </condition>
+ <name>~fire_1</name>
+ <offsets>
+  <x-m>-3</x-m>
+  <y-m>9.63</y-m>
+  <z-m>-.085</z-m>
+  <heading-deg>0</heading-deg>
+ </offsets>
+</model>
+
+<model>
+ <path>Aircraft/787-family/Models/Effects/smoke.xml</path>
+ <condition>
+ 	<or>
+	<equals>
+		<property>controls/fires/fire[1]/phase</property>
+		<value>smoke</value>
+	</equals>
+	<equals>
+		<property>controls/fires/fire[1]/phase</property>
+		<value>fire</value>
+	</equals>
+	</or>
+ </condition>
+ <name>~smoke_1</name>
+ <offsets>
+  <x-m>-3</x-m>
+  <y-m>9.63</y-m>
+  <z-m>-.085</z-m>
+  <heading-deg>0</heading-deg>
+ </offsets>
+</model>
+
+<model>
+ <path>Aircraft/787-family/Models/Effects/explode1.xml</path>
+ <condition>
+	<equals>
+		<property>controls/fires/fire[1]/phase</property>
+		<value>explode</value>
+	</equals>
+ </condition>
+ <name>~fire_2</name>
+ <offsets>
+  <x-m>-3.5</x-m>
+  <y-m>9.63</y-m>
+  <z-m>-.085</z-m>
+  <heading-deg>0</heading-deg>
+ </offsets>
+</model>
+
+<model>
+ <path>Aircraft/787-family/Models/Effects/ext.xml</path>
+ <condition>
+	<equals>
+		<property>controls/fires/fire/extinguish</property>
+		<value>1</value>
+	</equals>
+ </condition>
+ <name>ext</name>
+ <offsets>
+  <x-m>-5</x-m>
+  <y-m>-9.63</y-m>
+  <z-m>-.085</z-m>
+  <heading-deg>0</heading-deg>
+ </offsets>
+</model>
+
+<model>
+ <path>Aircraft/787-family/Models/Effects/ext.xml</path>
+ <condition>
+	<equals>
+		<property>controls/fires/fire[1]/extinguish</property>
+		<value>1</value>
+	</equals>
+ </condition>
+ <name>ext</name>
+ <offsets>
+  <x-m>-5</x-m>
+  <y-m>9.63</y-m>
+  <z-m>-.085</z-m>
+  <heading-deg>0</heading-deg>
+ </offsets>
+</model>
+
+</PropertyList>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<sim>    
+  <model>        
+    <livery>
+	<name type="string">ACA Air Canada (C-GHPQ)</name>
+      <texture-fuselage>Liveries-8/GEnx/ACA.png</texture-fuselage>
+      <texture-engines>Liveries-engines/ACA.png</texture-engines>
+    </livery>
+  </model>
+</sim>
+
+</PropertyList>

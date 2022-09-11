@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<sim>    
+  <model>        
+    <livery>
+	<name type="string">TOM Tui Airways (G-TUIA)</name>
+      <texture-fuselage>Liveries-8/GEnx/TOM.png</texture-fuselage>
+      <texture-engines>Liveries-engines/TOM.png</texture-engines>
+    </livery>
+  </model>
+</sim>
+
+</PropertyList>
