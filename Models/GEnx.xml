@@ -80,7 +80,7 @@
         <object-name>no2enge</object-name>
         <property-base>sim/model/livery</property-base>
         <texture-prop>texture-engines</texture-prop>
-        <texture>/Liveries-engines/GEnx.png</texture>
+        <texture>Liveries-engines/GEnx.png</texture>
 </animation>
 
 <animation>
