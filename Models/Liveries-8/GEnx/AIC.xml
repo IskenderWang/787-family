@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<sim>    
+  <model>        
+    <livery>
+	<name type="string">AIC Air India (VT-ANS)</name>
+      <texture-fuselage>Liveries-8/GEnx/AIC.png</texture-fuselage>
+      <texture-engines>Liveries-engines/AIC.png</texture-engines>
+    </livery>
+  </model>
+</sim>
+
+</PropertyList>
