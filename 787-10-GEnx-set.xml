@@ -87,8 +87,6 @@
     </flaps>
 
         <startup>
-            <splash-texture>Aircraft/787-family/splash.png</splash-texture>
-            <splash-texture>Aircraft/787-family/splash1.png</splash-texture>
             <splash-texture>Aircraft/787-family/splash2.png</splash-texture>
         </startup>
 
