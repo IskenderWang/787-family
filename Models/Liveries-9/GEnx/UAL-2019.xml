@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<sim>    
+  <model>        
+    <livery>
+	<name type="string">UAL United Airlines (N29975)</name>
+      <texture-fuselage>Liveries-9/GEnx/UAL-2019.png</texture-fuselage>
+      <texture-engines>Liveries-engines/UAL-2019.png</texture-engines>
+    </livery>
+  </model>
+</sim>
+
+</PropertyList>
