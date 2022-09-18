@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<sim>    
+  <model>        
+    <livery>
+	<name type="string">AEA Air Europa (EC-MMX)</name>
+      <texture-fuselage>Liveries-8/Trent1000/AEA.png</texture-fuselage>
+      <texture-engines>Liveries-engines/STDRR.png</texture-engines>
+    </livery>
+  </model>
+</sim>
+
+</PropertyList>
