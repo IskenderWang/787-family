@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<sim>    
+  <model>        
+    <livery>
+	<name type="string">EVA EVA Air (B-17802)</name>
+      <texture-fuselage>Liveries-10/GEnx/EVA.png</texture-fuselage>
+      <texture-engines>Liveries-engines/EVA.png</texture-engines>
+    </livery>
+  </model>
+</sim>
+
+</PropertyList>

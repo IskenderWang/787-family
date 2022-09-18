@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<sim>    
+  <model>        
+    <livery>
+	<name type="string">KLM Royal Dutch Airlines (PH-BKD)</name>
+      <texture-fuselage>Liveries-10/GEnx/KLM-100-2.png</texture-fuselage>
+      <texture-engines>Liveries-engines/KLM.png</texture-engines>
+    </livery>
+  </model>
+</sim>
+
+</PropertyList>
