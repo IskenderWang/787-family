@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<sim>    
+  <model>        
+    <livery>
+	<name type="string">SVA Saudi Arabian Airlines (HZ-AR26)</name>
+      <texture-fuselage>Liveries-10/Trent1000/SVA-NEOM.png</texture-fuselage>
+      <texture-engines>Liveries-engines/SVA-NEOM.png</texture-engines>
+    </livery>
+  </model>
+</sim>
+
+</PropertyList>
