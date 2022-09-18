@@ -42,3 +42,7 @@ If you made a livery, and want it to be added make sure to create a fork, add it
 ```sh
 <name type="string">ICAO Airline full name (Registration)</name>
 ```
+Example
+```sh
+<name type="string">DLH Lufthansa (D-ABPD)</name>
+```
