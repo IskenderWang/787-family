@@ -84,4 +84,95 @@
 		<output>/controls/flight/speedbrake</output>
 	</filter>
 
+	<filter>
+		<name>CAC inlet deflector controller</name>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<not>
+						<equals>
+							<property>/gear/gear[1]/wow</property>
+							<value>true</value>
+						</equals>
+					</not>
+					<equals>
+						<property>/controls/gear/gear-down</property>
+						<value>true</value>
+					</equals>
+					<greater-than-equals>
+						<property>/controls/flight/flaps</property>
+						<value>0.833</value>
+					</greater-than-equals>
+				</and>
+			</condition>
+			<value>1</value>
+		</input>
+		<input>
+			<condition>
+				<and>
+					<equals>
+						<property>/gear/gear[1]/wow</property>
+						<value>true</value>
+					</equals>
+					<greater-than-equals>
+						<property>/environment/temperature-degc</property>
+						<value>2</value>
+					</greater-than-equals>
+					<less-than-equals>
+						<property>/environment/temperature-degc</property>
+						<value>35</value>
+					</less-than-equals>
+				</and>
+			</condition>
+			<value>1</value>
+		</input>
+		<input>
+			<condition>
+				<and>
+					<equals>
+						<property>/gear/gear[1]/wow</property>
+						<value>true</value>
+					</equals>
+					<greater-than>
+						<property>/environment/temperature-degc</property>
+						<value>35</value>
+					</greater-than>
+					<or>
+						<greater-than-equals>
+							<property>/engines/engine[0]/n2</property>
+							<value>50.0</value>
+						</greater-than-equals>
+						<greater-than-equals>
+							<property>/engines/engine[1]/n2</property>
+							<value>50.0</value>
+						</greater-than-equals>
+					</or>
+					<or>
+						<less-than>
+							<property>/engines/engine[0]/n2</property>
+							<value>90.0</value>
+						</less-than>
+						<less-than>
+							<property>/engines/engine[1]/n2</property>
+							<value>90.0</value>
+						</less-than>
+					</or>
+				</and>
+			</condition>
+			<value>0.5</value>
+		</input>
+		<input>0</input>
+		<output>/systems/cac/inlet-deflector-door-cmd</output>
+	</filter>
+ 
+	<filter>
+		<name>CAC inlet deflector position</name>
+		<type>noise-spike</type>
+		<input>/systems/cac/inlet-deflector-door-cmd</input>
+		<output>/systems/cac/inlet-deflector-door-pos</output>
+		<max-rate-of-change>1</max-rate-of-change>
+	</filter>
+
 </PropertyList>

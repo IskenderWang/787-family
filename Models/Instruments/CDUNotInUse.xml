@@ -1,0 +1,712 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>cdu2screen.ac</path>
+
+<!-- Come on only when there's atleast 9 volts of power -->
+
+	<animation>
+		<type>select</type>
+		<object-name>cdu</object-name>
+		<object-name>text</object-name>
+		<condition>
+			<greater-than>
+				<property>systems/electrical/outputs/efis</property>
+				<value>9</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+<!-- Display -->
+
+	<animation>
+    <type>material</type>
+    <object-name>text</object-name>
+    <emission>
+      <red>   1 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+  </animation>
+
+<!-- Page Name -->
+	<text><name>text</name>
+		<offsets>
+			<x-m>-23.03</x-m>
+			<y-m>0</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+			<heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>center-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/page</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.008</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+<!-- Active Typing -->
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.9352</x-m>
+			<y-m>0</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+			<heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>center-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/input</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.008</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+
+<!-- Left Side Labels -->
+	<text><name>text</name>
+		<offsets>
+			<x-m>-23.0429</x-m>
+			<y-m>-0.048</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/l1-label</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.004</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-23.0127</x-m>
+			<y-m>-0.048</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/l2-label</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.004</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.9992</x-m>
+			<y-m>-0.048</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/l3-label</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.004</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.9865</x-m>
+			<y-m>-0.048</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/l4-label</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.004</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.9733</x-m>
+			<y-m>-0.048</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/l5-label</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.004</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.9606</x-m>
+			<y-m>-0.048</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/l6-label</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.004</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.9474</x-m>
+			<y-m>-0.048</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/l7-label</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.004</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+<!-- Right Side Labels -->
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>-23.0429</x-m>
+			<y-m>0.0498</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/r1-label</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.004</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-23.0127</x-m>
+			<y-m>0.0498</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/r2-label</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.004</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.9992</x-m>
+			<y-m>0.0498</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/r3-label</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.004</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.9865</x-m>
+			<y-m>0.0498</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/r4-label</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.004</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.9733</x-m>
+			<y-m>0.0498</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/r5-label</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.004</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.9606</x-m>
+			<y-m>0.0498</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/r6-label</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.004</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.9474</x-m>
+			<y-m>0.0498</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/r7-label</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.004</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+
+<!-- Left Side Values -->
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>-23.0192</x-m>
+			<y-m>-0.038</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/l1</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.006</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-23.0060</x-m>
+			<y-m>-0.038</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/l2</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.006</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.9927</x-m>
+			<y-m>-0.038</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/l3</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.006</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.98</x-m>
+			<y-m>-0.038</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/l4</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.006</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.9668</x-m>
+			<y-m>-0.038</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/l5</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.006</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.9533</x-m>
+			<y-m>-0.038</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/l6</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.006</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.9422</x-m>
+			<y-m>-0.038</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/l7</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.006</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+<!-- Right Side Values -->
+
+	<text><name>text</name>
+		<offsets>
+			<x-m>-23.0192</x-m>
+			<y-m>0.042</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/r1</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.006</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-23.0060</x-m>
+			<y-m>0.042</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/r2</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.006</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.9927</x-m>
+			<y-m>0.042</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/r3</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.006</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.98</x-m>
+			<y-m>0.042</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/r4</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.006</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.9668</x-m>
+			<y-m>0.042</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/r5</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.006</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.9533</x-m>
+			<y-m>0.042</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/r6</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.006</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text><name>text</name>
+		<offsets>
+			<x-m>-22.9422</x-m>
+			<y-m>0.042</y-m>
+			<z-m>1.3439</z-m><heading-deg>90</heading-deg>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>xy-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">%s</format>
+		<property>controls/cdu/display/r7</property>
+  <truncate type="bool">false</truncate>
+  <font type="string">Helvetica.txf</font>
+  <draw-text type="bool">true</draw-text>
+  <draw-alignment type="bool">false</draw-alignment>
+  <draw-boundingbox type="bool">false</draw-boundingbox>
+		<character-size>0.006</character-size>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+</PropertyList>
