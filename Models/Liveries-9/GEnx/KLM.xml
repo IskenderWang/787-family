@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <PropertyList>
 
+  <externaladdons>
+    <wifi>1</wifi>
+  </externaladdons>
+
 <sim>    
   <model>        
     <livery>
