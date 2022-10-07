@@ -10,7 +10,10 @@
 
     <effect>
         <inherits-from>Aircraft/787-family/Models/Effects/reflect</inherits-from>
+        <object-name>antennae</object-name>
         <object-name>bodyfairing</object-name>
+        <object-name>wifiantenna</object-name>
+        <object-name>placards</object-name>
         <object-name>fuselage</object-name>
         <object-name>fuselage.001</object-name>
         <object-name>lhfdoor</object-name>
@@ -229,6 +232,7 @@
 	<object-name>rwinga</object-name>
 	<object-name>rwingb</object-name>
 	<object-name>rwingc</object-name>
+        <object-name>wifiantenna</object-name>
         <property-base>sim/model/livery</property-base>
         <texture-prop>texture-fuselage</texture-prop>
         <texture>787-10.png</texture>
@@ -286,6 +290,19 @@
   <z-m>-3.55</z-m>
  </offsets>
 </model>
+
+<!-- Wifi Antenna -->
+
+ <animation>
+  <object-name>wifiantenna</object-name>
+  <type>select</type>
+  <condition>
+   <equals>
+    <property>externaladdons/wifi</property>
+    <value>1</value>
+   </equals>
+  </condition>
+ </animation>
 
 <!-- Flight Deck -->
 
