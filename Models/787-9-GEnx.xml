@@ -152,6 +152,7 @@
 
 <animation>
        <type>material</type>
+	<object-name>placards</object-name>
 	<object-name>aftcargodoor</object-name>
 	<object-name>antennae</object-name>
 	<object-name>bodyfairing</object-name>
