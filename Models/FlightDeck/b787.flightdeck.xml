@@ -438,6 +438,34 @@
 			<z-m>1.28486 m</z-m>
 		</center>
 	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>flaps.lever</object-name>
+		<action>
+			<button>0</button>
+			<button>4</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>controls.flapsDown(1);</script>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>flaps.lever</object-name>
+		<action>
+			<button>1</button>
+			<button>3</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>controls.flapsDown(-1);</script>
+			</binding>
+		</action>
+	</animation>	
 
 <!-- Speed Brakes -->
 
@@ -458,6 +486,44 @@
 		</axis>
 	</animation>
 
+<!-- No arming logic implemented, for now -->	
+	
+	<animation>
+		<type>pick</type>
+		<object-name>spdbrk.lever</object-name>
+		<action>
+			<button>0</button>
+			<button>4</button>
+			<repeatable>false</repeatable>
+			<binding>
+  				<command>property-adjust</command>
+  				<property>/controls/flight/speedbrake-lever</property>
+ 				<step>0.5</step>
+ 				<min>0</min>
+  				<max>1</max>
+ 				<wrap>false</wrap>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>spdbrk.lever</object-name>
+		<action>
+			<button>1</button>
+			<button>3</button>
+			<repeatable>false</repeatable>
+			<binding>
+  				<command>property-adjust</command>
+  				<property>/controls/flight/speedbrake-lever</property>
+ 				<step>-0.5</step>
+ 				<min>0</min>
+  				<max>1</max>
+ 				<wrap>false</wrap>
+			</binding>
+		</action>
+	</animation>	
+	
     <!--Park Brakes-->
     <animation>
         <type>translate</type>
