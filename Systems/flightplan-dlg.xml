@@ -2,15 +2,15 @@
 
 <PropertyList>
 
-	<name>flightplan</name>
-	<layout>vbox</layout>
+    <name>flightplan</name>
+    <layout>vbox</layout>
 
-	<text>
-		<label>Import / Export Flightplans</label>
-	</text>
-	
-	<nasal>
-		<open>
+    <text>
+        <label>Import / Export Flightplans</label>
+    </text>
+
+    <nasal>
+        <open>
 		
 			var import_plan = func {
 				if (getprop("/instrumentation/fmcFP/selectedFP") == "Primary")
@@ -37,13 +37,13 @@
 			var open_selector = gui.FileSelector.new(import_plan, "Import Flightplan", "Import");
             var save_selector = gui.FileSelector.new(export_plan, "Export Flightplan", "Export");
 		</open>
-		<close>
+        <close>
 			open_selector.del();
             save_selector.del();
 		</close>
-	</nasal>
+    </nasal>
 
-<!--	<hrule />
+    <!--	<hrule />
 
             <group>
                 <layout>hbox</layout>
@@ -63,20 +63,20 @@
                     </binding>
                 </input>
             </group> -->
-                
-	<hrule />
-		<group>
-		<layout>hbox</layout>
-		
-	    <text>
+
+    <hrule />
+    <group>
+        <layout>hbox</layout>
+
+        <text>
             <halign>right</halign>
             <label>Plan:</label>
         </text>
         <combo>
             <halign>left</halign>
             <name>flightplan</name>
-					    <pref-width>300</pref-width>
-   						<pref-height>20</pref-height>
+            <pref-width>300</pref-width>
+            <pref-height>20</pref-height>
             <property>/instrumentation/fmcFP/selectedFP</property>
             <editable>false</editable>
             <value>Primary</value>
@@ -84,65 +84,65 @@
             <binding>
                 <command>dialog-apply</command>
             </binding>
-        </combo>						
-			</group>
-	<hrule />
-	<group>
-	<layout>hbox</layout>
+        </combo>
+    </group>
+    <hrule />
+    <group>
+        <layout>hbox</layout>
 
-		<button>
-			<legend>Clear</legend>
-			<default>true</default>
-			<padding>10</padding>
-			<binding>
-				<command>nasal</command>
-				<script>
+        <button>
+            <legend>Clear</legend>
+            <default>true</default>
+            <padding>10</padding>
+            <binding>
+                <command>nasal</command>
+                <script>
 					if (getprop("/instrumentation/fmcFP/selectedFP") == "Primary")
 						var plan = 0;
 					else
 						var plan = 1;
 					b787.fmcFP.clear(plan);
 				</script>
-			</binding>
-		</button>
+            </binding>
+        </button>
 
-		<button>
-			<legend>Import</legend>
-			<default>true</default>
-			<padding>10</padding>
-			<binding>
-				<command>nasal</command>
-				<script>
+        <button>
+            <legend>Import</legend>
+            <default>true</default>
+            <padding>10</padding>
+            <binding>
+                <command>nasal</command>
+                <script>
 					open_selector.open()
 				</script>
-			</binding>
-		</button>
+            </binding>
+        </button>
 
-		<button>
-			<legend>Export</legend>
-			<default>true</default>
-			<padding>10</padding>
-			<binding>
-				<command>nasal</command>
-				<script>
+        <button>
+            <legend>Export</legend>
+            <default>true</default>
+            <padding>10</padding>
+            <binding>
+                <command>nasal</command>
+                <script>
 					save_selector.open()
 				</script>
-			</binding>
-		</button>
+            </binding>
+        </button>
 
-		<button>
-			<legend>Close</legend>
-			<default>true</default>
-			<key>Esc</key>
-		<padding>10</padding>
-			<binding>
-				<command>dialog-apply</command>
-			</binding>
-			<binding>
-				<command>dialog-close</command>
-			</binding>
-		</button>
-		
-		</group>
+        <button>
+            <legend>Close</legend>
+            <default>true</default>
+            <key>Esc</key>
+            <padding>10</padding>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+
+    </group>
 
 </PropertyList>

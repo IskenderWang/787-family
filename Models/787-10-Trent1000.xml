@@ -4,7 +4,7 @@
     <path>787-10.ac</path>
     <main include="animation-common.xml" omit-node="y" />
 
-        <!-- Livery select -->
+    <!-- Livery select -->
     <nasal>
         <load>
          var livery_update = aircraft.livery_update.new("Aircraft/787-family/Models/Liveries-10/Trent1000", 10);
@@ -107,7 +107,7 @@
         <path>Autopush/Goldhofert.xml</path>
         <offsets>
             <x-m>-25.54268</x-m>
-            
+
             <z-m>-3.55</z-m>
         </offsets>
     </model>
@@ -119,7 +119,7 @@
         <path>FlightDeck/b787.flightdeck.xml</path>
         <offsets>
             <x-m>-6.002498</x-m>
-            
+
             <z-m>0.09158</z-m>
         </offsets>
     </model>
@@ -170,7 +170,7 @@
         </center>
         <axis>
             <x>1</x>
-            
+
             <z>-0.13</z>
         </axis>
     </animation>
@@ -212,7 +212,7 @@
         </center>
         <axis>
             <x>1</x>
-            
+
             <z>-0.13</z>
         </axis>
     </animation>
@@ -254,7 +254,7 @@
         </center>
         <axis>
             <x>-1</x>
-            
+
             <z>0.13</z>
         </axis>
     </animation>
@@ -296,7 +296,7 @@
         </center>
         <axis>
             <x>-1</x>
-            
+
             <z>0.13</z>
         </axis>
     </animation>
@@ -330,7 +330,7 @@
         </center>
         <axis>
             <x>1</x>
-            
+
             <z>-0.2</z>
         </axis>
     </animation>
@@ -364,7 +364,7 @@
         </center>
         <axis>
             <x>1</x>
-            
+
             <z>-0.2</z>
         </axis>
     </animation>
@@ -398,7 +398,7 @@
         </center>
         <axis>
             <x>-1</x>
-            
+
             <z>0.2</z>
         </axis>
     </animation>
@@ -432,7 +432,7 @@
         </center>
         <axis>
             <x>-1</x>
-            
+
             <z>0.2</z>
         </axis>
     </animation>
@@ -599,13 +599,13 @@
         <offset-deg>0</offset-deg>
         <center>
             <x-m>27.3423</x-m>
-            
+
             <z-m>2</z-m>
         </center>
         <axis>
-            
+
             <y>1</y>
-            
+
         </axis>
     </animation>
 
@@ -659,7 +659,7 @@
         </center>
         <axis>
             <x>1.0</x>
-            
+
             <z>2.0</z>
         </axis>
     </animation>
@@ -678,8 +678,8 @@
             <z-m>-1.164</z-m>
         </center>
         <axis>
-            
-            
+
+
             <z>1</z>
         </axis>
     </animation>
@@ -689,7 +689,7 @@
         <name>tyre-smoke-n</name>
         <offsets>
             <x-m>-20.56</x-m>
-            
+
             <z-m>-3.2</z-m>
         </offsets>
     </model>
@@ -699,7 +699,7 @@
         <name>tyre-smoke-n</name>
         <offsets>
             <x-m>-20.56</x-m>
-            
+
             <z-m>-3.2</z-m>
         </offsets>
     </model>
@@ -732,9 +732,9 @@
             <z-m>-1.063</z-m>
         </center>
         <axis>
-            
+
             <y>1</y>
-            
+
         </axis>
     </animation>
 
@@ -755,8 +755,8 @@
             </entry>
         </interpolation>
         <axis>
-            
-            
+
+
             <z>1</z>
         </axis>
     </animation>
@@ -769,13 +769,13 @@
         <property>/gear/gear[0]/rollspeed-ms</property>
         <factor>10</factor>
         <axis>
-            
+
             <y>-1</y>
-            
+
         </axis>
         <center>
             <x-m>-26.85535</x-m>
-            
+
             <z-m>-3.26425</z-m>
         </center>
     </animation>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!--
 **********************************************************************
@@ -25,164 +25,164 @@ file, these values will be used (they are hardcoded).
 
 <PropertyList>
 
-<!-- Not Enabling the Generic TCAS as the 787 has it's own
+    <!-- Not Enabling the Generic TCAS as the 787 has it's own
     	<tcas>
   		<name>tcas</name>
        		<number>0</number>
     	</tcas> -->
 
-	<adf>
-		<name>adf</name>
-		<number>0</number>
-	</adf>
-	<adf>
-		<name>adf</name>
-		<number>1</number>
-	</adf>
+    <adf>
+        <name>adf</name>
+        <number>0</number>
+    </adf>
+    <adf>
+        <name>adf</name>
+        <number>1</number>
+    </adf>
 
-	<airspeed-indicator>
-		<name>airspeed-indicator</name>
-		<number>0</number>
-		<total-pressure>/systems/pitot/total-pressure-inhg</total-pressure>
-		<static-pressure>/systems/static/pressure-inhg</static-pressure>
-	</airspeed-indicator>
+    <airspeed-indicator>
+        <name>airspeed-indicator</name>
+        <number>0</number>
+        <total-pressure>/systems/pitot/total-pressure-inhg</total-pressure>
+        <static-pressure>/systems/static/pressure-inhg</static-pressure>
+    </airspeed-indicator>
 
-	<altimeter>
-		<name>altimeter</name>
-		<number>0</number>
-		<static-pressure>/systems/static/pressure-inhg</static-pressure>
-		<quantum>0</quantum>
-		<tau>0</tau>
-	</altimeter>
+    <altimeter>
+        <name>altimeter</name>
+        <number>0</number>
+        <static-pressure>/systems/static/pressure-inhg</static-pressure>
+        <quantum>0</quantum>
+        <tau>0</tau>
+    </altimeter>
 
-	<attitude-indicator>
-		<name>attitude-indicator</name>
-		<number>0</number>
-		<suction>/systems/vacuum/suction-inhg</suction>
-	</attitude-indicator>
+    <attitude-indicator>
+        <name>attitude-indicator</name>
+        <number>0</number>
+        <suction>/systems/vacuum/suction-inhg</suction>
+    </attitude-indicator>
 
-	<clock>
-		<name>clock</name>
-		<number>0</number>
-	</clock>
+    <clock>
+        <name>clock</name>
+        <number>0</number>
+    </clock>
 
-	<dme>
-		<name>dme</name>
-		<number>0</number>
-	</dme>
+    <dme>
+        <name>dme</name>
+        <number>0</number>
+    </dme>
 
-	<altimeter>
-		<name>encoder</name>
-		<number>0</number>
-		<static-pressure>/systems/static/pressure-inhg</static-pressure>
-		<quantum>10</quantum>
-		<tau>0.1</tau>
-	</altimeter>
+    <altimeter>
+        <name>encoder</name>
+        <number>0</number>
+        <static-pressure>/systems/static/pressure-inhg</static-pressure>
+        <quantum>10</quantum>
+        <tau>0.1</tau>
+    </altimeter>
 
-	<marker-beacon>
-		<name>marker-beacon</name>
-		<number>0</number>
-	</marker-beacon>
+    <marker-beacon>
+        <name>marker-beacon</name>
+        <number>0</number>
+    </marker-beacon>
 
-	<heading-indicator>
-		<name>heading-indicator</name>
-		<number>0</number>
-		<suction>/systems/vacuum/suction-inhg</suction>
-	</heading-indicator>
+    <heading-indicator>
+        <name>heading-indicator</name>
+        <number>0</number>
+        <suction>/systems/vacuum/suction-inhg</suction>
+    </heading-indicator>
 
-	<KT-70>
-		<name>kt-70</name>
-		<number>0</number>
-	</KT-70>
+    <KT-70>
+        <name>kt-70</name>
+        <number>0</number>
+    </KT-70>
 
-	<magnetic-compass>
-		<name>magnetic-compass</name>
-		<number>0</number>
-	</magnetic-compass>
+    <magnetic-compass>
+        <name>magnetic-compass</name>
+        <number>0</number>
+    </magnetic-compass>
 
-	<comm-radio>
-		<name>comm</name>
-		<number>0</number>
-	</comm-radio>
+    <comm-radio>
+        <name>comm</name>
+        <number>0</number>
+    </comm-radio>
 
-	<comm-radio>
-		<name>comm</name>
-		<number>1</number>
-	</comm-radio>
+    <comm-radio>
+        <name>comm</name>
+        <number>1</number>
+    </comm-radio>
 
     <nav-radio>
-		<name>nav</name>
-		<number>0</number>
-	</nav-radio>
+        <name>nav</name>
+        <number>0</number>
+    </nav-radio>
 
-	<nav-radio>
-		<name>nav</name>
-		<number>1</number>
-	</nav-radio>
+    <nav-radio>
+        <name>nav</name>
+        <number>1</number>
+    </nav-radio>
 
-	<slip-skid-ball>
-		<name>slip-skid-ball</name>
-		<number>0</number>
-	</slip-skid-ball>
+    <slip-skid-ball>
+        <name>slip-skid-ball</name>
+        <number>0</number>
+    </slip-skid-ball>
 
-	<transponder>
-		<name>transponder</name>
-		<number>0</number>
-		<mode-c-altitude>/instrumentation/encoder/mode-c-alt-ft</mode-c-altitude>
-	</transponder>
+    <transponder>
+        <name>transponder</name>
+        <number>0</number>
+        <mode-c-altitude>/instrumentation/encoder/mode-c-alt-ft</mode-c-altitude>
+    </transponder>
 
-	<turn-indicator>
-		<name>turn-indicator</name>
-		<number>0</number>
-	</turn-indicator>
+    <turn-indicator>
+        <name>turn-indicator</name>
+        <number>0</number>
+    </turn-indicator>
 
-	<vertical-speed-indicator>
-		<name>vertical-speed-indicator</name>
-		<number>0</number>
-		<static-pressure>/systems/static/pressure-inhg</static-pressure>
-	</vertical-speed-indicator>
+    <vertical-speed-indicator>
+        <name>vertical-speed-indicator</name>
+        <number>0</number>
+        <static-pressure>/systems/static/pressure-inhg</static-pressure>
+    </vertical-speed-indicator>
 
-	<gps>
-		<name>gps</name>
-		<number>0</number>
-	</gps>
+    <gps>
+        <name>gps</name>
+        <number>0</number>
+    </gps>
 
-	<gps>
-		<name>gps</name>
-		<number>1</number>
-	</gps>
+    <gps>
+        <name>gps</name>
+        <number>1</number>
+    </gps>
 
-	<gps>
-		<name>gps</name>
-		<number>2</number>
-	</gps>
-	
-	<gps>
-		<name>gps</name>
-		<number>3</number>
-	</gps>
-	
-	<gps>
-		<name>gps</name>
-		<number>4</number>
-	</gps>
+    <gps>
+        <name>gps</name>
+        <number>2</number>
+    </gps>
 
-	<radar>
-		<name>wxradar</name>
-		<number>0</number>
-	</radar>
+    <gps>
+        <name>gps</name>
+        <number>3</number>
+    </gps>
 
-	<tacan>
-		<name>tacan</name>
-		<number>0</number>
-	</tacan>
+    <gps>
+        <name>gps</name>
+        <number>4</number>
+    </gps>
 
-	<mk-viii>
-	 <name>mk-viii</name>
-	 <number>0</number>
-	</mk-viii>
-	
-	<!-- navigation-display>
+    <radar>
+        <name>wxradar</name>
+        <number>0</number>
+    </radar>
+
+    <tacan>
+        <name>tacan</name>
+        <number>0</number>
+    </tacan>
+
+    <mk-viii>
+        <name>mk-viii</name>
+        <number>0</number>
+    </mk-viii>
+
+    <!-- navigation-display>
         <name>nd</name>
         <number>0</number>        
         <symbols include="nav-display.xml"/>
