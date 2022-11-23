@@ -24,9 +24,9 @@
 			<entry><ind>2</ind><dep>0.66</dep></entry>
 		</interpolation>
 		<axis>
-			<x>0</x>
+			
 			<y>-1</y>
-			<z>0</z>
+			
 		</axis>
 	</animation>
 

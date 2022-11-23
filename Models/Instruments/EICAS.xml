@@ -266,13 +266,13 @@
      	</entry>
    	</interpolation>
    	<center>
-    	<x-m>0</x-m>
+    	
      	<y-m>-0.0577</y-m>
      	<z-m>0.1189</z-m>
    	</center>
    	<axis>
      	<x>-1.0</x>
-     	<y>0</y>
+     	
      	<z>0.0</z>
    	</axis>
 </animation>
@@ -290,13 +290,13 @@
      	</entry>
    	</interpolation>
    	<center>
-    	<x-m>0</x-m>
+    	
      	<y-m>-0.0160</y-m>
      	<z-m>0.1189</z-m>
    	</center>
    	<axis>
      	<x>-1.0</x>
-     	<y>0</y>
+     	
      	<z>0.0</z>
    	</axis>
 </animation>
@@ -314,13 +314,13 @@
      	</entry>
    	</interpolation>
    	<center>
-    	<x-m>0</x-m>
+    	
      	<y-m>-0.0577</y-m>
      	<z-m>0.0801</z-m>
    	</center>
    	<axis>
      	<x>-1.0</x>
-     	<y>0</y>
+     	
      	<z>0.0</z>
    	</axis>
 </animation>
@@ -338,13 +338,13 @@
      	</entry>
    	</interpolation>
    	<center>
-    	<x-m>0</x-m>
+    	
      	<y-m>-0.0160</y-m>
      	<z-m>0.0801</z-m>
    	</center>
    	<axis>
      	<x>-1.0</x>
-     	<y>0</y>
+     	
      	<z>0.0</z>
    	</axis>
 </animation>
@@ -362,13 +362,13 @@
      	</entry>
    	</interpolation>
    	<center>
-    	<x-m>0</x-m>
+    	
      	<y-m>-0.0577</y-m>
      	<z-m>0.0412</z-m>
    	</center>
    	<axis>
      	<x>-1.0</x>
-     	<y>0</y>
+     	
      	<z>0.0</z>
    	</axis>
 </animation>
@@ -386,13 +386,13 @@
      	</entry>
    	</interpolation>
    	<center>
-    	<x-m>0</x-m>
+    	
      	<y-m>-0.0160</y-m>
      	<z-m>0.0412</z-m>
    	</center>
    	<axis>
      	<x>-1.0</x>
-     	<y>0</y>
+     	
      	<z>0.0</z>
    	</axis>
 </animation>

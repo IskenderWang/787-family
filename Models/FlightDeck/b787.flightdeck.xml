@@ -216,7 +216,7 @@
 		<path>Aircraft/787-family/Models/FlightDeck/OHpanel.xml</path>
         <offsets>
 			<x-m>-23.1083</x-m>
-			<y-m>0</y-m>
+			
 			<z-m>2.57767</z-m>
 			<pitch-deg>70.5</pitch-deg>
 		</offsets>
@@ -228,7 +228,7 @@
 		<path>Aircraft/787-family/Models/Instruments/mag-compass.xml</path>
 		<offsets>
 			<x-m>-23.7505</x-m>
-			<y-m>0</y-m>
+			
 			<z-m>2.30645</z-m>
 		</offsets>
 	</model>
@@ -243,7 +243,7 @@
             <subtype>textranslate</subtype>
             <factor>0.00473764</factor>
             <axis>
-                <x>0</x>
+                
                 <y>1</y>
             </axis>
         </transform>
@@ -255,8 +255,8 @@
                 <y>0.50</y>
             </center>
             <axis>
-                <x>0</x>
-                <y>0</y>
+                
+                
                 <z>-1</z>
             </axis>
         </transform>
@@ -365,13 +365,13 @@
 		<property>controls/engines/engine[0]/throttle</property>
 		<factor>50</factor>
 		<axis>
-			<x>0</x>
+			
 			<y>-1</y>
-			<z>0</z>
+			
 		</axis>
 		<center>
 			<x-m>-23.2606 m</x-m>
-			<y-m>0</y-m>
+			
 			<z-m>1.28486 m</z-m>
 		</center>
 	</animation>
@@ -409,13 +409,13 @@
 		<property>controls/engines/engine[1]/throttle</property>
 		<factor>50</factor>
 		<axis>
-			<x>0</x>
+			
 			<y>-1</y>
-			<z>0</z>
+			
 		</axis>
 		<center>
 			<x-m>-23.2606 m</x-m>
-			<y-m>0</y-m>
+			
 			<z-m>1.28486 m</z-m>
 		</center>
 	</animation>
@@ -428,13 +428,13 @@
 		<property>controls/flight/flaps</property>
 		<factor>54.6</factor>
 		<axis>
-			<x>0</x>
+			
 			<y>1</y>
-			<z>0</z>
+			
 		</axis>
 		<center>
 			<x-m>-23.2606 m</x-m>
-			<y-m>0</y-m>
+			
 			<z-m>1.28486 m</z-m>
 		</center>
 	</animation>
@@ -448,13 +448,13 @@
 		<factor>58.4</factor>
 		<center>
 			<x-m>-23.2606 m</x-m>
-			<y-m>0</y-m>
+			
 			<z-m>1.28486 m</z-m>
 		</center>
 		<axis>
-			<x>0</x>
+			
 			<y>1</y>
-			<z>0</z>
+			
 		</axis>
 	</animation>
 
@@ -466,8 +466,8 @@
         <factor>0.015</factor>
         <axis>
             <x>-1</x>
-            <y>0</y>
-            <z>0</z>
+            
+            
         </axis>
     </animation>
 
@@ -506,13 +506,13 @@
         <factor>40</factor>
         <center>
             <x-m>-23.1208</x-m>
-            <y-m>0</y-m>
+            
             <z-m>1.36516</z-m>
         </center>
         <axis>
-            <x>0</x>
+            
             <y>1</y>
-            <z>0</z>
+            
         </axis>
     </animation>
 
@@ -523,13 +523,13 @@
         <factor>40</factor>
         <center>
             <x-m>-23.1208</x-m>
-            <y-m>0</y-m>
+            
             <z-m>1.36516</z-m>
         </center>
         <axis>
-            <x>0</x>
+            
             <y>1</y>
-            <z>0</z>
+            
         </axis>
     </animation>
 
@@ -2323,13 +2323,13 @@
 		<factor>15</factor>
 		<center>
 			<x-m>-23.2790</x-m>
-			<y-m>0</y-m>
+			
 			<z-m>1.1191</z-m>
 		</center>
 		<axis>
-			<x>0</x>
+			
 			<y>-1</y>
-			<z>0</z>
+			
 		</axis>
 	</animation>
 
@@ -2339,14 +2339,14 @@
 		<property>controls/flight/aileron</property>
 		<factor>60</factor>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>-0.5776</y-m>
 			<z-m>1.7127</z-m>
 		</center>
 		<axis>
 			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 	</animation>
 
@@ -2356,14 +2356,14 @@
 		<property>controls/flight/aileron</property>
 		<factor>60</factor>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>0.5776</y-m>
 			<z-m>1.7127</z-m>
 		</center>
 		<axis>
 			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 	</animation>
 
@@ -2492,13 +2492,13 @@
 		<factor>50</factor>
 		<center>
 			<x-m>-23.7894</x-m>
-			<y-m>0</y-m>
+			
 			<z-m>1.6466</z-m>
 		</center>
 		<axis>
-			<x>0</x>
+			
 			<y>1</y>
-			<z>0</z>
+			
 		</axis>
 	</animation>
 	<animation>
@@ -2598,9 +2598,9 @@
    <factor>0.001</factor>
    <step>100</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2611,9 +2611,9 @@
    <factor>0.01</factor>
    <step>10</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
  
@@ -2624,9 +2624,9 @@
    <factor>0.1</factor>
    <step>1</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2637,9 +2637,9 @@
    <factor>0.1</factor>
    <step>1</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2650,9 +2650,9 @@
    <factor>1</factor>
    <step>0.1</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
  
@@ -2663,9 +2663,9 @@
    <factor>10</factor>
    <step>0.01</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
  
@@ -2676,9 +2676,9 @@
    <factor>0.001</factor>
    <step>100</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
  
@@ -2689,9 +2689,9 @@
    <factor>0.01</factor>
    <step>10</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
  
@@ -2702,9 +2702,9 @@
    <factor>0.1</factor>
    <step>1</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
  
@@ -2715,9 +2715,9 @@
    <factor>0.00001</factor>
    <step>10000</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2728,9 +2728,9 @@
    <factor>0.0001</factor>
    <step>1000</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2741,9 +2741,9 @@
    <factor>0.001</factor>
    <step>100</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2754,9 +2754,9 @@
    <factor>0.01</factor>
    <step>10</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2767,9 +2767,9 @@
    <factor>0.1</factor>
    <step>1</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2791,9 +2791,9 @@
    <factor>0.0001</factor>
    <step>1000</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2804,9 +2804,9 @@
    <factor>0.001</factor>
    <step>100</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2817,9 +2817,9 @@
    <factor>0.01</factor>
    <step>10</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2830,9 +2830,9 @@
    <factor>0.1</factor>
    <step>1</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -3315,13 +3315,13 @@
 		<property>/it-autoflight/input/fd1</property>
 		<factor>-40</factor>
 		<axis>
-			<x>0</x>
+			
 			<y>1</y>
-			<z>0</z>
+			
 		</axis>
 		<center>
 			<x-m>-23.7116</x-m>
-			<y-m>0</y-m>
+			
 			<z-m>1.92734</z-m>
 		</center>
 	</animation>
@@ -3334,13 +3334,13 @@
 		<property>autopilot/panel/larm</property>
 		<factor>40</factor>
 		<axis>
-			<x>0</x>
+			
 			<y>-1</y>
-			<z>0</z>
+			
 		</axis>
 		<center>
 			<x-m>-23.7315</x-m>
-			<y-m>0</y-m>
+			
 			<z-m>1.97778</z-m>
 		</center>
 	</animation>
@@ -3350,13 +3350,13 @@
 		<property>autopilot/panel/rarm</property>
 		<factor>40</factor>
 		<axis>
-			<x>0</x>
+			
 			<y>-1</y>
-			<z>0</z>
+			
 		</axis>
 		<center>
 			<x-m>-23.7315</x-m>
-			<y-m>0</y-m>
+			
 			<z-m>1.97778</z-m>
 		</center>
 	</animation>
@@ -3458,8 +3458,8 @@
 			<entry><ind>15</ind><dep>120</dep></entry>
 		</interpolation>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>-
 		<center>
@@ -3512,11 +3512,11 @@
 		<factor>60</factor>
 		<axis>
 			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>-0.1985</y-m>
 			<z-m>1.3484</z-m>
 		</center>
@@ -3529,11 +3529,11 @@
 		<factor>60</factor>
 		<axis>
 			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>-0.1082</y-m>
 			<z-m>1.3484</z-m>
 		</center>
@@ -3545,13 +3545,13 @@
 		<property>instrumentation/wxradar/precip</property>
 		<factor>40</factor>
 		<axis>
-			<x>0</x>
+			
 			<y>-1</y>
-			<z>0</z>
+			
 		</axis>
 		<center>
 			<x-m>-22.7939</x-m>
-			<y-m>0</y-m>
+			
 			<z-m>1.347</z-m>
 		</center>
 	</animation>
@@ -3756,9 +3756,9 @@
 		<property>instrumentation/nd-settings/vor</property>
 		<factor>-0.25</factor>
 		<axis>
-			<x>0</x>
+			
 			<y>1</y>
-			<z>0</z>
+			
 		</axis>
 	</animation>
 	
@@ -3783,9 +3783,9 @@
 		<property>instrumentation/nd-settings/wpt</property>
 		<factor>-0.25</factor>
 		<axis>
-			<x>0</x>
+			
 			<y>1</y>
-			<z>0</z>
+			
 		</axis>
 	</animation>
 	
@@ -3808,9 +3808,9 @@
 		<property>instrumentation/nd-settings/arpt</property>
 		<factor>-0.25</factor>
 		<axis>
-			<x>0</x>
+			
 			<y>1</y>
-			<z>0</z>
+			
 		</axis>
 	</animation>
 
@@ -3825,9 +3825,9 @@
 		</condition>
 		<factor>-0.25</factor>
 		<axis>
-			<x>0</x>
+			
 			<y>1</y>
-			<z>0</z>
+			
 		</axis>
 	</animation>
 
@@ -3863,14 +3863,14 @@
 		<property>controls/fires/fire/extinguish</property>
 		<factor>45</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 		<center>
 			<x-m>-23.0821</x-m>
 			<y-m>-0.0231</y-m>
-			<z-m>0</z-m>
+			
 		</center>
 	</animation>
 	
@@ -3880,14 +3880,14 @@
 		<property>controls/fires/fire[1]/extinguish</property>
 		<factor>-45</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 		<center>
 			<x-m>-23.0821</x-m>
 			<y-m>0.0253</y-m>
-			<z-m>0</z-m>
+			
 		</center>
 	</animation>
 	

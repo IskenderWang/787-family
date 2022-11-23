@@ -170,7 +170,7 @@
 	<text><name>text</name>
 		<offsets>
 			<x-m>-0.085</x-m>
-			<y-m>0</y-m>
+			
 			<z-m>-0.001</z-m>
 			<heading-deg>90</heading-deg>
 		</offsets>
@@ -194,7 +194,7 @@
 	<text><name>text</name>
 		<offsets>
 			<x-m>0.089</x-m>
-			<y-m>0</y-m>
+			
 			<z-m>-0.001</z-m>
 			<heading-deg>90</heading-deg>
 		</offsets>
@@ -874,9 +874,9 @@
     <subtype>textranslate</subtype>
     <factor>-0.3333</factor>
     <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
   </transform>
   <transform>
@@ -885,8 +885,8 @@
     <factor>0.25</factor>
     <axis>
      <x>1</x>
-     <y>0</y>
-     <z>0</z>
+     
+     
    </axis>
   </transform>
  </animation>
@@ -901,9 +901,9 @@
     <subtype>textranslate</subtype>
     <factor>0.0065</factor>
     <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
   </transform>
   <transform>
@@ -912,8 +912,8 @@
     <factor>0.00277</factor>
     <axis>
      <x>1</x>
-     <y>0</y>
-     <z>0</z>
+     
+     
    </axis>
   </transform>
  </animation>
@@ -928,9 +928,9 @@
     <subtype>textranslate</subtype>
     <factor>0.0065</factor>
     <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
   </transform>
   <transform>
@@ -939,8 +939,8 @@
     <factor>0.00277</factor>
     <axis>
      <x>1</x>
-     <y>0</y>
-     <z>0</z>
+     
+     
    </axis>
   </transform>
  </animation>
@@ -953,9 +953,9 @@
     <property>/instrumentation/efb/manual-page</property>
     <factor>1</factor>
     <axis>
-     <x>0</x>
+     
      <y>-1</y>
-     <z>0</z>
+     
    </axis>
 </animation>
 

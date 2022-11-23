@@ -35,11 +35,11 @@
 		<factor>1</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>0.0865</y-m>
 			<z-m>-0.05</z-m>
 		</center>
@@ -549,8 +549,8 @@
 		<object-name>arc</object-name>
 		<property>orientation/heading-magnetic-deg</property>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>-1</z>
 		</axis>
 		<center>
@@ -784,11 +784,11 @@
 		<property>orientation/heading-magnetic-deg</property>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>0.0865</y-m>
 			<z-m>-0.05</z-m>
 		</center>
@@ -801,9 +801,9 @@
    <factor>0.001</factor>
    <step>100</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -814,9 +814,9 @@
    <factor>0.01</factor>
    <step>10</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -827,9 +827,9 @@
    <factor>0.1</factor>
    <step>1</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -842,9 +842,9 @@
    <factor>0.08</factor>
    <step>100</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -855,9 +855,9 @@
    <factor>0.01</factor>
    <step>10</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -868,9 +868,9 @@
    <factor>0.1</factor>
    <step>1</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation> 
 
@@ -881,11 +881,11 @@
 		<property>instrumentation/ndfull/heading-bug</property>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>0.0865</y-m>
 			<z-m>-0.05</z-m>
 		</center>
@@ -924,11 +924,11 @@
 		<property>instrumentation/ndfull/nav1-brg</property>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>0.0865</y-m>
 			<z-m>-0.05</z-m>
 		</center>
@@ -951,11 +951,11 @@
 		<factor>-1</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>0.0865</y-m>
 			<z-m>-0.05</z-m>
 		</center>
@@ -994,11 +994,11 @@
 		<property>instrumentation/ndfull/nav2-brg</property>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>0.0865</y-m>
 			<z-m>-0.05</z-m>
 		</center>
@@ -1021,11 +1021,11 @@
 		<factor>-1</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>0.0865</y-m>
 			<z-m>-0.05</z-m>
 		</center>
@@ -1399,11 +1399,11 @@
 		<property>instrumentation/ndfull/route/wp[1]/bearing-deg</property>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>0.0865</y-m>
 			<z-m>-0.05</z-m>
 		</center>
@@ -1414,11 +1414,11 @@
 		<property>instrumentation/ndfull/route/wp[2]/bearing-deg</property>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>0.0865</y-m>
 			<z-m>-0.05</z-m>
 		</center>
@@ -1429,11 +1429,11 @@
 		<property>instrumentation/ndfull/route/wp[3]/bearing-deg</property>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>0.0865</y-m>
 			<z-m>-0.05</z-m>
 		</center>
@@ -1444,11 +1444,11 @@
 		<property>instrumentation/ndfull/route/wp[4]/bearing-deg</property>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>0.0865</y-m>
 			<z-m>-0.05</z-m>
 		</center>
@@ -1459,11 +1459,11 @@
 		<property>instrumentation/ndfull/route/wp[5]/bearing-deg</property>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>0.0865</y-m>
 			<z-m>-0.05</z-m>
 		</center>
@@ -1474,11 +1474,11 @@
 		<property>instrumentation/ndfull/route/wp[6]/bearing-deg</property>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>0.0865</y-m>
 			<z-m>-0.05</z-m>
 		</center>
@@ -1489,11 +1489,11 @@
 		<property>instrumentation/ndfull/route/wp[7]/bearing-deg</property>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>0.0865</y-m>
 			<z-m>-0.05</z-m>
 		</center>
@@ -1504,11 +1504,11 @@
 		<property>instrumentation/ndfull/route/wp[8]/bearing-deg</property>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>0.0865</y-m>
 			<z-m>-0.05</z-m>
 		</center>
@@ -1519,11 +1519,11 @@
 		<property>instrumentation/ndfull/route/wp[9]/bearing-deg</property>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>0.0865</y-m>
 			<z-m>-0.05</z-m>
 		</center>
@@ -1534,11 +1534,11 @@
 		<property>instrumentation/ndfull/route/wp[10]/bearing-deg</property>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>0.0865</y-m>
 			<z-m>-0.05</z-m>
 		</center>
@@ -16036,11 +16036,11 @@
 		<factor>-1</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>0.0865</y-m>
 			<z-m>-0.05</z-m>
 		</center>

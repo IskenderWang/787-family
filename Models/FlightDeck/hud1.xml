@@ -141,13 +141,13 @@
 	<factor>-120</factor>
 	<center>
 		<x-m>-0.01</x-m>
-		<y-m>0</y-m>
+		
 		<z-m>0.135</z-m>
 	</center>
 	<axis>
-		<x>0</x>
+		
 		<y>1</y>
-		<z>0</z>
+		
 	</axis>
 </animation>
 
@@ -622,9 +622,9 @@
      <z>0.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -637,8 +637,8 @@
    <factor>0.019532</factor>
    <axis>
      <x>1</x>
-     <y>0</y>
-     <z>0</z>
+     
+     
    </axis>
    </transform>
    <transform>
@@ -648,8 +648,8 @@
    <step>40</step>
    <axis>
      <x>1</x>
-     <y>0</y>
-     <z>0</z>
+     
+     
    </axis>
    </transform>
    <transform>
@@ -658,9 +658,9 @@
    <factor>-0.0009766</factor>
    <step>40</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
    </transform>
  </animation>
@@ -675,9 +675,9 @@
      <z>0.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -692,9 +692,9 @@
      <z>-1.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -708,9 +708,9 @@
      <z>0.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -725,9 +725,9 @@
      <z>-1.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -741,9 +741,9 @@
      <z>0.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -758,9 +758,9 @@
      <z>-1.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -774,9 +774,9 @@
      <z>0.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -791,9 +791,9 @@
      <z>-1.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -807,9 +807,9 @@
      <z>0.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -824,9 +824,9 @@
      <z>-1.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -840,9 +840,9 @@
      <z>0.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -857,9 +857,9 @@
      <z>-1.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -873,9 +873,9 @@
      <z>0.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -890,9 +890,9 @@
      <z>-1.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -906,9 +906,9 @@
      <z>0.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -923,9 +923,9 @@
      <z>-1.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -939,9 +939,9 @@
      <z>0.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -956,9 +956,9 @@
      <z>-1.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -984,9 +984,9 @@
      <z>0.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation-->
 
@@ -1001,9 +1001,9 @@
      <z>1.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
  
@@ -1017,9 +1017,9 @@
 		 <z>0.0</z>
 	 </axis>
 	 <center>
-		 <x-m>0</x-m>
-		 <y-m>0</y-m>
-		 <z-m>0</z-m>
+		 
+		 
+		 
 	 </center>
  </animation>
 
@@ -1034,9 +1034,9 @@
      <z>-1.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -1051,9 +1051,9 @@
      <z>0.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -1092,9 +1092,9 @@
      </entry>
    </interpolation>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1106,9 +1106,9 @@
    <step>100</step>
    <scroll>1</scroll>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1120,9 +1120,9 @@
    <step>10</step>
    <scroll>1</scroll>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1132,9 +1132,9 @@
    <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
    <factor>0.1</factor>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1249,9 +1249,9 @@
      </entry>
 </interpolation>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1344,9 +1344,9 @@
       </entry>
      </interpolation>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
    </transform>
    <transform>
@@ -1436,8 +1436,8 @@
      </interpolation>
     <axis>
      <x>1</x>
-     <y>0</y>
-     <z>0</z>
+     
+     
     </axis>
    </transform>
  </animation>
@@ -1450,9 +1450,9 @@
      <subtype>textranslate</subtype>
    <factor>0.000147</factor>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
    </transform>
    <transform>
@@ -1462,9 +1462,9 @@
    <offset>0.000147</offset>
    <step>1000</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
    </transform>
    <transform>
@@ -1510,8 +1510,8 @@
      </interpolation>
    <axis>
      <x>1</x>
-     <y>0</y>
-     <z>0</z>
+     
+     
    </axis>
    </transform>
    <transform>
@@ -1628,9 +1628,9 @@
       </entry>
      </interpolation>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
    </transform>
  </animation>
@@ -1641,9 +1641,9 @@
    <property>instrumentation/altimeter/indicated-altitude-ft</property>
    <factor>0.01</factor>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1655,9 +1655,9 @@
    <step>100</step>
    <scroll>10</scroll>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1669,9 +1669,9 @@
    <step>1000</step>
    <scroll>10</scroll>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1683,9 +1683,9 @@
    <step>10000</step>
    <scroll>10</scroll>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1696,9 +1696,9 @@
    <factor>0.00001</factor>
    <step>10000</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1709,9 +1709,9 @@
    <factor>0.0001</factor>
    <step>1000</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1722,9 +1722,9 @@
    <factor>0.001</factor>
    <step>100</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1735,9 +1735,9 @@
    <factor>0.01</factor>
    <step>10</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1748,9 +1748,9 @@
    <factor>0.1</factor>
    <step>1</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1760,9 +1760,9 @@
    <property>instrumentation/efis/baro-mode</property>
    <factor>0.059</factor>
    <axis>
-     <x>0</x>
+     
      <y>-1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1773,9 +1773,9 @@
    <factor>0.0001</factor>
    <step>1000</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1786,9 +1786,9 @@
    <factor>0.001</factor>
    <step>100</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1799,9 +1799,9 @@
    <factor>0.01</factor>
    <step>10</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1812,9 +1812,9 @@
    <factor>0.1</factor>
    <step>1</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1825,9 +1825,9 @@
    <factor>0.001</factor>
    <step>100</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1838,9 +1838,9 @@
    <factor>0.01</factor>
    <step>10</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1851,9 +1851,9 @@
    <factor>0.1</factor>
    <step>1</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1864,9 +1864,9 @@
    <factor>0.001</factor>
    <step>100</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1877,9 +1877,9 @@
    <factor>0.01</factor>
    <step>10</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1890,9 +1890,9 @@
    <factor>0.1</factor>
    <step>1</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1903,9 +1903,9 @@
    <factor>1.0</factor>
    <step>0.1</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1916,9 +1916,9 @@
    <factor>10.0</factor>
    <step>0.01</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1929,9 +1929,9 @@
    <factor>100.0</factor>
    <step>0.001</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1976,9 +1976,9 @@
    <factor>0.001</factor>
    <step>100.0</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -1989,9 +1989,9 @@
    <factor>0.01</factor>
    <step>10.0</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2002,9 +2002,9 @@
    <factor>0.1</factor>
    <step>1.0</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2015,9 +2015,9 @@
    <factor>1.0</factor>
    <step>0.1</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2028,9 +2028,9 @@
    <factor>0.001</factor>
    <step>100.0</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2041,9 +2041,9 @@
    <factor>0.01</factor>
    <step>10.0</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2054,9 +2054,9 @@
    <factor>0.1</factor>
    <step>1.0</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2067,9 +2067,9 @@
    <factor>1.0</factor>
    <step>0.1</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2084,8 +2084,8 @@
      <z>0.0</z>
    </center>
    <axis>
-     <x>0</x>
-     <y>0</y>
+     
+     
      <z>-1</z>
    </axis>
  </animation>
@@ -2095,14 +2095,14 @@
    <object-name>nav</object-name>
    <property>orientation/heading-deg[0]</property>
    <center>
-     <x-m>0</x-m>
-     <y>0</y>
+     
+     
      <z-m>-0.065</z-m>
    </center>
    <axis>
      <x>1</x>
-     <y>0</y>
-     <z>0</z>
+     
+     
    </axis>
  </animation>
 
@@ -2111,14 +2111,14 @@
    <object-name>nav</object-name>
    <property>instrumentation/nav/radials/target-radial-deg[0]</property>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
+     
+     
      <z-m>-0.065</z-m>
    </center>
    <axis>
      <x>-1</x>
-     <y>0</y>
-     <z>0</z>
+     
+     
    </axis>
  </animation>
 
@@ -2127,14 +2127,14 @@
    <object-name>nav1</object-name>
    <property>orientation/heading-deg[0]</property>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
+     
+     
      <z-m>-0.065</z-m>
    </center>
    <axis>
      <x>1</x>
-     <y>0</y>
-     <z>0</z>
+     
+     
    </axis>
  </animation>
 
@@ -2143,14 +2143,14 @@
    <object-name>nav1</object-name>
    <property>instrumentation/nav/radials/target-radial-deg[0]</property>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
+     
+     
      <z-m>-0.065</z-m>
    </center>
    <axis>
      <x>-1</x>
-     <y>0</y>
-     <z>0</z>
+     
+     
    </axis>
  </animation>
 
@@ -2159,14 +2159,14 @@
    <object-name>nav1off</object-name>
    <property>orientation/heading-deg[0]</property>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
+     
+     
      <z-m>-0.065</z-m>
    </center>
    <axis>
      <x>1</x>
-     <y>0</y>
-     <z>0</z>
+     
+     
    </axis>
  </animation>
 
@@ -2175,14 +2175,14 @@
    <object-name>nav1off</object-name>
    <property>instrumentation/nav/radials/target-radial-deg[0]</property>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
+     
+     
      <z-m>-0.065</z-m>
    </center>
    <axis>
      <x>-1</x>
-     <y>0</y>
-     <z>0</z>
+     
+     
    </axis>
  </animation>
 
@@ -2205,9 +2205,9 @@
      </entry>
 </interpolation> 
   <axis>
-   <x>0</x>
+   
    <y>1</y>
-   <z>0</z>
+   
   </axis>
  </animation>
 
@@ -2238,8 +2238,8 @@
      </entry>
    </interpolation>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
+     
+     
      <z-m>-0.065</z-m>
    </center>
    <axis>
@@ -2259,9 +2259,9 @@
      <z>0.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -2296,9 +2296,9 @@
      </entry>
    </interpolation>
 	<axis> 
-	<x>0</x>
+	
 	<y>1</y>
-	<z>0</z>
+	
 	</axis>
 </animation>
 
@@ -2307,8 +2307,8 @@
    <object-name>vector.002</object-name>
    <property>autopilot/settings/true-heading-deg[0]</property>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
+     
+     
      <z-m>-0.065</z-m>
    </center>
    <axis>
@@ -2323,8 +2323,8 @@
    <object-name>vector.002</object-name>
    <property>orientation/heading-deg[0]</property>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
+     
+     
      <z-m>-0.065</z-m>
    </center>
    <axis>
@@ -2385,9 +2385,9 @@
      </entry>
    </interpolation>
 	<axis> 
-	<x>0</x>
+	
 	<y>-1</y>
-	<z>0</z>
+	
 	</axis>
 </animation>
 
@@ -2401,9 +2401,9 @@
      <z>0.0</z>
    </axis>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
  </animation>
 
@@ -2459,8 +2459,8 @@
      </entry>
 </interpolation>
   <axis>
-   <x>0</x>
-   <y>0</y>
+   
+   
    <z>1</z>
   </axis>
  </animation>
@@ -2472,9 +2472,9 @@
    <factor>0.0001</factor>
    <step>1000.0</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2485,9 +2485,9 @@
    <factor>-0.0001</factor>
    <step>1000.0</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2498,9 +2498,9 @@
    <factor>0.001</factor>
    <step>100.0</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2511,9 +2511,9 @@
    <factor>-0.001</factor>
    <step>100.0</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2524,9 +2524,9 @@
    <factor>0.01</factor>
    <step>10.0</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -2537,9 +2537,9 @@
    <factor>-0.01</factor>
    <step>10.0</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 

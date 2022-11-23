@@ -66,7 +66,7 @@
 		<weight unit="LBS">340</weight>
 		<location name="POINTMASS" unit="IN">
 			<x>-898.32</x>
-			<y>0</y>
+			
 			<z>51.22</z>
 		</location>
 	</pointmass>
@@ -78,7 +78,7 @@
 		<weight unit="LBS">7200</weight>
 		<location name="POINTMASS" unit="IN">
 			<x>-591</x>
-			<y>0</y>
+			
 			<z>78.8</z>
 		</location>
 	</pointmass>
@@ -89,7 +89,7 @@
 		<weight unit="LBS">10800</weight>
 		<location name="POINTMASS" unit="IN">
 			<x>-216.7</x>
-			<y>0</y>
+			
 			<z>78.8</z>
 		</location>
 	</pointmass>
@@ -100,7 +100,7 @@
 		<weight unit="LBS">36000</weight>
 		<location name="POINTMASS" unit="IN">
 			<x>157.6</x>
-			<y>0</y>
+			
 			<z>78.8</z>
 		</location>
 	</pointmass>
@@ -112,7 +112,7 @@
 		<weight unit="LBS">10000</weight>
 		<location name="POINTMASS" unit="IN">
 			<x>-394</x>
-			<y>0</y>
+			
 			<z>-39.4</z>
 		</location>
 	</pointmass>
@@ -123,7 +123,7 @@
 		<weight unit="LBS">5000</weight>
 		<location name="POINTMASS" unit="IN">
 			<x>157.6</x>
-			<y>0</y>
+			
 			<z>-39.4</z>
 		</location>
 	</pointmass>
@@ -1054,19 +1054,19 @@
 		<force name="pushback" frame="BODY">
 			<location unit="IN">
 				<x>-613.40986</x>
-				<y>0</y>
+				
 				<z>-100</z>
 			</location>
 			<direction>
 				<x>1</x>
-				<y>0</y>
-				<z>0</z>
+				
+				
 			</direction>
 		</force>
 		<force name="tractor" frame="BODY">
 		  <location unit="IN">
 		    <x>-613.40986</x>
-		    <y>0</y>
+		    
 		    <z>-100</z>
 		  </location>
 		  <direction>

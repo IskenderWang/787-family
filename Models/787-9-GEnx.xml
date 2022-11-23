@@ -107,7 +107,7 @@
         <path>Autopush/Goldhofert.xml</path>
         <offsets>
             <x-m>-25.54268</x-m>
-            <y-m>0</y-m>
+            
             <z-m>-3.55</z-m>
         </offsets>
     </model>
@@ -119,7 +119,7 @@
         <path>FlightDeck/b787.flightdeck.xml</path>
         <offsets>
             <x-m>-2.982308</x-m>
-            <y-m>0</y-m>
+            
             <z-m>0.09158</z-m>
         </offsets>
     </model>
@@ -170,7 +170,7 @@
         </center>
         <axis>
             <x>1</x>
-            <y>0</y>
+            
             <z>-0.13</z>
         </axis>
     </animation>
@@ -212,7 +212,7 @@
         </center>
         <axis>
             <x>1</x>
-            <y>0</y>
+            
             <z>-0.13</z>
         </axis>
     </animation>
@@ -254,7 +254,7 @@
         </center>
         <axis>
             <x>-1</x>
-            <y>0</y>
+            
             <z>0.13</z>
         </axis>
     </animation>
@@ -296,7 +296,7 @@
         </center>
         <axis>
             <x>-1</x>
-            <y>0</y>
+            
             <z>0.13</z>
         </axis>
     </animation>
@@ -330,7 +330,7 @@
         </center>
         <axis>
             <x>1</x>
-            <y>0</y>
+            
             <z>-0.2</z>
         </axis>
     </animation>
@@ -364,7 +364,7 @@
         </center>
         <axis>
             <x>1</x>
-            <y>0</y>
+            
             <z>-0.2</z>
         </axis>
     </animation>
@@ -398,7 +398,7 @@
         </center>
         <axis>
             <x>-1</x>
-            <y>0</y>
+            
             <z>0.2</z>
         </axis>
     </animation>
@@ -432,7 +432,7 @@
         </center>
         <axis>
             <x>-1</x>
-            <y>0</y>
+            
             <z>0.2</z>
         </axis>
     </animation>
@@ -599,13 +599,13 @@
         <offset-deg>0</offset-deg>
         <center>
             <x-m>25.111</x-m>
-            <y-m>0</y-m>
+            
             <z-m>2</z-m>
         </center>
         <axis>
-            <x>0</x>
+            
             <y>1</y>
-            <z>0</z>
+            
         </axis>
     </animation>
 
@@ -659,7 +659,7 @@
         </center>
         <axis>
             <x>1.0</x>
-            <y>0</y>
+            
             <z>2.0</z>
         </axis>
     </animation>
@@ -678,8 +678,8 @@
             <z-m>-1.164</z-m>
         </center>
         <axis>
-            <x>0</x>
-            <y>0</y>
+            
+            
             <z>1</z>
         </axis>
     </animation>
@@ -689,7 +689,7 @@
         <name>tyre-smoke-n</name>
         <offsets>
             <x-m>-20.56</x-m>
-            <y-m>0</y-m>
+            
             <z-m>-3.2</z-m>
         </offsets>
     </model>
@@ -699,7 +699,7 @@
         <name>tyre-smoke-n</name>
         <offsets>
             <x-m>-20.56</x-m>
-            <y-m>0</y-m>
+            
             <z-m>-3.2</z-m>
         </offsets>
     </model>
@@ -732,9 +732,9 @@
             <z-m>-1.063</z-m>
         </center>
         <axis>
-            <x>0</x>
+            
             <y>1</y>
-            <z>0</z>
+            
         </axis>
     </animation>
 
@@ -755,8 +755,8 @@
             </entry>
         </interpolation>
         <axis>
-            <x>0</x>
-            <y>0</y>
+            
+            
             <z>1</z>
         </axis>
     </animation>
@@ -769,13 +769,13 @@
         <property>/gear/gear[0]/rollspeed-ms</property>
         <factor>10</factor>
         <axis>
-            <x>0</x>
+            
             <y>-1</y>
-            <z>0</z>
+            
         </axis>
         <center>
             <x-m>-23.83516</x-m>
-            <y-m>0</y-m>
+            
             <z-m>-3.26425</z-m>
         </center>
     </animation>

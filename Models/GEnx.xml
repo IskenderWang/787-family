@@ -114,8 +114,8 @@
   </center>
   <axis>
    <x>1</x>
-   <y>0</y>
-   <z>0</z>
+   
+   
   </axis>
 </animation>
 
@@ -133,8 +133,8 @@
   </center>
   <axis>
    <x>1</x>
-   <y>0</y>
-   <z>0</z>
+   
+   
   </axis>
 </animation>
 
@@ -195,7 +195,7 @@
   <step>70</step>
   <axis>
    <x>1</x>
-   <y>0</y>
+   
   </axis>
  </animation>
 
@@ -208,7 +208,7 @@
   <step>70</step>
   <axis>
    <x>1</x>
-   <y>0</y>
+   
   </axis>
  </animation>
 
@@ -239,7 +239,7 @@
         <axis>
             <x>0.704755</x>
             <y>0.0</y>
-            <z>0</z>
+            
         </axis>
     </animation>
 
@@ -252,7 +252,7 @@
         <axis>
             <x>0.704755</x>
             <y>0.0</y>
-            <z>0</z>
+            
         </axis>
     </animation>
 
