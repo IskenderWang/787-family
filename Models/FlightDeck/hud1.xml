@@ -617,9 +617,9 @@
    <object-name>headingribbon</object-name>
    <property>orientation/roll-deg[0]</property>
    <axis>
-     <x>1.0</x>
-     <y>0.0</y>
-     <z>0.0</z>
+     <x>1</x>
+     
+     
    </axis>
    <center>
      
@@ -670,9 +670,9 @@
    <object-name>ptc20</object-name>
    <property>orientation/roll-deg[0]</property>
    <axis>
-     <x>1.0</x>
-     <y>0.0</y>
-     <z>0.0</z>
+     <x>1</x>
+     
+     
    </axis>
    <center>
      
@@ -687,8 +687,8 @@
    <property>orientation/pitch-deg[0]</property>
 <factor>0.0105</factor>
 <axis>
-     <x>0.0</x>
-     <y>0.0</y>
+     
+     
      <z>-1.0</z>
    </axis>
    <center>
@@ -703,9 +703,9 @@
    <object-name>ptc15</object-name>
    <property>orientation/roll-deg[0]</property>
    <axis>
-     <x>1.0</x>
-     <y>0.0</y>
-     <z>0.0</z>
+     <x>1</x>
+     
+     
    </axis>
    <center>
      
@@ -720,8 +720,8 @@
    <property>orientation/pitch-deg[0]</property>
 <factor>0.0105</factor>
 <axis>
-     <x>0.0</x>
-     <y>0.0</y>
+     
+     
      <z>-1.0</z>
    </axis>
    <center>
@@ -736,9 +736,9 @@
    <object-name>ptc10</object-name>
    <property>orientation/roll-deg[0]</property>
    <axis>
-     <x>1.0</x>
-     <y>0.0</y>
-     <z>0.0</z>
+     <x>1</x>
+     
+     
    </axis>
    <center>
      
@@ -753,8 +753,8 @@
    <property>orientation/pitch-deg[0]</property>
 <factor>0.0105</factor>
 <axis>
-     <x>0.0</x>
-     <y>0.0</y>
+     
+     
      <z>-1.0</z>
    </axis>
    <center>
@@ -769,9 +769,9 @@
    <object-name>ptc05</object-name>
    <property>orientation/roll-deg[0]</property>
    <axis>
-     <x>1.0</x>
-     <y>0.0</y>
-     <z>0.0</z>
+     <x>1</x>
+     
+     
    </axis>
    <center>
      
@@ -786,8 +786,8 @@
    <property>orientation/pitch-deg[0]</property>
 <factor>0.0105</factor>
 <axis>
-     <x>0.0</x>
-     <y>0.0</y>
+     
+     
      <z>-1.0</z>
    </axis>
    <center>
@@ -802,9 +802,9 @@
    <object-name>ptc00</object-name>
    <property>orientation/roll-deg[0]</property>
    <axis>
-     <x>1.0</x>
-     <y>0.0</y>
-     <z>0.0</z>
+     <x>1</x>
+     
+     
    </axis>
    <center>
      
@@ -819,8 +819,8 @@
    <property>orientation/pitch-deg[0]</property>
 <factor>0.0105</factor>
 <axis>
-     <x>0.0</x>
-     <y>0.0</y>
+     
+     
      <z>-1.0</z>
    </axis>
    <center>
@@ -835,9 +835,9 @@
    <object-name>ptc-05</object-name>
    <property>orientation/roll-deg[0]</property>
    <axis>
-     <x>1.0</x>
-     <y>0.0</y>
-     <z>0.0</z>
+     <x>1</x>
+     
+     
    </axis>
    <center>
      
@@ -852,8 +852,8 @@
    <property>orientation/pitch-deg[0]</property>
 <factor>0.0105</factor>
 <axis>
-     <x>0.0</x>
-     <y>0.0</y>
+     
+     
      <z>-1.0</z>
    </axis>
    <center>
@@ -868,9 +868,9 @@
    <object-name>ptc-10</object-name>
    <property>orientation/roll-deg[0]</property>
    <axis>
-     <x>1.0</x>
-     <y>0.0</y>
-     <z>0.0</z>
+     <x>1</x>
+     
+     
    </axis>
    <center>
      
@@ -885,8 +885,8 @@
    <property>orientation/pitch-deg[0]</property>
 <factor>0.0105</factor>
 <axis>
-     <x>0.0</x>
-     <y>0.0</y>
+     
+     
      <z>-1.0</z>
    </axis>
    <center>
@@ -901,9 +901,9 @@
    <object-name>ptc-15</object-name>
    <property>orientation/roll-deg[0]</property>
    <axis>
-     <x>1.0</x>
-     <y>0.0</y>
-     <z>0.0</z>
+     <x>1</x>
+     
+     
    </axis>
    <center>
      
@@ -918,8 +918,8 @@
    <property>orientation/pitch-deg[0]</property>
 <factor>0.0105</factor>
 <axis>
-     <x>0.0</x>
-     <y>0.0</y>
+     
+     
      <z>-1.0</z>
    </axis>
    <center>
@@ -934,9 +934,9 @@
    <object-name>ptc-20</object-name>
    <property>orientation/roll-deg[0]</property>
    <axis>
-     <x>1.0</x>
-     <y>0.0</y>
-     <z>0.0</z>
+     <x>1</x>
+     
+     
    </axis>
    <center>
      
@@ -951,8 +951,8 @@
    <property>orientation/pitch-deg[0]</property>
 <factor>0.0105</factor>
 <axis>
-     <x>0.0</x>
-     <y>0.0</y>
+     
+     
      <z>-1.0</z>
    </axis>
    <center>
@@ -968,9 +968,9 @@
    <property>orientation/pitch-deg</property>
    <factor>0.0014</factor>
     <axis>
-     <x>0.0</x>
-     <y>0.0</y>
-     <z>1.0</z>
+     
+     
+     <z>1</z>
    </axis>
  </animation>
 
@@ -979,9 +979,9 @@
    <object-name>FDbars</object-name>
    <property>orientation/roll-deg</property>
    <axis>
-     <x>1.0</x>
-     <y>0.0</y>
-     <z>0.0</z>
+     <x>1</x>
+     
+     
    </axis>
    <center>
      
@@ -996,9 +996,9 @@
    <property>instrumentation/flightdirector/vbar-pitch</property>
 <factor>0.00104</factor>
 <axis>
-     <x>0.0</x>
-     <y>0.0</y>
-     <z>1.0</z>
+     
+     
+     <z>1</z>
    </axis>
    <center>
      
@@ -1012,9 +1012,9 @@
 	 <object-name>FDbars</object-name>
 	 <property>instrumentation/flightdirector/vbar-roll</property>
 	 <axis>
-		 <x>1.0</x>
-		 <y>0.0</y>
-		 <z>0.0</z>
+		 <x>1</x>
+		 
+		 
 	 </axis>
 	 <center>
 		 
@@ -1029,8 +1029,8 @@
    <property>orientation/alpha-deg[0]</property>
 <factor>0.0105</factor>
 <axis>
-     <x>0.0</x>
-     <y>0.0</y>
+     
+     
      <z>-1.0</z>
    </axis>
    <center>
@@ -1046,9 +1046,9 @@
    <property>orientation/side-slip-deg[0]</property>
 <factor>0.0105</factor>
 <axis>
-     <x>0.0</x>
+     
      <y>-1.0</y>
-     <z>0.0</z>
+     
    </axis>
    <center>
      
@@ -1950,9 +1950,9 @@
     </entry>
   </interpolation>
     <axis>
-     <x>0.0</x>
-     <y>0.0</y>
-     <z>1.0</z>
+     
+     
+     <z>1</z>
    </axis>
  </animation>
 
@@ -2081,7 +2081,7 @@
    <center>
      <x>0.748</x>
      <y>0.25</y>
-     <z>0.0</z>
+     
    </center>
    <axis>
      
@@ -2244,8 +2244,8 @@
    </center>
    <axis>
      <x>-1.0</x>
-     <y>0.0</y>
-     <z>0.0</z>
+     
+     
    </axis>
  </animation>
 
@@ -2254,9 +2254,9 @@
    <object-name>vector.001</object-name>
    <property>orientation/roll-deg[0]</property>
    <axis>
-     <x>1.0</x>
-     <y>0.0</y>
-     <z>0.0</z>
+     <x>1</x>
+     
+     
    </axis>
    <center>
      
@@ -2313,8 +2313,8 @@
    </center>
    <axis>
      <x>-1.0</x>
-     <y>0.0</y>
-     <z>0.0</z>
+     
+     
    </axis>
  </animation>
 
@@ -2328,9 +2328,9 @@
      <z-m>-0.065</z-m>
    </center>
    <axis>
-     <x>1.0</x>
-     <y>0.0</y>
-     <z>0.0</z>
+     <x>1</x>
+     
+     
    </axis>
  </animation>
 
@@ -2396,9 +2396,9 @@
    <object-name>pfdhdg.001</object-name>
    <property>orientation/roll-deg[0]</property>
    <axis>
-     <x>1.0</x>
-     <y>0.0</y>
-     <z>0.0</z>
+     <x>1</x>
+     
+     
    </axis>
    <center>
      
@@ -2434,9 +2434,9 @@
      </entry>
    </interpolation>
    <axis>
-     <x>0.0</x>
-     <y>1.0</y>
-     <z>0.0</z>
+     
+     <y>1</y>
+     
    </axis>
  </animation>
 

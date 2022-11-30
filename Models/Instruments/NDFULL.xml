@@ -940,7 +940,7 @@
    		<property>instrumentation/ndfull/vor1-dist</property>
    		<factor>0.005</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -1010,7 +1010,7 @@
    		<property>instrumentation/ndfull/vor2-dist</property>
    		<factor>0.005</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -1054,7 +1054,7 @@
    		<property>instrumentation/ndfull/route/wp[1]/xoffset</property>
    		<factor>0.001</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -1065,7 +1065,7 @@
    		<property>instrumentation/ndfull/route/wp[1]/yoffset</property>
    		<factor>0.001</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -1090,7 +1090,7 @@
    		<property>instrumentation/ndfull/route/wp[2]/xoffset</property>
    		<factor>0.001</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -1101,7 +1101,7 @@
    		<property>instrumentation/ndfull/route/wp[2]/yoffset</property>
    		<factor>0.001</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -1126,7 +1126,7 @@
    		<property>instrumentation/ndfull/route/wp[3]/xoffset</property>
    		<factor>0.001</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -1137,7 +1137,7 @@
    		<property>instrumentation/ndfull/route/wp[3]/yoffset</property>
    		<factor>0.001</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -1162,7 +1162,7 @@
    		<property>instrumentation/ndfull/route/wp[4]/xoffset</property>
    		<factor>0.001</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -1173,7 +1173,7 @@
    		<property>instrumentation/ndfull/route/wp[4]/yoffset</property>
    		<factor>0.001</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -1198,7 +1198,7 @@
    		<property>instrumentation/ndfull/route/wp[5]/xoffset</property>
    		<factor>0.001</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -1209,7 +1209,7 @@
    		<property>instrumentation/ndfull/route/wp[5]/yoffset</property>
    		<factor>0.001</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -1234,7 +1234,7 @@
    		<property>instrumentation/ndfull/route/wp[6]/xoffset</property>
    		<factor>0.001</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -1245,7 +1245,7 @@
    		<property>instrumentation/ndfull/route/wp[6]/yoffset</property>
    		<factor>0.001</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -1270,7 +1270,7 @@
    		<property>instrumentation/ndfull/route/wp[7]/xoffset</property>
    		<factor>0.001</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -1281,7 +1281,7 @@
    		<property>instrumentation/ndfull/route/wp[7]/yoffset</property>
    		<factor>0.001</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -1306,7 +1306,7 @@
    		<property>instrumentation/ndfull/route/wp[8]/xoffset</property>
    		<factor>0.001</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -1317,7 +1317,7 @@
    		<property>instrumentation/ndfull/route/wp[8]/yoffset</property>
    		<factor>0.001</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -1342,7 +1342,7 @@
    		<property>instrumentation/ndfull/route/wp[9]/xoffset</property>
    		<factor>0.001</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -1353,7 +1353,7 @@
    		<property>instrumentation/ndfull/route/wp[9]/yoffset</property>
    		<factor>0.001</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -1377,7 +1377,7 @@
    		<property>instrumentation/ndfull/route/wp[10]/xoffset</property>
    		<factor>0.001</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -1387,7 +1387,7 @@
    		<property>instrumentation/ndfull/route/wp[10]/yoffset</property>
    		<factor>0.001</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -1550,7 +1550,7 @@
    	<property>instrumentation/ndfull/route/wp[1]/line-length</property>
    	<factor>0.0015</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1561,7 +1561,7 @@
    	<property>instrumentation/ndfull/route/wp[2]/line-length</property>
    	<factor>0.0015</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1572,7 +1572,7 @@
    	<property>instrumentation/ndfull/route/wp[3]/line-length</property>
    	<factor>0.0015</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1583,7 +1583,7 @@
    	<property>instrumentation/ndfull/route/wp[4]/line-length</property>
    	<factor>0.0015</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1594,7 +1594,7 @@
    	<property>instrumentation/ndfull/route/wp[5]/line-length</property>
    	<factor>0.0015</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1605,7 +1605,7 @@
    	<property>instrumentation/ndfull/route/wp[6]/line-length</property>
    	<factor>0.0015</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1616,7 +1616,7 @@
    	<property>instrumentation/ndfull/route/wp[7]/line-length</property>
    	<factor>0.0015</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1627,7 +1627,7 @@
    	<property>instrumentation/ndfull/route/wp[8]/line-length</property>
    	<factor>0.0015</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1638,7 +1638,7 @@
    	<property>instrumentation/ndfull/route/wp[9]/line-length</property>
    	<factor>0.0015</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1649,7 +1649,7 @@
    	<property>instrumentation/ndfull/route/wp[10]/line-length</property>
    	<factor>0.0015</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1877,7 +1877,7 @@
    		<property>instrumentation/mptcas/mp[0]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -1890,7 +1890,7 @@
    		<property>instrumentation/mptcas/mp[0]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -2113,7 +2113,7 @@
    		<property>instrumentation/mptcas/mp[1]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -2126,7 +2126,7 @@
    		<property>instrumentation/mptcas/mp[1]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -2349,7 +2349,7 @@
    		<property>instrumentation/mptcas/mp[2]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -2362,7 +2362,7 @@
    		<property>instrumentation/mptcas/mp[2]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -2585,7 +2585,7 @@
    		<property>instrumentation/mptcas/mp[3]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -2598,7 +2598,7 @@
    		<property>instrumentation/mptcas/mp[3]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -2821,7 +2821,7 @@
    		<property>instrumentation/mptcas/mp[4]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -2834,7 +2834,7 @@
    		<property>instrumentation/mptcas/mp[4]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -3057,7 +3057,7 @@
    		<property>instrumentation/mptcas/mp[5]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -3070,7 +3070,7 @@
    		<property>instrumentation/mptcas/mp[5]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -3293,7 +3293,7 @@
    		<property>instrumentation/mptcas/mp[6]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -3306,7 +3306,7 @@
    		<property>instrumentation/mptcas/mp[6]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -3529,7 +3529,7 @@
    		<property>instrumentation/mptcas/mp[7]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -3542,7 +3542,7 @@
    		<property>instrumentation/mptcas/mp[7]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -3765,7 +3765,7 @@
    		<property>instrumentation/mptcas/mp[8]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -3778,7 +3778,7 @@
    		<property>instrumentation/mptcas/mp[8]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -4001,7 +4001,7 @@
    		<property>instrumentation/mptcas/mp[9]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -4014,7 +4014,7 @@
    		<property>instrumentation/mptcas/mp[9]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -4237,7 +4237,7 @@
    		<property>instrumentation/mptcas/mp[10]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -4250,7 +4250,7 @@
    		<property>instrumentation/mptcas/mp[10]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -4473,7 +4473,7 @@
    		<property>instrumentation/mptcas/mp[11]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -4486,7 +4486,7 @@
    		<property>instrumentation/mptcas/mp[11]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -4709,7 +4709,7 @@
    		<property>instrumentation/mptcas/mp[12]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -4722,7 +4722,7 @@
    		<property>instrumentation/mptcas/mp[12]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -4945,7 +4945,7 @@
    		<property>instrumentation/mptcas/mp[13]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -4958,7 +4958,7 @@
    		<property>instrumentation/mptcas/mp[13]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -5181,7 +5181,7 @@
    		<property>instrumentation/mptcas/mp[14]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -5194,7 +5194,7 @@
    		<property>instrumentation/mptcas/mp[14]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -5417,7 +5417,7 @@
    		<property>instrumentation/mptcas/mp[15]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -5430,7 +5430,7 @@
    		<property>instrumentation/mptcas/mp[15]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -5653,7 +5653,7 @@
    		<property>instrumentation/mptcas/mp[16]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -5666,7 +5666,7 @@
    		<property>instrumentation/mptcas/mp[16]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -5889,7 +5889,7 @@
    		<property>instrumentation/mptcas/mp[17]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -5902,7 +5902,7 @@
    		<property>instrumentation/mptcas/mp[17]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -6125,7 +6125,7 @@
    		<property>instrumentation/mptcas/mp[18]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -6138,7 +6138,7 @@
    		<property>instrumentation/mptcas/mp[18]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -6361,7 +6361,7 @@
    		<property>instrumentation/mptcas/mp[19]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -6374,7 +6374,7 @@
    		<property>instrumentation/mptcas/mp[19]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -6597,7 +6597,7 @@
    		<property>instrumentation/mptcas/mp[20]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -6610,7 +6610,7 @@
    		<property>instrumentation/mptcas/mp[20]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -6833,7 +6833,7 @@
    		<property>instrumentation/mptcas/mp[21]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -6846,7 +6846,7 @@
    		<property>instrumentation/mptcas/mp[21]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -7069,7 +7069,7 @@
    		<property>instrumentation/mptcas/mp[22]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -7082,7 +7082,7 @@
    		<property>instrumentation/mptcas/mp[22]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -7305,7 +7305,7 @@
    		<property>instrumentation/mptcas/mp[23]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -7318,7 +7318,7 @@
    		<property>instrumentation/mptcas/mp[23]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -7541,7 +7541,7 @@
    		<property>instrumentation/mptcas/mp[24]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -7554,7 +7554,7 @@
    		<property>instrumentation/mptcas/mp[24]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -7777,7 +7777,7 @@
    		<property>instrumentation/mptcas/mp[25]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -7790,7 +7790,7 @@
    		<property>instrumentation/mptcas/mp[25]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -8013,7 +8013,7 @@
    		<property>instrumentation/mptcas/mp[26]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -8026,7 +8026,7 @@
    		<property>instrumentation/mptcas/mp[26]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -8249,7 +8249,7 @@
    		<property>instrumentation/mptcas/mp[27]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -8262,7 +8262,7 @@
    		<property>instrumentation/mptcas/mp[27]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -8485,7 +8485,7 @@
    		<property>instrumentation/mptcas/mp[28]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -8498,7 +8498,7 @@
    		<property>instrumentation/mptcas/mp[28]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -8721,7 +8721,7 @@
    		<property>instrumentation/mptcas/mp[29]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -8734,7 +8734,7 @@
    		<property>instrumentation/mptcas/mp[29]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -8959,7 +8959,7 @@
    		<property>instrumentation/mptcas/ai[0]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -8972,7 +8972,7 @@
    		<property>instrumentation/mptcas/ai[0]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -9195,7 +9195,7 @@
    		<property>instrumentation/mptcas/ai[1]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -9208,7 +9208,7 @@
    		<property>instrumentation/mptcas/ai[1]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -9431,7 +9431,7 @@
    		<property>instrumentation/mptcas/ai[2]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -9444,7 +9444,7 @@
    		<property>instrumentation/mptcas/ai[2]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -9667,7 +9667,7 @@
    		<property>instrumentation/mptcas/ai[3]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -9680,7 +9680,7 @@
    		<property>instrumentation/mptcas/ai[3]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -9903,7 +9903,7 @@
    		<property>instrumentation/mptcas/ai[4]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -9916,7 +9916,7 @@
    		<property>instrumentation/mptcas/ai[4]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -10139,7 +10139,7 @@
    		<property>instrumentation/mptcas/ai[5]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -10152,7 +10152,7 @@
    		<property>instrumentation/mptcas/ai[5]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -10375,7 +10375,7 @@
    		<property>instrumentation/mptcas/ai[6]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -10388,7 +10388,7 @@
    		<property>instrumentation/mptcas/ai[6]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -10611,7 +10611,7 @@
    		<property>instrumentation/mptcas/ai[7]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -10624,7 +10624,7 @@
    		<property>instrumentation/mptcas/ai[7]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -10847,7 +10847,7 @@
    		<property>instrumentation/mptcas/ai[8]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -10860,7 +10860,7 @@
    		<property>instrumentation/mptcas/ai[8]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -11083,7 +11083,7 @@
    		<property>instrumentation/mptcas/ai[9]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -11096,7 +11096,7 @@
    		<property>instrumentation/mptcas/ai[9]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -11319,7 +11319,7 @@
    		<property>instrumentation/mptcas/ai[10]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -11332,7 +11332,7 @@
    		<property>instrumentation/mptcas/ai[10]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -11555,7 +11555,7 @@
    		<property>instrumentation/mptcas/ai[11]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -11568,7 +11568,7 @@
    		<property>instrumentation/mptcas/ai[11]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -11791,7 +11791,7 @@
    		<property>instrumentation/mptcas/ai[12]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -11804,7 +11804,7 @@
    		<property>instrumentation/mptcas/ai[12]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -12027,7 +12027,7 @@
    		<property>instrumentation/mptcas/ai[13]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -12040,7 +12040,7 @@
    		<property>instrumentation/mptcas/ai[13]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -12263,7 +12263,7 @@
    		<property>instrumentation/mptcas/ai[14]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -12276,7 +12276,7 @@
    		<property>instrumentation/mptcas/ai[14]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -12499,7 +12499,7 @@
    		<property>instrumentation/mptcas/ai[15]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -12512,7 +12512,7 @@
    		<property>instrumentation/mptcas/ai[15]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -12735,7 +12735,7 @@
    		<property>instrumentation/mptcas/ai[16]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -12748,7 +12748,7 @@
    		<property>instrumentation/mptcas/ai[16]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -12971,7 +12971,7 @@
    		<property>instrumentation/mptcas/ai[17]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -12984,7 +12984,7 @@
    		<property>instrumentation/mptcas/ai[17]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -13207,7 +13207,7 @@
    		<property>instrumentation/mptcas/ai[18]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -13220,7 +13220,7 @@
    		<property>instrumentation/mptcas/ai[18]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -13443,7 +13443,7 @@
    		<property>instrumentation/mptcas/ai[19]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -13456,7 +13456,7 @@
    		<property>instrumentation/mptcas/ai[19]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 	
@@ -13677,7 +13677,7 @@
    		<property>instrumentation/mptcas/ai[20]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -13690,7 +13690,7 @@
    		<property>instrumentation/mptcas/ai[20]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -13913,7 +13913,7 @@
    		<property>instrumentation/mptcas/ai[21]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -13926,7 +13926,7 @@
    		<property>instrumentation/mptcas/ai[21]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -14149,7 +14149,7 @@
    		<property>instrumentation/mptcas/ai[22]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -14162,7 +14162,7 @@
    		<property>instrumentation/mptcas/ai[22]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -14385,7 +14385,7 @@
    		<property>instrumentation/mptcas/ai[23]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -14398,7 +14398,7 @@
    		<property>instrumentation/mptcas/ai[23]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -14621,7 +14621,7 @@
    		<property>instrumentation/mptcas/ai[24]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -14634,7 +14634,7 @@
    		<property>instrumentation/mptcas/ai[24]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -14857,7 +14857,7 @@
    		<property>instrumentation/mptcas/ai[25]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -14870,7 +14870,7 @@
    		<property>instrumentation/mptcas/ai[25]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -15093,7 +15093,7 @@
    		<property>instrumentation/mptcas/ai[26]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -15106,7 +15106,7 @@
    		<property>instrumentation/mptcas/ai[26]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -15329,7 +15329,7 @@
    		<property>instrumentation/mptcas/ai[27]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -15342,7 +15342,7 @@
    		<property>instrumentation/mptcas/ai[27]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -15565,7 +15565,7 @@
    		<property>instrumentation/mptcas/ai[28]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -15578,7 +15578,7 @@
    		<property>instrumentation/mptcas/ai[28]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 
@@ -15801,7 +15801,7 @@
    		<property>instrumentation/mptcas/ai[29]/xoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<y>1.0</y>
+    	 	<y>1</y>
    		</axis>
 	</animation>
 
@@ -15814,7 +15814,7 @@
    		<property>instrumentation/mptcas/ai[29]/yoffset</property>
    		<factor>0.08</factor>
     	 <axis>
-    	 	<z>1.0</z>
+    	 	<z>1</z>
    		</axis>
 	</animation>
 

@@ -34,9 +34,9 @@
    <z-m>0.</z-m>
   </center>
   <axis>
-   <x>0.0</x>
-   <y>1.0</y>
-   <z>0.0</z>
+   
+   <y>1</y>
+   
   </axis>
  </animation>
 

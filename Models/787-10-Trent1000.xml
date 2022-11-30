@@ -654,11 +654,11 @@
         <offset-deg>0</offset-deg>
         <center>
             <x-m>31.24126</x-m>
-            <y-m>0.0</y-m>
+            
             <z-m>7.1</z-m>
         </center>
         <axis>
-            <x>1.0</x>
+            <x>1</x>
 
             <z>2.0</z>
         </axis>
@@ -674,7 +674,7 @@
         <offset-deg>0</offset-deg>
         <center>
             <x-m>-24.74768</x-m>
-            <y-m>0.0</y-m>
+            
             <z-m>-1.164</z-m>
         </center>
         <axis>
@@ -728,7 +728,7 @@
         </interpolation>
         <center>
             <x-m>-26.85535</x-m>
-            <y-m>0.0</y-m>
+            
             <z-m>-1.063</z-m>
         </center>
         <axis>

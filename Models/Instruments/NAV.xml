@@ -589,7 +589,7 @@
    	<property>controls/navigation/vert-profile/nm1</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -599,7 +599,7 @@
    	<property>controls/navigation/vert-profile/nm2</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -609,7 +609,7 @@
    	<property>controls/navigation/vert-profile/nm3</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -619,7 +619,7 @@
    	<property>controls/navigation/vert-profile/nm4</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -629,7 +629,7 @@
    	<property>controls/navigation/vert-profile/nm5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -639,7 +639,7 @@
    	<property>controls/navigation/vert-profile/nm6</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -649,7 +649,7 @@
    	<property>controls/navigation/vert-profile/nm7</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -659,7 +659,7 @@
    	<property>controls/navigation/vert-profile/nm8</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -669,7 +669,7 @@
    	<property>controls/navigation/vert-profile/nm9</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -679,7 +679,7 @@
    	<property>controls/navigation/vert-profile/nm10</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -689,7 +689,7 @@
    	<property>controls/navigation/vert-profile/nm11</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -699,7 +699,7 @@
    	<property>controls/navigation/vert-profile/nm12</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -709,7 +709,7 @@
    	<property>controls/navigation/vert-profile/nm13</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -719,7 +719,7 @@
    	<property>controls/navigation/vert-profile/nm14</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -729,7 +729,7 @@
    	<property>controls/navigation/vert-profile/nm15</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -739,7 +739,7 @@
    	<property>controls/navigation/vert-profile/nm16</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -749,7 +749,7 @@
    	<property>controls/navigation/vert-profile/nm17</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -759,7 +759,7 @@
    	<property>controls/navigation/vert-profile/nm18</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -769,7 +769,7 @@
    	<property>controls/navigation/vert-profile/nm19</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -779,7 +779,7 @@
    	<property>controls/navigation/vert-profile/nm20</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -789,7 +789,7 @@
    	<property>controls/navigation/vert-profile/nm21</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -799,7 +799,7 @@
    	<property>controls/navigation/vert-profile/nm22</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -809,7 +809,7 @@
    	<property>controls/navigation/vert-profile/nm23</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -819,7 +819,7 @@
    	<property>controls/navigation/vert-profile/nm24</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -829,7 +829,7 @@
    	<property>controls/navigation/vert-profile/nm25</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -839,7 +839,7 @@
    	<property>controls/navigation/vert-profile/nm26</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -849,7 +849,7 @@
    	<property>controls/navigation/vert-profile/nm27</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -859,7 +859,7 @@
    	<property>controls/navigation/vert-profile/nm28</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -869,7 +869,7 @@
    	<property>controls/navigation/vert-profile/nm29</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -879,7 +879,7 @@
    	<property>controls/navigation/vert-profile/nm30</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -889,7 +889,7 @@
    	<property>controls/navigation/vert-profile/nm31</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -899,7 +899,7 @@
    	<property>controls/navigation/vert-profile/nm32</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -909,7 +909,7 @@
    	<property>controls/navigation/vert-profile/nm33</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -919,7 +919,7 @@
    	<property>controls/navigation/vert-profile/nm34</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -929,7 +929,7 @@
    	<property>controls/navigation/vert-profile/nm35</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -939,7 +939,7 @@
    	<property>controls/navigation/vert-profile/nm36</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -949,7 +949,7 @@
    	<property>controls/navigation/vert-profile/nm37</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -959,7 +959,7 @@
    	<property>controls/navigation/vert-profile/nm38</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -969,7 +969,7 @@
    	<property>controls/navigation/vert-profile/nm39</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -979,7 +979,7 @@
    	<property>controls/navigation/vert-profile/nm40</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -989,7 +989,7 @@
    	<property>controls/navigation/vert-profile/nm41</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -999,7 +999,7 @@
    	<property>controls/navigation/vert-profile/nm42</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1009,7 +1009,7 @@
    	<property>controls/navigation/vert-profile/nm43</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1019,7 +1019,7 @@
    	<property>controls/navigation/vert-profile/nm44</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1029,7 +1029,7 @@
    	<property>controls/navigation/vert-profile/nm45</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1039,7 +1039,7 @@
    	<property>controls/navigation/vert-profile/nm46</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1049,7 +1049,7 @@
    	<property>controls/navigation/vert-profile/nm47</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1059,7 +1059,7 @@
    	<property>controls/navigation/vert-profile/nm48</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1069,7 +1069,7 @@
    	<property>controls/navigation/vert-profile/nm49</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1079,7 +1079,7 @@
    	<property>controls/navigation/vert-profile/nm50</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1090,7 +1090,7 @@
    	<property>controls/navigation/vert-profile/nm1.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1100,7 +1100,7 @@
    	<property>controls/navigation/vert-profile/nm2.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1110,7 +1110,7 @@
    	<property>controls/navigation/vert-profile/nm3.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1120,7 +1120,7 @@
    	<property>controls/navigation/vert-profile/nm4.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1130,7 +1130,7 @@
    	<property>controls/navigation/vert-profile/nm5.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1140,7 +1140,7 @@
    	<property>controls/navigation/vert-profile/nm6.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1150,7 +1150,7 @@
    	<property>controls/navigation/vert-profile/nm7.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1160,7 +1160,7 @@
    	<property>controls/navigation/vert-profile/nm8.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1170,7 +1170,7 @@
    	<property>controls/navigation/vert-profile/nm9.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1180,7 +1180,7 @@
    	<property>controls/navigation/vert-profile/nm10.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1190,7 +1190,7 @@
    	<property>controls/navigation/vert-profile/nm11.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1200,7 +1200,7 @@
    	<property>controls/navigation/vert-profile/nm12.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1210,7 +1210,7 @@
    	<property>controls/navigation/vert-profile/nm13.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1220,7 +1220,7 @@
    	<property>controls/navigation/vert-profile/nm14.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1230,7 +1230,7 @@
    	<property>controls/navigation/vert-profile/nm15.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1240,7 +1240,7 @@
    	<property>controls/navigation/vert-profile/nm16.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1250,7 +1250,7 @@
    	<property>controls/navigation/vert-profile/nm17.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1260,7 +1260,7 @@
    	<property>controls/navigation/vert-profile/nm18.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1270,7 +1270,7 @@
    	<property>controls/navigation/vert-profile/nm19.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1280,7 +1280,7 @@
    	<property>controls/navigation/vert-profile/nm20.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1290,7 +1290,7 @@
    	<property>controls/navigation/vert-profile/nm21.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1300,7 +1300,7 @@
    	<property>controls/navigation/vert-profile/nm22.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1310,7 +1310,7 @@
    	<property>controls/navigation/vert-profile/nm23.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1320,7 +1320,7 @@
    	<property>controls/navigation/vert-profile/nm24.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1330,7 +1330,7 @@
    	<property>controls/navigation/vert-profile/nm25.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1340,7 +1340,7 @@
    	<property>controls/navigation/vert-profile/nm26.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1350,7 +1350,7 @@
    	<property>controls/navigation/vert-profile/nm27.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1360,7 +1360,7 @@
    	<property>controls/navigation/vert-profile/nm28.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1370,7 +1370,7 @@
    	<property>controls/navigation/vert-profile/nm29.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1380,7 +1380,7 @@
    	<property>controls/navigation/vert-profile/nm30.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1390,7 +1390,7 @@
    	<property>controls/navigation/vert-profile/nm31.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1400,7 +1400,7 @@
    	<property>controls/navigation/vert-profile/nm32.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1410,7 +1410,7 @@
    	<property>controls/navigation/vert-profile/nm33.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1420,7 +1420,7 @@
    	<property>controls/navigation/vert-profile/nm34.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1430,7 +1430,7 @@
    	<property>controls/navigation/vert-profile/nm35.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1440,7 +1440,7 @@
    	<property>controls/navigation/vert-profile/nm36.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1450,7 +1450,7 @@
    	<property>controls/navigation/vert-profile/nm37.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1460,7 +1460,7 @@
    	<property>controls/navigation/vert-profile/nm38.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1470,7 +1470,7 @@
    	<property>controls/navigation/vert-profile/nm39.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1480,7 +1480,7 @@
    	<property>controls/navigation/vert-profile/nm40.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1490,7 +1490,7 @@
    	<property>controls/navigation/vert-profile/nm41.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1500,7 +1500,7 @@
    	<property>controls/navigation/vert-profile/nm42.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1510,7 +1510,7 @@
    	<property>controls/navigation/vert-profile/nm43.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1520,7 +1520,7 @@
    	<property>controls/navigation/vert-profile/nm44.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1530,7 +1530,7 @@
    	<property>controls/navigation/vert-profile/nm45.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1540,7 +1540,7 @@
    	<property>controls/navigation/vert-profile/nm46.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1550,7 +1550,7 @@
    	<property>controls/navigation/vert-profile/nm47.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1560,7 +1560,7 @@
    	<property>controls/navigation/vert-profile/nm48.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1570,7 +1570,7 @@
    	<property>controls/navigation/vert-profile/nm49.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1585,7 +1585,7 @@
    	<property>instrumentation/altimeter/indicated-altitude-ft</property>
    	<factor>0.000001997</factor>
      <axis>
-     	<z>1.0</z>
+     	<z>1</z>
    	</axis>
 </animation>
 
@@ -1613,7 +1613,7 @@
    	<property>controls/navigation/descent-line-length</property>
    	<factor>0.007071068</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -7899,7 +7899,7 @@
    	<property>controls/navigation/vnav/wp1alt</property>
    	<factor>0.000001997</factor>
     	<axis>
-     		<z>1.0</z>
+     		<z>1</z>
    	</axis>
 </animation>
 
@@ -7913,7 +7913,7 @@
    	<property>controls/navigation/vnav/wp1dist</property>
    	<factor>0.002892</factor>
     	<axis>
-     		<y>1.0</y>
+     		<y>1</y>
    	</axis>
 </animation>
 
@@ -7925,7 +7925,7 @@
    	<property>controls/navigation/vnav/wp2alt</property>
    	<factor>0.000001997</factor>
     	<axis>
-     		<z>1.0</z>
+     		<z>1</z>
    	</axis>
 </animation>
 
@@ -7939,7 +7939,7 @@
    	<property>controls/navigation/vnav/wp2dist</property>
    	<factor>0.002892</factor>
     	<axis>
-     		<y>1.0</y>
+     		<y>1</y>
    	</axis>
 </animation>
 
@@ -7951,7 +7951,7 @@
    	<property>controls/navigation/vnav/wp3alt</property>
    	<factor>0.000001997</factor>
     	<axis>
-     		<z>1.0</z>
+     		<z>1</z>
    	</axis>
 </animation>
 
@@ -7965,7 +7965,7 @@
    	<property>controls/navigation/vnav/wp3dist</property>
    	<factor>0.002892</factor>
     	<axis>
-     		<y>1.0</y>
+     		<y>1</y>
    	</axis>
 </animation>
 
@@ -7977,7 +7977,7 @@
    	<property>controls/navigation/vnav/wp4alt</property>
    	<factor>0.000001997</factor>
     	<axis>
-     		<z>1.0</z>
+     		<z>1</z>
    	</axis>
 </animation>
 
@@ -7991,7 +7991,7 @@
    	<property>controls/navigation/vnav/wp4dist</property>
    	<factor>0.002892</factor>
     	<axis>
-     		<y>1.0</y>
+     		<y>1</y>
    	</axis>
 </animation>
 
@@ -8002,7 +8002,7 @@
    	<property>controls/navigation/vnav/wp5alt</property>
    	<factor>0.000001997</factor>
     	<axis>
-     		<z>1.0</z>
+     		<z>1</z>
    	</axis>
 </animation>
 
@@ -8015,7 +8015,7 @@
    	<property>controls/navigation/vnav/wp5dist</property>
    	<factor>0.002892</factor>
     	<axis>
-     		<y>1.0</y>
+     		<y>1</y>
    	</axis>
 </animation>
 
@@ -8041,7 +8041,7 @@
    	<property>controls/navigation/vnav/wp1length</property>
    	<factor>0.007071068</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -8068,7 +8068,7 @@
    	<property>controls/navigation/vnav/wp2length</property>
    	<factor>0.007071068</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -8095,7 +8095,7 @@
    	<property>controls/navigation/vnav/wp3length</property>
    	<factor>0.007071068</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -8122,7 +8122,7 @@
    	<property>controls/navigation/vnav/wp4length</property>
    	<factor>0.007071068</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -8149,7 +8149,7 @@
    	<property>controls/navigation/vnav/wp5length</property>
    	<factor>0.007071068</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -8214,7 +8214,7 @@
    	<property>controls/navigation/vnav/wp1dist</property>
    	<factor>0.01</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -8285,7 +8285,7 @@
    	<property>controls/navigation/vnav/wp2dist</property>
    	<factor>0.01</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -8350,7 +8350,7 @@
    	<property>controls/navigation/vnav/wp3dist</property>
    	<factor>0.01</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -8409,7 +8409,7 @@
    	<property>controls/navigation/vnav/wp4dist</property>
    	<factor>0.01</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>

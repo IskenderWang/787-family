@@ -479,9 +479,9 @@
 		<property>controls/flight/rudder</property>
 		<factor>0.10</factor>
 		<axis>
-			<x>1.0</x>
-			<y>0.0</y>
-			<z>0.0</z>
+			<x>1</x>
+			
+			
 		</axis>
 	</animation>
 	
@@ -491,9 +491,9 @@
 		<property>controls/flight/rudder</property>
 		<factor>-0.10</factor>
 		<axis>
-			<x>1.0</x>
-			<y>0.0</y>
-			<z>0.0</z>
+			<x>1</x>
+			
+			
 		</axis>
 	</animation>
 
@@ -568,9 +568,9 @@
 		<property>controls/gear/brake-left</property>
 		<factor>-0.06</factor>
 		<axis>
-			<x>1.0</x>
-			<y>0.0</y>
-			<z>0.0</z>
+			<x>1</x>
+			
+			
 		</axis>
 	</animation>	
 
@@ -3897,9 +3897,9 @@
 		<property>controls/fires/fire/extinguish</property>
 		<factor>0.024</factor>
 		<axis>
-			<x>0.0</x>
-			<y>0.0</y>
-			<z>1.0</z>
+			
+			
+			<z>1</z>
 		</axis>
 	</animation>
 	
@@ -3909,9 +3909,9 @@
 		<property>controls/fires/fire[1]/extinguish</property>
 		<factor>0.024</factor>
 		<axis>
-			<x>0.0</x>
-			<y>0.0</y>
-			<z>1.0</z>
+			
+			
+			<z>1</z>
 		</axis>
 	</animation>
 

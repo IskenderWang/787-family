@@ -303,7 +303,7 @@
         <property>instrumentation/clock/indicated-sec</property>
         <factor>6</factor>
         <center>
-            <x-m>0.0</x-m>
+            
             <y-m>0.1360</y-m>
             <z-m>0.1225</z-m>
         </center>
@@ -571,9 +571,9 @@
    	<property>surface-positions/flap-pos-norm</property>
    	<factor>0.36</factor>
      <axis>
-     	<x>0.0</x>
-     	<y>1.0</y>
-     	<z>0.0</z>
+     	
+     	<y>1</y>
+     	
    	</axis>
 </animation>
 

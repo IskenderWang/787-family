@@ -577,7 +577,7 @@
         <center>
 
             <y-m>9.5</y-m>
-            <z-m>1.0</z-m>
+            <z-m>1</z-m>
         </center>
         <axis>
             <x>4</x>
@@ -625,7 +625,7 @@
         <center>
 
             <y-m>-9.5</y-m>
-            <z-m>1.0</z-m>
+            <z-m>1</z-m>
         </center>
         <axis>
             <x>-4</x>
@@ -1262,7 +1262,7 @@
         <axis>
             <x>3.63</x>
             <y>7.71</y>
-            <z>1.0</z>
+            <z>1</z>
         </axis>
     </animation>
 
@@ -1294,7 +1294,7 @@
         <axis>
             <x>0.24</x>
             <y>4.923</y>
-            <z>1.0</z>
+            <z>1</z>
         </axis>
     </animation>
 
