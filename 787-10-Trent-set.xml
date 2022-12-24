@@ -212,9 +212,9 @@
         <internal type="bool">true</internal>
         <cockpit type="bool">true</cockpit>
         <config>
-            <x-offset-m type="double">-0.603</x-offset-m>
-            <y-offset-m type="double">2.1135</y-offset-m>
-            <z-offset-m type="double">-27.5427</z-offset-m>
+            <x-offset-m type="double">-0.57</x-offset-m>
+            <y-offset-m type="double">2.3</y-offset-m>
+            <z-offset-m type="double">-28.6</z-offset-m>
             <pitch-offset-deg>-10.3</pitch-offset-deg>
             <default-field-of-view-deg type="double">60.0</default-field-of-view-deg>
         </config>
