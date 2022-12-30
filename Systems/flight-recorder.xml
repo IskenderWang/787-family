@@ -21,7 +21,6 @@
         </signals>
 
         <!-- Add custom properties here -->
-        <!-- TODO: Add flaps -->
 
         <signal>
             <type>bool</type>
