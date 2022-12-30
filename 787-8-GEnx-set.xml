@@ -301,6 +301,7 @@
 		</config>
 	</view>
 
+	<!-- TODO: Fix position -->
 	<view n="104">
 		<name>EFB View</name>
 		<type>lookfrom</type>
@@ -319,6 +320,7 @@
 		</config>
 	</view>
 
+	<!-- TODO: Fix position -->
 	<view n="105">
 		<name>CDU View</name>
 		<type>lookfrom</type>
@@ -789,7 +791,6 @@
 	<constant>
 	    <const type="bool">1</const>
 	</constant>
-
 		<engines>
 			<engine-start-switch type="int">1</engine-start-switch>
 			<engine n="0">
