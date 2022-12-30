@@ -206,6 +206,7 @@
             <master-caution type="bool">false</master-caution>
         </alarms>
 
+    <!-- The cockpit is -3.25 z-offset from the cockpit of the 787-8 -->
     <view n="0">
         <name>Pilot View</name>
         <type>lookfrom</type>
@@ -213,10 +214,10 @@
         <cockpit type="bool">true</cockpit>
         <config>
             <x-offset-m type="double">-0.603</x-offset-m>
-            <y-offset-m type="double">2.11</y-offset-m>
-            <z-offset-m type="double">-26.20</z-offset-m>
+            <y-offset-m type="double">2.242</y-offset-m>
+            <z-offset-m type="double">-25.86</z-offset-m>
             <pitch-offset-deg>-10.3</pitch-offset-deg>
-            <default-field-of-view-deg type="double">60.0</default-field-of-view-deg>
+            <default-field-of-view-deg type="double">90.0</default-field-of-view-deg>
         </config>
     </view>
 
@@ -252,6 +253,7 @@
             <z-offset-m archive="y" type="double">125.0</z-offset-m>
         </config>
     </view>
+
     <view n="101">
         <name>Gear View</name>
         <type>lookfrom</type>
@@ -263,7 +265,7 @@
             <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
             <x-offset-m type="double">0</x-offset-m>
             <y-offset-m type="double">-2.3146</y-offset-m>
-            <z-offset-m type="double">10.1192</z-offset-m>
+            <z-offset-m type="double">10.1193</z-offset-m>
             <default-field-of-view-deg type="double">60</default-field-of-view-deg>
         </config>
     </view>
@@ -282,11 +284,29 @@
             <z-offset-m type="double">-8.2443</z-offset-m>
             <heading-offset-deg>-111</heading-offset-deg>
             <pitch-offset-deg>-16.2</pitch-offset-deg>
-            <default-field-of-view-deg type="double">62</default-field-of-view-deg>
+            <default-field-of-view-deg type="double">90</default-field-of-view-deg>
         </config>
     </view>
 
-    <view n="103">
+	<view n="103">
+		<name>Left Aft Wing View</name>
+		<type>lookfrom</type>
+		<internal type="bool">true</internal>
+		<cockpit type="bool">true</cockpit>
+		<config>
+			<from-model type="bool">true</from-model>
+			<from-model-idx type="int">0</from-model-idx>
+			<ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+			<x-offset-m type="double">0</x-offset-m>
+			<y-offset-m type="double">2.24</y-offset-m>
+			<z-offset-m type="double">7.96</z-offset-m>
+			<pitch-offset-deg>1.6</pitch-offset-deg>
+			<heading-offset-deg>81.5</heading-offset-deg>
+			<default-field-of-view-deg type="double">60</default-field-of-view-deg>
+		</config>
+	</view>
+
+    <view n="104">
         <name>Full Cockpit View</name>
         <type>lookfrom</type>
         <internal type="bool">true</internal>
@@ -297,65 +317,13 @@
             <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
             <x-offset-m type="double">0</x-offset-m>
             <y-offset-m type="double">2.242</y-offset-m>
-            <z-offset-m type="double">-26.3</z-offset-m>
+            <z-offset-m type="double">-25.21</z-offset-m>
             <pitch-offset-deg>-14.5</pitch-offset-deg>
             <default-field-of-view-deg type="double">105</default-field-of-view-deg>
         </config>
     </view>
 
-    <view n="104">
-        <name>EFB View</name>
-        <type>lookfrom</type>
-        <internal type="bool">true</internal>
-        <cockpit type="bool">true</cockpit>
-        <config>
-            <from-model type="bool">true</from-model>
-            <from-model-idx type="int">0</from-model-idx>
-            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-            <x-offset-m type="double">-0.955</x-offset-m>
-            <y-offset-m type="double">1.75</y-offset-m>
-            <z-offset-m type="double">-26.9902</z-offset-m>
-            <pitch-offset-deg>-48.6</pitch-offset-deg>
-            <heading-offset-deg>48.6</heading-offset-deg>
-            <default-field-of-view-deg type="double">75</default-field-of-view-deg>
-        </config>
-    </view>
-
     <view n="105">
-        <name>CDU View</name>
-        <type>lookfrom</type>
-        <internal type="bool">true</internal>
-        <cockpit type="bool">true</cockpit>
-        <config>
-            <from-model type="bool">true</from-model>
-            <from-model-idx type="int">0</from-model-idx>
-            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-            <x-offset-m type="double">0</x-offset-m>
-            <y-offset-m type="double">2.4</y-offset-m>
-            <z-offset-m type="double">-27.3</z-offset-m>
-            <pitch-offset-deg>-90</pitch-offset-deg>
-            <default-field-of-view-deg type="double">37</default-field-of-view-deg>
-        </config>
-    </view>
-
-    <view n="106">
-        <name>Overhead Panel View</name>
-        <type>lookfrom</type>
-        <internal type="bool">true</internal>
-        <cockpit type="bool">true</cockpit>
-        <config>
-            <from-model type="bool">true</from-model>
-            <from-model-idx type="int">0</from-model-idx>
-            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-            <x-offset-m type="double">0</x-offset-m>
-            <y-offset-m type="double">1.5</y-offset-m>
-            <z-offset-m type="double">26.0517</z-offset-m>
-            <pitch-offset-deg>53.1</pitch-offset-deg>
-            <default-field-of-view-deg type="double">70</default-field-of-view-deg>
-        </config>
-    </view>
-
-    <view n="107">
         <name>Copilot View</name>
         <type>lookfrom</type>
         <internal type="bool">true</internal>
@@ -364,7 +332,7 @@
             <from-model type="bool">true</from-model>
             <from-model-idx type="int">0</from-model-idx>
             <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-            <default-field-of-view-deg type="double">60.0</default-field-of-view-deg>
+            <default-field-of-view-deg type="double">90.0</default-field-of-view-deg>
             <default-pitch-deg type="double">0</default-pitch-deg>
             <default-heading-deg type="double">0</default-heading-deg>
             <front-direction-deg type="double">0</front-direction-deg>
@@ -376,13 +344,65 @@
             <right-direction-deg type="double">270</right-direction-deg>
             <front-right-direction-deg type="double">315</front-right-direction-deg>
             <x-offset-m type="double">0.603</x-offset-m>
-            <y-offset-m type="double">2.08</y-offset-m>
-            <z-offset-m type="double">-26.2</z-offset-m>
+            <y-offset-m type="double">2.242</y-offset-m>
+            <z-offset-m type="double">-25.862</z-offset-m>
             <pitch-offset-deg>-10.3</pitch-offset-deg>
         </config>
         <dynamic>
             <enabled type="bool" userarchive="y">false</enabled>
         </dynamic>
+    </view>
+
+    <view n="106">
+        <name>EFB View</name>
+        <type>lookfrom</type>
+        <internal type="bool">true</internal>
+        <cockpit type="bool">true</cockpit>
+        <config>
+            <from-model type="bool">true</from-model>
+            <from-model-idx type="int">0</from-model-idx>
+            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+            <x-offset-m type="double">-0.785</x-offset-m>
+            <y-offset-m type="double">2.04</y-offset-m>
+            <z-offset-m type="double">-26.16</z-offset-m>
+            <pitch-offset-deg>-46.6</pitch-offset-deg>
+            <heading-offset-deg>49.275</heading-offset-deg>
+            <default-field-of-view-deg type="double">50</default-field-of-view-deg>
+        </config>
+    </view>
+
+    <view n="107">
+        <name>CDU View</name>
+        <type>lookfrom</type>
+        <internal type="bool">true</internal>
+        <cockpit type="bool">true</cockpit>
+        <config>
+            <from-model type="bool">true</from-model>
+            <from-model-idx type="int">0</from-model-idx>
+            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+            <x-offset-m type="double">0</x-offset-m>
+            <y-offset-m type="double">2.3</y-offset-m>
+            <z-offset-m type="double">-26.33</z-offset-m>
+            <pitch-offset-deg>-73</pitch-offset-deg>
+            <default-field-of-view-deg type="double">41</default-field-of-view-deg>
+        </config>
+    </view>
+
+    <view n="108">
+        <name>Overhead Panel View</name>
+        <type>lookfrom</type>
+        <internal type="bool">true</internal>
+        <cockpit type="bool">true</cockpit>
+        <config>
+            <from-model type="bool">true</from-model>
+            <from-model-idx type="int">0</from-model-idx>
+            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+            <x-offset-m type="double">0</x-offset-m>
+            <y-offset-m type="double">1.8</y-offset-m>
+            <z-offset-m type="double">-25.7</z-offset-m>
+            <pitch-offset-deg>62.9</pitch-offset-deg>
+            <default-field-of-view-deg type="double">78</default-field-of-view-deg>
+        </config>
     </view>
 
         <menubar>
