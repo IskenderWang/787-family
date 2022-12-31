@@ -351,6 +351,23 @@
 	</view>
 
 	<view n="106">
+		<name>Center Console View</name>
+		<type>lookfrom</type>
+		<internal type="bool">true</internal>
+		<cockpit type="bool">true</cockpit>
+		<config>
+			<from-model type="bool">true</from-model>
+			<from-model-idx type="int">0</from-model-idx>
+			<ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+			<x-offset-m type="double">0</x-offset-m>
+			<y-offset-m type="double">1.81</y-offset-m>
+			<z-offset-m type="double">-22.86</z-offset-m>
+			<pitch-offset-deg>-72.2</pitch-offset-deg>
+			<default-field-of-view-deg type="double">90</default-field-of-view-deg>
+		</config>
+	</view>
+
+	<view n="107">
 		<name>EFB View</name>
 		<type>lookfrom</type>
 		<internal type="bool">true</internal>
@@ -368,7 +385,7 @@
 		</config>
 	</view>
 
-	<view n="107">
+	<view n="108">
 		<name>CDU View</name>
 		<type>lookfrom</type>
 		<internal type="bool">true</internal>
@@ -385,7 +402,7 @@
 		</config>
 	</view>
 
-	<view n="108">
+	<view n="109">
 		<name>Overhead Panel View</name>
 		<type>lookfrom</type>
 		<internal type="bool">true</internal>
