@@ -111,7 +111,7 @@ Distribute under the terms of GPLv2.
    <property>&YAW-PROP;</property>
    <factor>&YAW-MULT;</factor>
    <center>
-     <x-m>0</x-m>
+     <x-m>0.346</x-m>
      <y-m>0</y-m>
      <z-m>0</z-m>
    </center>
