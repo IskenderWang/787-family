@@ -106,8 +106,9 @@
         <name>Pushback</name>
         <path>Autopush/Goldhofert.xml</path>
         <offsets>
-            <x-m>-25.54268</x-m>
-
+            <!-- The truck should be -0.346 x-m from the plane's nose wheel -->
+            <x-m>-27.201</x-m>
+            <y-m>0</y-m>
             <z-m>-3.55</z-m>
         </offsets>
     </model>
