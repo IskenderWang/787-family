@@ -213,7 +213,7 @@
         <internal type="bool">true</internal>
         <cockpit type="bool">true</cockpit>
         <config>
-            <x-offset-m type="double">-0.603</x-offset-m>
+            <x-offset-m type="double">-0.568</x-offset-m>
             <y-offset-m type="double">2.242</y-offset-m>
             <z-offset-m type="double">-25.86</z-offset-m>
             <pitch-offset-deg>-10.3</pitch-offset-deg>
@@ -343,7 +343,7 @@
             <back-right-direction-deg type="double">225</back-right-direction-deg>
             <right-direction-deg type="double">270</right-direction-deg>
             <front-right-direction-deg type="double">315</front-right-direction-deg>
-            <x-offset-m type="double">0.603</x-offset-m>
+            <x-offset-m type="double">0.568</x-offset-m>
             <y-offset-m type="double">2.242</y-offset-m>
             <z-offset-m type="double">-25.862</z-offset-m>
             <pitch-offset-deg>-10.3</pitch-offset-deg>
