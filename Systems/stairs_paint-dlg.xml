@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+	<name>stairs_paint</name>
+	<layout>vbox</layout>
+
+	<text>
+		<label>Select livery for stairs</label>
+	</text>
+
+	<hrule />
+
+	<combo>
+		<halign>left</halign>
+		<name>stairs_paint</name>
+		<pref-width>200</pref-width>
+		<property>services/stairs/paint-end</property>
+		<value>blank.png</value>
+		<value>white-grey.png</value>
+		<value>blue-shade.png</value>
+		<value>blue-stripes.png</value>
+		<value>dark-red.png</value>
+		<value>emirates.png</value>
+		<value>green-orange.png</value>
+		<value>malaysia.png</value>
+		<value>merlion.png</value>
+		<binding>
+			<command>dialog-apply</command>
+			<object-name>stairs_paint</object-name>
+		</binding>
+	</combo>
+
+	<checkbox>
+		<label>Enable stair covers</label>
+		<property>/services/stairs/cover-enable</property>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
+		<live>true</live>
+	</checkbox>
+
+	<group>
+		<layout>hbox</layout>
+
+		<button>
+			<legend>Close</legend>
+			<default>true</default>
+			<key>Esc</key>
+			<padding>5</padding>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+		</button>
+	</group>
+
+</PropertyList>

@@ -75,55 +75,55 @@
 	</text>
 
 	<group>
-	<layout>table</layout>
+		<layout>table</layout>
 
-	<text>
-		<row>0</row>
-		<col>0</col>
-		<label>Left Gear</label>
-	</text>
+		<text>
+			<row>0</row>
+			<col>0</col>
+			<label>Left Gear</label>
+		</text>
 
-	<text>
-		<row>0</row>
-		<col>1</col>
-		<label>Nose Gear</label>
-	</text>
+		<text>
+			<row>0</row>
+			<col>1</col>
+			<label>Nose Gear</label>
+		</text>
 
-	<text>
-		<row>0</row>
-		<col>2</col>
-		<label>Right Gear</label>
-	</text>
+		<text>
+			<row>0</row>
+			<col>2</col>
+			<label>Right Gear</label>
+		</text>
 
-	<checkbox>
-		<row>1</row>
-		<col>0</col>
-		<property>services/chocks/left</property>
-		<binding>
-			<command>dialog-apply</command>
-		</binding>
-		<live>true</live>
-	</checkbox>
+		<checkbox>
+			<row>1</row>
+			<col>0</col>
+			<property>services/chocks/left</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
 
-	<checkbox>
-		<row>1</row>
-		<col>1</col>
-		<property>services/chocks/nose</property>
-		<binding>
-			<command>dialog-apply</command>
-		</binding>
-		<live>true</live>
-	</checkbox>
+		<checkbox>
+			<row>1</row>
+			<col>1</col>
+			<property>services/chocks/nose</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
 
-	<checkbox>
-		<row>1</row>
-		<col>2</col>
-		<property>services/chocks/right</property>
-		<binding>
-			<command>dialog-apply</command>
-		</binding>
-		<live>true</live>
-	</checkbox>
+		<checkbox>
+			<row>1</row>
+			<col>2</col>
+			<property>services/chocks/right</property>
+			<binding>
+				<command>dialog-apply</command>
+			</binding>
+			<live>true</live>
+		</checkbox>
 
 	</group>
 
@@ -142,19 +142,38 @@
 		<live>true</live>
 	</checkbox>
 
-	<button>
-		<legend>Toggle Stairs</legend>
-		<padding>5</padding>
-		<binding>
-			<command>nasal</command>
-			<script>
-				if (getprop("services/stairs/enable") == 1) {
-					b787.doors.toggle("stairs_pos");
-				} else
-					screen.log.write("Please enable the Stairs truck first", 1, 0, 0);
-			</script>
-		</binding>
-	</button>
+	<group>
+		<layout>table</layout>
+		<button>
+			<row>0</row>
+			<col>0</col>
+			<legend>Toggle Stairs</legend>
+			<padding>5</padding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					if (getprop("services/stairs/enable") == 1) {
+						b787.doors.toggle("stairs_pos");
+					} else
+						screen.log.write("Please enable the Stairs truck first", 1, 0, 0);
+				</script>
+			</binding>
+		</button>
+
+		<button>
+			<row>0</row>
+			<col>1</col>
+			<legend>Configure</legend>
+			<padding>5</padding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					var stairs_configure = gui.Dialog.new("sim/gui/dialogs/fuel_truck/dialog", "Aircraft/787-family/Systems/stairs_paint-dlg.xml");
+					stairs_configure.open();
+				</script>
+			</binding>
+		</button>
+	</group>
 
 	<hrule />
 
@@ -183,13 +202,13 @@
 	<hrule />
 
 	<group>
-	<layout>hbox</layout>
+		<layout>hbox</layout>
 
 		<button>
 			<legend>Close</legend>
 			<default>true</default>
 			<key>Esc</key>
-		<padding>5</padding>
+			<padding>5</padding>
 			<binding>
 				<command>dialog-apply</command>
 			</binding>
