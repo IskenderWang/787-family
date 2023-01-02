@@ -140,19 +140,38 @@
 		<live>true</live>
 	</checkbox>
 
-	<button>
-		<legend>Toggle Stairs</legend>
-		<padding>5</padding>
-		<binding>
-			<command>nasal</command>
-			<script>
-				if (getprop("services/stairs/enable") == 1) {
-					b787.doors.toggle("stairs_pos");
-				} else
-					screen.log.write("Please enable the Stairs truck first", 1, 0, 0);
-			</script>
-		</binding>
-	</button>
+	<group>
+		<layout>table</layout>
+		<button>
+			<row>0</row>
+			<col>0</col>
+			<legend>Toggle Stairs</legend>
+			<padding>5</padding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					if (getprop("services/stairs/enable") == 1) {
+						b787.doors.toggle("stairs_pos");
+					} else
+						screen.log.write("Please enable the Stairs truck first", 1, 0, 0);
+				</script>
+			</binding>
+		</button>
+
+		<button>
+			<row>0</row>
+			<col>1</col>
+			<legend>Configure</legend>
+			<padding>5</padding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					var stairs_configure = gui.Dialog.new("sim/gui/dialogs/fuel_truck/dialog", "Aircraft/787-family/Systems/stairs_paint-dlg.xml");
+					stairs_configure.open();
+				</script>
+			</binding>
+		</button>
+	</group>
 
     <hrule />
 
