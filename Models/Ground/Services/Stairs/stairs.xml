@@ -5,7 +5,7 @@
 	<name>Mobile Stairs</name>
 	<path>stairs.ac</path>
 
-<!-- LIVERY SELECT -->
+	<!-- LIVERY SELECT -->
 	<!-- Animation -->
 	<animation>
 		<type>material</type>
@@ -15,14 +15,17 @@
 		<texture-prop>paint-end</texture-prop>
 	</animation>
 
-<animation>
-	<type>select</type>
-	<object-name>cover</object-name>
-	<object-name>cover-under</object-name>
-	<object-name>cover-rods</object-name>
-	<condition>
-		<property>/services/stairs/cover</property>
-	</condition>
-</animation>
-		
+	<animation>
+		<type>select</type>
+		<object-name>cover</object-name>
+		<object-name>cover-under</object-name>
+		<object-name>cover-rods</object-name>
+		<condition>
+			<property>/services/stairs/cover</property>
+		</condition>
+	</animation>
+
 </PropertyList>
+
+<!-- While the stairs are correctly placed leading up to the base of the door, the model is a little
+     too tall, causing part of the truck's wheels to be under the ground. -->

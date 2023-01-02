@@ -141,7 +141,16 @@
 		</binding>
 		<live>true</live>
 	</checkbox>
-	
+
+	<checkbox>
+		<label>Enable boarding stairs</label>
+		<property>services/stairs/enable</property>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
+		<live>true</live>
+	</checkbox>
+
 	<checkbox>
 		<label>Enable External Power Box</label>
 		<property>services/ext-pwr/enable</property>
