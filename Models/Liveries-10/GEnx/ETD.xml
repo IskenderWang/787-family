@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+  <externaladdons>
+    <wifi>1</wifi>
+  </externaladdons>
+
+<sim>    
+  <model>        
+    <livery>
+	<name type="string">ETD Etihad Airways (A6-BMA)</name>
+      <texture-fuselage>Liveries-10/GEnx/ETD.png</texture-fuselage>
+      <texture-engines>Liveries-engines/GEnx.png</texture-engines>
+    </livery>
+  </model>
+</sim>
+
+</PropertyList>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+  <externaladdons>
+    <wifi>1</wifi>
+  </externaladdons>
+
+<sim>    
+  <model>        
+    <livery>
+	<name type="string">SIA Singapore Airlines (9V-SCE)</name>
+      <texture-fuselage>Liveries-10/Trent1000/SIA.png</texture-fuselage>
+      <texture-engines>Liveries-engines/Trent1000.png</texture-engines>
+    </livery>
+  </model>
+</sim>
+
+</PropertyList>

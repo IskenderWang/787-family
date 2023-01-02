@@ -8,9 +8,21 @@
         <object-name>Window</object-name>
     </effect>
 
+ <animation> 
+  <type>material</type> 
+        <object-name>Window</object-name>
+  <property-base>controls/constant/const</property-base>
+  <transparency>
+   <alpha-prop>rotors/tail/rpm</alpha-prop>
+   <factor>-0.0015</factor>
+   <offset>1</offset>
+  </transparency>
+ </animation>
+
     <effect>
         <inherits-from>Aircraft/787-family/Models/Effects/reflect</inherits-from>
         <object-name>bodyfairing</object-name>
+        <object-name>wifiantenna</object-name>
         <object-name>fuselage</object-name>
         <object-name>fuselage.001</object-name>
         <object-name>lhfdoor</object-name>

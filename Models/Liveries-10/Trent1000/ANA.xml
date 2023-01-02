@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+  <externaladdons>
+    <wifi>1</wifi>
+  </externaladdons>
+
+<sim>    
+  <model>        
+    <livery>
+	<name type="string">ANA All Nippon Airways (JA900A)</name>
+      <texture-fuselage>Liveries-10/Trent1000/ANA.png</texture-fuselage>
+      <texture-engines>Liveries-engines/STDRR.png</texture-engines>
+    </livery>
+  </model>
+</sim>
+
+</PropertyList>

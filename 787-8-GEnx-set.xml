@@ -828,6 +828,9 @@
 			<main-panel-pedestal-norm type="double">0.8</main-panel-pedestal-norm>
 			<strobe type="bool">false</strobe>
 		</lighting>
+	<externaladdons>
+	    <wifi type="bool">false</wifi>
+	</externaladdons>
 		<switches>
 			<no-smoking-sign type="bool">true</no-smoking-sign>
 			<seatbelt-sign type="bool">false</seatbelt-sign>

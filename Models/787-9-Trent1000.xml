@@ -11,6 +11,7 @@
     <effect>
         <inherits-from>Aircraft/787-family/Models/Effects/reflect</inherits-from>
         <object-name>bodyfairing</object-name>
+        <object-name>wifiantenna</object-name>
         <object-name>fuselage</object-name>
         <object-name>fuselage.001</object-name>
         <object-name>lhfdoor</object-name>

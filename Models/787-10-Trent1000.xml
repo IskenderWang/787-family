@@ -11,6 +11,7 @@
     <effect>
         <inherits-from>Aircraft/787-family/Models/Effects/reflect</inherits-from>
         <object-name>bodyfairing</object-name>
+        <object-name>wifiantenna</object-name>
         <object-name>fuselage</object-name>
         <object-name>fuselage.001</object-name>
         <object-name>lhfdoor</object-name>
@@ -1749,7 +1750,7 @@
   <factor>-60</factor>
   <offset-deg>0</offset-deg>
   <center>
-   <x-m>-24.74768</x-m>
+   <x-m>-26.85535</x-m>
    <y-m>0.0</y-m>
    <z-m>-1.164</z-m>
   </center>
@@ -2698,7 +2699,7 @@
             </entry>
         </interpolation>
         <center>
-            <x-m>-26.85535</x-m>
+            <x-m>-24.59268</x-m>
             <y-m>0.0</y-m>
             <z-m>-1.063</z-m>
         </center>
