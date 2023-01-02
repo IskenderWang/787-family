@@ -28,6 +28,7 @@ var ground_services = {
 
 	setprop("/services/stairs/enable", 0);
 	setprop("/sim/model/door-positions/stairs_pos/position-norm", 0);
+	setprop("/services/stairs/paint-end", "white-grey.png");
 
 	# Fuel Truck
 	
