@@ -10,7 +10,7 @@
 	</text>
 
 	<hrule />
-		
+
 	<text>
 		<label>De-icing Truck</label>
 	</text>
@@ -38,13 +38,13 @@
 			</script>
 		</binding>
 	</button>
-		
+
 	<hrule />
-	
+
 	<text>
 		<label>Catering Truck</label>
 	</text>
-	
+
 	<checkbox>
 		<label>Enable Catering Truck</label>
 		<property>services/catering/enable</property>
@@ -53,7 +53,7 @@
 		</binding>
 		<live>true</live>
 	</checkbox>
-	
+
 	<button>
 		<legend>Toggle Catering</legend>
 		<padding>5</padding>
@@ -67,34 +67,34 @@
 			</script>
 		</binding>
 	</button>
-	
+
 	<hrule />
-	
+
 	<text>
 		<label>Landing Gear Chocks</label>
 	</text>
-	
+
 	<group>
 	<layout>table</layout>
-	
+
 	<text>
 		<row>0</row>
 		<col>0</col>
 		<label>Left Gear</label>
 	</text>
-	
+
 	<text>
 		<row>0</row>
 		<col>1</col>
 		<label>Nose Gear</label>
 	</text>
-	
+
 	<text>
 		<row>0</row>
 		<col>2</col>
 		<label>Right Gear</label>
 	</text>
-	
+
 	<checkbox>
 		<row>1</row>
 		<col>0</col>
@@ -104,7 +104,7 @@
 		</binding>
 		<live>true</live>
 	</checkbox>
-	
+
 	<checkbox>
 		<row>1</row>
 		<col>1</col>
@@ -114,7 +114,7 @@
 		</binding>
 		<live>true</live>
 	</checkbox>
-	
+
 	<checkbox>
 		<row>1</row>
 		<col>2</col>
@@ -124,27 +124,47 @@
 		</binding>
 		<live>true</live>
 	</checkbox>
-	
+
 	</group>
-	
+
 	<hrule />
-	
+
 	<text>
-		<label>Other Ground Services</label>
+		<label>Boarding Services</label>
 	</text>
-	
+
 	<checkbox>
-		<label>Enable Baggage Truck</label>
-		<property>services/baggage/enable</property>
+		<label>Enable Boarding Stairs</label>
+		<property>services/stairs/enable</property>
 		<binding>
 			<command>dialog-apply</command>
 		</binding>
 		<live>true</live>
 	</checkbox>
 
+	<button>
+		<legend>Toggle Stairs</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>
+				if (getprop("services/stairs/enable") == 1) {
+					b787.doors.toggle("stairs_pos");
+				} else
+					screen.log.write("Please enable the Stairs truck first", 1, 0, 0);
+			</script>
+		</binding>
+	</button>
+
+	<hrule />
+
+	<text>
+		<label>Other Ground Services</label>
+	</text>
+
 	<checkbox>
-		<label>Enable boarding stairs</label>
-		<property>services/stairs/enable</property>
+		<label>Enable Baggage Truck</label>
+		<property>services/baggage/enable</property>
 		<binding>
 			<command>dialog-apply</command>
 		</binding>
@@ -159,9 +179,9 @@
 		</binding>
 		<live>true</live>
 	</checkbox>
-	
+
 	<hrule />
-	
+
 	<group>
 	<layout>hbox</layout>
 
@@ -177,7 +197,7 @@
 				<command>dialog-close</command>
 			</binding>
 		</button>
-		
+
 	</group>
 
 </PropertyList>
