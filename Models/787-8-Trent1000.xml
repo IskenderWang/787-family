@@ -3534,6 +3534,23 @@
 	</condition>
 </animation>
 
+<!-- Stairs -->
+
+<model>
+  <path>Aircraft/787-family/Models/Ground/Services/Stairs/stairs.xml</path>
+  <condition>
+    <equals>
+      <property>services/stairs/enable</property>
+      <value>1</value>
+    </equals>
+  </condition>
+  <offsets>
+    <x-m>-19.563</x-m> <!-- front to back -->
+    <y-m>-2.5776</y-m> <!-- side to side -->
+    <z-m>1.0111</z-m> <!-- height -->
+  </offsets>
+</model>
+
 <!-- External Power -->
 
 <model>
