@@ -27,5 +27,5 @@ doors.new("r1", 5);
 doors.new("r2", 5);
 doors.new("cam_menu", 0.5);
 doors.new("cater_pos", 30);
-doors.new("stairs_pos", 1);
+doors.new("stairs_pos", 15);
 doors.new("cargo", 10);
