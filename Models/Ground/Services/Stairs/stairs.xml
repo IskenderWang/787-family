@@ -21,7 +21,7 @@
 		<object-name>cover-under</object-name>
 		<object-name>cover-rods</object-name>
 		<condition>
-			<property>/services/stairs/cover</property>
+			<property>/services/stairs/cover-enable</property>
 		</condition>
 	</animation>
 
