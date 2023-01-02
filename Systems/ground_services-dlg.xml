@@ -127,6 +127,33 @@
 
     </group>
 
+	<text>
+		<label>Boarding Services</label>
+	</text>
+
+	<checkbox>
+		<label>Enable Boarding Stairs</label>
+		<property>services/stairs/enable</property>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
+		<live>true</live>
+	</checkbox>
+
+	<button>
+		<legend>Toggle Stairs</legend>
+		<padding>5</padding>
+		<binding>
+			<command>nasal</command>
+			<script>
+				if (getprop("services/stairs/enable") == 1) {
+					b787.doors.toggle("stairs_pos");
+				} else
+					screen.log.write("Please enable the Stairs truck first", 1, 0, 0);
+			</script>
+		</binding>
+	</button>
+
     <hrule />
 
     <text>
@@ -136,15 +163,6 @@
     <checkbox>
         <label>Enable Baggage Truck</label>
         <property>services/baggage/enable</property>
-        <binding>
-            <command>dialog-apply</command>
-        </binding>
-        <live>true</live>
-    </checkbox>
-
-    <checkbox>
-        <label>Enable boarding stairs</label>
-        <property>services/stairs/enable</property>
         <binding>
             <command>dialog-apply</command>
         </binding>
