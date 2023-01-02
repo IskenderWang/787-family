@@ -26,6 +26,3 @@
 	</animation>
 
 </PropertyList>
-
-<!-- While the stairs are correctly placed leading up to the base of the door, the model is a little
-     too tall, causing part of the truck's wheels to be under the ground. -->
