@@ -30,12 +30,12 @@
         <binding>
             <command>nasal</command>
             <script>
-				if (getprop("services/deicing_truck/enable") == 1) {
-					setprop("/services/deicing_truck/de-ice", 1);
-					screen.log.write("Starting De-icing Process...", 1, 1, 1);
-				} else
-					screen.log.write("Please Enable the De-icing truck first", 1, 0, 0);
-			</script>
+                if (getprop("services/deicing_truck/enable") == 1) {
+                    setprop("/services/deicing_truck/de-ice", 1);
+                    screen.log.write("Starting De-icing Process...", 1, 1, 1);
+                } else
+                    screen.log.write("Please Enable the De-icing truck first", 1, 0, 0);
+            </script>
         </binding>
     </button>
 
@@ -60,11 +60,11 @@
         <binding>
             <command>nasal</command>
             <script>
-				if (getprop("services/catering/enable") == 1) {
-					b787.doors.toggle("cater_pos");
-				} else
-					screen.log.write("Please Enable the Catering truck first", 1, 0, 0);
-			</script>
+                if (getprop("services/catering/enable") == 1) {
+                    b787.doors.toggle("cater_pos");
+                } else
+                    screen.log.write("Please Enable the Catering truck first", 1, 0, 0);
+            </script>
         </binding>
     </button>
 
@@ -136,6 +136,15 @@
     <checkbox>
         <label>Enable Baggage Truck</label>
         <property>services/baggage/enable</property>
+        <binding>
+            <command>dialog-apply</command>
+        </binding>
+        <live>true</live>
+    </checkbox>
+
+    <checkbox>
+        <label>Enable boarding stairs</label>
+        <property>services/stairs/enable</property>
         <binding>
             <command>dialog-apply</command>
         </binding>
