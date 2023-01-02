@@ -995,7 +995,7 @@
     <offsets>
         <x-m>-19.563</x-m> <!-- front to back -->
         <y-m>-2.5776</y-m> <!-- side to side -->
-        <z-m>1.0111</z-m> <!-- height -->
+        <z-m>1</z-m> <!-- height -->
     </offsets>
     </model>
 
