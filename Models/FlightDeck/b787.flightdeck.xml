@@ -3119,7 +3119,7 @@
 		<type>select</type>
 		<object-name>AP.toggle</object-name>
 		<condition>
-			<property>/it-autoflight/input/ap1</property>
+            <property>/it-autoflight/output/ap1</property>
 		</condition>
 	</animation>
 
@@ -3127,10 +3127,17 @@
 		<type>select</type>
 		<object-name>APP.toggle</object-name>
 		<condition>
-			<equals>
-				<property>/it-autoflight/input/vert</property>
-				<value>2</value>
-			</equals>
+            <or>
+                <property>/it-autoflight/output/appr-armed</property>
+                <equals>
+                    <property>/it-autoflight/output/vert</property>
+                    <value>2</value>
+                </equals>
+                <equals>
+                    <property>/it-autoflight/output/vert</property>
+                    <value>6</value>
+                </equals>
+            </or>
 		</condition>
 	</animation>
 
@@ -3138,11 +3145,19 @@
 		<type>select</type>
 		<object-name>LOC.toggle</object-name>
 		<condition>
-			<equals>
-				<property>/it-autoflight/input/lat</property>
-				<value>2</value>
-			</equals>
+            <or>
+                <property>/it-autoflight/output/loc-armed</property>
+                <equals>
+                    <property>/it-autoflight/output/lat</property>
+                    <value>2</value>
+                </equals>
+                <equals>
+                    <property>/it-autoflight/output/lat</property>
+                    <value>4</value>
+                </equals>
+            </or>
 		</condition>
+
 	</animation>
 
 	<animation>
@@ -3150,20 +3165,26 @@
 		<object-name>ALT.toggle</object-name>
 		<condition>
 			<equals>
-				<property>/it-autoflight/input/vert</property>
-				<value>0</value>
+				<property>/it-autoflight/output/vert</property>
+                <value>0</value>
 			</equals>
 		</condition>
 	</animation>
-	
-		<animation>
+
+    <animation>
 		<type>select</type>
 		<object-name>FLCH.toggle</object-name>
 		<condition>
-			<equals>
-				<property>/it-autoflight/input/vert</property>
-				<value>4</value>
-			</equals>
+            <or>
+                <equals>
+                    <property>/it-autoflight/output/vert</property>
+                    <value>4</value>
+                </equals>
+                <equals>
+                    <property>/it-autoflight/output/vert</property>
+                    <value>7</value>
+                </equals>
+            </or>
 		</condition>
 	</animation>
 
@@ -3171,10 +3192,10 @@
 		<type>select</type>
 		<object-name>HDG.toggle</object-name>
 		<condition>
-			<equals>
-				<property>/it-autoflight/input/lat</property>
-				<value>0</value>
-			</equals>
+            <equals>
+                <property>/it-autoflight/output/lat</property>
+                <value>0</value>
+            </equals>
 		</condition>
 	</animation>
 
@@ -3183,8 +3204,8 @@
 		<object-name>VS.toggle</object-name>
 		<condition>
 			<equals>
-				<property>/it-autoflight/input/vert</property>
-				<value>1</value>
+				<property>/it-autoflight/output/vert</property>
+                <value>1</value>
 			</equals>
 		</condition>
 	</animation>
@@ -3193,10 +3214,13 @@
 		<type>select</type>
 		<object-name>LNAV.toggle</object-name>
 		<condition>
-			<equals>
-				<property>/it-autoflight/input/lat</property>
-				<value>1</value>
-			</equals>
+            <or>
+                <property>/it-autoflight/output/lnav-armed</property>
+                <equals>
+                    <property>/it-autoflight/output/lat</property>
+                    <value>1</value>
+                </equals>
+            </or>
 		</condition>
 	</animation>
 
@@ -3215,7 +3239,7 @@
 		<type>select</type>
 		<object-name>AT.toggle</object-name>
 		<condition>
-			<property>/it-autoflight/input/athr</property>
+			<property>/it-autoflight/output/athr</property>
 		</condition>
 	</animation>
 
