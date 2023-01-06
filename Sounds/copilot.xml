@@ -6,7 +6,7 @@
 
     <copilot>
 	<name>v1</name>
-        <path>Aircraft/787-8/Sounds/v1.wav</path>
+        <path>Aircraft/787-family/Sounds/v1.wav</path>
         <mode>once</mode>
         <condition>
             <property>sim/sound/v1</property>
@@ -25,7 +25,7 @@
 
     <copilot2>
 	<name>vr</name>
-        <path>Aircraft/787-8/Sounds/vr.wav</path>
+        <path>Aircraft/787-family/Sounds/vr.wav</path>
         <mode>once</mode>
         <condition>
             <property>sim/sound/vr</property>
@@ -44,7 +44,7 @@
 
     <copilot3>
 	<name>v2</name>
-        <path>Aircraft/787-8/Sounds/v2.wav</path>
+        <path>Aircraft/787-family/Sounds/v2.wav</path>
         <mode>once</mode>
         <condition>
             <property>sim/sound/v2</property>
@@ -63,7 +63,7 @@
 
     <copilot4>
 	<name>active</name>
-        <path>Aircraft/787-8/Sounds/active.wav</path>
+        <path>Aircraft/787-family/Sounds/active.wav</path>
         <mode>once</mode>
         <condition>
             <property>sim/sound/active</property>
@@ -82,7 +82,7 @@
 
     <copilot6>
 	<name>gearsup</name>
-        <path>Aircraft/787-8/Sounds/gearsup.wav</path>
+        <path>Aircraft/787-family/Sounds/gearsup.wav</path>
         <mode>once</mode>
         <condition>
             <property>sim/sound/gearsup</property>
@@ -101,7 +101,7 @@
 
     <copilot7>
 	<name>toflaps10</name>
-        <path>Aircraft/787-8/Sounds/toflaps10.wav</path>
+        <path>Aircraft/787-family/Sounds/toflaps10.wav</path>
         <mode>once</mode>
         <condition>
             <property>sim/sound/toflaps10</property>
@@ -120,7 +120,7 @@
 
     <copilot8>
 	<name>toflaps0</name>
-        <path>Aircraft/787-8/Sounds/toflaps0.wav</path>
+        <path>Aircraft/787-family/Sounds/toflaps0.wav</path>
         <mode>once</mode>
         <condition>
             <property>sim/sound/toflaps0</property>
@@ -139,7 +139,7 @@
 
     <copilot9>
 	<name>landflaps10</name>
-        <path>Aircraft/787-8/Sounds/landflaps10.wav</path>
+        <path>Aircraft/787-family/Sounds/landflaps10.wav</path>
         <mode>once</mode>
         <condition>
             <property>sim/sound/landflaps10</property>
@@ -158,7 +158,7 @@
 
     <copilot10>
 	<name>landflaps20</name>
-        <path>Aircraft/787-8/Sounds/landflaps20.wav</path>
+        <path>Aircraft/787-family/Sounds/landflaps20.wav</path>
         <mode>once</mode>
         <condition>
             <property>sim/sound/landflaps20</property>
@@ -177,7 +177,7 @@
 
     <copilot11>
 	<name>landflaps30</name>
-        <path>Aircraft/787-8/Sounds/landflaps30.wav</path>
+        <path>Aircraft/787-family/Sounds/landflaps30.wav</path>
         <mode>once</mode>
         <condition>
             <property>sim/sound/landflaps30</property>
@@ -196,7 +196,7 @@
 
     <copilot12>
 	<name>landflapsfull</name>
-        <path>Aircraft/787-8/Sounds/landflapsfull.wav</path>
+        <path>Aircraft/787-family/Sounds/landflapsfull.wav</path>
         <mode>once</mode>
         <condition>
             <property>sim/sound/landflapsfull</property>
@@ -215,7 +215,7 @@
 
     <copilot13>
 	<name>gearsdown</name>
-        <path>Aircraft/787-8/Sounds/gearsdown.wav</path>
+        <path>Aircraft/787-family/Sounds/gearsdown.wav</path>
         <mode>once</mode>
         <condition>
             <property>sim/sound/gearsdown</property>
@@ -234,7 +234,7 @@
 
     <copilot14>
 	<name>touchdown</name>
-        <path>Aircraft/787-8/Sounds/touch-spd-brk-rev.wav</path>
+        <path>Aircraft/787-family/Sounds/touch-spd-brk-rev.wav</path>
         <mode>once</mode>
         <condition>
             <property>sim/sound/touchdown</property>
@@ -253,7 +253,7 @@
 
     <copilot15>
 	<name>under60</name>
-        <path>Aircraft/787-8/Sounds/under60.wav</path>
+        <path>Aircraft/787-family/Sounds/under60.wav</path>
         <mode>once</mode>
         <condition>
             <property>sim/sound/under60</property>
@@ -272,7 +272,7 @@
 
     <copilot16>
 	<name>off</name>
-        <path>Aircraft/787-8/Sounds/off.wav</path>
+        <path>Aircraft/787-family/Sounds/off.wav</path>
         <mode>once</mode>
         <condition>
             <property>sim/sound/off</property>
@@ -291,7 +291,7 @@
 
     <copilot17>
 	<name>active-flaps</name>
-        <path>Aircraft/787-8/Sounds/active-flaps.wav</path>
+        <path>Aircraft/787-family/Sounds/active-flaps.wav</path>
         <mode>once</mode>
         <condition>
             <property>sim/sound/active-flaps</property>
