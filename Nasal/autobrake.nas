@@ -42,7 +42,7 @@ var autobrake = {
             }
 
             # ABS RTO
-            if (absetting == 6) {
+            if (absetting == -1) {
                 if (getprop("controls/engines/engine[0]/throttle") >= 0.9) {
                     me.fullthrottle = 1;
                 }
