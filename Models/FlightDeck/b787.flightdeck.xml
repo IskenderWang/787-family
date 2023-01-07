@@ -70,6 +70,11 @@
     <object-name>yokepitch</object-name>
   </effect>
 
+  <effect>
+    <inherits-from>../Effects/windscreen</inherits-from>
+    <object-name>Windscreen</object-name>
+  </effect>
+
   <!--Cockpit Shaking-->
   <animation>
 		<type>translate</type>
