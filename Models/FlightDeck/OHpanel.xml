@@ -33,6 +33,21 @@
     	</emission>
   	</animation>
 
+	<!-- Make the letters on the panel illuminate amber -->
+	<animation>
+		<type>material</type>
+		<object-name>letters</object-name>
+		<condition>
+			<property>controls/lighting/cockpit</property>
+		</condition>
+		<emission>
+			<red>   0.5    </red>
+			<green> 0.3745 </green>
+			<blue>  0      </blue>
+			<factor-prop>/controls/lighting/ovhd-output</factor-prop>
+		</emission>
+	</animation>
+
 <!-- IND -->
 
 
