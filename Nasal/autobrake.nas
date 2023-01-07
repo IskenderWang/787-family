@@ -53,11 +53,26 @@ var autobrake = {
                     me.fullthrottle = 0;
                 }
             }
-
-            if (getprop("/velocities/airspeed-kt") < 40) {
-                setprop("/controls/autobrake/setting", 0);
-            }
         }
+
+		# Deactivate autobrake after rollout, even from RTO. There's some slack for the throttle
+		# setting to taxi after rollout.
+		if (
+			(getprop("/velocities/airspeed-kt") < 40)
+			and (getprop("/gear/gear[0]/rollspeed-ms") > 5)
+			and (getprop("/controls/engines/engine[0]/throttle") < 0.3)
+		) {
+			setprop("/controls/autobrake/setting", 0);
+		}
+
+		# Deactivate autobrake after takeoff
+		if (
+			(getprop("/velocities/airspeed-kt") > 120)
+			and (getprop("/gear/gear[0]/compression-norm") == 0)
+			and (getprop("/controls/engines/engine[0]/throttle") > 0.9)
+		) {
+			setprop("/controls/autobrake/setting", 0);
+		}
     },
     reset : func {
         me.loopid += 1;
