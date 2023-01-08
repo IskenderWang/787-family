@@ -55,26 +55,26 @@ var autobrake = {
             }
         }
 
-		# Deactivate autobrake after rollout, even from RTO. There's some slack for the throttle
-		# setting to taxi after rollout.
-		if (
-			(getprop("/velocities/airspeed-kt") < 40)                   # Airspeed is low
-			and (getprop("/gear/gear[0]/rollspeed-ms") > 5)             # The aircraft is rolling
-            and (getprop("/gear/gear[0]/compression-norm") != 0)        # The aircraft is on the ground
-			and (getprop("/controls/engines/engine[0]/throttle") < 0.3) # Throttle is set to taxi
-		) {
-			setprop("/controls/autobrake/setting", 0);
-		}
+        # Deactivate autobrake after rollout, even from RTO. There's some slack for the throttle
+        # setting to taxi after rollout.
+        if (
+            (getprop("/velocities/airspeed-kt") < 40)                   # Airspeed is low
+            and (getprop("/gear/gear[0]/rollspeed-ms") > 5)             # The aircraft is rolling
+            and (getprop("/gear/gear[0]/compression-ft") != 0)        # The aircraft is on the ground
+            and (getprop("/controls/engines/engine[0]/throttle") < 0.3) # Throttle is set to taxi
+        ) {
+            setprop("/controls/autobrake/setting", 0);
+        }
 
-		# Deactivate autobrake after takeoff
-		if (
-			(getprop("/velocities/airspeed-kt") > 120)                  # Airspeed is high
-            and (getprop("velocities/gear[0]/rollspeed-ms") > 25)       # Aircraft was recently on the ground
-			and (getprop("/gear/gear[0]/compression-norm") == 0)        # The aircraft is flying
-			and (getprop("/controls/engines/engine[0]/throttle") > 0.9) # Throttle is set to takeoff
-		) {
-			setprop("/controls/autobrake/setting", 0);
-		}
+        # Deactivate autobrake after takeoff
+        if (
+            (getprop("/velocities/airspeed-kt") > 120)                  # Airspeed is high
+            and (getprop("/gear/gear[0]/rollspeed-ms") > 25)            # Aircraft was recently on the ground
+            and (getprop("/gear/gear[0]/compression-ft") == 0)          # The aircraft is flying
+            and (getprop("/controls/engines/engine[0]/throttle") > 0.9) # Throttle is set to takeoff
+        ) {
+            setprop("/controls/autobrake/setting", 0);
+        }
     },
     reset : func {
         me.loopid += 1;
