@@ -2917,7 +2917,7 @@
     <animation>
         <type>pick</type>
         <object-name>APmaster</object-name>
-        <object-name>APtoggle</object-name>
+        <object-name>AP.toggle</object-name>
         <action>
             <button>0</button>
             <binding>
@@ -2985,10 +2985,9 @@
         <action>
             <button>0</button>
             <binding>
-                <command>property-cycle</command>
+                <command>property-assign</command>
                 <property>/it-autoflight/input/lat</property>
 				<value>1</value>
-				<value></value>
             </binding>
         </action>
     </animation>
@@ -3016,10 +3015,9 @@
         <action>
             <button>0</button>
             <binding>
-                <command>property-cycle</command>
+                <command>property-assign</command>
                 <property>/it-autoflight/input/lat</property>
 				<value>0</value>
-				<value></value>
             </binding>
         </action>
     </animation>
@@ -3034,7 +3032,6 @@
                 <command>property-cycle</command>
                 <property>/it-autoflight/input/vert</property>
 				<value>1</value>
-				<value></value>
             </binding>
         </action>
     </animation>
@@ -3046,14 +3043,13 @@
         <action>
             <button>0</button>
             <binding>
-                <command>property-cycle</command>
+                <command>property-assign</command>
                 <property>/it-autoflight/input/vert</property>
 				<value>4</value>
-				<value></value>
             </binding>
         </action>
     </animation>
-    
+
    <animation>
         <type>pick</type>
         <object-name>ALThold</object-name>
@@ -3092,10 +3088,9 @@
         <action>
             <button>0</button>
             <binding>
-                <command>property-cycle</command>
+                <command>property-assign</command>
                 <property>/it-autoflight/input/lat</property>
 				<value>2</value>
-				<value></value>
             </binding>
         </action>
     </animation>
@@ -3107,10 +3102,9 @@
         <action>
             <button>0</button>
             <binding>
-                <command>property-cycle</command>
+                <command>property-assign</command>
                 <property>/it-autoflight/input/vert</property>
 				<value>2</value>
-				<value></value>
             </binding>
         </action>
     </animation>
