@@ -3117,6 +3117,26 @@
 		</condition>
 	</animation>
 
+    <animation>
+        <type>material</type>
+        <object-name>AP.toggle</object-name>
+        <object-name>AT.toggle</object-name>
+        <object-name>LNAV.toggle</object-name>
+        <object-name>VNAV.toggle</object-name>
+        <object-name>FLCH.toggle</object-name>
+        <object-name>HDG.toggle</object-name>
+        <object-name>VS.toggle</object-name>
+        <object-name>ALT.toggle</object-name>
+        <object-name>LOC.toggle</object-name>
+        <object-name>APP.toggle</object-name>
+        <emission>
+            <red>0</red>
+            <green>0.6</green>
+            <blue>0</blue>
+            <factor-prop>controls/lighting/master-bright</factor-prop>
+        </emission>
+    </animation>
+
 	<animation>
 		<type>select</type>
 		<object-name>APP.toggle</object-name>
