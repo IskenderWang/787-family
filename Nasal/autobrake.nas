@@ -58,10 +58,10 @@ var autobrake = {
         # Deactivate autobrake after rollout, even from RTO. There's some slack for the throttle
         # setting to taxi after rollout.
         if (
-            (getprop("/velocities/airspeed-kt") < 40)                   # Airspeed is low
-            and (getprop("/gear/gear[0]/rollspeed-ms") > 5)             # The aircraft is rolling
-            and (getprop("/gear/gear[0]/compression-ft") != 0)        # The aircraft is on the ground
-            and (getprop("/controls/engines/engine[0]/throttle") < 0.3) # Throttle is set to taxi
+            (getprop("/velocities/airspeed-kt") < 40)                  # Airspeed is low
+            and (getprop("/gear/gear[0]/rollspeed-ms") > 5)            # The aircraft is rolling
+            and (getprop("/gear/gear[0]/compression-ft") != 0)         # The aircraft is on the ground
+            and (getprop("/controls/engines/engine[0]/throttle") == 0) # Throttle is set to idle
         ) {
             setprop("/controls/autobrake/setting", 0);
         }
