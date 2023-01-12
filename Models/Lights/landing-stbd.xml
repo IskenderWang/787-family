@@ -33,14 +33,14 @@
 		<object-name>Light</object-name>
 		<offset-deg>120</offset-deg>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>-1</z>
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
-			<z-m>0</z-m>
+			
+			
+			
 		</center>
 	</animation>
 	<animation>

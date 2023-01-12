@@ -2,10 +2,10 @@
 
 <PropertyList>
 
-<!-- Virtual Co-pilot Voices -->
+    <!-- Virtual Co-pilot Voices -->
 
     <tcas1>
-	<name>tcas1</name>
+        <name>tcas1</name>
         <path>Sounds/tcas/female/clear.wav</path>
         <mode>once</mode>
         <condition>
@@ -23,7 +23,7 @@
         <max-dist>100.0</max-dist>
     </tcas1>
     <tcas2>
-	<name>tcas2</name>
+        <name>tcas2</name>
         <path>Sounds/tcas/female/climb.wav</path>
         <mode>looped</mode>
         <condition>
@@ -41,7 +41,7 @@
         <max-dist>100.0</max-dist>
     </tcas2>
     <tcas3>
-	<name>tcas3</name>
+        <name>tcas3</name>
         <path>Sounds/tcas/female/climb_now.wav</path>
         <mode>looped</mode>
         <condition>
@@ -59,7 +59,7 @@
         <max-dist>100.0</max-dist>
     </tcas3>
     <tcas4>
-	<name>tcas4</name>
+        <name>tcas4</name>
         <path>Sounds/tcas/female/descend.wav</path>
         <mode>looped</mode>
         <condition>
@@ -77,7 +77,7 @@
         <max-dist>100.0</max-dist>
     </tcas4>
     <tcas5>
-	<name>tcas5</name>
+        <name>tcas5</name>
         <path>Sounds/tcas/female/descend_now.wav</path>
         <mode>looped</mode>
         <condition>
@@ -95,7 +95,7 @@
         <max-dist>100.0</max-dist>
     </tcas5>
     <tcas6>
-	<name>tcas6</name>
+        <name>tcas6</name>
         <path>Sounds/tcas/female/do_not_climb.wav</path>
         <mode>looped</mode>
         <condition>
@@ -113,7 +113,7 @@
         <max-dist>100.0</max-dist>
     </tcas6>
     <tcas7>
-	<name>tcas7</name>
+        <name>tcas7</name>
         <path>Sounds/tcas/female/do_not_descend.wav</path>
         <mode>looped</mode>
         <condition>
@@ -131,7 +131,7 @@
         <max-dist>100.0</max-dist>
     </tcas7>
     <tcas8>
-	<name>tcas8</name>
+        <name>tcas8</name>
         <path>Sounds/tcas/female/increase_climb.wav</path>
         <mode>looped</mode>
         <condition>
@@ -149,7 +149,7 @@
         <max-dist>100.0</max-dist>
     </tcas8>
     <tcas9>
-	<name>tcas9</name>
+        <name>tcas9</name>
         <path>Sounds/tcas/female/increase_descent.wav</path>
         <mode>looped</mode>
         <condition>
@@ -167,7 +167,7 @@
         <max-dist>100.0</max-dist>
     </tcas9>
     <tcas10>
-	<name>tcas10</name>
+        <name>tcas10</name>
         <path>Sounds/tcas/female/traffic.wav</path>
         <mode>once</mode>
         <condition>

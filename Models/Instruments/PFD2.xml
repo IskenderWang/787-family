@@ -121,7 +121,7 @@
             <entry><ind>9600</ind><dep>0.9035</dep></entry>
         </interpolation>
         <axis>
-            <x>0</x>
+            
             <y>1</y>
         </axis>
     </animation>
@@ -135,7 +135,7 @@
             <entry><ind>19200</ind><dep>0.9035</dep></entry>
         </interpolation>
         <axis>
-            <x>0</x>
+            
             <y>1</y>
         </axis>
     </animation>
@@ -149,7 +149,7 @@
             <entry><ind>28800</ind><dep>0.9035</dep></entry>
         </interpolation>
         <axis>
-            <x>0</x>
+            
             <y>1</y>
         </axis>
     </animation>
@@ -163,7 +163,7 @@
             <entry><ind>38400</ind><dep>0.9035</dep></entry>
         </interpolation>
         <axis>
-            <x>0</x>
+            
             <y>1</y>
         </axis>
     </animation>
@@ -177,7 +177,7 @@
             <entry><ind>48000</ind><dep>0.9035</dep></entry>
         </interpolation>
         <axis>
-            <x>0</x>
+            
             <y>1</y>
         </axis>
     </animation>
@@ -191,7 +191,7 @@
             <entry><ind>57600</ind><dep>0.9035</dep></entry>
         </interpolation>
         <axis>
-            <x>0</x>
+            
             <y>1</y>
         </axis>
     </animation>
@@ -207,7 +207,7 @@
             <entry><ind>560</ind><dep>0.7520</dep></entry>
         </interpolation>
         <axis>
-            <x>0</x>
+            
             <y>1</y>
         </axis>
     </animation>
@@ -239,8 +239,8 @@
         <property>instrumentation/nav/gs-needle-deflection-norm</property>
         <factor>0.0272</factor>
         <axis>
-            <x>0</x>
-            <y>0</y>
+            
+            
             <z>1</z>
         </axis>
     </animation>
@@ -272,9 +272,9 @@
         <property>instrumentation/nav/heading-needle-deflection-norm</property>
         <factor>-0.0272</factor>
         <axis>
-            <x>0</x>
+            
             <y>-1</y>
-            <z>0</z>
+            
         </axis>
     </animation>
 
@@ -289,8 +289,8 @@
             <y>0.75</y>
         </center>
         <axis>
-            <x>0</x>
-            <y>0</y>
+            
+            
             <z>-1</z>
         </axis>
     </animation>
@@ -303,14 +303,14 @@
         <property>instrumentation/clock/indicated-sec</property>
         <factor>6</factor>
         <center>
-            <x-m>0.0</x-m>
+            
             <y-m>0.1360</y-m>
             <z-m>0.1225</z-m>
         </center>
         <axis>
             <x>-1</x>
-            <y>0</y>
-            <z>0</z>
+            
+            
         </axis>
     </animation>
 <!-- Digital displays -->
@@ -322,9 +322,9 @@
         <factor>0.01</factor>
         <step>10</step>
         <axis>
-            <x>0</x>
+            
             <y>1</y>
-            <z>0</z>
+            
         </axis>
     </animation>
 
@@ -335,9 +335,9 @@
         <factor>0.1</factor>
         <step>1</step>
         <axis>
-            <x>0</x>
+            
             <y>1</y>
-            <z>0</z>
+            
         </axis>
     </animation>
  
@@ -348,9 +348,9 @@
         <factor>0.01</factor>
         <step>10</step>
         <axis>
-            <x>0</x>
+            
             <y>1</y>
-            <z>0</z>
+            
         </axis>
     </animation>
 
@@ -361,9 +361,9 @@
         <factor>0.1</factor>
         <step>1</step>
         <axis>
-            <x>0</x>
+            
             <y>1</y>
-            <z>0</z>
+            
         </axis>
     </animation>
 
@@ -374,9 +374,9 @@
         <factor>0.0001</factor>
         <step>1000</step>
         <axis>
-            <x>0</x>
+            
             <y>1</y>
-            <z>0</z>
+            
         </axis>
     </animation>
 
@@ -387,9 +387,9 @@
         <factor>0.001</factor>
         <step>100</step>
         <axis>
-            <x>0</x>
+            
             <y>1</y>
-            <z>0</z>
+            
         </axis>
     </animation>
 
@@ -400,9 +400,9 @@
         <factor>0.01</factor>
         <step>10</step>
         <axis>
-            <x>0</x>
+            
             <y>1</y>
-            <z>0</z>
+            
         </axis>
     </animation>
 
@@ -413,9 +413,9 @@
         <factor>0.1</factor>
         <step>1</step>
         <axis>
-            <x>0</x>
+            
             <y>1</y>
-            <z>0</z>
+            
         </axis>
     </animation>
 
@@ -441,7 +441,7 @@
             <subtype>textranslate</subtype>
             <factor>0.00236882</factor>
             <axis>
-                <x>0</x>
+                
                 <y>1</y>
             </axis>
         </transform>
@@ -453,8 +453,8 @@
                 <y>0.50</y>
             </center>
             <axis>
-                <x>0</x>
-                <y>0</y>
+                
+                
                 <z>-1</z>
             </axis>
         </transform>
@@ -571,9 +571,9 @@
    	<property>surface-positions/flap-pos-norm</property>
    	<factor>0.36</factor>
      <axis>
-     	<x>0.0</x>
-     	<y>1.0</y>
-     	<z>0.0</z>
+     	
+     	<y>1</y>
+     	
    	</axis>
 </animation>
 
@@ -630,9 +630,9 @@
         <property>/it-autoflight/fd/roll-bar</property>
         <factor>0.0023474</factor>
         <axis>
-            <x>0</x>
+            
             <y>1</y>
-            <z>0</z>
+            
         </axis>
     </animation>
 
@@ -642,8 +642,8 @@
         <property>/it-autoflight/fd/pitch-bar</property>
         <factor>0.0012126</factor>
         <axis>
-            <x>0</x>
-            <y>0</y>
+            
+            
             <z>1</z>
         </axis>
     </animation>

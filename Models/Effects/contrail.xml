@@ -11,9 +11,9 @@ Contrail particle system by Lauri Peltonen A.K.A. Zan
 	 <lighting>true</lighting>
 	 
 	 <offsets>
-		 <x-m>0</x-m>
-		 <y-m>0</y-m>
-		 <z-m>0</z-m>
+		 
+		 
+		 
 		 <pitch-deg>0</pitch-deg>
 		 <roll-deg>90</roll-deg>
 	 </offsets>
@@ -127,4 +127,3 @@ Contrail particle system by Lauri Peltonen A.K.A. Zan
 </particlesystem>
 
 </PropertyList>
-

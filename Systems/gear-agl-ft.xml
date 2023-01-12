@@ -5,22 +5,22 @@
 <!-- Only for JSBsim aircraft, YAsim aircraft calculate this automatically -->
 
 <PropertyList>
-	
-	<filter>
-		<name>Gear AGL Altitude FT</name>
-		<type>gain</type>
-		<gain>1.0</gain>
-		<input>
-			<expression>
-				<dif>
-					<property>/position/altitude-agl-ft</property>
-					<value>15.0</value> <!-- Change this value to adjust property -->
-				</dif>
-			</expression>
-		</input>
-		<output>/position/gear-agl-ft</output>
-		<min>0</min>
-		<max>50000</max>
-	</filter>
+
+    <filter>
+        <name>Gear AGL Altitude FT</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+        <input>
+            <expression>
+                <dif>
+                    <property>/position/altitude-agl-ft</property>
+                    <value>15.0</value> <!-- Change this value to adjust property -->
+                </dif>
+            </expression>
+        </input>
+        <output>/position/gear-agl-ft</output>
+        <min>0</min>
+        <max>50000</max>
+    </filter>
 
 </PropertyList>

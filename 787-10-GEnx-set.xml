@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList include="787-common.xml">
 
@@ -18,17 +18,17 @@
             <cockpit type="int">4</cockpit>
         </rating>
         <tags>
-          <tag>transport</tag>
-          <tag>boeing</tag>
-          <tag>2010s</tag> <!-- first flight 2009, entry into service 2011 -->
-          <tag>etops</tag>
-          <tag>glass-cockpit</tag>
-          <tag>hud</tag>
-          <tag>ifr</tag>
-          <tag>retractable-gear</tag>
-          <tag>tricycle</tag>
-          <tag>jet</tag>
-          <tag>twin-engine</tag>
+            <tag>transport</tag>
+            <tag>boeing</tag>
+            <tag>2010s</tag> <!-- first flight 2009, entry into service 2011 -->
+            <tag>etops</tag>
+            <tag>glass-cockpit</tag>
+            <tag>hud</tag>
+            <tag>ifr</tag>
+            <tag>retractable-gear</tag>
+            <tag>tricycle</tag>
+            <tag>jet</tag>
+            <tag>twin-engine</tag>
         </tags>
         <engine>genx-1b-10</engine>
 
@@ -36,7 +36,7 @@
             <path>Aircraft/787-family/Models/787-10-GEnx.xml</path>
 
             <livery>
-               <file type="string">BOE-10</file>
+                <file type="string">BOE-10</file>
             </livery>
 
             <b787>
@@ -66,40 +66,40 @@
                 <diagram>help.jpg</diagram>
                 <chart>help.jpg</chart>
             </efb>
-                        <shadow-enabled type="bool">true</shadow-enabled> <!-- disabled in remote aircraft over mp -->
+            <shadow-enabled type="bool">true</shadow-enabled> <!-- disabled in remote aircraft over mp -->
         </model>
 
         <hud>
-                <path n="1">Aircraft/787-family/Models/FlightDeck/HUD2.xml</path>
-    </hud>
+            <path n="1">Aircraft/787-family/Models/FlightDeck/HUD2.xml</path>
+        </hud>
 
-    <flaps>
-        <setting>0.000</setting>  <!-- flaps up -->
-        <setting>0.033</setting>  <!-- flaps 1  -->
-        <setting>0.220</setting>  <!-- flaps 5  -->
-        <setting>0.360</setting>  <!-- flaps 10  -->
-        <setting>0.500</setting>  <!-- flaps 15 -->
-        <setting>0.567</setting>  <!-- flaps 17 -->
-        <setting>0.600</setting>  <!-- flaps 18 -->
-        <setting>0.667</setting>  <!-- flaps 20 -->
-        <setting>0.833</setting>  <!-- flaps 25 -->
-        <setting>1.000</setting>  <!-- flaps 30 -->
-    </flaps>
+        <flaps>
+            <setting>0.000</setting> <!-- flaps up -->
+            <setting>0.033</setting> <!-- flaps 1  -->
+            <setting>0.220</setting> <!-- flaps 5  -->
+            <setting>0.360</setting> <!-- flaps 10  -->
+            <setting>0.500</setting> <!-- flaps 15 -->
+            <setting>0.567</setting> <!-- flaps 17 -->
+            <setting>0.600</setting> <!-- flaps 18 -->
+            <setting>0.667</setting> <!-- flaps 20 -->
+            <setting>0.833</setting> <!-- flaps 25 -->
+            <setting>1.000</setting> <!-- flaps 30 -->
+        </flaps>
 
         <startup>
             <splash-texture>Aircraft/787-family/splash2.png</splash-texture>
         </startup>
 
-    <!-- Initialize External Connections as False, the clients will change them to true if connection is established -->
+        <!-- Initialize External Connections as False, the clients will change them to true if connection is established -->
 
-    <connection>
-        <fgfscopilot>
-            <connected type="bool">false</connected>
-        </fgfscopilot>
-        <autopirep>
-            <connected type="bool">false</connected>
-        </autopirep>
-    </connection>
+        <connection>
+            <fgfscopilot>
+                <connected type="bool">false</connected>
+            </fgfscopilot>
+            <autopirep>
+                <connected type="bool">false</connected>
+            </autopirep>
+        </connection>
 
         <chase-distance-m>-100</chase-distance-m>
 
@@ -110,95 +110,97 @@
         <instrumentation>
             <path>Aircraft/787-family/Systems/instrumentation.xml</path>
 
-   <tcas>                                <!-- http://wiki.flightgear.org/index.php/TCAS -->
+            <tcas>
+                <!-- http://wiki.flightgear.org/index.php/TCAS -->
 
-     <serviceable type="bool">true</serviceable>
-                                         <!-- TCAS ENABLE -->
+                <serviceable type="bool">true</serviceable>
+                <!-- TCAS ENABLE -->
 
-     <inputs>
-         <mode type="int">3</mode>       <!-- 0=off, 1=standby, 2=TA-only, 3=auto(TA/RA) -->
-     </inputs>
+                <inputs>
+                    <mode type="int">3</mode> <!-- 0=off, 1=standby, 2=TA-only, 3=auto(TA/RA) -->
+                </inputs>
 
-     <voice>
-         <file-prefix type="string">Aircraft/MyAircraft/Sounds/tcas/</file-prefix>
-     </voice>
+                <voice>
+                    <file-prefix type="string">Aircraft/MyAircraft/Sounds/tcas/</file-prefix>
+                </voice>
 
-     <speaker>                           <!-- Speaker Configuration -->
-       <max-dist> 12 </max-dist>          <!-- Max. distance where speaker is heard -->
-       <reference-dist> 2 </reference-dist> <!-- Distance to pilot -->
-       <volume> 2.0 </volume>            <!-- Volume at reference distance -->
-     </speaker>
+                <speaker>
+                    <!-- Speaker Configuration -->
+                    <max-dist> 12 </max-dist> <!-- Max. distance where speaker is heard -->
+                    <reference-dist> 2 </reference-dist> <!-- Distance to pilot -->
+                    <volume> 2.0 </volume> <!-- Volume at reference distance -->
+                </speaker>
 
-   </tcas>
+            </tcas>
 
-   <sysinfo>
-        <max type="int">0</max>
-        <first type="int">0</first>
-   </sysinfo>
+            <sysinfo>
+                <max type="int">0</max>
+                <first type="int">0</first>
+            </sysinfo>
 
-    <wxradar>
-        <serviceable type="bool">true</serviceable>
-        <multi-scan type="bool">true</multi-scan>
-        <tilt type="int">0</tilt>
-        <precip type="bool">true</precip>
-        <range type="int">30</range>
-    </wxradar>
+            <wxradar>
+                <serviceable type="bool">true</serviceable>
+                <multi-scan type="bool">true</multi-scan>
+                <tilt type="int">0</tilt>
+                <precip type="bool">true</precip>
+                <range type="int">30</range>
+            </wxradar>
 
-    <warn>
-        <master-sound type="int">1</master-sound>
-    </warn>
+            <warn>
+                <master-sound type="int">1</master-sound>
+            </warn>
 
-        <nd-settings>
-            <wpt type="bool">true</wpt>
-            <arpt type="bool">true</arpt>
-            <vor type="bool">true</vor>
-            <ndb type="bool">true</ndb>
-            <traffic type="bool">false</traffic>
-        </nd-settings>
+            <nd-settings>
+                <wpt type="bool">true</wpt>
+                <arpt type="bool">true</arpt>
+                <vor type="bool">true</vor>
+                <ndb type="bool">true</ndb>
+                <traffic type="bool">false</traffic>
+            </nd-settings>
 
-        <nd n="0">
-           <radar-texture-path type="string">Aircraft/787-family/Models/Instruments/od_ndradar_1.png</radar-texture-path>
-          <symbol-texture-path type="string">Aircraft/787-family/Models/Instruments/symbols_2d.png</symbol-texture-path>
-            <font>
-                <color>
-                   <red type="float">0.7</red>
-                   <green type="float">0.7</green>
-                   <blue type="float">0.7</blue>
-                   <alpha type="float">1</alpha>
-               </color>
-               <name type="string">helvetica_bold.txf</name>
-               <size type="float">14</size>
-               <line-spacing type="float">0.01</line-spacing>
-           </font>
-           <serviceable type="bool">true</serviceable>
-           <range type="int">30</range>
-           <aircraft-heading-up type="bool">true</aircraft-heading-up>
-           <heading-up-deg type="float">0.01</heading-up-deg>
-           <x-center type="float">0.499</x-center>
-           <y-center type="float">0.182</y-center>
-       </nd>
+            <nd n="0">
+                <radar-texture-path type="string">Aircraft/787-family/Models/Instruments/od_ndradar_1.png</radar-texture-path>
+                <symbol-texture-path type="string">Aircraft/787-family/Models/Instruments/symbols_2d.png</symbol-texture-path>
+                <font>
+                    <color>
+                        <red type="float">0.7</red>
+                        <green type="float">0.7</green>
+                        <blue type="float">0.7</blue>
+                        <alpha type="float">1</alpha>
+                    </color>
+                    <name type="string">helvetica_bold.txf</name>
+                    <size type="float">14</size>
+                    <line-spacing type="float">0.01</line-spacing>
+                </font>
+                <serviceable type="bool">true</serviceable>
+                <range type="int">30</range>
+                <aircraft-heading-up type="bool">true</aircraft-heading-up>
+                <heading-up-deg type="float">0.01</heading-up-deg>
+                <x-center type="float">0.499</x-center>
+                <y-center type="float">0.182</y-center>
+            </nd>
 
-       <nd n="1">
-           <radar-texture-path type="string">Aircraft/787-family/Models/Instruments/od_ndradar_2.png</radar-texture-path>
-          <symbol-texture-path type="string">Aircraft/787-family/Models/Instruments/symbols_2d.png</symbol-texture-path>
-            <font>
-                <color>
-                   <red type="float">0.7</red>
-                   <green type="float">0.7</green>
-                   <blue type="float">0.7</blue>
-                   <alpha type="float">1</alpha>
-               </color>
-               <name type="string">helvetica_bold.txf</name>
-               <size type="float">14</size>
-               <line-spacing type="float">0.01</line-spacing>
-           </font>
-           <serviceable type="bool">true</serviceable>
-           <range type="int">100</range>
-           <aircraft-heading-up type="bool">true</aircraft-heading-up>
-           <heading-up-deg type="float">0.01</heading-up-deg>
-           <x-center type="float">0.499</x-center>
-           <y-center type="float">0.182</y-center>
-       </nd>
+            <nd n="1">
+                <radar-texture-path type="string">Aircraft/787-family/Models/Instruments/od_ndradar_2.png</radar-texture-path>
+                <symbol-texture-path type="string">Aircraft/787-family/Models/Instruments/symbols_2d.png</symbol-texture-path>
+                <font>
+                    <color>
+                        <red type="float">0.7</red>
+                        <green type="float">0.7</green>
+                        <blue type="float">0.7</blue>
+                        <alpha type="float">1</alpha>
+                    </color>
+                    <name type="string">helvetica_bold.txf</name>
+                    <size type="float">14</size>
+                    <line-spacing type="float">0.01</line-spacing>
+                </font>
+                <serviceable type="bool">true</serviceable>
+                <range type="int">100</range>
+                <aircraft-heading-up type="bool">true</aircraft-heading-up>
+                <heading-up-deg type="float">0.01</heading-up-deg>
+                <x-center type="float">0.499</x-center>
+                <y-center type="float">0.182</y-center>
+            </nd>
 
         </instrumentation>
 
@@ -206,227 +208,190 @@
             <master-caution type="bool">false</master-caution>
         </alarms>
 
-    <!-- The cockpit is -6.26 z-offset from the cockpit of the 787-8 -->
-    <view n="0">
-        <name>Pilot View</name>
-        <type>lookfrom</type>
-        <internal type="bool">true</internal>
-        <cockpit type="bool">true</cockpit>
-        <config>
-            <x-offset-m type="double">-0.568</x-offset-m>
-            <y-offset-m type="double">2.242</y-offset-m>
-            <z-offset-m type="double">-28.872</z-offset-m>
-            <pitch-offset-deg>-10.3</pitch-offset-deg>
-            <default-field-of-view-deg type="double">90.0</default-field-of-view-deg>
-        </config>
-    </view>
+        <view n="0">
+            <name>Pilot View</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <cockpit type="bool">true</cockpit>
+            <config>
+                <x-offset-m type="double">-0.603</x-offset-m>
+                <y-offset-m type="double">2.1135</y-offset-m>
+                <z-offset-m type="double">-27.5427</z-offset-m>
+                <pitch-offset-deg>-10.3</pitch-offset-deg>
+                <default-field-of-view-deg type="double">60.0</default-field-of-view-deg>
+            </config>
+        </view>
 
-    <view n="1">
-        <internal type="bool">0</internal>
-        <cockpit type="bool">0</cockpit>
-    </view>
+        <view n="1">
+            <internal type="bool">0</internal>
+            <cockpit type="bool">0</cockpit>
+        </view>
 
-    <view n="2">
-        <internal type="bool">0</internal>
-        <cockpit type="bool">0</cockpit>
-    </view>
+        <view n="2">
+            <internal type="bool">0</internal>
+            <cockpit type="bool">0</cockpit>
+        </view>
 
-    <view n="3">
-        <internal type="bool">0</internal>
-        <cockpit type="bool">0</cockpit>
-    </view>
+        <view n="3">
+            <internal type="bool">0</internal>
+            <cockpit type="bool">0</cockpit>
+        </view>
 
-    <view n="4">
-        <internal type="bool">0</internal>
-        <cockpit type="bool">0</cockpit>
-    </view>
+        <view n="4">
+            <internal type="bool">0</internal>
+            <cockpit type="bool">0</cockpit>
+        </view>
 
-    <view n="5">
-        <internal type="bool">0</internal>
-        <cockpit type="bool">0</cockpit>
-    </view>
+        <view n="5">
+            <internal type="bool">0</internal>
+            <cockpit type="bool">0</cockpit>
+        </view>
 
-    <view n="6">
-        <internal type="bool">0</internal>
-        <cockpit type="bool">0</cockpit>
-        <config>
-            <z-offset-m archive="y" type="double">125.0</z-offset-m>
-        </config>
-    </view>
+        <view n="6">
+            <internal type="bool">0</internal>
+            <cockpit type="bool">0</cockpit>
+            <config>
+                <z-offset-m archive="y" type="double">125.0</z-offset-m>
+            </config>
+        </view>
+        <view n="101">
+            <name>Gear View</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <cockpit type="bool">true</cockpit>
+            <config>
+                <from-model type="bool">true</from-model>
+                <from-model-idx type="int">0</from-model-idx>
+                <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+                <x-offset-m type="double">0</x-offset-m>
+                <y-offset-m type="double">-2.3146</y-offset-m>
+                <z-offset-m type="double">10.1192</z-offset-m>
+                <default-field-of-view-deg type="double">60</default-field-of-view-deg>
+            </config>
+        </view>
 
-    <view n="101">
-        <name>Gear View</name>
-        <type>lookfrom</type>
-        <internal type="bool">true</internal>
-        <cockpit type="bool">true</cockpit>
-        <config>
-            <from-model type="bool">true</from-model>
-            <from-model-idx type="int">0</from-model-idx>
-            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-            <x-offset-m type="double">0</x-offset-m>
-            <y-offset-m type="double">-2.3146</y-offset-m>
-            <z-offset-m type="double">10.1193</z-offset-m>
-            <default-field-of-view-deg type="double">60</default-field-of-view-deg>
-        </config>
-    </view>
+        <view n="102">
+            <name>Right Engine View</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <cockpit type="bool">true</cockpit>
+            <config>
+                <from-model type="bool">true</from-model>
+                <from-model-idx type="int">0</from-model-idx>
+                <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+                <x-offset-m type="double">3.25</x-offset-m>
+                <y-offset-m type="double">2.0382</y-offset-m>
+                <z-offset-m type="double">-6.9016</z-offset-m>
+                <heading-offset-deg>-111</heading-offset-deg>
+                <pitch-offset-deg>-16.2</pitch-offset-deg>
+                <default-field-of-view-deg type="double">62</default-field-of-view-deg>
+            </config>
+        </view>
 
-    <view n="102">
-        <name>Right Engine View</name>
-        <type>lookfrom</type>
-        <internal type="bool">true</internal>
-        <cockpit type="bool">true</cockpit>
-        <config>
-            <from-model type="bool">true</from-model>
-            <from-model-idx type="int">0</from-model-idx>
-            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-            <x-offset-m type="double">3.25</x-offset-m>
-            <y-offset-m type="double">2.0382</y-offset-m>
-            <z-offset-m type="double">-8.2443</z-offset-m>
-            <heading-offset-deg>-111</heading-offset-deg>
-            <pitch-offset-deg>-16.2</pitch-offset-deg>
-            <default-field-of-view-deg type="double">90</default-field-of-view-deg>
-        </config>
-    </view>
+        <view n="103">
+            <name>Full Cockpit View</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <cockpit type="bool">true</cockpit>
+            <config>
+                <from-model type="bool">true</from-model>
+                <from-model-idx type="int">0</from-model-idx>
+                <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+                <x-offset-m type="double">0</x-offset-m>
+                <y-offset-m type="double">2.242</y-offset-m>
+                <z-offset-m type="double">-27.642</z-offset-m>
+                <pitch-offset-deg>-14.5</pitch-offset-deg>
+                <default-field-of-view-deg type="double">105</default-field-of-view-deg>
+            </config>
+        </view>
 
-	<view n="103">
-		<name>Left Aft Wing View</name>
-		<type>lookfrom</type>
-		<internal type="bool">true</internal>
-		<cockpit type="bool">true</cockpit>
-		<config>
-			<from-model type="bool">true</from-model>
-			<from-model-idx type="int">0</from-model-idx>
-			<ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-			<x-offset-m type="double">0</x-offset-m>
-			<y-offset-m type="double">2.24</y-offset-m>
-			<z-offset-m type="double">7.96</z-offset-m>
-			<pitch-offset-deg>1.6</pitch-offset-deg>
-			<heading-offset-deg>81.5</heading-offset-deg>
-			<default-field-of-view-deg type="double">60</default-field-of-view-deg>
-		</config>
-	</view>
+        <view n="104">
+            <name>EFB View</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <cockpit type="bool">true</cockpit>
+            <config>
+                <from-model type="bool">true</from-model>
+                <from-model-idx type="int">0</from-model-idx>
+                <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+                <x-offset-m type="double">-0.955</x-offset-m>
+                <y-offset-m type="double">1.75</y-offset-m>
+                <z-offset-m type="double">-28.333</z-offset-m>
+                <pitch-offset-deg>-48.6</pitch-offset-deg>
+                <heading-offset-deg>48.6</heading-offset-deg>
+                <default-field-of-view-deg type="double">75</default-field-of-view-deg>
+            </config>
+        </view>
 
-    <view n="104">
-        <name>Full Cockpit View</name>
-        <type>lookfrom</type>
-        <internal type="bool">true</internal>
-        <cockpit type="bool">true</cockpit>
-        <config>
-            <from-model type="bool">true</from-model>
-            <from-model-idx type="int">0</from-model-idx>
-            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-            <x-offset-m type="double">0</x-offset-m>
-            <y-offset-m type="double">2.242</y-offset-m>
-            <z-offset-m type="double">-28.22</z-offset-m>
-            <pitch-offset-deg>-14.5</pitch-offset-deg>
-            <default-field-of-view-deg type="double">105</default-field-of-view-deg>
-        </config>
-    </view>
+        <view n="105">
+            <name>CDU View</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <cockpit type="bool">true</cockpit>
+            <config>
+                <from-model type="bool">true</from-model>
+                <from-model-idx type="int">0</from-model-idx>
+                <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+                <x-offset-m type="double">0</x-offset-m>
+                <y-offset-m type="double">2.4</y-offset-m>
+                <z-offset-m type="double">-28.642</z-offset-m>
+                <pitch-offset-deg>-90</pitch-offset-deg>
+                <default-field-of-view-deg type="double">37</default-field-of-view-deg>
+            </config>
+        </view>
 
-    <view n="105">
-        <name>Copilot View</name>
-        <type>lookfrom</type>
-        <internal type="bool">true</internal>
-        <cockpit type="bool">1</cockpit>
-        <config>
-            <from-model type="bool">true</from-model>
-            <from-model-idx type="int">0</from-model-idx>
-            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-            <default-field-of-view-deg type="double">90.0</default-field-of-view-deg>
-            <default-pitch-deg type="double">0</default-pitch-deg>
-            <default-heading-deg type="double">0</default-heading-deg>
-            <front-direction-deg type="double">0</front-direction-deg>
-            <front-left-direction-deg type="double">45</front-left-direction-deg>
-            <left-direction-deg type="double">90</left-direction-deg>
-            <back-left-direction-deg type="double">135</back-left-direction-deg>
-            <back-direction-deg type="double">180</back-direction-deg>
-            <back-right-direction-deg type="double">225</back-right-direction-deg>
-            <right-direction-deg type="double">270</right-direction-deg>
-            <front-right-direction-deg type="double">315</front-right-direction-deg>
-            <x-offset-m type="double">0.568</x-offset-m>
-            <y-offset-m type="double">2.242</y-offset-m>
-            <z-offset-m type="double">-28.872</z-offset-m>
-            <pitch-offset-deg>-10.3</pitch-offset-deg>
-        </config>
-        <dynamic>
-            <enabled type="bool" userarchive="y">false</enabled>
-        </dynamic>
-    </view>
+        <view n="106">
+            <name>Overhead Panel View</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <cockpit type="bool">true</cockpit>
+            <config>
+                <from-model type="bool">true</from-model>
+                <from-model-idx type="int">0</from-model-idx>
+                <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+                <x-offset-m type="double">0</x-offset-m>
+                <y-offset-m type="double">1.5</y-offset-m>
+                <z-offset-m type="double">-27.39436</z-offset-m>
+                <pitch-offset-deg>53.1</pitch-offset-deg>
+                <default-field-of-view-deg type="double">70</default-field-of-view-deg>
+            </config>
+        </view>
 
-	<view n="106">
-		<name>Center Console View</name>
-		<type>lookfrom</type>
-		<internal type="bool">true</internal>
-		<cockpit type="bool">true</cockpit>
-		<config>
-			<from-model type="bool">true</from-model>
-			<from-model-idx type="int">0</from-model-idx>
-			<ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-			<x-offset-m type="double">0</x-offset-m>
-			<y-offset-m type="double">1.81</y-offset-m>
-			<z-offset-m type="double">-29.12</z-offset-m>
-			<pitch-offset-deg>-72.2</pitch-offset-deg>
-			<default-field-of-view-deg type="double">90</default-field-of-view-deg>
-		</config>
-	</view>
-
-    <view n="107">
-        <name>EFB View</name>
-        <type>lookfrom</type>
-        <internal type="bool">true</internal>
-        <cockpit type="bool">true</cockpit>
-        <config>
-            <from-model type="bool">true</from-model>
-            <from-model-idx type="int">0</from-model-idx>
-            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-            <x-offset-m type="double">-0.785</x-offset-m>
-            <y-offset-m type="double">2.04</y-offset-m>
-            <z-offset-m type="double">-29.18</z-offset-m>
-            <pitch-offset-deg>-46.6</pitch-offset-deg>
-            <heading-offset-deg>49.275</heading-offset-deg>
-            <default-field-of-view-deg type="double">50</default-field-of-view-deg>
-        </config>
-    </view>
-
-    <view n="108">
-        <name>CDU View</name>
-        <type>lookfrom</type>
-        <internal type="bool">true</internal>
-        <cockpit type="bool">true</cockpit>
-        <config>
-            <from-model type="bool">true</from-model>
-            <from-model-idx type="int">0</from-model-idx>
-            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-            <x-offset-m type="double">0</x-offset-m>
-            <y-offset-m type="double">2.3</y-offset-m>
-            <z-offset-m type="double">-29.34</z-offset-m>
-            <pitch-offset-deg>-73</pitch-offset-deg>
-            <default-field-of-view-deg type="double">41</default-field-of-view-deg>
-        </config>
-    </view>
-
-    <view n="109">
-        <name>Overhead Panel View</name>
-        <type>lookfrom</type>
-        <internal type="bool">true</internal>
-        <cockpit type="bool">true</cockpit>
-        <config>
-            <from-model type="bool">true</from-model>
-            <from-model-idx type="int">0</from-model-idx>
-            <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-            <x-offset-m type="double">0</x-offset-m>
-            <y-offset-m type="double">1.8</y-offset-m>
-            <z-offset-m type="double">-28.71</z-offset-m>
-            <pitch-offset-deg>62.9</pitch-offset-deg>
-            <default-field-of-view-deg type="double">78</default-field-of-view-deg>
-        </config>
-    </view>
+        <view n="107">
+            <name>Copilot View</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <cockpit type="bool">1</cockpit>
+            <config>
+                <from-model type="bool">true</from-model>
+                <from-model-idx type="int">0</from-model-idx>
+                <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+                <default-field-of-view-deg type="double">60.0</default-field-of-view-deg>
+                <default-pitch-deg type="double">0</default-pitch-deg>
+                <default-heading-deg type="double">0</default-heading-deg>
+                <front-direction-deg type="double">0</front-direction-deg>
+                <front-left-direction-deg type="double">45</front-left-direction-deg>
+                <left-direction-deg type="double">90</left-direction-deg>
+                <back-left-direction-deg type="double">135</back-left-direction-deg>
+                <back-direction-deg type="double">180</back-direction-deg>
+                <back-right-direction-deg type="double">225</back-right-direction-deg>
+                <right-direction-deg type="double">270</right-direction-deg>
+                <front-right-direction-deg type="double">315</front-right-direction-deg>
+                <x-offset-m type="double">0.603</x-offset-m>
+                <y-offset-m type="double">2.1135</y-offset-m>
+                <z-offset-m type="double">-27.5427</z-offset-m>
+                <pitch-offset-deg>-10.3</pitch-offset-deg>
+            </config>
+            <dynamic>
+                <enabled type="bool" userarchive="y">false</enabled>
+            </dynamic>
+        </view>
 
         <menubar>
             <default>
                 <menu n="3">
                     <item n="0">
-                    <label>Autopilot Dialog</label>
+                        <label>Autopilot Dialog</label>
                         <binding>
                             <command>nasal</command>
                             <script>
@@ -438,7 +403,7 @@
                 </menu>
                 <menu n="5">
                     <item n="5">
-                    <label>Radio Stack</label>
+                        <label>Radio Stack</label>
                         <binding>
                             <command>nasal</command>
                             <script>dialogs.Radio.open()</script>
@@ -495,13 +460,13 @@
                         </binding>
                     </item>
                     <item>
-						<name>tiller</name>
-						<label>Tiller Steering</label>
-						<binding>
-							<command>dialog-show</command>
-							<dialog-name>tiller-dlg</dialog-name>
-						</binding>
-					</item>
+                        <name>tiller</name>
+                        <label>Tiller Steering</label>
+                        <binding>
+                            <command>dialog-show</command>
+                            <dialog-name>tiller-dlg</dialog-name>
+                        </binding>
+                    </item>
                     <item>
                         <name>lights</name>
                         <label>Control Aircraft Lights</label>
@@ -535,7 +500,7 @@
                         </binding>
                     </item>
                     <item>
-                    <label>Ground Services' Controls</label>
+                        <label>Ground Services' Controls</label>
                         <binding>
                             <command>nasal</command>
                             <script>
@@ -544,8 +509,8 @@
                             </script>
                         </binding>
                     </item>
-                     <item>
-                    <label>Fuel Truck Controls</label>
+                    <item>
+                        <label>Fuel Truck Controls</label>
                         <binding>
                             <command>nasal</command>
                             <script>
@@ -614,56 +579,56 @@
             </key>
         </help>
 
-<!-- General MP Enabled Properties -->
+        <!-- General MP Enabled Properties -->
 
-    <multiplay>
-        <generic>
+        <multiplay>
+            <generic>
 
-            <!-- Aircraft Lighting -->
+                <!-- Aircraft Lighting -->
 
-            <int n="0" alias="controls/lighting/logo"/>
-            <int n="1" alias="controls/lighting/landing-lights[0]"/>
-            <int n="2" alias="controls/lighting/wing-lights"/>
-            <int n="3" alias="sim/model/lights/beacon/state"/>
-            <int n="4" alias="controls/lighting/nav-lights"/>
-            <int n="5" alias="sim/model/lights/strobe/state"/>
-            <int n="6" alias="controls/lighting/taxi-lights"/>
+                <int n="0" alias="controls/lighting/logo" />
+                <int n="1" alias="controls/lighting/landing-lights[0]" />
+                <int n="2" alias="controls/lighting/wing-lights" />
+                <int n="3" alias="sim/model/lights/beacon/state" />
+                <int n="4" alias="controls/lighting/nav-lights" />
+                <int n="5" alias="sim/model/lights/strobe/state" />
+                <int n="6" alias="controls/lighting/taxi-lights" />
 
-            <!-- Gears, Engines, Surfaces and Wingflex -->
+                <!-- Gears, Engines, Surfaces and Wingflex -->
 
-            <float n="0" alias="gear/gear[0]/position-norm"/>
-            <float n="1" alias="gear/gear[1]/position-norm"/>
-            <float n="2" alias="gear/gear[2]/position-norm"/>
-            <float n="3" alias="engines/engine[0]/n1"/>
-            <float n="4" alias="engines/engine[1]/n1"/>
-            <float n="5" alias="sim/systems/wingflexer/z-m"/>
-            <float n="6" alias="/fdm/jsbsim/fcs/aileron-cmd-norm"/>
-            <float n="7" alias="surface-positions/flap-pos-norm"/>
-            <float n="8" alias="controls/flight/elevator-trim"/>
-            <float n="9" alias="/fdm/jsbsim/fcs/elevator-cmd-norm"/>
-            <float n="10" alias="/fdm/jsbsim/fcs/rudder-cmd-norm"/>
-            <float n="11" alias="surface-positions/speedbrake-pos-norm"/>
-            <float n="12" alias="controls/switches/contrails"/>
-            <float n="13" alias="/gear/gear[0]/compression-norm"/>
-            <float n="14" alias="/gear/gear[1]/compression-norm"/>
-            <float n="15" alias="/gear/gear[2]/compression-norm"/>
-            <float n="16" alias="/gear/gear[0]/rollspeed-ms"/>
-            <float n="17" alias="/gear/gear[1]/rollspeed-ms"/>
-            <float n="18" alias="/gear/gear[2]/rollspeed-ms"/>
-            <float n="19" alias="engines/engine[0]/reverser-pos-norm"/>
-            <float n="20" alias="engines/engine[1]/reverser-pos-norm"/>
+                <float n="0" alias="gear/gear[0]/position-norm" />
+                <float n="1" alias="gear/gear[1]/position-norm" />
+                <float n="2" alias="gear/gear[2]/position-norm" />
+                <float n="3" alias="engines/engine[0]/n1" />
+                <float n="4" alias="engines/engine[1]/n1" />
+                <float n="5" alias="sim/systems/wingflexer/z-m" />
+                <float n="6" alias="/fdm/jsbsim/fcs/aileron-cmd-norm" />
+                <float n="7" alias="surface-positions/flap-pos-norm" />
+                <float n="8" alias="controls/flight/elevator-trim" />
+                <float n="9" alias="/fdm/jsbsim/fcs/elevator-cmd-norm" />
+                <float n="10" alias="/fdm/jsbsim/fcs/rudder-cmd-norm" />
+                <float n="11" alias="surface-positions/speedbrake-pos-norm" />
+                <float n="12" alias="controls/switches/contrails" />
+                <float n="13" alias="/gear/gear[0]/compression-norm" />
+                <float n="14" alias="/gear/gear[1]/compression-norm" />
+                <float n="15" alias="/gear/gear[2]/compression-norm" />
+                <float n="16" alias="/gear/gear[0]/rollspeed-ms" />
+                <float n="17" alias="/gear/gear[1]/rollspeed-ms" />
+                <float n="18" alias="/gear/gear[2]/rollspeed-ms" />
+                <float n="19" alias="engines/engine[0]/reverser-pos-norm" />
+                <float n="20" alias="engines/engine[1]/reverser-pos-norm" />
 
-            <!-- Fuel Controls and Extra -->
+                <!-- Fuel Controls and Extra -->
 
-            <int n="7" alias="/controls/surge/flash" />
-            <int n="8" alias="controls/jettison/arm" />
-            <int n="9" alias="/controls/jettison/rnozzle" />
-            <int n="10" alias="/controls/jettison/lnozzle" />
+                <int n="7" alias="/controls/surge/flash" />
+                <int n="8" alias="controls/jettison/arm" />
+                <int n="9" alias="/controls/jettison/rnozzle" />
+                <int n="10" alias="/controls/jettison/lnozzle" />
 
-        </generic>
-    </multiplay>
+            </generic>
+        </multiplay>
 
-<!-- NOTE that the Dual Control MP Properties will be aliased into /sim/multiplay/generic/ through Dual_Control_Pilot.nas, Dual_Control_Copilot and Dual_Control_787.nas files -->
+        <!-- NOTE that the Dual Control MP Properties will be aliased into /sim/multiplay/generic/ through Dual_Control_Pilot.nas, Dual_Control_Copilot and Dual_Control_787.nas files -->
 
     </sim>
 
@@ -698,47 +663,47 @@
 
     <payload>
 
-    <weight n="0">
-        <name>Crew</name>
-        <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]">350</weight-lb>
-        <max-lb>500</max-lb>
-        <min-lb>350</min-lb>
-    </weight>
+        <weight n="0">
+            <name>Crew</name>
+            <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]">350</weight-lb>
+            <max-lb>500</max-lb>
+            <min-lb>350</min-lb>
+        </weight>
 
-    <weight n="1">
-        <name>First Class</name>
-        <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]">1800</weight-lb>
-        <max-lb>2400</max-lb>
-        <min-lb>0</min-lb>
-    </weight>
+        <weight n="1">
+            <name>First Class</name>
+            <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]">1800</weight-lb>
+            <max-lb>2400</max-lb>
+            <min-lb>0</min-lb>
+        </weight>
 
-    <weight n="2">
-        <name>Business Class</name>
-        <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]">6400</weight-lb>
-        <max-lb>8000</max-lb>
-        <min-lb>0</min-lb>
-    </weight>
+        <weight n="2">
+            <name>Business Class</name>
+            <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]">6400</weight-lb>
+            <max-lb>8000</max-lb>
+            <min-lb>0</min-lb>
+        </weight>
 
-    <weight n="3">
-        <name>Economy Class</name>
-        <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[3]">26000</weight-lb>
-        <max-lb>35000</max-lb>
-        <min-lb>0</min-lb>
-    </weight>
+        <weight n="3">
+            <name>Economy Class</name>
+            <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[3]">26000</weight-lb>
+            <max-lb>35000</max-lb>
+            <min-lb>0</min-lb>
+        </weight>
 
-    <weight n="4">
-        <name>Forward Cargo</name>
-        <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[4]">10000</weight-lb>
-        <max-lb>10000</max-lb>
-        <min-lb>0</min-lb>
-    </weight>
+        <weight n="4">
+            <name>Forward Cargo</name>
+            <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[4]">10000</weight-lb>
+            <max-lb>10000</max-lb>
+            <min-lb>0</min-lb>
+        </weight>
 
-    <weight n="5">
-        <name>Rear Cargo</name>
-        <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[5]">5000</weight-lb>
-        <max-lb>10000</max-lb>
-        <min-lb>0</min-lb>
-    </weight>
+        <weight n="5">
+            <name>Rear Cargo</name>
+            <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[5]">5000</weight-lb>
+            <max-lb>10000</max-lb>
+            <min-lb>0</min-lb>
+        </weight>
     </payload>
 
     <controls>
@@ -790,27 +755,27 @@
         <electric>
             <avionics-switch type="bool">true</avionics-switch>
         </electric>
-	<safety>
-	    <safety_switch type="bool">0</safety_switch>
-	    <safety_switch1 type="bool">0</safety_switch1>
-	    <safety_switch2 type="bool">0</safety_switch2>
-	    <safety_switch3 type="bool">0</safety_switch3>
-	    <safety_switch4 type="bool">0</safety_switch4>
-	    <safety_switch5 type="bool">0</safety_switch5>
-	    <safety_switch6 type="bool">0</safety_switch6>
-	    <safety_switch7 type="bool">0</safety_switch7>
-	    <safety_switch8 type="bool">0</safety_switch8>
-	    <safety_switch9 type="bool">0</safety_switch9>
-	    <safety_switch10 type="bool">0</safety_switch10>
-	    <safety_switch11 type="bool">0</safety_switch11>
-	    <safety_switch12 type="bool">0</safety_switch12>
-	    <safety_switch13 type="bool">0</safety_switch13>
-	    <safety_switch14 type="bool">0</safety_switch14>
-	    <safety_switch15 type="bool">0</safety_switch15>
-	</safety>
-	<constant>
-	    <const type="bool">1</const>
-	</constant>
+        <safety>
+            <safety_switch type="bool">0</safety_switch>
+            <safety_switch1 type="bool">0</safety_switch1>
+            <safety_switch2 type="bool">0</safety_switch2>
+            <safety_switch3 type="bool">0</safety_switch3>
+            <safety_switch4 type="bool">0</safety_switch4>
+            <safety_switch5 type="bool">0</safety_switch5>
+            <safety_switch6 type="bool">0</safety_switch6>
+            <safety_switch7 type="bool">0</safety_switch7>
+            <safety_switch8 type="bool">0</safety_switch8>
+            <safety_switch9 type="bool">0</safety_switch9>
+            <safety_switch10 type="bool">0</safety_switch10>
+            <safety_switch11 type="bool">0</safety_switch11>
+            <safety_switch12 type="bool">0</safety_switch12>
+            <safety_switch13 type="bool">0</safety_switch13>
+            <safety_switch14 type="bool">0</safety_switch14>
+            <safety_switch15 type="bool">0</safety_switch15>
+        </safety>
+        <constant>
+            <const type="bool">1</const>
+        </constant>
         <engines>
             <engine-start-switch type="int">1</engine-start-switch>
             <engine n="0">
@@ -862,7 +827,7 @@
                 <announce type="bool">true</announce>
                 <active type="bool">false</active>
             </copilot>
-	    <ind type="bool">1</ind>
+            <ind type="bool">1</ind>
         </switches>
     </controls>
 
@@ -956,12 +921,12 @@
         </mk-viii>
     </instrumentation>
 
-<autopilot>
-    <internal>
-        <aileron-max type="double">1</aileron-max>
-        <aileron-min type="double">-1</aileron-min>
-    </internal>
-</autopilot>
+    <autopilot>
+        <internal>
+            <aileron-max type="double">1</aileron-max>
+            <aileron-min type="double">-1</aileron-min>
+        </internal>
+    </autopilot>
 
     <nasal>
         <b787>
@@ -1029,7 +994,7 @@
             <file>Aircraft/787-family/Nasal/procedures/fmsWP.nas</file>
             <file>Aircraft/787-family/Nasal/procedures/fmsTP.nas</file>
             <file>Aircraft/787-family/Nasal/procedures/fmsTransition.nas</file>
-			<file>Aircraft/787-family/Nasal/shake.nas</file>
+            <file>Aircraft/787-family/Nasal/shake.nas</file>
 
         </b787>
         <dualcontrol>
@@ -1039,10 +1004,10 @@
             <file>Aircraft/787-family/Nasal/radio.nas</file>
         </dialogs>
 
-<!-- Animation creators -->
+        <!-- Animation creators -->
 
         <helpers>
-<!--            <file>Aircraft/787-family/Devel/wxradar-echo-animations.nas</file>
+            <!--            <file>Aircraft/787-family/Devel/wxradar-echo-animations.nas</file>
             <file>Aircraft/787-family/Devel/wxradar-pixel-animations.nas</file>
             <file>Aircraft/787-family/Devel/tcas-animations-helper.nas</file> -->
             <!-- file>Aircraft/Instruments-3d/vsd/animation_creator.nas</file -->

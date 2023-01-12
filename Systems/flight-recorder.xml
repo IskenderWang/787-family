@@ -7,9 +7,9 @@
 
         <!-- Generic tings -->
 
-        <signals include="Aircraft/Generic/flightrecorder/components/position.xml"/>
-        <signals include="Aircraft/Generic/flightrecorder/components/controls.xml"/>
-        <signals include="Aircraft/Generic/flightrecorder/components/surfaces.xml"/>
+        <signals include="Aircraft/Generic/flightrecorder/components/position.xml" />
+        <signals include="Aircraft/Generic/flightrecorder/components/controls.xml" />
+        <signals include="Aircraft/Generic/flightrecorder/components/surfaces.xml" />
         <signals include="Aircraft/Generic/flightrecorder/components/engine-jet.xml">
             <count type="int">2</count>
         </signals>

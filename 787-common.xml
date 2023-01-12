@@ -3,38 +3,38 @@
 <!-- Put anything common between all -sets here -->
 
 <PropertyList>
-    
+
     <controls>
         <gear>
             <tiller-cmd-norm type="double">0</tiller-cmd-norm>
             <enable-tiller type="bool">true</enable-tiller>
         </gear>
     </controls>
- 
-	<input>
-		<keyboard>
- 			<key n="267">
-			<name>F11</name>
-				<desc>Pop up autopilot dialog</desc>
-				<binding>
-							<command>nasal</command>
-							<script>
+
+    <input>
+        <keyboard>
+            <key n="267">
+                <name>F11</name>
+                <desc>Pop up autopilot dialog</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>
 							 var ap_dialog = gui.Dialog.new("sim/gui/dialogs/ap_dialog/dialog", "Aircraft/787-family/gui/dialogs/it-autoflight-dlg.xml");
 							 ap_dialog.open();
 							</script>
-				</binding>
-			</key>
-			<key n="127">
-				<name>Delete</name>
-				<desc>Toggle thrust reversers</desc>
-				<binding>
-					<command>nasal</command>
-					<script>
+                </binding>
+            </key>
+            <key n="127">
+                <name>Delete</name>
+                <desc>Toggle thrust reversers</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>
 					 reversethrust.togglereverser();
 					</script>
-				</binding>
-			</key>
-			<key n="101">
+                </binding>
+            </key>
+            <key n="101">
                 <name>e</name>
                 <desc>Set idle thrust</desc>
                 <binding>
@@ -61,152 +61,152 @@
                         setprop("controls/engines/engine[1]/throttle", 1);
                     </script>
                 </binding>
-			</key>
-			<key n="6">
-				<name>Ctrl-f</name>
-				<desc>Toggle FBW Override</desc>
-				<repeatable type="bool">true</repeatable>
-				<binding>
-					<command>property-cycle</command>
-					<property>/controls/fbw/active</property>
-					<value>0</value>
-					<value>1</value>
-				</binding>
-			</key>
-			<key n="25">
-				<name>Ctrl-y</name>
-				<desc>Toggle Yaw Damper</desc>
-				<repeatable type="bool">true</repeatable>
-				<binding>
-					<command>property-cycle</command>
-					<property>/controls/fbw/yaw-damper</property>
-					<value>0</value>
-					<value>1</value>
-				</binding>
-			</key>
-			<key n="119">
-				<name>w</name>
-				<desc>Walk forward toward view</desc>
-				<repeatable type="bool">true</repeatable>
-				<binding>
-					<command>nasal</command>
-					<script>
+            </key>
+            <key n="6">
+                <name>Ctrl-f</name>
+                <desc>Toggle FBW Override</desc>
+                <repeatable type="bool">true</repeatable>
+                <binding>
+                    <command>property-cycle</command>
+                    <property>/controls/fbw/active</property>
+                    <value>0</value>
+                    <value>1</value>
+                </binding>
+            </key>
+            <key n="25">
+                <name>Ctrl-y</name>
+                <desc>Toggle Yaw Damper</desc>
+                <repeatable type="bool">true</repeatable>
+                <binding>
+                    <command>property-cycle</command>
+                    <property>/controls/fbw/yaw-damper</property>
+                    <value>0</value>
+                    <value>1</value>
+                </binding>
+            </key>
+            <key n="119">
+                <name>w</name>
+                <desc>Walk forward toward view</desc>
+                <repeatable type="bool">true</repeatable>
+                <binding>
+                    <command>nasal</command>
+                    <script>
 					 walk.walk_about(0.1);
 					</script>
-				</binding>
-			</key>
-			<key n="2">
-				<name>Ctrl-b</name>
-				<desc>Cycle speedbrake setting</desc>
-				<binding>
-					<command>property-cycle</command>
-					<property>controls/flight/speedbrake-lever</property>
-					<value>0</value>
-					<value>0.5</value>
-					<value>1</value>
-				</binding>
-			</key>
-			<key n="11">
-				<name>Ctrl-k</name>
-				<desc>Arm/disarm ground spoilers</desc>
-				<binding>
-					<command>property-toggle</command>
-					<property>controls/flight/ground-spoilers-armed</property>
-				</binding>
-			</key>
-			<key n="87">
-				<name>W</name>
-				<desc>Run forward toward view</desc>
-				<repeatable type="bool">true</repeatable>
-				<binding>
-					<command>nasal</command>
-					<script>
+                </binding>
+            </key>
+            <key n="2">
+                <name>Ctrl-b</name>
+                <desc>Cycle speedbrake setting</desc>
+                <binding>
+                    <command>property-cycle</command>
+                    <property>controls/flight/speedbrake-lever</property>
+                    <value>0</value>
+                    <value>0.5</value>
+                    <value>1</value>
+                </binding>
+            </key>
+            <key n="11">
+                <name>Ctrl-k</name>
+                <desc>Arm/disarm ground spoilers</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>controls/flight/ground-spoilers-armed</property>
+                </binding>
+            </key>
+            <key n="87">
+                <name>W</name>
+                <desc>Run forward toward view</desc>
+                <repeatable type="bool">true</repeatable>
+                <binding>
+                    <command>nasal</command>
+                    <script>
 					 walk.walk_about(0.25);
 					</script>
-				</binding>
-			</key>
-			<key n="115">
-				<name>s</name>
-				<desc>Walk backward from view</desc>
-				<repeatable type="bool">true</repeatable>
-				<binding>
-					<command>nasal</command>
-					<script>
+                </binding>
+            </key>
+            <key n="115">
+                <name>s</name>
+                <desc>Walk backward from view</desc>
+                <repeatable type="bool">true</repeatable>
+                <binding>
+                    <command>nasal</command>
+                    <script>
 					 walk.walk_about(-0.1);
 					</script>
-				</binding>
-			</key>
-			<key n="357">
-				<name>Up</name>
-				<repeatable type="bool">true</repeatable>
-				  <mod-alt>
-				   <desc>Tilt View Up</desc>
-				   <binding>
-					<command>nasal</command>
-					<script>
+                </binding>
+            </key>
+            <key n="357">
+                <name>Up</name>
+                <repeatable type="bool">true</repeatable>
+                <mod-alt>
+                    <desc>Tilt View Up</desc>
+                    <binding>
+                        <command>nasal</command>
+                        <script>
 						setprop("/sim/current-view/pitch-offset-deg", getprop("/sim/current-view/pitch-offset-deg") + 1);
 					</script>
-				   </binding>
-				  </mod-alt>
-			</key>
-			<key n="359">
-				<name>Down</name>
-				<repeatable type="bool">true</repeatable>
-				  <mod-alt>
-				   <desc>Tilt View Down</desc>
-				   <binding>
-					<command>nasal</command>
-					<script>
+                    </binding>
+                </mod-alt>
+            </key>
+            <key n="359">
+                <name>Down</name>
+                <repeatable type="bool">true</repeatable>
+                <mod-alt>
+                    <desc>Tilt View Down</desc>
+                    <binding>
+                        <command>nasal</command>
+                        <script>
 						setprop("/sim/current-view/pitch-offset-deg", getprop("/sim/current-view/pitch-offset-deg") - 1);
 					</script>
-				   </binding>
-				  </mod-alt>
-			</key>
-			<key n="356">
-				<name>Left</name>
-				<repeatable type="bool">true</repeatable>
-				  <mod-alt>
-				   <desc>Pan View Left</desc>
-				   <binding>
-					<command>nasal</command>
-					<script>
+                    </binding>
+                </mod-alt>
+            </key>
+            <key n="356">
+                <name>Left</name>
+                <repeatable type="bool">true</repeatable>
+                <mod-alt>
+                    <desc>Pan View Left</desc>
+                    <binding>
+                        <command>nasal</command>
+                        <script>
 						setprop("/sim/current-view/heading-offset-deg", getprop("/sim/current-view/heading-offset-deg") + 1);
 					</script>
-				   </binding>
-				  </mod-alt>
-			</key>
-			<key n="358">
-				<name>Right</name>
-				<repeatable type="bool">true</repeatable>
-				  <mod-alt>
-				   <desc>Pan View Right</desc>
-				   <binding>
-					<command>nasal</command>
-					<script>
+                    </binding>
+                </mod-alt>
+            </key>
+            <key n="358">
+                <name>Right</name>
+                <repeatable type="bool">true</repeatable>
+                <mod-alt>
+                    <desc>Pan View Right</desc>
+                    <binding>
+                        <command>nasal</command>
+                        <script>
 						setprop("/sim/current-view/heading-offset-deg", getprop("/sim/current-view/heading-offset-deg") - 1);
 					</script>
-				   </binding>
-				  </mod-alt>
-			</key>
-			<key n="66">
-				<name>B</name>
-				<desc>Toggle parking brake on or off</desc>
-				<binding>
-					<command>nasal</command>
-					<script>b787.toggle_parkingbrakes();</script>
-				</binding>
-			</key>
-			<key n="68">
-				<name>D</name>
-				<desc>Autopilot Disconnect</desc>
-				<binding>
-					<command>property-assign</command>
-					<property>it-autoflight/input/ap1</property>
-					<value>0</value>
-				</binding>
-			</key>
-		</keyboard>
-	</input>
+                    </binding>
+                </mod-alt>
+            </key>
+            <key n="66">
+                <name>B</name>
+                <desc>Toggle parking brake on or off</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>b787.toggle_parkingbrakes();</script>
+                </binding>
+            </key>
+            <key n="68">
+                <name>D</name>
+                <desc>Autopilot Disconnect</desc>
+                <binding>
+                    <command>property-assign</command>
+                    <property>it-autoflight/input/ap1</property>
+                    <value>0</value>
+                </binding>
+            </key>
+        </keyboard>
+    </input>
 
     <sim n="0">
         <aircraft-data>
@@ -214,7 +214,7 @@
             <path>/sim/model/autopush/route/show-wingtip</path>
         </aircraft-data>
         <model>
-            <autopush include="Systems/autopush-config.xml"/>
+            <autopush include="Systems/autopush-config.xml" />
         </model>
         <systems>
             <autopilot>
@@ -230,7 +230,7 @@
                 <path>Aircraft/787-family/Systems/gear-agl-ft.xml</path>
             </autopilot>
 
-            <wingflexer include="Systems/wingflexer-params.xml"/>
+            <wingflexer include="Systems/wingflexer-params.xml" />
             <autopilot>
                 <name>wing flexer property rule</name>
                 <path>Aircraft/Generic/wingflexer.xml</path>
@@ -248,10 +248,10 @@
         <jsbsim>
             <external_reactions>
                 <tractor>
-                    <magnitude alias="/sim/model/autopush/force-lbf"/>
-                    <x alias="/sim/model/autopush/force-x"/>
-                    <y alias="/sim/model/autopush/force-y"/>
-                    <z alias="/sim/model/autopush/force-z"/>
+                    <magnitude alias="/sim/model/autopush/force-lbf" />
+                    <x alias="/sim/model/autopush/force-x" />
+                    <y alias="/sim/model/autopush/force-y" />
+                    <z alias="/sim/model/autopush/force-z" />
                 </tractor>
             </external_reactions>
         </jsbsim>
@@ -292,7 +292,7 @@
             <file>Nasal/Autopush/route.nas</file>
         </autopush_route>
     </nasal>
-    
+
     <it-autoflight>
         <config>
             <roll>
@@ -311,7 +311,7 @@
                 <roll>1.6</roll>
                 <alt-gain>-5</alt-gain>
             </cmd>
-            <autoland> 
+            <autoland>
                 <pitch-kp>0.0051</pitch-kp>
                 <yaw-kp>-0.05</yaw-kp>
             </autoland>
@@ -327,7 +327,7 @@
             <auto-bank-max-deg>30</auto-bank-max-deg> <!-- Maximum Auto Bank Limit -->
             <autothrottle-max>0.95</autothrottle-max> <!-- Thrust Max Limit Normalized -->
             <autothrottle-min>0.02</autothrottle-min> <!-- Thrust Low Limit Normalized -->
-            <custom-fma>0</custom-fma> <!-- Call functions when modes change for a custom FMA to be implemented --> 
+            <custom-fma>0</custom-fma> <!-- Call functions when modes change for a custom FMA to be implemented -->
             <disable-final>0</disable-final> <!-- Disable the Final Controllers, for custom FCS integration -->
             <hdg-hld-separate>0</hdg-hld-separate> <!-- Separates the HDG HLD mode from the HDG SEL mode -->
             <land-enable>1</land-enable> <!-- Enable/Disable Autoland -->
