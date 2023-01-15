@@ -3,78 +3,127 @@ var autobrake = {
         me.UPDATE_INTERVAL = 0.5;
         me.loopid = 0;
         me.fullthrottle = 0;
-        setprop("/controls/autobrake/setting", 0);
+        me.old_throttle = getprop("controls/engine[0]/throttle");
+        me.current_spdbrk = getprop("controls/flight/speedbrake-lever");
+        setprop("controls/autobrake/setting", 0);
 
         me.reset();
     },
     update : func {
-        var absetting = getprop("/controls/autobrake/setting");
+        var current_throttle = getprop("controls/engines/engine[0]/throttle");
+        var current_spdbrk = getprop("controls/flight/speedbrake-lever");
+        var absetting = getprop("controls/autobrake/setting");
 
-        if ((getprop("/velocities/airspeed-kt") >= 40) and (getprop("/gear/gear[0]/rollspeed-ms") > 5)) {
-            # ABS LOW 1
-            if (absetting == 1) {
-                setprop("controls/gear/brake-left", 0.2);
-                setprop("controls/gear/brake-right", 0.2);
-            }
+        # Handle disarming events
 
-            # ABS LOW 2
-            if (absetting == 2) {
-                setprop("controls/gear/brake-left", 0.4);
-                setprop("controls/gear/brake-right", 0.4);
-            }
+        # Initiating a go-around after touchdown disarms the system.
+        if (
+            (absetting > 1)
+            and (current_throttle > me.old_throttle)
+            and (getprop("gear/gear[1]/rollspeed-ms") > 5)
+            # The rollspeed is used to avoid disarming the system in the takeoff roll.
+        ) {
+            setprop("controls/gear/brake-left", 0);
+            setprop("controls/gear/brake-right", 0);
+            setprop("controls/autobrake/setting", 1);
+            #screen.log.write("Disarming Autobrakes after go-around"); # For testing
+        }
 
-            # ABS MED 3
-            if (absetting == 3) {
-                setprop("controls/gear/brake-left", 0.6);
-                setprop("controls/gear/brake-right", 0.6);
-            }
+        # Pressing the pedal brakes when the system is armed disarms the system.
+        if (
+            (absetting > 1)
+            and (getprop("controls/gear/brake-left") > (absetting - 1) / 5)
+        ) {
+            setprop("controls/autobrake/setting", 1);
 
-            # ABS HIGH 4
-                if (absetting == 4) {
-                setprop("controls/gear/brake-left", 0.8);
-                setprop("controls/gear/brake-right", 0.8);
-            }
+            #screen.log.write("Disarming Autobrakes after pedal input"); # For testing
+            # The fact that `/controls/autobrake/setting` is tied to both the pedal brakes and
+            # autobrakes limits our ability to detect pedal braking to just detecting more or the
+            # same pedal braking than the autobrake setting.
+        }
 
-            # ABS MAX 5
-            if (absetting == 5) {
+        # Moving the speedbrake lever to down (0) after brakes have deployed on the ground disarms
+        # the system.
+        if (
+            (getprop("gear/gear[1]/compression-ft") != 0)
+            and (getprop("controls/gear/brake-left") > 0)
+            and (me.old_spdbrk > 0)
+            and (current_spdbrk == 0)
+        ) {
+            setprop("controls/autobrake/setting", 1);
+            #screen.log.write("Disarming Autobrakes after speedbrakes down"); # For testing
+        }
+
+        # TODO: Add normal intiskid system fault and loss of inertial data from the IRUs as
+        # disarming events.
+
+        me.old_throttle = current_throttle;
+        me.old_spdbrk = current_spdbrk;
+
+        # Handle application of brake pressure
+
+        # OFF & DISARM settings
+        if ((absetting == 0) or (absetting == 1))
+            return;
+
+        # The wheels must be spinning to appy brakes
+        if (getprop("gear/gear[1]/rollspeed-ms") < 5)
+            return;
+
+        # RTO setting
+        if (absetting == -1) {
+            if (current_throttle >= 0.9)
+                me.fullthrottle = 1;
+
+            if ((me.fullthrottle == 1) and (current_throttle <= 0.6)) {
                 setprop("controls/gear/brake-left", 1);
                 setprop("controls/gear/brake-right", 1);
+                me.fullthrottle == 0;
+                #screen.log.write("Applying autobrakes after RTO"); # For testing
             }
 
-            # ABS RTO
-            if (absetting == -1) {
-                if (getprop("controls/engines/engine[0]/throttle") >= 0.9) {
-                    me.fullthrottle = 1;
-                }
-
-                if ((me.fullthrottle == 1) and (getprop("controls/engines/engine[0]/throttle") <= 0.6)) {
-                    setprop("controls/gear/brake-left", 1);
-                    setprop("controls/gear/brake-right", 1);
-                    me.fullthrottle = 0;
-                }
+            # Set autobrake to OFF after takeoff
+            if (
+                (getprop("velocities/airspeed-kt") > 150)
+                and (getprop("gear/gear[1]/compression-ft") == 0)
+                and (me.fullthrottle == 1)
+            ) {
+                setprop("controls/autobrake/setting", 0);
+                #screen.log.write("Setting Autobrakes to OFF after takeoff"); # For testing
             }
+
+            return;
         }
 
-        # Deactivate autobrake after rollout, even from RTO. There's some slack for the throttle
-        # setting to taxi after rollout.
-        if (
-            (getprop("/velocities/airspeed-kt") < 40)                  # Airspeed is low
-            and (getprop("/gear/gear[0]/rollspeed-ms") > 5)            # The aircraft is rolling
-            and (getprop("/gear/gear[0]/compression-ft") != 0)         # The aircraft is on the ground
-            and (getprop("/controls/engines/engine[0]/throttle") == 0) # Throttle is set to idle
-        ) {
-            setprop("/controls/autobrake/setting", 0);
+        # Throttle has to be set to idle to apply brake pressure.
+        if ((current_throttle != 0))
+            return;
+
+        # AUTOBRAKE MAX setting
+        if (absetting == 6) {
+            # We should be detecting a pitch angle lower than 1°, but this can be unreliable in
+            # sloped runways, so instead we detect that the nose wheel is touching the ground.
+            if (getprop("gear/gear[0]/compression-ft") == 0) {
+                #screen.log.write("Setting Autobrakes to 0.8 MAX"); # For testing
+                setprop("controls/gear/brake-left", 0.8);
+                setprop("controls/gear/brake-right", 0.8);
+                return;
+            }
+
+            # Set the brakes to MAX after nose wheel touches the ground.
+            #screen.log.write("Setting Autobrakes to 1.0 MAX"); # For testing
+            setprop("controls/gear/brake-left", 1);
+            setprop("controls/gear/brake-right", 1);
+
+            return;
         }
 
-        # Deactivate autobrake after takeoff
-        if (
-            (getprop("/velocities/airspeed-kt") > 120)                  # Airspeed is high
-            and (getprop("/gear/gear[0]/rollspeed-ms") > 25)            # Aircraft was recently on the ground
-            and (getprop("/gear/gear[0]/compression-ft") == 0)          # The aircraft is flying
-            and (getprop("/controls/engines/engine[0]/throttle") > 0.9) # Throttle is set to takeoff
-        ) {
-            setprop("/controls/autobrake/setting", 0);
-        }
+        # All remaining autobrake settings
+        #screen.log.write("Setting autobrakes to " ~ (absetting - 1) / 5.0 ~ "."); # For testing
+        setprop("controls/gear/brake-left", (absetting - 1) / 5.0);
+        setprop("controls/gear/brake-right", (absetting - 1) / 5.0);
+
+        # The brakes will stay applied until coming to a complete stop or until it's disarmed.
     },
     reset : func {
         me.loopid += 1;
@@ -92,3 +141,10 @@ setlistener("sim/signals/fdm-initialized", func {
     print("Autobrake System .... Initialized");
     sysinfo.log_msg("[ABS] Autobrake System Initialized", 0);
 });
+
+# Notes:
+# 1. `gear/gear[0]` is the nose gear (first to takeoff, last to land)
+# 2. `gear/gear[1]` is the left gear (last to takeoff, first to land)
+# 3. RTO position is -1
+# 4. OFF position is 0, DISARM position is 1
+# 5. 2 to 6 are autobrake 1 to MAX
