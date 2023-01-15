@@ -95,7 +95,7 @@
 	<text><name>white</name>
 		<offsets>
 			<x-m>0.0001</x-m>
-			<y-m>0</y-m>
+			
 			<z-m>-0.0348</z-m>
 		</offsets>
 		<alignment>center-center</alignment>

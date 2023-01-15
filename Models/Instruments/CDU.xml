@@ -44,7 +44,7 @@
 	<text><name>text</name>
 		<offsets>
 			<x-m>-0.1022</x-m>
-			<y-m>0</y-m>
+			
 			<z-m>-0.0001</z-m><heading-deg>90</heading-deg>
 			<heading-deg>90</heading-deg>
 		</offsets>
@@ -69,7 +69,7 @@
 	<text><name>text</name>
 		<offsets>
 			<x-m>0.0100</x-m>
-			<y-m>0</y-m>
+			
 			<z-m>-0.0001</z-m><heading-deg>90</heading-deg>
 			<heading-deg>90</heading-deg>
 		</offsets>

@@ -71,13 +71,13 @@ Distribute under the terms of GPLv2.
    <factor>-16.3</factor>
    <center>
      <x-m>-2.8976</x-m>
-     <y-m>0</y-m>
+     
      <z-m>0.5809</z-m>
    </center>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -89,13 +89,13 @@ Distribute under the terms of GPLv2.
    <factor>-16.3</factor>
    <center>
      <x-m>2.0501</x-m>
-     <y-m>0</y-m>
+     
      <z-m>0.5735</z-m>
    </center>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -111,13 +111,13 @@ Distribute under the terms of GPLv2.
    <property>&YAW-PROP;</property>
    <factor>&YAW-MULT;</factor>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
    <axis>
-     <x>0</x>
-     <y>0</y>
+     
+     
      <z>-1</z>
    </axis>
  </animation>
@@ -127,8 +127,8 @@ Distribute under the terms of GPLv2.
    <property>&COMPRESSION-PROP;</property>
    <factor>0.3048</factor>
    <axis>
-     <x>0</x>
-     <y>0</y>
+     
+     
      <z>1</z>
    </axis>
  </animation>
@@ -139,14 +139,14 @@ Distribute under the terms of GPLv2.
    <factor>&PITCH-FACTOR;</factor>
    <offset-deg>&PITCH-OFFSET;</offset-deg>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
+     
+     
+     
    </center>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 </PropertyList>

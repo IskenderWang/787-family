@@ -9,9 +9,9 @@
   <object-name>Ring</object-name>
   <property>instrumentation/magnetic-compass/indicated-heading-deg</property>
   <axis>
-   <x>0.0</x>
-   <y>0.0</y>
-   <z>1.0</z>
+   
+   
+   <z>1</z>
   </axis>
  </animation>
 

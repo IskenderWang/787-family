@@ -33,7 +33,7 @@
 
     </group>
 
-    <hrule/>
+    <hrule />
 
     <group>
         <layout>hbox</layout>
@@ -68,14 +68,14 @@
 
     </group>
 
-    <hrule/>
+    <hrule />
 
 
-<!--         COM 1          -->
+    <!--         COM 1          -->
 
 
     <group>
-         <layout>table</layout>
+        <layout>table</layout>
 
         <text>
             <row>0</row>
@@ -138,7 +138,7 @@
             </binding>
         </dial>
 
-<!--         COM 2          -->
+        <!--         COM 2          -->
 
         <text>
             <row>1</row>
@@ -197,7 +197,7 @@
             </binding>
         </dial>
 
-<!--         NAV 1          -->
+        <!--         NAV 1          -->
 
         <text>
             <row>2</row>
@@ -274,7 +274,7 @@
             </binding>
         </input>
 
-<!--         NAV 2          -->
+        <!--         NAV 2          -->
 
         <text>
             <row>3</row>
@@ -351,7 +351,7 @@
             </binding>
         </input>
 
-<!--         ADF 1          -->
+        <!--         ADF 1          -->
 
         <text>
             <row>4</row>
@@ -418,7 +418,7 @@
             </binding>
         </checkbox>
 
-<!--         ADF 2          -->
+        <!--         ADF 2          -->
 
         <text>
             <row>5</row>
@@ -485,7 +485,7 @@
             </binding>
         </checkbox>
 
-<!--         Transponder (with SquawkGear/VATSIM)     -->
+        <!--         Transponder (with SquawkGear/VATSIM)     -->
         <text>
             <row>6</row>
             <col>0</col>
@@ -531,9 +531,8 @@
 
     </group>
 
-    <hrule/>
+    <hrule />
 
-    <group>
-    </group>
+    <group></group>
 
 </PropertyList>

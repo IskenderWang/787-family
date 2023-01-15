@@ -45,14 +45,14 @@
         <type>flash</type>
         <object-name>landinglight</object-name>
         <center>
-            <x-m>0.0</x-m>
-            <y-m>0.0</y-m>
+            
+            
             <z-m>0.0</z-m>
         </center>
         <axis>
             <x>-1</x>
-            <y>0</y>
-            <z>0</z>
+            
+            
         </axis>
         <power>8</power>
         <factor>6</factor>

@@ -2,5 +2,4 @@
 <!--
   Thrust is computed directly by the engine
 -->
-<direct name="Direct">
-</direct>
+<direct name="Direct"></direct>
