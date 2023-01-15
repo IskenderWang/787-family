@@ -23,8 +23,8 @@
 		<object-name>arc</object-name>
 		<property>orientation/heading-magnetic-deg</property>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>-1</z>
 		</axis>
 		<center>
@@ -51,12 +51,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -66,8 +66,8 @@
 		<property>instrumentation/nav/nav-distance</property>
 		<factor>0.00000198</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -78,12 +78,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -106,12 +106,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -121,8 +121,8 @@
 		<property>instrumentation/nav[1]/nav-distance</property>
 		<factor>0.00000198</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -133,12 +133,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -160,12 +160,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -178,12 +178,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -206,12 +206,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -234,12 +234,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -502,9 +502,9 @@
    <factor>0.001</factor>
    <step>100</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -515,9 +515,9 @@
    <factor>0.01</factor>
    <step>10</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -528,9 +528,9 @@
    <factor>0.1</factor>
    <step>1</step>
    <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
  </animation>
 
@@ -589,7 +589,7 @@
    	<property>controls/navigation/vert-profile/nm1</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -599,7 +599,7 @@
    	<property>controls/navigation/vert-profile/nm2</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -609,7 +609,7 @@
    	<property>controls/navigation/vert-profile/nm3</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -619,7 +619,7 @@
    	<property>controls/navigation/vert-profile/nm4</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -629,7 +629,7 @@
    	<property>controls/navigation/vert-profile/nm5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -639,7 +639,7 @@
    	<property>controls/navigation/vert-profile/nm6</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -649,7 +649,7 @@
    	<property>controls/navigation/vert-profile/nm7</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -659,7 +659,7 @@
    	<property>controls/navigation/vert-profile/nm8</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -669,7 +669,7 @@
    	<property>controls/navigation/vert-profile/nm9</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -679,7 +679,7 @@
    	<property>controls/navigation/vert-profile/nm10</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -689,7 +689,7 @@
    	<property>controls/navigation/vert-profile/nm11</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -699,7 +699,7 @@
    	<property>controls/navigation/vert-profile/nm12</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -709,7 +709,7 @@
    	<property>controls/navigation/vert-profile/nm13</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -719,7 +719,7 @@
    	<property>controls/navigation/vert-profile/nm14</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -729,7 +729,7 @@
    	<property>controls/navigation/vert-profile/nm15</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -739,7 +739,7 @@
    	<property>controls/navigation/vert-profile/nm16</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -749,7 +749,7 @@
    	<property>controls/navigation/vert-profile/nm17</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -759,7 +759,7 @@
    	<property>controls/navigation/vert-profile/nm18</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -769,7 +769,7 @@
    	<property>controls/navigation/vert-profile/nm19</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -779,7 +779,7 @@
    	<property>controls/navigation/vert-profile/nm20</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -789,7 +789,7 @@
    	<property>controls/navigation/vert-profile/nm21</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -799,7 +799,7 @@
    	<property>controls/navigation/vert-profile/nm22</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -809,7 +809,7 @@
    	<property>controls/navigation/vert-profile/nm23</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -819,7 +819,7 @@
    	<property>controls/navigation/vert-profile/nm24</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -829,7 +829,7 @@
    	<property>controls/navigation/vert-profile/nm25</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -839,7 +839,7 @@
    	<property>controls/navigation/vert-profile/nm26</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -849,7 +849,7 @@
    	<property>controls/navigation/vert-profile/nm27</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -859,7 +859,7 @@
    	<property>controls/navigation/vert-profile/nm28</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -869,7 +869,7 @@
    	<property>controls/navigation/vert-profile/nm29</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -879,7 +879,7 @@
    	<property>controls/navigation/vert-profile/nm30</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -889,7 +889,7 @@
    	<property>controls/navigation/vert-profile/nm31</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -899,7 +899,7 @@
    	<property>controls/navigation/vert-profile/nm32</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -909,7 +909,7 @@
    	<property>controls/navigation/vert-profile/nm33</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -919,7 +919,7 @@
    	<property>controls/navigation/vert-profile/nm34</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -929,7 +929,7 @@
    	<property>controls/navigation/vert-profile/nm35</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -939,7 +939,7 @@
    	<property>controls/navigation/vert-profile/nm36</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -949,7 +949,7 @@
    	<property>controls/navigation/vert-profile/nm37</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -959,7 +959,7 @@
    	<property>controls/navigation/vert-profile/nm38</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -969,7 +969,7 @@
    	<property>controls/navigation/vert-profile/nm39</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -979,7 +979,7 @@
    	<property>controls/navigation/vert-profile/nm40</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -989,7 +989,7 @@
    	<property>controls/navigation/vert-profile/nm41</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -999,7 +999,7 @@
    	<property>controls/navigation/vert-profile/nm42</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1009,7 +1009,7 @@
    	<property>controls/navigation/vert-profile/nm43</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1019,7 +1019,7 @@
    	<property>controls/navigation/vert-profile/nm44</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1029,7 +1029,7 @@
    	<property>controls/navigation/vert-profile/nm45</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1039,7 +1039,7 @@
    	<property>controls/navigation/vert-profile/nm46</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1049,7 +1049,7 @@
    	<property>controls/navigation/vert-profile/nm47</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1059,7 +1059,7 @@
    	<property>controls/navigation/vert-profile/nm48</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1069,7 +1069,7 @@
    	<property>controls/navigation/vert-profile/nm49</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1079,7 +1079,7 @@
    	<property>controls/navigation/vert-profile/nm50</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1090,7 +1090,7 @@
    	<property>controls/navigation/vert-profile/nm1.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1100,7 +1100,7 @@
    	<property>controls/navigation/vert-profile/nm2.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1110,7 +1110,7 @@
    	<property>controls/navigation/vert-profile/nm3.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1120,7 +1120,7 @@
    	<property>controls/navigation/vert-profile/nm4.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1130,7 +1130,7 @@
    	<property>controls/navigation/vert-profile/nm5.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1140,7 +1140,7 @@
    	<property>controls/navigation/vert-profile/nm6.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1150,7 +1150,7 @@
    	<property>controls/navigation/vert-profile/nm7.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1160,7 +1160,7 @@
    	<property>controls/navigation/vert-profile/nm8.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1170,7 +1170,7 @@
    	<property>controls/navigation/vert-profile/nm9.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1180,7 +1180,7 @@
    	<property>controls/navigation/vert-profile/nm10.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1190,7 +1190,7 @@
    	<property>controls/navigation/vert-profile/nm11.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1200,7 +1200,7 @@
    	<property>controls/navigation/vert-profile/nm12.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1210,7 +1210,7 @@
    	<property>controls/navigation/vert-profile/nm13.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1220,7 +1220,7 @@
    	<property>controls/navigation/vert-profile/nm14.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1230,7 +1230,7 @@
    	<property>controls/navigation/vert-profile/nm15.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1240,7 +1240,7 @@
    	<property>controls/navigation/vert-profile/nm16.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1250,7 +1250,7 @@
    	<property>controls/navigation/vert-profile/nm17.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1260,7 +1260,7 @@
    	<property>controls/navigation/vert-profile/nm18.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1270,7 +1270,7 @@
    	<property>controls/navigation/vert-profile/nm19.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1280,7 +1280,7 @@
    	<property>controls/navigation/vert-profile/nm20.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1290,7 +1290,7 @@
    	<property>controls/navigation/vert-profile/nm21.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1300,7 +1300,7 @@
    	<property>controls/navigation/vert-profile/nm22.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1310,7 +1310,7 @@
    	<property>controls/navigation/vert-profile/nm23.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1320,7 +1320,7 @@
    	<property>controls/navigation/vert-profile/nm24.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1330,7 +1330,7 @@
    	<property>controls/navigation/vert-profile/nm25.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1340,7 +1340,7 @@
    	<property>controls/navigation/vert-profile/nm26.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1350,7 +1350,7 @@
    	<property>controls/navigation/vert-profile/nm27.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1360,7 +1360,7 @@
    	<property>controls/navigation/vert-profile/nm28.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1370,7 +1370,7 @@
    	<property>controls/navigation/vert-profile/nm29.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1380,7 +1380,7 @@
    	<property>controls/navigation/vert-profile/nm30.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1390,7 +1390,7 @@
    	<property>controls/navigation/vert-profile/nm31.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1400,7 +1400,7 @@
    	<property>controls/navigation/vert-profile/nm32.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1410,7 +1410,7 @@
    	<property>controls/navigation/vert-profile/nm33.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1420,7 +1420,7 @@
    	<property>controls/navigation/vert-profile/nm34.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1430,7 +1430,7 @@
    	<property>controls/navigation/vert-profile/nm35.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1440,7 +1440,7 @@
    	<property>controls/navigation/vert-profile/nm36.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1450,7 +1450,7 @@
    	<property>controls/navigation/vert-profile/nm37.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1460,7 +1460,7 @@
    	<property>controls/navigation/vert-profile/nm38.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1470,7 +1470,7 @@
    	<property>controls/navigation/vert-profile/nm39.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1480,7 +1480,7 @@
    	<property>controls/navigation/vert-profile/nm40.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1490,7 +1490,7 @@
    	<property>controls/navigation/vert-profile/nm41.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1500,7 +1500,7 @@
    	<property>controls/navigation/vert-profile/nm42.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1510,7 +1510,7 @@
    	<property>controls/navigation/vert-profile/nm43.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1520,7 +1520,7 @@
    	<property>controls/navigation/vert-profile/nm44.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1530,7 +1530,7 @@
    	<property>controls/navigation/vert-profile/nm45.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1540,7 +1540,7 @@
    	<property>controls/navigation/vert-profile/nm46.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1550,7 +1550,7 @@
    	<property>controls/navigation/vert-profile/nm47.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1560,7 +1560,7 @@
    	<property>controls/navigation/vert-profile/nm48.49999999999999</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1570,7 +1570,7 @@
    	<property>controls/navigation/vert-profile/nm49.5</property>
    	<factor>0.00001115</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -1585,7 +1585,7 @@
    	<property>instrumentation/altimeter/indicated-altitude-ft</property>
    	<factor>0.000001997</factor>
      <axis>
-     	<z>1.0</z>
+     	<z>1</z>
    	</axis>
 </animation>
 
@@ -1597,11 +1597,11 @@
 		<property>controls/navigation/descent-slope</property>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>-0.0631</y-m>
 			<z-m>-0.1410</z-m>
 		</center>
@@ -1613,7 +1613,7 @@
    	<property>controls/navigation/descent-line-length</property>
    	<factor>0.007071068</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -7899,7 +7899,7 @@
    	<property>controls/navigation/vnav/wp1alt</property>
    	<factor>0.000001997</factor>
     	<axis>
-     		<z>1.0</z>
+     		<z>1</z>
    	</axis>
 </animation>
 
@@ -7913,7 +7913,7 @@
    	<property>controls/navigation/vnav/wp1dist</property>
    	<factor>0.002892</factor>
     	<axis>
-     		<y>1.0</y>
+     		<y>1</y>
    	</axis>
 </animation>
 
@@ -7925,7 +7925,7 @@
    	<property>controls/navigation/vnav/wp2alt</property>
    	<factor>0.000001997</factor>
     	<axis>
-     		<z>1.0</z>
+     		<z>1</z>
    	</axis>
 </animation>
 
@@ -7939,7 +7939,7 @@
    	<property>controls/navigation/vnav/wp2dist</property>
    	<factor>0.002892</factor>
     	<axis>
-     		<y>1.0</y>
+     		<y>1</y>
    	</axis>
 </animation>
 
@@ -7951,7 +7951,7 @@
    	<property>controls/navigation/vnav/wp3alt</property>
    	<factor>0.000001997</factor>
     	<axis>
-     		<z>1.0</z>
+     		<z>1</z>
    	</axis>
 </animation>
 
@@ -7965,7 +7965,7 @@
    	<property>controls/navigation/vnav/wp3dist</property>
    	<factor>0.002892</factor>
     	<axis>
-     		<y>1.0</y>
+     		<y>1</y>
    	</axis>
 </animation>
 
@@ -7977,7 +7977,7 @@
    	<property>controls/navigation/vnav/wp4alt</property>
    	<factor>0.000001997</factor>
     	<axis>
-     		<z>1.0</z>
+     		<z>1</z>
    	</axis>
 </animation>
 
@@ -7991,7 +7991,7 @@
    	<property>controls/navigation/vnav/wp4dist</property>
    	<factor>0.002892</factor>
     	<axis>
-     		<y>1.0</y>
+     		<y>1</y>
    	</axis>
 </animation>
 
@@ -8002,7 +8002,7 @@
    	<property>controls/navigation/vnav/wp5alt</property>
    	<factor>0.000001997</factor>
     	<axis>
-     		<z>1.0</z>
+     		<z>1</z>
    	</axis>
 </animation>
 
@@ -8015,7 +8015,7 @@
    	<property>controls/navigation/vnav/wp5dist</property>
    	<factor>0.002892</factor>
     	<axis>
-     		<y>1.0</y>
+     		<y>1</y>
    	</axis>
 </animation>
 
@@ -8025,11 +8025,11 @@
 		<property>controls/navigation/vnav/wp1angle</property>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>-0.0631</y-m>
 			<z-m>-0.1410</z-m>
 		</center>
@@ -8041,7 +8041,7 @@
    	<property>controls/navigation/vnav/wp1length</property>
    	<factor>0.007071068</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -8052,11 +8052,11 @@
 		<property>controls/navigation/vnav/wp2angle</property>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>-0.0631</y-m>
 			<z-m>-0.1410</z-m>
 		</center>
@@ -8068,7 +8068,7 @@
    	<property>controls/navigation/vnav/wp2length</property>
    	<factor>0.007071068</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -8079,11 +8079,11 @@
 		<property>controls/navigation/vnav/wp3angle</property>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>-0.0631</y-m>
 			<z-m>-0.1410</z-m>
 		</center>
@@ -8095,7 +8095,7 @@
    	<property>controls/navigation/vnav/wp3length</property>
    	<factor>0.007071068</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -8106,11 +8106,11 @@
 		<property>controls/navigation/vnav/wp4angle</property>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>-0.0631</y-m>
 			<z-m>-0.1410</z-m>
 		</center>
@@ -8122,7 +8122,7 @@
    	<property>controls/navigation/vnav/wp4length</property>
    	<factor>0.007071068</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -8133,11 +8133,11 @@
 		<property>controls/navigation/vnav/wp5angle</property>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
+			
 			<y-m>-0.0631</y-m>
 			<z-m>-0.1410</z-m>
 		</center>
@@ -8149,7 +8149,7 @@
    	<property>controls/navigation/vnav/wp5length</property>
    	<factor>0.007071068</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -8198,12 +8198,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -8214,7 +8214,7 @@
    	<property>controls/navigation/vnav/wp1dist</property>
    	<factor>0.01</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -8235,8 +8235,8 @@
 		<property>controls/navigation/vnav/wp1dist</property>
 		<factor>0.0026</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -8269,12 +8269,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -8285,7 +8285,7 @@
    	<property>controls/navigation/vnav/wp2dist</property>
    	<factor>0.01</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -8303,8 +8303,8 @@
 		<property>controls/navigation/vnav/wp2dist</property>
 		<factor>0.0026</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -8334,12 +8334,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -8350,7 +8350,7 @@
    	<property>controls/navigation/vnav/wp3dist</property>
    	<factor>0.01</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -8365,8 +8365,8 @@
 		<property>controls/navigation/vnav/wp3dist</property>
 		<factor>0.0026</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -8393,12 +8393,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -8409,7 +8409,7 @@
    	<property>controls/navigation/vnav/wp4dist</property>
    	<factor>0.01</factor>
      <axis>
-     	<x>0.0</x>
+     	
      	<y>-1.0</y>
    	</axis>
 </animation>
@@ -8421,8 +8421,8 @@
 		<property>controls/navigation/vnav/wp4dist</property>
 		<factor>0.0026</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -8523,12 +8523,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -8540,12 +8540,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -8557,12 +8557,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -8574,12 +8574,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -8592,12 +8592,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -8609,12 +8609,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -8626,12 +8626,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -8644,12 +8644,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -8662,12 +8662,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -8680,12 +8680,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -8914,12 +8914,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -8932,8 +8932,8 @@
 		<property>instrumentation/mptcas/mp[0]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -8947,12 +8947,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -9177,12 +9177,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -9195,8 +9195,8 @@
 		<property>instrumentation/mptcas/mp[1]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -9210,12 +9210,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -9440,12 +9440,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -9458,8 +9458,8 @@
 		<property>instrumentation/mptcas/mp[2]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -9473,12 +9473,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -9703,12 +9703,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -9721,8 +9721,8 @@
 		<property>instrumentation/mptcas/mp[3]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -9736,12 +9736,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -9966,12 +9966,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -9984,8 +9984,8 @@
 		<property>instrumentation/mptcas/mp[4]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -9999,12 +9999,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -10229,12 +10229,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -10247,8 +10247,8 @@
 		<property>instrumentation/mptcas/mp[5]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -10262,12 +10262,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -10492,12 +10492,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -10510,8 +10510,8 @@
 		<property>instrumentation/mptcas/mp[6]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -10525,12 +10525,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -10755,12 +10755,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -10773,8 +10773,8 @@
 		<property>instrumentation/mptcas/mp[7]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -10788,12 +10788,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -11018,12 +11018,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -11036,8 +11036,8 @@
 		<property>instrumentation/mptcas/mp[8]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -11051,12 +11051,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -11281,12 +11281,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -11299,8 +11299,8 @@
 		<property>instrumentation/mptcas/mp[9]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -11314,12 +11314,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -11544,12 +11544,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -11562,8 +11562,8 @@
 		<property>instrumentation/mptcas/mp[10]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -11577,12 +11577,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -11807,12 +11807,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -11825,8 +11825,8 @@
 		<property>instrumentation/mptcas/mp[11]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -11840,12 +11840,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -12070,12 +12070,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -12088,8 +12088,8 @@
 		<property>instrumentation/mptcas/mp[12]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -12103,12 +12103,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -12333,12 +12333,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -12351,8 +12351,8 @@
 		<property>instrumentation/mptcas/mp[13]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -12366,12 +12366,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -12596,12 +12596,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -12614,8 +12614,8 @@
 		<property>instrumentation/mptcas/mp[14]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -12629,12 +12629,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -12859,12 +12859,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -12877,8 +12877,8 @@
 		<property>instrumentation/mptcas/mp[15]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -12892,12 +12892,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -13122,12 +13122,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -13140,8 +13140,8 @@
 		<property>instrumentation/mptcas/mp[16]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -13155,12 +13155,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -13385,12 +13385,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -13403,8 +13403,8 @@
 		<property>instrumentation/mptcas/mp[17]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -13418,12 +13418,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -13648,12 +13648,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -13666,8 +13666,8 @@
 		<property>instrumentation/mptcas/mp[18]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -13681,12 +13681,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -13911,12 +13911,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -13929,8 +13929,8 @@
 		<property>instrumentation/mptcas/mp[19]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -13944,12 +13944,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -14174,12 +14174,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -14192,8 +14192,8 @@
 		<property>instrumentation/mptcas/mp[20]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -14207,12 +14207,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -14437,12 +14437,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -14455,8 +14455,8 @@
 		<property>instrumentation/mptcas/mp[21]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -14470,12 +14470,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -14700,12 +14700,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -14718,8 +14718,8 @@
 		<property>instrumentation/mptcas/mp[22]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -14733,12 +14733,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -14963,12 +14963,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -14981,8 +14981,8 @@
 		<property>instrumentation/mptcas/mp[23]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -14996,12 +14996,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -15226,12 +15226,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -15244,8 +15244,8 @@
 		<property>instrumentation/mptcas/mp[24]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -15259,12 +15259,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -15489,12 +15489,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -15507,8 +15507,8 @@
 		<property>instrumentation/mptcas/mp[25]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -15522,12 +15522,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -15752,12 +15752,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -15770,8 +15770,8 @@
 		<property>instrumentation/mptcas/mp[26]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -15785,12 +15785,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -16015,12 +16015,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -16033,8 +16033,8 @@
 		<property>instrumentation/mptcas/mp[27]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -16048,12 +16048,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -16278,12 +16278,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -16296,8 +16296,8 @@
 		<property>instrumentation/mptcas/mp[28]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -16311,12 +16311,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -16541,12 +16541,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -16559,8 +16559,8 @@
 		<property>instrumentation/mptcas/mp[29]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -16574,12 +16574,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -16806,12 +16806,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -16824,8 +16824,8 @@
 		<property>instrumentation/mptcas/ai[0]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -16839,12 +16839,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -17069,12 +17069,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -17087,8 +17087,8 @@
 		<property>instrumentation/mptcas/ai[1]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -17102,12 +17102,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -17332,12 +17332,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -17350,8 +17350,8 @@
 		<property>instrumentation/mptcas/ai[2]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -17365,12 +17365,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -17595,12 +17595,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -17613,8 +17613,8 @@
 		<property>instrumentation/mptcas/ai[3]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -17628,12 +17628,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -17858,12 +17858,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -17876,8 +17876,8 @@
 		<property>instrumentation/mptcas/ai[4]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -17891,12 +17891,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -18121,12 +18121,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -18139,8 +18139,8 @@
 		<property>instrumentation/mptcas/ai[5]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -18154,12 +18154,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -18384,12 +18384,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -18402,8 +18402,8 @@
 		<property>instrumentation/mptcas/ai[6]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -18417,12 +18417,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -18647,12 +18647,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -18665,8 +18665,8 @@
 		<property>instrumentation/mptcas/ai[7]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -18680,12 +18680,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -18910,12 +18910,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -18928,8 +18928,8 @@
 		<property>instrumentation/mptcas/ai[8]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -18943,12 +18943,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -19173,12 +19173,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -19191,8 +19191,8 @@
 		<property>instrumentation/mptcas/ai[9]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -19206,12 +19206,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -19436,12 +19436,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -19454,8 +19454,8 @@
 		<property>instrumentation/mptcas/ai[10]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -19469,12 +19469,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -19699,12 +19699,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -19717,8 +19717,8 @@
 		<property>instrumentation/mptcas/ai[11]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -19732,12 +19732,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -19962,12 +19962,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -19980,8 +19980,8 @@
 		<property>instrumentation/mptcas/ai[12]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -19995,12 +19995,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -20225,12 +20225,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -20243,8 +20243,8 @@
 		<property>instrumentation/mptcas/ai[13]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -20258,12 +20258,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -20488,12 +20488,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -20506,8 +20506,8 @@
 		<property>instrumentation/mptcas/ai[14]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -20521,12 +20521,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -20751,12 +20751,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -20769,8 +20769,8 @@
 		<property>instrumentation/mptcas/ai[15]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -20784,12 +20784,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -21014,12 +21014,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -21032,8 +21032,8 @@
 		<property>instrumentation/mptcas/ai[16]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -21047,12 +21047,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -21277,12 +21277,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -21295,8 +21295,8 @@
 		<property>instrumentation/mptcas/ai[17]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -21310,12 +21310,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -21540,12 +21540,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -21558,8 +21558,8 @@
 		<property>instrumentation/mptcas/ai[18]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -21573,12 +21573,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -21803,12 +21803,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -21821,8 +21821,8 @@
 		<property>instrumentation/mptcas/ai[19]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -21836,12 +21836,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -22064,12 +22064,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -22082,8 +22082,8 @@
 		<property>instrumentation/mptcas/ai[20]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -22097,12 +22097,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -22327,12 +22327,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -22345,8 +22345,8 @@
 		<property>instrumentation/mptcas/ai[21]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -22360,12 +22360,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -22590,12 +22590,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -22608,8 +22608,8 @@
 		<property>instrumentation/mptcas/ai[22]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -22623,12 +22623,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -22853,12 +22853,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -22871,8 +22871,8 @@
 		<property>instrumentation/mptcas/ai[23]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -22886,12 +22886,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -23116,12 +23116,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -23134,8 +23134,8 @@
 		<property>instrumentation/mptcas/ai[24]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -23149,12 +23149,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -23379,12 +23379,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -23397,8 +23397,8 @@
 		<property>instrumentation/mptcas/ai[25]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -23412,12 +23412,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -23642,12 +23642,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -23660,8 +23660,8 @@
 		<property>instrumentation/mptcas/ai[26]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -23675,12 +23675,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -23905,12 +23905,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -23923,8 +23923,8 @@
 		<property>instrumentation/mptcas/ai[27]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -23938,12 +23938,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -24168,12 +24168,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -24186,8 +24186,8 @@
 		<property>instrumentation/mptcas/ai[28]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -24201,12 +24201,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -24431,12 +24431,12 @@
 		<factor>0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -24449,8 +24449,8 @@
 		<property>instrumentation/mptcas/ai[29]/distance-nm</property>
 		<factor>0.00366696</factor>
 		<axis>
-			<x>0</x>
-			<y>0</y>
+			
+			
 			<z>1</z>
 		</axis>
 	</animation>
@@ -24464,12 +24464,12 @@
 		<factor>-0.85</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>-0.0466</z-m>
 		</center>
 	</animation>
@@ -24553,12 +24553,12 @@
 		<factor>-1</factor>
 		<axis>
 			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			
+			
 		</axis>
 		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
+			
+			
 			<z-m>0.0202</z-m>
 		</center>
 	</animation>
@@ -24571,9 +24571,9 @@
     <subtype>textranslate</subtype>
     <factor>0.0065</factor>
     <axis>
-     <x>0</x>
+     
      <y>1</y>
-     <z>0</z>
+     
    </axis>
   </transform>
   <transform>
@@ -24582,8 +24582,8 @@
     <factor>0.00277</factor>
     <axis>
      <x>1</x>
-     <y>0</y>
-     <z>0</z>
+     
+     
    </axis>
   </transform>
  </animation>
