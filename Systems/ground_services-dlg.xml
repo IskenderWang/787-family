@@ -30,12 +30,12 @@
         <binding>
             <command>nasal</command>
             <script>
-				if (getprop("services/deicing_truck/enable") == 1) {
-					setprop("/services/deicing_truck/de-ice", 1);
-					screen.log.write("Starting De-icing Process...", 1, 1, 1);
-				} else
-					screen.log.write("Please Enable the De-icing truck first", 1, 0, 0);
-			</script>
+                if (getprop("services/deicing_truck/enable") == 1) {
+                    setprop("/services/deicing_truck/de-ice", 1);
+                    screen.log.write("Starting De-icing Process...", 1, 1, 1);
+                } else
+                    screen.log.write("Please Enable the De-icing truck first", 1, 0, 0);
+            </script>
         </binding>
     </button>
 
@@ -60,11 +60,11 @@
         <binding>
             <command>nasal</command>
             <script>
-				if (getprop("services/catering/enable") == 1) {
-					b787.doors.toggle("cater_pos");
-				} else
-					screen.log.write("Please Enable the Catering truck first", 1, 0, 0);
-			</script>
+                if (getprop("services/catering/enable") == 1) {
+                    b787.doors.toggle("cater_pos");
+                } else
+                    screen.log.write("Please Enable the Catering truck first", 1, 0, 0);
+            </script>
         </binding>
     </button>
 
@@ -126,6 +126,51 @@
         </checkbox>
 
     </group>
+
+    <hrule />
+
+	<text>
+		<label>Boarding Services</label>
+	</text>
+
+	<checkbox>
+		<label>Enable Boarding Stairs</label>
+		<property>services/stairs/enable</property>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
+		<live>true</live>
+	</checkbox>
+
+	<group>
+		<layout>table</layout>
+		<button>
+			<row>0</row>
+			<col>0</col>
+			<legend>Toggle Stairs</legend>
+			<padding>5</padding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					if (getprop("services/stairs/enable") == 1) {
+						b787.doors.toggle("stairs_pos");
+					} else
+						screen.log.write("Please enable the Stairs truck first", 1, 0, 0);
+				</script>
+			</binding>
+		</button>
+
+		<button>
+			<row>0</row>
+			<col>1</col>
+			<legend>Configure</legend>
+			<padding>5</padding>
+			<binding>
+				<command>dialog-show</command>
+				<dialog-name>stairs_paint</dialog-name>
+			</binding>
+		</button>
+	</group>
 
     <hrule />
 

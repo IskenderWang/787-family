@@ -5,7 +5,7 @@
 	<name>Mobile Stairs</name>
 	<path>stairs.ac</path>
 
-<!-- LIVERY SELECT -->
+	<!-- LIVERY SELECT -->
 	<!-- Animation -->
 	<animation>
 		<type>material</type>
@@ -15,14 +15,65 @@
 		<texture-prop>paint-end</texture-prop>
 	</animation>
 
-<animation>
-	<type>select</type>
-	<object-name>cover</object-name>
-	<object-name>cover-under</object-name>
-	<object-name>cover-rods</object-name>
-	<condition>
-		<property>/services/stairs/cover</property>
-	</condition>
-</animation>
-		
+	<animation>
+		<type>select</type>
+		<object-name>cover</object-name>
+		<object-name>cover-under</object-name>
+		<object-name>cover-rods</object-name>
+		<condition>
+			<property>/services/stairs/cover-enable</property>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>block</object-name>
+		<object-name>cover</object-name>
+		<object-name>cover-rods</object-name>
+		<object-name>cover-under</object-name>
+		<object-name>Cube</object-name>
+		<object-name>Cube.003</object-name>
+		<object-name>Cube.004</object-name>
+		<object-name>Cube.006</object-name>
+		<object-name>Cube.007</object-name>
+		<object-name>Cube.008</object-name>
+		<object-name>Cube.009</object-name>
+		<object-name>Cube.010</object-name>
+		<object-name>Cube.011</object-name>
+		<object-name>Cube.012</object-name>
+		<object-name>Cube.013</object-name>
+		<object-name>Cube.015</object-name>
+		<object-name>Cube.016</object-name>
+		<object-name>Cylinder.0</object-name>
+		<object-name>Cylinder.2</object-name>
+		<object-name>Cylinder.3</object-name>
+		<object-name>Cylinder.4</object-name>
+		<object-name>Cylinder.5</object-name>
+		<object-name>Cylinder.6</object-name>
+		<object-name>Cylinder.7</object-name>
+		<object-name>Cylinder.8</object-name>
+		<object-name>Cylinder.9</object-name>
+		<object-name>cylinder</object-name>
+		<object-name>cylinder00</object-name>
+		<object-name>cylinder10</object-name>
+		<object-name>cylinder11</object-name>
+		<object-name>gourmet_ca</object-name>
+		<object-name>gourmet_r0</object-name>
+		<object-name>gourmet_r1</object-name>
+		<object-name>gourmet_ra</object-name>
+		<object-name>mesh</object-name>
+		<object-name>mesh000000</object-name>
+		<object-name>paint</object-name>
+		<property>/sim/model/door-positions/stairs_pos/position-norm</property>
+		<factor>10</factor>
+		<axis>
+			<x1-m>0</x1-m> <!-- front to back -->
+			<y1-m>1</y1-m> <!-- side to side -->
+			<z1-m>0</z1-m> <!-- height -->
+			<x2-m>0.2</x2-m>
+			<y2-m>2</y2-m>
+			<z2-m>0</z2-m>
+		</axis>
+	</animation>
+
 </PropertyList>

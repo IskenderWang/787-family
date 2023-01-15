@@ -24,6 +24,12 @@ var ground_services = {
 	setprop("/services/catering/scissor-deg", 0);
 	setprop("/sim/model/door-positions/cater_pos/position-norm", 0);
 
+	# Boarding Stairs Truck
+
+	setprop("/services/stairs/enable", 0);
+	setprop("/sim/model/door-positions/stairs_pos/position-norm", 0);
+	setprop("/services/stairs/paint-end", "white-grey.png");
+
 	# Fuel Truck
 	
 	setprop("/services/fuel-truck/enable", 0);
