@@ -166,11 +166,8 @@
 			<legend>Configure</legend>
 			<padding>5</padding>
 			<binding>
-				<command>nasal</command>
-				<script>
-					var stairs_configure = gui.Dialog.new("sim/gui/dialogs/fuel_truck/dialog", "Aircraft/787-family/Systems/stairs_paint-dlg.xml");
-					stairs_configure.open();
-				</script>
+				<command>dialog-show</command>
+				<dialog-name>stairs_paint</dialog-name>
 			</binding>
 		</button>
 	</group>
