@@ -15,6 +15,7 @@ var autobrake = {
         var absetting = getprop("controls/autobrake/setting");
 
         # Handle disarming events
+        #########################
 
         # Initiating a go-around after touchdown disarms the system.
         if (
@@ -61,6 +62,7 @@ var autobrake = {
         me.old_spdbrk = current_spdbrk;
 
         # Handle application of brake pressure
+        ######################################
 
         # OFF & DISARM settings
         if ((absetting == 0) or (absetting == 1))
