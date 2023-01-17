@@ -2626,8 +2626,64 @@
 		</axis>
 	</animation>
 
+    <!-- Mode Control Panel -->
 
-<!-- Mode Control Panel -->
+    <animation>
+        <!-- The autopilot panel should only light up when there's electricity -->
+        <type>select</type>
+        <!-- Toggle indicators -->
+        <object-name>AP.toggle</object-name>
+        <object-name>AT.toggle</object-name>
+        <object-name>LNAV.toggle</object-name>
+        <object-name>VNAV.toggle</object-name>
+        <object-name>FLCH.toggle</object-name>
+        <object-name>HDG.toggle</object-name>
+        <object-name>VS.toggle</object-name>
+        <object-name>ALT.toggle</object-name>
+        <object-name>LOC.toggle</object-name>
+        <object-name>APP.toggle</object-name>
+        <!-- HDG -->
+        <object-name>Plane.018</object-name>
+        <object-name>Plane.trk</object-name>
+        <object-name>APhdg.100</object-name>
+        <object-name>APhdg.10</object-name>
+        <object-name>APhdg.1</object-name>
+        <!-- A/T -->
+        <object-name>APmach.1</object-name>
+        <object-name>APmach.0.1</object-name>
+        <object-name>APmach.0.01</object-name>
+        <object-name>APmachind</object-name>
+        <object-name>APmachind.001</object-name>
+        <object-name>APiasind</object-name>
+        <object-name>APias.100</object-name>
+        <object-name>APias.10</object-name>
+        <object-name>APias.1</object-name>
+        <!-- V/S / FPA -->
+        <object-name>APvsnegative</object-name>
+        <object-name>APvs.1000</object-name>
+        <object-name>APvs.100</object-name>
+        <object-name>APvs.10</object-name>
+        <object-name>APvs.1</object-name>
+        <object-name>APvs.minus1</object-name>
+        <!-- Altitude -->
+        <object-name>APalt.10000</object-name>
+        <object-name>APalt.1000</object-name>
+        <object-name>APalt.100</object-name>
+        <object-name>APalt.10</object-name>
+        <object-name>APalt.1</object-name>
+        <condition>
+            <or>
+                <greater-than>
+                    <property>systems/electrical/left-bus</property>
+                    <value>5</value>
+                </greater-than>
+                <greater-than>
+                    <property>systems/electrical/right-bus</property>
+                    <value>5</value>
+                </greater-than>
+            </or>
+        </condition>
+    </animation>
 
 	<animation>
 		<type>select</type>
@@ -2649,6 +2705,7 @@
 		<object-name>APmach.0.1</object-name>
 		<object-name>APmach.0.01</object-name>
 		<object-name>APmachind</object-name>
+		<object-name>APmachind.001</object-name>
 		<condition>
 			<equals>
 				<property>/it-autoflight/input/kts-mach</property>
