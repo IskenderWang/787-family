@@ -22,7 +22,7 @@ var autobrake = {
             (absetting > 1)
             and (current_throttle > me.old_throttle)
             and (getprop("gear/gear[1]/rollspeed-ms") > 5)
-            # The rollspeed is used to avoid disarming the system in the takeoff roll.
+            # The wheels will only be spinning if the aircraft has touched down.
         ) {
             setprop("controls/gear/brake-left", 0);
             setprop("controls/gear/brake-right", 0);
@@ -39,8 +39,8 @@ var autobrake = {
 
             #screen.log.write("Disarming Autobrakes after pedal input"); # For testing
             # The fact that `/controls/autobrake/setting` is tied to both the pedal brakes and
-            # autobrakes limits our ability to detect pedal braking to just detecting more or the
-            # same pedal braking than the autobrake setting.
+            # autobrakes limits our ability to detect pedal braking to just detecting more pedal
+            # braking than the autobrake setting.
         }
 
         # Moving the speedbrake lever to down (0) after brakes have deployed on the ground disarms
