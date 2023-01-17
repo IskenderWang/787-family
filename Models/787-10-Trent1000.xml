@@ -17,6 +17,7 @@
 
     <animation>
         <type>material</type>
+        <object-name>fuselage</object-name>
         <object-name>aftcargodoor</object-name>
         <object-name>antennae</object-name>
         <object-name>bodyfairing</object-name>
@@ -24,7 +25,6 @@
         <object-name>cac</object-name>
         <object-name>cacdeflectorbackground</object-name>
         <object-name>fin</object-name>
-        <object-name>fuselage</object-name>
         <object-name>fuselage.001</object-name>
         <object-name>fuselage.004</object-name>
         <object-name>fwdcargodoor</object-name>
