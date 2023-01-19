@@ -2,7 +2,6 @@ var autobrake = {
     init : func {
         me.UPDATE_INTERVAL = 0.5;
         me.loopid = 0;
-        me.fullthrottle = 0;
         me.old_throttle = getprop("controls/engine[0]/throttle");
         me.current_spdbrk = getprop("controls/flight/speedbrake-lever");
         setprop("controls/autobrake/setting", 0);
@@ -74,24 +73,20 @@ var autobrake = {
 
         # RTO setting
         if (absetting == -1) {
-            if (current_throttle >= 0.9)
-                me.fullthrottle = 1;
-
-            if ((me.fullthrottle == 1) and (current_throttle <= 0.6)) {
-                setprop("controls/gear/brake-left", 1);
-                setprop("controls/gear/brake-right", 1);
-                me.fullthrottle == 0;
-                #screen.log.write("Applying autobrakes after RTO"); # For testing
+            # Set to OFF after takeoff
+            if (getprop("gear/gear[1]/compression-ft") == 0) {
+                #screen.log.write("Setting Autobrakes to OFF after takeoff"); # For testing
+                setprop("controls/autobrake/setting", 0);
             }
 
-            # Set autobrake to OFF after takeoff
+            # 43.5 rollspeed means 85 kt ground speed
             if (
-                (getprop("velocities/airspeed-kt") > 150)
-                and (getprop("gear/gear[1]/compression-ft") == 0)
-                and (me.fullthrottle == 1)
+                (getprop("gear/gear[1]/rollspeed-ms") > 43.5)
+                and (current_throttle == 0)
             ) {
-                setprop("controls/autobrake/setting", 0);
-                #screen.log.write("Setting Autobrakes to OFF after takeoff"); # For testing
+                #screen.log.write("Applying autobrakes after RTO"); # For testing
+                setprop("controls/gear/brake-left", 1);
+                setprop("controls/gear/brake-right", 1);
             }
 
             return;
