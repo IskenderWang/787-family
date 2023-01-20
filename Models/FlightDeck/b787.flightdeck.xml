@@ -2586,6 +2586,8 @@
 	<animation>
 		<type>pick</type>
 		<object-name>autobrake</object-name>
+
+        <!-- Cycle using left click -->
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -2603,6 +2605,18 @@
 			</binding>
 		</action>
 
+        <!-- Set to OFF using right click -->
+        <action>
+            <button>2</button>
+            <repetable type="bool">false</repetable>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autobrake/setting</property>
+                <value>0</value>
+            </binding>
+        </action>
+
+        <!-- Adjust using mouse wheel -->
         <action>
             <button>3</button>
             <repeatable type="bool">true</repeatable>
