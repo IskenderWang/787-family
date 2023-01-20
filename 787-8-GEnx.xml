@@ -783,6 +783,7 @@
                     <property>metrics/Sw-sqft</property>
                     <property>aero/cl-squared</property>
                     <property>/controls/ice/wing/drag-coefficient</property>
+                    <property>aero/function/kCDge</property>
                     <value>0.04</value>
                 </product>
             </function>
@@ -810,6 +811,7 @@
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/flap-pos-deg</property>
+                    <property>aero/function/kCDge</property>
                     <value> 0.0025 </value>
                 </product>
             </function>
