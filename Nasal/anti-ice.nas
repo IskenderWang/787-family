@@ -2,150 +2,262 @@ var icing = {
     init : func {
         me.UPDATE_INTERVAL = 5;
         me.loopid = 0;
+
         me.icewarnw = 0;
         me.icewarne1 = 0;
         me.icewarne2 = 0;
+        me.icewarn_windscreen = 0;
+        me.icewarn_probes = 0;
+
         setprop("/controls/ice/wing/temp", getprop("/environment/temperature-degc") );
         setprop("/controls/ice/eng1/temp", getprop("/environment/temperature-degc") );
         setprop("/controls/ice/eng2/temp", getprop("/environment/temperature-degc") );
+        setprop("/controls/ice/windscreen/center_temp", getprop("/environment/temperature-degc") );
+        setprop("/controls/ice/windscreen/sides_temp", getprop("/environment/temperature-degc") );
+        setprop("/controls/ice/probes/temp", getprop("/environment/temperature-degc"));
 
-        if (getprop("/environment/temperature-degc") <= 0) {
-            setprop("/controls/ice/wing/anti-ice-setting", 2);
-            setprop("/controls/ice/eng1/anti-ice-setting", 2);
-            setprop("/controls/ice/eng2/anti-ice-setting", 2);
-        } else {
-            setprop("/controls/ice/wing/anti-ice-setting", 1);
-            setprop("/controls/ice/eng1/anti-ice-setting", 1);
-            setprop("/controls/ice/eng2/anti-ice-setting", 1);
-        }
+        setprop("/controls/ice/wing/anti-ice-setting", 1.0);
+        setprop("/controls/ice/eng1/anti-ice-setting", 1.0);
+        setprop("/controls/ice/eng2/anti-ice-setting", 1.0);
+        setprop("/controls/ice/windscreen/anti-ice", 0.0);
+        setprop("/controls/ice/windscreen/anti-ice-backup", 0.0);
+        setprop("/controls/ice/probes/anti-ice", 0.0);
 
         me.reset();
     },
     update : func {
-        var outsidetemp = getprop("/environment/temperature-degc");
-        var wingtemp = getprop("/controls/ice/wing/temp");
-        var eng1temp = getprop("/controls/ice/eng1/temp");
-        var eng2temp = getprop("/controls/ice/eng2/temp");
+        # Get information
+        #################
 
-        # Calculate TAT Value (TAT = static temp (1 +((1.4 - 1) / 2) Mach^2) )
+        # Calculate TAT Value [ TAT = static temp (1 + ((1.4 - 1) / 2) Mach^2) ]
+        # note (1.4 - 1) / 2 = 0.2
+        setprop(
+            "/controls/ice/tat",
+            getprop("/environment/temperature-degc") * (1 + 0.2 * getprop("/velocities/mach") * getprop("/velocities/mach"))
+        );
+        var tat = getprop("/controls/ice/tat");
 
-        setprop("/controls/ice/tat", outsidetemp * (1 + (0.2 * getprop("/velocities/mach") * getprop("/velocities/mach"))) );
+        # Anti-Ice Control System knobs & switches.
 
-        # Automatic Anti-Ice Control System
-
+        # These knobs have an 'auto' option, so some logic is required.
         var wingicesetting = getprop("/controls/ice/wing/anti-ice-setting");
         var eng1icesetting = getprop("/controls/ice/eng1/anti-ice-setting");
         var eng2icesetting = getprop("/controls/ice/eng2/anti-ice-setting");
 
-        # Initialize Auto Anti-Ice Control System
+        # The windscreen setting is omitted because the switch directly controls the heaters.
 
-        var AutoAntiIce = func(part) {
-            var Temp = getprop("/controls/ice/" ~ part ~ "/temp");
+        # These probes are always heated when the engines are on (no AutoAntiIce required)
+        var probesetting =
+            getprop("/controls/engines/eng[0]/running")
+            or getprop("/controls/engine/eng[1]/running");
 
-            if (Temp <= -10)
-                setprop("/controls/" ~ part ~ "/anti-ice", 1);
-            else
-                setprop("/controls/" ~ part ~ "/anti-ice", 0);
-        };
+        # Control activation of heating elements
+        ########################################
 
+        # Wing heaters
         if (wingicesetting == 0)
             setprop("/controls/ice/wing/anti-ice", 0);
         elsif (wingicesetting == 1)
-            AutoAntiIce("wing");
+            setprop("/controls/ice/wing/anti-ice", tat <= 0);
         else
             setprop("/controls/ice/wing/anti-ice", 1);
 
+        # Engine 1 heaters
         if (eng1icesetting == 0)
             setprop("/controls/ice/eng1/anti-ice", 0);
         elsif (eng1icesetting == 1)
-            AutoAntiIce("eng1");
+            setprop("/controls/ice/eng1/anti-ice", tat <= 0);
         else
             setprop("/controls/ice/eng1/anti-ice", 1);
 
+        # Engine 2 heaters
         if (eng2icesetting == 0)
             setprop("/controls/ice/eng2/anti-ice", 0);
         elsif (eng2icesetting == 1)
-            AutoAntiIce("eng2");
+            setprop("/controls/ice/eng2/anti-ice", tat <= 0);
         else
             setprop("/controls/ice/eng2/anti-ice", 1);
 
-        # Wing Ice
-        if ((getprop("/controls/ice/wing/anti-ice") == 0) or (outsidetemp > 15)) {
-            if (outsidetemp > wingtemp) {
-                wingtemp = wingtemp + 1;
+        # Probe heaters
+        if (probesetting == 0)
+            setprop("/controls/ice/probes/anti-ice", 0);
+        else
+            setprop("/controls/ice/probes/anti-ice", 1);
 
-                if ((wingtemp <= 0) and (me.icewarnw == 0)) {
-                    screen.log.write("Wing Ice Alert!", 1, 0, 0);
-                    sysinfo.log_msg("[HEAT] Ice Detected on Wings", 1);
-                    me.icewarnw = 1;
-                }
-            }
+        # Calculate temperatures, cooling, and heating using heat energy
+        ################################################################
 
-            if (outsidetemp < wingtemp)
-                wingtemp = wingtemp - 0.25;
-        } elsif (wingtemp < 15) {
-            wingtemp = wingtemp + 1;
+        # Get the temperatures of the parts
+        var wing_temp = getprop("/controls/ice/wing/temp");
+        var eng1_temp = getprop("/controls/ice/eng1/temp");
+        var eng2_temp = getprop("/controls/ice/eng2/temp");
+        var windscreen_center_temp = getprop("/controls/ice/windscreen/center_temp");
+        var windscreen_sides_temp = getprop("/controls/ice/windscreen/sides_temp");
+        var probes_temp = getprop("/controls/ice/probes/temp");
+
+        # Heat energy: Calculated as mass * specific heat capacity * degrees °K.
+        var wing_heat_energy = 850 * 897 * (wing_temp + 273.15);
+        var eng1_heat_energy = 367 * 897 * (eng1_temp + 273.15);
+        var eng2_heat_energy = 367 * 897 * (eng2_temp + 273.15);
+        var windscreen_center_heat_energy = 119 * 753 * (windscreen_center_temp + 273.15);
+        var windscreen_sides_heat_energy = 123 * 753 * (windscreen_sides_temp + 273.15);
+        var probes_heat_energy = 10 * 897 * (probes_temp + 273.15);
+
+        # Air affects all parts even if the heaters are on, the heaters can heat the part
+        # afterwards. This method also heats the parts when TAT > part's temperature.
+        wing_heat_energy -= (tat - wing_temp) * 1400000 / -100;
+        eng1_heat_energy -= (tat - eng1_temp) * 1400000 / -100;
+        eng2_heat_energy -= (tat - eng2_temp) * 1400000 / -100;
+        windscreen_center_heat_energy -= (tat - windscreen_center_temp) * 1400000 / -100;
+        windscreen_sides_heat_energy -= (tat - windscreen_sides_temp) * 1400000 / -100;
+        probes_heat_energy -= (tat - probes_temp) * 1400000 / -100;
+
+        # Wing heaters
+        #=============
+        if (getprop("/controls/ice/wing/anti-ice") == 1) {
+            wing_heat_energy += 1345500;
+
+            # Simulates the system not heating the part once it reaches 15°C
+            if (wing_heat_energy > 219699967)
+                wing_heat_energy = 219699967;
         }
 
-        # Engine 1 Ice
-        if ((getprop("/controls/ice/eng1/anti-ice") == 0) or (outsidetemp > 15)) {
-            if (outsidetemp > eng1temp) {
-                eng1temp = eng1temp + 1;
+        wing_temp = wing_heat_energy / 850 / 897 - 273.15; # Back into °C
 
-                if ((eng1temp <= 0) and (me.icewarne1 == 0)) {
-                    screen.log.write("Engine 1 Ice Alert!", 1, 0, 0);
-                    sysinfo.log_msg("[HEAT] Ice Detected on Engine 1", 1);
-                    me. icewarne1 = 1;
-                }
-            }
+        # Handle wing icing alert
+        if ((wing_temp <= 0) and (me.icewarnw == 0)) {
+            screen.log.write("Wing Ice Alert!", 1, 0, 0);
+            sysinfo.log_msg("[HEAT] Ice Detected on Wings", 1);
+            me.icewarnw = 1;
+        }
+        if ((wing_temp > 0) and (me.icewarnw == 1))
+            me.icewarnw = 0;
 
-            if (outsidetemp < eng1temp)
-                eng1temp = eng1temp - 0.25;
-        } elsif (eng1temp < 15) {
-            eng1temp = eng1temp + 1;
+        # Engine 1 heaters
+        #=================
+        if (getprop("/controls/ice/eng1/anti-ice") == 1) {
+            eng1_heat_energy += 1480050;
+
+            # Simulates the system not heating the part once it reaches 35°C
+            if (eng1_heat_energy > 101442672)
+                eng1_heat_energy = 101442672;
         }
 
-        # Engine 2 Ice
+        eng1_temp = eng1_heat_energy / 367 / 897 - 273.15; # Back into °C
 
-        if ((getprop("/controls/ice/eng2/anti-ice") == 0) or (outsidetemp > 15)) {
-            if (outsidetemp > eng2temp) {
-                eng2temp = eng2temp + 1;
-
-                if ((eng2temp <= 0) and (me.icewarne2 == 0)) {
-                    screen.log.write("Engine 2 Ice Alert!", 1, 0, 0);
-                    sysinfo.log_msg("[HEAT] Ice Detected on Engine 2", 1);
-                    me. icewarne2 = 1;
-                }
-            }
-
-            if (outsidetemp < eng2temp)
-                eng2temp = eng2temp - 0.25;
-        } elsif (eng2temp < 15) {
-            eng2temp = eng2temp + 1;
+        # Handle eng1 icing alert
+        if ((eng1_temp <= 0) and (me.icewarne1 == 0)) {
+            screen.log.write("Engine 1 Ice Alert!", 1, 0, 0);
+            sysinfo.log_msg("[HEAT] Ice Detected on Engine 1", 1);
+            me.icewarne1 = 1
         }
+        if ((eng1_temp > 0) and (me.icewarne1 == 1))
+            me.icewarne1 = 0;
+
+        # Engine 2 heaters
+        #=================
+        if (getprop("/controls/ice/eng2/anti-ice") == 1) {
+            eng2_heat_energy += 1480050;
+
+            # Simulates the system not heating the part once it reaches 35°C
+            if (eng2_heat_energy > 101442672)
+                eng2_heat_energy = 101442672;
+        }
+
+        eng2_temp = eng2_heat_energy / 367 / 897 - 273.15; # Back into °C
+
+        # Handle eng2 icing alert
+        if ((eng2_temp <= 0) and (me.icewarne1 == 0)) {
+            screen.log.write("Engine 2 Ice Alert!", 1, 0, 0);
+            sysinfo.log_msg("[HEAT] Ice Detected on Engine 2", 1);
+            me.icewarne2 = 1
+        }
+        if ((eng2_temp > 0) and (me.icewarne1 == 1))
+            me.icewarne2 = 0;
+
+        # Windscreen primary & secondary heaters
+        #=======================================
+        if (getprop("/controls/ice/windscreen/anti-ice") == 1) {
+            windscreen_center_heat_energy += 1190000;
+            windscreen_sides_heat_energy += 1230000;
+
+            # Simulates the system not heating the part once it reaches 15°C
+            if (windscreen_center_heat_energy > 25820257)
+                windscreen_center_heat_energy = 25820257;
+            if (windscreen_sides_heat_energy > 26688165)
+                windscreen_sides_heat_energy = 26688165;
+        }
+
+        # TODO: Make secondary run only when primary fails
+        if (getprop("/controls/ice/windscreen/anti-ice-backup") == 1) {
+            windscreen_center_heat_energy += 1190000;
+
+            # Simulates the system not heating the part once it reaches 15°C
+            if (windscreen_center_heat_energy > 25820257)
+                windscreen_center_heat_energy = 25820257;
+        }
+
+        windscreen_center_temp = windscreen_center_heat_energy / 119 / 753 - 273.15;
+        windscreen_sides_temp = windscreen_sides_heat_energy / 123 / 753 - 273.15;
+
+        # Handle windscreen ice alert
+        if ((windscreen_center_temp <= 0) and (me.icewarn_windscreen == 0)) {
+            screen.log.write("Windscreen Ice Alert!", 1, 0, 0);
+            sysinfo.log_msg("[HEAT] Ice detected on Windscreen", 1);
+            me.icewarn_windscreen = 1;
+        }
+        if ((windscreen_center_temp > 0) and (me.icewarn_windscreen == 1))
+            me.icewarn_windscreen = 0;
+
+        # Probe heaters
+        #==============
+        if (getprop("/controls/ice/probes/anti-ice") == 1) {
+            probes_heat_energy += 1124000;
+
+            # Simulates the system not heating the part once it reaches 15°C
+            if (probes_heat_energy > 2584706)
+                probes_heat_energy = 2584706;
+        }
+
+        probes_temp = probes_heat_energy / 10 / 897 - 273.15;
+
+        # Handle probes ice alert
+        if ((probes_temp <= 0) and (me.icewarn_probes == 0)) {
+            screen.log.write("Pitot & AoA probes Ice Alert!", 1, 0, 0);
+            sysinfo.log_msg("[HEAT] Ice detected on pitot & AoA probes");
+            me.icewarn_probes = 1;
+        }
+        if ((probes_temp > 0) and (me.icewarn_probes == 1))
+            me.icewarn_probes = 0;
+
+        # Export variables and warnings
+        ###############################
 
         # Exporting nasal variables back to the property tree
-
-        setprop("/controls/ice/wing/temp", wingtemp);
-        setprop("/controls/ice/eng1/temp", eng1temp);
-        setprop("/controls/ice/eng2/temp", eng2temp);
+        setprop("/controls/ice/wing/temp", wing_temp);
+        setprop("/controls/ice/eng1/temp", eng1_temp);
+        setprop("/controls/ice/eng2/temp", eng2_temp);
+        setprop("/controls/ice/windscreen/center_temp", windscreen_center_temp);
+        setprop("/controls/ice/windscreen/sides_temp", windscreen_sides_temp);
+        setprop("/controls/ice/probes/temp", probes_temp);
 
         # Set Engine Failures in case of Heavy Ice
-
-        if (eng1temp <= -30)
+        if (eng1_temp <= -30)
             setprop("/controls/engines/engine/cut-off", 1);
 
-        if (eng2temp <= -30)
+        if (eng2_temp <= -30)
             setprop("/controls/engines/engine[1]/cut-off", 1);
 
-        # Set Wing Lift and Drag Coefficients according to temperature
+        # Change aerodynamics
+        #####################
 
-        if (wingtemp>=0) {
+        # Set Wing Lift and Drag Coefficients according to temperature
+        if (wing_temp >= 0) {
             setprop("/controls/ice/wing/lift-coefficient", 1);
             setprop("/controls/ice/wing/drag-coefficient", 1);
         } else {
-            setprop("/controls/ice/wing/lift-coefficient", 1 + ( wingtemp / 80 ) );
-            setprop("/controls/ice/wing/drag-coefficient", 1 - ( wingtemp / 80 ) );
+            setprop("/controls/ice/wing/lift-coefficient", 1 + ( wing_temp / 80 ) );
+            setprop("/controls/ice/wing/drag-coefficient", 1 - ( wing_temp / 80 ) );
         }
     },
     reset : func {
