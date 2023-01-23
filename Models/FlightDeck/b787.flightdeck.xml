@@ -668,12 +668,6 @@
 		</condition>
 	</animation>
 
-<!-- Fog -->
-
-	<model>
-		<path>Aircraft/787-family/Models/fog.xml</path>
-	</model>
-
 <!-- CDU (MFD CDUs) -->
 
 	<model>

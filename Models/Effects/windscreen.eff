@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <PropertyList>
     <name>windscreen</name>
-    <inherits-from>Effects/model-combined</inherits-from>
+    <inherits-from>Effects/glass</inherits-from>
     <parameters>
         <reflection-enabled type="int">1</reflection-enabled>
         <reflection-dynamic type="int">1</reflection-dynamic>

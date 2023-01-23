@@ -16,7 +16,7 @@
   	</animation>
 
 <effect>
-	<inherits-from>glassreflect</inherits-from>
+	<inherits-from>Effects/hud</inherits-from>
 	<object-name>Glass.001</object-name>
 </effect>
 
