@@ -45,23 +45,34 @@ var icing = {
         # Anti-Ice Control System knobs & switches.
 
         # These knobs have an 'auto' option, so some logic is required.
-        var wingicesetting = getprop("/controls/ice/wing/anti-ice-setting");
-        var eng1icesetting = getprop("/controls/ice/eng1/anti-ice-setting");
-        var eng2icesetting = getprop("/controls/ice/eng2/anti-ice-setting");
+        var wingicesetting =
+            getprop("/controls/ice/wing/anti-ice-setting")
+            * (!!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus")));
+
+        var eng1icesetting = 
+            getprop("/controls/ice/eng1/anti-ice-setting")
+            * (getprop("/engines/engine[0]/n1") >= 30.0);
+        var eng2icesetting = 
+            getprop("/controls/ice/eng2/anti-ice-setting")
+            * (getprop("/engines/engine[1]/n1") >= 30.0);
 
         # Activate the windscreen heaters only when the system is serviceable
-        var windscreensetting_p = getprop("/controls/ice/windscreen/primary") * getprop("/controls/ice/windscreen/primary-serviceable");
+        var windscreensetting_p =
+            getprop("/controls/ice/windscreen/primary")
+            * getprop("/controls/ice/windscreen/primary-serviceable")
+            * (!!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus")));
 
         # The backup system only kicks in when the primary fails
         var windscreensetting_b =
             getprop("/controls/ice/windscreen/backup")
             * getprop("/controls/ice/windscreen/backup-serviceable")
-            * (!getprop("/controls/ice/windscreen/primary-serviceable"));
+            * (!getprop("/controls/ice/windscreen/primary-serviceable"))
+            * (!!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus")));
 
         # These probes are always heated when the engines are on (no AutoAntiIce required)
         var probesetting =
-            getprop("/controls/engines/eng[0]/running")
-            or getprop("/controls/engine/eng[1]/running");
+            (!getprop("/engines/engine[0]/cutoff") or !getprop("/engines/engine[1]/cutoff"))
+            * (!!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus")));
 
         # Control activation of heating elements
         ########################################
