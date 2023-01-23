@@ -2074,8 +2074,9 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		</axis>
 	</animation>
 
-<!-- Window Heating -->
+	<!-- Window Heating -->
 
+	<!-- Primary window heaters -->
 	<animation>
 		<type>pick</type>
 		<object-name>Primary_L_Side</object-name>
@@ -2091,7 +2092,6 @@ setprop("/controls/engines/engine[1]/starter", 0);
 			</binding>
 		</action>
 	</animation>
-
 	<animation>
 		<type>textranslate</type>
 		<object-name>Primary_L_Side</object-name>
@@ -2101,14 +2101,12 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		<property>controls/ice/windscreen/anti-ice</property>
 		<factor>-0.0625</factor>
 		<axis>
-			
+			<x>0</x>
 			<y>1</y>
-			
 		</axis>
 	</animation>
-
- <animation>
-  <type>translate</type>
+	<animation>
+		<type>translate</type>
 		<object-name>Primary_L_Side</object-name>
 		<object-name>Primary_R_Side</object-name>
 		<object-name>Primary_L_FWD</object-name>
@@ -2118,13 +2116,51 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		<object-name>Primary_L_FWD.001</object-name>
 		<object-name>Primary_R_FWD.001</object-name>
 		<property>controls/ice/windscreen/anti-ice</property>
-  <factor>-0.007</factor>
-  <axis>
-   <x>1</x>
-   
-   
-  </axis>
- </animation>
+		<factor>-0.007</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+		</axis>
+	</animation>
+
+	<!-- Backup window heaters -->
+	<animation>
+		<type>pick</type>
+		<object-name>Backup_L_FWD</object-name>
+		<object-name>Backup_R_FWD</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/ice/windscreen/anti-ice-backup</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>Backup_L_FWD</object-name>
+		<object-name>Backup_R_FWD</object-name>
+		<property>controls/ice/windscreen/anti-ice-backup</property>
+		<factor>-0.13975</factor>
+		<axis>
+			<x>2</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>Backup_L_FWD</object-name>
+		<object-name>Backup_R_FWD</object-name>
+		<object-name>Backup_L_FWD.001</object-name>
+		<object-name>Backup_R_FWD.001</object-name>
+		<property>controls/ice/windscreen/anti-ice-backup</property>
+		<factor>-0.007</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+		</axis>
+	</animation>
 
 <!-- OHP Light Bulbs -->
 
