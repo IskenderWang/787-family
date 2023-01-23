@@ -13,6 +13,16 @@
         <lightmap-multi type="int">0</lightmap-multi>
         <lightmap-color type="vec3d">1 1 1</lightmap-color>
         <lightmap-factor type="float"><use>controls/lighting/landing-lights[0]</use></lightmap-factor>
+        <texture n="2">
+            <image>Aircraft/787-family/Models/Effects/windscreen_shader.png</image>
+            <type>2d</type>
+            <filter>linear-mipmap-linear</filter>
+            <wrap-s>clamp</wrap-s>
+            <wrap-t>clamp</wrap-t>
+            <internal-format>normalized</internal-format>
+        </texture>
+        <use-mask type="int">1</use-mask>
+        <overlay-color type="vec3d" n="0">1.0 1.0 1.0</overlay-color>
         <texture n="3">
             <image>Aircraft/787-family/Models/Effects/fuselage_lightmap.png</image>
             <filter>linear-mipmap-linear</filter>
@@ -20,7 +30,7 @@
             <wrap-t>clamp</wrap-t>
             <internal-format>normalized</internal-format>
         </texture>
-        <texture n="5">
+        <texture n="3">
             <type>cubemap</type>
             <images>
                 <positive-x>Aircraft/Generic/Effects/CubeMaps/sunrise/1.png</positive-x>
