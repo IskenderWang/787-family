@@ -533,7 +533,7 @@
 	<object-name>warn1</object-name>
   	<condition>
 	<less-than-equals>
- 	   	<property>controls/window-heat/temp</property>
+ 	   	<property>controls/ice/windscreen/center_temp</property>
     		<value>0</value>
 	</less-than-equals>
   	</condition>

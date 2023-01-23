@@ -249,12 +249,12 @@ me.touchdown = 1;
 # Control Window Heating and Anti-icing in extreme temperatures
 
 if ((getprop("/environment/temperature-degc") <= 0) and (getprop("/controls/switches/copilot/pneu") == 1)) {
-setprop("/controls/window-heat/engage", 1);
+setprop("/controls/ice/windscreen/anti-ice", 1);
 setprop("/controls/ice/eng1/anti-ice", 1);
 setprop("/controls/ice/eng2/anti-ice", 1);
 setprop("/controls/ice/wing/anti-ice", 1);
 } else {
-setprop("/controls/window-heat/engage", 0);
+setprop("/controls/ice/windscreen/anti-ice", 0);
 setprop("/controls/ice/eng1/anti-ice", 0);
 setprop("/controls/ice/eng2/anti-ice", 0);
 setprop("/controls/ice/wing/anti-ice", 0);

@@ -2087,10 +2087,10 @@ setprop("/controls/engines/engine[1]/starter", 0);
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>controls/window-heat/engage</property>
+				<property>controls/ice/windscreen/anti-ice</property>
 			</binding>
 		</action>
-	</animation>	
+	</animation>
 
 	<animation>
 		<type>textranslate</type>
@@ -2098,7 +2098,7 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		<object-name>Primary_R_Side</object-name>
 		<object-name>Primary_L_FWD</object-name>
 		<object-name>Primary_R_FWD</object-name>
-		<property>controls/window-heat/engage</property>
+		<property>controls/ice/windscreen/anti-ice</property>
 		<factor>-0.0625</factor>
 		<axis>
 			
@@ -2117,7 +2117,7 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		<object-name>Primary_R_Side.001</object-name>
 		<object-name>Primary_L_FWD.001</object-name>
 		<object-name>Primary_R_FWD.001</object-name>
-		<property>controls/window-heat/engage</property>
+		<property>controls/ice/windscreen/anti-ice</property>
   <factor>-0.007</factor>
   <axis>
    <x>1</x>

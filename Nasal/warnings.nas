@@ -67,7 +67,7 @@ if (getprop("/controls/pneumatic/temp/fuel-pump-right") >= 150) caution = 1;
 if (getprop("/controls/ice/wing/temp") < 0) caution = 1;
 if (getprop("/controls/ice/eng1/temp") < 0) caution = 1;
 if (getprop("/controls/ice/eng2/temp") < 0) caution = 1;
-if (getprop("/controls/window-heat/temp") < 0) caution = 1;
+if (getprop("/controls/ice/windscreen/center_temp") < 0) caution = 1;
 
 ## Mach Trim Error
 
