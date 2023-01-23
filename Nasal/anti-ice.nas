@@ -19,8 +19,10 @@ var icing = {
         setprop("/controls/ice/wing/anti-ice-setting", 1.0);
         setprop("/controls/ice/eng1/anti-ice-setting", 1.0);
         setprop("/controls/ice/eng2/anti-ice-setting", 1.0);
-        setprop("/controls/ice/windscreen/anti-ice", 0.0);
-        setprop("/controls/ice/windscreen/anti-ice-backup", 0.0);
+        setprop("/controls/ice/windscreen/primary-serviceable", 1.0);
+        setprop("/controls/ice/windscreen/primary", 0.0);
+        setprop("/controls/ice/windscreen/backup-serviceable", 1.0);
+        setprop("/controls/ice/windscreen/backup", 0.0);
         setprop("/controls/ice/probes/anti-ice", 0.0);
 
         me.reset();
@@ -44,7 +46,14 @@ var icing = {
         var eng1icesetting = getprop("/controls/ice/eng1/anti-ice-setting");
         var eng2icesetting = getprop("/controls/ice/eng2/anti-ice-setting");
 
-        # The windscreen setting is omitted because the switch directly controls the heaters.
+        # Activate the windscreen heaters only when the system is serviceable
+        var windscreensetting_p = getprop("/controls/ice/windscreen/primary") * getprop("/controls/ice/windscreen/primary-serviceable");
+
+        # The backup system only kicks in when the primary fails
+        var windscreensetting_b =
+            getprop("/controls/ice/windscreen/backup")
+            * getprop("/controls/ice/windscreen/backup-serviceable")
+            * (!getprop("/controls/ice/windscreen/primary-serviceable"));
 
         # These probes are always heated when the engines are on (no AutoAntiIce required)
         var probesetting =
@@ -77,6 +86,18 @@ var icing = {
             setprop("/controls/ice/eng2/anti-ice", tat <= 0);
         else
             setprop("/controls/ice/eng2/anti-ice", 1);
+
+        # Windscreen primary heaters
+        if (windscreensetting_p == 0)
+            setprop("/controls/ice/windscreen/anti-ice", 0.0);
+        else
+            setprop("/controls/ice/windscreen/anti-ice", 1.0);
+
+        # Windscreen backup heaters
+        if (windscreensetting_b == 0)
+            setprop("/controls/ice/windscreen/anti-ice-backup", 0.0);
+        else
+            setprop("/controls/ice/windscreen/anti-ice-backup", 1.0);
 
         # Probe heaters
         if (probesetting == 0)
@@ -189,7 +210,6 @@ var icing = {
                 windscreen_sides_heat_energy = 26688165;
         }
 
-        # TODO: Make secondary run only when primary fails
         if (getprop("/controls/ice/windscreen/anti-ice-backup") == 1) {
             windscreen_center_heat_energy += 210000;
 

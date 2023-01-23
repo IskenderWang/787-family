@@ -2088,7 +2088,7 @@ setprop("/controls/engines/engine[1]/starter", 0);
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>controls/ice/windscreen/anti-ice</property>
+				<property>controls/ice/windscreen/primary</property>
 			</binding>
 		</action>
 	</animation>
@@ -2098,7 +2098,7 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		<object-name>Primary_R_Side</object-name>
 		<object-name>Primary_L_FWD</object-name>
 		<object-name>Primary_R_FWD</object-name>
-		<property>controls/ice/windscreen/anti-ice</property>
+		<property>controls/ice/windscreen/primary</property>
 		<factor>-0.0625</factor>
 		<axis>
 			<x>0</x>
@@ -2115,7 +2115,7 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		<object-name>Primary_R_Side.001</object-name>
 		<object-name>Primary_L_FWD.001</object-name>
 		<object-name>Primary_R_FWD.001</object-name>
-		<property>controls/ice/windscreen/anti-ice</property>
+		<property>controls/ice/windscreen/primary</property>
 		<factor>-0.007</factor>
 		<axis>
 			<x>1</x>
@@ -2133,7 +2133,7 @@ setprop("/controls/engines/engine[1]/starter", 0);
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>controls/ice/windscreen/anti-ice-backup</property>
+				<property>controls/ice/windscreen/backup</property>
 			</binding>
 		</action>
 	</animation>
@@ -2141,7 +2141,7 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		<type>textranslate</type>
 		<object-name>Backup_L_FWD</object-name>
 		<object-name>Backup_R_FWD</object-name>
-		<property>controls/ice/windscreen/anti-ice-backup</property>
+		<property>controls/ice/windscreen/backup</property>
 		<factor>-0.13975</factor>
 		<axis>
 			<x>2</x>
@@ -2154,7 +2154,7 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		<object-name>Backup_R_FWD</object-name>
 		<object-name>Backup_L_FWD.001</object-name>
 		<object-name>Backup_R_FWD.001</object-name>
-		<property>controls/ice/windscreen/anti-ice-backup</property>
+		<property>controls/ice/windscreen/backup</property>
 		<factor>-0.007</factor>
 		<axis>
 			<x>1</x>
