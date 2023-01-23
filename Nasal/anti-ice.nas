@@ -106,17 +106,17 @@ var icing = {
         # Air affects all parts even if the heaters are on, the heaters can heat the part
         # afterwards. This method also heats the parts when TAT > part's temperature. The cooling
         # affected to each part by the TAT takes into account the part's surface area.
-        wing_heat_energy -= (tat - wing_temp) * 743845 / -100;
-        eng1_heat_energy -= (tat - eng1_temp) * 680125 / -100;
-        eng2_heat_energy -= (tat - eng2_temp) * 680125 / -100;
-        windscreen_center_heat_energy -= (tat - windscreen_center_temp) * 78215 / -100;
-        windscreen_sides_heat_energy -= (tat - windscreen_sides_temp) * 78215 / -100;
-        probes_heat_energy -= (tat - probes_temp) * 5000 / -100;
+        wing_heat_energy -= (tat - wing_temp) * 743845 / -50;
+        eng1_heat_energy -= (tat - eng1_temp) * 680125 / -50;
+        eng2_heat_energy -= (tat - eng2_temp) * 680125 / -50;
+        windscreen_center_heat_energy -= (tat - windscreen_center_temp) * 78215 / -50;
+        windscreen_sides_heat_energy -= (tat - windscreen_sides_temp) * 78215 / -50;
+        probes_heat_energy -= (tat - probes_temp) * 5000 / -50;
 
         # Wing heaters
         #=============
         if (getprop("/controls/ice/wing/anti-ice") == 1) {
-            wing_heat_energy += 967000;
+            wing_heat_energy += 1859613;
 
             # Simulates the system not heating the part once it reaches 15°C
             if (wing_heat_energy > 219699967)
@@ -137,7 +137,7 @@ var icing = {
         # Engine 1 heaters
         #=================
         if (getprop("/controls/ice/eng1/anti-ice") == 1) {
-            eng1_heat_energy += 986000;
+            eng1_heat_energy += 1972000;
 
             # Simulates the system not heating the part once it reaches 35°C
             if (eng1_heat_energy > 101442672)
@@ -158,7 +158,7 @@ var icing = {
         # Engine 2 heaters
         #=================
         if (getprop("/controls/ice/eng2/anti-ice") == 1) {
-            eng2_heat_energy += 986000;
+            eng2_heat_energy += 1972000;
 
             # Simulates the system not heating the part once it reaches 35°C
             if (eng2_heat_energy > 101442672)
@@ -179,8 +179,8 @@ var icing = {
         # Windscreen primary & secondary heaters
         #=======================================
         if (getprop("/controls/ice/windscreen/anti-ice") == 1) {
-            windscreen_center_heat_energy += 105000;
-            windscreen_sides_heat_energy += 105000;
+            windscreen_center_heat_energy += 210000;
+            windscreen_sides_heat_energy += 210000;
 
             # Simulates the system not heating the part once it reaches 15°C
             if (windscreen_center_heat_energy > 25820257)
@@ -191,7 +191,7 @@ var icing = {
 
         # TODO: Make secondary run only when primary fails
         if (getprop("/controls/ice/windscreen/anti-ice-backup") == 1) {
-            windscreen_center_heat_energy += 105000;
+            windscreen_center_heat_energy += 210000;
 
             # Simulates the system not heating the part once it reaches 15°C
             if (windscreen_center_heat_energy > 25820257)
@@ -210,10 +210,13 @@ var icing = {
         if ((windscreen_center_temp > 0) and (me.icewarn_windscreen == 1))
             me.icewarn_windscreen = 0;
 
+        setprop("/environment/aircraft-effects/fog-level", windscreen_center_temp / -45);
+        setprop("/environment/aircraft-effects/frost-level", windscreen_center_temp / -30);
+
         # Probe heaters
         #==============
         if (getprop("/controls/ice/probes/anti-ice") == 1) {
-            probes_heat_energy += 7500;
+            probes_heat_energy += 15000;
 
             # Simulates the system not heating the part once it reaches 15°C
             if (probes_heat_energy > 2584706)
