@@ -1560,23 +1560,46 @@ setprop("/controls/engines/engine[1]/starter", 0);
 
 <!-- END OF ENGINE STARTER PANEL -->
 
-<!-- ANTI-ICING CONTROLS -->
+	<!-- ANTI-ICING CONTROLS -->
+	<animation>
+		<type>pick</type>
+		<object-name>wing.anti-ice</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property>controls/ice/wing/anti-ice-setting</property>
+				<value>0</value>
+				<value>1</value>
+				<value>2</value>
+			</binding>
+		</action>
 
- <animation>
-   <type>pick</type>
-   <object-name>wing.anti-ice</object-name>
-	<action>
-        <button>0</button>
-	<repeatable type="bool">false</repeatable>
-	<binding>
-		<command>property-cycle</command>
-		<property>controls/ice/wing/anti-ice-setting</property>
-		<value>0</value>
-		<value>1</value>
-		<value>2</value>
-	</binding>
-	</action>
- </animation>
+		<action>
+			<button>3</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/ice/wing/anti-ice-setting</property>
+				<step>1</step>
+				<min>0</min>
+				<max>2</max>
+			</binding>
+		</action>
+
+		<action>
+			<button>4</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/ice/wing/anti-ice-setting</property>
+				<step>-1</step>
+				<min>0</min>
+				<max>2</max>
+			</binding>
+		</action>
+	</animation>
 
 	<animation>
 		<type>rotate</type>
@@ -1597,21 +1620,45 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		</axis>
 	</animation>
 
- <animation>
-   <type>pick</type>
-   <object-name>eng1.anti-ice</object-name>
-	<action>
-        <button>0</button>
-	<repeatable type="bool">false</repeatable>
-	<binding>
-		<command>property-cycle</command>
-		<property>controls/ice/eng1/anti-ice-setting</property>
-		<value>0</value>
-		<value>1</value>
-		<value>2</value>
-	</binding>
-	</action>
- </animation>
+	<animation>
+		<type>pick</type>
+		<object-name>eng1.anti-ice</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property>controls/ice/eng1/anti-ice-setting</property>
+				<value>0</value>
+				<value>1</value>
+				<value>2</value>
+			</binding>
+		</action>
+
+		<action>
+			<button>3</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/ice/eng1/anti-ice-setting</property>
+				<step>1</step>
+				<min>0</min>
+				<max>2</max>
+			</binding>
+		</action>
+
+		<action>
+			<button>4</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/ice/eng1/anti-ice-setting</property>
+				<step>-1</step>
+				<min>0</min>
+				<max>2</max>
+			</binding>
+		</action>
+	</animation>
 
 	<animation>
 		<type>rotate</type>
@@ -1632,21 +1679,45 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		</axis>
 	</animation>
 
- <animation>
-   <type>pick</type>
-   <object-name>eng2.anti-ice</object-name>
-	<action>
-        <button>0</button>
-	<repeatable type="bool">false</repeatable>
-	<binding>
-		<command>property-cycle</command>
-		<property>controls/ice/eng2/anti-ice-setting</property>
-		<value>0</value>
-		<value>1</value>
-		<value>2</value>
-	</binding>
-	</action>
- </animation>
+	<animation>
+		<type>pick</type>
+		<object-name>eng2.anti-ice</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property>controls/ice/eng2/anti-ice-setting</property>
+				<value>0</value>
+				<value>1</value>
+				<value>2</value>
+			</binding>
+		</action>
+
+		<action>
+			<button>3</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/ice/eng2/anti-ice-setting</property>
+				<step>1</step>
+				<min>0</min>
+				<max>2</max>
+			</binding>
+		</action>
+
+		<action>
+			<button>4</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/ice/eng2/anti-ice-setting</property>
+				<step>-1</step>
+				<min>0</min>
+				<max>2</max>
+			</binding>
+		</action>
+	</animation>
 
 	<animation>
 		<type>rotate</type>
@@ -1666,8 +1737,7 @@ setprop("/controls/engines/engine[1]/starter", 0);
 			<z2-m>-0.32778</z2-m>
 		</axis>
 	</animation>
-
-<!-- END OF ANTI-ICING CONTROLS -->
+	<!-- END OF ANTI-ICING CONTROLS -->
 
 <!-- AIRCRAFT LIGHTING CONTROLS -->
 
