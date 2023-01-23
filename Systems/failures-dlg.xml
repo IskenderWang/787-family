@@ -249,6 +249,80 @@
         <hrule />
 
         <text>
+            <label>Anti-Ice System Failures</label>
+        </text>
+
+        <group>
+            <layout>hbox</layout>
+
+            <group>
+                <layout>vbox</layout>
+                <text>
+                    <label>Windscreen Primary</label>
+                </text>
+
+                <text>
+                    <property>controls/ice/windscreen/primary-legend</property>
+                    <live>true</live>
+                </text>
+
+                <button>
+                    <legend>Fail system</legend>
+                    <padding>1</padding>
+                    <binding>
+                        <command>nasal</command>
+                        <script>
+                            setprop(
+                                "controls/ice/windscreen/primary-serviceable",
+                                !getprop("controls/ice/windscreen/primary-serviceable")
+                            );
+
+                            if (getprop("controls/ice/windscreen/primary-serviceable") == 0)
+                                setprop("controls/ice/windscreen/primary-legend", "FAILED");
+                            else
+                                setprop("controls/ice/windscreen/primary-legend", "AVAILABLE");
+                        </script>
+                    </binding>
+                </button>
+            </group>
+
+            <vrule />
+
+            <group>
+                <layout>vbox</layout>
+                <text>
+                    <label>Windscreen Backup</label>
+                </text>
+
+                <text>
+                    <property>controls/ice/windscreen/backup-legend</property>
+                    <live>true</live>
+                </text>
+
+                <button>
+                    <legend>Fail system</legend>
+                    <padding>1</padding>
+                    <binding>
+                        <command>nasal</command>
+                        <script>
+                            setprop(
+                                "controls/ice/windscreen/backup-serviceable",
+                                !getprop("controls/ice/windscreen/backup-serviceable")
+                            );
+
+                            if (getprop("controls/ice/windscreen/backup-serviceable") == 0)
+                                setprop("controls/ice/windscreen/backup-legend", "FAILED");
+                            else
+                                setprop("controls/ice/windscreen/backup-legend", "AVAILABLE");
+                        </script>
+                    </binding>
+                </button>
+            </group>
+        </group>
+
+        <hrule />
+
+        <text>
             <label>Hydraulic System Failures</label>
         </text>
 

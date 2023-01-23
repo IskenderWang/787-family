@@ -19,11 +19,14 @@ var icing = {
         setprop("/controls/ice/wing/anti-ice-setting", 1.0);
         setprop("/controls/ice/eng1/anti-ice-setting", 1.0);
         setprop("/controls/ice/eng2/anti-ice-setting", 1.0);
-        setprop("/controls/ice/windscreen/primary-serviceable", 1.0);
         setprop("/controls/ice/windscreen/primary", 0.0);
-        setprop("/controls/ice/windscreen/backup-serviceable", 1.0);
         setprop("/controls/ice/windscreen/backup", 0.0);
         setprop("/controls/ice/probes/anti-ice", 0.0);
+
+        setprop("/controls/ice/windscreen/primary-serviceable", 1.0);
+        setprop("/controls/ice/windscreen/primary-legend", "AVAILABLE");
+        setprop("/controls/ice/windscreen/backup-serviceable", 1.0);
+        setprop("/controls/ice/windscreen/backup-legend", "AVAILABLE");
 
         me.reset();
     },
