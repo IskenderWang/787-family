@@ -232,7 +232,7 @@ var icing = {
         if ((wscreen_c_temp > 0) and (me.icewarn_windscreen == 1))
             me.icewarn_windscreen = 0;
 
-        setprop("/environment/aircraft-effects/fog-level", wscreen_c_temp / -45);
+        setprop("/environment/aircraft-effects/fog-level", wscreen_c_temp / -25);
         setprop("/environment/aircraft-effects/frost-level", wscreen_c_temp / -30);
 
         # Probe heaters
