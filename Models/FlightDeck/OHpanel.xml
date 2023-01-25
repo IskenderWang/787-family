@@ -2086,24 +2086,48 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		</center>
 	</animation>
 
-<!-- Wiper Controls -->
+	<!-- Wiper Controls -->
+	<animation>
+		<type>pick</type>
+		<object-name>l.wiper</object-name>
+		<object-name>r.wiper</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property>controls/wipers/speed</property>
+				<value>0</value>
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+			</binding>
+		</action>
 
- <animation>
-   <type>pick</type>
-   <object-name>l.wiper</object-name>
-   <object-name>r.wiper</object-name>
-	<action>
-        <button>0</button>
-	<repeatable type="bool">false</repeatable>
-	<binding>
-		<command>property-cycle</command>
-		<property>controls/wipers/speed</property>
-		<value>0</value>
-		<value>1</value>
-		<value>2</value>
-	</binding>
-	</action>
- </animation>
+		<action>
+			<button>3</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/wipers/speed</property>
+				<step>1</step>
+				<min>0</min>
+				<max>3</max>
+			</binding>
+		</action>
+
+		<action>
+			<button>4</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/wipers/speed</property>
+				<step>-1</step>
+				<min>0</min>
+				<max>3</max>
+			</binding>
+		</action>
+	</animation>
 
 	<animation>
 		<type>rotate</type>
@@ -2111,8 +2135,9 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		<property>controls/wipers/speed</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>1</ind><dep>90</dep></entry>
-			<entry><ind>2</ind><dep>135</dep></entry>
+			<entry><ind>1</ind><dep>45</dep></entry>
+			<entry><ind>2</ind><dep>90</dep></entry>
+			<entry><ind>3</ind><dep>135</dep></entry>
 		</interpolation>
 		<axis>
 			<x1-m>1</x1-m>
@@ -2130,9 +2155,9 @@ setprop("/controls/engines/engine[1]/starter", 0);
 		<property>controls/wipers/speed</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>1</ind><dep>90</dep></entry>
-			<entry><ind>2</ind><dep>135</dep></entry>
-			<entry><ind>3</ind><dep>90</dep></entry>
+			<entry><ind>1</ind><dep>45</dep></entry>
+			<entry><ind>2</ind><dep>90</dep></entry>
+			<entry><ind>3</ind><dep>135</dep></entry>
 		</interpolation>
 		<axis>
 			<x1-m>1</x1-m>
