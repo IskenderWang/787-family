@@ -49,10 +49,10 @@ var icing = {
             getprop("/controls/ice/wing/anti-ice-setting")
             * (!!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus")));
 
-        var eng1icesetting = 
+        var eng1icesetting =
             getprop("/controls/ice/eng1/anti-ice-setting")
             * (getprop("/engines/engine[0]/n1") >= 30.0);
-        var eng2icesetting = 
+        var eng2icesetting =
             getprop("/controls/ice/eng2/anti-ice-setting")
             * (getprop("/engines/engine[1]/n1") >= 30.0);
 
@@ -119,8 +119,8 @@ var icing = {
         else
             setprop("/controls/ice/probes/anti-ice", 1);
 
-        # Calculate temperatures, cooling, and heating using heat energy
-        ################################################################
+        # Calculate temperatures, cooling, and heating
+        ##############################################
 
         # Get the temperatures of the parts
         var wing_temp = getprop("/controls/ice/wing/temp");
@@ -133,7 +133,7 @@ var icing = {
         # Air affects all parts even if the heaters are on, the heaters can heat the part
         # afterwards. This method also heats the parts when TAT > part's temperature.
         # All parts use the following formula:
-        # part_temp = me.UPDATE_INTERVAL * (me.UPDATE_INTERVAL * (tat - part_temp) * part_surface_area * 10) / mass / specific_heat_capacity_of_material;
+        # part_temp += me.UPDATE_INTERVAL * (me.UPDATE_INTERVAL * (tat - part_temp) * part_surface_area * 10) / mass / specific_heat_capacity_of_material;
 
         wing_temp      += me.UPDATE_INTERVAL * (me.UPDATE_INTERVAL * (tat - wing_temp     ) * 14.887 * 10) / 850 / 897;
         eng1_temp      += me.UPDATE_INTERVAL * (me.UPDATE_INTERVAL * (tat - eng1_temp     ) * 13.603 * 10) / 367 / 897;
@@ -231,6 +231,12 @@ var icing = {
         }
         if ((wscreen_c_temp > 0) and (me.icewarn_windscreen == 1))
             me.icewarn_windscreen = 0;
+
+        # Handle windscreen heaters failure alert
+        if (getprop("/controls/ice/windscreen/primary-serviceable") == 0)
+            sysinfo.log_msg("[HEAT] Primary windscreen heaters failure");
+        if (getprop("/controls/ice/windscreen/backup-serviceable") == 0)
+            sysinfo.log_msg("[HEAT] Backup windscreen heaters failure");
 
         setprop("/environment/aircraft-effects/fog-level", wscreen_c_temp / -25);
         setprop("/environment/aircraft-effects/frost-level", wscreen_c_temp / -30);
