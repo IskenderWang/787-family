@@ -257,216 +257,71 @@
 
             <group>
                 <layout>vbox</layout>
+                <text>
+                    <label>Windscreen</label>
+                </text>
 
-                <!-- Windscreen primary -->
-                <group>
-                    <layout>vbox</layout>
-                    <text>
-                        <label>Windscreen Primary</label>
-                    </text>
+                <checkbox>
+                    <label>Fail primary heaters</label>
+                    <property>controls/ice/windscreen/primary-failed</property>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </checkbox>
 
-                    <text>
-                        <property>controls/ice/windscreen/primary-legend</property>
-                        <live>true</live>
-                        <halign>center</halign>
-                    </text>
-
-                    <button>
-                        <legend>Fail system</legend>
-                        <padding>1</padding>
-                        <binding>
-                            <command>nasal</command>
-                            <script>
-                                setprop(
-                                    "controls/ice/windscreen/primary-serviceable",
-                                    !getprop("controls/ice/windscreen/primary-serviceable")
-                                );
-
-                                if (getprop("controls/ice/windscreen/primary-serviceable") == 0)
-                                    setprop("controls/ice/windscreen/primary-legend", "FAILED");
-                                else
-                                    setprop("controls/ice/windscreen/primary-legend", "AVAILABLE");
-                            </script>
-                        </binding>
-                    </button>
-                </group>
-
-                <!-- Windscreen backup -->
-                <group>
-                    <layout>vbox</layout>
-                    <text>
-                        <label>Windscreen Backup</label>
-                    </text>
-
-                    <text>
-                        <property>controls/ice/windscreen/backup-legend</property>
-                        <live>true</live>
-                        <halign>center</halign>
-                    </text>
-
-                    <button>
-                        <legend>Fail system</legend>
-                        <padding>1</padding>
-                        <binding>
-                            <command>nasal</command>
-                            <script>
-                                setprop(
-                                    "controls/ice/windscreen/backup-serviceable",
-                                    !getprop("controls/ice/windscreen/backup-serviceable")
-                                );
-
-                                if (getprop("controls/ice/windscreen/backup-serviceable") == 0)
-                                    setprop("controls/ice/windscreen/backup-legend", "FAILED");
-                                else
-                                    setprop("controls/ice/windscreen/backup-legend", "AVAILABLE");
-                            </script>
-                        </binding>
-                    </button>
-                </group>
+                <checkbox>
+                    <label>Fail backup heaters</label>
+                    <property>controls/ice/windscreen/backup-failed</property>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </checkbox>
             </group>
-
-            <vrule />
 
             <group>
                 <layout>vbox</layout>
+                <text>
+                    <label>Engine</label>
+                </text>
 
-                <!-- Engine 1 -->
-                <group>
-                    <layout>vbox</layout>
-                    <text>
-                        <label>Engine 1</label>
-                    </text>
+                <checkbox>
+                    <label>Fail engine 1 heaters</label>
+                    <property>controls/ice/eng1/failed</property>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </checkbox>
 
-                    <text>
-                        <property>controls/ice/eng1/legend</property>
-                        <live>true</live>
-                        <halign>center</halign>
-                    </text>
-
-                    <button>
-                        <legend>Fail system</legend>
-                        <padding>1</padding>
-                        <binding>
-                            <command>nasal</command>
-                            <script>
-                                setprop(
-                                    "controls/ice/eng1/serviceable",
-                                    !getprop("controls/ice/eng1/serviceable")
-                                );
-
-                                if (getprop("controls/ice/eng1/serviceable") == 0)
-                                    setprop("controls/ice/eng1/legend", "FAILED");
-                                else
-                                    setprop("controls/ice/eng1/legend", "AVAILABLE");
-                            </script>
-                        </binding>
-                    </button>
-                </group>
-
-                <!-- Engine 2 -->
-                <group>
-                    <layout>vbox</layout>
-                    <text>
-                        <label>Engine 2</label>
-                    </text>
-
-                    <text>
-                        <property>controls/ice/eng2/legend</property>
-                        <live>true</live>
-                        <halign>center</halign>
-                    </text>
-
-                    <button>
-                        <legend>Fail system</legend>
-                        <padding>1</padding>
-                        <binding>
-                            <command>nasal</command>
-                            <script>
-                                setprop(
-                                    "controls/ice/eng2/serviceable",
-                                    !getprop("controls/ice/eng2/serviceable")
-                                );
-
-                                if (getprop("controls/ice/eng2/serviceable") == 0)
-                                    setprop("controls/ice/eng2/legend", "FAILED");
-                                else
-                                    setprop("controls/ice/eng2/legend", "AVAILABLE");
-                            </script>
-                        </binding>
-                    </button>
-                </group>
+                <checkbox>
+                    <label>Fail engine 2 heaters</label>
+                    <property>controls/ice/eng2/failed</property>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </checkbox>
             </group>
-
-            <vrule />
 
             <group>
                 <layout>vbox</layout>
+                <text>
+                    <label>Wing &amp; Probes</label>
+                </text>
 
-                <!-- Wing -->
-                <group>
-                    <layout>vbox</layout>
-                    <text>
-                        <label>Wing</label>
-                    </text>
+                <checkbox>
+                    <label>Fail wing heaters</label>
+                    <property>controls/ice/wing/failed</property>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </checkbox>
 
-                    <text>
-                        <property>controls/ice/wing/legend</property>
-                        <live>true</live>
-                        <halign>center</halign>
-                    </text>
-
-                    <button>
-                        <legend>Fail system</legend>
-                        <padding>1</padding>
-                        <binding>
-                            <command>nasal</command>
-                            <script>
-                                    setprop(
-                                        "controls/ice/wing/serviceable",
-                                        !getprop("controls/ice/wing/serviceable")
-                                    );
-
-                                    if (getprop("controls/ice/wing/serviceable") == 0)
-                                        setprop("controls/ice/wing/legend", "FAILED");
-                                    else
-                                        setprop("controls/ice/wing/legend", "AVAILABLE");
-                            </script>
-                        </binding>
-                    </button>
-                </group>
-
-                <!-- Probes -->
-                <group>
-                    <layout>vbox</layout>
-                    <text>
-                        <label>Probes</label>
-                    </text>
-
-                    <text>
-                        <property>controls/ice/probes/legend</property>
-                        <live>true</live>
-                        <halign>center</halign>
-                    </text>
-
-                    <button>
-                        <legend>Fail system</legend>
-                        <padding>1</padding>
-                        <binding>
-                            <command>nasal</command>
-                            <script>
-                                setprop(
-                                    "controls/ice/probes/serviceable",
-                                    !getprop("controls/ice/probes/serviceable")
-                                );
-
-                                if (getprop("controls/ice/probes/serviceable") == 0)
-                                    setprop("controls/ice/probes/legend", "FAILED");
-                                else
-                                    setprop("controls/ice/probes/legend", "AVAILABLE");
-                            </script>
-                        </binding>
-                    </button>
-                </group>
+                <checkbox>
+                    <label>Fail probe heaters</label>
+                    <property>controls/ice/probes/failed</property>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </checkbox>
             </group>
         </group>
 

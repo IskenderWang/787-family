@@ -35,18 +35,12 @@ var icing = {
         setprop("/controls/ice/probes/anti-ice", 0.0);
 
         # Failure states and legends
-        setprop("/controls/ice/wing/serviceable", 1.0);
-        setprop("/controls/ice/wing/legend", "AVAILABLE");
-        setprop("/controls/ice/eng1/serviceable", 1.0);
-        setprop("/controls/ice/eng1/legend", "AVAILABLE");
-        setprop("/controls/ice/eng2/serviceable", 1.0);
-        setprop("/controls/ice/eng2/legend", "AVAILABLE");
-        setprop("/controls/ice/windscreen/primary-serviceable", 1.0);
-        setprop("/controls/ice/windscreen/primary-legend", "AVAILABLE");
-        setprop("/controls/ice/windscreen/backup-serviceable", 1.0);
-        setprop("/controls/ice/windscreen/backup-legend", "AVAILABLE");
-        setprop("/controls/ice/probes/serviceable", 1.0);
-        setprop("/controls/ice/probes/legend", "AVAILABLE");
+        setprop("/controls/ice/wing/failed", 0.0);
+        setprop("/controls/ice/eng1/failed", 0.0);
+        setprop("/controls/ice/eng2/failed", 0.0);
+        setprop("/controls/ice/windscreen/primary-failed", 0.0);
+        setprop("/controls/ice/windscreen/backup-failed", 0.0);
+        setprop("/controls/ice/probes/failed", 0.0);
 
         me.reset();
     },
@@ -66,23 +60,23 @@ var icing = {
         # required to handle that.
         var wingicesetting =
             getprop("/controls/ice/wing/anti-ice-setting")
-            * (getprop("/controls/ice/wing/serviceable"))
+            * !getprop("/controls/ice/wing/failed")
             * !!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus"));
 
         var eng1icesetting =
             getprop("/controls/ice/eng1/anti-ice-setting")
-            * (getprop("/controls/ice/eng1/serviceable"))
+            * !getprop("/controls/ice/eng1/failed")
             * (getprop("/engines/engine[0]/n1") >= 30.0);
         var eng2icesetting =
             getprop("/controls/ice/eng2/anti-ice-setting")
-            * (getprop("/controls/ice/eng2/serviceable"))
+            * !getprop("/controls/ice/eng2/failed")
             * (getprop("/engines/engine[1]/n1") >= 30.0);
 
         # Windscreen primary heaters
         setprop(
             "/controls/ice/windscreen/anti-ice",
             getprop("/controls/ice/windscreen/primary")
-            * getprop("/controls/ice/windscreen/primary-serviceable")
+            * !getprop("/controls/ice/windscreen/primary-failed")
             * !!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus"))
         );
 
@@ -90,8 +84,8 @@ var icing = {
         setprop(
             "/controls/ice/windscreen/anti-ice-backup",
             getprop("/controls/ice/windscreen/backup")
-            * getprop("/controls/ice/windscreen/backup-serviceable")
-            * !getprop("/controls/ice/windscreen/primary-serviceable")
+            * !getprop("/controls/ice/windscreen/backup-failed")
+            * getprop("/controls/ice/windscreen/primary-failed")
             * !!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus"))
         );
 
@@ -99,7 +93,7 @@ var icing = {
         setprop(
             "/controls/ice/probes/anti-ice",
             !(getprop("/engines/engine[0]/cutoff") or getprop("/engines/engine[1]/cutoff"))
-            * (getprop("/controls/ice/probes/serviceable"))
+            * !getprop("/controls/ice/probes/failed")
             * !!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus"))
         );
 
@@ -176,9 +170,9 @@ var icing = {
             me.icewarnw = 0;
 
         # Handle wing heater failure alert
-        if (getprop("/controls/ice/wing/serviceable") == 0 and me.failwarn_wing == 0)
+        if (getprop("/controls/ice/wing/failed") == 1 and me.failwarn_wing == 0)
             sysinfo.log_msg("[HEAT] Wing heaters failure", 1);
-        me.failwarn_wing = !getprop("/controls/ice/wing/serviceable");
+        me.failwarn_wing = getprop("/controls/ice/wing/failed");
 
         # Engine 1 heaters
         #=================
@@ -200,9 +194,9 @@ var icing = {
             me.icewarne1 = 0;
 
         # Handle engine 1 heater failure alert
-        if (getprop("/controls/ice/eng1/serviceable") == 0 and me.failwarn_eng1 == 0)
+        if (getprop("/controls/ice/eng1/failed") == 1 and me.failwarn_eng1 == 0)
             sysinfo.log_msg("[HEAT] Engine 1 heater failure", 1);
-        me.failwarn_eng1 = !getprop("/controls/ice/eng1/serviceable");
+        me.failwarn_eng1 = getprop("/controls/ice/eng1/failed");
 
         # Engine 2 heaters
         #=================
@@ -224,9 +218,9 @@ var icing = {
             me.icewarne2 = 0;
 
         # Handle engine 2 heater failure alert
-        if (getprop("/controls/ice/eng2/serviceable") == 0 and me.failwarn_eng2 == 0)
+        if (getprop("/controls/ice/eng2/failed") == 1 and me.failwarn_eng2 == 0)
             sysinfo.log_msg("[HEAT] Engine 2 heater failure", 1);
-        me.failwarn_eng2 = !getprop("/controls/ice/eng2/serviceable");
+        me.failwarn_eng2 = getprop("/controls/ice/eng2/failed");
 
         # Windscreen primary & secondary heaters
         #=======================================
@@ -260,13 +254,13 @@ var icing = {
 
         # Handle windscreen heaters failure alert
         # Primary
-        if (getprop("/controls/ice/windscreen/primary-serviceable") == 0 and me.failwarn_wscreen_p == 0)
+        if (getprop("/controls/ice/windscreen/primary-failed") == 1 and me.failwarn_wscreen_p == 0)
             sysinfo.log_msg("[HEAT] Primary windscreen heaters failure", 1);
-        me.failwarn_wscreen_p = !getprop("/controls/ice/windscreen/primary-serviceable");
+        me.failwarn_wscreen_p = getprop("/controls/ice/windscreen/primary-failed");
         # Backup
-        if (getprop("/controls/ice/windscreen/backup-serviceable") == 0 and me.failwarn_wscreen_b == 0)
+        if (getprop("/controls/ice/windscreen/backup-failed") == 1 and me.failwarn_wscreen_b == 0)
             sysinfo.log_msg("[HEAT] Backup windscreen heaters failure", 1);
-        me.failwarn_wscreen_b = !getprop("/controls/ice/windscreen/backup-serviceable");
+        me.failwarn_wscreen_b = getprop("/controls/ice/windscreen/backup-failed");
 
         setprop("/environment/aircraft-effects/fog-level", wscreen_c_temp / -25);
         setprop("/environment/aircraft-effects/frost-level", wscreen_c_temp / -30);
@@ -291,9 +285,9 @@ var icing = {
             me.icewarn_probes = 0;
 
         # Handle probes heaters failure alert
-        if (getprop("/controls/ice/probes/serviceable") == 0 and me.failwarn_probes == 0)
+        if (getprop("/controls/ice/probes/failed") == 1 and me.failwarn_probes == 0)
             sysinfo.log_msg("[HEAT] Probe heaters failure", 1);
-        me.failwarn_probes = !getprop("/controls/ice/probes/serviceable");
+        me.failwarn_probes = getprop("/controls/ice/probes/failed");
 
         # Export variables and warnings
         ###############################
