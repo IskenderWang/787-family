@@ -62,13 +62,12 @@ var icing = {
         );
         var tat = getprop("/controls/ice/tat");
 
-        # Anti-Ice Control System knobs & switches.
-
-        # These knobs have an 'auto' option, so some logic further ahead is required.
+        # Anti-Ice Control System knobs. These have an 'auto' option, so some logic further ahead is
+        # required to handle that.
         var wingicesetting =
             getprop("/controls/ice/wing/anti-ice-setting")
             * (getprop("/controls/ice/wing/serviceable"))
-            * (!!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus")));
+            * !!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus"));
 
         var eng1icesetting =
             getprop("/controls/ice/eng1/anti-ice-setting")
@@ -79,23 +78,30 @@ var icing = {
             * (getprop("/controls/ice/eng2/serviceable"))
             * (getprop("/engines/engine[1]/n1") >= 30.0);
 
-        var windscreensetting_p =
+        # Windscreen primary heaters
+        setprop(
+            "/controls/ice/windscreen/anti-ice",
             getprop("/controls/ice/windscreen/primary")
             * getprop("/controls/ice/windscreen/primary-serviceable")
-            * (!!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus")));
+            * !!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus"))
+        );
 
-        # The backup system only kicks in when the primary fails
-        var windscreensetting_b =
+        # Windscreen backup heaters
+        setprop(
+            "/controls/ice/windscreen/anti-ice-backup",
             getprop("/controls/ice/windscreen/backup")
             * getprop("/controls/ice/windscreen/backup-serviceable")
-            * (getprop("/controls/ice/windscreen/primary-serviceable"))
-            * (!!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus")));
+            * !getprop("/controls/ice/windscreen/primary-serviceable")
+            * !!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus"))
+        );
 
-        # These probes are always heated when the engines are on (no AutoAntiIce required)
-        var probesetting =
-            (!getprop("/engines/engine[0]/cutoff") or !getprop("/engines/engine[1]/cutoff"))
+        # Probe heaters
+        setprop(
+            "/controls/ice/probes/anti-ice",
+            !(getprop("/engines/engine[0]/cutoff") or getprop("/engines/engine[1]/cutoff"))
             * (getprop("/controls/ice/probes/serviceable"))
-            * (!!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus")));
+            * !!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus"))
+        );
 
         # Control activation of heating elements
         ########################################
@@ -123,24 +129,6 @@ var icing = {
             setprop("/controls/ice/eng2/anti-ice", tat <= 0);
         else
             setprop("/controls/ice/eng2/anti-ice", 1);
-
-        # Windscreen primary heaters
-        if (windscreensetting_p == 0)
-            setprop("/controls/ice/windscreen/anti-ice", 0.0);
-        else
-            setprop("/controls/ice/windscreen/anti-ice", 1.0);
-
-        # Windscreen backup heaters
-        if (windscreensetting_b == 0)
-            setprop("/controls/ice/windscreen/anti-ice-backup", 0.0);
-        else
-            setprop("/controls/ice/windscreen/anti-ice-backup", 1.0);
-
-        # Probe heaters
-        if (probesetting == 0)
-            setprop("/controls/ice/probes/anti-ice", 0);
-        else
-            setprop("/controls/ice/probes/anti-ice", 1);
 
         # Calculate temperatures, cooling, and heating
         ##############################################
