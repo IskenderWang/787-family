@@ -231,8 +231,8 @@ var icing = {
         # Windscreen primary & secondary heaters
         #=======================================
         if (getprop("/controls/ice/windscreen/anti-ice") == 1) {
-            wscreen_c_temp += me.UPDATE_INTERVAL * (4000 * me.UPDATE_INTERVAL) * 119 * 753;
-            wscreen_s_temp += me.UPDATE_INTERVAL * (4000 * me.UPDATE_INTERVAL) * 123 * 753;
+            wscreen_c_temp += me.UPDATE_INTERVAL * (4000 * me.UPDATE_INTERVAL) / 119 / 753;
+            wscreen_s_temp += me.UPDATE_INTERVAL * (4000 * me.UPDATE_INTERVAL) / 123 / 753;
 
             # Simulates the system not heating the part once it reaches 15°C
             if (wscreen_c_temp >= 15.0)
@@ -242,7 +242,7 @@ var icing = {
         }
 
         if (getprop("/controls/ice/windscreen/anti-ice-backup") == 1) {
-            wscreen_c_temp += me.UPDATE_INTERVAL * (4000 * me.UPDATE_INTERVAL) * 119 * 753;
+            wscreen_c_temp += me.UPDATE_INTERVAL * (4000 * me.UPDATE_INTERVAL) / 119 / 753;
 
             # Simulates the system not heating the part once it reaches 15°C
             if (wscreen_c_temp >= 15.0)
