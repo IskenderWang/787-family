@@ -8,6 +8,8 @@ var icing = {
         me.icewarne2 = 0;
         me.icewarn_windscreen = 0;
         me.icewarn_probes = 0;
+        me.failwarn_wscreen_p = 0;
+        me.failwarn_wscreen_b = 0;
 
         setprop("/controls/ice/wing/temp", getprop("/environment/temperature-degc") );
         setprop("/controls/ice/eng1/temp", getprop("/environment/temperature-degc") );
@@ -233,10 +235,14 @@ var icing = {
             me.icewarn_windscreen = 0;
 
         # Handle windscreen heaters failure alert
-        if (getprop("/controls/ice/windscreen/primary-serviceable") == 0)
-            sysinfo.log_msg("[HEAT] Primary windscreen heaters failure");
-        if (getprop("/controls/ice/windscreen/backup-serviceable") == 0)
-            sysinfo.log_msg("[HEAT] Backup windscreen heaters failure");
+        # Primary
+        if (getprop("/controls/ice/windscreen/primary-serviceable") == 0 and me.failwarn_wscreen_p == 0)
+            sysinfo.log_msg("[HEAT] Primary windscreen heaters failure", 1);
+        me.failwarn_wscreen_p = !getprop("/controls/ice/windscreen/primary-serviceable");
+        # Backup
+        if (getprop("/controls/ice/windscreen/backup-serviceable") == 0 and me.failwarn_wscreen_b == 0)
+            sysinfo.log_msg("[HEAT] Backup windscreen heaters failure", 1);
+        me.failwarn_wscreen_b = !getprop("/controls/ice/windscreen/backup-serviceable");
 
         setprop("/environment/aircraft-effects/fog-level", wscreen_c_temp / -25);
         setprop("/environment/aircraft-effects/frost-level", wscreen_c_temp / -30);
