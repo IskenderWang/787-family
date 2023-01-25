@@ -3,14 +3,22 @@ var icing = {
         me.UPDATE_INTERVAL = 5;
         me.loopid = 0;
 
+        # Ice warnings
         me.icewarnw = 0;
         me.icewarne1 = 0;
         me.icewarne2 = 0;
         me.icewarn_windscreen = 0;
         me.icewarn_probes = 0;
+
+        # Failure warnings
+        me.failwarn_wing = 0;
+        me.failwarn_eng1 = 0;
+        me.failwarn_eng2 = 0;
         me.failwarn_wscreen_p = 0;
         me.failwarn_wscreen_b = 0;
+        me.failwarn_probes = 0;
 
+        # Temperatures
         setprop("/controls/ice/wing/temp", getprop("/environment/temperature-degc") );
         setprop("/controls/ice/eng1/temp", getprop("/environment/temperature-degc") );
         setprop("/controls/ice/eng2/temp", getprop("/environment/temperature-degc") );
@@ -18,6 +26,7 @@ var icing = {
         setprop("/controls/ice/windscreen/sides_temp", getprop("/environment/temperature-degc") );
         setprop("/controls/ice/probes/temp", getprop("/environment/temperature-degc"));
 
+        # Anti-ice settings
         setprop("/controls/ice/wing/anti-ice-setting", 1.0);
         setprop("/controls/ice/eng1/anti-ice-setting", 1.0);
         setprop("/controls/ice/eng2/anti-ice-setting", 1.0);
@@ -25,10 +34,19 @@ var icing = {
         setprop("/controls/ice/windscreen/backup", 0.0);
         setprop("/controls/ice/probes/anti-ice", 0.0);
 
+        # Failure states and legends
+        setprop("/controls/ice/wing/serviceable", 1.0);
+        setprop("/controls/ice/wing/legend", "AVAILABLE");
+        setprop("/controls/ice/eng1/serviceable", 1.0);
+        setprop("/controls/ice/eng1/legend", "AVAILABLE");
+        setprop("/controls/ice/eng2/serviceable", 1.0);
+        setprop("/controls/ice/eng2/legend", "AVAILABLE");
         setprop("/controls/ice/windscreen/primary-serviceable", 1.0);
         setprop("/controls/ice/windscreen/primary-legend", "AVAILABLE");
         setprop("/controls/ice/windscreen/backup-serviceable", 1.0);
         setprop("/controls/ice/windscreen/backup-legend", "AVAILABLE");
+        setprop("/controls/ice/probes/serviceable", 1.0);
+        setprop("/controls/ice/probes/legend", "AVAILABLE");
 
         me.reset();
     },
@@ -46,19 +64,21 @@ var icing = {
 
         # Anti-Ice Control System knobs & switches.
 
-        # These knobs have an 'auto' option, so some logic is required.
+        # These knobs have an 'auto' option, so some logic further ahead is required.
         var wingicesetting =
             getprop("/controls/ice/wing/anti-ice-setting")
+            * (getprop("/controls/ice/wing/serviceable"))
             * (!!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus")));
 
         var eng1icesetting =
             getprop("/controls/ice/eng1/anti-ice-setting")
+            * (getprop("/controls/ice/eng1/serviceable"))
             * (getprop("/engines/engine[0]/n1") >= 30.0);
         var eng2icesetting =
             getprop("/controls/ice/eng2/anti-ice-setting")
+            * (getprop("/controls/ice/eng2/serviceable"))
             * (getprop("/engines/engine[1]/n1") >= 30.0);
 
-        # Activate the windscreen heaters only when the system is serviceable
         var windscreensetting_p =
             getprop("/controls/ice/windscreen/primary")
             * getprop("/controls/ice/windscreen/primary-serviceable")
@@ -68,12 +88,13 @@ var icing = {
         var windscreensetting_b =
             getprop("/controls/ice/windscreen/backup")
             * getprop("/controls/ice/windscreen/backup-serviceable")
-            * (!getprop("/controls/ice/windscreen/primary-serviceable"))
+            * (getprop("/controls/ice/windscreen/primary-serviceable"))
             * (!!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus")));
 
         # These probes are always heated when the engines are on (no AutoAntiIce required)
         var probesetting =
             (!getprop("/engines/engine[0]/cutoff") or !getprop("/engines/engine[1]/cutoff"))
+            * (getprop("/controls/ice/probes/serviceable"))
             * (!!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus")));
 
         # Control activation of heating elements
@@ -166,6 +187,11 @@ var icing = {
         if ((wing_temp > 0) and (me.icewarnw == 1))
             me.icewarnw = 0;
 
+        # Handle wing heater failure alert
+        if (getprop("/controls/ice/wing/serviceable") == 0 and me.failwarn_wing == 0)
+            sysinfo.log_msg("[HEAT] Wing heaters failure", 1);
+        me.failwarn_wing = !getprop("/controls/ice/wing/serviceable");
+
         # Engine 1 heaters
         #=================
         if (getprop("/controls/ice/eng1/anti-ice") == 1) {
@@ -185,6 +211,11 @@ var icing = {
         if ((eng1_temp > 0) and (me.icewarne1 == 1))
             me.icewarne1 = 0;
 
+        # Handle engine 1 heater failure alert
+        if (getprop("/controls/ice/eng1/serviceable") == 0 and me.failwarn_eng1 == 0)
+            sysinfo.log_msg("[HEAT] Engine 1 heater failure", 1);
+        me.failwarn_eng1 = !getprop("/controls/ice/eng1/serviceable");
+
         # Engine 2 heaters
         #=================
         if (getprop("/controls/ice/eng2/anti-ice") == 1) {
@@ -203,6 +234,11 @@ var icing = {
         }
         if ((eng2_temp > 0) and (me.icewarne1 == 1))
             me.icewarne2 = 0;
+
+        # Handle engine 2 heater failure alert
+        if (getprop("/controls/ice/eng2/serviceable") == 0 and me.failwarn_eng2 == 0)
+            sysinfo.log_msg("[HEAT] Engine 2 heater failure", 1);
+        me.failwarn_eng2 = !getprop("/controls/ice/eng2/serviceable");
 
         # Windscreen primary & secondary heaters
         #=======================================
@@ -265,6 +301,11 @@ var icing = {
         }
         if ((probes_temp > 0) and (me.icewarn_probes == 1))
             me.icewarn_probes = 0;
+
+        # Handle probes heaters failure alert
+        if (getprop("/controls/ice/probes/serviceable") == 0 and me.failwarn_probes == 0)
+            sysinfo.log_msg("[HEAT] Probe heaters failure", 1);
+        me.failwarn_probes = !getprop("/controls/ice/probes/serviceable");
 
         # Export variables and warnings
         ###############################
