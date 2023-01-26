@@ -2791,7 +2791,42 @@
      
    </axis>
  </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>HDG-TRK</object-name>
+        <action>
+            <button>0</button>
+            <repeatable type="bool">false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>/it-autoflight/input/trk</property>
+            </binding>
+        </action>
+    </animation>
  
+    <animation>
+        <type>select</type>
+        <object-name>Plane.018</object-name>
+        <condition>
+            <equals>
+                <property>/it-autoflight/input/trk</property>
+                <value>0</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Plane.trk</object-name>
+        <condition>
+            <equals>
+                <property>/it-autoflight/input/trk</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+
    <animation>
    <type>textranslate</type>
    <object-name>APhdg.100</object-name>
@@ -3385,9 +3420,9 @@
 				<command>property-adjust</command>
 				<property>/it-autoflight/input/hdg</property>
 				<wrap type="bool">true</wrap>
-        <step>1</step>
-        <min>0</min>
-        <max>360</max>
+                <step>1</step>
+                <min>1</min>
+                <max>361</max>
 			</binding>
 		</action>
 		<action>
@@ -3398,9 +3433,9 @@
 				<command>property-adjust</command>
 				<property>/it-autoflight/input/hdg</property>
 				<wrap type="bool">true</wrap>
-        <step>-1</step>
-        <min>0</min>
-        <max>360</max>
+                <step>-1</step>
+                <min>1</min>
+                <max>361</max>
 			</binding>
 		</action>
 	</animation>
