@@ -13,6 +13,9 @@ var autobrake = {
         var current_spdbrk = getprop("controls/flight/speedbrake-lever");
         var absetting = getprop("controls/autobrake/setting");
 
+        # The pressure will be interpolated to go from 0 to 1 in 1 second (or, for eg, 0 to 0.2 in 0.2 seconds)
+        var brake_pressure = (absetting - 1) / 5.0;
+
         # Handle disarming events
         #########################
 
@@ -23,8 +26,8 @@ var autobrake = {
             and (getprop("gear/gear[1]/rollspeed-ms") > 5)
             # The wheels will only be spinning if the aircraft has touched down.
         ) {
-            interpolate("controls/gear/brake-left", 0, (absetting - 1) / 5.0 / 2);
-            interpolate("controls/gear/brake-right", 0, (absetting - 1) / 5.0 / 2);
+            interpolate("controls/gear/brake-left", 0, brake_pressure / 2);
+            interpolate("controls/gear/brake-right", 0, brake_pressure / 2);
             setprop("controls/autobrake/setting", 1);
             #screen.log.write("Disarming Autobrakes after go-around"); # For testing
         }
@@ -116,9 +119,9 @@ var autobrake = {
         }
 
         # All remaining autobrake settings
-        #screen.log.write("Setting autobrakes to " ~ (absetting - 1) / 5.0 ~ "."); # For testing
-        interpolate("controls/gear/brake-left", (absetting - 1) / 5.0, (absetting - 1) / 5.0));
-        interpolate("controls/gear/brake-right", (absetting - 1) / 5.0, (absetting - 1) / 5.0));
+        #screen.log.write("Setting autobrakes to " ~ brake_pressure ~ "."); # For testing
+        interpolate("controls/gear/brake-left", brake_pressure, brake_pressure));
+        interpolate("controls/gear/brake-right", brake_pressure, brake_pressure));
 
         # The brakes will stay applied until coming to a complete stop or until it's disarmed.
     },
