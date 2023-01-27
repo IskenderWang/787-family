@@ -45,7 +45,7 @@ var autobrake = {
         # Moving the speedbrake lever to down (0) after brakes have deployed on the ground disarms
         # the system.
         if (
-            (getprop("gear/gear[1]/compression-ft") != 0)
+            getprop("gear/gear[1]/wow")
             and (getprop("controls/gear/brake-left") > 0)
             and (me.old_spdbrk > 0)
             and (current_spdbrk == 0)
@@ -74,7 +74,7 @@ var autobrake = {
         # RTO setting
         if (absetting == -1) {
             # Set to OFF after takeoff
-            if (getprop("gear/gear[1]/compression-ft") == 0) {
+            if (!getprop("gear/gear[1]/wow")) {
                 #screen.log.write("Setting Autobrakes to OFF after takeoff"); # For testing
                 setprop("controls/autobrake/setting", 0);
             }
@@ -100,7 +100,7 @@ var autobrake = {
         if (absetting == 6) {
             # We should be detecting a pitch angle lower than 1°, but this can be unreliable in
             # sloped runways, so instead we detect that the nose wheel is touching the ground.
-            if (getprop("gear/gear[0]/compression-ft") == 0) {
+            if (!getprop("gear/gear[0]/wow")) {
                 #screen.log.write("Setting Autobrakes to 0.8 MAX"); # For testing
                 interpolate("controls/gear/brake-left", 0.8, 0.8);
                 interpolate("controls/gear/brake-right", 0.8, 0.8);
