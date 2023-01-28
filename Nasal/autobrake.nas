@@ -120,8 +120,8 @@ var autobrake = {
 
         # All remaining autobrake settings
         #screen.log.write("Setting autobrakes to " ~ brake_pressure ~ "."); # For testing
-        interpolate("controls/gear/brake-left", brake_pressure, brake_pressure));
-        interpolate("controls/gear/brake-right", brake_pressure, brake_pressure));
+        interpolate("controls/gear/brake-left", brake_pressure, brake_pressure);
+        interpolate("controls/gear/brake-right", brake_pressure, brake_pressure);
 
         # The brakes will stay applied until coming to a complete stop or until it's disarmed.
     },
