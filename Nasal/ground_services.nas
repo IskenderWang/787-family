@@ -147,8 +147,11 @@ var ground_services = {
 				screen.log.write("De-icing Completed!", 1, 1, 1);
 				setprop("/services/deicing_truck/de-ice", 0);
 				setprop("/controls/ice/wing/temp", 30);
-				setprop("/controls/ice/wing/eng1", 30);
-				setprop("/controls/ice/wing/eng2", 30);
+				setprop("/controls/ice/eng1/temp", 30);
+				setprop("/controls/ice/eng2/temp", 30);
+				setprop("/controls/ice/probes/temp", 30);
+				setprop("/controls/ice/windscreen/center_temp", 30);
+				setprop("/controls/ice/windscreen/sides_temp", 30);
 			}
 		
 		} else 
