@@ -2626,8 +2626,64 @@
 		</axis>
 	</animation>
 
+    <!-- Mode Control Panel -->
 
-<!-- Mode Control Panel -->
+    <animation>
+        <!-- The autopilot panel should only light up when there's electricity -->
+        <type>select</type>
+        <!-- Toggle indicators -->
+        <object-name>AP.toggle</object-name>
+        <object-name>AT.toggle</object-name>
+        <object-name>LNAV.toggle</object-name>
+        <object-name>VNAV.toggle</object-name>
+        <object-name>FLCH.toggle</object-name>
+        <object-name>HDG.toggle</object-name>
+        <object-name>VS.toggle</object-name>
+        <object-name>ALT.toggle</object-name>
+        <object-name>LOC.toggle</object-name>
+        <object-name>APP.toggle</object-name>
+        <!-- HDG -->
+        <object-name>Plane.018</object-name>
+        <object-name>Plane.trk</object-name>
+        <object-name>APhdg.100</object-name>
+        <object-name>APhdg.10</object-name>
+        <object-name>APhdg.1</object-name>
+        <!-- A/T -->
+        <object-name>APmach.1</object-name>
+        <object-name>APmach.0.1</object-name>
+        <object-name>APmach.0.01</object-name>
+        <object-name>APmachind</object-name>
+        <object-name>APmachind.001</object-name>
+        <object-name>APiasind</object-name>
+        <object-name>APias.100</object-name>
+        <object-name>APias.10</object-name>
+        <object-name>APias.1</object-name>
+        <!-- V/S / FPA -->
+        <object-name>APvsnegative</object-name>
+        <object-name>APvs.1000</object-name>
+        <object-name>APvs.100</object-name>
+        <object-name>APvs.10</object-name>
+        <object-name>APvs.1</object-name>
+        <object-name>APvs.minus1</object-name>
+        <!-- Altitude -->
+        <object-name>APalt.10000</object-name>
+        <object-name>APalt.1000</object-name>
+        <object-name>APalt.100</object-name>
+        <object-name>APalt.10</object-name>
+        <object-name>APalt.1</object-name>
+        <condition>
+            <or>
+                <greater-than>
+                    <property>systems/electrical/left-bus</property>
+                    <value>5</value>
+                </greater-than>
+                <greater-than>
+                    <property>systems/electrical/right-bus</property>
+                    <value>5</value>
+                </greater-than>
+            </or>
+        </condition>
+    </animation>
 
 	<animation>
 		<type>select</type>
@@ -2649,6 +2705,7 @@
 		<object-name>APmach.0.1</object-name>
 		<object-name>APmach.0.01</object-name>
 		<object-name>APmachind</object-name>
+		<object-name>APmachind.001</object-name>
 		<condition>
 			<equals>
 				<property>/it-autoflight/input/kts-mach</property>
@@ -2734,7 +2791,42 @@
      
    </axis>
  </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>HDG-TRK</object-name>
+        <action>
+            <button>0</button>
+            <repeatable type="bool">false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>/it-autoflight/input/trk</property>
+            </binding>
+        </action>
+    </animation>
  
+    <animation>
+        <type>select</type>
+        <object-name>Plane.018</object-name>
+        <condition>
+            <equals>
+                <property>/it-autoflight/input/trk</property>
+                <value>0</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>Plane.trk</object-name>
+        <condition>
+            <equals>
+                <property>/it-autoflight/input/trk</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+
    <animation>
    <type>textranslate</type>
    <object-name>APhdg.100</object-name>
@@ -2917,7 +3009,7 @@
     <animation>
         <type>pick</type>
         <object-name>APmaster</object-name>
-        <object-name>APtoggle</object-name>
+        <object-name>AP.toggle</object-name>
         <action>
             <button>0</button>
             <binding>
@@ -2985,10 +3077,9 @@
         <action>
             <button>0</button>
             <binding>
-                <command>property-cycle</command>
+                <command>property-assign</command>
                 <property>/it-autoflight/input/lat</property>
 				<value>1</value>
-				<value></value>
             </binding>
         </action>
     </animation>
@@ -3016,10 +3107,9 @@
         <action>
             <button>0</button>
             <binding>
-                <command>property-cycle</command>
+                <command>property-assign</command>
                 <property>/it-autoflight/input/lat</property>
 				<value>0</value>
-				<value></value>
             </binding>
         </action>
     </animation>
@@ -3034,7 +3124,6 @@
                 <command>property-cycle</command>
                 <property>/it-autoflight/input/vert</property>
 				<value>1</value>
-				<value></value>
             </binding>
         </action>
     </animation>
@@ -3046,14 +3135,13 @@
         <action>
             <button>0</button>
             <binding>
-                <command>property-cycle</command>
+                <command>property-assign</command>
                 <property>/it-autoflight/input/vert</property>
 				<value>4</value>
-				<value></value>
             </binding>
         </action>
     </animation>
-    
+
    <animation>
         <type>pick</type>
         <object-name>ALThold</object-name>
@@ -3092,10 +3180,9 @@
         <action>
             <button>0</button>
             <binding>
-                <command>property-cycle</command>
+                <command>property-assign</command>
                 <property>/it-autoflight/input/lat</property>
 				<value>2</value>
-				<value></value>
             </binding>
         </action>
     </animation>
@@ -3107,10 +3194,9 @@
         <action>
             <button>0</button>
             <binding>
-                <command>property-cycle</command>
+                <command>property-assign</command>
                 <property>/it-autoflight/input/vert</property>
 				<value>2</value>
-				<value></value>
             </binding>
         </action>
     </animation>
@@ -3119,18 +3205,45 @@
 		<type>select</type>
 		<object-name>AP.toggle</object-name>
 		<condition>
-			<property>/it-autoflight/input/ap1</property>
+            <property>/it-autoflight/output/ap1</property>
 		</condition>
 	</animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>AP.toggle</object-name>
+        <object-name>AT.toggle</object-name>
+        <object-name>LNAV.toggle</object-name>
+        <object-name>VNAV.toggle</object-name>
+        <object-name>FLCH.toggle</object-name>
+        <object-name>HDG.toggle</object-name>
+        <object-name>VS.toggle</object-name>
+        <object-name>ALT.toggle</object-name>
+        <object-name>LOC.toggle</object-name>
+        <object-name>APP.toggle</object-name>
+        <emission>
+            <red>0</red>
+            <green>0.6</green>
+            <blue>0</blue>
+            <factor-prop>controls/lighting/master-bright</factor-prop>
+        </emission>
+    </animation>
 
 	<animation>
 		<type>select</type>
 		<object-name>APP.toggle</object-name>
 		<condition>
-			<equals>
-				<property>/it-autoflight/input/vert</property>
-				<value>2</value>
-			</equals>
+            <or>
+                <property>/it-autoflight/output/appr-armed</property>
+                <equals>
+                    <property>/it-autoflight/output/vert</property>
+                    <value>2</value>
+                </equals>
+                <equals>
+                    <property>/it-autoflight/output/vert</property>
+                    <value>6</value>
+                </equals>
+            </or>
 		</condition>
 	</animation>
 
@@ -3138,11 +3251,19 @@
 		<type>select</type>
 		<object-name>LOC.toggle</object-name>
 		<condition>
-			<equals>
-				<property>/it-autoflight/input/lat</property>
-				<value>2</value>
-			</equals>
+            <or>
+                <property>/it-autoflight/output/loc-armed</property>
+                <equals>
+                    <property>/it-autoflight/output/lat</property>
+                    <value>2</value>
+                </equals>
+                <equals>
+                    <property>/it-autoflight/output/lat</property>
+                    <value>4</value>
+                </equals>
+            </or>
 		</condition>
+
 	</animation>
 
 	<animation>
@@ -3150,20 +3271,26 @@
 		<object-name>ALT.toggle</object-name>
 		<condition>
 			<equals>
-				<property>/it-autoflight/input/vert</property>
-				<value>0</value>
+				<property>/it-autoflight/output/vert</property>
+                <value>0</value>
 			</equals>
 		</condition>
 	</animation>
-	
-		<animation>
+
+    <animation>
 		<type>select</type>
 		<object-name>FLCH.toggle</object-name>
 		<condition>
-			<equals>
-				<property>/it-autoflight/input/vert</property>
-				<value>4</value>
-			</equals>
+            <or>
+                <equals>
+                    <property>/it-autoflight/output/vert</property>
+                    <value>4</value>
+                </equals>
+                <equals>
+                    <property>/it-autoflight/output/vert</property>
+                    <value>7</value>
+                </equals>
+            </or>
 		</condition>
 	</animation>
 
@@ -3171,10 +3298,10 @@
 		<type>select</type>
 		<object-name>HDG.toggle</object-name>
 		<condition>
-			<equals>
-				<property>/it-autoflight/input/lat</property>
-				<value>0</value>
-			</equals>
+            <equals>
+                <property>/it-autoflight/output/lat</property>
+                <value>0</value>
+            </equals>
 		</condition>
 	</animation>
 
@@ -3183,8 +3310,8 @@
 		<object-name>VS.toggle</object-name>
 		<condition>
 			<equals>
-				<property>/it-autoflight/input/vert</property>
-				<value>1</value>
+				<property>/it-autoflight/output/vert</property>
+                <value>1</value>
 			</equals>
 		</condition>
 	</animation>
@@ -3193,10 +3320,13 @@
 		<type>select</type>
 		<object-name>LNAV.toggle</object-name>
 		<condition>
-			<equals>
-				<property>/it-autoflight/input/lat</property>
-				<value>1</value>
-			</equals>
+            <or>
+                <property>/it-autoflight/output/lnav-armed</property>
+                <equals>
+                    <property>/it-autoflight/output/lat</property>
+                    <value>1</value>
+                </equals>
+            </or>
 		</condition>
 	</animation>
 
@@ -3215,7 +3345,7 @@
 		<type>select</type>
 		<object-name>AT.toggle</object-name>
 		<condition>
-			<property>/it-autoflight/input/athr</property>
+			<property>/it-autoflight/output/athr</property>
 		</condition>
 	</animation>
 
@@ -3290,9 +3420,9 @@
 				<command>property-adjust</command>
 				<property>/it-autoflight/input/hdg</property>
 				<wrap type="bool">true</wrap>
-        <step>1</step>
-        <min>0</min>
-        <max>360</max>
+                <step>1</step>
+                <min>1</min>
+                <max>361</max>
 			</binding>
 		</action>
 		<action>
@@ -3303,9 +3433,9 @@
 				<command>property-adjust</command>
 				<property>/it-autoflight/input/hdg</property>
 				<wrap type="bool">true</wrap>
-        <step>-1</step>
-        <min>0</min>
-        <max>360</max>
+                <step>-1</step>
+                <min>1</min>
+                <max>361</max>
 			</binding>
 		</action>
 	</animation>
