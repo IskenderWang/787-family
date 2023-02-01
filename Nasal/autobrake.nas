@@ -13,6 +13,11 @@ var autobrake = {
         var current_spdbrk = getprop("controls/flight/speedbrake-lever");
         var absetting = getprop("controls/autobrake/setting");
 
+        var rear_on_ground = getprop("gear/gear[1]/wow") or getprop("gear/gear[2]/wow");
+        var rear_spin = getprop("gear/gear[1]/rollspeed-ms");
+        if (rear_spin < getprop("gear/gear[2]/rollspeed-ms"))
+            rear_spin = getprop("gear/gear[2]/rollspeed-ms");
+
         # The pressure will be interpolated to go from 0 to 1 in 1 second (or, for eg, 0 to 0.2 in 0.2 seconds)
         var brake_pressure = (absetting - 1) / 5.0;
 
@@ -23,7 +28,7 @@ var autobrake = {
         if (
             (absetting > 1)
             and (current_throttle > me.old_throttle)
-            and (getprop("gear/gear[1]/rollspeed-ms") > 5)
+            and (rear_spin > 5)
             # The wheels will only be spinning if the aircraft has touched down.
         ) {
             interpolate("controls/gear/brake-left", 0, brake_pressure / 2);
@@ -48,7 +53,7 @@ var autobrake = {
         # Moving the speedbrake lever to down (0) after brakes have deployed on the ground disarms
         # the system.
         if (
-            getprop("gear/gear[1]/wow")
+            rear_on_ground
             and (getprop("controls/gear/brake-left") > 0)
             and (me.old_spdbrk > 0)
             and (current_spdbrk == 0)
@@ -71,20 +76,20 @@ var autobrake = {
             return;
 
         # The wheels must be spinning to appy brakes
-        if (getprop("gear/gear[1]/rollspeed-ms") < 5)
+        if (rear_spin < 5)
             return;
 
         # RTO setting
         if (absetting == -1) {
             # Set to OFF after takeoff
-            if (!getprop("gear/gear[1]/wow")) {
+            if (!rear_on_ground) {
                 #screen.log.write("Setting Autobrakes to OFF after takeoff"); # For testing
                 setprop("controls/autobrake/setting", 0);
             }
 
             # 43.5 rollspeed means 85 kt ground speed
             if (
-                (getprop("gear/gear[1]/rollspeed-ms") > 43.5)
+                (rear_spin > 43.5)
                 and (current_throttle == 0)
             ) {
                 #screen.log.write("Applying autobrakes after RTO"); # For testing
@@ -145,6 +150,7 @@ setlistener("sim/signals/fdm-initialized", func {
 # Notes:
 # 1. `gear/gear[0]` is the nose gear (first to takeoff, last to land)
 # 2. `gear/gear[1]` is the left gear (last to takeoff, first to land)
-# 3. RTO position is -1
-# 4. OFF position is 0, DISARM position is 1
-# 5. 2 to 6 are autobrake 1 to MAX
+# 3. `gear/gear[2]` is the right gear (last to takeoff, first to land)
+# 4. RTO position is -1
+# 5. OFF position is 0, DISARM position is 1
+# 6. 2 to 6 are autobrake 1 to MAX
