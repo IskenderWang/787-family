@@ -26,9 +26,9 @@ var autobrake = {
 
         # Initiating a go-around after touchdown disarms the system.
         if (
-            (absetting > 1)
-            and (current_throttle > me.old_throttle)
-            and (rear_spin > 5)
+            absetting > 1
+            and current_throttle > me.old_throttle
+            and rear_spin > 5
             # The wheels will only be spinning if the aircraft has touched down.
         ) {
             interpolate("controls/gear/brake-left", 0, brake_pressure / 2);
@@ -39,8 +39,8 @@ var autobrake = {
 
         # Pressing the pedal brakes when the system is armed disarms the system.
         if (
-            (absetting > 1)
-            and (getprop("controls/gear/brake-left") > (absetting - 1) / 5)
+            absetting > 1
+            and getprop("controls/gear/brake-left") > (absetting - 1) / 5
         ) {
             setprop("controls/autobrake/setting", 1);
 
@@ -54,9 +54,9 @@ var autobrake = {
         # the system.
         if (
             rear_on_ground
-            and (getprop("controls/gear/brake-left") > 0)
-            and (me.old_spdbrk > 0)
-            and (current_spdbrk == 0)
+            and getprop("controls/gear/brake-left") > 0
+            and me.old_spdbrk > 0
+            and current_spdbrk == 0
         ) {
             setprop("controls/autobrake/setting", 1);
             #screen.log.write("Disarming Autobrakes after speedbrakes down"); # For testing
@@ -72,7 +72,7 @@ var autobrake = {
         ######################################
 
         # OFF & DISARM settings
-        if ((absetting == 0) or (absetting == 1))
+        if (absetting == 0 or absetting == 1)
             return;
 
         # The wheels must be spinning to appy brakes
@@ -89,8 +89,8 @@ var autobrake = {
 
             # 43.5 rollspeed means 85 kt ground speed
             if (
-                (rear_spin > 43.5)
-                and (current_throttle == 0)
+                rear_spin > 43.5
+                and current_throttle == 0
             ) {
                 #screen.log.write("Applying autobrakes after RTO"); # For testing
                 interpolate("controls/gear/brake-left", 1, 0.8);
@@ -101,7 +101,7 @@ var autobrake = {
         }
 
         # Throttle has to be set to idle to apply brake pressure.
-        if ((current_throttle != 0))
+        if (current_throttle != 0)
             return;
 
         # AUTOBRAKE MAX setting
