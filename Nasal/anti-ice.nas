@@ -152,13 +152,8 @@ var icing = {
 
         # Wing heaters
         #=============
-        if (getprop("/controls/ice/wing/anti-ice") == 1) {
+        if (getprop("/controls/ice/wing/anti-ice") == 1 and wing_temp < 15.0 )
             wing_temp += me.UPDATE_INTERVAL * (30000 * me.UPDATE_INTERVAL) / 850 / 897;
-
-            # Simulates the system not heating the part once it reaches 15°C
-            if (wing_temp >= 15.0)
-                wing_temp = 15.0;
-        }
 
         # Handle wing icing alert
         if ((wing_temp <= 0) and (me.icewarnw == 0)) {
@@ -176,13 +171,8 @@ var icing = {
 
         # Engine 1 heaters
         #=================
-        if (getprop("/controls/ice/eng1/anti-ice") == 1) {
+        if (getprop("/controls/ice/eng1/anti-ice") == 1 and eng1_temp < 35.0)
             eng1_temp += me.UPDATE_INTERVAL * (25000 * me.UPDATE_INTERVAL) / 367 / 897;
-
-            # Simulates the system not heating the part once it reaches 35°C
-            if (eng1_temp >= 35.0)
-                eng1_temp = 35.0;
-        }
 
         # Handle eng1 icing alert
         if ((eng1_temp <= 0) and (me.icewarne1 == 0)) {
@@ -200,13 +190,8 @@ var icing = {
 
         # Engine 2 heaters
         #=================
-        if (getprop("/controls/ice/eng2/anti-ice") == 1) {
+        if (getprop("/controls/ice/eng2/anti-ice") == 1 and eng2_temp < 35.0)
             eng2_temp += me.UPDATE_INTERVAL * (25000 * me.UPDATE_INTERVAL) / 367 / 897;
-
-            # Simulates the system not heating the part once it reaches 35°C
-            if (eng2_temp >= 35.0)
-                eng2_temp = 35.0;
-        }
 
         # Handle eng2 icing alert
         if ((eng2_temp <= 0) and (me.icewarne1 == 0)) {
@@ -225,23 +210,15 @@ var icing = {
         # Windscreen primary & secondary heaters
         #=======================================
         if (getprop("/controls/ice/windscreen/anti-ice") == 1) {
-            wscreen_c_temp += me.UPDATE_INTERVAL * (4000 * me.UPDATE_INTERVAL) / 119 / 753;
-            wscreen_s_temp += me.UPDATE_INTERVAL * (4000 * me.UPDATE_INTERVAL) / 123 / 753;
+            if (wscreen_c_temp < 15.0)
+                wscreen_c_temp += me.UPDATE_INTERVAL * (4000 * me.UPDATE_INTERVAL) / 119 / 753;
 
-            # Simulates the system not heating the part once it reaches 15°C
-            if (wscreen_c_temp >= 15.0)
-                wscreen_c_temp = 15.0;
-            if (wscreen_s_temp >= 15.0)
-                wscreen_s_temp = 15.0;
+            if (wscreen_s_temp < 15.0)
+                wscreen_s_temp += me.UPDATE_INTERVAL * (4000 * me.UPDATE_INTERVAL) / 123 / 753;
         }
 
-        if (getprop("/controls/ice/windscreen/anti-ice-backup") == 1) {
+        if (getprop("/controls/ice/windscreen/anti-ice-backup") == 1 and wscreen_c_temp < 15)
             wscreen_c_temp += me.UPDATE_INTERVAL * (4000 * me.UPDATE_INTERVAL) / 119 / 753;
-
-            # Simulates the system not heating the part once it reaches 15°C
-            if (wscreen_c_temp >= 15.0)
-                wscreen_c_temp = 15.0;
-        }
 
         # Handle windscreen ice alert
         if ((wscreen_c_temp <= 0) and (me.icewarn_windscreen == 0)) {
@@ -267,13 +244,8 @@ var icing = {
 
         # Probe heaters
         #==============
-        if (getprop("/controls/ice/probes/anti-ice") == 1) {
+        if (getprop("/controls/ice/probes/anti-ice") == 1 and probes_temp < 15.0)
             probes_temp += me.UPDATE_INTERVAL * (300 * me.UPDATE_INTERVAL) * 10 * 897;
-
-            # Simulates the system not heating the part once it reaches 15°C
-            if (probes_temp >= 15.0)
-                probes_temp = 15.0;
-        }
 
         # Handle probes ice alert
         if ((probes_temp <= 0) and (me.icewarn_probes == 0)) {
