@@ -959,6 +959,45 @@
         </mk-viii>
     </instrumentation>
 
+    <limits>
+        <max-flap-extension-speed>
+            <flaps>0.03333</flaps>
+            <speed>250</speed>
+        </max-flap-extension-speed>
+        <max-flap-extension-speed>
+            <flaps>0.16666</flaps>
+            <speed>230</speed>
+        </max-flap-extension-speed>
+        <max-flap-extension-speed>
+            <flaps>0.50000</flaps>
+            <speed>215</speed>
+        </max-flap-extension-speed>
+        <max-flap-extension-speed>
+            <flaps>0.66666</flaps>
+            <speed>210</speed>
+        </max-flap-extension-speed>
+        <max-flap-extension-speed>
+            <flaps>0.83333</flaps>
+            <speed>180</speed>
+        </max-flap-extension-speed>
+        <max-flap-extension-speed>
+            <flaps>1.00000</flaps>
+            <speed>170</speed>
+        </max-flap-extension-speed>
+
+        <max-gear-extension-speed>270</max-gear-extension-speed>
+
+        <max-positive-g>4.4</max-positive-g>
+        <max-negative-g>-1.76</max-negative-g>
+
+        <mass-and-balance>
+            <maximum-ramp-mass-lbs>562000</maximum-ramp-mass-lbs>
+            <maximum-takeoff-mass-lbs>560000</maximum-takeoff-mass-lbs>
+            <maximum-landing-mass-lbs>425000</maximum-landing-mass-lbs>
+            <maximum-zero-fuel-mass-lbs>400000</maximum-zero-fuel-mass-lbs>
+        </mass-and-balance>
+    </limits>
+
     <autopilot>
         <internal>
             <aileron-max type="double">1</aileron-max>
@@ -969,6 +1008,7 @@
     <nasal>
         <b787>
             <file>Aircraft/787-family/Nasal/sysinfo.nas</file>
+            <file>Aircraft/787-family/Nasal/limits.nas</file>
         </b787>
         <systems>
             <file>Aircraft/787-family/Nasal/systems-10-GEnx.nas</file>
