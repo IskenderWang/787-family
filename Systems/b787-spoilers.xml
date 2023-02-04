@@ -3,83 +3,121 @@
 <!-- Boeing 787 speedbrake/ground spoiler configuration -->
 
 <PropertyList>
-
     <logic>
-        <name>Ground spoilers disarm</name>
+        <name>Set spoilers UP when lever in ARMED, on ground, and no throttles in T/O range</name>
         <enable>
             <condition>
-                <!-- Ground spoilers can only be armed when the speedbrake lever is up -->
-                <greater-than>
-                    <property>/controls/flight/speedbrake-lever</property>
-                    <value>0</value>
-                </greater-than>
-            </condition>
-        </enable>
-        <input>
-            <false />
-        </input>
-        <output>/controls/flight/ground-spoilers-armed</output>
-    </logic>
-
-    <logic>
-        <name>Ground spoilers engage</name>
-        <enable>
-            <condition>
+                <property>/gear/gear[1]/wow</property>
+                <property>/gear/gear[2]/wow</property>
                 <equals>
                     <property>/controls/flight/ground-spoilers-armed</property>
                     <value type="bool">true</value>
                 </equals>
-                <equals>
-                    <property>/controls/engines/throttle-cmd-pid</property>
-                    <value type="double">0</value>
-                </equals>
-                <property>/gear/gear[1]/wow</property>
-                <property>/gear/gear[2]/wow</property>
-                <greater-than>
-                    <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
-                    <value>72</value>
-                </greater-than>
+                <and>
+                    <less-than>
+                        <property>/controls/engines/engine[0]/throttle</property>
+                        <value type="double">0.5</value>
+                    </less-than>
+                    <less-than>
+                        <property>/controls/engines/engine[0]/throttle</property>
+                        <value type="double">0.5</value>
+                    </less-than>
+                </and>
             </condition>
         </enable>
         <input>
-            <true />
+            <value type="double">1</value>
         </input>
-        <output>/controls/flight/ground-spoilers</output>
+        <output>/controls/flight/speedbrake-lever</output>
     </logic>
 
     <logic>
-        <name>Ground spoilers disengage</name>
+        <name>Set spoilers UP when on ground and reversers deployed</name>
         <enable>
             <condition>
+                <property>/gear/gear[1]/wow</property>
+                <property>/gear/gear[2]/wow</property>
+                <and>
+                    <property>/controls/engines/engine[0]/reverser</property>
+                    <property>/controls/engines/engine[1]/reverser</property>
+                </and>
+            </condition>
+        </enable>
+        <input>
+            <value type="double">1</value>
+        </input>
+        <output>/controls/flight/speedbrake-lever</output>
+    </logic>
+
+    <logic>
+        <name>Set spoilers UP when on ground, above 85 kt and either throttle not in T/O range (RTO)</name>
+        <enable>
+            <condition>
+                <property>/gear/gear[1]/wow</property>
+                <property>/gear/gear[2]/wow</property>
+                <equals>
+                    <!-- Use IT-AUTOFLIGHT to determine if we're on T/O CLB (and not ROLLOUT) -->
+                    <property>/it-autoflight/output/vert</property>
+                    <value type="int">7</value>
+                </equals>
+                <greater-than>
+                    <expression>
+                        <max>
+                            <property>/gear/gear[1]/rollspeed-ms</property>
+                            <property>/gear/gear[2]/rollspeed-ms</property>
+                        </max>
+                    </expression>
+                    <value>43.5</value>
+                </greater-than>
                 <or>
-                    <equals>
-                        <property>/controls/flight/ground-spoilers-armed</property>
-                        <value type="bool">false</value>
-                    </equals>
                     <less-than>
-                        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
-                        <value>72</value>
+                        <property>/controls/engines/engine[0]/throttle</property>
+                        <value type="double">0.5</value>
+                    </less-than>
+                    <less-than>
+                        <property>/controls/engines/engine[0]/throttle</property>
+                        <value type="double">0.5</value>
                     </less-than>
                 </or>
             </condition>
         </enable>
         <input>
-            <false />
+            <value type="double">1</value>
         </input>
-        <output>/controls/flight/ground-spoilers</output>
+        <output>/controls/flight/speedbrake-lever</output>
     </logic>
+
+    <!-- For the life of me... I can't figure out why (the f*) this deploys speedbrakes when throttle is above 50%. Signed: nico-castell -->
+    <!-- <logic>
+        <name>Set spoilers DOWN when on ground and either throttle is in T/O range</name>
+        <enable>
+            <condition>
+                <property>/gear/gear[1]/wow</property>
+                <property>/gear/gear[2]/wow</property>
+                <or>
+                    <greater-than-equals>
+                        <property>/controls/engines/engine[0]/throttle</property>
+                        <value type="double">0.5</value>
+                    </greater-than-equals>
+                    <greater-than-equals>
+                        <property>/controls/engines/engine[0]/throttle</property>
+                        <value type="double">0.5</value>
+                    </greater-than-equals>
+                </or>
+            </condition>
+        </enable>
+        <input>
+            <value type="double">0</value>
+        </input>
+        <output>/controls/flight/speedbrake-lever</output>
+    </logic> -->
 
     <filter>
         <name>Main speedbrake controller</name>
         <type>gain</type>
         <gain>1.0</gain>
         <input>
-            <expression>
-                <max>
-                    <property>/controls/flight/ground-spoilers</property>
-                    <property>/controls/flight/speedbrake-lever</property>
-                </max>
-            </expression>
+            <property>/controls/flight/speedbrake-lever</property>
         </input>
         <output>/controls/flight/speedbrake</output>
     </filter>
@@ -174,5 +212,4 @@
         <output>/systems/cac/inlet-deflector-door-pos</output>
         <max-rate-of-change>1</max-rate-of-change>
     </filter>
-
 </PropertyList>
