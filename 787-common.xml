@@ -42,9 +42,7 @@
                 <binding>
                     <command>nasal</command>
                     <script>
-                        if (getprop("/it-autoflight/input/athr") == 1) {
-                            setprop("/it-autoflight/input/athr", 0);
-                        }
+                        setprop("it-autoflight/input/athr", 0);
                         setprop("controls/engines/engine[0]/throttle", 0);
                         setprop("controls/engines/engine[1]/throttle", 0);
                     </script>
@@ -52,15 +50,75 @@
             </key>
             <key n="114">
                 <name>r</name>
-                <desc>Set TOGA thrust</desc>
+                <desc>Cycle throttle at 0% - 25% - 50%</desc>
                 <binding>
                     <command>nasal</command>
                     <script>
-                        if (getprop("/it-autoflight/input/athr") == 1) {
-                            setprop("/it-autoflight/input/athr", 0);
+                        setprop("it-autoflight/input/athr", 0);
+
+                        var throttle_setting = (
+                            getprop("controls/engines/engine[0]/throttle")
+                            + getprop("controls/engines/engine[1]/throttle")
+                        ) / 2;
+
+                        if (throttle_setting == 0.0) {
+                            setprop("controls/engines/engine[0]/throttle", 0.25);
+                            setprop("controls/engines/engine[1]/throttle", 0.25);
+                            return;
                         }
-                        setprop("controls/engines/engine[0]/throttle", 1);
-                        setprop("controls/engines/engine[1]/throttle", 1);
+
+                        if (throttle_setting == 0.25) {
+                            setprop("controls/engines/engine[0]/throttle", 0.5);
+                            setprop("controls/engines/engine[1]/throttle", 0.5);
+                            return;
+                        }
+
+                        setprop("controls/engines/engine[0]/throttle", 0.0);
+                        setprop("controls/engines/engine[1]/throttle", 0.0);
+                    </script>
+                </binding>
+            </key>
+            <key n="102">
+                <name>f</name>
+                <desc>Arm autothrottle and set TO/GA</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script><![CDATA[
+                        var airspeed = getprop("velocities/airspeed-kt");
+
+                        if (getprop("gear/gear[1]/wow") or getprop("gear/gear[2]/wow")) {
+                            if (airspeed < 50 and getprop("controls/flight/flaps") > 0)
+                                setprop("it-autoflight/input/toga", 1);
+
+                            if (airspeed > 80)
+                                setprop("it-autoflight/input/lat", 3);
+
+                            return;
+                        }
+
+                        # After takeoff
+                        if (getprop("it-autoflight/output/vert") == 7) {
+                            setprop("it-autoflight/input/athr", 0);
+                            setprop("controls/engines/engine[0]/throttle", 1.0);
+                            setprop("controls/engines/engine[1]/throttle", 1.0);
+                            return;
+                        }
+
+                        # In approach
+                        setprop("it-autoflight/input/toga", 1);
+                        setprop("it-autoflight/input/lat", 1);
+                    ]]></script>
+                </binding>
+            </key>
+            <key n="70">
+                <name>Shift-f</name>
+                <desc>Disarm A/T, throttle to 100%</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        setprop("it-autoflight/input/athr", 0);
+                        setprop("controls/engines/engine[0]/throttle", 1.0);
+                        setprop("controls/engines/engine[1]/throttle", 1.0);
                     </script>
                 </binding>
             </key>

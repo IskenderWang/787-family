@@ -580,11 +580,19 @@
             </key>
             <key>
                 <name>e</name>
-                <desc>Set idle thrust</desc>
+                <desc>Disarm A/T, throttle to idle</desc>
             </key>
             <key>
                 <name>r</name>
-                <desc>Set TOGA thrust</desc>
+                <desc>Disarm A/T, cycle throtte 0% - 25% - 50%</desc>
+            </key>
+            <key>
+                <name>f</name>
+                <desc>TO/GA button</desc>
+            </key>
+            <key>
+                <name>Shift-f</name>
+                <desc>Disarm A/T, throttle to 100%</desc>
             </key>
             <key>
                 <name>Ctrl-f</name>
