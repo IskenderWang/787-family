@@ -93,6 +93,7 @@
                             if (airspeed > 80)
                                 setprop("it-autoflight/input/lat", 3);
 
+                            setprop("controls/flight/speedbrake-lever", 0);
                             return;
                         }
 
