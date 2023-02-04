@@ -332,8 +332,9 @@
                 <td>0.001</td>
             </pitch>
             <cmd>
+                <alt>-5</alt>
+                <flch-accel>1.5</flch-accel>
                 <roll>1.6</roll>
-                <alt-gain>-5</alt-gain>
             </cmd>
             <autoland>
                 <pitch-kp>0.0051</pitch-kp>
@@ -347,20 +348,26 @@
             </rollout>
         </config>
         <settings>
-            <autoland-without-ap>0</autoland-without-ap> <!-- Engage LAND and FLARE Modes even if the AP is off -->
-            <auto-bank-max-deg>30</auto-bank-max-deg> <!-- Maximum Auto Bank Limit -->
-            <autothrottle-max>0.95</autothrottle-max> <!-- Thrust Max Limit Normalized -->
-            <autothrottle-min>0.02</autothrottle-min> <!-- Thrust Low Limit Normalized -->
-            <custom-fma>0</custom-fma> <!-- Call functions when modes change for a custom FMA to be implemented -->
-            <disable-final>0</disable-final> <!-- Disable the Final Controllers, for custom FCS integration -->
-            <hdg-hld-separate>0</hdg-hld-separate> <!-- Separates the HDG HLD mode from the HDG SEL mode -->
-            <land-enable>1</land-enable> <!-- Enable/Disable Autoland -->
-            <land-flap>0.7</land-flap> <!-- Minimum Flap used for Landing -->
-            <lat-agl-ft>50</lat-agl-ft> <!-- AGL when LNAV becomes active if armed -->
-            <reduc-agl-ft>1000</reduc-agl-ft> <!-- AGL when T/O CLB changes to SPD CLB (FLCH), set to 0 to disable -->
-            <retard-enable>1</retard-enable> <!-- AGL to Thrust Retard -->
-            <retard-ft>50</retard-ft> <!-- Enable Thrust Retard -->
-            <togaspd>160</togaspd> <!-- V2 + 10kts -->
+            <accel-ft type="double">1000</accel-ft> <!-- Acceleration AGL when T/O CLB changes to SPD CLV, 0 to disable -->
+            <auto-bank-limit-calc type="bool">1</auto-bank-limit-calc> <!-- Disable to add a custom auto bank limit schedule -->
+            <autoland-without-ap type="bool">1</autoland-without-ap> <!-- Engage LAND and FLARE Modes even if the AP is off -->
+            <autothrottle-max type="double">0.95</autothrottle-max> <!-- Thrust Max Limit Normalized -->
+            <autothrottle-min type="double">0.02</autothrottle-min> <!-- Thrust Min Limit Normalized -->
+            <bank-max-deg type="double">30</bank-max-deg> <!-- Maximum Bank Limit -->
+            <custom-fma type="bool">0</custom-fma> <!-- Call functions when modes change for a custom FMA to be implemented -->
+            <disable-final type="bool">0</disable-final> <!-- Disable the Final Controllers, for custom FMS integration -->
+            <fd-starts-on type="bool">0</fd-starts-on> <!-- Enable/Disable Flight Director being on by default -->
+            <fd-takeoff-offset type="double">0</fd-takeoff-offset> <!-- Adjust the Flight Director Pitch Bar on ground -->
+            <hdg-hld-separate type="bool">0</hdg-hld-separate> <!-- Separates the HDG HLD mode from the HDG SEL mode -->
+            <land-enable type="bool">1</land-enable> <!-- Enable/Disable Autoland -->
+            <land-flap type="double">0.7</land-flap> <!-- Minimum Flap used for Landing -->
+            <lnav-ft type="double">50</lnav-ft> <!-- AGL when LNAV becomes active if armed -->
+            <retard-enable type="bool">1</retard-enable> <!-- Enable Thrust Retard -->
+            <retard-ft type="double">50</retard-ft> <!-- AGL to Thrust Retard -->
+            <takeoff-hdg-cap type="double">5</takeoff-hdg-cap> <!-- Maximum bank to capture current hdn in T/O mode -->
+            <toga-spd type="double">160</toga-spd> <!-- V2 + 10kts -->
+            <use-controls-engines type="bool">1</use-controls-engines> <!-- Use /controls/engines properties -->
+            <use-controls-flight type="bool">1</use-controls-flight> <!-- Use /controls/flight properties -->
         </settings>
     </it-autoflight>
 
