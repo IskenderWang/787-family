@@ -18,7 +18,6 @@ var autobrake = {
         if (rear_spin < getprop("gear/gear[2]/rollspeed-ms"))
             rear_spin = getprop("gear/gear[2]/rollspeed-ms");
 
-        # The pressure will be interpolated to go from 0 to 1 in 1 second (or, for eg, 0 to 0.2 in 0.2 seconds)
         var brake_pressure = (absetting - 1) / 5.0;
 
         # Handle disarming events
@@ -31,8 +30,8 @@ var autobrake = {
             and rear_spin > 5
             # The wheels will only be spinning if the aircraft has touched down.
         ) {
-            interpolate("controls/gear/brake-left", 0, brake_pressure / 2);
-            interpolate("controls/gear/brake-right", 0, brake_pressure / 2);
+            setprop("controls/gear/brake-left", 0);
+            setprop("controls/gear/brake-right", 0);
             setprop("controls/autobrake/setting", 1);
             #screen.log.write("Disarming Autobrakes after go-around"); # For testing
         }
@@ -93,8 +92,8 @@ var autobrake = {
                 and current_throttle == 0
             ) {
                 #screen.log.write("Applying autobrakes after RTO"); # For testing
-                interpolate("controls/gear/brake-left", 1, 0.8);
-                interpolate("controls/gear/brake-right", 1, 0.8);
+                setprop("controls/gear/brake-left", 1);
+                setprop("controls/gear/brake-right", 1);
             }
 
             return;
@@ -110,23 +109,23 @@ var autobrake = {
             # sloped runways, so instead we detect that the nose wheel is touching the ground.
             if (!getprop("gear/gear[0]/wow")) {
                 #screen.log.write("Setting Autobrakes to 0.8 MAX"); # For testing
-                interpolate("controls/gear/brake-left", 0.8, 0.8);
-                interpolate("controls/gear/brake-right", 0.8, 0.8);
+                setprop("controls/gear/brake-left", 0.8);
+                setprop("controls/gear/brake-right", 0.8);
                 return;
             }
 
             # Set the brakes to MAX after nose wheel touches the ground.
             #screen.log.write("Setting Autobrakes to 1.0 MAX"); # For testing
-            interpolate("controls/gear/brake-left", 1, 0.2);
-            interpolate("controls/gear/brake-right", 1, 0.2);
+            setprop("controls/gear/brake-left", 1);
+            setprop("controls/gear/brake-right", 1);
 
             return;
         }
 
         # All remaining autobrake settings
         #screen.log.write("Setting autobrakes to " ~ brake_pressure ~ "."); # For testing
-        interpolate("controls/gear/brake-left", brake_pressure, brake_pressure);
-        interpolate("controls/gear/brake-right", brake_pressure, brake_pressure);
+        setprop("controls/gear/brake-left", brake_pressure);
+        setprop("controls/gear/brake-right", brake_pressure);
 
         # The brakes will stay applied until coming to a complete stop or until it's disarmed.
     },
