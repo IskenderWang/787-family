@@ -4,7 +4,7 @@
 
 <PropertyList>
     <logic>
-        <name>Set spoilers UP when lever in ARMED, on ground, and no throttles in T/O range</name>
+        <name>Set spoilers UP when on ground, lever in ARMED, spd above 70kt, and no throttles above 50%</name>
         <enable>
             <condition>
                 <property>/gear/gear[1]/wow</property>
@@ -21,13 +21,13 @@
             </condition>
         </enable>
         <input>
-            <value type="double">1</value>
+            <true />
         </input>
         <output>/controls/flight/speedbrake-auto</output>
     </logic>
 
     <logic>
-        <name>Set spoilers UP when on ground and reversers deployed</name>
+        <name>Set spoilers UP when on ground, spd above 70 kt, and reversers deployed</name>
         <enable>
             <condition>
                 <property>/gear/gear[1]/wow</property>
@@ -37,7 +37,7 @@
             </condition>
         </enable>
         <input>
-            <value type="double">1</value>
+            <true />
         </input>
         <output>/controls/flight/speedbrake-auto</output>
     </logic>
@@ -75,7 +75,7 @@
             </condition>
         </enable>
         <input>
-            <value type="double">1</value>
+            <true />
         </input>
         <output>/controls/flight/speedbrake-auto</output>
     </logic>
@@ -100,7 +100,7 @@
             </condition>
         </enable>
         <input>
-            <value type="double">0</value>
+            <false />
         </input>
         <output>/controls/flight/speedbrake-auto</output>
     </logic> -->
