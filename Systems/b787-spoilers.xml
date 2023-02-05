@@ -48,11 +48,8 @@
             <condition>
                 <property>/gear/gear[1]/wow</property>
                 <property>/gear/gear[2]/wow</property>
-                <equals>
-                    <!-- Use IT-AUTOFLIGHT to determine if we're on T/O CLB (and not ROLLOUT) -->
-                    <property>/it-autoflight/output/vert</property>
-                    <value type="int">7</value>
-                </equals>
+                <!-- Use an assist by the autobrake system to detect RTOs by monitoring throttles -->
+                <property>/controls/autobrake/possible-rto</property>
                 <greater-than>
                     <expression>
                         <max>
@@ -62,16 +59,6 @@
                     </expression>
                     <value>43.5</value>
                 </greater-than>
-                <or>
-                    <less-than>
-                        <property>/controls/engines/engine[0]/throttle</property>
-                        <value type="double">0.5</value>
-                    </less-than>
-                    <less-than>
-                        <property>/controls/engines/engine[0]/throttle</property>
-                        <value type="double">0.5</value>
-                    </less-than>
-                </or>
             </condition>
         </enable>
         <input>

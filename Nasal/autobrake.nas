@@ -2,14 +2,20 @@ var autobrake = {
     init : func {
         me.UPDATE_INTERVAL = 0.5;
         me.loopid = 0;
-        me.old_throttle = getprop("controls/engine[0]/throttle");
+        me.old_throttle = getprop("controls/engines/engine[0]/throttle");
         me.current_spdbrk = getprop("controls/flight/speedbrake-lever");
         setprop("controls/autobrake/setting", 0);
+
+        # These only assist the auto spoilers
+        me.old_throttle1 = getprop("controls/engines/engine[0]/throttle");
+        me.old_throttle2 = getprop("controls/engines/engine[0]/throttle");
 
         me.reset();
     },
     update : func {
-        var current_throttle = getprop("controls/engines/engine[0]/throttle");
+        var throttle1 = getprop("controls/engines/engine[0]/throttle");
+        var throttle2 = getprop("controls/engines/engine[1]/throttle");
+        var current_throttle = (throttle1 + throttle2) / 2;
         var current_spdbrk = getprop("controls/flight/speedbrake-lever");
         var absetting = getprop("controls/autobrake/setting");
 
@@ -19,6 +25,19 @@ var autobrake = {
             rear_spin = getprop("gear/gear[2]/rollspeed-ms");
 
         var brake_pressure = (absetting - 1) / 5.0;
+
+        # Assist automatic spoilers system (since autobrake.nas can, in fact, know the previous
+        # state of the throttle, when the auto spoilers alone can't)
+        if (
+            (throttle1 < 0.5 and me.old_throttle1 >= 0.5)
+            or (throttle2 < 0.5 and me.old_throttle2 >= 0.5)
+        ) {
+            setprop("/controls/autobrake/possible-rto", 1);
+        } else {
+            setprop("/controls/autobrake/possible-rto", 0);
+        }
+        me.old_throttle1 = throttle1;
+        me.old_throttle2 = throttle2;
 
         # Handle disarming events
         #########################
