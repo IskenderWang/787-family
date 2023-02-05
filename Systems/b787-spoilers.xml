@@ -9,20 +9,15 @@
             <condition>
                 <property>/gear/gear[1]/wow</property>
                 <property>/gear/gear[2]/wow</property>
-                <equals>
-                    <property>/controls/flight/ground-spoilers-armed</property>
-                    <value type="bool">true</value>
-                </equals>
-                <and>
-                    <less-than>
-                        <property>/controls/engines/engine[0]/throttle</property>
-                        <value type="double">0.5</value>
-                    </less-than>
-                    <less-than>
-                        <property>/controls/engines/engine[0]/throttle</property>
-                        <value type="double">0.5</value>
-                    </less-than>
-                </and>
+                <property>/controls/flight/ground-spoilers-armed</property>
+                <less-than>
+                    <property>/controls/engines/engine[0]/throttle</property>
+                    <value type="double">0.5</value>
+                </less-than>
+                <less-than>
+                    <property>/controls/engines/engine[0]/throttle</property>
+                    <value type="double">0.5</value>
+                </less-than>
             </condition>
         </enable>
         <input>
@@ -37,10 +32,8 @@
             <condition>
                 <property>/gear/gear[1]/wow</property>
                 <property>/gear/gear[2]/wow</property>
-                <and>
-                    <property>/controls/engines/engine[0]/reverser</property>
-                    <property>/controls/engines/engine[1]/reverser</property>
-                </and>
+                <property>/controls/engines/engine[0]/reverser</property>
+                <property>/controls/engines/engine[1]/reverser</property>
             </condition>
         </enable>
         <input>
