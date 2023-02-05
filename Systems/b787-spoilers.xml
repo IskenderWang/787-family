@@ -23,7 +23,7 @@
         <input>
             <value type="double">1</value>
         </input>
-        <output>/controls/flight/speedbrake-lever</output>
+        <output>/controls/flight/speedbrake-auto</output>
     </logic>
 
     <logic>
@@ -39,7 +39,7 @@
         <input>
             <value type="double">1</value>
         </input>
-        <output>/controls/flight/speedbrake-lever</output>
+        <output>/controls/flight/speedbrake-auto</output>
     </logic>
 
     <logic>
@@ -77,7 +77,7 @@
         <input>
             <value type="double">1</value>
         </input>
-        <output>/controls/flight/speedbrake-lever</output>
+        <output>/controls/flight/speedbrake-auto</output>
     </logic>
 
     <!-- For the life of me... I can't figure out why (the f*) this deploys speedbrakes when throttle is above 50%. Signed: nico-castell -->
@@ -102,7 +102,7 @@
         <input>
             <value type="double">0</value>
         </input>
-        <output>/controls/flight/speedbrake-lever</output>
+        <output>/controls/flight/speedbrake-auto</output>
     </logic> -->
 
     <filter>
@@ -110,7 +110,12 @@
         <type>gain</type>
         <gain>1.0</gain>
         <input>
-            <property>/controls/flight/speedbrake-lever</property>
+            <expression>
+                <max>
+                    <property>/controls/flight/speedbrake-lever</property>
+                    <property>/controls/flight/speedbrake-auto</property>
+                </max>
+            </expression>
         </input>
         <output>/controls/flight/speedbrake</output>
     </filter>
