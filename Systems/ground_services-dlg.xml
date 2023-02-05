@@ -124,8 +124,26 @@
             </binding>
             <live>true</live>
         </checkbox>
-
     </group>
+
+    <button>
+        <row>2</row>
+        <col>1</col>
+        <legend>Toggle Chocks</legend>
+        <padding>2</padding>
+        <binding>
+            <command>property-toggle</command>
+            <property>services/chocks/left</property>
+        </binding>
+        <binding>
+            <command>property-toggle</command>
+            <property>services/chocks/nose</property>
+        </binding>
+        <binding>
+            <command>property-toggle</command>
+            <property>services/chocks/right</property>
+        </binding>
+    </button>
 
     <hrule />
 

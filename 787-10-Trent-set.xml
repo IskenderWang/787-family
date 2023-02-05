@@ -216,9 +216,9 @@
             <cockpit type="bool">true</cockpit>
             <config>
                 <x-offset-m type="double">-0.568</x-offset-m>
-                <y-offset-m type="double">2.242</y-offset-m>
+                <y-offset-m type="double">2.298</y-offset-m>
                 <z-offset-m type="double">-28.872</z-offset-m>
-                <pitch-offset-deg>-10.3</pitch-offset-deg>
+                <pitch-offset-deg>-10</pitch-offset-deg>
                 <default-field-of-view-deg type="double">90.0</default-field-of-view-deg>
             </config>
         </view>
@@ -346,9 +346,9 @@
                 <right-direction-deg type="double">270</right-direction-deg>
                 <front-right-direction-deg type="double">315</front-right-direction-deg>
                 <x-offset-m type="double">0.568</x-offset-m>
-                <y-offset-m type="double">2.242</y-offset-m>
+                <y-offset-m type="double">2.298</y-offset-m>
                 <z-offset-m type="double">-28.872</z-offset-m>
-                <pitch-offset-deg>-10.3</pitch-offset-deg>
+                <pitch-offset-deg>-10</pitch-offset-deg>
             </config>
             <dynamic>
                 <enabled type="bool" userarchive="y">false</enabled>
@@ -836,6 +836,7 @@
         </flight>
         <gear>
             <brake-parking type="bool">true</brake-parking>
+            <enable-tiller type="bool">false</enable-tiller>
         </gear>
         <lighting>
             <beacon type="bool">false</beacon>
