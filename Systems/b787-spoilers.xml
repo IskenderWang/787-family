@@ -67,8 +67,7 @@
         <output>/controls/flight/speedbrake-auto</output>
     </logic>
 
-    <!-- For the life of me... I can't figure out why (the f*) this deploys speedbrakes when throttle is above 50%. Signed: nico-castell -->
-    <!-- <logic>
+    <logic>
         <name>Set spoilers DOWN when on ground and either throttle is in T/O range</name>
         <enable>
             <condition>
@@ -90,7 +89,7 @@
             <false />
         </input>
         <output>/controls/flight/speedbrake-auto</output>
-    </logic> -->
+    </logic>
 
     <filter>
         <name>Main speedbrake controller</name>
