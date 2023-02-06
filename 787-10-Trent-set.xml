@@ -926,35 +926,39 @@
             <nav-display n="1" type="int">0</nav-display>
         </nav-compass>
 
-        <!-- See http://wiki.flightgear.org/index.php/GPWS -->
+        <!-- https://wiki.flightgear.org/Ground_proximity_warning_system -->
         <mk-viii>
-            <serviceable type="bool">true</serviceable>
+            <serviceable>true</serviceable>       <!-- EGPWS_ENABLE -->
+
             <configuration-module>
-                <category-1 type="int">255</category-1>
-                <category-3 type="int">2</category-3>
-                <category-4 type="int">13</category-4>
-                <category-5 type="int">0</category-5>
-                <category-6 type="int">1</category-6>
-                <category-7 type="int">124</category-7>
-                <category-8 type="int">2</category-8>
-                <category-9 type="int">3</category-9>
-                <category-10 type="int">6</category-10>
-                <category-13 type="int">7</category-13>
-                <category-14 type="int">0</category-14>
+                <category-1>  255  </category-1>  <!-- AIRCRAFT_MODE_TYPE_SELECT -->
+                <category-3>  2    </category-3>  <!-- POSITION_INPUT_SELECT -->
+                <category-4>  1002 </category-4>  <!-- ALTITUDE_CALLOUTS -->
+                <category-5>  0    </category-5>  <!-- AUDIO_MENU_SELECT -->
+                <category-6>  1    </category-6>  <!-- TERRAIN_DISPLAY_SELECT -->
+                <category-7>  124  </category-7>  <!-- OPTIONS_SELECT_GROUP_1 -->
+                <category-8>  3    </category-8>  <!-- RADIO_ALTITUDE_INPUT_SELECT -->
+                <category-9>  3    </category-9>  <!-- NAVIGATION_INPUT_SELECT -->
+                <category-10> 6    </category-10> <!-- ATTITUDE_INPUT_SELECT -->
+                <category-13> 7    </category-13> <!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->
+                <category-14> 0    </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
             </configuration-module>
-            <inputs>
+
+            <inputs>                              <!-- Module I/O -->
                 <arinc429>
-                    <decision-height-ncd type="bool">false</decision-height-ncd>
-                    <decision-height type="double">200</decision-height>
+                    <decision-height-ncd> false </decision-height-ncd>
+                    <decision-height> 200 </decision-height>
                 </arinc429>
             </inputs>
-            <speaker>
-                <max-dist type="double">2</max-dist>
-                <reference-dist type="double">1</reference-dist>
-                <volume type="double">0.4</volume>
+
+            <speaker>                             <!-- Speaker configuration -->
+                <max-dist> 2 </max-dist>          <!-- Max distance where speakers is heard -->
+                <reference-dist> 1 </reference-dist> <!-- Distance to pilot -->
+                <volume> 0.4 </volume>            <!-- volume at reference distance -->
             </speaker>
+
             <voice>
-                <file-prefix>Aircraft/787-family/Sounds/GPWS/</file-prefix>
+                <file-prefix type="string">Sounds/mk-viii/</file-prefix>
             </voice>
         </mk-viii>
     </instrumentation>
