@@ -53,10 +53,6 @@
 		<padding>5</padding>
 		<pref-width>300</pref-width>
 
-		<text>
-			<label>Tiller steering enabled when this dialog is open</label>
-		</text>
-
 		<group>
 			<layout>hbox</layout>
 			<halign>center</halign>
@@ -94,10 +90,6 @@
 			<live type="bool">true</live>
 		</slider>
 
-		<text>
-			<label>Tiller can steer up to 70 degrees</label>
-		</text>
-
 		<button>
 			<legend>Center</legend>
 			<binding>
@@ -116,9 +108,10 @@
 		</button>
 	</group>
 
-	<hrule />
-
 	<text>
-		<label>Tiller controlled via rudder when this dialog is closed.</label>
+		<label>Tiller controlled via slider when this dialog is open.</label>
+	</text>
+	<text>
+		<label>Controlled via rudder up to 7 degrees when closed.</label>
 	</text>
 </PropertyList>
