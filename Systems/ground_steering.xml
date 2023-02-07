@@ -15,7 +15,7 @@ The resulting steering output goes to /controls/gear/steering-cmd-norm
     <filter>
         <name>Steering controlled by rudder</name>
         <type>gain</type>
-        <gain>0.2</gain> <!-- Rudder goes from -0.5 to 0.5, a gain of 0.2 gives us 7 deg -->
+        <gain>0.11428</gain> <!-- Rudder goes from -0.5 to 0.5, a gain of 0.11428 gives us 8 deg -->
 
         <input>
             <property>/controls/flight/rudder</property>
