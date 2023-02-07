@@ -832,10 +832,6 @@
             <ground-spoilers-armed type="bool">false</ground-spoilers-armed>
             <speedbrake-lever type="double">0</speedbrake-lever>
         </flight>
-        <gear>
-            <brake-parking type="bool">true</brake-parking>
-            <enable-tiller type="bool">false</enable-tiller>
-        </gear>
         <lighting>
             <beacon type="bool">false</beacon>
             <interior type="double">0</interior>

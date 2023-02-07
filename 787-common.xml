@@ -7,7 +7,9 @@
     <controls>
         <gear>
             <tiller-cmd-norm type="double">0</tiller-cmd-norm>
-            <enable-tiller type="bool">true</enable-tiller>
+            <steering-cmd-norm type="double">0</steering-cmd-norm>
+            <enable-tiller type="bool">false</enable-tiller>
+            <brake-parking type="bool">true</brake-parking>
         </gear>
     </controls>
 
@@ -239,6 +241,11 @@
             <autopilot>
                 <name>Spoilers</name>
                 <path>Aircraft/787-family/Systems/b787-spoilers.xml</path>
+            </autopilot>
+
+            <autopilot>
+                <name>Nose wheel steering</name>
+                <path>Aircraft/787-family/Systems/ground_steering.xml</path>
             </autopilot>
         </systems>
         <flight-recorder include="Systems/flight-recorder.xml"></flight-recorder>

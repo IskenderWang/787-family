@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Nose gear maximum rotation angle: 70 deg
+Nose gear maximum rotation angle when controlled by rudder: 7 deg
+
+Autopush overrides both tiller and rudder controls
+
+The resulting steering output goes to /controls/gear/steering-cmd-norm
+-->
+
+<PropertyList>
+    <!-- We need to calculate the steering from the rudder controls, this is not necessary for the
+         other inputs -->
+    <filter>
+        <name>Steering controlled by rudder</name>
+        <type>gain</type>
+        <gain>0.2</gain> <!-- Rudder goes from -0.5 to 0.5, a gain of 0.2 gives us 7 deg -->
+
+        <input>
+            <property>/controls/flight/rudder</property>
+        </input>
+        <output>
+            <property>/controls/gear/rudder-cmd-norm</property>
+        </output>
+    </filter>
+
+    <filter>
+        <name>Steering when tiller steering enabled, overridable by autopush</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <enable>
+            <condition>
+                <property>/controls/gear/enable-tiller</property>
+                <not>
+                    <property>/sim/model/autopush/enabled</property>
+                </not>
+            </condition>
+        </enable>
+        <input>
+            <property>/controls/gear/tiller-cmd-norm</property>
+        </input>
+        <output>
+            <property>/controls/gear/steering-cmd-norm</property>
+        </output>
+    </filter>
+
+    <filter>
+        <name>Steering when tiller steering disabled, overridable by autopush</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <enable>
+            <condition>
+                <not>
+                    <property>/controls/gear/enable-tiller</property>
+                </not>
+                <not>
+                    <property>/sim/model/autopush/enabled</property>
+                </not>
+            </condition>
+        </enable>
+        <input>
+            <property>/controls/gear/rudder-cmd-norm</property>
+        </input>
+        <output>
+            <property>/controls/gear/steering-cmd-norm</property>
+        </output>
+    </filter>
+
+    <filter>
+        <name>Steering when autopush is enabled</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <enable>
+            <condition>
+                <property>/sim/model/autopush/enabled</property>
+            </condition>
+        </enable>
+        <input>
+            <property>/sim/model/autopush/autopush-cmd-norm</property>
+        </input>
+        <output>
+            <property>/controls/gear/steering-cmd-norm</property>
+        </output>
+    </filter>
+</PropertyList>
