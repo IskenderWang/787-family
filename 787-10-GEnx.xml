@@ -560,18 +560,15 @@
             </kinematic>
         </channel>
 
+        <!-- Nose wheel steering gets input from Systems/ground_steering.xml -->
         <channel name="Steering">
             <fcs_function name="Nose Wheel Steering 0">
                 <function name="fcs/steer-nose-deg[0]">
                     <description>Steering command for nose gear</description>
-                    <table>
-                        <independentVar lookup="row">/controls/gear/steering-cmd-norm</independentVar>
-                        <tableData>
-                            -1 -70
-                             0   0
-                             1  70
-                        </tableData>
-                    </table>
+                    <product>
+                        <property>/controls/gear/steering-cmd-norm</property>
+                        <value>70.0</value>
+                    </product>
                 </function>
             </fcs_function>
 
@@ -581,7 +578,6 @@
                 <output>fcs/steer-pos-deg[0]</output>
             </actuator>
         </channel>
-
         <channel name="Speedbrake">
             <kinematic name="Speedbrake Control">
                 <input>fcs/speedbrake-cmd-norm</input>
