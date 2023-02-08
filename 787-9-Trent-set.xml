@@ -954,7 +954,7 @@
             </speaker>
 
             <voice>
-                <file-prefix type="string">Sounds/mk-viii/</file-prefix>
+                <file-prefix type="string">Aircraft/787-family/Sounds/GPWS/</file-prefix>
             </voice>
         </mk-viii>
     </instrumentation>

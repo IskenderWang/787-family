@@ -112,6 +112,6 @@
 		<label>Tiller controlled via slider when this dialog is open.</label>
 	</text>
 	<text>
-		<label>Controlled via rudder up to 7 degrees when closed.</label>
+		<label>Controlled via rudder up to 8 degrees when closed.</label>
 	</text>
 </PropertyList>
