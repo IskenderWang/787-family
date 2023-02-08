@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+    <logic>
+        <name>Crack windscreen when exceeding airframe's g loading</name>
+        <enable>
+            <condition>
+                <or>
+                    <greater-than>
+                        <property>/accelerations/pilot-gdamped</property>
+                        <property>/limits/max-positive-g</property>
+                    </greater-than>
+                    <less-than>
+                        <property>/accelerations/pilot-gdamped</property>
+                        <property>/limits/max-negative-g</property>
+                    </less-than>
+                </or>
+            </condition>
+        </enable>
+        <input>
+            <value type="int">1</value>
+        </input>
+        <output>
+            <property>/environment/aircraft-effects/use-overlay</property>
+        </output>
+    </logic>
+</PropertyList>

@@ -247,6 +247,11 @@
                 <name>Nose wheel steering</name>
                 <path>Aircraft/787-family/Systems/ground_steering.xml</path>
             </autopilot>
+
+            <autopilot>
+                <name>Windscreen cracker at excessive Gs</name>
+                <path>Aircraft/787-family/Systems/limits.xml</path>
+            </autopilot>
         </systems>
         <flight-recorder include="Systems/flight-recorder.xml"></flight-recorder>
     </sim>

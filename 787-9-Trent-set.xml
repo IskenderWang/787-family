@@ -1008,7 +1008,7 @@
     <nasal>
         <b787>
             <file>Aircraft/787-family/Nasal/sysinfo.nas</file>
-            <file>Aircraft/787-family/Nasal/limits.nas</file>
+            <file>Aircraft/Generic/limits.nas</file>
         </b787>
         <systems>
             <file>Aircraft/787-family/Nasal/systems-9-Trent1000.nas</file>
