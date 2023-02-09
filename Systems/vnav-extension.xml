@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- IT-VNAV-Extension v0.3.2 -->
+<!-- Copyright (c) 2023 Nicolás Castellán (nico-castell) -->
+
+<PropertyList>
+    <!-- Distance to waypoint -->
+    <filter>
+        <name>Distance to waypoint</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <input>
+            <expression>
+                <difference>
+                    <property>/autopilot/route-manager/wp/dist</property>
+                    <property>/it-autoflight/internal/lnav-advance-nm</property>
+                </difference>
+            </expression>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/distance-to-wp</property>
+        </output>
+    </filter>
+
+    <!-- Altitude difference -->
+    <filter>
+        <name>Altitude difference</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <input>
+            <expression>
+                <difference>
+                    <property>/it-autoflight/input/alt</property>
+                    <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+                </difference>
+            </expression>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/altitude-difference-ft</property>
+        </output>
+    </filter>
+
+    <!-- Cruise override, aka STEPS mode -->
+    <filter>
+        <name>Cruise override, aka STEPS mode</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <enable>
+            <condition>
+                <property>/it-vnav/inputs/steps</property>
+            </condition>
+        </enable>
+
+        <input>
+            <property>/it-autoflight/input/alt</property>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/altitude-from</property>
+        </output>
+    </filter>
+
+    <!-- Activate cruise controller, which is unavailable below 2500 ft AGL -->
+    <logic>
+        <name>Activate cruise controller, which is unavailable below 2500 ft AGL</name>
+
+        <enable>
+            <condition>
+                <equals>
+                    <property>/it-autoflight/input/alt</property>
+                    <property>/it-vnav/internal/altitude-from</property>
+                </equals>
+                <greater-than>
+                    <property>/position/gear-agl-ft</property>
+                    <value>2500</value>
+                </greater-than>
+            </condition>
+        </enable>
+
+        <input>
+            <true />
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/cruise-phase</property>
+        </output>
+    </logic>
+
+    <!-- Activate transition controller -->
+    <logic>
+        <name>Activate transition controller</name>
+
+        <enable>
+            <condition>
+                <not>
+                    <equals>
+                        <property>/it-autoflight/input/alt</property>
+                        <property>/it-vnav/internal/altitude-from</property>
+                    </equals>
+                </not>
+            </condition>
+        </enable>
+
+        <input>
+            <false />
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/cruise-phase</property>
+        </output>
+    </logic>
+
+    <!-- Transition phase V/S with autothrottle -->
+    <filter>
+        <name>Transition phase V/S with autothrottle</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <enable>
+            <condition>
+                <property>/it-autoflight/output/athr</property>
+                <not>
+                    <property>/it-vnav/internal/cruise-phase</property>
+                </not>
+            </condition>
+        </enable>
+
+        <input>
+            <expression>
+                <floor>
+                    <sum>
+                        <div>
+                            <property>/it-vnav/internal/altitude-difference-ft</property>
+                            <div>
+                                <property>/it-vnav/internal/distance-to-wp</property>
+                                <div>
+                                    <property>/velocities/groundspeed-kt</property>
+                                    <value>60.0</value>
+                                </div>
+                            </div>
+                        </div>
+                        <value>0.5</value>
+                    </sum>
+                </floor>
+            </expression>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/vs</property>
+        </output>
+        <min>
+            <condition>
+                <less-than>
+                    <expression>
+                        <div>
+                            <sum>
+                                <property>/controls/engines/engine[0]/throttle</property>
+                                <property>/controls/engines/engine[1]/throttle</property>
+                            </sum>
+                            <value>2</value>
+                        </div>
+                    </expression>
+                    <expression>
+                        <sum>
+                            <property>/it-autoflight/settings/autothrottle-min</property>
+                            <value>0.01</value>
+                        </sum>
+                    </expression>
+                </less-than>
+                <property>/it-vnav/settings/controlled-descent</property>
+            </condition>
+
+            <expression>
+                <product>
+                    <abs>
+                        <property>/it-autoflight/internal/target-fpm-flch</property>
+                    </abs>
+                    <value>-1</value>
+                </product>
+            </expression>
+        </min>
+        <min>
+            <value>-6000</value>
+        </min>
+        <max>
+            <condition>
+                <greater-than>
+                    <expression>
+                        <div>
+                            <sum>
+                                <property>/controls/engines/engine[0]/throttle</property>
+                                <property>/controls/engines/engine[1]/throttle</property>
+                            </sum>
+                            <value>2</value>
+                        </div>
+                    </expression>
+                    <expression>
+                        <sum>
+                            <property>/it-autoflight/settings/autothrottle-max</property>
+                            <value>-0.01</value>
+                        </sum>
+                    </expression>
+                </greater-than>
+            </condition>
+
+            <expression>
+                <abs>
+                    <property>/it-autoflight/internal/target-fpm-flch</property>
+                </abs>
+            </expression>
+        </max>
+        <max>
+            <value>6000</value>
+        </max>
+    </filter>
+
+    <!-- Transition phase V/S without autothrottle -->
+    <filter>
+        <name>Transition phase V/S without autothrottle</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <enable>
+            <condition>
+                <not>
+                    <property>/it-autoflight/output/athr</property>
+                </not>
+                <not>
+                    <property>/it-vnav/internal/cruise-phase</property>
+                </not>
+            </condition>
+        </enable>
+
+        <input>
+            <expression>
+                <floor>
+                    <sum>
+                        <div>
+                            <property>/it-vnav/internal/altitude-difference-ft</property>
+                            <div>
+                                <property>/it-vnav/internal/distance-to-wp</property>
+                                <div>
+                                    <property>/velocities/groundspeed-kt</property>
+                                    <value>60.0</value>
+                                </div>
+                            </div>
+                        </div>
+                        <value>0.5</value>
+                    </sum>
+                </floor>
+            </expression>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/vs</property>
+        </output>
+        <min>
+            <condition>
+                <property>/it-vnav/settings/controlled-descent</property>
+            </condition>
+
+            <expression>
+                <product>
+                    <abs>
+                        <property>/it-autoflight/internal/target-fpm-flch</property>
+                    </abs>
+                    <value>-1</value>
+                </product>
+            </expression>
+        </min>
+        <min>
+            <value>-6000</value>
+        </min>
+        <max>
+            <expression>
+                <abs>
+                    <property>/it-autoflight/internal/target-fpm-flch</property>
+                </abs>
+            </expression>
+        </max>
+        <max>
+            <value>6000</value>
+        </max>
+    </filter>
+
+    <!-- Detect runway altitude -->
+    <filter>
+        <name>Detect runway altitude</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <enable>
+            <condition>
+                <property>/gear/gear[1]/wow</property>
+                <property>/gear/gear[2]/wow</property>
+            </condition>
+        </enable>
+
+        <input>
+            <expression>
+                <floor>
+                    <sum>
+                        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+                        <value>0.5</value>
+                    </sum>
+                </floor>
+            </expression>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/rwy-alt-ft</property>
+        </output>
+        <output>
+            <property>/it-vnav/internal/altitude-from</property>
+        </output>
+    </filter>
+
+    <!-- Detect being vnav-ft above runway -->
+    <logic>
+        <name>Detect being vnav-ft above runway</name>
+
+        <enable>
+            <condition>
+                <greater-than>
+                    <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+                    <expression>
+                        <sum>
+                            <property>/it-vnav/internal/rwy-alt-ft</property>
+                            <property>/it-vnav/settings/vnav-ft</property>
+                        </sum>
+                    </expression>
+                </greater-than>
+            </condition>
+        </enable>
+
+        <input>
+            <true />
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/above-vnav-ft</property>
+        </output>
+    </logic>
+
+    <!-- Autofill departure altitude information -->
+    <filter>
+        <name>Autofill departure altitude information</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <enable>
+            <condition>
+                <equals>
+                    <expression>
+                        <sum>
+                            <property>/autopilot/route-manager/current-wp</property>
+                            <value>-1</value>
+                        </sum>
+                    </expression>
+                    <value>0</value>
+                </equals>
+            </condition>
+        </enable>
+
+        <input>
+            <property>/it-vnav/internal/rwy-alt-ft</property>
+        </input>
+        <output>
+            <property>/autopilot/route-manager/route/wp[0]/altitude-ft</property>
+        </output>
+
+        <input>
+            <expression>
+                <div>
+                    <property>/it-vnav/internal/rwy-alt-ft</property>
+                    <value>3.28083</value>
+                </div>
+            </expression>
+        </input>
+        <output>
+            <property>/autopilot/route-manager/route/wp[0]/altitude-m</property>
+        </output>
+    </filter>
+
+    <!-- Reset above-vnav-ft after landing -->
+    <logic>
+        <name>Reset above-vnav-ft after landing</name>
+
+        <enable>
+            <condition>
+                <property>/gear/gear[1]/wow</property>
+                <property>/gear/gear[2]/wow</property>
+            </condition>
+        </enable>
+
+        <input>
+            <false />
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/above-vnav-ft</property>
+        </output>
+    </logic>
+
+    <!-- Make VNAV available under the right conditions -->
+    <logic>
+        <name>Make VNAV available under the right conditions</name>
+
+        <enable>
+            <condition>
+                <not>
+                    <property>/gear/gear[1]/wow</property>
+                </not>
+                <not>
+                    <property>/gear/gear[2]/wow</property>
+                </not>
+                <or> <!-- Lateral mode has to be LNAV or LOC (engaged, not armed) -->
+                    <equals>
+                        <property>/it-autoflight/output/lat</property>
+                        <value>1</value>
+                    </equals>
+                    <equals>
+                        <property>/it-autoflight/output/lat</property>
+                        <value>2</value>
+                    </equals>
+                </or>
+                <property>/it-vnav/internal/above-vnav-ft</property>
+                <less-than> <!-- Convenient way to ensure mode is not FLARE, ROLLOUT, T/O CLB, or G/A CLB -->
+                    <property>/it-autoflight/output/vert</property>
+                    <value>6</value>
+                </less-than>
+            </condition>
+        </enable>
+
+        <input>
+            <true />
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/available</property>
+        </output>
+    </logic>
+
+    <!-- Don't make VNAV available under the wrong conditions -->
+    <logic>
+        <name>Don't make VNAV available under the wrong conditions</name>
+
+        <enable>
+            <condition>
+                <not>
+                    <and>
+                        <not>
+                            <property>/gear/gear[1]/wow</property>
+                        </not>
+                        <not>
+                            <property>/gear/gear[2]/wow</property>
+                        </not>
+                        <or> <!-- Lateral mode has to be LNAV or LOC (engaged, not armed) -->
+                            <equals>
+                                <property>/it-autoflight/output/lat</property>
+                                <value>1</value>
+                            </equals>
+                            <equals>
+                                <property>/it-autoflight/output/lat</property>
+                                <value>2</value>
+                            </equals>
+                        </or>
+                        <property>/it-vnav/internal/above-vnav-ft</property>
+                        <less-than> <!-- Convenient way to ensure mode is not FLARE, ROLLOUT, T/O CLB, or G/A CLB -->
+                            <property>/it-autoflight/output/vert</property>
+                            <value>6</value>
+                        </less-than>
+                    </and>
+                </not>
+            </condition>
+        </enable>
+
+        <input>
+            <false />
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/available</property>
+        </output>
+    </logic>
+
+    <!-- Engage VNAV when serviceable, available, vertical route available, and armed are true -->
+    <logic>
+        <name>Engage VNAV when serviceable, available, vertical route available, and armed are true</name>
+
+        <enable>
+            <condition>
+                <property>/it-vnav/inputs/serviceable</property>
+                <property>/it-vnav/internal/available</property>
+                <property>/it-vnav/internal/vert-route-available</property>
+                <property>/it-vnav/output/armed</property>
+            </condition>
+        </enable>
+
+        <input>
+            <true />
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/engaged</property>
+        </output>
+    </logic>
+
+    <!-- Disengage VNAV when either serviceable, available, vertical route available, or armed are false -->
+    <logic>
+        <name>Disengage VNAV when either serviceable, available, vertical route available, or armed are false</name>
+
+        <enable>
+            <condition>
+                <not>
+                    <and>
+                        <property>/it-vnav/inputs/serviceable</property>
+                        <property>/it-vnav/internal/available</property>
+                        <property>/it-vnav/internal/vert-route-available</property>
+                        <property>/it-vnav/output/armed</property>
+                    </and>
+                </not>
+            </condition>
+        </enable>
+
+        <input>
+            <false />
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/engaged</property>
+        </output>
+    </logic>
+
+    <!-- Calculate capture-vs -->
+    <filter>
+        <name>Calculate capture-vs</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <input>
+            <expression>
+                <clip>
+                    <clipMin>50</clipMin>
+                    <clipMax>2500</clipMax>
+                    <product>
+                        <floor>
+                            <sum>
+                                <div>
+                                    <div>
+                                        <abs>
+                                            <property>/it-autoflight/internal/vert-speed-fpm</property>
+                                        </abs>
+                                        <product>
+                                            <property>it-autoflight/config/cmd/alt</property>
+                                            <value>-1</value>
+                                        </product>
+                                    </div>
+                                    <value>100</value>
+                                </div>
+                                <value>0.5</value>
+                            </sum>
+                        </floor>
+                        <value>100</value>
+                    </product>
+                </clip>
+            </expression>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/capture-vs</property>
+        </output>
+    </filter>
+
+    <!-- Determine if altitude is captured -->
+    <logic>
+        <name>Determine if altitude is captured</name>
+
+        <enable>
+            <condition>
+                <less-than>
+                    <expression>
+                        <abs>
+                            <property>/it-vnav/internal/altitude-difference-ft</property>
+                        </abs>
+                    </expression>
+                    <property>/it-vnav/internal/capture-vs</property>
+                </less-than>
+            </condition>
+        </enable>
+
+        <input>
+            <true />
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/captured</property>
+        </output>
+    </logic>
+
+    <!-- Determine if altitude is not captured -->
+    <logic>
+        <name>Determine if altitude is not captured</name>
+
+        <enable>
+            <condition>
+                <greater-than-equals>
+                    <expression>
+                        <abs>
+                            <property>/it-vnav/internal/altitude-difference-ft</property>
+                        </abs>
+                    </expression>
+                    <property>/it-vnav/internal/capture-vs</property>
+                </greater-than-equals>
+            </condition>
+        </enable>
+
+        <input>
+            <false />
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/captured</property>
+        </output>
+    </logic>
+
+    <!-- Connect VNAV's V/S to IT-AUTOFLIGHT's V/S input when VNAV is engaged and capturing -->
+    <filter>
+        <name>Connect VNAV's V/S to IT-AUTOFLIGHT's V/S input when VNAV is engaged and capturing</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <enable>
+            <condition>
+                <property>/it-vnav/internal/engaged</property>
+                <not>
+                    <property>/it-vnav/internal/captured</property>
+                </not>
+            </condition>
+        </enable>
+
+        <input>
+            <expression>
+                <clip> <!-- IT-AUTOFLIGHT doesn't recommend any more than 6000 ft/m climb or descent -->
+                    <clipMin>-6000</clipMin>
+                    <clipMax>6000</clipMax>
+                    <property>/it-vnav/internal/vs</property>
+                </clip>
+            </expression>
+        </input>
+
+        <output>
+            <property>/it-autoflight/input/vs</property>
+        </output>
+        <max-rate-of-change>5</max-rate-of-change>
+    </filter>
+</PropertyList>

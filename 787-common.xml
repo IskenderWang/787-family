@@ -11,6 +11,9 @@
             <enable-tiller type="bool">false</enable-tiller>
             <brake-parking type="bool">true</brake-parking>
         </gear>
+        <mcp>
+            <vs-step type="double">500</vs-step>
+        </mcp>
     </controls>
 
     <input>
@@ -315,6 +318,11 @@
             </autopilot>
 
             <autopilot>
+                <name>VNAV extension</name>
+                <path>Aircraft/787-family/Systems/vnav-extension.xml</path>
+            </autopilot>
+
+            <autopilot>
                 <name>Nose wheel steering</name>
                 <path>Aircraft/787-family/Systems/ground_steering.xml</path>
             </autopilot>
@@ -374,6 +382,9 @@
         <autopush_route>
             <file>Nasal/Autopush/route.nas</file>
         </autopush_route>
+        <it-vnav-extension>
+            <file>Aircraft/787-family/Nasal/vnav-extension.nas</file>
+        </it-vnav-extension>
     </nasal>
 
     <it-autoflight>
@@ -430,4 +441,11 @@
         </settings>
     </it-autoflight>
 
+    <it-vnav>
+        <settings>
+            <vnav-ft type="double">400</vnav-ft> <!-- Minimum altitude above runway to make VNAV available -->
+            <controlled-descent type="bool">false</controlled-descent> <!-- `false` = FREE descent, `true` = CTLD descent-->
+            <auto-descend type="bool">false</auto-descend> <!-- `false` = Press DESCEND button do descend, `true` = Let VNAV descend automatically -->
+        </settings>
+    </it-vnav>
 </PropertyList>

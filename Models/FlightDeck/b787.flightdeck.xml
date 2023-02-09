@@ -3130,14 +3130,12 @@
         <action>
             <button>0</button>
             <binding>
-                <command>property-cycle</command>
-                <property>autopilot/panel/alt</property>
-				<value>vnav</value>
-				<value></value>
+                <command>property-assign</command>
+                <property>/it-vnav/inputs/arm-button</property>
+                <value type="bool">true</value>
             </binding>
         </action>
     </animation>
-
 
     <animation>
         <type>pick</type>
@@ -3160,9 +3158,14 @@
         <action>
             <button>0</button>
             <binding>
-                <command>property-cycle</command>
+                <command>property-assign</command>
                 <property>/it-autoflight/input/vert</property>
 				<value>1</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>/it-vnav/output/armed</property>
+                <value type="bool">false</value>
             </binding>
         </action>
     </animation>
@@ -3178,6 +3181,11 @@
                 <property>/it-autoflight/input/vert</property>
 				<value>4</value>
             </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>/it-vnav/output/armed</property>
+                <value type="bool">false</value>
+            </binding>
         </action>
     </animation>
 
@@ -3190,9 +3198,14 @@
             <binding>
                 <command>nasal</command>
  				<script>
- 					setprop("/it-autoflight/input/alt", getprop("/instrumentation/altimeter/indicated-altitude-ft"));
+ 					setprop("/it-autoflight/input/alt", math.round(getprop("/instrumentation/altimeter/indicated-altitude-ft"), 100));
  					setprop("/it-autoflight/input/vert", 0);
  				</script>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>/it-vnav/output/armed</property>
+                <value type="bool">false</value>
             </binding>
         </action>
     </animation>
@@ -3205,7 +3218,7 @@
             <binding>
                 <command>nasal</command>
  				<script>
- 					setprop("/it-autoflight/input/vs", getprop("/velocities/vertical-speed-fps") * 60);
+ 					setprop("/it-autoflight/input/vs", math.round(getprop("/velocities/vertical-speed-fps") * 60), 100);
  					setprop("/it-autoflight/input/vert", 1);
  				</script>
             </binding>
@@ -3373,10 +3386,7 @@
 		<type>select</type>
 		<object-name>VNAV.toggle</object-name>
 		<condition>
-			<equals>
-				<property>autopilot/panel/alt</property>
-				<value>vnav</value>
-			</equals>
+            <property>/it-vnav/output/armed</property>
 		</condition>
 	</animation>
 
@@ -3394,27 +3404,76 @@
 		<type>pick</type>
 		<object-name>ALT.knob</object-name>
 		<action>
-			<button>0</button>
 			<button>3</button>
 			<repeatable type="bool">true</repeatable>
 			<binding>
-				<command>property-adjust</command>
-				<property>/it-autoflight/input/alt</property>
-				<step>500</step>
-				<max>50000</max>
+				<command>nasal</command>
+				<script><![CDATA[
+                    var alt = "/it-autoflight/input/alt";
+                    var step = "controls/mcp/vs-step";
+
+                    var new_alt = getprop(alt) + getprop(step);
+
+                    if (new_alt >= 50000)
+                        new_alt = 50000;
+
+                    setprop(alt, new_alt);
+                ]]></script>
 			</binding>
 		</action>
 		<action>
-			<button>1</button>
 			<button>4</button>
 			<repeatable type="bool">true</repeatable>
 			<binding>
-				<command>property-adjust</command>
-				<property>/it-autoflight/input/alt</property>
-				<step>-500</step>
-				<min>0</min>
+				<command>nasal</command>
+                <script><![CDATA[
+                    var alt = "/it-autoflight/input/alt";
+                    var step = "controls/mcp/vs-step";
+
+                    var new_alt = getprop(alt) - getprop(step);
+
+                    if (new_alt <= 0)
+                        new_alt = 0;
+
+                    setprop(alt, new_alt);
+                ]]></script>
 			</binding>
 		</action>
+
+        <action>
+            <button>0</button>
+            <repeatable type="bool">true</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script><![CDATA[
+                    var vs_step = "controls/mcp/vs-step";
+
+                    if (getprop(vs_step) == 100) {
+                        setprop(vs_step, 500);
+                        return;
+                    }
+
+                    setprop(vs_step, 1000);
+                ]]></script>
+            </binding>
+        </action>
+        <action>
+            <button>1</button>
+            <repeatable type="bool">true</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script><![CDATA[
+                    var vs_step = "controls/mcp/vs-step";
+
+                    if (getprop(vs_step) == 1000) {
+                        setprop(vs_step, 500);
+                        return;
+                    }
+
+                    setprop(vs_step, 100);
+                ]]></script>
+            </binding>
+        </action>
 	</animation>
 
 <!-- VS Knob Pick Animations -->
