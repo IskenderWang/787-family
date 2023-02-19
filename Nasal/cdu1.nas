@@ -652,26 +652,21 @@ var cdu = {
 
 			#### Field types
 
-			setprop("/controls/cdu/l4-type", "click");
-			setprop("/controls/cdu/l5-type", "click");
+			setprop("/controls/cdu/l1-type", "disp");
+			setprop("/controls/cdu/l2-type", "disp");
+			setprop("/controls/cdu/l3-type", "disp");
+			setprop("/controls/cdu/l4-type", "disp");
+			setprop("/controls/cdu/l5-type", "disp");
 			setprop("/controls/cdu/l6-type", "click");
 			setprop("/controls/cdu/l7-type", "click");
 
-			setprop("/controls/cdu/r5-type", "click");
+			setprop("/controls/cdu/r1-type", "disp");
+			setprop("/controls/cdu/r2-type", "disp");
+			setprop("/controls/cdu/r3-type", "disp");
+			setprop("/controls/cdu/r4-type", "disp");
+			setprop("/controls/cdu/r5-type", "disp");
 			setprop("/controls/cdu/r6-type", "click");
 			setprop("/controls/cdu/r7-type", "click");
-
-			var l1type = "disp";
-			var r1type = "disp";
-
-			var l2type = "disp";
-			var r2type = "disp";
-
-			var l3type = "disp";
-			var r3type = "disp";
-
-			var l4type = "disp";
-			var r4type = "disp";
 
 			#### Field Values
 
@@ -733,16 +728,19 @@ var cdu = {
 
 				##### Display for 1 or more waypoints
 
-				for (var i = 0; i < 100; i = i + 1) {
-					if (getprop("/autopilot/route-manager/route/num") / 4 > i)
-						setprop("/controls/cdu/route-manager/max-pages", i + 1);
-				}
+				pages = math.ceil(getprop("/autopilot/route-manager/route/num") / 4);
+				if (pages < 1)
+					pages = 1;
+				setprop("/controls/cdu/route-manager/max-pages", pages);
 
 				###### Display and "function-ize" BACK and NEXT (for more than 1 page)
 
 				if (getprop("/controls/cdu/route-manager/max-pages") != getprop("/controls/cdu/route-manager/page")) {
 					setprop("/controls/cdu/display/r5", "NEXT >");
+					setprop("/controls/cdu/r5-type", "click");
+
 					if (keypress == "r5") {
+						setprop("/controls/cdu/r5-type", "disp"); # Stops pilots from interacting too fast.
 						setprop("/controls/cdu/route-manager/page", getprop("/controls/cdu/route-manager/page") + 1);
 						keypress = "";
 					}
@@ -752,8 +750,10 @@ var cdu = {
 
 				if (getprop("/controls/cdu/route-manager/page") != 1) {
 					setprop("/controls/cdu/display/l5", "< BACK");
+					setprop("/controls/cdu/l5-type", "click");
 
 					if (keypress == "l5") {
+						setprop("/controls/cdu/l5-type", "disp"); # Stops pilots from interacting too fast.
 						setprop("/controls/cdu/route-manager/page", getprop("/controls/cdu/route-manager/page") - 1);
 						keypress = "";
 					}
@@ -761,141 +761,89 @@ var cdu = {
 					setprop("/controls/cdu/display/l5", "-");
 				}
 
-				###### Displays the last page of waypoints (also first page if there's only 1 page)
+				###### Display the waypoint pages
 
-				if (getprop("/controls/cdu/route-manager/max-pages") == getprop("/controls/cdu/route-manager/page")) {
-					var l1 = "-";
-					var r1 = "-";
-					var l2 = "-";
-					var r2 = "-";
-					var l3 = "-";
-					var r3 = "-";
-					var l4 = "-";
-					var r4 = "-";
+				var l1 = "-";
+				var r1 = "-";
+				var l1type = "disp";
+				var r1type = "disp";
+				var l2 = "-";
+				var r2 = "-";
+				var l2type = "disp";
+				var r2type = "disp";
+				var l3 = "-";
+				var r3 = "-";
+				var l3type = "disp";
+				var r3type = "disp";
+				var l4 = "-";
+				var r4 = "-";
+				var l4type = "disp";
+				var r4type = "disp";
 
-					var lastpagewps = getprop("/autopilot/route-manager/route/num") - ((getprop("/controls/cdu/route-manager/max-pages") - 1) * 4);
+				current_page = getprop("/controls/cdu/route-manager/page");
+				current_wp = getprop("/autopilot/route-manager/current-wp");
+				final_index = getprop("/autopilot/route-manager/route/num") - 1;
 
-					if (lastpagewps >= 1) {
-						l1_wp = ((getprop("/controls/cdu/route-manager/max-pages") - 1) * 4);
-
-						if (currentwp == l1_wp)
-							l1 = "> " ~ getprop("/autopilot/route-manager/route/wp[" ~ l1_wp ~"]/id");
-						else
-							l1 = getprop("/autopilot/route-manager/route/wp[" ~ l1_wp ~"]/id");
-
-						r1 = getprop("/autopilot/route-manager/route/wp[" ~ l1_wp ~"]/altitude-ft");
-						var l1type = "click";
-						var r1type = "click";
-					}
-
-					if (lastpagewps >= 2) {
-						l2_wp = ((getprop("/controls/cdu/route-manager/max-pages") - 1) * 4) + 1;
-
-						if (currentwp == l2_wp)
-							l2 = "> " ~ getprop("/autopilot/route-manager/route/wp[" ~ l2_wp ~"]/id");
-						else
-							l2 = getprop("/autopilot/route-manager/route/wp[" ~ l2_wp ~"]/id");
-
-						r2 = getprop("/autopilot/route-manager/route/wp[" ~ l2_wp ~"]/altitude-ft");
-						var l2type = "click";
-						var r2type = "click";
-					}
-
-					if (lastpagewps >= 3) {
-						l3_wp = ((getprop("/controls/cdu/route-manager/max-pages") - 1) * 4) + 2;
-
-						if (currentwp == l3_wp)
-							l3 = "> " ~ getprop("/autopilot/route-manager/route/wp[" ~ l3_wp ~"]/id");
-						else
-							l3 = getprop("/autopilot/route-manager/route/wp[" ~ l3_wp ~"]/id");
-
-						r3 = getprop("/autopilot/route-manager/route/wp[" ~ l3_wp ~"]/altitude-ft");
-						var l3type = "click";
-						var r3type = "click";
-					}
-
-					if (lastpagewps == 4) {
-						l4_wp = ((getprop("/controls/cdu/route-manager/max-pages") - 1) * 4) + 3;
-
-						if (currentwp == l4_wp)
-							l4 = "> " ~ getprop("/autopilot/route-manager/route/wp[" ~ l4_wp ~"]/id");
-						else
-							l4 = getprop("/autopilot/route-manager/route/wp[" ~ l4_wp ~"]/id");
-
-						r4 = getprop("/autopilot/route-manager/route/wp[" ~ l4_wp ~"]/altitude-ft");
-						var l4type = "click";
-						var r4type = "click";
-					}
-				} else {
-					###### The middle (not last) and first (if more than 1 page) pages
-
-					var l1type = "click";
-					var r1type = "click";
-
-					var l2type = "click";
-					var r2type = "click";
-
-					var l3type = "click";
-					var r3type = "click";
-
-					var l4type = "click";
-					var r4type = "click";
-
-					l1_wp = ((getprop("/controls/cdu/route-manager/page") - 1) * 4);
-					l2_wp = ((getprop("/controls/cdu/route-manager/page") - 1) * 4) + 1;
-					l3_wp = ((getprop("/controls/cdu/route-manager/page") - 1) * 4) + 2;
-					l4_wp = ((getprop("/controls/cdu/route-manager/page") - 1) * 4) + 3;
-
-					if (currentwp == l1_wp)
-						l1 = "> " ~ getprop("/autopilot/route-manager/route/wp[" ~ l1_wp ~"]/id");
-					else
-						l1 = getprop("/autopilot/route-manager/route/wp[" ~ l1_wp ~"]/id");
-
-					r1 = getprop("/autopilot/route-manager/route/wp[" ~ l1_wp ~"]/altitude-ft");
-
-					if (currentwp == l2_wp)
-						l1 = "> " ~ getprop("/autopilot/route-manager/route/wp[" ~ l2_wp ~"]/id");
-					else
-						l2 = getprop("/autopilot/route-manager/route/wp[" ~ l2_wp ~"]/id");
-
-					r2 = getprop("/autopilot/route-manager/route/wp[" ~ l2_wp ~"]/altitude-ft");
-
-					if (currentwp == l3_wp)
-						l1 = "> " ~ getprop("/autopilot/route-manager/route/wp[" ~ l3_wp ~"]/id");
-					else
-						l3 = getprop("/autopilot/route-manager/route/wp[" ~ l3_wp ~"]/id");
-
-					r3 = getprop("/autopilot/route-manager/route/wp[" ~ l3_wp ~"]/altitude-ft");
-
-					if (currentwp == l4_wp)
-						l1 = "> " ~ getprop("/autopilot/route-manager/route/wp[" ~ l4_wp ~"]/id");
-					else
-						l4 = getprop("/autopilot/route-manager/route/wp[" ~ l4_wp ~"]/id");
-
-					r4 = getprop("/autopilot/route-manager/route/wp[" ~ l4_wp ~"]/altitude-ft");
+				var row1_wp = current_page * 4 - 4;
+				if (row1_wp <= final_index) {
+					l1 = row1_wp ~ " - " ~ getprop("/autopilot/route-manager/route/wp["~ row1_wp ~"]/id");
+					r1 = getprop("/autopilot/route-manager/route/wp["~ row1_wp ~"]/altitude-ft");
+					l1type = "click";
+					r1type = "click";
+					if (current_wp == row1_wp)
+						l1 = "> " ~ l1;
 				}
 
-				setprop("/controls/cdu/l1-type", l1type);
-				setprop("/controls/cdu/r1-type", r1type);
+				var row2_wp = current_page * 4 - 3;
+				if (row2_wp <= final_index) {
+					l2 = row2_wp ~ " - " ~ getprop("/autopilot/route-manager/route/wp["~ row2_wp ~"]/id");
+					r2 = getprop("/autopilot/route-manager/route/wp["~ row2_wp ~"]/altitude-ft");
+					l2type = "click";
+					r2type = "click";
+					if (current_wp == row2_wp)
+						l2 = "> " ~ l2;
+				}
 
-				setprop("/controls/cdu/l2-type", l2type);
-				setprop("/controls/cdu/r2-type", r2type);
+				var row3_wp = current_page * 4 - 2;
+				if (row3_wp <= final_index) {
+					l3 = row3_wp ~ " - " ~ getprop("/autopilot/route-manager/route/wp["~ row3_wp ~"]/id");
+					r3 = getprop("/autopilot/route-manager/route/wp["~ row3_wp ~"]/altitude-ft");
+					l3type = "click";
+					r3type = "click";
+					if (current_wp == row3_wp)
+						l3 = "> " ~ l3;
+				}
 
-				setprop("/controls/cdu/l3-type", l3type);
-				setprop("/controls/cdu/r3-type", r3type);
-
-				setprop("/controls/cdu/l4-type", l4type);
-				setprop("/controls/cdu/r4-type", r4type);
+				var row4_wp = current_page * 4 - 1;
+				if (row4_wp <= final_index) {
+					l4 = row4_wp ~ " - " ~ getprop("/autopilot/route-manager/route/wp["~ row4_wp ~"]/id");
+					r4 = getprop("/autopilot/route-manager/route/wp["~ row4_wp ~"]/altitude-ft");
+					l4type = "click";
+					r4type = "click";
+					if (current_wp == row4_wp)
+						l4 = "> " ~ l4;
+				}
 
 				setprop("/controls/cdu/display/l1", l1);
 				setprop("/controls/cdu/display/r1", r1);
+				setprop("/controls/cdu/l1-type", l1type);
+				setprop("/controls/cdu/r1-type", r1type);
+
 				setprop("/controls/cdu/display/l2", l2);
 				setprop("/controls/cdu/display/r2", r2);
+				setprop("/controls/cdu/l2-type", l2type);
+				setprop("/controls/cdu/r2-type", r2type);
+
 				setprop("/controls/cdu/display/l3", l3);
 				setprop("/controls/cdu/display/r3", r3);
+				setprop("/controls/cdu/l3-type", l3type);
+				setprop("/controls/cdu/r3-type", r3type);
+
 				setprop("/controls/cdu/display/l4", l4);
 				setprop("/controls/cdu/display/r4", r4);
-			} # Ends brace for there being 1 or more waypoints
+				setprop("/controls/cdu/l4-type", l4type);
+				setprop("/controls/cdu/r4-type", r4type);
+			}
 
 			#### Route Manager Functions (REPLACE, INSERT, ADD, JUMP TO, ACTIVATE, CLEAR, REMOVE)
 
@@ -908,7 +856,7 @@ var cdu = {
 			}
 
 			if ((getprop("/autopilot/route-manager/active") != 1) and (keypress == "r7")) {
-				setprop("/autopilot/route-manager/active", 1);
+				fgcommand("activate-flightplan", props.Node.new({"activate": 1}));
 				sysinfo.log_msg("[AP] Selected Route Activated", 0);
 				keypress = "";
 				cduinput = "";
@@ -916,19 +864,19 @@ var cdu = {
 
 			##### JUMP TO (PART 2) FUNCTION
 			if ((keypress == "l1") and (cduinput == "JUMP TO")) {
-				setprop("/autopilot/route-manager/input", "@JUMP" ~ l1_wp);
+				setprop("/autopilot/route-manager/input", "@JUMP" ~ row1_wp);
 				keypress = "";
 				cduinput = "";
 			} elsif ((keypress == "l2") and (cduinput == "JUMP TO")) {
-				setprop("/autopilot/route-manager/input", "@JUMP" ~ l2_wp);
+				setprop("/autopilot/route-manager/input", "@JUMP" ~ row2_wp);
 				keypress = "";
 				cduinput = "";
 			} elsif ((keypress == "l3") and (cduinput == "JUMP TO")) {
-				setprop("/autopilot/route-manager/input", "@JUMP" ~ l3_wp);
+				setprop("/autopilot/route-manager/input", "@JUMP" ~ row3_wp);
 				keypress = "";
 				cduinput = "";
 			} elsif ((keypress == "l4") and (cduinput == "JUMP TO")) {
-				setprop("/autopilot/route-manager/input", "@JUMP" ~ l4_wp);
+				setprop("/autopilot/route-manager/input", "@JUMP" ~ row4_wp);
 				keypress = "";
 				cduinput = "";
 			}
@@ -955,19 +903,19 @@ var cdu = {
 			##### REMOVE FUNCTION (PART 2)
 
 			if ((keypress == "l1") and (cduinput == "REMOVE")) {
-				setprop("/autopilot/route-manager/input", "@DELETE" ~ l1_wp);
+				setprop("/autopilot/route-manager/input", "@DELETE" ~ row1_wp);
 				keypress = "";
 				cduinput = "";
 			} elsif ((keypress == "l2") and (cduinput == "REMOVE")) {
-				setprop("/autopilot/route-manager/input", "@DELETE" ~ l2_wp);
+				setprop("/autopilot/route-manager/input", "@DELETE" ~ row2_wp);
 				keypress = "";
 				cduinput = "";
 			} elsif ((keypress == "l3") and (cduinput == "REMOVE")) {
-				setprop("/autopilot/route-manager/input", "@DELETE" ~ l3_wp);
+				setprop("/autopilot/route-manager/input", "@DELETE" ~ row3_wp);
 				keypress = "";
 				cduinput = "";
 			} elsif ((keypress == "l4") and (cduinput == "REMOVE")) {
-				setprop("/autopilot/route-manager/input", "@DELETE" ~ l4_wp);
+				setprop("/autopilot/route-manager/input", "@DELETE" ~ row4_wp);
 				keypress = "";
 				cduinput = "";
 			}
@@ -983,38 +931,58 @@ var cdu = {
 			##### REPLACE FUNCTION (for ALT only, ofcourse)
 
 			if ((keypress == "r1") and (cduinput != "")) {
-				setprop("/autopilot/route-manager/route/wp[" ~ l1_wp ~ "]/altitude-ft", cduinput);
+				if (isnum(cduinput)) {
+					setprop("/autopilot/route-manager/route/wp[" ~ row1_wp ~ "]/altitude-ft", cduinput);
+					setprop("/autopilot/route-manager/route/wp[" ~ row1_wp ~ "]/altitude-m", math.round(cduinput / 3.28083, 0.1));
+					var fl = props.globals.initNode("/autopilot/route-manager/route/wp[" ~ row1_wp ~ "]/flight-level", 0, "INT");
+					fl.setIntValue(math.floor(cduinput / 1000, 1) * 10);
+				}
 				keypress = "";
 				cduinput = "";
 			} elsif ((keypress == "r2") and (cduinput != "")) {
-				setprop("/autopilot/route-manager/route/wp[" ~ l2_wp ~ "]/altitude-ft", cduinput);
+				if (isnum(cduinput)) {
+					setprop("/autopilot/route-manager/route/wp[" ~ row2_wp ~ "]/altitude-ft", cduinput);
+					setprop("/autopilot/route-manager/route/wp[" ~ row2_wp ~ "]/altitude-m", math.round(cduinput / 3.28083, 0.1));
+					var fl = props.globals.initNode("/autopilot/route-manager/route/wp[" ~ row2_wp ~ "]/flight-level", 0, "INT");
+					fl.setIntValue(math.floor(cduinput / 1000, 1) * 10);
+				}
 				keypress = "";
 				cduinput = "";
 			} elsif ((keypress == "r3") and (cduinput != "")) {
-				setprop("/autopilot/route-manager/route/wp[" ~ l3_wp ~ "]/altitude-ft", cduinput);
+				if (isnum(cduinput)) {
+					setprop("/autopilot/route-manager/route/wp[" ~ row3_wp ~ "]/altitude-ft", cduinput);
+					setprop("/autopilot/route-manager/route/wp[" ~ row3_wp ~ "]/altitude-m", math.round(cduinput / 3.28083, 0.1));
+					var fl = props.globals.initNode("/autopilot/route-manager/route/wp[" ~ row3_wp ~ "]/flight-level", 0, "INT");
+					fl.setIntValue(math.floor(cduinput / 1000, 1) * 10);
+				}
 				keypress = "";
 				cduinput = "";
 			} elsif ((keypress == "r4") and (cduinput != "")) {
-				setprop("/autopilot/route-manager/route/wp[" ~ l4_wp ~ "]/altitude-ft", cduinput);
+				if (isnum(cduinput)) {
+					setprop("/autopilot/route-manager/route/wp[" ~ row4_wp ~ "]/altitude-ft", cduinput);
+					setprop("/autopilot/route-manager/route/wp[" ~ row4_wp ~ "]/altitude-m", math.round(cduinput / 3.28083, 0.1));
+					var fl = props.globals.initNode("/autopilot/route-manager/route/wp[" ~ row4_wp ~ "]/flight-level", 0, "INT");
+					fl.setIntValue(math.floor(cduinput / 1000, 1) * 10);
+				}
 				keypress = "";
 				cduinput = "";
 			}
 
 			##### INSERT FUNCTION
 			if ((keypress == "l1") and (cduinput != "")) {
-				setprop("/autopilot/route-manager/input", "@INSERT" ~ l1_wp ~ ":" ~ cduinput);
+				setprop("/autopilot/route-manager/input", "@INSERT" ~ row1_wp ~ ":" ~ cduinput);
 				keypress = "";
 				cduinput = "";
 			} elsif ((keypress == "l2") and (cduinput != "")) {
-				setprop("/autopilot/route-manager/input", "@INSERT" ~ l2_wp ~ ":" ~ cduinput);
+				setprop("/autopilot/route-manager/input", "@INSERT" ~ row2_wp ~ ":" ~ cduinput);
 				keypress = "";
 				cduinput = "";
 			} elsif ((keypress == "l3") and (cduinput != "")) {
-				setprop("/autopilot/route-manager/input", "@INSERT" ~ l3_wp ~ ":" ~ cduinput);
+				setprop("/autopilot/route-manager/input", "@INSERT" ~ row3_wp ~ ":" ~ cduinput);
 				keypress = "";
 				cduinput = "";
 			} elsif ((keypress == "l4") and (cduinput != "")) {
-				setprop("/autopilot/route-manager/input", "@INSERT" ~ l4_wp ~ ":" ~ cduinput);
+				setprop("/autopilot/route-manager/input", "@INSERT" ~ row4_wp ~ ":" ~ cduinput);
 				keypress = "";
 				cduinput = "";
 			}
@@ -2170,6 +2138,10 @@ var cdu = {
 				keypress = "";
 			} elsif (keypress == "r6") {
 				page = "ROUTE";
+				in_page = math.ceil(getprop("/autopilot/route-manager/current-wp") / 4);
+				if (in_page < 1)
+					in_page = 1;
+				setprop("/controls/cdu/route-manager/page", in_page);
 				keypress = "";
 			} elsif ((keypress == "l5") and (cduinput != "")) {
 				setprop("/instrumentation/fmcFP/alternate/icao", cduinput);
