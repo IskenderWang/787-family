@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- IT-VNAV-Extension v0.3.2 -->
+<!-- IT-VNAV-Extension v0.4.0 -->
 <!-- Copyright (c) 2023 Nicolás Castellán (nico-castell) -->
 
 <PropertyList>
@@ -347,46 +347,6 @@
         </output>
     </logic>
 
-    <!-- Autofill departure altitude information -->
-    <filter>
-        <name>Autofill departure altitude information</name>
-        <type>gain</type>
-        <gain>1.0</gain>
-
-        <enable>
-            <condition>
-                <equals>
-                    <expression>
-                        <sum>
-                            <property>/autopilot/route-manager/current-wp</property>
-                            <value>-1</value>
-                        </sum>
-                    </expression>
-                    <value>0</value>
-                </equals>
-            </condition>
-        </enable>
-
-        <input>
-            <property>/it-vnav/internal/rwy-alt-ft</property>
-        </input>
-        <output>
-            <property>/autopilot/route-manager/route/wp[0]/altitude-ft</property>
-        </output>
-
-        <input>
-            <expression>
-                <div>
-                    <property>/it-vnav/internal/rwy-alt-ft</property>
-                    <value>3.28083</value>
-                </div>
-            </expression>
-        </input>
-        <output>
-            <property>/autopilot/route-manager/route/wp[0]/altitude-m</property>
-        </output>
-    </filter>
-
     <!-- Reset above-vnav-ft after landing -->
     <logic>
         <name>Reset above-vnav-ft after landing</name>
@@ -632,8 +592,7 @@
     <!-- Connect VNAV's V/S to IT-AUTOFLIGHT's V/S input when VNAV is engaged and capturing -->
     <filter>
         <name>Connect VNAV's V/S to IT-AUTOFLIGHT's V/S input when VNAV is engaged and capturing</name>
-        <type>gain</type>
-        <gain>1.0</gain>
+        <type>noise-spike</type>
 
         <enable>
             <condition>
@@ -657,6 +616,6 @@
         <output>
             <property>/it-autoflight/input/vs</property>
         </output>
-        <max-rate-of-change>5</max-rate-of-change>
+        <max-rate-of-change>1000</max-rate-of-change>
     </filter>
 </PropertyList>

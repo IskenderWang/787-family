@@ -1,4 +1,4 @@
-# IT-VNAV-Extension Controller v0.3.2
+# IT-VNAV-Extension Controller v0.4.0
 # Copyright (c) 2023 Nicolás Castellán (nico-castell)
 
 var VnavMgr = {
@@ -135,6 +135,7 @@ var VnavMgr = {
 
     descend_button: func() {
         button = "it-vnav/inputs/descend-button";
+        descent = getprop("it-vnav/internal/altitude-from") < getprop("it-autoflight/input/alt");
         if (!getprop(button))
             return;
 
@@ -170,25 +171,25 @@ var VnavMgr = {
         text = "it-vnav/output/controller";
 
         if (getprop("it-vnav/internal/cruise-phase"))
-            setprop(text, "CRSE");
+            setprop(text, "CRUISE");
         else
-            setprop(text, "TRAN");
+            setprop(text, "TRANSITION");
     },
 
     handle_steps_text: func() {
         text = "it-vnav/output/steps";
 
         if (getprop("it-vnav/inputs/steps"))
-            setprop(text, "STEP");
+            setprop(text, "STEPS");
         else
-            setprop(text, "NORM");
+            setprop(text, "NORMAL");
     },
 
     handle_descent_text: func() {
         text = "it-vnav/output/descent-type";
 
         if (getprop("it-vnav/settings/controlled-descent"))
-            setprop(text, "CTLD");
+            setprop(text, "CONTROLED");
         else
             setprop(text, "FREE");
     }
