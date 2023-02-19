@@ -136,11 +136,12 @@ var VnavMgr = {
 
     descend_button: func() {
         button = "it-vnav/inputs/descend-button";
-        descent = getprop("it-vnav/internal/altitude-from") < getprop("it-autoflight/input/alt");
         if (!getprop(button))
             return;
 
-        setprop("it-vnav/internal/descent-authorized", 1);
+        if (getprop("it-vnav/internal/altitude-from") < getprop("it-autoflight/input/alt"))
+            setprop("it-vnav/internal/descent-authorized", 1);
+
         VnavMgr.handle_vert_path_change();
 
         setprop(button, 0);
