@@ -22,6 +22,7 @@ var VnavMgr = {
         VnavMgr.handle_controller_text();
         VnavMgr.handle_steps_text();
         VnavMgr.handle_descent_text();
+        VnavMgr.handle_auto_descend_text();
     },
 
     update_wp: func() {
@@ -192,6 +193,15 @@ var VnavMgr = {
             setprop(text, "CONTROLED");
         else
             setprop(text, "FREE");
+    },
+
+    handle_auto_descend_text: func() {
+        text = "it-vnav/output/auto-descend";
+
+        if (getprop("it-vnav/settings/auto-descend"))
+            setprop(text, "ON");
+        else
+            setprop(text, "OFF");
     }
 };
 
@@ -257,4 +267,9 @@ setlistener("sim/signals/fdm-initialized", func {
         "it-vnav/settings/controlled-descent",
         VnavMgr.handle_descent_text,
     0, 0);
+
+    setlistener(
+        "it-vnav/settings/auto-descend",
+        VnavMgr.handle_auto_descend_text,
+    0 ,0);
 });
