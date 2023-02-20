@@ -115,261 +115,6 @@
         </output>
     </logic>
 
-    <!-- V/S required by route -->
-    <filter>
-        <name>V/S required by route</name>
-        <type>gain</type>
-        <gain>1.0</gain>
-
-        <input>
-            <expression>
-                <floor>
-                    <sum>
-                        <div>
-                            <property>/it-vnav/internal/altitude-difference-ft</property>
-                            <div>
-                                <property>/it-vnav/internal/distance-to-wp</property>
-                                <div>
-                                    <property>/velocities/groundspeed-kt</property>
-                                    <value>60.0</value>
-                                </div>
-                            </div>
-                        </div>
-                        <value>0.5</value>
-                    </sum>
-                </floor>
-            </expression>
-        </input>
-
-        <output>
-            <property>/it-vnav/internal/route-vs-cmd</property>
-        </output>
-    </filter>
-
-    <!-- Throttle limited -->
-    <filter>
-        <name>Throttle limited</name>
-        <type>gain</type>
-        <gain>1.0</gain>
-
-        <input>
-            <condition>
-                <or>
-                    <greater-than>
-                        <expression>
-                            <div>
-                                <sum>
-                                    <property>/controls/engines/engine[0]/throttle</property>
-                                    <property>/controls/engines/engine[1]/throttle</property>
-                                </sum>
-                                <value>2</value>
-                            </div>
-                        </expression>
-                        <expression>
-                            <sum>
-                                <property>/it-autoflight/settings/autothrottle-max</property>
-                                <value>-0.01</value>
-                            </sum>
-                        </expression>
-                    </greater-than>
-                    <less-than>
-                        <expression>
-                            <div>
-                                <sum>
-                                    <property>/controls/engines/engine[0]/throttle</property>
-                                    <property>/controls/engines/engine[1]/throttle</property>
-                                </sum>
-                                <value>2</value>
-                            </div>
-                        </expression>
-                        <expression>
-                            <sum>
-                                <property>/it-autoflight/settings/autothrottle-min</property>
-                                <value>0.01</value>
-                            </sum>
-                        </expression>
-                    </less-than>
-                </or>
-            </condition>
-
-            <true />
-        </input>
-
-        <input>
-            <false />
-        </input>
-
-        <output>
-            <property>/it-vnav/internal/throttle-limited</property>
-        </output>
-    </filter>
-
-    <!-- Climb controller V/S with autothrottle -->
-    <filter>
-        <name>Climb controller V/S with autothrottle</name>
-        <type>gain</type>
-        <gain>1.0</gain>
-
-        <enable>
-            <condition>
-                <greater-than> <!-- Conveniently, this also ensures that we're not in cruise phase -->
-                    <property>/it-autoflight/input/alt</property>
-                    <property>/it-vnav/internal/altitude-from</property>
-                </greater-than>
-                <property>/it-autoflight/output/athr</property>
-            </condition>
-        </enable>
-
-        <input>
-            <property>/it-autoflight/input/vs</property>
-        </input>
-
-        <reference>
-            <condition>
-                <property>/it-vnav/internal/throttle-limited</property>
-                <greater-than>
-                    <property>/it-vnav/internal/route-vs-cmd</property>
-                    <property>/it-autoflight/internal/target-fpm-flch</property>
-                </greater-than>
-            </condition>
-
-            <property>/it-autoflight/internal/target-fpm-flch</property>
-        </reference>
-
-        <reference>
-            <property>/it-vnav/internal/route-vs-cmd</property>
-        </reference>
-
-        <output>
-            <property>/it-vnav/internal/vs-cmd</property>
-        </output>
-    </filter>
-
-    <!-- Climb controller V/S without autothrottle -->
-    <fitler>
-        <name>Climb controller V/S without autothrottle</name>
-        <type>gain</type>
-        <gain>1.0</gain>
-
-        <enable>
-            <condition>
-                <greater-than> <!-- Conveniently, this also ensures that we're not in cruise phase -->
-                    <property>/it-autoflight/input/alt</property>
-                    <property>/it-vnav/internal/altitude-from</property>
-                </greater-than>
-                <not>
-                    <property>/it-autoflight/output/athr</property>
-                </not>
-            </condition>
-        </enable>
-
-        <input>
-            <property>/it-autoflight/input/vs</property>
-        </input>
-
-        <reference>
-            <condition>
-                <greater-than>
-                    <property>/it-vnav/internal/route-vs-cmd</property>
-                    <property>/it-autoflight/internal/target-fpm-flch</property>
-                </greater-than>
-            </condition>
-
-            <property>/it-autoflight/internal/target-fpm-flch</property>
-        </reference>
-
-        <reference>
-            <property>/it-vnav/internal/route-vs-cmd</property>
-        </reference>
-
-        <output>
-            <property>/it-vnav/internal/vs-cmd</property>
-        </output>
-    </fitler>
-
-    <!-- Descent controller V/S with autothrottle -->
-    <filter>
-        <name>Descent controller V/S with autothrottle</name>
-        <type>gain</type>
-        <gain>1.0</gain>
-
-        <enable>
-            <condition>
-                <less-than> <!-- Conveniently, this also ensures that we're not in cruise phase -->
-                    <property>/it-autoflight/input/alt</property>
-                    <property>/it-vnav/internal/altitude-from</property>
-                </less-than>
-                <property>/it-autoflight/output/athr</property>
-            </condition>
-        </enable>
-
-        <input>
-            <property>/it-autoflight/input/vs</property>
-        </input>
-
-        <reference>
-            <condition>
-                <property>/it-vnav/internal/throttle-limited</property>
-                <less-than>
-                    <property>/it-vnav/internal/route-vs-cmd</property>
-                    <property>/it-autoflight/internal/target-fpm-flch</property>
-                </less-than>
-                <property>/it-vnav/settings/controlled-descent</property>
-            </condition>
-
-            <property>/it-autoflight/internal/target-fpm-flch</property>
-        </reference>
-
-        <reference>
-            <property>/it-vnav/internal/route-vs-cmd</property>
-        </reference>
-
-        <output>
-            <property>/it-vnav/internal/vs-cmd</property>
-        </output>
-    </filter>
-
-    <!-- Descent controller V/S without autothrottle -->
-    <filter>
-        <name>Descent controller V/S without autothrottle</name>
-        <type>gain</type>
-        <gain>1.0</gain>
-
-        <enable>
-            <condition>
-                <less-than> <!-- Conveniently, this also ensures that we're not in cruise phase -->
-                    <property>/it-autoflight/input/alt</property>
-                    <property>/it-vnav/internal/altitude-from</property>
-                </less-than>
-                <not>
-                    <property>/it-autoflight/output/athr</property>
-                </not>
-            </condition>
-        </enable>
-
-        <input>
-            <property>/it-autoflight/input/vs</property>
-        </input>
-
-        <reference>
-            <condition>
-                <less-than>
-                    <property>/it-vnav/internal/route-vs-cmd</property>
-                    <property>/it-autoflight/internal/target-fpm-flch</property>
-                </less-than>
-                <property>/it-vnav/settings/controlled-descent</property>
-            </condition>
-
-            <property>/it-autoflight/internal/target-fpm-flch</property>
-        </reference>
-
-        <reference>/it-vnav/internal/route-vs-cmd</reference>
-
-        <output>
-            <property>/it-vnav/internal/vs-cmd</property>
-        </output>
-    </filter>
-
     <!-- Detect runway altitude -->
     <filter>
         <name>Detect runway altitude</name>
@@ -683,10 +428,217 @@
         </output>
     </logic>
 
-    <!-- Connect VNAV's V/S to IT-AUTOFLIGHT's V/S input when VNAV is engaged and capturing -->
+    <!-- V/S required by route (R-V/S) -->
     <filter>
-        <name>Connect VNAV's V/S to IT-AUTOFLIGHT's V/S input when VNAV is engaged and capturing</name>
+        <name>V/S required by route</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <input>
+            <expression>
+                <div>
+                    <property>/it-vnav/internal/altitude-difference-ft</property>
+                    <div>
+                        <property>/it-vnav/internal/distance-to-wp</property>
+                        <div>
+                            <property>/velocities/groundspeed-kt</property>
+                            <value>60.0</value>
+                        </div>
+                    </div>
+                </div>
+            </expression>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/route-vs</property>
+        </output>
+    </filter>
+
+    <!-- Determine if throttle is ok -->
+    <logic>
+        <name>Determine if throttle is ok</name>
+
+        <input>
+            <and>
+                <less-than>
+                    <expression>
+                        <div>
+                            <sum>
+                                <property>/controls/engines/engine[0]/throttle</property>
+                                <property>/controls/engines/engine[1]/throttle</property>
+                            </sum>
+                            <value>2</value>
+                        </div>
+                    </expression>
+                    <expression>
+                        <sum>
+                            <property>/it-autoflight/settings/autothrottle-max</property>
+                            <value>-0.01</value>
+                        </sum>
+                    </expression>
+                </less-than>
+                <greater-than>
+                    <expression>
+                        <div>
+                            <sum>
+                                <property>/controls/engines/engine[0]/throttle</property>
+                                <property>/controls/engines/engine[1]/throttle</property>
+                            </sum>
+                            <value>2</value>
+                        </div>
+                    </expression>
+                    <expression>
+                        <sum>
+                            <property>/it-autoflight/settings/autothrottle-min</property>
+                            <value>0.01</value>
+                        </sum>
+                    </expression>
+                </greater-than>
+            </and>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/throttle-ok</property>
+        </output>
+    </logic>
+
+    <!-- Determine if we're descending -->
+    <logic>
+        <name>Determine if we're descending</name>
+
+        <input>
+            <less-than>
+                <property>/it-autoflight/input/alt</property>
+                <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+            </less-than>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/descending</property>
+        </output>
+    </logic>
+
+    <!-- Determine if route is ok (not too steep) -->
+    <logic>
+        <name>Determine if route is ok (not too steep)</name>
+
+        <input>
+            <or>
+                <and>
+                    <property>/it-vnav/internal/descending</property>
+                    <greater-than>
+                        <property>/it-vnav/internal/route-vs</property>
+                        <property>/it-autoflight/internal/target-fpm-flch</property>
+                    </greater-than>
+                </and>
+                <and>
+                    <not>
+                        <property>/it-vnav/internal/descending</property>
+                    </not>
+                    <less-than>
+                        <property>/it-vnav/internal/route-vs</property>
+                        <property>/it-autoflight/internal/target-fpm-flch</property>
+                    </less-than>
+                </and>
+            </or>
+        </input>
+
+        <input>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/route-ok</property>
+        </output>
+    </logic>
+
+    <!-- Transition V/S controller -->
+    <filter>
+        <name>Transition V/S controller</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <input> <!-- Command R-V/S when possible, fallback onto FLCH -->
+            <condition>
+                <or>
+                    <and> <!-- ATHR + THR-OK = R-V/S -->
+                        <property>/it-autoflight/output/athr</property>
+                        <property>/it-vnav/internal/throttle-ok</property>
+                    </and>
+                    <and> <!-- ATHR + THR-LIM + ROK = R-V/S -->
+                        <property>/it-autoflight/output/athr</property>
+                        <not>
+                            <property>/it-vnav/internal/throttle-ok</property>
+                        </not>
+                        <property>/it-vnav/internal/route-ok</property>
+                    </and>
+                    <and> <!-- MTHR + ROK = R-V/S -->
+                        <not>
+                            <property>/it-autoflight/output/athr</property>
+                        </not>
+                        <property>/it-vnav/internal/route-ok</property>
+                    </and>
+                    <and> <!-- MTHR + RST + DES + FREE = R-V/S -->
+                        <not>
+                            <property>/it-autoflight/output/athr</property>
+                        </not>
+                        <not>
+                            <property>/it-vnav/internal/throttle-ok</property>
+                        </not>
+                        <property>/it-vnav/internal/descending</property> <!-- TODO: Create -->
+                        <not>
+                            <property>/it-vnav/settings/controlled-descent</property>
+                        </not>
+                    </and>
+                    <and> <!-- ATHR + THR-LIM + RST + DES + FREE = R-V/S -->
+                        <property>/it-autoflight/output/athr</property>
+                        <not>
+                            <property>/it-vnav/internal/throttle-ok</property>
+                        </not>
+                        <not>
+                            <property>/it-vnav/internal/route-ok</property>
+                        </not>
+                        <property>/it-vnav/internal/descending</property>
+                        <not>
+                            <property>/it-vnav/settings/controlled-descent</property>
+                        </not>
+                    </and>
+                </or>
+            </condition>
+
+            <property>/it-vnav/internal/route-vs</property>
+        </input>
+
+        <input>
+            <property>/it-autoflight/internal/target-fpm-flch</property>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/vs-raw</property>
+        </output>
+        <min>-6000</min>
+        <max>6000</max>
+    </filter>
+
+    <!-- Filter V/S controller -->
+    <filter>
+        <name>Filter V/S controller</name>
         <type>noise-spike</type>
+
+        <input>
+            <property>/it-vnav/internal/vs-raw</property>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/vs-filtered</property>
+        </output>
+        <max-rate-of-change>1000</max-rate-of-change>
+    </filter>
+
+    <!-- Connect transition controller to ITAF's V/S input when necessary -->
+    <filter>
+        <name>Connect transition controller to ITAF's V/S input when necessary</name>
+        <type>gain</type>
+        <gain>1.0</gain>
 
         <enable>
             <condition>
@@ -694,22 +646,25 @@
                 <not>
                     <property>/it-vnav/internal/captured</property>
                 </not>
+                <not>
+                    <property>/it-vnav/internal/cruise-phase</property>
+                </not>
             </condition>
         </enable>
 
         <input>
             <expression>
-                <clip> <!-- IT-AUTOFLIGHT doesn't recommend any more than 6000 ft/m climb or descent -->
-                    <clipMin>-6000</clipMin>
-                    <clipMax>6000</clipMax>
-                    <property>/it-vnav/internal/vs-cmd</property>
-                </clip>
+                <floor>
+                    <sum>
+                        <property>/it-vnav/internal/vs-filtered</property>
+                        <value>0.5</value>
+                    </sum>
+                </floor>
             </expression>
         </input>
 
         <output>
             <property>/it-autoflight/input/vs</property>
         </output>
-        <max-rate-of-change>1500</max-rate-of-change>
     </filter>
 </PropertyList>
