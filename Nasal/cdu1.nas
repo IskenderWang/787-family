@@ -713,16 +713,16 @@ var cdu = {
 			##### Display nothing if there're no waypoints
 
 			if (getprop("/autopilot/route-manager/route/num") == 0) {
-				setprop("/controls/cdu/display/l1", "-");
-				setprop("/controls/cdu/display/r1", "-");
-				setprop("/controls/cdu/display/l2", "-");
-				setprop("/controls/cdu/display/r2", "-");
-				setprop("/controls/cdu/display/l3", "-");
-				setprop("/controls/cdu/display/r3", "-");
-				setprop("/controls/cdu/display/l4", "-");
-				setprop("/controls/cdu/display/r4", "-");
-				setprop("/controls/cdu/display/l5", "-");
-				setprop("/controls/cdu/display/r5", "-");
+				setprop("/controls/cdu/display/l1", "");
+				setprop("/controls/cdu/display/r1", "");
+				setprop("/controls/cdu/display/l2", "");
+				setprop("/controls/cdu/display/r2", "");
+				setprop("/controls/cdu/display/l3", "");
+				setprop("/controls/cdu/display/r3", "");
+				setprop("/controls/cdu/display/l4", "");
+				setprop("/controls/cdu/display/r4", "");
+				setprop("/controls/cdu/display/l5", "");
+				setprop("/controls/cdu/display/r5", "");
 			} else {
 				var currentwp = getprop("/autopilot/route-manager/current-wp");
 
@@ -745,7 +745,7 @@ var cdu = {
 						keypress = "";
 					}
 				} else {
-					setprop("/controls/cdu/display/r5", "-");
+					setprop("/controls/cdu/display/r5", "");
 				}
 
 				if (getprop("/controls/cdu/route-manager/page") != 1) {
@@ -758,25 +758,25 @@ var cdu = {
 						keypress = "";
 					}
 				} else {
-					setprop("/controls/cdu/display/l5", "-");
+					setprop("/controls/cdu/display/l5", "");
 				}
 
 				###### Display the waypoint pages
 
-				var l1 = "-";
-				var r1 = "-";
+				var l1 = "";
+				var r1 = "";
 				var l1type = "disp";
 				var r1type = "disp";
-				var l2 = "-";
-				var r2 = "-";
+				var l2 = "";
+				var r2 = "";
 				var l2type = "disp";
 				var r2type = "disp";
-				var l3 = "-";
-				var r3 = "-";
+				var l3 = "";
+				var r3 = "";
 				var l3type = "disp";
 				var r3type = "disp";
-				var l4 = "-";
-				var r4 = "-";
+				var l4 = "";
+				var r4 = "";
 				var l4type = "disp";
 				var r4type = "disp";
 
