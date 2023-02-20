@@ -213,9 +213,9 @@
             <cockpit type="bool">true</cockpit>
             <config>
                 <x-offset-m type="double">-0.568</x-offset-m>
-                <y-offset-m type="double">2.242</y-offset-m>
+                <y-offset-m type="double">2.298</y-offset-m>
                 <z-offset-m type="double">-22.612</z-offset-m>
-                <pitch-offset-deg>-10.3</pitch-offset-deg>
+                <pitch-offset-deg>-10</pitch-offset-deg>
                 <default-field-of-view-deg type="double">90.0</default-field-of-view-deg>
             </config>
         </view>
@@ -343,9 +343,9 @@
                 <right-direction-deg type="double">270</right-direction-deg>
                 <front-right-direction-deg type="double">315</front-right-direction-deg>
                 <x-offset-m type="double">0.568</x-offset-m>
-                <y-offset-m type="double">2.242</y-offset-m>
+                <y-offset-m type="double">2.298</y-offset-m>
                 <z-offset-m type="double">-22.612</z-offset-m>
-                <pitch-offset-deg>-10.3</pitch-offset-deg>
+                <pitch-offset-deg>-10</pitch-offset-deg>
             </config>
             <dynamic>
                 <enabled type="bool" userarchive="y">false</enabled>
@@ -832,9 +832,6 @@
             <ground-spoilers-armed type="bool">false</ground-spoilers-armed>
             <speedbrake-lever type="double">0</speedbrake-lever>
         </flight>
-        <gear>
-            <brake-parking type="bool">true</brake-parking>
-        </gear>
         <lighting>
             <beacon type="bool">false</beacon>
             <interior type="double">0</interior>
@@ -920,35 +917,39 @@
             <nav-display n="1" type="int">0</nav-display>
         </nav-compass>
 
-        <!-- See http://wiki.flightgear.org/index.php/GPWS -->
+        <!-- https://wiki.flightgear.org/Ground_proximity_warning_system -->
         <mk-viii>
-            <serviceable type="bool">true</serviceable>
+            <serviceable>true</serviceable>       <!-- EGPWS_ENABLE -->
+
             <configuration-module>
-                <category-1 type="int">255</category-1>
-                <category-3 type="int">2</category-3>
-                <category-4 type="int">13</category-4>
-                <category-5 type="int">0</category-5>
-                <category-6 type="int">1</category-6>
-                <category-7 type="int">124</category-7>
-                <category-8 type="int">2</category-8>
-                <category-9 type="int">3</category-9>
-                <category-10 type="int">6</category-10>
-                <category-13 type="int">7</category-13>
-                <category-14 type="int">0</category-14>
+                <category-1>  255  </category-1>  <!-- AIRCRAFT_MODE_TYPE_SELECT -->
+                <category-3>  2    </category-3>  <!-- POSITION_INPUT_SELECT -->
+                <category-4>  1002 </category-4>  <!-- ALTITUDE_CALLOUTS -->
+                <category-5>  0    </category-5>  <!-- AUDIO_MENU_SELECT -->
+                <category-6>  1    </category-6>  <!-- TERRAIN_DISPLAY_SELECT -->
+                <category-7>  124  </category-7>  <!-- OPTIONS_SELECT_GROUP_1 -->
+                <category-8>  3    </category-8>  <!-- RADIO_ALTITUDE_INPUT_SELECT -->
+                <category-9>  3    </category-9>  <!-- NAVIGATION_INPUT_SELECT -->
+                <category-10> 6    </category-10> <!-- ATTITUDE_INPUT_SELECT -->
+                <category-13> 7    </category-13> <!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->
+                <category-14> 0    </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
             </configuration-module>
-            <inputs>
+
+            <inputs>                              <!-- Module I/O -->
                 <arinc429>
-                    <decision-height-ncd type="bool">false</decision-height-ncd>
-                    <decision-height type="double">200</decision-height>
+                    <decision-height-ncd> false </decision-height-ncd>
+                    <decision-height> 200 </decision-height>
                 </arinc429>
             </inputs>
-            <speaker>
-                <max-dist type="double">2</max-dist>
-                <reference-dist type="double">1</reference-dist>
-                <volume type="double">0.4</volume>
+
+            <speaker>                             <!-- Speaker configuration -->
+                <max-dist> 2 </max-dist>          <!-- Max distance where speakers is heard -->
+                <reference-dist> 1 </reference-dist> <!-- Distance to pilot -->
+                <volume> 0.4 </volume>            <!-- volume at reference distance -->
             </speaker>
+
             <voice>
-                <file-prefix>Aircraft/787-family/Sounds/GPWS/</file-prefix>
+                <file-prefix type="string">Aircraft/787-family/Sounds/GPWS/</file-prefix>
             </voice>
         </mk-viii>
     </instrumentation>
@@ -960,9 +961,49 @@
         </internal>
     </autopilot>
 
+    <limits>
+        <max-flap-extension-speed>
+            <flaps>0.03333</flaps>
+            <speed>250</speed>
+        </max-flap-extension-speed>
+        <max-flap-extension-speed>
+            <flaps>0.16666</flaps>
+            <speed>230</speed>
+        </max-flap-extension-speed>
+        <max-flap-extension-speed>
+            <flaps>0.50000</flaps>
+            <speed>215</speed>
+        </max-flap-extension-speed>
+        <max-flap-extension-speed>
+            <flaps>0.66666</flaps>
+            <speed>210</speed>
+        </max-flap-extension-speed>
+        <max-flap-extension-speed>
+            <flaps>0.83333</flaps>
+            <speed>180</speed>
+        </max-flap-extension-speed>
+        <max-flap-extension-speed>
+            <flaps>1.00000</flaps>
+            <speed>170</speed>
+        </max-flap-extension-speed>
+
+        <max-gear-extension-speed>270</max-gear-extension-speed>
+
+        <max-positive-g>4.4</max-positive-g>
+        <max-negative-g>-1.76</max-negative-g>
+
+        <mass-and-balance>
+            <maximum-ramp-mass-lbs>504500</maximum-ramp-mass-lbs>
+            <maximum-takeoff-mass-lbs>502500</maximum-takeoff-mass-lbs>
+            <maximum-landing-mass-lbs>380000</maximum-landing-mass-lbs>
+            <maximum-zero-fuel-mass-lbs>355000</maximum-zero-fuel-mass-lbs>
+        </mass-and-balance>
+    </limits>
+
     <nasal>
         <b787>
             <file>Aircraft/787-family/Nasal/sysinfo.nas</file>
+            <file>Aircraft/Generic/limits.nas</file>
         </b787>
         <systems>
             <file>Aircraft/787-family/Nasal/systems-8-GEnx.nas</file>
