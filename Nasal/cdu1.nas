@@ -2138,7 +2138,7 @@ var cdu = {
 				keypress = "";
 			} elsif (keypress == "r6") {
 				page = "ROUTE";
-				in_page = math.ceil(getprop("/autopilot/route-manager/current-wp") / 4);
+				in_page = math.ceil((getprop("/autopilot/route-manager/current-wp") + 1) / 4);
 				if (in_page < 1)
 					in_page = 1;
 				setprop("/controls/cdu/route-manager/page", in_page);

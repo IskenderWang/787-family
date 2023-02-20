@@ -1,4 +1,4 @@
-# IT-VNAV-Extension Controller v0.4.0
+# IT-VNAV-Extension Controller v0.4.1
 # Copyright (c) 2023 Nicolás Castellán (nico-castell)
 
 var VnavMgr = {
@@ -48,6 +48,8 @@ var VnavMgr = {
 
         if (getprop(itaf_alt) != target_ft)
             setprop("it-vnav/internal/capture-inhibit", 0);
+
+        setprop("it-vnav/internal/altitude-from", getprop(itaf_alt));
 
         if (getprop("it-vnav/internal/engaged") == 1)
             setprop(itaf_alt, target_ft);
@@ -139,7 +141,7 @@ var VnavMgr = {
         if (!getprop(button))
             return;
 
-        if (getprop("it-vnav/internal/altitude-from") < getprop("it-autoflight/input/alt"))
+        if (getprop("it-autoflight/input/alt") < getprop("it-vnav/internal/altitude-from"))
             setprop("it-vnav/internal/descent-authorized", 1);
 
         VnavMgr.handle_vert_path_change();
@@ -191,7 +193,7 @@ var VnavMgr = {
         text = "it-vnav/output/descent-type";
 
         if (getprop("it-vnav/settings/controlled-descent"))
-            setprop(text, "CONTROLED");
+            setprop(text, "CONTROLLED");
         else
             setprop(text, "FREE");
     },

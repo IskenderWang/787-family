@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- IT-VNAV-Extension v0.4.0 -->
+<!-- IT-VNAV-Extension v0.4.1 -->
 <!-- Copyright (c) 2023 Nicolás Castellán (nico-castell) -->
 
 <PropertyList>
@@ -394,6 +394,12 @@
                     <property>/it-autoflight/output/vert</property>
                     <value>6</value>
                 </less-than>
+                <not>
+                    <equals> <!-- G/S -->
+                        <property>/it-autoflight/output/vert</property>
+                        <value>2</value>
+                    </equals>
+                </not>
             </condition>
         </enable>
 
@@ -435,6 +441,12 @@
                             <property>/it-autoflight/output/vert</property>
                             <value>6</value>
                         </less-than>
+                        <not>
+                            <equals> <!-- G/S -->
+                                <property>/it-autoflight/output/vert</property>
+                                <value>2</value>
+                            </equals>
+                        </not>
                     </and>
                 </not>
             </condition>
