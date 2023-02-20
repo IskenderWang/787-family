@@ -858,6 +858,9 @@
             </copilot>
             <ind type="bool">1</ind>
         </switches>
+        <autobrake>
+            <possible-rto type="bool">false</possible-rto>
+        </autobrake>
     </controls>
 
     <engines>

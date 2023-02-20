@@ -101,11 +101,23 @@
                 <name>Ctrl-b</name>
                 <desc>Cycle speedbrake setting</desc>
                 <binding>
-                    <command>property-cycle</command>
-                    <property>controls/flight/speedbrake-lever</property>
-                    <value>0</value>
-                    <value>0.5</value>
-                    <value>1</value>
+                    <command>nasal</command>
+                    <script><![CDATA[
+                        var lever = "controls/flight/speedbrake-lever";
+                        var auto = "controls/flight/speedbrake-auto";
+
+                        if (getprop(auto) == 1) {
+                            setprop(lever, 0.0);
+                            setprop(auto, 0);
+                            return;
+                        }
+
+                        var setting = getprop(lever) + 0.5;
+                        if (setting > 1) {
+                            setting = 0;
+                        }
+                        setprop(lever, setting);
+                        ]]></script>
                 </binding>
             </key>
             <key n="11">

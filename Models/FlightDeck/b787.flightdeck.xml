@@ -2586,12 +2586,15 @@
 	<animation>
 		<type>pick</type>
 		<object-name>autobrake</object-name>
+
+        <!-- Cycle using left click -->
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-cycle</command>
 				<property>controls/autobrake/setting</property>
+				<value>-1</value>
 				<value>0</value>
 				<value>1</value>
 				<value>2</value>
@@ -2601,6 +2604,41 @@
 				<value>6</value>
 			</binding>
 		</action>
+
+        <!-- Set to OFF using right click -->
+        <action>
+            <button>2</button>
+            <repetable type="bool">false</repetable>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autobrake/setting</property>
+                <value>0</value>
+            </binding>
+        </action>
+
+        <!-- Adjust using mouse wheel -->
+        <action>
+            <button>3</button>
+            <repeatable type="bool">true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/autobrake/setting</property>
+                <step>1</step>
+                <min>-1</min>
+                <max>6</max>
+            </binding>
+        </action>
+        <action>
+            <button>4</button>
+            <repeatable type="bool">true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/autobrake/setting</property>
+                <step>-1</step>
+                <min>-1</min>
+                <max>6</max>
+            </binding>
+        </action>
 	</animation>
 
 	<animation>
@@ -2608,13 +2646,14 @@
 		<object-name>autobrake</object-name>
 		<property>controls/autobrake/setting</property>
 		<interpolation>
+			<entry><ind>-1</ind><dep>-120</dep></entry>
 			<entry><ind>0</ind><dep>-90</dep></entry>
-			<entry><ind>1</ind><dep>-20</dep></entry>
-			<entry><ind>2</ind><dep>10</dep></entry>
-			<entry><ind>3</ind><dep>40</dep></entry>
-			<entry><ind>4</ind><dep>70</dep></entry>
-			<entry><ind>5</ind><dep>90</dep></entry>
-			<entry><ind>6</ind><dep>-120</dep></entry>
+			<entry><ind>1</ind><dep>-60</dep></entry>
+			<entry><ind>2</ind><dep>-30</dep></entry>
+			<entry><ind>3</ind><dep>0</dep></entry>
+			<entry><ind>4</ind><dep>30</dep></entry>
+			<entry><ind>5</ind><dep>60</dep></entry>
+			<entry><ind>6</ind><dep>90</dep></entry>
 		</interpolation>
 		<axis>
 			<x1-m>-23.7217</x1-m>
