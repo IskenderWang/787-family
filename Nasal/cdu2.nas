@@ -1583,7 +1583,7 @@ var cdu1 = {
 				setprop("/it-vnav/settings/controlled-descent", !getprop("/it-vnav/settings/controlled-descent"));
 				keypress = "";
 			} elsif (keypress == "r5") {
-				setprop("/it-vnav/inputs/steps", !getprop("/it-vnav/inputs/steps"));
+				setprop("/it-vnav/settings/steps", !getprop("/it-vnav/settings/steps"));
 				keypress = "";
 			}
 		} elsif (page == "HOLD CONFIG") {
