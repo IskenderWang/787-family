@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- IT-VNAV-Extension v0.5.0 -->
+<!-- IT-VNAV-Extension v0.6.0 -->
 <!-- Copyright (c) 2023 Nicolás Castellán (nico-castell) -->
 
 <PropertyList>
@@ -428,7 +428,63 @@
         </output>
     </logic>
 
-    <!-- V/S required by route (R-V/S) -->
+    <!-- Command R-V/S, fallback onto FLCH when needed -->
+    <logic>
+        <name>Command R-V/S, fallback onto FLCH when needed</name>
+
+        <input>
+            <or>
+                <and> <!-- ATHR + THR-OK = R-V/S -->
+                    <property>/it-autoflight/output/athr</property>
+                    <property>/it-vnav/internal/throttle-ok</property>
+                </and>
+                <and> <!-- ATHR + THR-LIM + ROK = R-V/S -->
+                    <property>/it-autoflight/output/athr</property>
+                    <not>
+                        <property>/it-vnav/internal/throttle-ok</property>
+                    </not>
+                    <property>/it-vnav/internal/route-ok</property>
+                </and>
+                <and> <!-- MTHR + ROK = R-V/S -->
+                    <not>
+                        <property>/it-autoflight/output/athr</property>
+                    </not>
+                    <property>/it-vnav/internal/route-ok</property>
+                </and>
+                <and> <!-- MTHR + RST + DES + FREE = R-V/S -->
+                    <not>
+                        <property>/it-autoflight/output/athr</property>
+                    </not>
+                    <not>
+                        <property>/it-vnav/internal/throttle-ok</property>
+                    </not>
+                    <property>/it-vnav/internal/descending</property>
+                    <not>
+                        <property>/it-vnav/settings/controlled-descent</property>
+                    </not>
+                </and>
+                <and> <!-- ATHR + THR-LIM + RST + DES + FREE = R-V/S -->
+                    <property>/it-autoflight/output/athr</property>
+                    <not>
+                        <property>/it-vnav/internal/throttle-ok</property>
+                    </not>
+                    <not>
+                        <property>/it-vnav/internal/route-ok</property>
+                    </not>
+                    <property>/it-vnav/internal/descending</property>
+                    <not>
+                        <property>/it-vnav/settings/controlled-descent</property>
+                    </not>
+                </and>
+            </or>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/use-route-vs</property>
+        </output>
+    </logic>
+
+    <!-- VNAV's R-V/S: V/S required by route -->
     <filter>
         <name>V/S required by route</name>
         <type>gain</type>
@@ -452,6 +508,118 @@
         <output>
             <property>/it-vnav/internal/route-vs</property>
         </output>
+    </filter>
+
+    <!-- VNAV's FLCH: Filter ITAF's flch-kts-error-cmd -->
+    <filter>
+        <name>VNAV's FLCH: Filter ITAF's flch-kts-error-cmd</name>
+        <type>noise-spike</type>
+        <feedback-if-disabled>true</feedback-if-disabled>
+        <initialize-to>output</initialize-to>
+
+        <input>
+            <property>/it-autoflight/internal/flch-kts-error-cmd</property>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/flch-kts-error</property>
+        </output>
+		<max-rate-of-change>
+			<condition>
+                <not>
+                    <property>/it-vnav/internal/use-route-vs</property>
+                </not>
+			</condition>
+			<value>1.5</value>
+		</max-rate-of-change>
+		<max-rate-of-change>100</max-rate-of-change>
+    </filter>
+
+    <!-- VNAV's FLCH: Speed By Pitch Delta -->
+    <filter>
+        <name>VNAV's FLCH: Speed By Pitch Delta</name>
+        <type>gain</type>
+        <gain>
+            <expression>
+                <table>
+                    <property>/velocities/airspeed-kt</property>
+                    <entry><ind>140</ind><dep> 700</dep></entry>
+                    <entry><ind>360</ind><dep>1400</dep></entry>
+                </table>
+            </expression>
+        </gain>
+
+        <input>
+            <condition>
+                <equals>
+                    <property>/it-autoflight/input/kts-mach</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+            <property>/it-autoflight/internal/mach-rate</property>
+        </input>
+
+        <input>/it-autoflight/internal/kts-rate</input>
+
+        <reference>/it-vnav/internal/flch-kts-error</reference>
+
+        <output>/it-vnav/internal/flch-raw</output>
+        <min>
+            <condition>
+                <or>
+                    <equals>
+                        <property>/gear/gear[1]/wow</property>
+                        <value>1</value>
+                    </equals>
+                    <equals>
+                        <property>/gear/gear[1]/wow</property>
+                        <value>1</value>
+                    </equals>
+                </or>
+            </condition>
+            <value>0</value>
+        </min>
+        <min>-2000</min>
+        <max>2000</max>
+    </filter>
+
+    <!-- VNAV's FLCH: Speed By Pitch Filter -->
+    <filter>
+        <name>VNAV's FLCH: Speed By Pitch Filter</name>
+        <type>noise-spike</type>
+
+        <input>/it-vnav/internal/flch-raw</input>
+
+        <output>/it-vnav/internal/flch-filtered</output>
+        <max-rate-of-change>
+            <condition>
+                <not>
+                    <property>/it-vnav/internal/use-route-vs</property>
+                </not>
+            </condition>
+            <value>1500</value>
+        </max-rate-of-change>
+        <max-rate-of-change>10000</max-rate-of-change>
+    </filter>
+
+    <!-- VNAV's FLCH: Speed By Pitch Final -->
+    <filter>
+        <name>VNAV's FLCH: Speed By Pitch Final</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <input>
+            <expression>
+                <sum>
+                    <property>/it-autoflight/internal/vert-speed-fpm</property>
+                    <property>/it-vnav/internal/flch-filtered</property>
+                </sum>
+            </expression>
+        </input>
+
+        <output>/it-vnav/internal/target-fpm-flch</output>
+        <min>-100000</min>
+        <max>100000</max>
     </filter>
 
     <!-- Determine if throttle is ok -->
@@ -557,59 +725,16 @@
         <type>gain</type>
         <gain>1.0</gain>
 
-        <input> <!-- Command R-V/S when possible, fallback onto FLCH -->
+        <input>
             <condition>
-                <or>
-                    <and> <!-- ATHR + THR-OK = R-V/S -->
-                        <property>/it-autoflight/output/athr</property>
-                        <property>/it-vnav/internal/throttle-ok</property>
-                    </and>
-                    <and> <!-- ATHR + THR-LIM + ROK = R-V/S -->
-                        <property>/it-autoflight/output/athr</property>
-                        <not>
-                            <property>/it-vnav/internal/throttle-ok</property>
-                        </not>
-                        <property>/it-vnav/internal/route-ok</property>
-                    </and>
-                    <and> <!-- MTHR + ROK = R-V/S -->
-                        <not>
-                            <property>/it-autoflight/output/athr</property>
-                        </not>
-                        <property>/it-vnav/internal/route-ok</property>
-                    </and>
-                    <and> <!-- MTHR + RST + DES + FREE = R-V/S -->
-                        <not>
-                            <property>/it-autoflight/output/athr</property>
-                        </not>
-                        <not>
-                            <property>/it-vnav/internal/throttle-ok</property>
-                        </not>
-                        <property>/it-vnav/internal/descending</property> <!-- TODO: Create -->
-                        <not>
-                            <property>/it-vnav/settings/controlled-descent</property>
-                        </not>
-                    </and>
-                    <and> <!-- ATHR + THR-LIM + RST + DES + FREE = R-V/S -->
-                        <property>/it-autoflight/output/athr</property>
-                        <not>
-                            <property>/it-vnav/internal/throttle-ok</property>
-                        </not>
-                        <not>
-                            <property>/it-vnav/internal/route-ok</property>
-                        </not>
-                        <property>/it-vnav/internal/descending</property>
-                        <not>
-                            <property>/it-vnav/settings/controlled-descent</property>
-                        </not>
-                    </and>
-                </or>
+                <property>/it-vnav/internal/use-route-vs</property>
             </condition>
 
             <property>/it-vnav/internal/route-vs</property>
         </input>
 
         <input>
-            <property>/it-autoflight/internal/target-fpm-flch</property>
+            <property>/it-vnav/internal/target-fpm-flch</property>
         </input>
 
         <output>
