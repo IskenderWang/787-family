@@ -105,7 +105,7 @@ var VnavMgr = {
         capture_inhibit = getprop("it-vnav/internal/capture-inhibit");
 
         if (!captured and !capture_inhibit) {
-            if (getprop("it-vnav/internal/cruise-phase") or getprop("it-vnav/settings/steps"))
+            if (getprop("it-vnav/internal/cruise-phase") or getprop("it-vnav/internal/steps"))
                 setprop(vert, 4);
             else
                 setprop(vert, 1);
@@ -279,4 +279,9 @@ setlistener("sim/signals/fdm-initialized", func {
         "it-vnav/settings/auto-descend",
         VnavMgr.handle_auto_descend_text,
     0 ,0);
+
+    setlistener(
+        "it-vnav/internal/steps",
+        VnavMgr.handle_vert_path_change,
+    0, 0);
 });

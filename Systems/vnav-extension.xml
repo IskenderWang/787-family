@@ -209,6 +209,25 @@
         </output>
     </logic>
 
+    <!-- Allow STEPS when above 2500 ft AGL -->
+    <logic>
+        <name>Allow STEPS when above 2500 ft AGL</name>
+
+        <input>
+            <and>
+                <property>/it-vnav/settings/steps</property>
+                <greater-than>
+                    <property>/position/gear-agl-ft</property>
+                    <value>2500</value>
+                </greater-than>
+            </and>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/steps</property>
+        </output>
+    </logic>
+
     <!-- Determine if altitude is captured -->
     <logic>
         <name>Determine if altitude is captured</name>
