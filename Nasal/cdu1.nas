@@ -1128,7 +1128,6 @@ var cdu = {
 
 			setprop("/controls/cdu/log/fuel", 0 - fuelused);
 
-
 			if (getprop("/controls/cdu/log/start-time-utc/day") == getprop("/sim/time/utc/day")) {
 				#### Day Time Flight (started and ended on the same UTC day)
 				var hours = getprop("/sim/time/utc/hour") - getprop("/controls/cdu/log/start-time-utc/hour");

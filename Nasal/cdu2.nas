@@ -1104,30 +1104,29 @@ var cdu1 = {
 		} elsif (page == " LOG ") {
 			#### Calculate Flight Time and Fuel Consumed
 
-			var fuelused = getprop("/consumables/fuel/total-fuel-kg") - getprop("/controls/cdu[1]/log/start-fuel-kg");
+			var fuelused = getprop("/consumables/fuel/total-fuel-kg") - getprop("/controls/cdu/log/start-fuel-kg");
 
-			setprop("/controls/cdu[1]/log/fuel", 0 - fuelused);
+			setprop("/controls/cdu/log/fuel", 0 - fuelused);
 
-
-			if (getprop("/controls/cdu[1]/log/start-time-utc/day") == getprop("/sim/time/utc/day")) {
+			if (getprop("/controls/cdu/log/start-time-utc/day") == getprop("/sim/time/utc/day")) {
 				#### Day Time Flight (started and ended on the same UTC day)
-				var hours = getprop("/sim/time/utc/hour") - getprop("/controls/cdu[1]/log/start-time-utc/hour");
+				var hours = getprop("/sim/time/utc/hour") - getprop("/controls/cdu/log/start-time-utc/hour");
 
-				if (getprop("/sim/time/utc/minute") >= getprop("/controls/cdu[1]/log/start-time-utc/minute")) {
-					var minutes = getprop("/sim/time/utc/minute") - getprop("/controls/cdu[1]/log/start-time-utc/minute");
+				if (getprop("/sim/time/utc/minute") >= getprop("/controls/cdu/log/start-time-utc/minute")) {
+					var minutes = getprop("/sim/time/utc/minute") - getprop("/controls/cdu/log/start-time-utc/minute");
 				} else {
-					var minutes = (60 - getprop("/controls/cdu[1]/log/start-time-utc/minute")) + getprop("/sim/time/utc/minute");
+					var minutes = (60 - getprop("/controls/cdu/log/start-time-utc/minute")) + getprop("/sim/time/utc/minute");
 
 					hours = hours - 1;
 				}
 			} else {
 				#### Overnight Flight (flight ends the next day)
-				var hours = (24 - getprop("/controls/cdu[1]/log/start-time-utc/hour")) + getprop("/sim/time/utc/hour");
+				var hours = (24 - getprop("/controls/cdu/log/start-time-utc/hour")) + getprop("/sim/time/utc/hour");
 
-				if (getprop("/sim/time/utc/minute") >= getprop("/controls/cdu[1]/log/start-time-utc/minute")) {
-					var minutes = getprop("/sim/time/utc/minute") - getprop("/controls/cdu[1]/log/start-time-utc/minute");
+				if (getprop("/sim/time/utc/minute") >= getprop("/controls/cdu/log/start-time-utc/minute")) {
+					var minutes = getprop("/sim/time/utc/minute") - getprop("/controls/cdu/log/start-time-utc/minute");
 				} else {
-					var minutes = (60 - getprop("/controls/cdu[1]/log/start-time-utc/minute")) + getprop("/sim/time/utc/minute");
+					var minutes = (60 - getprop("/controls/cdu/log/start-time-utc/minute")) + getprop("/sim/time/utc/minute");
 
 					hours = hours - 1;
 				}
@@ -1135,7 +1134,7 @@ var cdu1 = {
 
 			var flighttime = hours~":"~minutes;
 
-			setprop("/controls/cdu[1]/log/flighttime", flighttime);
+			setprop("/controls/cdu/log/flighttime", flighttime);
 
 			#### Field types
 
@@ -1181,8 +1180,8 @@ var cdu1 = {
 			setprop("/controls/cdu[1]/display/l3", getprop("/autopilot/route-manager/departure/airport"));
 			setprop("/controls/cdu[1]/display/r3", getprop("/autopilot/route-manager/destination/airport"));
 
-			setprop("/controls/cdu[1]/display/l4", getprop("/controls/cdu[1]/log/flighttime"));
-			setprop("/controls/cdu[1]/display/r4", getprop("/controls/cdu[1]/log/fuel"));
+			setprop("/controls/cdu[1]/display/l4", getprop("/controls/cdu/log/flighttime"));
+			setprop("/controls/cdu[1]/display/r4", getprop("/controls/cdu/log/fuel"));
 
 			setprop("/controls/cdu[1]/display/l5", "");
 			setprop("/controls/cdu[1]/display/r5", "");
@@ -1209,11 +1208,11 @@ var cdu1 = {
 			#### Flight Logging System (we just need to calculate flight time and fuel used actually)
 
 			if (keypress == "r7") {
-				setprop("/controls/cdu[1]/log/start-time-utc/day", getprop("/sim/time/utc/day"));
-				setprop("/controls/cdu[1]/log/start-time-utc/hour", getprop("/sim/time/utc/hour"));
-				setprop("/controls/cdu[1]/log/start-time-utc/minute", getprop("/sim/time/utc/minute"));
+				setprop("/controls/cdu/log/start-time-utc/day", getprop("/sim/time/utc/day"));
+				setprop("/controls/cdu/log/start-time-utc/hour", getprop("/sim/time/utc/hour"));
+				setprop("/controls/cdu/log/start-time-utc/minute", getprop("/sim/time/utc/minute"));
 
-				setprop("/controls/cdu[1]/log/start-fuel-kg", getprop("/consumables/fuel/total-fuel-kg"));
+				setprop("/controls/cdu/log/start-fuel-kg", getprop("/consumables/fuel/total-fuel-kg"));
 
 				keypress = "";
 			}
