@@ -444,6 +444,7 @@
     <it-vnav>
         <settings>
             <vnav-ft type="double">400</vnav-ft> <!-- Minimum altitude above runway to make VNAV available -->
+            <steps type="bool">false</steps> <!-- Wether VNAV should make step climbs and descents -->
             <controlled-descent type="bool">false</controlled-descent> <!-- `false` = FREE descent, `true` = CTLD descent-->
             <auto-descend type="bool">false</auto-descend> <!-- `false` = Press DESCEND button do descend, `true` = Let VNAV descend automatically -->
         </settings>

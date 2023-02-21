@@ -1,4 +1,4 @@
-# IT-VNAV-Extension Controller v0.6.0
+# IT-VNAV-Extension Controller v0.6.1
 # Copyright (c) 2023 Nicolás Castellán (nico-castell)
 
 var VnavMgr = {
@@ -7,7 +7,6 @@ var VnavMgr = {
         props.globals.initNode("it-vnav/inputs/cruise-button", 0, "BOOL");
         props.globals.initNode("it-vnav/inputs/descend-button", 0, "BOOL");
         props.globals.initNode("it-vnav/inputs/serviceable", 1, "BOOL");
-        props.globals.initNode("it-vnav/inputs/steps", 0, "BOOL");
 
         props.globals.initNode("it-vnav/internal/altitude-from", 0, "DOUBLE");
         props.globals.initNode("it-vnav/internal/captured", 0, "BOOL");
@@ -64,8 +63,13 @@ var VnavMgr = {
             if (index < 0)
                 index = 0;
 
-            if (getprop("it-autoflight/input/alt") == getprop("autopilot/route-manager/route/wp["~ index ~"]/altitude-ft"))
-                setprop("it-vnav/internal/altitude-from", old_ft);
+            old_ft = getprop("autopilot/route-manager/route/wp["~ index ~"]/altitude-ft");
+            alt_from = "it-vnav/internal/altitude-from";
+
+            if (getprop("it-autoflight/input/alt") == old_ft)
+                setprop(alt_from, old_ft);
+            else
+                setprop(alt_from, getprop("instrumentation/altimeter/indicated-altitude-ft"));
 
             VnavMgr.handle_vert_path_change();
 
@@ -86,7 +90,7 @@ var VnavMgr = {
         if (!getprop("it-vnav/internal/engaged"))
             return;
 
-        descent = getprop("it-autoflight/input/alt") < getprop("it-vnav/internal/altitude-from");
+        descent = getprop("it-autoflight/internal/descent");
         allowed = getprop("it-vnav/internal/descent-authorized") or getprop("it-vnav/settings/auto-descend");
 
         if (getprop("it-vnav/internal/cruise-phase"))
@@ -101,7 +105,7 @@ var VnavMgr = {
         capture_inhibit = getprop("it-vnav/internal/capture-inhibit");
 
         if (!captured and !capture_inhibit) {
-            if (getprop("it-vnav/internal/cruise-phase"))
+            if (getprop("it-vnav/internal/cruise-phase") or getprop("it-vnav/settings/steps"))
                 setprop(vert, 4);
             else
                 setprop(vert, 1);
@@ -141,7 +145,7 @@ var VnavMgr = {
         if (!getprop(button))
             return;
 
-        if (getprop("it-autoflight/input/alt") < getprop("it-vnav/internal/altitude-from"))
+        if (getprop("it-autoflight/internal/descent"))
             setprop("it-vnav/internal/descent-authorized", 1);
 
         VnavMgr.handle_vert_path_change();
@@ -183,7 +187,7 @@ var VnavMgr = {
     handle_steps_text: func() {
         text = "it-vnav/output/steps";
 
-        if (getprop("it-vnav/inputs/steps"))
+        if (getprop("it-vnav/settings/steps"))
             setprop(text, "STEPS");
         else
             setprop(text, "NORMAL");
@@ -262,7 +266,7 @@ setlistener("sim/signals/fdm-initialized", func {
     0, 0);
 
     setlistener(
-        "it-vnav/inputs/steps",
+        "it-vnav/settings/steps",
         VnavMgr.handle_steps_text,
     0, 0);
 
