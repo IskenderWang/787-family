@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- IT-VNAV-Extension v0.6.1 -->
+<!-- IT-VNAV-Extension v0.7.0 -->
 <!-- Copyright (c) 2023 Nicolás Castellán (nico-castell) -->
 
 <PropertyList>
@@ -44,12 +44,17 @@
         </output>
     </filter>
 
-    <!-- Activate cruise controller, which is unavailable below 2500 ft AGL -->
+    <!-- Determine if we're to use the CRUISE or TRANSITION controller -->
     <logic>
-        <name>Activate cruise controller, which is unavailable below 2500 ft AGL</name>
+        <name>Determine if we're to use the CRUISE or TRANSITION controller</name>
 
         <enable>
             <condition>
+            </condition>
+        </enable>
+
+        <input>
+            <and>
                 <equals>
                     <property>/it-autoflight/input/alt</property>
                     <property>/it-vnav/internal/altitude-from</property>
@@ -58,35 +63,7 @@
                     <property>/position/gear-agl-ft</property>
                     <value>2500</value>
                 </greater-than>
-            </condition>
-        </enable>
-
-        <input>
-            <true />
-        </input>
-
-        <output>
-            <property>/it-vnav/internal/cruise-phase</property>
-        </output>
-    </logic>
-
-    <!-- Activate transition controller -->
-    <logic>
-        <name>Activate transition controller</name>
-
-        <enable>
-            <condition>
-                <not>
-                    <equals>
-                        <property>/it-autoflight/input/alt</property>
-                        <property>/it-vnav/internal/altitude-from</property>
-                    </equals>
-                </not>
-            </condition>
-        </enable>
-
-        <input>
-            <false />
+            </and>
         </input>
 
         <output>
@@ -173,12 +150,12 @@
         </output>
     </logic>
 
-    <!-- Make VNAV available under the right conditions -->
+    <!-- Make VNAV available when all the requirements are met -->
     <logic>
-        <name>Make VNAV available under the right conditions</name>
+        <name>Make VNAV available when all the requirements are met</name>
 
-        <enable>
-            <condition>
+        <input>
+            <and>
                 <not>
                     <property>/gear/gear[1]/wow</property>
                 </not>
@@ -206,11 +183,7 @@
                         <value>2</value>
                     </equals>
                 </not>
-            </condition>
-        </enable>
-
-        <input>
-            <true />
+            </and>
         </input>
 
         <output>
@@ -218,188 +191,62 @@
         </output>
     </logic>
 
-    <!-- Don't make VNAV available under the wrong conditions -->
+    <!-- Engage VNAV when all requirements are met -->
     <logic>
-        <name>Don't make VNAV available under the wrong conditions</name>
-
-        <enable>
-            <condition>
-                <not>
-                    <and>
-                        <not>
-                            <property>/gear/gear[1]/wow</property>
-                        </not>
-                        <not>
-                            <property>/gear/gear[2]/wow</property>
-                        </not>
-                        <or> <!-- Lateral mode has to be LNAV or LOC (engaged, not armed) -->
-                            <equals>
-                                <property>/it-autoflight/output/lat</property>
-                                <value>1</value>
-                            </equals>
-                            <equals>
-                                <property>/it-autoflight/output/lat</property>
-                                <value>2</value>
-                            </equals>
-                        </or>
-                        <property>/it-vnav/internal/above-vnav-ft</property>
-                        <less-than> <!-- Convenient way to ensure mode is not FLARE, ROLLOUT, T/O CLB, or G/A CLB -->
-                            <property>/it-autoflight/output/vert</property>
-                            <value>6</value>
-                        </less-than>
-                        <not>
-                            <equals> <!-- G/S -->
-                                <property>/it-autoflight/output/vert</property>
-                                <value>2</value>
-                            </equals>
-                        </not>
-                    </and>
-                </not>
-            </condition>
-        </enable>
+        <name>Engage VNAV when all requirements are met</name>
 
         <input>
-            <false />
-        </input>
-
-        <output>
-            <property>/it-vnav/internal/available</property>
-        </output>
-    </logic>
-
-    <!-- Engage VNAV when serviceable, available, vertical route available, and armed are true -->
-    <logic>
-        <name>Engage VNAV when serviceable, available, vertical route available, and armed are true</name>
-
-        <enable>
-            <condition>
+            <and>
                 <property>/it-vnav/inputs/serviceable</property>
                 <property>/it-vnav/internal/available</property>
                 <property>/it-vnav/internal/vert-route-available</property>
                 <property>/it-vnav/output/armed</property>
-            </condition>
-        </enable>
-
-        <input>
-            <true />
+            </and>
         </input>
 
         <output>
             <property>/it-vnav/internal/engaged</property>
         </output>
     </logic>
-
-    <!-- Disengage VNAV when either serviceable, available, vertical route available, or armed are false -->
-    <logic>
-        <name>Disengage VNAV when either serviceable, available, vertical route available, or armed are false</name>
-
-        <enable>
-            <condition>
-                <not>
-                    <and>
-                        <property>/it-vnav/inputs/serviceable</property>
-                        <property>/it-vnav/internal/available</property>
-                        <property>/it-vnav/internal/vert-route-available</property>
-                        <property>/it-vnav/output/armed</property>
-                    </and>
-                </not>
-            </condition>
-        </enable>
-
-        <input>
-            <false />
-        </input>
-
-        <output>
-            <property>/it-vnav/internal/engaged</property>
-        </output>
-    </logic>
-
-    <!-- Calculate capture-vs -->
-    <filter>
-        <name>Calculate capture-vs</name>
-        <type>gain</type>
-        <gain>1.0</gain>
-
-        <input>
-            <expression>
-                <clip>
-                    <clipMin>50</clipMin>
-                    <clipMax>2500</clipMax>
-                    <product>
-                        <floor>
-                            <sum>
-                                <div>
-                                    <div>
-                                        <abs>
-                                            <property>/it-autoflight/internal/vert-speed-fpm</property>
-                                        </abs>
-                                        <product>
-                                            <property>it-autoflight/config/cmd/alt</property>
-                                            <value>-1</value>
-                                        </product>
-                                    </div>
-                                    <value>100</value>
-                                </div>
-                                <value>0.5</value>
-                            </sum>
-                        </floor>
-                        <value>100</value>
-                    </product>
-                </clip>
-            </expression>
-        </input>
-
-        <output>
-            <property>/it-vnav/internal/capture-vs</property>
-        </output>
-    </filter>
 
     <!-- Determine if altitude is captured -->
     <logic>
         <name>Determine if altitude is captured</name>
 
-        <enable>
-            <condition>
-                <less-than>
-                    <expression>
-                        <abs>
-                            <property>/it-vnav/internal/altitude-difference-ft</property>
-                        </abs>
-                    </expression>
-                    <property>/it-vnav/internal/capture-vs</property>
-                </less-than>
-            </condition>
-        </enable>
-
         <input>
-            <true />
-        </input>
-
-        <output>
-            <property>/it-vnav/internal/captured</property>
-        </output>
-    </logic>
-
-    <!-- Determine if altitude is not captured -->
-    <logic>
-        <name>Determine if altitude is not captured</name>
-
-        <enable>
-            <condition>
-                <greater-than-equals>
-                    <expression>
-                        <abs>
-                            <property>/it-vnav/internal/altitude-difference-ft</property>
-                        </abs>
-                    </expression>
-                    <property>/it-vnav/internal/capture-vs</property>
-                </greater-than-equals>
-            </condition>
-        </enable>
-
-        <input>
-            <false />
+            <less-than>
+                <expression>
+                    <abs>
+                        <property>/it-vnav/internal/altitude-difference-ft</property>
+                    </abs>
+                </expression>
+                <expression>
+                    <clip>
+                        <clipMin>50</clipMin>
+                        <clipMax>2500</clipMax>
+                        <product>
+                            <floor>
+                                <sum>
+                                    <div>
+                                        <div>
+                                            <abs>
+                                                <property>/it-autoflight/internal/vert-speed-fpm</property>
+                                            </abs>
+                                            <product>
+                                                <property>it-autoflight/config/cmd/alt</property>
+                                                <value>-1</value>
+                                            </product>
+                                        </div>
+                                        <value>100</value>
+                                    </div>
+                                    <value>0.5</value>
+                                </sum>
+                            </floor>
+                            <value>100</value>
+                        </product>
+                    </clip>
+                </expression>
+            </less-than>
         </input>
 
         <output>
