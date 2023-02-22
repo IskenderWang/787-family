@@ -290,7 +290,7 @@
             </expression>
         </input>
         <output>/it-vnav/internal/throttle-lag</output>
-        <filter-time>0.1</filter-time>
+        <filter-time>0.2</filter-time>
     </filter>
 
     <!-- Throttle avg -->
@@ -334,10 +334,9 @@
         </output>
     </logic>
 
-    <!-- Mach ok lag -->
-    <filter>
-        <name>Speed ok lag</name>
-        <type>exponential</type>
+    <!-- Mach ok raw -->
+    <logic>
+        <name>Mach ok raw</name>
         <input>
             <greater-than-equals>
                 <property>/it-autoflight/internal/mach-input-avg</property>
@@ -349,8 +348,16 @@
                 </expression>
             </greater-than-equals>
         </input>
+        <output>/it-vnav/internal/mach-ok-raw</output>
+    </logic>
+
+    <!-- Mach ok lag -->
+    <filter>
+        <name>Mach ok lag</name>
+        <type>exponential</type>
+        <input>/it-vnav/internal/mach-ok-raw</input>
         <output>/it-vnav/internal/mach-ok-lag</output>
-        <filter-time>0.05</filter-time>
+        <filter-time>0.1</filter-time>
     </filter>
 
     <!-- Mach ok avg -->
@@ -362,10 +369,9 @@
         <samples>64</samples>
     </filter>
 
-    <!-- Kts ok lag -->
-    <filter>
-        <name>Kts ok lag</name>
-        <type>exponential</type>
+    <!-- Kts ok raw -->
+    <logic>
+        <name>Kts ok raw</name>
         <input>
             <greater-than-equals>
                 <property>/it-autoflight/internal/kts-input-avg</property>
@@ -377,8 +383,16 @@
                 </expression>
             </greater-than-equals>
         </input>
+        <output>/it-vnav/internal/kts-ok-raw</output>
+    </logic>
+
+    <!-- Kts ok lag -->
+    <filter>
+        <name>Kts ok lag</name>
+        <type>exponential</type>
+        <input>/it-vnav/internal/kts-ok-raw</input>
         <output>/it-vnav/internal/kts-ok-lag</output>
-        <filter-time>0.05</filter-time>
+        <filter-time>0.1</filter-time>
     </filter>
 
     <!-- Kts ok avg -->
@@ -442,7 +456,7 @@
                     <property>/it-vnav/internal/descent</property>
                     <greater-than>
                         <property>/it-vnav/internal/route-vs</property>
-                        <property>/it-autoflight/internal/target-fpm-flch</property>
+                        <property>/it-autoflight/internal/sbp-final</property>
                     </greater-than>
                 </and>
                 <and>
@@ -451,7 +465,7 @@
                     </not>
                     <less-than>
                         <property>/it-vnav/internal/route-vs</property>
-                        <property>/it-autoflight/internal/target-fpm-flch</property>
+                        <property>/it-autoflight/internal/sbp-final</property>
                     </less-than>
                 </and>
             </or>
@@ -471,7 +485,7 @@
         <type>exponential</type>
         <input>/it-vnav/internal/route-ok-raw</input>
         <output>/it-vnav/internal/route-ok-lag</output>
-        <filter-time>0.1</filter-time>
+        <filter-time>0.2</filter-time>
     </filter>
 
     <!-- Route ok avg -->
@@ -559,7 +573,7 @@
         <type>exponential</type>
         <input>/it-vnav/internal/use-route-vs-raw</input>
         <output>/it-vnav/internal/use-route-vs-lag</output>
-        <filter-time>0.1</filter-time>
+        <filter-time>0.2</filter-time>
     </filter>
 
     <!-- Average use-route-vs -->
@@ -609,9 +623,9 @@
         </output>
     </filter>
 
-    <!-- VNAV's FLCH: Filter ITAF's flch-kts-error-cmd -->
+    <!-- VNAV's SBP: Filter ITAF's flch-kts-error-cmd -->
     <filter>
-        <name>VNAV's FLCH: Filter ITAF's flch-kts-error-cmd</name>
+        <name>VNAV's SBP: Filter ITAF's flch-kts-error-cmd</name>
         <type>noise-spike</type>
         <feedback-if-disabled>true</feedback-if-disabled>
         <initialize-to>output</initialize-to>
@@ -634,9 +648,9 @@
 		<max-rate-of-change>100</max-rate-of-change>
     </filter>
 
-    <!-- VNAV's FLCH: Speed By Pitch Delta -->
+    <!-- VNAV's SBP: Speed By Pitch Delta -->
     <filter>
-        <name>VNAV's FLCH: Speed By Pitch Delta</name>
+        <name>VNAV's SBP: Speed By Pitch Delta</name>
         <type>gain</type>
         <gain>
             <expression>
@@ -662,7 +676,7 @@
 
         <reference>/it-vnav/internal/flch-kts-error</reference>
 
-        <output>/it-vnav/internal/flch-raw</output>
+        <output>/it-vnav/internal/sbp-raw</output>
         <min>
             <condition>
                 <or>
@@ -682,28 +696,28 @@
         <max>2000</max>
     </filter>
 
-    <!-- VNAV's FLCH: Speed By Pitch Filter -->
+    <!-- VNAV's SBP: Speed By Pitch Filter -->
     <filter>
-        <name>VNAV's FLCH: Speed By Pitch Filter</name>
+        <name>VNAV's SBP: Speed By Pitch Filter</name>
         <type>noise-spike</type>
 
-        <input>/it-vnav/internal/flch-raw</input>
+        <input>/it-vnav/internal/sbp-raw</input>
 
-        <output>/it-vnav/internal/flch-filtered</output>
+        <output>/it-vnav/internal/sbp-filtered</output>
         <max-rate-of-change>
             <condition>
                 <not>
                     <property>/it-vnav/internal/use-route-vs</property>
                 </not>
             </condition>
-            <value>1500</value>
+            <value>700</value>
         </max-rate-of-change>
         <max-rate-of-change>10000</max-rate-of-change>
     </filter>
 
-    <!-- VNAV's FLCH: Speed By Pitch Final -->
+    <!-- VNAV's SBP: Speed By Pitch summer -->
     <filter>
-        <name>VNAV's FLCH: Speed By Pitch Final</name>
+        <name>VNAV's SBP: Speed By Pitch summer</name>
         <type>gain</type>
         <gain>1.0</gain>
 
@@ -711,14 +725,23 @@
             <expression>
                 <sum>
                     <property>/it-autoflight/internal/vert-speed-fpm</property>
-                    <property>/it-vnav/internal/flch-filtered</property>
+                    <property>/it-vnav/internal/sbp-filtered</property>
                 </sum>
             </expression>
         </input>
 
-        <output>/it-vnav/internal/target-fpm-flch</output>
+        <output>/it-vnav/internal/sbp-sum</output>
         <min>-100000</min>
         <max>100000</max>
+    </filter>
+
+    <!-- VNAV's SBP: Speed By Pitch Final -->
+    <filter>
+        <name>VNAV's SBP</name>
+        <type>moving-average</type>
+        <input>/it-vnav/internal/sbp-sum</input>
+        <output>/it-vnav/internal/sbp-final</output>
+        <samples>2048</samples>
     </filter>
 
     <!-- Transition V/S controller -->
@@ -736,7 +759,7 @@
         </input>
 
         <input>
-            <property>/it-vnav/internal/target-fpm-flch</property>
+            <property>/it-vnav/internal/sbp-final</property>
         </input>
 
         <output>
