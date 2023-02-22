@@ -334,6 +334,78 @@
         </output>
     </logic>
 
+    <!-- Mach ok lag -->
+    <filter>
+        <name>Speed ok lag</name>
+        <type>exponential</type>
+        <input>
+            <greater-than-equals>
+                <property>/it-autoflight/internal/mach-input-avg</property>
+                <property>/it-autoflight/input/mach</property>
+            </greater-than-equals>
+        </input>
+        <output>/it-vnav/internal/mach-ok-lag</output>
+        <filter-time>0.05</filter-time>
+    </filter>
+
+    <!-- Mach ok avg -->
+    <filter>
+        <name>Mach ok avg</name>
+        <type>moving-average</type>
+        <input>/it-vnav/internal/mach-ok-lag</input>
+        <output>/it-vnav/internal/mach-ok-avg</output>
+        <samples>64</samples>
+    </filter>
+
+    <!-- Kts ok lag -->
+    <filter>
+        <name>Kts ok lag</name>
+        <type>exponential</type>
+        <input>
+            <greater-than-equals>
+                <property>/it-autoflight/internal/kts-input-avg</property>
+                <property>/it-autoflight/internal/kts</property>
+            </greater-than-equals>
+        </input>
+        <output>/it-vnav/internal/kts-ok-lag</output>
+        <filter-time>0.05</filter-time>
+    </filter>
+
+    <!-- Kts ok avg -->
+    <filter>
+        <name>Kts ok avg</name>
+        <type>moving-average</type>
+        <input>/it-vnav/internal/kts-ok-lag</input>
+        <output>/it-vnav/internal/kts-ok-avg</output>
+        <samples>64</samples>
+    </filter>
+
+    <!-- Speed ok -->
+    <logic>
+        <name>Speed ok</name>
+        <input>
+            <or>
+                <and>
+                    <not>
+                        <property>/it-autoflight/input/kts-mach</property>
+                    </not>
+                    <greater-than-equals>
+                        <property>/it-vnav/internal/kts-ok-avg</property>
+                        <value>0.5</value>
+                    </greater-than-equals>
+                </and>
+                <and>
+                    <property>/it-autoflight/input/kts-mach</property>
+                    <greater-than-equals>
+                        <property>/it-vnav/internal/mach-ok-avg</property>
+                        <value>0.5</value>
+                    </greater-than-equals>
+                </and>
+            </or>
+        </input>
+        <output>/it-vnav/internal/speed-ok</output>
+    </logic>
+
     <!-- Determine if we're descending -->
     <logic>
         <name>Determine if we're descending</name>
@@ -430,24 +502,6 @@
                     </not>
                     <property>/it-vnav/internal/route-ok</property>
                 </and>
-                <and> <!-- MTHR + ROK = R-V/S -->
-                    <not>
-                        <property>/it-autoflight/output/athr</property>
-                    </not>
-                    <property>/it-vnav/internal/route-ok</property>
-                </and>
-                <and> <!-- MTHR + RST + DES + FREE = R-V/S -->
-                    <not>
-                        <property>/it-autoflight/output/athr</property>
-                    </not>
-                    <not>
-                        <property>/it-vnav/internal/throttle-ok</property>
-                    </not>
-                    <property>/it-vnav/internal/descent</property>
-                    <not>
-                        <property>/it-vnav/settings/controlled-descent</property>
-                    </not>
-                </and>
                 <and> <!-- ATHR + THR-LIM + RST + DES + FREE = R-V/S -->
                     <property>/it-autoflight/output/athr</property>
                     <not>
@@ -456,6 +510,26 @@
                     <not>
                         <property>/it-vnav/internal/route-ok</property>
                     </not>
+                    <property>/it-vnav/internal/descent</property>
+                    <not>
+                        <property>/it-vnav/settings/controlled-descent</property>
+                    </not>
+                </and>
+                <and> <!-- MTHR + SPD-OK + ROK = R-V/S -->
+                    <not>
+                        <property>/it-autoflight/output/athr</property>
+                    </not>
+                    <property>/it-vnav/internal/speed-ok</property>
+                    <property>/it-vnav/internal/route-ok</property>
+                </and>
+                <and> <!-- MTHR + SPD-OK + RST + DES + FREE = R-V/S -->
+                    <not>
+                        <property>/it-autoflight/output/athr</property>
+                    </not>
+                    <not>
+                        <property>/it-vnav/internal/throttle-ok</property>
+                    </not>
+                    <property>/it-vnav/internal/speed-ok</property>
                     <property>/it-vnav/internal/descent</property>
                     <not>
                         <property>/it-vnav/settings/controlled-descent</property>
