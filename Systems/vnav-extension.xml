@@ -289,7 +289,7 @@
                 </div>
             </expression>
         </input>
-        <output>/it-vnav/internal/throttle-lag</output>
+        <output>/it-vnav/internal/intermediates/throttle-lag</output>
         <filter-time>0.2</filter-time>
     </filter>
 
@@ -297,7 +297,7 @@
     <filter>
         <name>Throttle avg</name>
         <type>moving-average</type>
-        <input>/it-vnav/internal/throttle-lag</input>
+        <input>/it-vnav/internal/intermediates/throttle-lag</input>
         <output>/it-vnav/internal/throttle-avg</output>
         <samples>256</samples>
     </filter>
@@ -309,7 +309,7 @@
         <input>
             <and>
                 <less-than>
-                    <property>/it-vnav/internal/throttle-avg</property>
+                    <property>/it-vnav/internal/intermediates/throttle-avg</property>
                     <expression>
                         <sum>
                             <property>/it-autoflight/settings/autothrottle-max</property>
@@ -318,7 +318,7 @@
                     </expression>
                 </less-than>
                 <greater-than>
-                    <property>/it-vnav/internal/throttle-avg</property>
+                    <property>/it-vnav/internal/intermediates/throttle-avg</property>
                     <expression>
                         <sum>
                             <property>/it-autoflight/settings/autothrottle-min</property>
@@ -348,15 +348,15 @@
                 </expression>
             </greater-than-equals>
         </input>
-        <output>/it-vnav/internal/mach-ok-raw</output>
+        <output>/it-vnav/internal/intermediates/mach-ok-raw</output>
     </logic>
 
     <!-- Mach ok lag -->
     <filter>
         <name>Mach ok lag</name>
         <type>exponential</type>
-        <input>/it-vnav/internal/mach-ok-raw</input>
-        <output>/it-vnav/internal/mach-ok-lag</output>
+        <input>/it-vnav/internal/intermediates/mach-ok-raw</input>
+        <output>/it-vnav/internal/intermediates/mach-ok-lag</output>
         <filter-time>0.1</filter-time>
     </filter>
 
@@ -364,8 +364,8 @@
     <filter>
         <name>Mach ok avg</name>
         <type>moving-average</type>
-        <input>/it-vnav/internal/mach-ok-lag</input>
-        <output>/it-vnav/internal/mach-ok-avg</output>
+        <input>/it-vnav/internal/intermediates/mach-ok-lag</input>
+        <output>/it-vnav/internal/intermediates/mach-ok-avg</output>
         <samples>64</samples>
     </filter>
 
@@ -374,24 +374,24 @@
         <name>Kts ok raw</name>
         <input>
             <greater-than-equals>
-                <property>/it-autoflight/internal/kts-input-avg</property>
+                <property>/it-autoflight/internal/intermediates/kts-input-avg</property>
                 <expression>
                     <sum>
-                        <property>/it-autoflight/internal/kts</property>
+                        <property>/it-autoflight/internal/intermediates/kts</property>
                         <value>-0.5</value> <!-- Margin of error -->
                     </sum>
                 </expression>
             </greater-than-equals>
         </input>
-        <output>/it-vnav/internal/kts-ok-raw</output>
+        <output>/it-vnav/internal/intermediates/kts-ok-raw</output>
     </logic>
 
     <!-- Kts ok lag -->
     <filter>
         <name>Kts ok lag</name>
         <type>exponential</type>
-        <input>/it-vnav/internal/kts-ok-raw</input>
-        <output>/it-vnav/internal/kts-ok-lag</output>
+        <input>/it-vnav/internal/intermediates/kts-ok-raw</input>
+        <output>/it-vnav/internal/intermediates/kts-ok-lag</output>
         <filter-time>0.1</filter-time>
     </filter>
 
@@ -399,8 +399,8 @@
     <filter>
         <name>Kts ok avg</name>
         <type>moving-average</type>
-        <input>/it-vnav/internal/kts-ok-lag</input>
-        <output>/it-vnav/internal/kts-ok-avg</output>
+        <input>/it-vnav/internal/intermediates/kts-ok-lag</input>
+        <output>/it-vnav/internal/intermediates/kts-ok-avg</output>
         <samples>64</samples>
     </filter>
 
@@ -414,14 +414,14 @@
                         <property>/it-autoflight/input/kts-mach</property>
                     </not>
                     <greater-than-equals>
-                        <property>/it-vnav/internal/kts-ok-avg</property>
+                        <property>/it-vnav/internal/intermediates/kts-ok-avg</property>
                         <value>0.5</value>
                     </greater-than-equals>
                 </and>
                 <and>
                     <property>/it-autoflight/input/kts-mach</property>
                     <greater-than-equals>
-                        <property>/it-vnav/internal/mach-ok-avg</property>
+                        <property>/it-vnav/internal/intermediates/mach-ok-avg</property>
                         <value>0.5</value>
                     </greater-than-equals>
                 </and>
@@ -475,7 +475,7 @@
         </input>
 
         <output>
-            <property>/it-vnav/internal/route-ok-raw</property>
+            <property>/it-vnav/internal/intermediates/route-ok-raw</property>
         </output>
     </logic>
 
@@ -483,8 +483,8 @@
     <filter>
         <name>Route ok lag</name>
         <type>exponential</type>
-        <input>/it-vnav/internal/route-ok-raw</input>
-        <output>/it-vnav/internal/route-ok-lag</output>
+        <input>/it-vnav/internal/intermediates/route-ok-raw</input>
+        <output>/it-vnav/internal/intermediates/route-ok-lag</output>
         <filter-time>0.2</filter-time>
     </filter>
 
@@ -492,8 +492,8 @@
     <filter>
         <name>Route ok avg</name>
         <type>moving-average</type>
-        <input>/it-vnav/internal/route-ok-lag</input>
-        <output>/it-vnav/internal/route-ok-avg</output>
+        <input>/it-vnav/internal/intermediates/route-ok-lag</input>
+        <output>/it-vnav/internal/intermediates/route-ok-avg</output>
         <samples>256</samples>
     </filter>
 
@@ -502,7 +502,7 @@
         <name>Route ok</name>
         <input>
             <greater-than-equals>
-                <property>/it-vnav/internal/route-ok-avg</property>
+                <property>/it-vnav/internal/intermediates/route-ok-avg</property>
                 <value>0.5</value>
             </greater-than-equals>
         </input>
@@ -563,7 +563,7 @@
         </input>
 
         <output>
-            <property>/it-vnav/internal/use-route-vs-raw</property>
+            <property>/it-vnav/internal/intermediates/use-route-vs-raw</property>
         </output>
     </logic>
 
@@ -571,8 +571,8 @@
     <filter>
         <name>Lag use-route-vs</name>
         <type>exponential</type>
-        <input>/it-vnav/internal/use-route-vs-raw</input>
-        <output>/it-vnav/internal/use-route-vs-lag</output>
+        <input>/it-vnav/internal/intermediates/use-route-vs-raw</input>
+        <output>/it-vnav/internal/intermediates/use-route-vs-lag</output>
         <filter-time>0.2</filter-time>
     </filter>
 
@@ -580,8 +580,8 @@
     <filter>
         <name>Average use-route-vs</name>
         <type>moving-average</type>
-        <input>/it-vnav/internal/use-route-vs-lag</input>
-        <output>/it-vnav/internal/use-route-vs-avg</output>
+        <input>/it-vnav/internal/intermediates/use-route-vs-lag</input>
+        <output>/it-vnav/internal/intermediates/use-route-vs-avg</output>
         <samples>256</samples>
     </filter>
 
@@ -590,7 +590,7 @@
         <name>Final use-route-vs</name>
         <input>
             <greater-than-equals>
-                <property>/it-vnav/internal/use-route-vs-avg</property>
+                <property>/it-vnav/internal/intermediates/use-route-vs-avg</property>
                 <value>0.5</value>
             </greater-than-equals>
         </input>
@@ -635,7 +635,7 @@
         </input>
 
         <output>
-            <property>/it-vnav/internal/flch-kts-error</property>
+            <property>/it-vnav/internal/intermediates/flch-kts-error</property>
         </output>
 		<max-rate-of-change>
 			<condition>
@@ -669,14 +669,14 @@
                     <value>1</value>
                 </equals>
             </condition>
-            <property>/it-autoflight/internal/mach-rate</property>
+            <property>/it-autoflight/internal/intermediates/mach-rate</property>
         </input>
 
-        <input>/it-autoflight/internal/kts-rate</input>
+        <input>/it-autoflight/internal/intermediates/kts-rate</input>
 
-        <reference>/it-vnav/internal/flch-kts-error</reference>
+        <reference>/it-vnav/internal/intermediates/flch-kts-error</reference>
 
-        <output>/it-vnav/internal/sbp-raw</output>
+        <output>/it-vnav/internal/intermediates/sbp-raw</output>
         <min>
             <condition>
                 <or>
@@ -701,9 +701,9 @@
         <name>VNAV's SBP: Speed By Pitch Filter</name>
         <type>noise-spike</type>
 
-        <input>/it-vnav/internal/sbp-raw</input>
+        <input>/it-vnav/internal/intermediates/sbp-raw</input>
 
-        <output>/it-vnav/internal/sbp-filtered</output>
+        <output>/it-vnav/internal/intermediates/sbp-filtered</output>
         <max-rate-of-change>
             <condition>
                 <not>
@@ -725,12 +725,12 @@
             <expression>
                 <sum>
                     <property>/it-autoflight/internal/vert-speed-fpm</property>
-                    <property>/it-vnav/internal/sbp-filtered</property>
+                    <property>/it-vnav/internal/intermediates/sbp-filtered</property>
                 </sum>
             </expression>
         </input>
 
-        <output>/it-vnav/internal/sbp-sum</output>
+        <output>/it-vnav/internal/intermediates/sbp-sum</output>
         <min>-100000</min>
         <max>100000</max>
     </filter>
@@ -739,7 +739,7 @@
     <filter>
         <name>VNAV's SBP</name>
         <type>moving-average</type>
-        <input>/it-vnav/internal/sbp-sum</input>
+        <input>/it-vnav/internal/intermediates/sbp-sum</input>
         <output>/it-vnav/internal/sbp-final</output>
         <samples>2048</samples>
     </filter>
@@ -763,7 +763,7 @@
         </input>
 
         <output>
-            <property>/it-vnav/internal/vs-raw</property>
+            <property>/it-vnav/internal/intermediates/vs-raw</property>
         </output>
         <min>-6000</min>
         <max>6000</max>
@@ -775,7 +775,7 @@
         <type>noise-spike</type>
 
         <input>
-            <property>/it-vnav/internal/vs-raw</property>
+            <property>/it-vnav/internal/intermediates/vs-raw</property>
         </input>
 
         <output>
