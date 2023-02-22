@@ -274,6 +274,34 @@
         </output>
     </logic>
 
+    <!-- Throttle lag input -->
+    <filter>
+        <name>Throttle lag input</name>
+        <type>exponential</type>
+        <input>
+            <expression>
+                <div>
+                    <sum>
+                        <property>/controls/engines/engine[0]/throttle</property>
+                        <property>/controls/engines/engine[1]/throttle</property>
+                    </sum>
+                    <value>2</value>
+                </div>
+            </expression>
+        </input>
+        <output>/it-vnav/internal/throttle-lag</output>
+        <filter-time>0.1</filter-time>
+    </filter>
+
+    <!-- Throttle avg -->
+    <filter>
+        <name>Throttle avg</name>
+        <type>moving-average</type>
+        <input>/it-vnav/internal/throttle-lag</input>
+        <output>/it-vnav/internal/throttle-avg</output>
+        <samples>256</samples>
+    </filter>
+
     <!-- Determine if throttle is ok -->
     <logic>
         <name>Determine if throttle is ok</name>
@@ -281,36 +309,20 @@
         <input>
             <and>
                 <less-than>
-                    <expression>
-                        <div>
-                            <sum>
-                                <property>/controls/engines/engine[0]/throttle</property>
-                                <property>/controls/engines/engine[1]/throttle</property>
-                            </sum>
-                            <value>2</value>
-                        </div>
-                    </expression>
+                    <property>/it-vnav/internal/throttle-avg</property>
                     <expression>
                         <sum>
                             <property>/it-autoflight/settings/autothrottle-max</property>
-                            <value>-0.01</value>
+                            <value>-0.015</value>
                         </sum>
                     </expression>
                 </less-than>
                 <greater-than>
-                    <expression>
-                        <div>
-                            <sum>
-                                <property>/controls/engines/engine[0]/throttle</property>
-                                <property>/controls/engines/engine[1]/throttle</property>
-                            </sum>
-                            <value>2</value>
-                        </div>
-                    </expression>
+                    <property>/it-vnav/internal/throttle-avg</property>
                     <expression>
                         <sum>
                             <property>/it-autoflight/settings/autothrottle-min</property>
-                            <value>0.01</value>
+                            <value>0.015</value>
                         </sum>
                     </expression>
                 </greater-than>
@@ -367,8 +379,38 @@
         </input>
 
         <output>
-            <property>/it-vnav/internal/route-ok</property>
+            <property>/it-vnav/internal/route-ok-raw</property>
         </output>
+    </logic>
+
+    <!-- Route ok lag -->
+    <filter>
+        <name>Route ok lag</name>
+        <type>exponential</type>
+        <input>/it-vnav/internal/route-ok-raw</input>
+        <output>/it-vnav/internal/route-ok-lag</output>
+        <filter-time>0.1</filter-time>
+    </filter>
+
+    <!-- Route ok avg -->
+    <filter>
+        <name>Route ok avg</name>
+        <type>moving-average</type>
+        <input>/it-vnav/internal/route-ok-lag</input>
+        <output>/it-vnav/internal/route-ok-avg</output>
+        <samples>256</samples>
+    </filter>
+
+    <!-- Route ok -->
+    <logic>
+        <name>Route ok</name>
+        <input>
+            <greater-than-equals>
+                <property>/it-vnav/internal/route-ok-avg</property>
+                <value>0.5</value>
+            </greater-than-equals>
+        </input>
+        <output>/it-vnav/internal/route-ok</output>
     </logic>
 
     <!-- Command R-V/S, fallback onto FLCH when needed -->
@@ -423,8 +465,38 @@
         </input>
 
         <output>
-            <property>/it-vnav/internal/use-route-vs</property>
+            <property>/it-vnav/internal/use-route-vs-raw</property>
         </output>
+    </logic>
+
+    <!-- Lag use-route-vs -->
+    <filter>
+        <name>Lag use-route-vs</name>
+        <type>exponential</type>
+        <input>/it-vnav/internal/use-route-vs-raw</input>
+        <output>/it-vnav/internal/use-route-vs-lag</output>
+        <filter-time>0.1</filter-time>
+    </filter>
+
+    <!-- Average use-route-vs -->
+    <filter>
+        <name>Average use-route-vs</name>
+        <type>moving-average</type>
+        <input>/it-vnav/internal/use-route-vs-lag</input>
+        <output>/it-vnav/internal/use-route-vs-avg</output>
+        <samples>256</samples>
+    </filter>
+
+    <!-- Final use-route-vs -->
+    <logic>
+        <name>Final use-route-vs</name>
+        <input>
+            <greater-than-equals>
+                <property>/it-vnav/internal/use-route-vs-avg</property>
+                <value>0.5</value>
+            </greater-than-equals>
+        </input>
+        <output>/it-vnav/internal/use-route-vs</output>
     </logic>
 
     <!-- VNAV's R-V/S: V/S required by route -->
