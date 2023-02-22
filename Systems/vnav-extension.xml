@@ -550,10 +550,10 @@
                     <not>
                         <property>/it-autoflight/output/athr</property>
                     </not>
-                    <not>
-                        <property>/it-vnav/internal/throttle-ok</property>
-                    </not>
                     <property>/it-vnav/internal/speed-ok</property>
+                    <not>
+                        <property>/it-vnav/internal/route-ok</property>
+                    </not>
                     <property>/it-vnav/internal/descent</property>
                     <not>
                         <property>/it-vnav/settings/controlled-descent</property>
