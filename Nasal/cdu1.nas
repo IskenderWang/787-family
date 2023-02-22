@@ -88,6 +88,7 @@ var cdu = {
 
 		setprop("/controls/cdu/route-manager/page", 1);
 		setprop("/controls/cdu/route-manager/max-pages", 1);
+		setprop("/controls/cdu/route-manager/current-wp", 0);
 
 		## Display Props
 
@@ -709,6 +710,16 @@ var cdu = {
 			}
 
 			#### ROUTE DISPLAY (in pages)
+
+			##### Update page when waypoint changes while the page is being visualized
+			wp_change = getprop("/autopilot/route-manager/current-wp") - getprop("/controls/cdu/route-manager/current-wp");
+			if (wp_change != 0) {
+				in_page = math.ceil((getprop("/autopilot/route-manager/current-wp") + 1) / 4);
+				if (in_page < 1)
+					in_page = 1;
+				setprop("/controls/cdu/route-manager/page", in_page);
+			}
+			setprop("controls/cdu/route-manager/current-wp", getprop("/autopilot/route-manager/current-wp"));
 
 			##### Display nothing if there're no waypoints
 
