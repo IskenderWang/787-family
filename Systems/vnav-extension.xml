@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- IT-VNAV-Extension v0.7.0 -->
+<!-- IT-VNAV-Extension v0.7.1 -->
 <!-- Copyright (c) 2023 Nicolás Castellán (nico-castell) -->
 
 <PropertyList>
@@ -333,7 +333,7 @@
         </input>
 
         <output>
-            <property>/it-vnav/internal/descending</property>
+            <property>/it-vnav/internal/descent</property>
         </output>
     </logic>
 
@@ -344,7 +344,7 @@
         <input>
             <or>
                 <and>
-                    <property>/it-vnav/internal/descending</property>
+                    <property>/it-vnav/internal/descent</property>
                     <greater-than>
                         <property>/it-vnav/internal/route-vs</property>
                         <property>/it-autoflight/internal/target-fpm-flch</property>
@@ -352,7 +352,7 @@
                 </and>
                 <and>
                     <not>
-                        <property>/it-vnav/internal/descending</property>
+                        <property>/it-vnav/internal/descent</property>
                     </not>
                     <less-than>
                         <property>/it-vnav/internal/route-vs</property>
@@ -400,7 +400,7 @@
                     <not>
                         <property>/it-vnav/internal/throttle-ok</property>
                     </not>
-                    <property>/it-vnav/internal/descending</property>
+                    <property>/it-vnav/internal/descent</property>
                     <not>
                         <property>/it-vnav/settings/controlled-descent</property>
                     </not>
@@ -413,7 +413,7 @@
                     <not>
                         <property>/it-vnav/internal/route-ok</property>
                     </not>
-                    <property>/it-vnav/internal/descending</property>
+                    <property>/it-vnav/internal/descent</property>
                     <not>
                         <property>/it-vnav/settings/controlled-descent</property>
                     </not>

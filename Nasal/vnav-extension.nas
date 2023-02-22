@@ -1,4 +1,4 @@
-# IT-VNAV-Extension Controller v0.7.0
+# IT-VNAV-Extension Controller v0.7.1
 # Copyright (c) 2023 Nicolás Castellán (nico-castell)
 
 var VnavMgr = {
@@ -90,7 +90,7 @@ var VnavMgr = {
         if (!getprop("it-vnav/internal/engaged"))
             return;
 
-        descent = getprop("it-autoflight/internal/descent");
+        descent = getprop("it-vnav/internal/descent");
         allowed = getprop("it-vnav/internal/descent-authorized") or getprop("it-vnav/settings/auto-descend");
 
         if (getprop("it-vnav/internal/cruise-phase"))
@@ -145,7 +145,7 @@ var VnavMgr = {
         if (!getprop(button))
             return;
 
-        if (getprop("it-autoflight/internal/descent"))
+        if (getprop("it-vnav/internal/descent"))
             setprop("it-vnav/internal/descent-authorized", 1);
 
         VnavMgr.handle_vert_path_change();
