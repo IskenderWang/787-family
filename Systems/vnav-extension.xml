@@ -341,7 +341,12 @@
         <input>
             <greater-than-equals>
                 <property>/it-autoflight/internal/mach-input-avg</property>
-                <property>/it-autoflight/input/mach</property>
+                <expression>
+                    <sum>
+                        <property>/it-autoflight/input/mach</property>
+                        <value>-0.005</value> <!-- Margin of error -->
+                    </sum>
+                </expression>
             </greater-than-equals>
         </input>
         <output>/it-vnav/internal/mach-ok-lag</output>
@@ -364,7 +369,12 @@
         <input>
             <greater-than-equals>
                 <property>/it-autoflight/internal/kts-input-avg</property>
-                <property>/it-autoflight/internal/kts</property>
+                <expression>
+                    <sum>
+                        <property>/it-autoflight/internal/kts</property>
+                        <value>-0.5</value> <!-- Margin of error -->
+                    </sum>
+                </expression>
             </greater-than-equals>
         </input>
         <output>/it-vnav/internal/kts-ok-lag</output>
