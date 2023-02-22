@@ -298,7 +298,7 @@
         <name>Throttle avg</name>
         <type>moving-average</type>
         <input>/it-vnav/internal/intermediates/throttle-lag</input>
-        <output>/it-vnav/internal/throttle-avg</output>
+        <output>/it-vnav/internal/intermediates/throttle-avg</output>
         <samples>256</samples>
     </filter>
 
@@ -734,7 +734,7 @@
         <min>
             <condition>
                 <not>
-                    <property>/it-vnav/internal/descending</property>
+                    <property>/it-vnav/internal/descent</property>
                 </not>
             </condition>
             <value>0</value>
@@ -742,7 +742,7 @@
         <min>-100000</min>
         <max>
             <condition>
-                <property>/it-vnav/internal/descending</property>
+                <property>/it-vnav/internal/descent</property>
                 <value>0</value>
             </condition>
         </max>
