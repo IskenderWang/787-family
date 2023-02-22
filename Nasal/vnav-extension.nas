@@ -1,4 +1,4 @@
-# IT-VNAV-Extension Controller v0.7.1
+# IT-VNAV-Extension Controller v0.8.0
 # Copyright (c) 2023 Nicolás Castellán (nico-castell)
 
 var VnavMgr = {
