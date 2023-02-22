@@ -731,7 +731,21 @@
         </input>
 
         <output>/it-vnav/internal/intermediates/sbp-sum</output>
+        <min>
+            <condition>
+                <not>
+                    <property>/it-vnav/internal/descending</property>
+                </not>
+            </condition>
+            <value>0</value>
+        </min>
         <min>-100000</min>
+        <max>
+            <condition>
+                <property>/it-vnav/internal/descending</property>
+                <value>0</value>
+            </condition>
+        </max>
         <max>100000</max>
     </filter>
 
