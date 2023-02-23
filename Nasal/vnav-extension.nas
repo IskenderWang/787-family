@@ -52,7 +52,6 @@ var VnavMgr = {
 
         if (getprop("it-vnav/internal/engaged") == 1)
             setprop(itaf_alt, target_ft);
-
     },
 
     handle_vnav_engagement: func() {
@@ -96,20 +95,16 @@ var VnavMgr = {
         if (getprop("it-vnav/internal/cruise-phase"))
             setprop("it-vnav/internal/descent-authorized", 0);
 
-        if (descent and !allowed)
-            return;
-
         vert = "it-autoflight/input/vert";
 
         captured = getprop("it-vnav/internal/captured");
         capture_inhibit = getprop("it-vnav/internal/capture-inhibit");
 
-        if (!captured and !capture_inhibit) {
+        if (!captured and !capture_inhibit and (!descent or (descent and allowed)))
             if (getprop("it-vnav/internal/cruise-phase") or getprop("it-vnav/internal/steps"))
                 setprop(vert, 4);
             else
                 setprop(vert, 1);
-        }
     },
 
     handle_capturing_inhibitor: func() {
