@@ -374,10 +374,10 @@
         <name>Kts ok raw</name>
         <input>
             <greater-than-equals>
-                <property>/it-autoflight/internal/intermediates/kts-input-avg</property>
+                <property>/it-autoflight/internal/kts-input-avg</property>
                 <expression>
                     <sum>
-                        <property>/it-autoflight/internal/intermediates/kts</property>
+                        <property>/it-autoflight/input/kts</property>
                         <value>-0.5</value> <!-- Margin of error -->
                     </sum>
                 </expression>
