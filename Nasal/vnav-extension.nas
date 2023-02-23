@@ -1,4 +1,4 @@
-# IT-VNAV-Extension Controller v0.8.0
+# IT-VNAV-Extension Controller v0.8.1
 # Copyright (c) 2023 Nicolás Castellán (nico-castell)
 
 var VnavMgr = {
@@ -113,12 +113,10 @@ var VnavMgr = {
     },
 
     handle_capturing_inhibitor: func() {
-        capture_inhibit = "it-vnav/internal/capture-inhibit";
-
-        if (getprop("it-autoflight/mode/vert") == "ALT CAP")
-            setprop(capture_inhibit, 1);
-        else
-            setprop(capture_inhibit, 0);
+        setprop(
+            "it-vnav/internal/capture-inhibit",
+            getprop("it-autoflight/mode/vert") == "ALT CAP"
+        );
     },
 
     handle_itaf_vert_change: func() {
@@ -145,8 +143,8 @@ var VnavMgr = {
         if (!getprop(button))
             return;
 
-        if (getprop("it-vnav/internal/descent"))
-            setprop("it-vnav/internal/descent-authorized", 1);
+        # Only authorize descent when descending, but avoid if statement.
+        setprop("it-vnav/internal/descent-authorized", getprop("it-vnav/internal/descent"));
 
         VnavMgr.handle_vert_path_change();
 
@@ -169,8 +167,7 @@ var VnavMgr = {
         lnav_engaged = getprop("it-autoflight/output/lat") == 1;
         lnav_armed = getprop("it-autoflight/output/lnav-armed");
 
-        if (lnav_armed or lnav_engaged)
-            setprop(armed, 1);
+        setprop(armed, lnav_armed or lnav_engaged);
 
         setprop(button, 0);
     },
