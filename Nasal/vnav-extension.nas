@@ -1,4 +1,4 @@
-# IT-VNAV-Extension Controller v0.8.1
+# IT-VNAV-Extension Controller v0.10.0
 # Copyright (c) 2023 Nicolás Castellán (nico-castell)
 
 var VnavMgr = {
@@ -92,19 +92,19 @@ var VnavMgr = {
         descent = getprop("it-vnav/internal/descent");
         allowed = getprop("it-vnav/internal/descent-authorized") or getprop("it-vnav/settings/auto-descend");
 
-        if (getprop("it-vnav/internal/cruise-phase"))
+        if (getprop("it-vnav/internal/cruise-phase") or !descent)
             setprop("it-vnav/internal/descent-authorized", 0);
-
-        vert = "it-autoflight/input/vert";
 
         captured = getprop("it-vnav/internal/captured");
         capture_inhibit = getprop("it-vnav/internal/capture-inhibit");
 
-        if (!captured and !capture_inhibit and (!descent or (descent and allowed)))
+        if (!captured and !capture_inhibit and (!descent or (descent and allowed))) {
+            vert = "it-autoflight/input/vert";
             if (getprop("it-vnav/internal/cruise-phase") or getprop("it-vnav/internal/steps"))
                 setprop(vert, 4);
             else
                 setprop(vert, 1);
+        }
     },
 
     handle_capturing_inhibitor: func() {
@@ -228,6 +228,16 @@ setlistener("sim/signals/fdm-initialized", func {
     0, 0);
 
     setlistener(
+        "it-vnav/internal/steps",
+        VnavMgr.handle_vert_path_change,
+    0, 0);
+
+    setlistener(
+        "it-autoflight/output/vert",
+        VnavMgr.handle_itaf_vert_change,
+    0, 0);
+
+    setlistener(
         "it-autoflight/mode/vert",
         VnavMgr.handle_capturing_inhibitor,
     0, 0);
@@ -245,11 +255,6 @@ setlistener("sim/signals/fdm-initialized", func {
     setlistener(
         "it-vnav/inputs/arm-button",
         VnavMgr.arm_button,
-    0, 0);
-
-    setlistener(
-        "it-autoflight/output/vert",
-        VnavMgr.handle_itaf_vert_change,
     0, 0);
 
     setlistener(
@@ -271,9 +276,4 @@ setlistener("sim/signals/fdm-initialized", func {
         "it-vnav/settings/auto-descend",
         VnavMgr.handle_auto_descend_text,
     0 ,0);
-
-    setlistener(
-        "it-vnav/internal/steps",
-        VnavMgr.handle_vert_path_change,
-    0, 0);
 });

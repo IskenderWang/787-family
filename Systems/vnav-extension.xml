@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- IT-VNAV-Extension v0.8.1 -->
+<!-- IT-VNAV-Extension v0.10.0 -->
 <!-- Copyright (c) 2023 Nicolás Castellán (nico-castell) -->
 
 <PropertyList>
@@ -43,33 +43,6 @@
             <property>/it-vnav/internal/altitude-difference-ft</property>
         </output>
     </filter>
-
-    <!-- Determine if we're to use the CRUISE or TRANSITION controller -->
-    <logic>
-        <name>Determine if we're to use the CRUISE or TRANSITION controller</name>
-
-        <enable>
-            <condition>
-            </condition>
-        </enable>
-
-        <input>
-            <and>
-                <equals>
-                    <property>/it-autoflight/input/alt</property>
-                    <property>/it-vnav/internal/altitude-from</property>
-                </equals>
-                <greater-than>
-                    <property>/position/gear-agl-ft</property>
-                    <value>2500</value>
-                </greater-than>
-            </and>
-        </input>
-
-        <output>
-            <property>/it-vnav/internal/cruise-phase</property>
-        </output>
-    </logic>
 
     <!-- Detect runway altitude -->
     <filter>
@@ -229,6 +202,49 @@
         </output>
     </logic>
 
+    <!-- Determine if we're descending -->
+    <logic>
+        <name>Determine if we're descending</name>
+
+        <input>
+            <less-than>
+                <property>/it-autoflight/input/alt</property>
+                <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+            </less-than>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/descent</property>
+        </output>
+    </logic>
+
+    <!-- Determine if we're to use the CRUISE or TRANSITION controller -->
+    <logic>
+        <name>Determine if we're to use the CRUISE or TRANSITION controller</name>
+
+        <enable>
+            <condition>
+            </condition>
+        </enable>
+
+        <input>
+            <and>
+                <equals>
+                    <property>/it-autoflight/input/alt</property>
+                    <property>/it-vnav/internal/altitude-from</property>
+                </equals>
+                <greater-than>
+                    <property>/position/gear-agl-ft</property>
+                    <value>2500</value>
+                </greater-than>
+            </and>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/cruise-phase</property>
+        </output>
+    </logic>
+
     <!-- Determine if altitude is captured -->
     <logic>
         <name>Determine if altitude is captured</name>
@@ -301,6 +317,24 @@
         <output>/it-vnav/internal/intermediates/throttle-avg</output>
         <samples>256</samples>
     </filter>
+
+    <!-- Throttle rate -->
+	<filter>
+		<name>Throttle Rate</name>
+		<type>derivative</type>
+		<input>/it-vnav/internal/intermediates/throttle-avg</input>
+		<output>/it-vnav/internal/intermediates/throttle-rate-raw</output>
+		<filter-time>1.0</filter-time>
+	</filter>
+
+    <!-- Throttle rate lag -->
+	<filter>
+		<name>Throttle Rate Lag</name>
+		<type>exponential</type>
+		<input>/it-vnav/internal/intermediates/throttle-rate-raw</input>
+		<output>/it-vnav/internal/intermediates/throttle-rate</output>
+		<filter-time>0.04</filter-time>
+	</filter>
 
     <!-- Determine if throttle is ok -->
     <logic>
@@ -430,22 +464,6 @@
         <output>/it-vnav/internal/speed-ok</output>
     </logic>
 
-    <!-- Determine if we're descending -->
-    <logic>
-        <name>Determine if we're descending</name>
-
-        <input>
-            <less-than>
-                <property>/it-autoflight/input/alt</property>
-                <property>/instrumentation/altimeter/indicated-altitude-ft</property>
-            </less-than>
-        </input>
-
-        <output>
-            <property>/it-vnav/internal/descent</property>
-        </output>
-    </logic>
-
     <!-- Determine if route is ok (not too steep) -->
     <logic>
         <name>Determine if route is ok (not too steep)</name>
@@ -509,9 +527,9 @@
         <output>/it-vnav/internal/route-ok</output>
     </logic>
 
-    <!-- Command R-V/S, fallback onto FLCH when needed -->
+    <!-- Command R-V/S, fallback onto SBP when needed -->
     <logic>
-        <name>Command R-V/S, fallback onto FLCH when needed</name>
+        <name>Command R-V/S, fallback onto SBP when needed</name>
 
         <input>
             <or>
@@ -563,43 +581,13 @@
         </input>
 
         <output>
-            <property>/it-vnav/internal/intermediates/use-route-vs-raw</property>
+            <property>/it-vnav/internal/use-route-vs</property>
         </output>
-    </logic>
-
-    <!-- Lag use-route-vs -->
-    <filter>
-        <name>Lag use-route-vs</name>
-        <type>exponential</type>
-        <input>/it-vnav/internal/intermediates/use-route-vs-raw</input>
-        <output>/it-vnav/internal/intermediates/use-route-vs-lag</output>
-        <filter-time>0.2</filter-time>
-    </filter>
-
-    <!-- Average use-route-vs -->
-    <filter>
-        <name>Average use-route-vs</name>
-        <type>moving-average</type>
-        <input>/it-vnav/internal/intermediates/use-route-vs-lag</input>
-        <output>/it-vnav/internal/intermediates/use-route-vs-avg</output>
-        <samples>256</samples>
-    </filter>
-
-    <!-- Final use-route-vs -->
-    <logic>
-        <name>Final use-route-vs</name>
-        <input>
-            <greater-than-equals>
-                <property>/it-vnav/internal/intermediates/use-route-vs-avg</property>
-                <value>0.5</value>
-            </greater-than-equals>
-        </input>
-        <output>/it-vnav/internal/use-route-vs</output>
     </logic>
 
     <!-- VNAV's R-V/S: V/S required by route -->
     <filter>
-        <name>V/S required by route</name>
+        <name>VNAV's R-V/S: V/S required by route</name>
         <type>gain</type>
         <gain>1.0</gain>
 
@@ -619,8 +607,45 @@
         </input>
 
         <output>
-            <property>/it-vnav/internal/route-vs</property>
+            <property>/it-vnav/internal/intermediates/route-vs-raw</property>
         </output>
+    </filter>
+
+    <!-- VNAV's R-V/S: V/S that should be used -->
+    <filter>
+        <name>VNAV's R-V/S: V/S that should be used</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <input>/it-vnav/internal/intermediates/route-vs-raw</input>
+        <output>/it-vnav/internal/route-vs</output>
+        <min>
+            <condition>
+                <property>/it-vnav/internal/descent</property>
+                <property>/it-vnav/settings/controlled-descent</property>
+            </condition>
+            <expression>
+                <summary>
+                    <property>/it-vnav/internal/sbp-final</property>
+                    <value>-250</value>
+                </summary>
+            </expression>
+        </min>
+        <min>-6000</min>
+        <max>
+            <condition>
+                <not>
+                    <property>/it-vnav/internal/descent</property>
+                </not>
+            </condition>
+            <expression>
+                <sum>
+                    <property>/it-vnav/internal/sbp-final</property>
+                    <value>250</value>
+                </sum>
+            </expression>
+        </max>
+        <max>6000</max>
     </filter>
 
     <!-- VNAV's SBP: Filter ITAF's flch-kts-error-cmd -->
@@ -635,7 +660,7 @@
         </input>
 
         <output>
-            <property>/it-vnav/internal/intermediates/flch-kts-error</property>
+            <property>/it-vnav/internal/intermediates/sbp-kts-error</property>
         </output>
 		<max-rate-of-change>
 			<condition>
@@ -669,12 +694,25 @@
                     <value>1</value>
                 </equals>
             </condition>
-            <property>/it-autoflight/internal/intermediates/mach-rate</property>
+
+            <expression>
+                <difference>
+                    <property>/it-autoflight/internal/mach-rate</property>
+                    <property>/it-vnav/internal/intermediates/throttle-rate</property>
+                </difference>
+            </expression>
         </input>
 
-        <input>/it-autoflight/internal/intermediates/kts-rate</input>
+        <input>
+            <expression>
+                <difference>
+                    <property>/it-autoflight/internal/kts-rate</property>
+                    <property>/it-vnav/internal/intermediates/throttle-rate</property>
+                </difference>
+            </expression>
+        </input>
 
-        <reference>/it-vnav/internal/intermediates/flch-kts-error</reference>
+        <reference>/it-vnav/internal/intermediates/sbp-kts-error</reference>
 
         <output>/it-vnav/internal/intermediates/sbp-raw</output>
         <min>
@@ -751,11 +789,13 @@
 
     <!-- VNAV's SBP: Speed By Pitch Final -->
     <filter>
-        <name>VNAV's SBP</name>
-        <type>moving-average</type>
+        <name>VNAV's SBP: Speed By Pitch Final</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
         <input>/it-vnav/internal/intermediates/sbp-sum</input>
         <output>/it-vnav/internal/sbp-final</output>
-        <samples>2048</samples>
+        <max-rate-of-change>700</max-rate-of-change>
     </filter>
 
     <!-- Transition V/S controller -->
@@ -795,7 +835,7 @@
         <output>
             <property>/it-vnav/internal/vs-filtered</property>
         </output>
-        <max-rate-of-change>1000</max-rate-of-change>
+        <max-rate-of-change>700</max-rate-of-change>
     </filter>
 
     <!-- Connect transition controller to ITAF's V/S input when necessary -->

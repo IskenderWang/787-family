@@ -382,9 +382,9 @@
         <autopush_route>
             <file>Nasal/Autopush/route.nas</file>
         </autopush_route>
-        <it-vnav-extension>
+        <it_vnav_extension>
             <file>Aircraft/787-family/Nasal/vnav-extension.nas</file>
-        </it-vnav-extension>
+        </it_vnav_extension>
     </nasal>
 
     <it-autoflight>
