@@ -153,10 +153,10 @@
 		<type>select</type>
 		<object-name>windowice</object-name>
 		<condition>
-	<less-than-equals>
- 	   	<property>controls/ice/windscreen/center_temp</property>
-    		<value>0</value>
-	</less-than-equals>
+	<greater-than-equals>
+ 	   	<property>controls/ice/windscreen/center_icing</property>
+    		<value>0.05</value>
+	</greater-than-equals>
 		</condition>
 	</animation>
 
@@ -164,10 +164,10 @@
 		<type>select</type>
 		<object-name>wingice</object-name>
 		<condition>
-	<less-than-equals>
- 	   	<property>controls/ice/wing/temp</property>
-    		<value>0</value>
-	</less-than-equals>
+	<greater-than-equals>
+ 	   	<property>controls/ice/wing/icing</property>
+    		<value>0.05</value>
+	</greater-than-equals>
 		</condition>
 	</animation>
 
@@ -175,10 +175,10 @@
 		<type>select</type>
 		<object-name>eng1ice</object-name>
 		<condition>
-	<less-than-equals>
- 	   	<property>controls/ice/eng1/temp</property>
-    		<value>0</value>
-	</less-than-equals>
+	<greater-than-equals>
+ 	   	<property>controls/ice/eng1/icing</property>
+    		<value>0.05</value>
+	</greater-than-equals>
 		</condition>
 	</animation>
 
@@ -186,10 +186,10 @@
 		<type>select</type>
 		<object-name>eng2ice</object-name>
 		<condition>
-	<less-than-equals>
- 	   	<property>controls/ice/eng2/temp</property>
-    		<value>0</value>
-	</less-than-equals>
+	<greater-than-equals>
+ 	   	<property>controls/ice/eng2/icing</property>
+    		<value>0.05</value>
+	</greater-than-equals>
 		</condition>
 	</animation>
 

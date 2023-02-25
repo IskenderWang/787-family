@@ -466,10 +466,10 @@
     <type>select</type>
 	<object-name>warn2</object-name>
   	<condition>
-	<less-than-equals>
- 	   	<property>controls/ice/wing/temp</property>
-    		<value>0</value>
-	</less-than-equals>
+	<greater-than-equals>
+ 	   	<property>controls/ice/wing/icing</property>
+    		<value>0.05</value>
+	</greater-than-equals>
   	</condition>
 </animation>
 
@@ -477,10 +477,21 @@
     <type>select</type>
 	<object-name>warn3</object-name>
   	<condition>
-	<less-than-equals>
- 	   	<property>controls/ice/eng1/temp</property>
-    		<value>0</value>
-	</less-than-equals>
+	<greater-than-equals>
+ 	   	<property>controls/ice/eng1/icing</property>
+    		<value>0.05</value>
+	</greater-than-equals>
+  	</condition>
+</animation>
+
+<animation>
+    <type>select</type>
+	<object-name>warn4.001</object-name>
+  	<condition>
+	<greater-than-equals>
+ 	   	<property>controls/ice/eng2/icing</property>
+    		<value>0.05</value>
+	</greater-than-equals>
   	</condition>
 </animation>
 
@@ -488,21 +499,10 @@
     <type>select</type>
 	<object-name>warn4</object-name>
   	<condition>
-	<less-than-equals>
- 	   	<property>controls/ice/eng2/temp</property>
-    		<value>0</value>
-	</less-than-equals>
-  	</condition>
-</animation>
-
-<animation>
-    <type>select</type>
-	<object-name>warn4</object-name>
-  	<condition>
-	<less-than-equals>
- 	   	<property>controls/ice/wing/temp</property>
-    		<value>-20</value>
-	</less-than-equals>
+	<greater-than-equals>
+ 	   	<property>controls/ice/wing/icing</property>
+    		<value>0.85</value>
+	</greater-than-equals>
   	</condition>
 </animation>
 
@@ -510,10 +510,10 @@
     <type>select</type>
 	<object-name>warn5</object-name>
   	<condition>
-	<less-than-equals>
- 	   	<property>controls/ice/eng1/temp</property>
-    		<value>-20</value>
-	</less-than-equals>
+	<greater-than-equals>
+ 	   	<property>controls/ice/eng1/icing</property>
+    		<value>0.85</value>
+	</greater-than-equals>
   	</condition>
 </animation>
 
@@ -521,10 +521,10 @@
     <type>select</type>
 	<object-name>warn6</object-name>
   	<condition>
-	<less-than-equals>
- 	   	<property>controls/ice/eng2/temp</property>
-    		<value>-20</value>
-	</less-than-equals>
+	<greater-than-equals>
+ 	   	<property>controls/ice/eng2/icing</property>
+    		<value>0.85</value>
+	</greater-than-equals>
   	</condition>
 </animation>
 
@@ -532,10 +532,10 @@
     <type>select</type>
 	<object-name>warn1</object-name>
   	<condition>
-	<less-than-equals>
- 	   	<property>controls/ice/windscreen/center_temp</property>
-    		<value>0</value>
-	</less-than-equals>
+	<greater-than-equals>
+ 	   	<property>controls/ice/windscreen/center_icing</property>
+    		<value>0.05</value>
+	</greater-than-equals>
   	</condition>
 </animation>
 

@@ -224,15 +224,6 @@ var icing = {
         if (getprop("/controls/ice/wing/anti-ice") == 1 and wing_temp < 15.0 )
             wing_temp += me.UPDATE_INTERVAL * (48000 * me.UPDATE_INTERVAL) / 850 / 897;
 
-        # Handle wing icing alert
-        if ((wing_temp <= 0) and (me.icewarnw == 0)) {
-            screen.log.write("Wing Ice Alert!", 1, 0, 0);
-            sysinfo.log_msg("[HEAT] Ice Detected on Wings", 1);
-            me.icewarnw = 1;
-        }
-        if ((wing_temp > 0) and (me.icewarnw == 1))
-            me.icewarnw = 0;
-
         # Handle wing heater failure alert
         if (getprop("/controls/ice/wing/failed") == 1 and me.failwarn_wing == 0)
             sysinfo.log_msg("[HEAT] Wing heaters failure", 1);
@@ -243,15 +234,6 @@ var icing = {
         if (getprop("/controls/ice/eng1/anti-ice") == 1 and eng1_temp < 35.0)
             eng1_temp += me.UPDATE_INTERVAL * (72000 * me.UPDATE_INTERVAL) / 367 / 897;
 
-        # Handle eng1 icing alert
-        if ((eng1_temp <= 0) and (me.icewarne1 == 0)) {
-            screen.log.write("Engine 1 Ice Alert!", 1, 0, 0);
-            sysinfo.log_msg("[HEAT] Ice Detected on Engine 1", 1);
-            me.icewarne1 = 1
-        }
-        if ((eng1_temp > 0) and (me.icewarne1 == 1))
-            me.icewarne1 = 0;
-
         # Handle engine 1 heater failure alert
         if (getprop("/controls/ice/eng1/failed") == 1 and me.failwarn_eng1 == 0)
             sysinfo.log_msg("[HEAT] Engine 1 heater failure", 1);
@@ -261,15 +243,6 @@ var icing = {
         #=================
         if (getprop("/controls/ice/eng2/anti-ice") == 1 and eng2_temp < 35.0)
             eng2_temp += me.UPDATE_INTERVAL * (72000 * me.UPDATE_INTERVAL) / 367 / 897;
-
-        # Handle eng2 icing alert
-        if ((eng2_temp <= 0) and (me.icewarne1 == 0)) {
-            screen.log.write("Engine 2 Ice Alert!", 1, 0, 0);
-            sysinfo.log_msg("[HEAT] Ice Detected on Engine 2", 1);
-            me.icewarne2 = 1
-        }
-        if ((eng2_temp > 0) and (me.icewarne1 == 1))
-            me.icewarne2 = 0;
 
         # Handle engine 2 heater failure alert
         if (getprop("/controls/ice/eng2/failed") == 1 and me.failwarn_eng2 == 0)
@@ -289,15 +262,6 @@ var icing = {
         if (getprop("/controls/ice/windscreen/anti-ice-backup") == 1 and wscreen_c_temp < 15)
             wscreen_c_temp += me.UPDATE_INTERVAL * (5100 * me.UPDATE_INTERVAL) / 119 / 753;
 
-        # Handle windscreen ice alert
-        if ((wscreen_c_temp <= 0) and (me.icewarn_windscreen == 0)) {
-            screen.log.write("Windscreen Ice Alert!", 1, 0, 0);
-            sysinfo.log_msg("[HEAT] Ice detected on Windscreen", 1);
-            me.icewarn_windscreen = 1;
-        }
-        if ((wscreen_c_temp > 0) and (me.icewarn_windscreen == 1))
-            me.icewarn_windscreen = 0;
-
         # Handle windscreen heaters failure alert
         # Primary
         if (getprop("/controls/ice/windscreen/primary-failed") == 1 and me.failwarn_wscreen_p == 0)
@@ -312,15 +276,6 @@ var icing = {
         #==============
         if (getprop("/controls/ice/probes/anti-ice") == 1 and probes_temp < 15.0)
             probes_temp += me.UPDATE_INTERVAL * (350 * me.UPDATE_INTERVAL) * 10 * 897;
-
-        # Handle probes ice alert
-        if ((probes_temp <= 0) and (me.icewarn_probes == 0)) {
-            screen.log.write("Pitot & AoA probes Ice Alert!", 1, 0, 0);
-            sysinfo.log_msg("[HEAT] Ice detected on pitot & AoA probes", 1);
-            me.icewarn_probes = 1;
-        }
-        if ((probes_temp > 0) and (me.icewarn_probes == 1))
-            me.icewarn_probes = 0;
 
         # Handle probes heaters failure alert
         if (getprop("/controls/ice/probes/failed") == 1 and me.failwarn_probes == 0)
