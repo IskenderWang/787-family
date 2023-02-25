@@ -42,17 +42,23 @@ var icing = {
         setprop("/controls/ice/windscreen/backup-failed", 0.0);
         setprop("/controls/ice/probes/failed", 0.0);
 
+        # Icing situation on each part
+        me.wscreen_c_icing = 0;
+        me.probes_icing = 0;
+        me.eng1_icing = 0;
+        me.eng2_icing = 0;
+        me.wing_icing = 0;
+
         me.reset();
     },
     update : func {
         # Get information
         #################
 
-        # Calculate TAT Value [ TAT = static temp (1 + ((1.4 - 1) / 2) Mach^2) ]
-        # note (1.4 - 1) / 2 = 0.2
+        # Calculate TAT Value [ SAT + RR ], where RR = TAS^2 / 87^2
         setprop(
             "/controls/ice/tat",
-            getprop("/environment/temperature-degc") * (1 + 0.2 * getprop("/velocities/mach") * getprop("/velocities/mach"))
+            getprop("/environment/temperature-degc") + math.pow(getprop("/velocities/uBody-fps") * 0.5924838, 2) / 7569
         );
         var tat = getprop("/controls/ice/tat");
 
@@ -97,6 +103,69 @@ var icing = {
             * !!(getprop("/systems/electrical/left-bus") or getprop("/systems/electrical/right-bus"))
         );
 
+        # Determine if we're on icing conditions and their severity
+        ###########################################################
+
+        var rain = getprop("/environment/rain-norm");
+        var raining = 0;
+        if (rain != nil)
+            raining = rain;
+        else
+            rain = 0;
+
+        var snow = getprop("/environment/snow-norm");
+        var snowing = 0;
+        if (snow != nil)
+            snowing = snow;
+        else
+            snow = 0;
+
+        var clouds = 0;
+        var cloud_severity = 0;
+        for (i = 0; i < 5; i = i + 1) {
+            # Scan each cloud layer to determine if we're in or near clouds.
+            var coverage = getprop("/environment/clouds/layer["~ i ~"]/coverage");
+
+            if (coverage == "clear")
+                continue;
+            elsif (coverage = "few")
+                cloud_severity = 0.25;
+            elsif (coverage = "scattered")
+                cloud_severity = 0.5;
+            elsif (coverage = "broken")
+                cloud_severity = 0.75;
+            else # overcast
+                cloud_severity = 1.0;
+
+            var pos = getprop("/position/altitude-ft");
+
+            var under = getprop("/environment/clouds/layer["~ i ~"]/elevation-ft")
+                - getprop("/environment/clouds/layer["~ i ~"]/thickness-ft") - 1500;
+            var above = getprop("/environment/clouds/layer["~ i ~"]/elevation-ft")
+                + getprop("/environment/clouds/layer["~ i ~"]/thickness-ft") + 1500;
+
+            if (pos > under or pos < above) {
+                clouds = 1;
+                break;
+            }
+        }
+        cloud_severity = clouds * cloud_severity; # Set severity back to 0 if we're not in or near the clouds.
+
+        var visibility = getprop("/environment/ground-visibility-m");
+        var too_foggy = visibility <= 1600;
+        var fog_severity = 1 - visibility / 1600;
+        fog_severity = math.clamp(fog_severity, 0, 1);
+
+        var icing_conditions = tat < 10 and (raining or snowing or clouds or too_foggy);
+
+        var icing_severity = rain;
+        icing_severity += snow * 2;
+        icing_severity += cloud_severity;
+        icing_severity += fog_severity;
+
+        if (icing_severity > 1)
+            icing_severity = 1;
+
         # Control activation of heating elements
         ########################################
 
@@ -104,7 +173,7 @@ var icing = {
         if (wingicesetting == 0)
             setprop("/controls/ice/wing/anti-ice", 0);
         elsif (wingicesetting == 1)
-            setprop("/controls/ice/wing/anti-ice", tat <= 0);
+            setprop("/controls/ice/wing/anti-ice", icing_conditions);
         else
             setprop("/controls/ice/wing/anti-ice", 1);
 
@@ -112,7 +181,7 @@ var icing = {
         if (eng1icesetting == 0)
             setprop("/controls/ice/eng1/anti-ice", 0);
         elsif (eng1icesetting == 1)
-            setprop("/controls/ice/eng1/anti-ice", tat <= 0);
+            setprop("/controls/ice/eng1/anti-ice", icing_conditions);
         else
             setprop("/controls/ice/eng1/anti-ice", 1);
 
@@ -120,7 +189,7 @@ var icing = {
         if (eng2icesetting == 0)
             setprop("/controls/ice/eng2/anti-ice", 0);
         elsif (eng2icesetting == 1)
-            setprop("/controls/ice/eng2/anti-ice", tat <= 0);
+            setprop("/controls/ice/eng2/anti-ice", icing_conditions);
         else
             setprop("/controls/ice/eng2/anti-ice", 1);
 
@@ -138,14 +207,14 @@ var icing = {
         # Air affects all parts even if the heaters are on, the heaters can heat the part
         # afterwards. This method also heats the parts when TAT > part's temperature.
         # All parts use the following formula:
-        # part_temp += me.UPDATE_INTERVAL * (me.UPDATE_INTERVAL * (tat - part_temp) * part_surface_area * 10) / mass / specific_heat_capacity_of_material;
+        # part_temp += me.UPDATE_INTERVAL * (me.UPDATE_INTERVAL * (tat - part_temp) * part_surface_area * 100) / mass / specific_heat_capacity_of_material;
 
-        wing_temp      += me.UPDATE_INTERVAL * (me.UPDATE_INTERVAL * (tat - wing_temp     ) * 14.887 * 10) / 850 / 897;
-        eng1_temp      += me.UPDATE_INTERVAL * (me.UPDATE_INTERVAL * (tat - eng1_temp     ) * 13.603 * 10) / 367 / 897;
-        eng2_temp      += me.UPDATE_INTERVAL * (me.UPDATE_INTERVAL * (tat - eng2_temp     ) * 13.603 * 10) / 367 / 897;
-        wscreen_c_temp += me.UPDATE_INTERVAL * (me.UPDATE_INTERVAL * (tat - wscreen_c_temp) * 1.564  * 10) / 119 / 753;
-        wscreen_s_temp += me.UPDATE_INTERVAL * (me.UPDATE_INTERVAL * (tat - wscreen_s_temp) * 1.622  * 10) / 123 / 753;
-        probes_temp    += me.UPDATE_INTERVAL * (me.UPDATE_INTERVAL * (tat - probes_temp   ) * 0.1    * 10) / 10  / 897;
+        wing_temp      += me.UPDATE_INTERVAL * (me.UPDATE_INTERVAL * (tat - wing_temp     ) * 14.887 * 100) / 850 / 897;
+        eng1_temp      += me.UPDATE_INTERVAL * (me.UPDATE_INTERVAL * (tat - eng1_temp     ) * 13.603 * 100) / 367 / 897;
+        eng2_temp      += me.UPDATE_INTERVAL * (me.UPDATE_INTERVAL * (tat - eng2_temp     ) * 13.603 * 100) / 367 / 897;
+        wscreen_c_temp += me.UPDATE_INTERVAL * (me.UPDATE_INTERVAL * (tat - wscreen_c_temp) * 1.564  * 100) / 119 / 753;
+        wscreen_s_temp += me.UPDATE_INTERVAL * (me.UPDATE_INTERVAL * (tat - wscreen_s_temp) * 1.622  * 100) / 123 / 753;
+        probes_temp    += me.UPDATE_INTERVAL * (me.UPDATE_INTERVAL * (tat - probes_temp   ) * 0.1    * 100) / 10  / 897;
 
         # For the effect of the heating elements, all parts use the following formula:
         #part_temp += me.UPDATE_INTERVAL * (heating_power * me.UPDATE_INTERVAL) * mass * specific_heat_capacity_of_material;
@@ -153,7 +222,7 @@ var icing = {
         # Wing heaters
         #=============
         if (getprop("/controls/ice/wing/anti-ice") == 1 and wing_temp < 15.0 )
-            wing_temp += me.UPDATE_INTERVAL * (30000 * me.UPDATE_INTERVAL) / 850 / 897;
+            wing_temp += me.UPDATE_INTERVAL * (48000 * me.UPDATE_INTERVAL) / 850 / 897;
 
         # Handle wing icing alert
         if ((wing_temp <= 0) and (me.icewarnw == 0)) {
@@ -172,7 +241,7 @@ var icing = {
         # Engine 1 heaters
         #=================
         if (getprop("/controls/ice/eng1/anti-ice") == 1 and eng1_temp < 35.0)
-            eng1_temp += me.UPDATE_INTERVAL * (25000 * me.UPDATE_INTERVAL) / 367 / 897;
+            eng1_temp += me.UPDATE_INTERVAL * (72000 * me.UPDATE_INTERVAL) / 367 / 897;
 
         # Handle eng1 icing alert
         if ((eng1_temp <= 0) and (me.icewarne1 == 0)) {
@@ -191,7 +260,7 @@ var icing = {
         # Engine 2 heaters
         #=================
         if (getprop("/controls/ice/eng2/anti-ice") == 1 and eng2_temp < 35.0)
-            eng2_temp += me.UPDATE_INTERVAL * (25000 * me.UPDATE_INTERVAL) / 367 / 897;
+            eng2_temp += me.UPDATE_INTERVAL * (72000 * me.UPDATE_INTERVAL) / 367 / 897;
 
         # Handle eng2 icing alert
         if ((eng2_temp <= 0) and (me.icewarne1 == 0)) {
@@ -211,14 +280,14 @@ var icing = {
         #=======================================
         if (getprop("/controls/ice/windscreen/anti-ice") == 1) {
             if (wscreen_c_temp < 15.0)
-                wscreen_c_temp += me.UPDATE_INTERVAL * (4000 * me.UPDATE_INTERVAL) / 119 / 753;
+                wscreen_c_temp += me.UPDATE_INTERVAL * (5100 * me.UPDATE_INTERVAL) / 119 / 753;
 
             if (wscreen_s_temp < 15.0)
-                wscreen_s_temp += me.UPDATE_INTERVAL * (4000 * me.UPDATE_INTERVAL) / 123 / 753;
+                wscreen_s_temp += me.UPDATE_INTERVAL * (5300 * me.UPDATE_INTERVAL) / 123 / 753;
         }
 
         if (getprop("/controls/ice/windscreen/anti-ice-backup") == 1 and wscreen_c_temp < 15)
-            wscreen_c_temp += me.UPDATE_INTERVAL * (4000 * me.UPDATE_INTERVAL) / 119 / 753;
+            wscreen_c_temp += me.UPDATE_INTERVAL * (5100 * me.UPDATE_INTERVAL) / 119 / 753;
 
         # Handle windscreen ice alert
         if ((wscreen_c_temp <= 0) and (me.icewarn_windscreen == 0)) {
@@ -239,13 +308,10 @@ var icing = {
             sysinfo.log_msg("[HEAT] Backup windscreen heaters failure", 1);
         me.failwarn_wscreen_b = getprop("/controls/ice/windscreen/backup-failed");
 
-        setprop("/environment/aircraft-effects/fog-level", wscreen_c_temp / -25);
-        setprop("/environment/aircraft-effects/frost-level", wscreen_c_temp / -30);
-
         # Probe heaters
         #==============
         if (getprop("/controls/ice/probes/anti-ice") == 1 and probes_temp < 15.0)
-            probes_temp += me.UPDATE_INTERVAL * (300 * me.UPDATE_INTERVAL) * 10 * 897;
+            probes_temp += me.UPDATE_INTERVAL * (350 * me.UPDATE_INTERVAL) * 10 * 897;
 
         # Handle probes ice alert
         if ((probes_temp <= 0) and (me.icewarn_probes == 0)) {
@@ -261,10 +327,9 @@ var icing = {
             sysinfo.log_msg("[HEAT] Probe heaters failure", 1);
         me.failwarn_probes = getprop("/controls/ice/probes/failed");
 
-        # Export variables and warnings
-        ###############################
+        # Export temperatures
+        #####################
 
-        # Exporting nasal variables back to the property tree
         setprop("/controls/ice/wing/temp", wing_temp);
         setprop("/controls/ice/eng1/temp", eng1_temp);
         setprop("/controls/ice/eng2/temp", eng2_temp);
@@ -272,24 +337,113 @@ var icing = {
         setprop("/controls/ice/windscreen/sides_temp", wscreen_s_temp);
         setprop("/controls/ice/probes/temp", probes_temp);
 
-        # Set Engine Failures in case of Heavy Ice
-        if (eng1_temp <= -30)
-            setprop("/controls/engines/engine/cut-off", 1);
+        # Calculate icing severity on each part
+        #######################################
 
-        if (eng2_temp <= -30)
-            setprop("/controls/engines/engine[1]/cut-off", 1);
+        if (wscreen_c_temp <= 0)
+            me.wscreen_c_icing += (icing_severity) / 120 * me.UPDATE_INTERVAL;
+        else
+            me.wscreen_c_icing -= (wscreen_c_temp) / 120 * me.UPDATE_INTERVAL;
+        me.wscreen_c_icing = math.clamp(me.wscreen_c_icing, 0, 1);
 
-        # Change aerodynamics
-        #####################
+        if (probes_temp <= 0)
+            me.probes_icing += (icing_severity) / 120 * me.UPDATE_INTERVAL;
+        else
+            me.probes_icing -= (probes_temp) / 120 * me.UPDATE_INTERVAL;
+        me.probes_icing = math.clamp(me.probes_icing, 0, 1);
 
-        # Set Wing Lift and Drag Coefficients according to temperature
-        if (wing_temp >= 0) {
-            setprop("/controls/ice/wing/lift-coefficient", 1);
-            setprop("/controls/ice/wing/drag-coefficient", 1);
-        } else {
-            setprop("/controls/ice/wing/lift-coefficient", 1 + ( wing_temp / 80 ) );
-            setprop("/controls/ice/wing/drag-coefficient", 1 - ( wing_temp / 80 ) );
+        if (eng1_temp <= 0)
+            me.eng1_icing += (icing_severity) / 120 * me.UPDATE_INTERVAL;
+        else
+            me.eng1_icing -= (eng1_temp) / 120 * me.UPDATE_INTERVAL;
+        me.eng1_icing = math.clamp(me.eng1_icing, 0, 1);
+
+        if (eng2_temp <= 0)
+            me.eng2_icing += (icing_severity) / 120 * me.UPDATE_INTERVAL;
+        else
+            me.eng2_icing -= (eng2_temp) / 120 * me.UPDATE_INTERVAL;
+        me.eng2_icing = math.clamp(me.eng2_icing, 0, 1);
+
+        if (wing_temp <= 0)
+            me.wing_icing += (icing_severity) / 120 * me.UPDATE_INTERVAL;
+        else
+            me.wing_icing -= (wing_temp) / 120 * me.UPDATE_INTERVAL;
+        me.wing_icing = math.clamp(me.wing_icing, 0, 1);
+
+        # Export icing
+        setprop("/controls/ice/wing/icing", me.wing_icing);
+        setprop("/controls/ice/eng1/icing", me.eng1_icing);
+        setprop("/controls/ice/eng2/icing", me.eng2_icing);
+        setprop("/controls/ice/windscreen/center_icing", me.wscreen_c_icing);
+        setprop("/controls/ice/probes/icing", me.probes_icing);
+
+        # Alert pilot of icing
+        ######################
+
+        # Handle wing icing alert
+        if ((me.wing_icing <= 0.05) and (me.icewarnw == 0)) {
+            screen.log.write("Wing Ice Alert!", 1, 0, 0);
+            sysinfo.log_msg("[HEAT] Ice Detected on Wings", 1);
+            me.icewarnw = 1;
         }
+        if ((me.wing_icing > 0.05) and (me.icewarnw == 1))
+            me.icewarnw = 0;
+
+        # Handle eng1 icing alert
+        if ((me.eng1_icing <= 0.05) and (me.icewarne1 == 0)) {
+            screen.log.write("Engine 1 Ice Alert!", 1, 0, 0);
+            sysinfo.log_msg("[HEAT] Ice Detected on Engine 1", 1);
+            me.icewarne1 = 1
+        }
+        if ((me.eng1_icing > 0.05) and (me.icewarne1 == 1))
+            me.icewarne1 = 0;
+
+        # Handle eng2 icing alert
+        if ((me.eng2_icing <= 0.05) and (me.icewarne1 == 0)) {
+            screen.log.write("Engine 2 Ice Alert!", 1, 0, 0);
+            sysinfo.log_msg("[HEAT] Ice Detected on Engine 2", 1);
+            me.icewarne2 = 1
+        }
+        if ((me.eng2_icing > 0.05) and (me.icewarne1 == 1))
+            me.icewarne2 = 0;
+
+        # Handle windscreen ice alert
+        if ((me.wscreen_c_icing <= 0.05) and (me.icewarn_windscreen == 0)) {
+            screen.log.write("Windscreen Ice Alert!", 1, 0, 0);
+            sysinfo.log_msg("[HEAT] Ice detected on Windscreen", 1);
+            me.icewarn_windscreen = 1;
+        }
+        if ((me.wscreen_c_icing > 0.05) and (me.icewarn_windscreen == 1))
+            me.icewarn_windscreen = 0;
+
+        # Handle probes ice alert
+        if ((me.probes_icing <= 0.05) and (me.icewarn_probes == 0)) {
+            screen.log.write("Pitot & AoA probes Ice Alert!", 1, 0, 0);
+            sysinfo.log_msg("[HEAT] Ice detected on pitot & AoA probes", 1);
+            me.icewarn_probes = 1;
+        }
+        if ((me.probes_icing > 0.05) and (me.icewarn_probes == 1))
+            me.icewarn_probes = 0;
+
+        # Create consequences for icing
+        ###############################
+
+        # Windscreen ice and fog.
+        setprop("/environment/aircraft-effects/fog-level", me.wscreen_c_icing);
+        setprop("/environment/aircraft-effects/frost-level", me.wscreen_c_icing);
+
+        # Probes? (Not implemented yet)
+
+        # Set Engine Failures in case of Heavy Ice.
+        if (me.eng1_icing >= 0.95)
+            setprop("/controls/engines/engine/cutoff", 1);
+
+        if (me.eng2_icing <= 0.95)
+            setprop("/controls/engines/engine[1]/cutoff", 1);
+
+        # Set Wing Lift and Drag Coefficients according to icing.
+        setprop("/controls/ice/wing/lift-coefficient", 1 + me.wing_icing / -2);
+        setprop("/controls/ice/wing/drag-coefficient", 1 + me.wing_icing / 2);
     },
     reset : func {
         me.loopid += 1;
