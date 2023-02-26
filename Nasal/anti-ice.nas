@@ -126,30 +126,29 @@ var icing = {
             # Scan each cloud layer to determine if we're in or near clouds.
             var coverage = getprop("/environment/clouds/layer["~ i ~"]/coverage");
 
-            if (coverage == "clear")
-                continue;
-            elsif (coverage = "few")
-                cloud_severity = 0.25;
-            elsif (coverage = "scattered")
-                cloud_severity = 0.5;
-            elsif (coverage = "broken")
-                cloud_severity = 0.75;
-            else # overcast
-                cloud_severity = 1.0;
-
             var pos = getprop("/position/altitude-ft");
 
             var under = getprop("/environment/clouds/layer["~ i ~"]/elevation-ft")
-                - getprop("/environment/clouds/layer["~ i ~"]/thickness-ft") - 1500;
+                - getprop("/environment/clouds/layer["~ i ~"]/thickness-ft");
             var above = getprop("/environment/clouds/layer["~ i ~"]/elevation-ft")
-                + getprop("/environment/clouds/layer["~ i ~"]/thickness-ft") + 1500;
+                + getprop("/environment/clouds/layer["~ i ~"]/thickness-ft");
 
-            if (pos > under or pos < above) {
+            cloud_severity = 0;
+            if (pos > under or pos < above)
+                if (coverage == "few")
+                    cloud_severity = 0.25;
+                elsif (coverage == "scattered")
+                    cloud_severity = 0.5;
+                elsif (coverage == "broken")
+                    cloud_severity = 0.75;
+                else # overcast
+                    cloud_severity = 1.0;
+
+            if (pos > under - 1500 or pos < above + 1500) {
                 clouds = 1;
                 break;
             }
         }
-        cloud_severity = clouds * cloud_severity; # Set severity back to 0 if we're not in or near the clouds.
 
         var visibility = getprop("/environment/ground-visibility-m");
         var too_foggy = visibility <= 1600;
