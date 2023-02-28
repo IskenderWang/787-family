@@ -106,14 +106,19 @@ var icing = {
         # Determine if we're on icing conditions and their severity
         ###########################################################
 
-        var rain = getprop("/environment/rain-norm");
+        # When it's raining and OAT is below freezing, that rain is supercooled rain, which can form
+        # ice extremely quickly.
+        var rain = math.clamp(
+            getprop("/environment/rain-norm") * (3 * (getprop("environment/temperature-degc") <= 0))
+            0, 1
+        );
         var raining = 0;
         if (rain != nil)
             raining = rain;
         else
             rain = 0;
 
-        var snow = getprop("/environment/snow-norm");
+        var snow = math.clamp(getprop("/environment/snow-norm") * 2, 0, 1);
         var snowing = 0;
         if (snow != nil)
             snowing = snow;
@@ -124,18 +129,19 @@ var icing = {
         var cloud_severity = 0;
         for (i = 0; i < 5; i = i + 1) {
             # Scan each cloud layer to determine if we're in or near clouds.
-            var coverage = getprop("/environment/clouds/layer["~ i ~"]/coverage");
+            var coverage = getprop("/environment/metar/clouds/layer["~ i ~"]/coverage");
 
             var pos = getprop("/position/altitude-ft");
 
-            var under = getprop("/environment/clouds/layer["~ i ~"]/elevation-ft")
-                - getprop("/environment/clouds/layer["~ i ~"]/thickness-ft");
-            var above = getprop("/environment/clouds/layer["~ i ~"]/elevation-ft")
-                + getprop("/environment/clouds/layer["~ i ~"]/thickness-ft");
+            var under = getprop("/environment/metar/clouds/layer["~ i ~"]/elevation-ft");
+            var above = getprop("/environment/metar/clouds/layer["~ i ~"]/elevation-ft")
+                + getprop("/environment/metar/clouds/layer["~ i ~"]/thickness-ft");
 
             cloud_severity = 0;
-            if (pos > under or pos < above)
-                if (coverage == "few")
+            if (pos > under and pos < above)
+                if (coverage == "clear")
+                    cloud_severity = 0.0;
+                elsif (coverage == "few")
                     cloud_severity = 0.25;
                 elsif (coverage == "scattered")
                     cloud_severity = 0.5;
@@ -144,13 +150,17 @@ var icing = {
                 else # overcast
                     cloud_severity = 1.0;
 
-            if (pos > under - 1500 or pos < above + 1500) {
+            # These buffers give us ~2 minutes to turn the heaters on before reaching the clouds,
+            # while allowing us to quickly turn them off after leaving the clouds.
+            var under_buffer = math.min(under - 150 - getprop("velocities/vertical-speed-fps") * 120, under - 150);
+            var above_buffer = math.max(above + 150 - getprop("velocities/vertical-speed-fps") * 120, above + 150);
+            if (pos > under_buffer and pos < above_buffer) {
                 clouds = 1;
                 break;
             }
         }
 
-        var visibility = getprop("/environment/ground-visibility-m");
+        var visibility = getprop("/environment/visibility-m");
         var too_foggy = visibility <= 1600;
         var fog_severity = 1 - visibility / 1600;
         fog_severity = math.clamp(fog_severity, 0, 1);
@@ -161,9 +171,15 @@ var icing = {
         icing_severity += snow * 2;
         icing_severity += cloud_severity;
         icing_severity += fog_severity;
+        icing_severity = math.clamp(icing_severity, 0, 1);
 
-        if (icing_severity > 1)
-            icing_severity = 1;
+        # Though we don't need to export these variables, other systems might find them useful.
+        setprop("/controls/ice/icing-severity", icing_severity);
+        setprop("/controls/ice/icing-conditions", icing_conditions);
+        setprop("/controls/ice/fog-severity", fog_severity);
+        setprop("/controls/ice/cloud-severity", cloud_severity);
+        setprop("/controls/ice/snow-severity", snow);
+        setprop("/controls/ice/rain-severity", rain);
 
         # Control activation of heating elements
         ########################################
@@ -297,31 +313,31 @@ var icing = {
         if (wscreen_c_temp <= 0)
             me.wscreen_c_icing += (icing_severity) / 120 * me.UPDATE_INTERVAL;
         else
-            me.wscreen_c_icing -= (wscreen_c_temp) / 120 * me.UPDATE_INTERVAL;
+            me.wscreen_c_icing -= (wscreen_c_temp / 3) / 120 * me.UPDATE_INTERVAL;
         me.wscreen_c_icing = math.clamp(me.wscreen_c_icing, 0, 1);
 
         if (probes_temp <= 0)
             me.probes_icing += (icing_severity) / 120 * me.UPDATE_INTERVAL;
         else
-            me.probes_icing -= (probes_temp) / 120 * me.UPDATE_INTERVAL;
+            me.probes_icing -= (probes_temp / 3) / 120 * me.UPDATE_INTERVAL;
         me.probes_icing = math.clamp(me.probes_icing, 0, 1);
 
         if (eng1_temp <= 0)
             me.eng1_icing += (icing_severity) / 120 * me.UPDATE_INTERVAL;
         else
-            me.eng1_icing -= (eng1_temp) / 120 * me.UPDATE_INTERVAL;
+            me.eng1_icing -= (eng1_temp / 3) / 120 * me.UPDATE_INTERVAL;
         me.eng1_icing = math.clamp(me.eng1_icing, 0, 1);
 
         if (eng2_temp <= 0)
             me.eng2_icing += (icing_severity) / 120 * me.UPDATE_INTERVAL;
         else
-            me.eng2_icing -= (eng2_temp) / 120 * me.UPDATE_INTERVAL;
+            me.eng2_icing -= (eng2_temp / 3) / 120 * me.UPDATE_INTERVAL;
         me.eng2_icing = math.clamp(me.eng2_icing, 0, 1);
 
         if (wing_temp <= 0)
             me.wing_icing += (icing_severity) / 120 * me.UPDATE_INTERVAL;
         else
-            me.wing_icing -= (wing_temp) / 120 * me.UPDATE_INTERVAL;
+            me.wing_icing -= (wing_temp / 3) / 120 * me.UPDATE_INTERVAL;
         me.wing_icing = math.clamp(me.wing_icing, 0, 1);
 
         # Export icing
@@ -335,48 +351,48 @@ var icing = {
         ######################
 
         # Handle wing icing alert
-        if ((me.wing_icing <= 0.05) and (me.icewarnw == 0)) {
+        if ((me.wing_icing >= 0.05) and (me.icewarnw == 0)) {
             screen.log.write("Wing Ice Alert!", 1, 0, 0);
             sysinfo.log_msg("[HEAT] Ice Detected on Wings", 1);
             me.icewarnw = 1;
         }
-        if ((me.wing_icing > 0.05) and (me.icewarnw == 1))
+        if ((me.wing_icing < 0.05) and (me.icewarnw == 1))
             me.icewarnw = 0;
 
         # Handle eng1 icing alert
-        if ((me.eng1_icing <= 0.05) and (me.icewarne1 == 0)) {
+        if ((me.eng1_icing >= 0.05) and (me.icewarne1 == 0)) {
             screen.log.write("Engine 1 Ice Alert!", 1, 0, 0);
             sysinfo.log_msg("[HEAT] Ice Detected on Engine 1", 1);
             me.icewarne1 = 1
         }
-        if ((me.eng1_icing > 0.05) and (me.icewarne1 == 1))
+        if ((me.eng1_icing < 0.05) and (me.icewarne1 == 1))
             me.icewarne1 = 0;
 
         # Handle eng2 icing alert
-        if ((me.eng2_icing <= 0.05) and (me.icewarne1 == 0)) {
+        if ((me.eng2_icing >= 0.05) and (me.icewarne1 == 0)) {
             screen.log.write("Engine 2 Ice Alert!", 1, 0, 0);
             sysinfo.log_msg("[HEAT] Ice Detected on Engine 2", 1);
             me.icewarne2 = 1
         }
-        if ((me.eng2_icing > 0.05) and (me.icewarne1 == 1))
+        if ((me.eng2_icing < 0.05) and (me.icewarne1 == 1))
             me.icewarne2 = 0;
 
         # Handle windscreen ice alert
-        if ((me.wscreen_c_icing <= 0.05) and (me.icewarn_windscreen == 0)) {
+        if ((me.wscreen_c_icing >= 0.05) and (me.icewarn_windscreen == 0)) {
             screen.log.write("Windscreen Ice Alert!", 1, 0, 0);
             sysinfo.log_msg("[HEAT] Ice detected on Windscreen", 1);
             me.icewarn_windscreen = 1;
         }
-        if ((me.wscreen_c_icing > 0.05) and (me.icewarn_windscreen == 1))
+        if ((me.wscreen_c_icing < 0.05) and (me.icewarn_windscreen == 1))
             me.icewarn_windscreen = 0;
 
         # Handle probes ice alert
-        if ((me.probes_icing <= 0.05) and (me.icewarn_probes == 0)) {
+        if ((me.probes_icing >= 0.05) and (me.icewarn_probes == 0)) {
             screen.log.write("Pitot & AoA probes Ice Alert!", 1, 0, 0);
             sysinfo.log_msg("[HEAT] Ice detected on pitot & AoA probes", 1);
             me.icewarn_probes = 1;
         }
-        if ((me.probes_icing > 0.05) and (me.icewarn_probes == 1))
+        if ((me.probes_icing < 0.05) and (me.icewarn_probes == 1))
             me.icewarn_probes = 0;
 
         # Create consequences for icing
@@ -392,7 +408,7 @@ var icing = {
         if (me.eng1_icing >= 0.95)
             setprop("/controls/engines/engine/cutoff", 1);
 
-        if (me.eng2_icing <= 0.95)
+        if (me.eng2_icing >= 0.95)
             setprop("/controls/engines/engine[1]/cutoff", 1);
 
         # Set Wing Lift and Drag Coefficients according to icing.
