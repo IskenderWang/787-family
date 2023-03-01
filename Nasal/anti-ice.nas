@@ -106,24 +106,25 @@ var icing = {
         # Determine if we're on icing conditions and their severity
         ###########################################################
 
-        # When it's raining and OAT is below freezing, that rain is supercooled rain, which can form
-        # ice extremely quickly.
-        var rain = math.clamp(
-            getprop("/environment/rain-norm") * (3 * (getprop("environment/temperature-degc") <= 0))
-            0, 1
-        );
+        var rain = getprop("/environment/rain-norm");
         var raining = 0;
-        if (rain != nil)
+        if (rain != nil) {
+            # When it's raining and OAT is below freezing, that rain is supercooled rain, which can
+            # form ice extremely quickly.
+            rain = math.clamp(rain * (3 * (getprop("environment/temperature-degc") <= 0)), 0, 1);
             raining = rain;
-        else
+        } else {
             rain = 0;
+        }
 
-        var snow = math.clamp(getprop("/environment/snow-norm") * 2, 0, 1);
+        var snow = getprop("/environment/snow-norm");
         var snowing = 0;
-        if (snow != nil)
+        if (snow != nil) {
+            snow = math.clamp(snow * 2, 0, 1);
             snowing = snow;
-        else
+        } else {
             snow = 0;
+        }
 
         var clouds = 0;
         var cloud_severity = 0;
