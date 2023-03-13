@@ -920,7 +920,7 @@
             <binding>
                 <command>property-cycle</command>
                 <property>controls/cdu[1]/keypress</property>
-		<value>clr</value>
+		        <value>del</value>
             </binding>
         </action>
     </animation>
@@ -933,7 +933,7 @@
             <binding>
                 <command>property-cycle</command>
                 <property>controls/cdu[1]/keypress</property>
-		<value>del</value>
+		        <value>clr</value>
             </binding>
         </action>
     </animation>
@@ -3218,6 +3218,7 @@
             <binding>
                 <command>nasal</command>
  				<script>
+                    setprop("/it-vnav/output/armed", 0);
  					setprop("/it-autoflight/input/vs", math.round(getprop("/velocities/vertical-speed-fps") * 60), 100);
  					setprop("/it-autoflight/input/vert", 1);
  				</script>

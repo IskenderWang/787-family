@@ -1553,7 +1553,7 @@ var cdu = {
 			setprop("/controls/cdu/r3-type", "click");
 			setprop("/controls/cdu/r4-type", "disp");
 			setprop("/controls/cdu/r5-type", "click");
-			setprop("/controls/cdu/r6-type", "disp");
+			setprop("/controls/cdu/r6-type", "click");
 			setprop("/controls/cdu/r7-type", "disp");
 
 			#### Field Values
@@ -1588,8 +1588,8 @@ var cdu = {
 			setprop("/controls/cdu/display/l5", "Transition controller:");
 			setprop("/controls/cdu/display/r5", getprop("/it-vnav/output/steps"));
 
-			setprop("/controls/cdu/display/l6", "");
-			setprop("/controls/cdu/display/r6", "");
+			setprop("/controls/cdu/display/l6", "Minimums:");
+			setprop("/controls/cdu/display/r6", getprop("/instrumentation/mk-viii/inputs/arinc429/decision-height"));
 
 			setprop("/controls/cdu/display/l7", "< INDEX");
 			setprop("/controls/cdu/display/r7", "");
@@ -1616,7 +1616,14 @@ var cdu = {
 			} elsif (keypress == "r5") {
 				setprop("/it-vnav/settings/steps", !getprop("/it-vnav/settings/steps"));
 				keypress = "";
+			} elsif (keypress == "r6") {
+				if (isnum(cduinput))
+					setprop("/instrumentation/mk-viii/inputs/arinc429/decision-height", cduinput);
+				keypress = "";
+				cduinput = "";
 			}
+
+			setprop("/controls/cdu/input", cduinput);
 		} elsif (page == "HOLD CONFIG") {
 			#### Field types
 
