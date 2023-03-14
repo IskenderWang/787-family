@@ -3134,6 +3134,11 @@
                 <property>/it-vnav/inputs/arm-button</property>
                 <value type="bool">true</value>
             </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>/it-vnav/inputs/rearm-ils</property>
+                <value type="bool">false</value>
+            </binding>
         </action>
     </animation>
 
@@ -3167,6 +3172,11 @@
                 <property>/it-vnav/output/armed</property>
                 <value type="bool">false</value>
             </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>/it-vnav/inputs/rearm-ils</property>
+                <value type="bool">false</value>
+            </binding>
         </action>
     </animation>
 
@@ -3184,6 +3194,11 @@
             <binding>
                 <command>property-assign</command>
                 <property>/it-vnav/output/armed</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>/it-vnav/inputs/rearm-ils</property>
                 <value type="bool">false</value>
             </binding>
         </action>
@@ -3205,6 +3220,11 @@
             <binding>
                 <command>property-assign</command>
                 <property>/it-vnav/output/armed</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>/it-vnav/inputs/rearm-ils</property>
                 <value type="bool">false</value>
             </binding>
         </action>
@@ -3250,6 +3270,11 @@
                 <command>property-assign</command>
                 <property>/it-autoflight/input/vert</property>
 				<value>2</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>/it-vnav/inputs/rearm-ils</property>
+                <value type="bool">true</value>
             </binding>
         </action>
     </animation>

@@ -1,4 +1,4 @@
-# IT-VNAV-Extension Controller v0.10.0
+# IT-VNAV-Extension Controller v0.11.0
 # Copyright (c) 2023 Nicolás Castellán (nico-castell)
 
 var VnavMgr = {
@@ -7,6 +7,7 @@ var VnavMgr = {
         props.globals.initNode("it-vnav/inputs/cruise-button", 0, "BOOL");
         props.globals.initNode("it-vnav/inputs/descend-button", 0, "BOOL");
         props.globals.initNode("it-vnav/inputs/serviceable", 1, "BOOL");
+        props.globals.initNode("it-vnav/inputs/rearm-ils", 0, "BOOL"); # The buttons in the MCP interact directly with this input.
 
         props.globals.initNode("it-vnav/internal/altitude-from", 0, "DOUBLE");
         props.globals.initNode("it-vnav/internal/captured", 0, "BOOL");
@@ -116,11 +117,17 @@ var VnavMgr = {
 
     handle_itaf_vert_change: func() {
         vnav_vert = "it-vnav/internal/last-vert";
+        itaf_vert = "it-autoflight/input/vert";
 
-        if (getprop(vnav_vert) == 7 and getprop("it-vnav/internal/engaged"))
-            VnavMgr.handle_vert_path_change();
+        if (getprop("it-vnav/internal/engaged")) {
+            if (getprop(vnav_vert) == 7)
+                VnavMgr.handle_vert_path_change();
 
-        setprop(vnav_vert, getprop("it-autoflight/input/vert"));
+            if (getprop(vnav_vert) == 2 and getprop("it-vnav/inputs/rearm-ils"))
+                setprop(itaf_vert, 2);
+        }
+
+        setprop(vnav_vert, getprop(itaf_vert));
     },
 
     cruise_button: func() {
