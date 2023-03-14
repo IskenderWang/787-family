@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- IT-VNAV-Extension v0.11.0 -->
+<!-- IT-VNAV-Extension v0.11.1 -->
 <!-- Copyright (c) 2023 Nicolás Castellán (nico-castell) -->
 
 <PropertyList>
@@ -621,14 +621,20 @@
         <output>/it-vnav/internal/route-vs</output>
         <min>
             <condition>
+                <property>/it-vnav/internal/block-descent</property>
+            </condition>
+            <value>0</value>
+        </min>
+        <min>
+            <condition>
                 <property>/it-vnav/internal/descent</property>
                 <property>/it-vnav/settings/controlled-descent</property>
             </condition>
             <expression>
-                <summary>
+                <sum>
                     <property>/it-vnav/internal/sbp-final</property>
                     <value>-250</value>
-                </summary>
+                </sum>
             </expression>
         </min>
         <min>-6000</min>

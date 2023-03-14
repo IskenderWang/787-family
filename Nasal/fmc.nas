@@ -116,7 +116,7 @@ var fmc = {
                 return;
 
             if (wp_alt > getprop(fmc_wp ~ "altitude")) {
-                cruise_low(i);
+                me.cruise_low(i);
                 return;
             }
 
@@ -132,7 +132,7 @@ var fmc = {
         var cruise_lvl = math.min(getprop(fmc_wp ~"altitude"), getprop(prv_wp ~"altitude"));
 
         # Floor to nearest 500 ft. (if 7900 ft, then 7500 ft)
-        cruise_lvl = math.floor(cruise_lvl * 0.002) / 2000;
+        cruise_lvl = math.floor(cruise_lvl * 2 / 1000) / 2 * 1000;
 
         setprop(fmc_wp ~"altitude", cruise_lvl);
         setprop(prv_wp ~"altitude", cruise_lvl);

@@ -1,4 +1,4 @@
-# IT-VNAV-Extension Controller v0.11.0
+# IT-VNAV-Extension Controller v0.11.1
 # Copyright (c) 2023 Nicolás Castellán (nico-castell)
 
 var VnavMgr = {
@@ -16,6 +16,7 @@ var VnavMgr = {
         props.globals.initNode("it-vnav/internal/descent-authorized", 0, "BOOL");
         props.globals.initNode("it-vnav/internal/engaged", 0, "BOOL");
         props.globals.initNode("it-vnav/internal/last-vert", 0, "DOUBLE");
+        props.globals.initNode("it-vnav/internal/block-descent", 0, "BOOL");
         props.globals.initNode("it-vnav/internal/vert-route-available", 0, "BOOL");
 
         props.globals.initNode("it-vnav/output/armed", 0, "BOOL");
@@ -80,9 +81,9 @@ var VnavMgr = {
 
         # Some aproaches end up creating very exact altitudes (eg. 2238 ft), we want to round to the
         # nearest 100 when VNAV disengages (2200 ft for example). The same goes for V/S.
-        lat = "it-autoflight/input/alt";
+        alt = "it-autoflight/input/alt";
         vs = "it-autoflight/input/vs";
-        setprop(lat, math.round(getprop(lat), 100));
+        setprop(alt, math.round(getprop(alt), 100));
         setprop(vs, math.round(getprop(vs), 100));
     },
 
@@ -99,13 +100,21 @@ var VnavMgr = {
         captured = getprop("it-vnav/internal/captured");
         capture_inhibit = getprop("it-vnav/internal/capture-inhibit");
 
-        if (!captured and !capture_inhibit and (!descent or (descent and allowed))) {
-            vert = "it-autoflight/input/vert";
+        if (!captured and !capture_inhibit and (!descent or (descent and allowed)))
             if (getprop("it-vnav/internal/cruise-phase") or getprop("it-vnav/internal/steps"))
-                setprop(vert, 4);
+                setprop("it-autoflight/input/vert", 4);
             else
-                setprop(vert, 1);
-        }
+                setprop("it-autoflight/input/vert", 1);
+    },
+
+    handle_descent_change: func() {
+        descent = getprop("it-vnav/internal/descent");
+        allowed = getprop("it-vnav/internal/descent-authorized") or getprop("it-vnav/settings/auto-descend");
+
+        if (descent and !allowed)
+            setprop("it-vnav/internal/block-descent", 1);
+        else
+            setprop("it-vnav/internal/block-descent", 0);
     },
 
     handle_capturing_inhibitor: func() {
@@ -225,17 +234,22 @@ setlistener("sim/signals/fdm-initialized", func {
     0, 0);
 
     setlistener(
+        "it-vnav/internal/descent",
+        VnavMgr.handle_descent_change,
+    0, 0);
+
+    setlistener(
+        "it-vnav/internal/steps",
+        VnavMgr.handle_vert_path_change,
+    0, 0);
+
+    setlistener(
         "it-vnav/internal/captured",
         VnavMgr.handle_vert_path_change,
     0, 0);
 
     setlistener(
         "it-vnav/internal/cruise-phase",
-        VnavMgr.handle_vert_path_change,
-    0, 0);
-
-    setlistener(
-        "it-vnav/internal/steps",
         VnavMgr.handle_vert_path_change,
     0, 0);
 
