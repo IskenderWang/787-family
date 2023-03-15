@@ -836,11 +836,10 @@ var cdu1 = {
 				setprop("/controls/cdu[1]/r4-type", r4type);
 			}
 
-			#### Route Manager Functions (REPLACE, INSERT, ADD, JUMP TO, ACTIVATE, CLEAR, REMOVE)
+			#### Route Manager Functions (REPLACE, INSERT, ADD, ROUTE, JUMP TO, ACTIVATE, CLEAR, REMOVE)
 
 			##### ACTIVATE / JUMP TO (PART 1) FUNCTION
-
-			if ((getprop("/autopilot/route-manager/active") == 1) and (keypress == "r7")) {
+			if ((getprop("/autopilot/route-manager/active") == 1) and (keypress == "r7") and (cduinput != "JUMP TO")) {
 				# setprop("/controls/cdu[1]/input", "JUMP TO");
 				cduinput = "JUMP TO";
 				keypress = "";
@@ -854,7 +853,12 @@ var cdu1 = {
 			}
 
 			##### JUMP TO (PART 2) FUNCTION
-			if ((keypress == "l1") and (cduinput == "JUMP TO")) {
+			if ((keypress == "r7") and (cduinput == "JUMP TO")) {
+				next_wp = math.clamp(current_wp + 1, 0, final_index);
+				setprop("/autopilot/route-manager/input", "@JUMP" ~ next_wp);
+				keypress = "";
+				cduinput = "";
+			} elsif ((keypress == "l1") and (cduinput == "JUMP TO")) {
 				setprop("/autopilot/route-manager/input", "@JUMP" ~ row1_wp);
 				keypress = "";
 				cduinput = "";
@@ -873,7 +877,6 @@ var cdu1 = {
 			}
 
 			##### CLEAR FUNCTION
-
 			if (keypress == "l6") {
 				setprop("/autopilot/route-manager/input", "@CLEAR");
 				setprop("/controls/cdu[1]/route-manager/page", 1);
@@ -884,16 +887,17 @@ var cdu1 = {
 			}
 
 			##### REMOVE FUNCTION (PART 1)
-
-			if (keypress == "r6") {
-				# setprop("/controls/cdu[1]/input", "REMOVE");
+			if (keypress == "r6" and cduinput != "REMOVE") {
 				cduinput = "REMOVE";
 				keypress = "";
 			}
 
 			##### REMOVE FUNCTION (PART 2)
-
-			if ((keypress == "l1") and (cduinput == "REMOVE")) {
+			if ((keypress == "r6") and (cduinput == "REMOVE")) {
+				setprop("/autopilot/route-manager/input", "@DELETE" ~ current_wp);
+				keypress = "";
+				cduinput = "";
+			} elsif ((keypress == "l1") and (cduinput == "REMOVE")) {
 				setprop("/autopilot/route-manager/input", "@DELETE" ~ row1_wp);
 				keypress = "";
 				cduinput = "";
@@ -912,15 +916,39 @@ var cdu1 = {
 			}
 
 			##### ADD FUNCTION (EXEC)
-
 			if ((keypress == "exec") and (cduinput != "")) {
 				setprop("/autopilot/route-manager/input", "@INSERT999:" ~ cduinput);
 				keypress = "";
 				cduinput = "";
 			}
 
-			##### REPLACE FUNCTION (for ALT only, ofcourse)
+			##### ROUTE FUNCTION (RTE)
+			if (cduinput == "RTE") {
+				var route = func(wp) {
+					var fp = flightplan();
+					var from = fp.getWP(wp - 1);
+					var to = fp.getWP(wp);
 
+					if ((from == nil) or (to == nil)) {
+						sysinfo.log_msg("[RTE] Unable to route, invalid start and end points", 1);
+						return;
+					}
+
+					var route = airwaysRoute(from, to);
+					fp.insertWaypoints(route, wp);
+				}
+
+				if (keypress == "l1")
+					route(row1_wp);
+				elsif (keypress == "l2")
+					route(row2_wp);
+				elsif (keypress == "l3")
+					route(row3_wp);
+				elsif (keypress == "l4")
+					route(row4_wp);
+			}
+
+			##### REPLACE FUNCTION (for ALT only, ofcourse)
 			if ((keypress == "r1") and (cduinput != "")) {
 				if (isnum(cduinput)) {
 					setprop("/autopilot/route-manager/route/wp[" ~ row1_wp ~ "]/altitude-ft", cduinput);
