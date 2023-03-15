@@ -1,4 +1,4 @@
-# IT-VNAV-Extension Controller v0.11.1
+# IT-VNAV-Extension Controller v0.11.2
 # Copyright (c) 2023 Nicolás Castellán (nico-castell)
 
 var VnavMgr = {
@@ -132,7 +132,7 @@ var VnavMgr = {
             if (getprop(vnav_vert) == 7)
                 VnavMgr.handle_vert_path_change();
 
-            if (getprop(vnav_vert) == 2 and getprop("it-vnav/inputs/rearm-ils"))
+            if (getprop(itaf_vert) != 2 and getprop("it-vnav/inputs/rearm-ils"))
                 setprop(itaf_vert, 2);
         }
 
@@ -157,6 +157,7 @@ var VnavMgr = {
         # Only authorize descent when descending, but avoid if statement.
         setprop("it-vnav/internal/descent-authorized", getprop("it-vnav/internal/descent"));
 
+        VnavMgr.handle_descent_change();
         VnavMgr.handle_vert_path_change();
 
         setprop(button, 0);
