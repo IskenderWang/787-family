@@ -300,6 +300,16 @@
 	<type>material</type>
 	<condition>
 		<property>/controls/lighting/cockpit</property>
+		<or>
+			<greater-than>
+				<property>systems/electrical/left-bus</property>
+				<value>5</value>
+			</greater-than>
+			<greater-than>
+				<property>systems/electrical/right-bus</property>
+				<value>5</value>
+			</greater-than>
+		</or>
 	</condition>
 	<emission>
 		<red>   0.5 </red>
