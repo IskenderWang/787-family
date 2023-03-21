@@ -93,14 +93,20 @@
 		<object-name>mainpanel1</object-name>
 		<object-name>mainpanel2</object-name>
 		<object-name>shell2</object-name>
+		<object-name>shell2.001</object-name>
 		<object-name>pedestal</object-name>
-		<object-name>cockpitshell</object-name>
+		<object-name>pedestal.001</object-name>
+		<object-name>pedestal.002</object-name>
 		<object-name>carpet</object-name>
 		<object-name>tiller.l</object-name>
 		<object-name>tiller.r</object-name>
 		<object-name>tillerbase</object-name>
 		<object-name>leather</object-name>
+		<object-name>leather.001</object-name>
+		<object-name>leather.002</object-name>
+		<object-name>leather.003</object-name>
 		<object-name>seat</object-name>
+		<object-name>seat.001</object-name>
 		<object-name>base</object-name>
 		<object-name>pedalbase</object-name>
 		<object-name>pedal.right</object-name>
@@ -111,7 +117,7 @@
 		<object-name>yoke.right.roll</object-name>
 		<object-name>yokepitch</object-name>
 		<object-name>ac</object-name>
-		<object-name>shell3</object-name>
+		<object-name>shell3.004</object-name>
 		<object-name>leatheredges</object-name>
 		<object-name>pedestalswitches</object-name>
 		<object-name>mainpanelswitches</object-name>

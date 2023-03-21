@@ -33,6 +33,21 @@
     	</emission>
   	</animation>
 
+	<!-- Make the letters on the panel illuminate amber -->
+	<animation>
+		<type>material</type>
+		<object-name>letters</object-name>
+		<condition>
+			<property>controls/lighting/cockpit</property>
+		</condition>
+		<emission>
+			<red>   0.5    </red>
+			<green> 0.3745 </green>
+			<blue>  0      </blue>
+			<factor-prop>/controls/lighting/ovhd-output</factor-prop>
+		</emission>
+	</animation>
+
 <!-- IND -->
 
 
@@ -141,6 +156,167 @@
     <value>1</value>
    </equals>
   </condition>
+ </animation>
+
+ <animation>
+	<object-name>Wing.001</object-name>
+	<object-name>Ventilation.001</object-name>
+	<object-name>Trim_Air_R.001</object-name>
+	<object-name>Trim_Air_L.001</object-name>
+	<object-name>Towing_Power.001</object-name>
+	<object-name>Storm.001</object-name>
+	<object-name>Recirc_Fans_Upper.001</object-name>
+	<object-name>Recirc_Fans_Lower.001</object-name>
+	<object-name>RAM_Air_Turbine.001</object-name>
+	<object-name>R_Pumps_FWD.001</object-name>
+	<object-name>R_Pumps_AFT.001</object-name>
+	<object-name>R_PACK.001</object-name>
+	<object-name>R_ENG.001</object-name>
+	<object-name>Primary_R_Side.001</object-name>
+	<object-name>Primary_R_FWD.001</object-name>
+	<object-name>Primary_L_Side.001</object-name>
+	<object-name>Primary_L_FWD.001</object-name>
+	<object-name>Pass_Oxygen.001</object-name>
+	<object-name>Outflow_FWD_Valve.001</object-name>
+	<object-name>Outflow_AFT_Valve.001</object-name>
+	<object-name>Nozzle_R.001</object-name>
+	<object-name>Nozzle_L.001</object-name>
+	<object-name>NAV.001</object-name>
+	<object-name>Logo.001</object-name>
+	<object-name>L_Pumps_FWD.001</object-name>
+	<object-name>L_Pumps_AFT.001</object-name>
+	<object-name>L_PACK.001</object-name>
+	<object-name>L_ENG.001</object-name>
+	<object-name>IFE_Pass_Seats.001</object-name>
+	<object-name>HUMID.001</object-name>
+	<object-name>Heading_REF.001</object-name>
+	<object-name>GEN_CTRL_R2.001</object-name>
+	<object-name>GEN_CTRL_R1.001</object-name>
+	<object-name>GEN_CTRL_L2.001</object-name>
+	<object-name>GEN_CTRL_L1.001</object-name>
+	<object-name>FWD_EXT_PWR_R.001</object-name>
+	<object-name>FWD_EXT_PWR_L.001</object-name>
+	<object-name>FD_Door_Power.001</object-name>
+	<object-name>FCS_Wings.001</object-name>
+	<object-name>FCS_Tail.001</object-name>
+	<object-name>Equip_Cooling_FWD.001</object-name>
+	<object-name>Equip_Cooling_AFT.001</object-name>
+	<object-name>Engine_EEC_Mode_R.001</object-name>
+	<object-name>Engine_EEC_Mode_L.001</object-name>
+	<object-name>Drive_DISC_R2.001</object-name>
+	<object-name>Drive_DISC_R1.001</object-name>
+	<object-name>Drive_DISC_L2.001</object-name>
+	<object-name>Drive_DISC_L1.001</object-name>
+	<object-name>DISCH.001</object-name>
+	<object-name>Crossfeed.001</object-name>
+	<object-name>Center_Pumps_R.001</object-name>
+	<object-name>Center_Pumps_L.001</object-name>
+	<object-name>CCR_Reset_R.001</object-name>
+	<object-name>CCR_Reset_L.001</object-name>
+	<object-name>Cargofire_ARM_FWD.001</object-name>
+	<object-name>Cargofire_ARM_AFT.001</object-name>
+	<object-name>Cabin_Utility.001</object-name>
+	<object-name>BULK.001</object-name>
+	<object-name>Beacon.001</object-name>
+	<object-name>Battery.001</object-name>
+	<object-name>Balance.001</object-name>
+	<object-name>Backup_R_FWD.001</object-name>
+	<object-name>Backup_L_FWD.001</object-name>
+	<object-name>ARM.001</object-name>
+	<object-name>APU_GEN_R.001</object-name>
+	<object-name>APU_GEN_L.001</object-name>
+	<object-name>AFT_EXT_PWR.001</object-name>
+	<object-name>Wing</object-name>
+	<object-name>Ventilation</object-name>
+	<object-name>Trim_Air_R</object-name>
+	<object-name>Trim_Air_L</object-name>
+	<object-name>Towing_Power</object-name>
+	<object-name>Storm</object-name>
+	<object-name>Recirc_Fans_Upper</object-name>
+	<object-name>Recirc_Fans_Lower</object-name>
+	<object-name>RAM_Air_Turbine</object-name>
+	<object-name>R_Pumps_FWD</object-name>
+	<object-name>R_Pumps_AFT</object-name>
+	<object-name>R_PACK</object-name>
+	<object-name>R_ENG</object-name>
+	<object-name>Primary_R_Side</object-name>
+	<object-name>Primary_R_FWD</object-name>
+	<object-name>Primary_L_Side</object-name>
+	<object-name>Primary_L_FWD</object-name>
+	<object-name>Pass_Oxygen</object-name>
+	<object-name>Outflow_FWD_Valve</object-name>
+	<object-name>Outflow_AFT_Valve</object-name>
+	<object-name>Nozzle_R</object-name>
+	<object-name>Nozzle_L</object-name>
+	<object-name>NAV</object-name>
+	<object-name>Logo</object-name>
+	<object-name>L_Pumps_FWD</object-name>
+	<object-name>L_Pumps_AFT</object-name>
+	<object-name>L_PACK</object-name>
+	<object-name>L_ENG</object-name>
+	<object-name>IFE_Pass_Seats</object-name>
+	<object-name>HUMID</object-name>
+	<object-name>Heading_REF</object-name>
+	<object-name>GEN_CTRL_R2</object-name>
+	<object-name>GEN_CTRL_R1</object-name>
+	<object-name>GEN_CTRL_L2</object-name>
+	<object-name>GEN_CTRL_L1</object-name>
+	<object-name>FWD_EXT_PWR_R</object-name>
+	<object-name>FWD_EXT_PWR_L</object-name>
+	<object-name>FD_Door_Power</object-name>
+	<object-name>FCS_Wings</object-name>
+	<object-name>FCS_Tail</object-name>
+	<object-name>Equip_Cooling_FWD</object-name>
+	<object-name>Equip_Cooling_AFT</object-name>
+	<object-name>Engine_EEC_Mode_R</object-name>
+	<object-name>Engine_EEC_Mode_L</object-name>
+	<object-name>Drive_DISC_R2</object-name>
+	<object-name>Drive_DISC_R1</object-name>
+	<object-name>Drive_DISC_L2</object-name>
+	<object-name>Drive_DISC_L1</object-name>
+	<object-name>DISCH</object-name>
+	<object-name>Crossfeed</object-name>
+	<object-name>Center_Pumps_R</object-name>
+	<object-name>Center_Pumps_L</object-name>
+	<object-name>CCR_Reset_R</object-name>
+	<object-name>CCR_Reset_L</object-name>
+	<object-name>Cargofire_ARM_FWD</object-name>
+	<object-name>Cargofire_ARM_AFT</object-name>
+	<object-name>Cabin_Utility</object-name>
+	<object-name>BULK</object-name>
+	<object-name>Beacon</object-name>
+	<object-name>Battery</object-name>
+	<object-name>Balance</object-name>
+	<object-name>Backup_R_FWD</object-name>
+	<object-name>Backup_L_FWD</object-name>
+	<object-name>ARM</object-name>
+	<object-name>APU_GEN_R</object-name>
+	<object-name>APU_GEN_L</object-name>
+	<object-name>AFT_EXT_PWR</object-name>
+	<object-name>Fault1</object-name>
+	<object-name>Fault2</object-name>
+	<object-name>Fault3</object-name>
+	<object-name>Fault4</object-name>
+	<type>material</type>
+	<condition>
+		<property>/controls/lighting/cockpit</property>
+		<or>
+			<greater-than>
+				<property>systems/electrical/left-bus</property>
+				<value>5</value>
+			</greater-than>
+			<greater-than>
+				<property>systems/electrical/right-bus</property>
+				<value>5</value>
+			</greater-than>
+		</or>
+	</condition>
+	<emission>
+		<red>   0.5 </red>
+		<green> 0.5 </green>
+		<blue>  0.5 </blue>
+		<factor-prop>/controls/lighting/ovhd-output</factor-prop>
+	</emission>
  </animation>
 
 <!-- ELECTRICAL CONTROL PANEL -->
