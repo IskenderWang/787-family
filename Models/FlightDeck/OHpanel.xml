@@ -37,14 +37,11 @@
 	<animation>
 		<type>material</type>
 		<object-name>letters</object-name>
-		<condition>
-			<property>controls/lighting/cockpit</property>
-		</condition>
 		<emission>
 			<red>   0.5    </red>
 			<green> 0.3745 </green>
 			<blue>  0      </blue>
-			<factor-prop>/controls/lighting/ovhd-output</factor-prop>
+			<factor-prop>controls/lighting/master-bright</factor-prop>
 		</emission>
 	</animation>
 
@@ -158,7 +155,13 @@
   </condition>
  </animation>
 
- <animation>
+ <effect>
+		<inherits-from>Effects/lightmap</inherits-from>
+		<parameters>
+			<texture n="1">
+				<image>Aircraft/787-family/Models/Effects/buttons-lightmap.png</image>
+			</texture>
+		</parameters>
 	<object-name>Wing.001</object-name>
 	<object-name>Ventilation.001</object-name>
 	<object-name>Trim_Air_R.001</object-name>
@@ -297,27 +300,7 @@
 	<object-name>Fault2</object-name>
 	<object-name>Fault3</object-name>
 	<object-name>Fault4</object-name>
-	<type>material</type>
-	<condition>
-		<property>/controls/lighting/cockpit</property>
-		<or>
-			<greater-than>
-				<property>systems/electrical/left-bus</property>
-				<value>5</value>
-			</greater-than>
-			<greater-than>
-				<property>systems/electrical/right-bus</property>
-				<value>5</value>
-			</greater-than>
-		</or>
-	</condition>
-	<emission>
-		<red>   0.5 </red>
-		<green> 0.5 </green>
-		<blue>  0.5 </blue>
-		<factor-prop>/controls/lighting/ovhd-output</factor-prop>
-	</emission>
- </animation>
+ </effect>
 
 <!-- ELECTRICAL CONTROL PANEL -->
 
@@ -2515,17 +2498,6 @@ setprop("/controls/engines/engine[1]/starter", 0);
 				<property>controls/lighting/ovhd-input</property>
 				<step>0.05</step>
 				<max>1</max>
-			</binding>
-		</action>
-		<action>
-			<button>1</button>
-			<button>4</button>
-			<repeatable type="bool">true</repeatable>
-			<binding>
-				<command>property-adjust</command>
-				<property>controls/lighting/ovhd-input</property>
-				<step>-0.05</step>
-				<min>0</min>
 			</binding>
 		</action>
 	</animation>

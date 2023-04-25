@@ -101,6 +101,7 @@
 		<object-name>shell2.001</object-name>
 		<object-name>pedestal</object-name>
 		<object-name>pedestal.001</object-name>
+		<object-name>APLetters</object-name>
 		<object-name>pedestal.002</object-name>
 		<object-name>carpet</object-name>
 		<object-name>tiller.l</object-name>
@@ -152,6 +153,19 @@
     	</emission>
   	</animation>
 
+	<!-- Make the letters on the panel illuminate amber -->
+	<animation>
+		<type>material</type>
+		<object-name>pedestal.001</object-name>
+		<object-name>APLetters</object-name>
+		<emission>
+			<red>   0.5    </red>
+			<green> 0.3745 </green>
+			<blue>  0      </blue>
+			<factor-prop>controls/lighting/master-bright</factor-prop>
+		</emission>
+	</animation>
+
 	<!-- Lightmaps -->
 	<effect>
 		<inherits-from>Effects/lightmap</inherits-from>
@@ -167,6 +181,241 @@
 		<object-name>mainpanel2</object-name>
 		<object-name>shell2</object-name>
 		<object-name>pedestal</object-name>
+	</effect>
+
+	<effect>
+		<inherits-from>Effects/lightmap</inherits-from>
+		<parameters>
+			<texture n="1">
+				<image>Aircraft/787-family/Models/Effects/buttons1-lightmap.png</image>
+			</texture>
+			<factor>
+				<use>controls/lighting/master-bright</use>
+			</factor>
+		</parameters>
+		<object-name>Plane</object-name>
+		<object-name>Plane.001</object-name>
+		<object-name>Baro.knob.001</object-name>
+		<object-name>Baro.knob</object-name>
+		<object-name>WXR.btn</object-name>
+		<object-name>TFC.btn</object-name>
+		<object-name>TERR.btn</object-name>
+		<object-name>Plane.005</object-name>
+		<object-name>Plane.004</object-name>
+		<object-name>Plane.006</object-name>
+		<object-name>Plane.003</object-name>
+		<object-name>Baro.knob.006</object-name>
+		<object-name>Baro.knob.007</object-name>
+		<object-name>WXR.btn.001</object-name>
+		<object-name>TFC.btn.001</object-name>
+		<object-name>TERR.btn.001</object-name>
+		<object-name>Plane.103</object-name>
+		<object-name>Plane.115</object-name>
+		<object-name>Plane.118</object-name>
+		<object-name>Plane.117</object-name>
+		<object-name>Plane.116</object-name>
+		<object-name>Plane.002</object-name>
+		<object-name>Plane.007</object-name>
+		<object-name>Plane.008</object-name>
+		<object-name>Plane.009</object-name>
+		<object-name>cdu1</object-name>
+		<object-name>cdu2</object-name>
+		<object-name>cdu3</object-name>
+		<object-name>cdu4</object-name>
+		<object-name>cdu5</object-name>
+		<object-name>cdu6</object-name>
+		<object-name>cdu7</object-name>
+		<object-name>cdu8</object-name>
+		<object-name>cdu9</object-name>
+		<object-name>cdu.</object-name>
+		<object-name>cdu0</object-name>
+		<object-name>cdu00</object-name>
+		<object-name>a</object-name>
+		<object-name>b</object-name>
+		<object-name>c</object-name>
+		<object-name>d</object-name>
+		<object-name>e</object-name>
+		<object-name>f</object-name>
+		<object-name>g</object-name>
+		<object-name>h</object-name>
+		<object-name>i</object-name>
+		<object-name>j</object-name>
+		<object-name>k</object-name>
+		<object-name>l</object-name>
+		<object-name>m</object-name>
+		<object-name>n</object-name>
+		<object-name>o</object-name>
+		<object-name>p</object-name>
+		<object-name>q</object-name>
+		<object-name>r</object-name>
+		<object-name>s</object-name>
+		<object-name>t</object-name>
+		<object-name>u</object-name>
+		<object-name>v</object-name>
+		<object-name>w</object-name>
+		<object-name>x</object-name>
+		<object-name>y</object-name>
+		<object-name>z</object-name>
+		<object-name>del</object-name>
+		<object-name>clr</object-name>
+		<object-name>Plane.181</object-name>
+		<object-name>Plane.152</object-name>
+		<object-name>Plane.154</object-name>
+		<object-name>Plane.148</object-name>
+		<object-name>Plane.149</object-name>
+		<object-name>exec</object-name>
+		<object-name>~cdu1</object-name>
+		<object-name>~cdu2</object-name>
+		<object-name>~cdu3</object-name>
+		<object-name>~cdu4</object-name>
+		<object-name>~cdu5</object-name>
+		<object-name>~cdu6</object-name>
+		<object-name>~cdu7</object-name>
+		<object-name>~cdu8</object-name>
+		<object-name>~cdu9</object-name>
+		<object-name>~cdu0</object-name>
+		<object-name>~cdu.</object-name>
+		<object-name>~cdu00</object-name>
+		<object-name>~a</object-name>
+		<object-name>~b</object-name>
+		<object-name>~c</object-name>
+		<object-name>~d</object-name>
+		<object-name>~e</object-name>
+		<object-name>~f</object-name>
+		<object-name>~g</object-name>
+		<object-name>~h</object-name>
+		<object-name>~i</object-name>
+		<object-name>~j</object-name>
+		<object-name>~k</object-name>
+		<object-name>~l</object-name>
+		<object-name>~m</object-name>
+		<object-name>~n</object-name>
+		<object-name>~o</object-name>
+		<object-name>~p</object-name>
+		<object-name>~q</object-name>
+		<object-name>~r</object-name>
+		<object-name>~s</object-name>
+		<object-name>~t</object-name>
+		<object-name>~u</object-name>
+		<object-name>~v</object-name>
+		<object-name>~w</object-name>
+		<object-name>~x</object-name>
+		<object-name>~y</object-name>
+		<object-name>~z</object-name>
+		<object-name>~del</object-name>
+		<object-name>~clr</object-name>
+		<object-name>~exec</object-name>
+		<object-name>Plane.077</object-name>
+		<object-name>Plane.014</object-name>
+		<object-name>Plane.016</object-name>
+		<object-name>Plane.010</object-name>
+		<object-name>Plane.011</object-name>
+		<object-name>Plane.044</object-name>
+		<object-name>Plane.045</object-name>
+		<object-name>Plane.046</object-name>
+		<object-name>Plane.047</object-name>
+		<object-name>Plane.048</object-name>
+		<object-name>Plane.049</object-name>
+		<object-name>Plane.050</object-name>
+		<object-name>Plane.051</object-name>
+		<object-name>Plane.052</object-name>
+		<object-name>Plane.053</object-name>
+		<object-name>Plane.054</object-name>
+		<object-name>Plane.055</object-name>
+		<object-name>Plane.056</object-name>
+		<object-name>Plane.057</object-name>
+		<object-name>Plane.058</object-name>
+		<object-name>Plane.059</object-name>
+		<object-name>Plane.060</object-name>
+		<object-name>Plane.061</object-name>
+		<object-name>Plane.062</object-name>
+		<object-name>Plane.063</object-name>
+		<object-name>Plane.064</object-name>
+		<object-name>Plane.065</object-name>
+		<object-name>Plane.066</object-name>
+		<object-name>Plane.067</object-name>
+		<object-name>Plane.068</object-name>
+		<object-name>Plane.069</object-name>
+		<object-name>Plane.070</object-name>
+		<object-name>Plane.071</object-name>
+		<object-name>Plane.072</object-name>
+		<object-name>Plane.073</object-name>
+		<object-name>Plane.074</object-name>
+		<object-name>Plane.075</object-name>
+		<object-name>Plane.076</object-name>
+		<object-name>Plane.077</object-name>
+		<object-name>Plane.078</object-name>
+		<object-name>Plane.079</object-name>
+		<object-name>Plane.081</object-name>
+		<object-name>Plane.082</object-name>
+		<object-name>Plane.083</object-name>
+		<object-name>Plane.084</object-name>
+		<object-name>Plane.085</object-name>
+		<object-name>Plane.086</object-name>
+		<object-name>Plane.087</object-name>
+		<object-name>Plane.088</object-name>
+		<object-name>Plane.089</object-name>
+		<object-name>Plane.080</object-name>
+		<object-name>Plane.090</object-name>
+		<object-name>Plane.091</object-name>
+		<object-name>Plane.092</object-name>
+		<object-name>Plane.093</object-name>
+		<object-name>Plane.094</object-name>
+		<object-name>Plane.095</object-name>
+		<object-name>Plane.096</object-name>
+		<object-name>Plane.097</object-name>
+		<object-name>Plane.098</object-name>
+		<object-name>Plane.099</object-name>
+		<object-name>Plane.101</object-name>
+		<object-name>Plane.102</object-name>
+		<object-name>Plane.104</object-name>
+		<object-name>Plane.105</object-name>
+		<object-name>Plane.106</object-name>
+		<object-name>Plane.107</object-name>
+		<object-name>Plane.108</object-name>
+		<object-name>Plane.109</object-name>
+		<object-name>Plane.100</object-name>
+		<object-name>Plane.110</object-name>
+		<object-name>Plane.111</object-name>
+		<object-name>Plane.112</object-name>
+		<object-name>Plane.113</object-name>
+		<object-name>Plane.114</object-name>
+		<object-name>switch_base.001</object-name>
+		<object-name>switch_base.002</object-name>
+		<object-name>switch_base.003</object-name>
+		<object-name>switch_base.004</object-name>
+		<object-name>switch_base.005</object-name>
+		<object-name>switch_base.007</object-name>
+		<object-name>switch_base.008</object-name>
+		<object-name>switch_base.009</object-name>
+		<object-name>switch_base.010</object-name>
+		<object-name>switch_base.011</object-name>
+		<object-name>switch_base.013</object-name>
+		<object-name>switch_base.014</object-name>
+		<object-name>switch_base.015</object-name>
+		<object-name>switch_base.016</object-name>
+		<object-name>switch_base.017</object-name>
+		<object-name>switch_base.018</object-name>
+		<object-name>switch_base.019</object-name>
+		<object-name>switch_base.020</object-name>
+		<object-name>switch_base.021</object-name>
+		<object-name>switch_base.022</object-name>
+		<object-name>switch_base.023</object-name>
+		<object-name>switch_base.024</object-name>
+		<object-name>switch_base.025</object-name>
+		<object-name>switch_base.026</object-name>
+		<object-name>switch_base.039</object-name>
+		<object-name>switch_base.040</object-name>
+		<object-name>switch_base.041</object-name>
+		<object-name>switch_base.042</object-name>
+		<object-name>switch_base.043</object-name>
+		<object-name>switch_base.044</object-name>
+		<object-name>switch_base.045</object-name>
+		<object-name>switch_base.046</object-name>
+		<object-name>switch_base.047</object-name>
+		<object-name>switch_base.048</object-name>
+		<object-name>switch_base.049</object-name>
+		<object-name>switch_base.050</object-name>
 	</effect>
 
 	<effect>
