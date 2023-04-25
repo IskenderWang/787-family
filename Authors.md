@@ -4,8 +4,10 @@ Current maintainers:
 
 * IskenderWang
 * Marsdolphin
+* Pilot2938
+* Nicolás Castellán
 
-Special thanks to Pilot2938, Wesley, Zac, and all other contributors+helpers
+Special thanks to Wesley, Zac, and all other contributors+helpers
 
 ## 787-8
 
