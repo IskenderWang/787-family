@@ -76,6 +76,9 @@ var syscheck = {
 			"/controls/ice/wing/anti-ice",
 			"/controls/ice/eng1/anti-ice",
 			"/controls/ice/eng2/anti-ice",
+			"/controls/ice/windscreen/anti-ice",
+			"/controls/ice/windscreen/anti-ice-backup",
+			"/controls/ice/probes/anti-ice",
 			"/consumables/fuel/total-fuel-kg"
 		];
 		
@@ -345,6 +348,24 @@ var syscheck = {
 				sysinfo.log_msg("[HEAT] Engine 2 Anti-Icing Engaged", 0);
 			else
 				sysinfo.log_msg("[HEAT] Engine 2 Anti-Icing Dis-engaged", 1); }
+				
+		elsif (prop == "/controls/ice/windscreen/anti-ice") {
+			if (getprop(prop) == 1)
+				sysinfo.log_msg("[HEAT] Windscreen primary Anti-Icing Engaged", 0);
+			else
+				sysinfo.log_msg("[HEAT] Windscreen primary Anti-Icing Dis-engaged", 1); }
+				
+		elsif (prop == "/controls/ice/windscreen/anti-ice-backup") {
+			if (getprop(prop) == 1)
+				sysinfo.log_msg("[HEAT] Windscreen backup Anti-Icing Engaged", 0);
+			else
+				sysinfo.log_msg("[HEAT] Windscreen backup Anti-Icing Dis-engaged", 1); }
+				
+		elsif (prop == "/controls/ice/probes/anti-ice") {
+			if (getprop(prop) == 1)
+				sysinfo.log_msg("[HEAT] Probes Anti-Icing Engaged", 0);
+			else
+				sysinfo.log_msg("[HEAT] Probes Anti-Icing Dis-engaged", 1); }
 				
 		elsif (prop == "/controls/pneumatic/temp/fuel-pump-left") {
 			if ((getprop(prop) > 200) and (me.fuel_pump0_fault != 1)) {

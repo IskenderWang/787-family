@@ -42,7 +42,7 @@
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
 		<format type="string">%3.0fC</format>
-		<property>controls/window-heat/temp</property>
+		<property>controls/ice/windscreen/center_temp</property>
 		<font>B612/B612-Bold.ttf</font>
 		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
@@ -118,7 +118,10 @@
 		<type>select</type>
 		<object-name>windowheat</object-name>
 		<condition>
-				<property>controls/window-heat/engage</property>
+			<or>
+				<property>controls/ice/windscreen/anti-ice</property>
+				<property>controls/ice/windscreen/anti-ice-backup</property>
+			</or>
 		</condition>
 	</animation>
 
@@ -150,10 +153,10 @@
 		<type>select</type>
 		<object-name>windowice</object-name>
 		<condition>
-	<less-than-equals>
- 	   	<property>controls/window-heat/temp</property>
-    		<value>0</value>
-	</less-than-equals>
+	<greater-than-equals>
+ 	   	<property>controls/ice/windscreen/center_icing</property>
+    		<value>0.05</value>
+	</greater-than-equals>
 		</condition>
 	</animation>
 
@@ -161,10 +164,10 @@
 		<type>select</type>
 		<object-name>wingice</object-name>
 		<condition>
-	<less-than-equals>
- 	   	<property>controls/ice/wing/temp</property>
-    		<value>0</value>
-	</less-than-equals>
+	<greater-than-equals>
+ 	   	<property>controls/ice/wing/icing</property>
+    		<value>0.05</value>
+	</greater-than-equals>
 		</condition>
 	</animation>
 
@@ -172,10 +175,10 @@
 		<type>select</type>
 		<object-name>eng1ice</object-name>
 		<condition>
-	<less-than-equals>
- 	   	<property>controls/ice/eng1/temp</property>
-    		<value>0</value>
-	</less-than-equals>
+	<greater-than-equals>
+ 	   	<property>controls/ice/eng1/icing</property>
+    		<value>0.05</value>
+	</greater-than-equals>
 		</condition>
 	</animation>
 
@@ -183,10 +186,10 @@
 		<type>select</type>
 		<object-name>eng2ice</object-name>
 		<condition>
-	<less-than-equals>
- 	   	<property>controls/ice/eng2/temp</property>
-    		<value>0</value>
-	</less-than-equals>
+	<greater-than-equals>
+ 	   	<property>controls/ice/eng2/icing</property>
+    		<value>0.05</value>
+	</greater-than-equals>
 		</condition>
 	</animation>
 

@@ -1043,7 +1043,6 @@
             <file>Aircraft/787-family/Nasal/copilot.nas</file>
             <file>Aircraft/787-family/Nasal/wipers.nas</file>
             <file>Aircraft/787-family/Nasal/fuel.nas</file>
-            <file>Aircraft/787-family/Nasal/heating.nas</file>
             <file>Aircraft/787-family/Nasal/anti-ice.nas</file>
             <file>Aircraft/787-family/Nasal/surge.nas</file>
             <file>Aircraft/787-family/Nasal/autobrake.nas</file>
@@ -1076,7 +1075,7 @@
             <file>Aircraft/787-family/Nasal/procedures/fmsTP.nas</file>
             <file>Aircraft/787-family/Nasal/procedures/fmsTransition.nas</file>
             <file>Aircraft/787-family/Nasal/shake.nas</file>
-
+            <file>Aircraft/787-family/Nasal/rain.nas</file>
         </b787>
         <dualcontrol>
             <file>Aircraft/787-family/DualControl/DualControl_base.nas</file>

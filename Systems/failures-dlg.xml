@@ -249,6 +249,85 @@
         <hrule />
 
         <text>
+            <label>Anti-Ice System Failures</label>
+        </text>
+
+        <group>
+            <layout>hbox</layout>
+
+            <group>
+                <layout>vbox</layout>
+                <text>
+                    <label>Windscreen</label>
+                </text>
+
+                <checkbox>
+                    <label>Fail primary heaters</label>
+                    <property>controls/ice/windscreen/primary-failed</property>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </checkbox>
+
+                <checkbox>
+                    <label>Fail backup heaters</label>
+                    <property>controls/ice/windscreen/backup-failed</property>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </checkbox>
+            </group>
+
+            <group>
+                <layout>vbox</layout>
+                <text>
+                    <label>Engine</label>
+                </text>
+
+                <checkbox>
+                    <label>Fail engine 1 heaters</label>
+                    <property>controls/ice/eng1/failed</property>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </checkbox>
+
+                <checkbox>
+                    <label>Fail engine 2 heaters</label>
+                    <property>controls/ice/eng2/failed</property>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </checkbox>
+            </group>
+
+            <group>
+                <layout>vbox</layout>
+                <text>
+                    <label>Wing &amp; Probes</label>
+                </text>
+
+                <checkbox>
+                    <label>Fail wing heaters</label>
+                    <property>controls/ice/wing/failed</property>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </checkbox>
+
+                <checkbox>
+                    <label>Fail probe heaters</label>
+                    <property>controls/ice/probes/failed</property>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </checkbox>
+            </group>
+        </group>
+
+        <hrule />
+
+        <text>
             <label>Hydraulic System Failures</label>
         </text>
 
