@@ -14,6 +14,19 @@
          livery_update.stop();
         </unload>
     </nasal>
+	
+	<!-- wifiantenna -->
+
+	<animation>
+	  <object-name>wifiantenna</object-name>
+	  <type>select</type>
+	  <condition>
+	     <equals>
+		<property>externaladdons/wifi</property>
+		<value>1</value>
+	     </equals>
+	  </condition>
+	</animation>
 
     <animation>
         <type>material</type>
