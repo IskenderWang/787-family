@@ -17,6 +17,12 @@
 
     <animation>
         <type>material</type>
+        <!--
+            All of these objects are parented together, so they will share any effects applied to
+            the parent (the fuselage). Also, any effects applied to the children will be overriden
+            by the effects of the parent.
+        -->
+        <object-name>fuselage</object-name>
         <object-name>aftcargodoor</object-name>
         <object-name>antennae</object-name>
         <object-name>bodyfairing</object-name>
@@ -24,7 +30,6 @@
         <object-name>cac</object-name>
         <object-name>cacdeflectorbackground</object-name>
         <object-name>fin</object-name>
-        <object-name>fuselage</object-name>
         <object-name>fuselage.001</object-name>
         <object-name>fuselage.004</object-name>
         <object-name>fwdcargodoor</object-name>
