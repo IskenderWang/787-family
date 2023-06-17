@@ -561,7 +561,12 @@ var page = {
 			
 		if (getprop("/instrumentation/efb/vnav_autogen/first") + 10 < getprop("autopilot/route-manager/route/num"))
 			r13 = "SCROLL DOWN >";
-			
+
+		if (getprop("/autopilot/route-manager/route/num") != getprop("/instrumentation/efb/vnav_autogen/num"))
+			setprop("/instrumentation/efb/vnav_autogen/gen", 0);
+
+		setprop("/instrumentation/efb/vnav_autogen/num", getprop("/autopilot/route-manager/route/num"));
+
 		if (getprop("/instrumentation/efb/vnav_autogen/gen") == 1) {	
 		
 		var first = getprop("/instrumentation/efb/vnav_autogen/first");	

@@ -11,6 +11,9 @@
             <enable-tiller type="bool">false</enable-tiller>
             <brake-parking type="bool">true</brake-parking>
         </gear>
+        <mcp>
+            <vs-step type="double">500</vs-step>
+        </mcp>
     </controls>
 
     <input>
@@ -42,9 +45,7 @@
                 <binding>
                     <command>nasal</command>
                     <script>
-                        if (getprop("/it-autoflight/input/athr") == 1) {
-                            setprop("/it-autoflight/input/athr", 0);
-                        }
+                        setprop("it-autoflight/input/athr", 0);
                         setprop("controls/engines/engine[0]/throttle", 0);
                         setprop("controls/engines/engine[1]/throttle", 0);
                     </script>
@@ -52,15 +53,76 @@
             </key>
             <key n="114">
                 <name>r</name>
-                <desc>Set TOGA thrust</desc>
+                <desc>Cycle throttle at 0% - 25% - 50%</desc>
                 <binding>
                     <command>nasal</command>
                     <script>
-                        if (getprop("/it-autoflight/input/athr") == 1) {
-                            setprop("/it-autoflight/input/athr", 0);
+                        setprop("it-autoflight/input/athr", 0);
+
+                        var throttle_setting = (
+                            getprop("controls/engines/engine[0]/throttle")
+                            + getprop("controls/engines/engine[1]/throttle")
+                        ) / 2;
+
+                        if (throttle_setting == 0.0) {
+                            setprop("controls/engines/engine[0]/throttle", 0.25);
+                            setprop("controls/engines/engine[1]/throttle", 0.25);
+                            return;
                         }
-                        setprop("controls/engines/engine[0]/throttle", 1);
-                        setprop("controls/engines/engine[1]/throttle", 1);
+
+                        if (throttle_setting == 0.25) {
+                            setprop("controls/engines/engine[0]/throttle", 0.5);
+                            setprop("controls/engines/engine[1]/throttle", 0.5);
+                            return;
+                        }
+
+                        setprop("controls/engines/engine[0]/throttle", 0.0);
+                        setprop("controls/engines/engine[1]/throttle", 0.0);
+                    </script>
+                </binding>
+            </key>
+            <key n="102">
+                <name>f</name>
+                <desc>Arm autothrottle and set TO/GA</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script><![CDATA[
+                        var airspeed = getprop("velocities/airspeed-kt");
+
+                        if (getprop("gear/gear[1]/wow") or getprop("gear/gear[2]/wow")) {
+                            if (airspeed < 50 and getprop("controls/flight/flaps") > 0)
+                                setprop("it-autoflight/input/toga", 1);
+
+                            if (airspeed > 80)
+                                setprop("it-autoflight/input/lat", 3);
+
+                            setprop("controls/flight/speedbrake-lever", 0);
+                            return;
+                        }
+
+                        # After takeoff
+                        if (getprop("it-autoflight/output/vert") == 7) {
+                            setprop("it-autoflight/input/athr", 0);
+                            setprop("controls/engines/engine[0]/throttle", 1.0);
+                            setprop("controls/engines/engine[1]/throttle", 1.0);
+                            return;
+                        }
+
+                        # In approach
+                        setprop("it-autoflight/input/toga", 1);
+                        setprop("it-autoflight/input/lat", 1);
+                    ]]></script>
+                </binding>
+            </key>
+            <key n="70">
+                <name>Shift-f</name>
+                <desc>Disarm A/T, throttle to 100%</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        setprop("it-autoflight/input/athr", 0);
+                        setprop("controls/engines/engine[0]/throttle", 1.0);
+                        setprop("controls/engines/engine[1]/throttle", 1.0);
                     </script>
                 </binding>
             </key>
@@ -256,6 +318,11 @@
             </autopilot>
 
             <autopilot>
+                <name>VNAV extension</name>
+                <path>Aircraft/787-family/Systems/vnav-extension.xml</path>
+            </autopilot>
+
+            <autopilot>
                 <name>Nose wheel steering</name>
                 <path>Aircraft/787-family/Systems/ground_steering.xml</path>
             </autopilot>
@@ -315,6 +382,9 @@
         <autopush_route>
             <file>Nasal/Autopush/route.nas</file>
         </autopush_route>
+        <it_vnav_extension>
+            <file>Aircraft/787-family/Nasal/vnav-extension.nas</file>
+        </it_vnav_extension>
     </nasal>
 
     <it-autoflight>
@@ -332,8 +402,9 @@
                 <td>0.001</td>
             </pitch>
             <cmd>
+                <alt>-5</alt>
+                <flch-accel>1.5</flch-accel>
                 <roll>1.6</roll>
-                <alt-gain>-5</alt-gain>
             </cmd>
             <autoland>
                 <pitch-kp>0.0051</pitch-kp>
@@ -347,21 +418,35 @@
             </rollout>
         </config>
         <settings>
-            <autoland-without-ap>0</autoland-without-ap> <!-- Engage LAND and FLARE Modes even if the AP is off -->
-            <auto-bank-max-deg>30</auto-bank-max-deg> <!-- Maximum Auto Bank Limit -->
-            <autothrottle-max>0.95</autothrottle-max> <!-- Thrust Max Limit Normalized -->
-            <autothrottle-min>0.02</autothrottle-min> <!-- Thrust Low Limit Normalized -->
-            <custom-fma>0</custom-fma> <!-- Call functions when modes change for a custom FMA to be implemented -->
-            <disable-final>0</disable-final> <!-- Disable the Final Controllers, for custom FCS integration -->
-            <hdg-hld-separate>0</hdg-hld-separate> <!-- Separates the HDG HLD mode from the HDG SEL mode -->
-            <land-enable>1</land-enable> <!-- Enable/Disable Autoland -->
-            <land-flap>0.7</land-flap> <!-- Minimum Flap used for Landing -->
-            <lat-agl-ft>50</lat-agl-ft> <!-- AGL when LNAV becomes active if armed -->
-            <reduc-agl-ft>1000</reduc-agl-ft> <!-- AGL when T/O CLB changes to SPD CLB (FLCH), set to 0 to disable -->
-            <retard-enable>1</retard-enable> <!-- AGL to Thrust Retard -->
-            <retard-ft>50</retard-ft> <!-- Enable Thrust Retard -->
-            <togaspd>160</togaspd> <!-- V2 + 10kts -->
+            <accel-ft type="double">1000</accel-ft> <!-- Acceleration AGL when T/O CLB changes to SPD CLV, 0 to disable -->
+            <auto-bank-limit-calc type="bool">1</auto-bank-limit-calc> <!-- Disable to add a custom auto bank limit schedule -->
+            <autoland-without-ap type="bool">1</autoland-without-ap> <!-- Engage LAND and FLARE Modes even if the AP is off -->
+            <autothrottle-max type="double">0.95</autothrottle-max> <!-- Thrust Max Limit Normalized -->
+            <autothrottle-min type="double">0.02</autothrottle-min> <!-- Thrust Min Limit Normalized -->
+            <bank-max-deg type="double">30</bank-max-deg> <!-- Maximum Bank Limit -->
+            <custom-fma type="bool">0</custom-fma> <!-- Call functions when modes change for a custom FMA to be implemented -->
+            <disable-final type="bool">0</disable-final> <!-- Disable the Final Controllers, for custom FMS integration -->
+            <fd-starts-on type="bool">0</fd-starts-on> <!-- Enable/Disable Flight Director being on by default -->
+            <fd-takeoff-offset type="double">0</fd-takeoff-offset> <!-- Adjust the Flight Director Pitch Bar on ground -->
+            <hdg-hld-separate type="bool">0</hdg-hld-separate> <!-- Separates the HDG HLD mode from the HDG SEL mode -->
+            <land-enable type="bool">1</land-enable> <!-- Enable/Disable Autoland -->
+            <land-flap type="double">0.7</land-flap> <!-- Minimum Flap used for Landing -->
+            <lnav-ft type="double">50</lnav-ft> <!-- AGL when LNAV becomes active if armed -->
+            <retard-enable type="bool">1</retard-enable> <!-- Enable Thrust Retard -->
+            <retard-ft type="double">50</retard-ft> <!-- AGL to Thrust Retard -->
+            <takeoff-hdg-cap type="double">5</takeoff-hdg-cap> <!-- Maximum bank to capture current hdn in T/O mode -->
+            <toga-spd type="double">160</toga-spd> <!-- V2 + 10kts -->
+            <use-controls-engines type="bool">1</use-controls-engines> <!-- Use /controls/engines properties -->
+            <use-controls-flight type="bool">1</use-controls-flight> <!-- Use /controls/flight properties -->
         </settings>
     </it-autoflight>
 
+    <it-vnav>
+        <settings>
+            <vnav-ft type="double">400</vnav-ft> <!-- Minimum altitude above runway to make VNAV available -->
+            <steps type="bool">false</steps> <!-- Wether VNAV should make step climbs and descents -->
+            <controlled-descent type="bool">false</controlled-descent> <!-- `false` = FREE descent, `true` = CTLD descent-->
+            <auto-descend type="bool">false</auto-descend> <!-- `false` = Press DESCEND button do descend, `true` = Let VNAV descend automatically -->
+        </settings>
+    </it-vnav>
 </PropertyList>

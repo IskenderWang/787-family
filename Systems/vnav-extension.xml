@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- IT-VNAV-Extension v0.11.2 -->
+<!-- Copyright (c) 2023 Nicolás Castellán (nico-castell) -->
+
+<PropertyList>
+    <!-- Distance to waypoint -->
+    <filter>
+        <name>Distance to waypoint</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <input>
+            <expression>
+                <difference>
+                    <property>/autopilot/route-manager/wp/dist</property>
+                    <property>/it-autoflight/internal/lnav-advance-nm</property>
+                </difference>
+            </expression>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/distance-to-wp</property>
+        </output>
+    </filter>
+
+    <!-- Altitude difference -->
+    <filter>
+        <name>Altitude difference</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <input>
+            <expression>
+                <difference>
+                    <property>/it-autoflight/input/alt</property>
+                    <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+                </difference>
+            </expression>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/altitude-difference-ft</property>
+        </output>
+    </filter>
+
+    <!-- Detect runway altitude -->
+    <filter>
+        <name>Detect runway altitude</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <enable>
+            <condition>
+                <property>/gear/gear[1]/wow</property>
+                <property>/gear/gear[2]/wow</property>
+            </condition>
+        </enable>
+
+        <input>
+            <expression>
+                <floor>
+                    <sum>
+                        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+                        <value>0.5</value>
+                    </sum>
+                </floor>
+            </expression>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/rwy-alt-ft</property>
+        </output>
+        <output>
+            <property>/it-vnav/internal/altitude-from</property>
+        </output>
+    </filter>
+
+    <!-- Detect being vnav-ft above runway -->
+    <logic>
+        <name>Detect being vnav-ft above runway</name>
+
+        <enable>
+            <condition>
+                <greater-than>
+                    <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+                    <expression>
+                        <sum>
+                            <property>/it-vnav/internal/rwy-alt-ft</property>
+                            <property>/it-vnav/settings/vnav-ft</property>
+                        </sum>
+                    </expression>
+                </greater-than>
+            </condition>
+        </enable>
+
+        <input>
+            <true />
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/above-vnav-ft</property>
+        </output>
+    </logic>
+
+    <!-- Reset above-vnav-ft after landing -->
+    <logic>
+        <name>Reset above-vnav-ft after landing</name>
+
+        <enable>
+            <condition>
+                <property>/gear/gear[1]/wow</property>
+                <property>/gear/gear[2]/wow</property>
+            </condition>
+        </enable>
+
+        <input>
+            <false />
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/above-vnav-ft</property>
+        </output>
+    </logic>
+
+    <!-- Make VNAV available when all the requirements are met -->
+    <logic>
+        <name>Make VNAV available when all the requirements are met</name>
+
+        <input>
+            <and>
+                <property>/it-vnav/inputs/serviceable</property>
+                <not>
+                    <property>/gear/gear[1]/wow</property>
+                </not>
+                <not>
+                    <property>/gear/gear[2]/wow</property>
+                </not>
+                <or> <!-- Lateral mode has to be LNAV or LOC (engaged, not armed) -->
+                    <equals>
+                        <property>/it-autoflight/output/lat</property>
+                        <value>1</value>
+                    </equals>
+                    <equals>
+                        <property>/it-autoflight/output/lat</property>
+                        <value>2</value>
+                    </equals>
+                </or>
+                <less-than> <!-- Convenient way to ensure mode is not FLARE, ROLLOUT, T/O CLB, or G/A CLB -->
+                    <property>/it-autoflight/output/vert</property>
+                    <value>6</value>
+                </less-than>
+                <not>
+                    <equals> <!-- VNAV should disengage after capturing the G/S -->
+                        <property>/it-autoflight/output/vert</property>
+                        <value>2</value>
+                    </equals>
+                </not>
+                <property>/it-vnav/internal/above-vnav-ft</property>
+                <property>/it-vnav/internal/vert-route-available</property>
+                <property>/autopilot/route-manager/active</property>
+            </and>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/available</property>
+        </output>
+    </logic>
+
+    <!-- Engage VNAV when available and armed -->
+    <logic>
+        <name>Engage VNAV when available and armed</name>
+
+        <input>
+            <and>
+                <property>/it-vnav/internal/available</property>
+                <property>/it-vnav/output/armed</property>
+            </and>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/engaged</property>
+        </output>
+    </logic>
+
+    <!-- Allow STEPS when above 2500 ft AGL -->
+    <logic>
+        <name>Allow STEPS when above 2500 ft AGL</name>
+
+        <input>
+            <and>
+                <property>/it-vnav/settings/steps</property>
+                <greater-than>
+                    <property>/position/gear-agl-ft</property>
+                    <value>2500</value>
+                </greater-than>
+            </and>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/steps</property>
+        </output>
+    </logic>
+
+    <!-- Determine if we're descending -->
+    <logic>
+        <name>Determine if we're descending</name>
+
+        <input>
+            <less-than>
+                <property>/it-autoflight/input/alt</property>
+                <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+            </less-than>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/descent</property>
+        </output>
+    </logic>
+
+    <!-- Determine if we're to use the CRUISE or TRANSITION controller -->
+    <logic>
+        <name>Determine if we're to use the CRUISE or TRANSITION controller</name>
+
+        <enable>
+            <condition>
+            </condition>
+        </enable>
+
+        <input>
+            <and>
+                <equals>
+                    <property>/it-autoflight/input/alt</property>
+                    <property>/it-vnav/internal/altitude-from</property>
+                </equals>
+                <greater-than>
+                    <property>/position/gear-agl-ft</property>
+                    <value>2500</value>
+                </greater-than>
+            </and>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/cruise-phase</property>
+        </output>
+    </logic>
+
+    <!-- Determine if altitude is captured -->
+    <logic>
+        <name>Determine if altitude is captured</name>
+
+        <input>
+            <less-than>
+                <expression>
+                    <abs>
+                        <property>/it-vnav/internal/altitude-difference-ft</property>
+                    </abs>
+                </expression>
+                <expression>
+                    <clip>
+                        <clipMin>50</clipMin>
+                        <clipMax>2500</clipMax>
+                        <product>
+                            <floor>
+                                <sum>
+                                    <div>
+                                        <div>
+                                            <abs>
+                                                <property>/it-autoflight/internal/vert-speed-fpm</property>
+                                            </abs>
+                                            <product>
+                                                <property>it-autoflight/config/cmd/alt</property>
+                                                <value>-1</value>
+                                            </product>
+                                        </div>
+                                        <value>100</value>
+                                    </div>
+                                    <value>0.5</value>
+                                </sum>
+                            </floor>
+                            <value>100</value>
+                        </product>
+                    </clip>
+                </expression>
+            </less-than>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/captured</property>
+        </output>
+    </logic>
+
+    <!-- Throttle lag input -->
+    <filter>
+        <name>Throttle lag input</name>
+        <type>exponential</type>
+        <input>
+            <expression>
+                <div>
+                    <sum>
+                        <property>/controls/engines/engine[0]/throttle</property>
+                        <property>/controls/engines/engine[1]/throttle</property>
+                    </sum>
+                    <value>2</value>
+                </div>
+            </expression>
+        </input>
+        <output>/it-vnav/internal/intermediates/throttle-lag</output>
+        <filter-time>0.2</filter-time>
+    </filter>
+
+    <!-- Throttle avg -->
+    <filter>
+        <name>Throttle avg</name>
+        <type>moving-average</type>
+        <input>/it-vnav/internal/intermediates/throttle-lag</input>
+        <output>/it-vnav/internal/intermediates/throttle-avg</output>
+        <samples>256</samples>
+    </filter>
+
+    <!-- Throttle rate -->
+	<filter>
+		<name>Throttle Rate</name>
+		<type>derivative</type>
+		<input>/it-vnav/internal/intermediates/throttle-avg</input>
+		<output>/it-vnav/internal/intermediates/throttle-rate-raw</output>
+		<filter-time>1.0</filter-time>
+	</filter>
+
+    <!-- Throttle rate lag -->
+	<filter>
+		<name>Throttle Rate Lag</name>
+		<type>exponential</type>
+		<input>/it-vnav/internal/intermediates/throttle-rate-raw</input>
+		<output>/it-vnav/internal/intermediates/throttle-rate</output>
+		<filter-time>0.04</filter-time>
+	</filter>
+
+    <!-- Determine if throttle is ok -->
+    <logic>
+        <name>Determine if throttle is ok</name>
+
+        <input>
+            <and>
+                <less-than>
+                    <property>/it-vnav/internal/intermediates/throttle-avg</property>
+                    <expression>
+                        <sum>
+                            <property>/it-autoflight/settings/autothrottle-max</property>
+                            <value>-0.015</value>
+                        </sum>
+                    </expression>
+                </less-than>
+                <greater-than>
+                    <property>/it-vnav/internal/intermediates/throttle-avg</property>
+                    <expression>
+                        <sum>
+                            <property>/it-autoflight/settings/autothrottle-min</property>
+                            <value>0.015</value>
+                        </sum>
+                    </expression>
+                </greater-than>
+            </and>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/throttle-ok</property>
+        </output>
+    </logic>
+
+    <!-- Mach ok raw -->
+    <logic>
+        <name>Mach ok raw</name>
+        <input>
+            <greater-than-equals>
+                <property>/it-autoflight/internal/mach-input-avg</property>
+                <expression>
+                    <sum>
+                        <property>/it-autoflight/input/mach</property>
+                        <value>-0.005</value> <!-- Margin of error -->
+                    </sum>
+                </expression>
+            </greater-than-equals>
+        </input>
+        <output>/it-vnav/internal/intermediates/mach-ok-raw</output>
+    </logic>
+
+    <!-- Mach ok lag -->
+    <filter>
+        <name>Mach ok lag</name>
+        <type>exponential</type>
+        <input>/it-vnav/internal/intermediates/mach-ok-raw</input>
+        <output>/it-vnav/internal/intermediates/mach-ok-lag</output>
+        <filter-time>0.1</filter-time>
+    </filter>
+
+    <!-- Mach ok avg -->
+    <filter>
+        <name>Mach ok avg</name>
+        <type>moving-average</type>
+        <input>/it-vnav/internal/intermediates/mach-ok-lag</input>
+        <output>/it-vnav/internal/intermediates/mach-ok-avg</output>
+        <samples>64</samples>
+    </filter>
+
+    <!-- Kts ok raw -->
+    <logic>
+        <name>Kts ok raw</name>
+        <input>
+            <greater-than-equals>
+                <property>/it-autoflight/internal/kts-input-avg</property>
+                <expression>
+                    <sum>
+                        <property>/it-autoflight/input/kts</property>
+                        <value>-0.5</value> <!-- Margin of error -->
+                    </sum>
+                </expression>
+            </greater-than-equals>
+        </input>
+        <output>/it-vnav/internal/intermediates/kts-ok-raw</output>
+    </logic>
+
+    <!-- Kts ok lag -->
+    <filter>
+        <name>Kts ok lag</name>
+        <type>exponential</type>
+        <input>/it-vnav/internal/intermediates/kts-ok-raw</input>
+        <output>/it-vnav/internal/intermediates/kts-ok-lag</output>
+        <filter-time>0.1</filter-time>
+    </filter>
+
+    <!-- Kts ok avg -->
+    <filter>
+        <name>Kts ok avg</name>
+        <type>moving-average</type>
+        <input>/it-vnav/internal/intermediates/kts-ok-lag</input>
+        <output>/it-vnav/internal/intermediates/kts-ok-avg</output>
+        <samples>64</samples>
+    </filter>
+
+    <!-- Speed ok -->
+    <logic>
+        <name>Speed ok</name>
+        <input>
+            <or>
+                <and>
+                    <not>
+                        <property>/it-autoflight/input/kts-mach</property>
+                    </not>
+                    <greater-than-equals>
+                        <property>/it-vnav/internal/intermediates/kts-ok-avg</property>
+                        <value>0.5</value>
+                    </greater-than-equals>
+                </and>
+                <and>
+                    <property>/it-autoflight/input/kts-mach</property>
+                    <greater-than-equals>
+                        <property>/it-vnav/internal/intermediates/mach-ok-avg</property>
+                        <value>0.5</value>
+                    </greater-than-equals>
+                </and>
+            </or>
+        </input>
+        <output>/it-vnav/internal/speed-ok</output>
+    </logic>
+
+    <!-- Determine if route is ok (not too steep) -->
+    <logic>
+        <name>Determine if route is ok (not too steep)</name>
+
+        <input>
+            <or>
+                <and>
+                    <property>/it-vnav/internal/descent</property>
+                    <greater-than>
+                        <property>/it-vnav/internal/route-vs</property>
+                        <property>/it-autoflight/internal/sbp-final</property>
+                    </greater-than>
+                </and>
+                <and>
+                    <not>
+                        <property>/it-vnav/internal/descent</property>
+                    </not>
+                    <less-than>
+                        <property>/it-vnav/internal/route-vs</property>
+                        <property>/it-autoflight/internal/sbp-final</property>
+                    </less-than>
+                </and>
+            </or>
+        </input>
+
+        <input>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/intermediates/route-ok-raw</property>
+        </output>
+    </logic>
+
+    <!-- Route ok lag -->
+    <filter>
+        <name>Route ok lag</name>
+        <type>exponential</type>
+        <input>/it-vnav/internal/intermediates/route-ok-raw</input>
+        <output>/it-vnav/internal/intermediates/route-ok-lag</output>
+        <filter-time>0.2</filter-time>
+    </filter>
+
+    <!-- Route ok avg -->
+    <filter>
+        <name>Route ok avg</name>
+        <type>moving-average</type>
+        <input>/it-vnav/internal/intermediates/route-ok-lag</input>
+        <output>/it-vnav/internal/intermediates/route-ok-avg</output>
+        <samples>256</samples>
+    </filter>
+
+    <!-- Route ok -->
+    <logic>
+        <name>Route ok</name>
+        <input>
+            <greater-than-equals>
+                <property>/it-vnav/internal/intermediates/route-ok-avg</property>
+                <value>0.5</value>
+            </greater-than-equals>
+        </input>
+        <output>/it-vnav/internal/route-ok</output>
+    </logic>
+
+    <!-- Command R-V/S, fallback onto SBP when needed -->
+    <logic>
+        <name>Command R-V/S, fallback onto SBP when needed</name>
+
+        <input>
+            <or>
+                <and> <!-- ATHR + THR-OK = R-V/S -->
+                    <property>/it-autoflight/output/athr</property>
+                    <property>/it-vnav/internal/throttle-ok</property>
+                </and>
+                <and> <!-- ATHR + THR-LIM + ROK = R-V/S -->
+                    <property>/it-autoflight/output/athr</property>
+                    <not>
+                        <property>/it-vnav/internal/throttle-ok</property>
+                    </not>
+                    <property>/it-vnav/internal/route-ok</property>
+                </and>
+                <and> <!-- ATHR + THR-LIM + RST + DES + FREE = R-V/S -->
+                    <property>/it-autoflight/output/athr</property>
+                    <not>
+                        <property>/it-vnav/internal/throttle-ok</property>
+                    </not>
+                    <not>
+                        <property>/it-vnav/internal/route-ok</property>
+                    </not>
+                    <property>/it-vnav/internal/descent</property>
+                    <not>
+                        <property>/it-vnav/settings/controlled-descent</property>
+                    </not>
+                </and>
+                <and> <!-- MTHR + SPD-OK + ROK = R-V/S -->
+                    <not>
+                        <property>/it-autoflight/output/athr</property>
+                    </not>
+                    <property>/it-vnav/internal/speed-ok</property>
+                    <property>/it-vnav/internal/route-ok</property>
+                </and>
+                <and> <!-- MTHR + SPD-OK + RST + DES + FREE = R-V/S -->
+                    <not>
+                        <property>/it-autoflight/output/athr</property>
+                    </not>
+                    <property>/it-vnav/internal/speed-ok</property>
+                    <not>
+                        <property>/it-vnav/internal/route-ok</property>
+                    </not>
+                    <property>/it-vnav/internal/descent</property>
+                    <not>
+                        <property>/it-vnav/settings/controlled-descent</property>
+                    </not>
+                </and>
+            </or>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/use-route-vs</property>
+        </output>
+    </logic>
+
+    <!-- VNAV's R-V/S: V/S required by route -->
+    <filter>
+        <name>VNAV's R-V/S: V/S required by route</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <input>
+            <expression>
+                <div>
+                    <property>/it-vnav/internal/altitude-difference-ft</property>
+                    <div>
+                        <property>/it-vnav/internal/distance-to-wp</property>
+                        <div>
+                            <property>/velocities/groundspeed-kt</property>
+                            <value>60.0</value>
+                        </div>
+                    </div>
+                </div>
+            </expression>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/intermediates/route-vs-raw</property>
+        </output>
+    </filter>
+
+    <!-- VNAV's R-V/S: V/S that should be used -->
+    <filter>
+        <name>VNAV's R-V/S: V/S that should be used</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <input>/it-vnav/internal/intermediates/route-vs-raw</input>
+        <output>/it-vnav/internal/route-vs</output>
+        <min>
+            <condition>
+                <property>/it-vnav/internal/block-descent</property>
+            </condition>
+            <value>0</value>
+        </min>
+        <min>
+            <condition>
+                <property>/it-vnav/internal/descent</property>
+                <property>/it-vnav/settings/controlled-descent</property>
+            </condition>
+            <expression>
+                <sum>
+                    <property>/it-vnav/internal/sbp-final</property>
+                    <value>-250</value>
+                </sum>
+            </expression>
+        </min>
+        <min>-6000</min>
+        <max>
+            <condition>
+                <not>
+                    <property>/it-vnav/internal/descent</property>
+                </not>
+            </condition>
+            <expression>
+                <sum>
+                    <property>/it-vnav/internal/sbp-final</property>
+                    <value>250</value>
+                </sum>
+            </expression>
+        </max>
+        <max>6000</max>
+    </filter>
+
+    <!-- VNAV's SBP: Filter ITAF's flch-kts-error-cmd -->
+    <filter>
+        <name>VNAV's SBP: Filter ITAF's flch-kts-error-cmd</name>
+        <type>noise-spike</type>
+        <feedback-if-disabled>true</feedback-if-disabled>
+        <initialize-to>output</initialize-to>
+
+        <input>
+            <property>/it-autoflight/internal/flch-kts-error-cmd</property>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/intermediates/sbp-kts-error</property>
+        </output>
+		<max-rate-of-change>
+			<condition>
+                <not>
+                    <property>/it-vnav/internal/use-route-vs</property>
+                </not>
+			</condition>
+			<value>1.5</value>
+		</max-rate-of-change>
+		<max-rate-of-change>100</max-rate-of-change>
+    </filter>
+
+    <!-- VNAV's SBP: Speed By Pitch Delta -->
+    <filter>
+        <name>VNAV's SBP: Speed By Pitch Delta</name>
+        <type>gain</type>
+        <gain>
+            <expression>
+                <table>
+                    <property>/velocities/airspeed-kt</property>
+                    <entry><ind>140</ind><dep> 700</dep></entry>
+                    <entry><ind>360</ind><dep>1400</dep></entry>
+                </table>
+            </expression>
+        </gain>
+
+        <input>
+            <condition>
+                <equals>
+                    <property>/it-autoflight/input/kts-mach</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+
+            <expression>
+                <difference>
+                    <property>/it-autoflight/internal/mach-rate</property>
+                    <property>/it-vnav/internal/intermediates/throttle-rate</property>
+                </difference>
+            </expression>
+        </input>
+
+        <input>
+            <expression>
+                <difference>
+                    <property>/it-autoflight/internal/kts-rate</property>
+                    <property>/it-vnav/internal/intermediates/throttle-rate</property>
+                </difference>
+            </expression>
+        </input>
+
+        <reference>/it-vnav/internal/intermediates/sbp-kts-error</reference>
+
+        <output>/it-vnav/internal/intermediates/sbp-raw</output>
+        <min>
+            <condition>
+                <or>
+                    <equals>
+                        <property>/gear/gear[1]/wow</property>
+                        <value>1</value>
+                    </equals>
+                    <equals>
+                        <property>/gear/gear[1]/wow</property>
+                        <value>1</value>
+                    </equals>
+                </or>
+            </condition>
+            <value>0</value>
+        </min>
+        <min>-2000</min>
+        <max>2000</max>
+    </filter>
+
+    <!-- VNAV's SBP: Speed By Pitch Filter -->
+    <filter>
+        <name>VNAV's SBP: Speed By Pitch Filter</name>
+        <type>noise-spike</type>
+
+        <input>/it-vnav/internal/intermediates/sbp-raw</input>
+
+        <output>/it-vnav/internal/intermediates/sbp-filtered</output>
+        <max-rate-of-change>
+            <condition>
+                <not>
+                    <property>/it-vnav/internal/use-route-vs</property>
+                </not>
+            </condition>
+            <value>700</value>
+        </max-rate-of-change>
+        <max-rate-of-change>10000</max-rate-of-change>
+    </filter>
+
+    <!-- VNAV's SBP: Speed By Pitch summer -->
+    <filter>
+        <name>VNAV's SBP: Speed By Pitch summer</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <input>
+            <expression>
+                <sum>
+                    <property>/it-autoflight/internal/vert-speed-fpm</property>
+                    <property>/it-vnav/internal/intermediates/sbp-filtered</property>
+                </sum>
+            </expression>
+        </input>
+
+        <output>/it-vnav/internal/intermediates/sbp-sum</output>
+        <min>
+            <condition>
+                <not>
+                    <property>/it-vnav/internal/descent</property>
+                </not>
+            </condition>
+            <value>0</value>
+        </min>
+        <min>-100000</min>
+        <max>
+            <condition>
+                <property>/it-vnav/internal/descent</property>
+                <value>0</value>
+            </condition>
+        </max>
+        <max>100000</max>
+    </filter>
+
+    <!-- VNAV's SBP: Speed By Pitch Final -->
+    <filter>
+        <name>VNAV's SBP: Speed By Pitch Final</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <input>/it-vnav/internal/intermediates/sbp-sum</input>
+        <output>/it-vnav/internal/sbp-final</output>
+        <max-rate-of-change>700</max-rate-of-change>
+    </filter>
+
+    <!-- Transition V/S controller -->
+    <filter>
+        <name>Transition V/S controller</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <input>
+            <condition>
+                <property>/it-vnav/internal/use-route-vs</property>
+            </condition>
+
+            <property>/it-vnav/internal/route-vs</property>
+        </input>
+
+        <input>
+            <property>/it-vnav/internal/sbp-final</property>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/intermediates/vs-raw</property>
+        </output>
+        <min>-6000</min>
+        <max>6000</max>
+    </filter>
+
+    <!-- Filter V/S controller -->
+    <filter>
+        <name>Filter V/S controller</name>
+        <type>noise-spike</type>
+
+        <input>
+            <property>/it-vnav/internal/intermediates/vs-raw</property>
+        </input>
+
+        <output>
+            <property>/it-vnav/internal/vs-filtered</property>
+        </output>
+        <max-rate-of-change>700</max-rate-of-change>
+    </filter>
+
+    <!-- Connect transition controller to ITAF's V/S input when necessary -->
+    <filter>
+        <name>Connect transition controller to ITAF's V/S input when necessary</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+
+        <enable>
+            <condition>
+                <property>/it-vnav/internal/engaged</property>
+                <not>
+                    <property>/it-vnav/internal/captured</property>
+                </not>
+                <not>
+                    <property>/it-vnav/internal/cruise-phase</property>
+                </not>
+            </condition>
+        </enable>
+
+        <input>
+            <expression>
+                <floor>
+                    <sum>
+                        <property>/it-vnav/internal/vs-filtered</property>
+                        <value>0.5</value>
+                    </sum>
+                </floor>
+            </expression>
+        </input>
+
+        <output>
+            <property>/it-autoflight/input/vs</property>
+        </output>
+    </filter>
+</PropertyList>

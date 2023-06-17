@@ -5,26 +5,23 @@ V2 = "";
 
 # The actual function
 var vspeeds = func {
-
-       # Create/populate variables at each function cycle
-       # Retrieve total aircraft weight.
+	# Create/populate variables at each function cycle
+	# Retrieve total aircraft weight.
 	WT = getprop("/fdm/jsbsim/inertia/weight-lbs");
-	
 
-       
-		V1 = (1.98 * 0.0001 * WT)+44.53;
-		VR = (1.98 * 0.0001 * WT)+59.53;
-		V2 = (1.98 * 0.0001 * WT)+74.53;
-	
+	V1 = (1.98 * 0.0001 * WT) + 44.53;
+	VR = (1.98 * 0.0001 * WT) + 59.53;
+	V2 = (1.98 * 0.0001 * WT) + 74.53;
 
-       
+	# Export the calculated V-speeds to the property-tree, for further use
+	setprop("/instrumentation/fmc/vspeeds/V1", V1);
+	setprop("/instrumentation/fmc/vspeeds/VR", VR);
+	setprop("/instrumentation/fmc/vspeeds/V2", V2);
 
-       # Export the calculated V-speeds to the property-tree, for further use
-	setprop("/instrumentation/fmc/vspeeds/V1",V1);
-	setprop("/instrumentation/fmc/vspeeds/VR",VR);
-	setprop("/instrumentation/fmc/vspeeds/V2",V2);
+	# Export V2 + 10 kt for use by IT-AUTOFLIGHT
+	setprop("it-autoflight/settings/toga-spd", V2 + 10);
 
-       # Repeat the function each second
+	# Repeat the function each second
 	settimer(vspeeds, 1);
 }
 

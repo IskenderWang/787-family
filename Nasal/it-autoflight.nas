@@ -1,5 +1,5 @@
-# IT-AUTOFLIGHT System Controller V4.0.7
-# Copyright (c) 2021 Josh Davidson (Octal450)
+# IT-AUTOFLIGHT System Controller V4.0.8
+# Copyright (c) 2023 Josh Davidson (Octal450)
 
 setprop("/it-autoflight/config/tuning-mode", 0); # Not used by controller
 
@@ -43,8 +43,14 @@ var Gear = {
 
 var Misc = {
 	efis0Trk: props.globals.getNode("/instrumentation/efis[0]/hdg-trk-selected", 1),
+	efis0True: props.globals.getNode("/instrumentation/efis[0]/mfd/true-north", 1),
 	efis1Trk: props.globals.getNode("/instrumentation/efis[1]/hdg-trk-selected", 1),
+	efis1True: props.globals.getNode("/instrumentation/efis[1]/mfd/true-north", 1),
 	flapNorm: props.globals.getNode("/surface-positions/flap-pos-norm", 1),
+};
+
+var Orientation = {
+	rollDeg: props.globals.getNode("/orientation/roll-deg"),
 };
 
 var Position = {
@@ -70,8 +76,6 @@ var Velocities = {
 	groundspeedMps: 0,
 	indicatedAirspeedKt: props.globals.getNode("/instrumentation/airspeed-indicator/indicated-speed-kt", 1),
 	indicatedMach: props.globals.getNode("/instrumentation/airspeed-indicator/indicated-mach", 1),
-	trueAirspeedKt: props.globals.getNode("/instrumentation/airspeed-indicator/true-speed-kt", 1),
-	trueAirspeedKtTemp: 0,
 };
 
 # IT-AUTOFLIGHT
@@ -97,7 +101,6 @@ var Input = {
 	fpaAbs: props.globals.initNode("/it-autoflight/input/fpa-abs", 0, "DOUBLE"), # Set by property rule
 	hdg: props.globals.initNode("/it-autoflight/input/hdg", 0, "INT"),
 	hdgCalc: 0,
-	hdgHldCalc: 0,
 	kts: props.globals.initNode("/it-autoflight/input/kts", 250, "INT"),
 	ktsMach: props.globals.initNode("/it-autoflight/input/kts-mach", 0, "BOOL"),
 	lat: props.globals.initNode("/it-autoflight/input/lat", 5, "INT"),
@@ -105,9 +108,11 @@ var Input = {
 	mach: props.globals.initNode("/it-autoflight/input/mach", 0.5, "DOUBLE"),
 	radioSel: props.globals.initNode("/it-autoflight/input/radio-sel", 0, "INT"),
 	radioSelTemp: 0,
+	roll: props.globals.initNode("/it-autoflight/input/roll", 0, "INT"),
 	toga: props.globals.initNode("/it-autoflight/input/toga", 0, "BOOL"),
 	trk: props.globals.initNode("/it-autoflight/input/trk", 0, "BOOL"),
 	trueCourse: props.globals.initNode("/it-autoflight/input/true-course", 0, "BOOL"),
+	trueCourseTemp: 0,
 	vert: props.globals.initNode("/it-autoflight/input/vert", 7, "INT"),
 	vertTemp: 7,
 	vs: props.globals.initNode("/it-autoflight/input/vs", 0, "INT"),
@@ -121,24 +126,34 @@ var Internal = {
 	altDiff: 0,
 	altTemp: 0,
 	altPredicted: props.globals.initNode("/it-autoflight/internal/altitude-predicted", 0, "DOUBLE"),
-	bankLimit: props.globals.initNode("/it-autoflight/internal/bank-limit", 30, "INT"),
-	bankLimitAuto: 30,
-	bankLimitMax: [30, 5, 10, 15, 20, 25, 30],
+	bankLimit: props.globals.initNode("/it-autoflight/internal/bank-limit", 0, "DOUBLE"),
+	bankLimitAuto: props.globals.initNode("/it-autoflight/internal/bank-limit-auto", 0, "DOUBLE"),
+	bankLimitCalc: 0,
+	bankLimitMax: [5, 10, 15, 20, 25, 30, 35],
+	bankLimitTemp: 0,
 	captVs: 0,
 	driftAngle: props.globals.initNode("/it-autoflight/internal/drift-angle-deg", 0, "DOUBLE"),
 	driftAngleTemp: 0,
 	flchActive: 0,
 	fpa: props.globals.initNode("/it-autoflight/internal/fpa", 0, "DOUBLE"),
 	hdgErrorDeg: props.globals.initNode("/it-autoflight/internal/heading-error-deg", 0, "DOUBLE"),
+	hdgHldCalc: 0,
 	hdgHldTarget: props.globals.initNode("/it-autoflight/internal/hdg-hld-target", 360, "INT"),
 	hdgHldValue: 360,
 	hdgPredicted: props.globals.initNode("/it-autoflight/internal/heading-predicted", 0, "DOUBLE"),
+	hdgTrk: props.globals.initNode("/it-autoflight/internal/heading", 0, "DOUBLE"),
 	lnavAdvanceNm: props.globals.initNode("/it-autoflight/internal/lnav-advance-nm", 0, "DOUBLE"),
+	magTrueDiffDeg: props.globals.initNode("/it-autoflight/internal/mag-true-diff-deg", 0, "DOUBLE"),
+	magTrueDiffDegTemp: 0,
 	minVs: props.globals.initNode("/it-autoflight/internal/min-vs", -500, "INT"),
 	maxVs: props.globals.initNode("/it-autoflight/internal/max-vs", 500, "INT"),
 	navCourseTrackErrorDeg: [props.globals.initNode("/it-autoflight/internal/nav1-course-track-error-deg", 0, "DOUBLE"), props.globals.initNode("/it-autoflight/internal/nav2-course-track-error-deg", 0, "DOUBLE"), props.globals.initNode("/it-autoflight/internal/nav3-course-track-error-deg", 0, "DOUBLE")],
 	navHeadingErrorDeg: [props.globals.initNode("/it-autoflight/internal/nav1-heading-error-deg", 0, "DOUBLE"), props.globals.initNode("/it-autoflight/internal/nav2-heading-error-deg", 0, "DOUBLE"), props.globals.initNode("/it-autoflight/internal/nav3-heading-error-deg", 0, "DOUBLE")],
 	navHeadingErrorDegTemp: [0, 0, 0],
+	takeoffHdg: props.globals.initNode("/it-autoflight/internal/takeoff-hdg", 0, "INT"),
+	takeoffHdgCalc: 0,
+	takeoffLvl: props.globals.initNode("/it-autoflight/internal/takeoff-lvl", 1, "BOOL"),
+	throttle: [props.globals.initNode("/it-autoflight/internal/throttle[0]", 0, "DOUBLE"), props.globals.initNode("/it-autoflight/internal/throttle[1]", 0, "DOUBLE"), props.globals.initNode("/it-autoflight/internal/throttle[2]", 0, "DOUBLE"), props.globals.initNode("/it-autoflight/internal/throttle[3]", 0, "DOUBLE"), props.globals.initNode("/it-autoflight/internal/throttle[4]", 0, "DOUBLE"), props.globals.initNode("/it-autoflight/internal/throttle[5]", 0, "DOUBLE"), props.globals.initNode("/it-autoflight/internal/throttle[6]", 0, "DOUBLE"), props.globals.initNode("/it-autoflight/internal/throttle[7]", 0, "DOUBLE")],
 	vs: props.globals.initNode("/it-autoflight/internal/vert-speed-fpm", 0, "DOUBLE"),
 	vsTemp: 0,
 };
@@ -151,6 +166,7 @@ var Output = {
 	apprArm: props.globals.initNode("/it-autoflight/output/appr-armed", 0, "BOOL"),
 	athr: props.globals.initNode("/it-autoflight/output/athr", 0, "BOOL"),
 	athrTemp: 0,
+	cws: props.globals.initNode("/it-autoflight/output/cws", 0, "BOOL"),
 	fd1: props.globals.initNode("/it-autoflight/output/fd1", 0, "BOOL"),
 	fd1Temp: 0,
 	fd2: props.globals.initNode("/it-autoflight/output/fd2", 0, "BOOL"),
@@ -174,19 +190,24 @@ var Text = {
 };
 
 var Settings = {
-	autoBankMaxDeg: props.globals.getNode("/it-autoflight/settings/auto-bank-max-deg", 1),
+	accelFt: props.globals.getNode("/it-autoflight/settings/accel-ft", 1),
+	autoBankLimitCalc: props.globals.getNode("/it-autoflight/settings/auto-bank-limit-calc", 1),
 	autolandWithoutAp: props.globals.getNode("/it-autoflight/settings/autoland-without-ap", 1),
 	autolandWithoutApTemp: 0,
+	bankMaxDeg: props.globals.getNode("/it-autoflight/settings/bank-max-deg", 1),
 	customFma: props.globals.getNode("/it-autoflight/settings/custom-fma", 1),
 	disableFinal: props.globals.getNode("/it-autoflight/settings/disable-final", 1),
 	fdStartsOn: props.globals.getNode("/it-autoflight/settings/fd-starts-on", 1),
 	hdgHldSeparate: props.globals.getNode("/it-autoflight/settings/hdg-hld-separate", 1),
-	latAglFt: props.globals.getNode("/it-autoflight/settings/lat-agl-ft", 1),
 	landingFlap: props.globals.getNode("/it-autoflight/settings/land-flap", 1),
-	reducAglFt: props.globals.getNode("/it-autoflight/settings/reduc-agl-ft", 1),
+	lnavFt: props.globals.getNode("/it-autoflight/settings/lnav-ft", 1),
 	retardAltitude: props.globals.getNode("/it-autoflight/settings/retard-ft", 1),
 	retardEnable: props.globals.getNode("/it-autoflight/settings/retard-enable", 1),
-	togaSpd: props.globals.getNode("/it-autoflight/settings/togaspd", 1),
+	takeoffHdgCap: props.globals.getNode("/it-autoflight/settings/takeoff-hdg-cap", 1),
+	takeoffHdgCapTemp: 0,
+	togaSpd: props.globals.getNode("/it-autoflight/settings/toga-spd", 1),
+	useControlsEngines: props.globals.getNode("/it-autoflight/settings/use-controls-engines", 1),
+	useControlsFlight: props.globals.getNode("/it-autoflight/settings/use-controls-flight", 1),
 };
 
 var Sound = {
@@ -195,7 +216,7 @@ var Sound = {
 };
 
 var Gain = {
-	altGain: props.globals.getNode("/it-autoflight/config/cmd/alt-gain", 1),
+	altGain: props.globals.getNode("/it-autoflight/config/cmd/alt", 1),
 	hdgGain: props.globals.getNode("/it-autoflight/config/cmd/roll", 1),
 	pitchKp: props.globals.initNode("/it-autoflight/config/pitch/kp", 0, "DOUBLE"),
 	pitchKpCalc: 0,
@@ -215,11 +236,11 @@ var Gain = {
 
 var ITAF = {
 	init: func(t = 0) { # Not everything should be reset if the reset is type 1
+		Input.ktsMach.setBoolValue(0);
 		if (t != 1) {
 			Input.alt.setValue(10000);
 			Input.bankLimitSw.setValue(0);
 			Input.hdg.setValue(360);
-			Input.ktsMach.setBoolValue(0);
 			Input.kts.setValue(250);
 			Input.mach.setValue(0.5);
 			Input.trk.setBoolValue(0);
@@ -227,6 +248,7 @@ var ITAF = {
 			Input.radioSel.setBoolValue(0);
 			Input.vsFpa.setBoolValue(0);
 		}
+		Internal.takeoffLvl.setBoolValue(1);
 		Input.ap1.setBoolValue(0);
 		Input.ap2.setBoolValue(0);
 		Input.athr.setBoolValue(0);
@@ -271,7 +293,7 @@ var ITAF = {
 		Output.ap2Temp = Output.ap2.getBoolValue();
 		Output.latTemp = Output.lat.getValue();
 		Output.vertTemp = Output.vert.getValue();
-		
+
 		# Trip system off
 		if (!Input.ap1Avail.getBoolValue() and Output.ap1Temp) {
 			me.ap1Master(0);
@@ -282,17 +304,17 @@ var ITAF = {
 		if (!Input.athrAvail.getBoolValue() and Output.athr.getBoolValue()) {
 			me.athrMaster(0);
 		}
-		
+
 		# VOR/ILS Revision
 		if (Output.latTemp == 2 or Output.latTemp == 4 or Output.vertTemp == 2 or Output.vertTemp == 6) {
 			me.checkRadioRevision(Output.latTemp, Output.vertTemp);
 		}
-		
+
 		Output.ap1Temp = Output.ap1.getBoolValue();
 		Output.ap2Temp = Output.ap2.getBoolValue();
 		Output.athrTemp = Output.athr.getBoolValue();
 		Settings.autolandWithoutApTemp = Settings.autolandWithoutAp.getBoolValue();
-		
+
 		# Kill Autoland if the system should not autoland without AP, and AP is off
 		if (Settings.autolandWithoutApTemp) { # Only evaluate the rest if this setting is on
 			if (!Output.ap1Temp and !Output.ap2Temp) {
@@ -304,7 +326,7 @@ var ITAF = {
 				}
 			}
 		}
-		
+
 		Gear.wow1Temp = Gear.wow1.getBoolValue();
 		Gear.wow2Temp = Gear.wow2.getBoolValue();
 		Output.latTemp = Output.lat.getValue();
@@ -313,11 +335,16 @@ var ITAF = {
 		Position.gearAglFtTemp = Position.gearAglFt.getValue();
 		Internal.vsTemp = Internal.vs.getValue();
 		Position.indicatedAltitudeFtTemp = Position.indicatedAltitudeFt.getValue();
-		
+
+		# Takeoff mode logic
+		if (Output.latTemp == 5 and (Internal.takeoffLvl.getBoolValue() or Gear.wow1Temp or Gear.wow2Temp)) {
+			me.takeoffLogic();
+		}
+
 		# HDG HLD logic
 		if (!Settings.hdgHldSeparate.getBoolValue()) {
 			Output.hdgInHldTemp = Output.hdgInHld.getBoolValue();
-			
+
 			if (Output.latTemp == 0) {
 				if (Input.hdg.getValue() == Internal.hdgHldValue and abs(Internal.hdgErrorDeg.getValue()) <= 2.5) {
 					if (Output.hdgInHldTemp != 1) {
@@ -341,22 +368,22 @@ var ITAF = {
 				}
 			}
 		}
-		
+
 		# LNAV Engagement
 		if (Output.lnavArm.getBoolValue()) {
 			me.checkLnav(1);
 		}
-		
+
 		# VOR/LOC or ILS/LOC Capture
 		if (Output.locArm.getBoolValue()) {
 			me.checkLoc(1);
 		}
-		
+
 		# G/S Capture
 		if (Output.apprArm.getBoolValue()) {
 			me.checkAppr(1);
 		}
-		
+
 		# Autoland Logic
 		if (Output.latTemp == 2) {
 			if (Position.gearAglFtTemp <= 150) {
@@ -382,19 +409,19 @@ var ITAF = {
 				}
 			}
 		}
-		
+
 		# FLCH Engagement
 		if (Text.vertTemp == "T/O CLB") {
-			me.checkFlch(Settings.reducAglFt.getValue());
+			me.checkFlch(Settings.accelFt.getValue());
 		}
-		
+
 		# Altitude Capture/Sync Logic
 		if (Output.vertTemp != 0) {
 			Internal.alt.setValue(Input.alt.getValue());
 		}
 		Internal.altTemp = Internal.alt.getValue();
 		Internal.altDiff = Internal.altTemp - Position.indicatedAltitudeFtTemp;
-		
+
 		if (Output.vertTemp != 0 and Output.vertTemp != 2 and Output.vertTemp != 6 and Output.vertTemp != 9) {
 			Internal.captVs = math.clamp(math.round(abs(Internal.vs.getValue()) / (-1 * Gain.altGain.getValue()), 100), 50, 2500); # Capture limits
 			if (abs(Internal.altDiff) <= Internal.captVs and !Gear.wow1Temp and !Gear.wow2Temp) {
@@ -405,7 +432,7 @@ var ITAF = {
 				}
 			}
 		}
-		
+
 		# Altitude Hold Min/Max Reset
 		if (Internal.altCaptureActive) {
 			if (abs(Internal.altDiff) <= 25 and Text.vert.getValue() != "ALT HLD") {
@@ -413,39 +440,25 @@ var ITAF = {
 				me.updateVertText("ALT HLD");
 			}
 		}
-		
+
 		# Thrust Mode Selector
 		me.updateThrustMode();
+
+		# Bank Limits
+		me.bankLimit();
 	},
 	slowLoop: func() {
-		Input.bankLimitSwTemp = Input.bankLimitSw.getValue();
-		Velocities.trueAirspeedKtTemp = Velocities.trueAirspeedKt.getValue();
 		FPLN.activeTemp = FPLN.active.getValue();
 		FPLN.currentWpTemp = FPLN.currentWp.getValue();
 		FPLN.numTemp = FPLN.num.getValue();
-		
-		# Bank Limit
-		if (Velocities.trueAirspeedKtTemp >= 420) {
-			Internal.bankLimitAuto = 15;
-		} else if (Velocities.trueAirspeedKtTemp >= 340) {
-			Internal.bankLimitAuto = 20;
-		} else {
-			Internal.bankLimitAuto = 30;
-		}
-		
-		if (Internal.bankLimitAuto > Internal.bankLimitMax[Input.bankLimitSwTemp]) {
-			Internal.bankLimit.setValue(Internal.bankLimitMax[Input.bankLimitSwTemp]);
-		} else {
-			Internal.bankLimit.setValue(Internal.bankLimitAuto);
-		}
-		
+
 		# If in LNAV mode and route is not longer active, switch to HDG HLD
 		if (Output.lat.getValue() == 1) { # Only evaulate the rest of the condition if we are in LNAV mode
 			if (FPLN.num.getValue() == 0 or !FPLN.active.getBoolValue()) {
 				me.setLatMode(3);
 			}
 		}
-		
+
 		# Waypoint Advance Logic
 		if (FPLN.numTemp > 0 and FPLN.activeTemp == 1) {
 			if ((FPLN.currentWpTemp + 1) < FPLN.numTemp) {
@@ -479,28 +492,28 @@ var ITAF = {
 					FPLN.turnDist = 1;
 				}
 				Internal.lnavAdvanceNm.setValue(FPLN.turnDist);
-				
+
 				if (FPLN.wp0Dist.getValue() <= FPLN.turnDist and flightplan().getWP(FPLN.currentWp.getValue()).fly_type == "flyBy") { # Don't care unless we are flyBy-ing
 					FPLN.currentWp.setValue(FPLN.currentWpTemp + 1);
 				}
 			}
 		}
-		
+
 		# Reset system once flight complete
 		if (!Output.ap1.getBoolValue() and !Output.ap2.getBoolValue() and Gear.wow0.getBoolValue() and Velocities.groundspeedKt.getValue() < 60 and Output.vert.getValue() != 7) { # Not in T/O or G/A
 			me.init(1);
 		}
-		
+
 		# Calculate Roll and Pitch Rate Kp
 		if (!Settings.disableFinal.getBoolValue()) {
 			Gain.rollKpLowTemp = Gain.rollKpLow.getValue();
 			Gain.rollKpHighTemp = Gain.rollKpHigh.getValue();
 			Gain.pitchKpLowTemp = Gain.pitchKpLow.getValue();
 			Gain.pitchKpHighTemp = Gain.pitchKpHigh.getValue();
-			
+
 			Gain.rollKpCalc = Gain.rollKpLowTemp + (Velocities.airspeedKt.getValue() - 140) * ((Gain.rollKpHighTemp - Gain.rollKpLowTemp) / (360 - 140));
 			Gain.pitchKpCalc = Gain.pitchKpLowTemp + (Velocities.airspeedKt.getValue() - 140) * ((Gain.pitchKpHighTemp - Gain.pitchKpLowTemp) / (360 - 140));
-			
+
 			if (Gain.rollKpLowTemp > Gain.rollKpHighTemp) {
 				Gain.rollKpCalc = math.clamp(Gain.rollKpCalc, Gain.rollKpHighTemp, Gain.rollKpLowTemp);
 			} else if (Gain.rollKpLowTemp < Gain.rollKpHighTemp) {
@@ -511,15 +524,15 @@ var ITAF = {
 			} else if (Gain.pitchKpLowTemp < Gain.pitchKpHighTemp) {
 				Gain.pitchKpCalc = math.clamp(Gain.pitchKpCalc, Gain.pitchKpLowTemp, Gain.pitchKpHighTemp);
 			}
-			
+
 			Gain.rollKp.setValue(Gain.rollKpCalc);
 			Gain.pitchKp.setValue(Gain.pitchKpCalc);
 		}
-		
+
 		# Calculate Roll Command Kp
 		Gain.rollCmdKpCalc = Gain.hdgGain.getValue() + (Velocities.airspeedKt.getValue() - 140) * ((Gain.hdgGain.getValue() + 1.0 - Gain.hdgGain.getValue()) / (360 - 140));
 		Gain.rollCmdKpCalc = math.clamp(Gain.rollCmdKpCalc, Gain.hdgGain.getValue(), Gain.hdgGain.getValue() + 1.0);
-		
+
 		Gain.rollCmdKp.setValue(Gain.rollCmdKpCalc);
 	},
 	ap1Master: func(s) {
@@ -558,7 +571,7 @@ var ITAF = {
 	},
 	apOffFunction: func() {
 		if (!Output.ap1.getBoolValue() and !Output.ap2.getBoolValue()) { # Only do if both APs are off
-			if (!Settings.disableFinal.getBoolValue()) {
+			if (!Settings.disableFinal.getBoolValue() and Settings.useControlsFlight.getBoolValue()) {
 				Controls.aileron.setValue(0);
 				Controls.elevator.setValue(0);
 				Controls.rudder.setValue(0);
@@ -578,6 +591,16 @@ var ITAF = {
 				Output.athr.setBoolValue(1);
 			}
 		} else {
+			if (!Settings.useControlsEngines.getBoolValue()) {
+				setprop("/controls/engines/engine[0]/throttle", Internal.throttle[0].getValue());
+				setprop("/controls/engines/engine[1]/throttle", Internal.throttle[1].getValue());
+				setprop("/controls/engines/engine[2]/throttle", Internal.throttle[2].getValue());
+				setprop("/controls/engines/engine[3]/throttle", Internal.throttle[3].getValue());
+				setprop("/controls/engines/engine[4]/throttle", Internal.throttle[4].getValue());
+				setprop("/controls/engines/engine[5]/throttle", Internal.throttle[5].getValue());
+				setprop("/controls/engines/engine[6]/throttle", Internal.throttle[6].getValue());
+				setprop("/controls/engines/engine[7]/throttle", Internal.throttle[7].getValue());
+			}
 			Output.athr.setBoolValue(0);
 		}
 		Output.athrTemp = Output.athr.getBoolValue();
@@ -668,14 +691,16 @@ var ITAF = {
 			me.updateLnavArm(0);
 			me.updateLocArm(0);
 			me.updateApprArm(0);
+			me.takeoffLogic();
 			Output.lat.setValue(5);
 			me.updateLatText("T/O");
-		} else if (n == 6) { # LVL
+		} else if (n == 6) { # ROLL
 			me.updateLnavArm(0);
 			me.updateLocArm(0);
 			me.updateApprArm(0);
 			Output.lat.setValue(6);
-			me.updateLatText("LVL");
+			me.updateLatText("ROLL");
+			me.syncRoll();
 		} else if (n == 9) { # Blank
 			me.updateLnavArm(0);
 			me.updateLocArm(0);
@@ -698,7 +723,7 @@ var ITAF = {
 		} else if (n == 3) {
 			me.syncHdg();
 			me.updateLnavArm(0);
-		} 
+		}
 	},
 	setVertMode: func(n) {
 		Input.altDiff = Input.alt.getValue() - Position.indicatedAltitudeFt.getValue();
@@ -790,7 +815,7 @@ var ITAF = {
 			Output.vert.setValue(7);
 			Input.ktsMach.setBoolValue(0);
 			me.updateThrustMode();
-		} else if (n == 9) {
+		} else if (n == 9) { # Blank
 			Internal.flchActive = 0;
 			Internal.altCaptureActive = 0;
 			me.updateApprArm(0);
@@ -840,6 +865,17 @@ var ITAF = {
 			Text.thr.setValue("THRUST");
 		}
 	},
+	bankLimit: func() {
+		Input.bankLimitSwTemp = Input.bankLimitSw.getValue();
+		Output.latTemp = Output.lat.getValue();
+
+		if (Input.bankLimitSwTemp == 0) {
+			Internal.bankLimitCalc = Internal.bankLimitAuto.getValue();
+		} else {
+			Internal.bankLimitCalc = Internal.bankLimitMax[Input.bankLimitSwTemp - 1];
+		}
+		Internal.bankLimit.setValue(math.clamp(Internal.bankLimitCalc, 0, Settings.bankMaxDeg.getValue()));
+	},
 	activateLnav: func() {
 		if (Output.lat.getValue() != 1) {
 			me.updateLnavArm(0);
@@ -872,7 +908,7 @@ var ITAF = {
 	},
 	checkLnav: func(t) {
 		FPLN.activeTemp = FPLN.active.getBoolValue();
-		if (FPLN.num.getValue() > 0 and FPLN.activeTemp and Position.gearAglFt.getValue() >= Settings.latAglFt.getValue()) {
+		if (FPLN.num.getValue() > 0 and FPLN.activeTemp and Position.gearAglFt.getValue() >= Settings.lnavFt.getValue()) {
 			me.activateLnav();
 		} else if (FPLN.activeTemp and Output.lat.getValue() != 1 and t != 1) {
 			me.updateLnavArm(1);
@@ -944,6 +980,24 @@ var ITAF = {
 			}
 		}
 	},
+	takeoffLogic: func() {
+		takeoffHdgCapTemp = Settings.takeoffHdgCap.getValue();
+		if (takeoffHdgCapTemp == 0) {
+			Internal.takeoffLvl.setBoolValue(1);
+		} else {
+			if (!Gear.wow1.getBoolValue() and !Gear.wow2.getBoolValue()) {
+				if (abs(Orientation.rollDeg.getValue()) > Settings.takeoffHdgCap.getValue()) {
+					Internal.takeoffHdg.setValue(math.round(Internal.hdgTrk.getValue())); # Switches to track automatically
+					Internal.takeoffLvl.setBoolValue(1);
+				} else {
+					Internal.takeoffLvl.setBoolValue(0);
+				}
+			} else {
+				Internal.takeoffHdg.setValue(math.round(Internal.hdgTrk.getValue())); # Switches to track automatically
+				Internal.takeoffLvl.setBoolValue(1);
+			}
+		}
+	},
 	setClimbRateLim: func() {
 		Internal.vsTemp = Internal.vs.getValue();
 		if (Internal.alt.getValue() >= Position.indicatedAltitudeFt.getValue()) {
@@ -989,6 +1043,10 @@ var ITAF = {
 	},
 	syncHdg: func() {
 		Input.hdg.setValue(math.round(Internal.hdgPredicted.getValue())); # Switches to track automatically
+	},
+	syncRoll: func() {
+		Internal.bankLimitTemp = Internal.bankLimit.getValue();
+		Input.roll.setValue(math.clamp(math.round(Orientation.rollDeg.getValue(), 1), Internal.bankLimitTemp * -1, Internal.bankLimitTemp));
 	},
 	syncAlt: func() {
 		Input.alt.setValue(math.clamp(math.round(Internal.altPredicted.getValue(), 100), 0, 50000));
@@ -1119,35 +1177,89 @@ setlistener("/it-autoflight/input/vs-fpa", func() {
 setlistener("/it-autoflight/input/trk", func() {
 	Input.trkTemp = Input.trk.getBoolValue();
 	Internal.driftAngleTemp = math.round(Internal.driftAngle.getValue());
-	
+
 	if (Input.trkTemp) {
 		Input.hdgCalc = Input.hdg.getValue() + Internal.driftAngleTemp;
-		Input.hdgHldCalc = Internal.hdgHldTarget.getValue() + Internal.driftAngleTemp;
+		Internal.hdgHldCalc = Internal.hdgHldTarget.getValue() + Internal.driftAngleTemp;
+		Internal.takeoffHdgCalc = Internal.takeoffHdg.getValue() + Internal.driftAngleTemp;
 	} else {
 		Input.hdgCalc = Input.hdg.getValue() - Internal.driftAngleTemp;
-		Input.hdgHldCalc = Internal.hdgHldTarget.getValue() - Internal.driftAngleTemp;
+		Internal.hdgHldCalc = Internal.hdgHldTarget.getValue() - Internal.driftAngleTemp;
+		Internal.takeoffHdgCalc = Internal.takeoffHdg.getValue() - Internal.driftAngleTemp;
 	}
-	
+
 	if (Input.hdgCalc > 360) { # It's rounded, so this is ok. Otherwise do >= 360.5
 		Input.hdgCalc = Input.hdgCalc - 360;
 	} else if (Input.hdgCalc < 1) { # It's rounded, so this is ok. Otherwise do < 0.5
 		Input.hdgCalc = Input.hdgCalc + 360;
 	}
-	if (Input.hdgHldCalc > 360) { # It's rounded, so this is ok. Otherwise do >= 360.5
-		Input.hdgHldCalc = Input.hdgHldCalc - 360;
-	} else if (Input.hdgHldCalc < 1) { # It's rounded, so this is ok. Otherwise do < 0.5
-		Input.hdgHldCalc = Input.hdgHldCalc + 360;
+
+	if (Internal.hdgHldCalc > 360) { # It's rounded, so this is ok. Otherwise do >= 360.5
+		Internal.hdgHldCalc = Internal.hdgHldCalc - 360;
+	} else if (Internal.hdgHldCalc < 1) { # It's rounded, so this is ok. Otherwise do < 0.5
+		Internal.hdgHldCalc = Internal.hdgHldCalc + 360;
 	}
-	
+
+	if (Internal.takeoffHdgCalc > 360) { # It's rounded, so this is ok. Otherwise do >= 360.5
+		Internal.takeoffHdgCalc = Internal.takeoffHdgCalc - 360;
+	} else if (Internal.takeoffHdgCalc < 1) { # It's rounded, so this is ok. Otherwise do < 0.5
+		Internal.takeoffHdgCalc = Internal.takeoffHdgCalc + 360;
+	}
+
 	Input.hdg.setValue(Input.hdgCalc);
-	Internal.hdgHldTarget.setValue(Input.hdgHldCalc);
-	
+	Internal.hdgHldTarget.setValue(Internal.hdgHldCalc);
+	Internal.takeoffHdg.setValue(Internal.takeoffHdgCalc);
+
 	if (Settings.customFma.getBoolValue()) {
 		updateFma.lat();
 	}
-	
+
 	Misc.efis0Trk.setBoolValue(Input.trkTemp); # For Canvas Nav Display.
 	Misc.efis1Trk.setBoolValue(Input.trkTemp); # For Canvas Nav Display.
+}, 0, 0);
+
+setlistener("/it-autoflight/input/true-course", func() {
+	Internal.magTrueDiffDegTemp = math.round(Internal.magTrueDiffDeg.getValue());
+	Input.trueCourseTemp = Input.trueCourse.getBoolValue();
+
+	if (Input.trueCourseTemp) {
+		Input.hdgCalc = Input.hdg.getValue() + Internal.magTrueDiffDegTemp;
+		Internal.hdgHldCalc = Internal.hdgHldTarget.getValue() + Internal.magTrueDiffDegTemp;
+		Internal.takeoffHdgCalc = Internal.takeoffHdg.getValue() + Internal.magTrueDiffDegTemp;
+	} else {
+		Input.hdgCalc = Input.hdg.getValue() - Internal.magTrueDiffDegTemp;
+		Internal.hdgHldCalc = Internal.hdgHldTarget.getValue() - Internal.magTrueDiffDegTemp;
+		Internal.takeoffHdgCalc = Internal.takeoffHdg.getValue() - Internal.magTrueDiffDegTemp;
+	}
+
+	if (Input.hdgCalc > 360) { # It's rounded, so this is ok. Otherwise do >= 360.5
+		Input.hdgCalc = Input.hdgCalc - 360;
+	} else if (Input.hdgCalc < 1) { # It's rounded, so this is ok. Otherwise do < 0.5
+		Input.hdgCalc = Input.hdgCalc + 360;
+	}
+
+	if (Internal.hdgHldCalc > 360) { # It's rounded, so this is ok. Otherwise do >= 360.5
+		Internal.hdgHldCalc = Internal.hdgHldCalc - 360;
+	} else if (Internal.hdgHldCalc < 1) { # It's rounded, so this is ok. Otherwise do < 0.5
+		Internal.hdgHldCalc = Internal.hdgHldCalc + 360;
+	}
+
+	if (Internal.takeoffHdgCalc > 360) { # It's rounded, so this is ok. Otherwise do >= 360.5
+		Internal.takeoffHdgCalc = Internal.takeoffHdgCalc - 360;
+	} else if (Internal.takeoffHdgCalc < 1) { # It's rounded, so this is ok. Otherwise do < 0.5
+		Internal.takeoffHdgCalc = Internal.takeoffHdgCalc + 360;
+	}
+
+	Input.hdg.setValue(Input.hdgCalc);
+	Internal.hdgHldTarget.setValue(Internal.hdgHldCalc);
+	Internal.takeoffHdg.setValue(Internal.takeoffHdgCalc);
+
+	if (Settings.customFma.getBoolValue()) {
+		updateFma.lat();
+	}
+
+	Misc.efis0True.setBoolValue(Input.trueCourseTemp); # For Canvas Nav Display.
+	Misc.efis1True.setBoolValue(Input.trueCourseTemp); # For Canvas Nav Display.
 }, 0, 0);
 
 setlistener("/sim/signals/fdm-initialized", func() {
