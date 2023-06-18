@@ -115,6 +115,7 @@
         <object-name>rwinga</object-name>
         <object-name>rwingb</object-name>
         <object-name>rwingc</object-name>
+        <object-name>wifiantenna</object-name>
         <property-base>sim/model/livery</property-base>
         <texture-prop>texture-fuselage</texture-prop>
         <texture>787-8.png</texture>
