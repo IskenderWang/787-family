@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 
-<!-- IT-AUTOFLIGHT Autopilot Control Dialog -->
-<!-- Copyright (c) 2023 Josh Davidson (Octal450) -->
+<!-- IT-AUTOFLIGHT Control Dialog -->
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
 
 <PropertyList>
-
+	
 	<name>autopilot</name>
 	<layout>vbox</layout>
 	<pref-width>260</pref-width>
-
+	
 	<group>
 		<layout>hbox</layout>
-
+		
 		<text>
 			<halign>left</halign>
 			<label>IT-AUTOFLIGHT System (V4.0.X)</label>
@@ -27,12 +27,12 @@
 			</binding>
 		</button>
 	</group>
-
+	
 	<hrule/>
-
+	
 	<group>
 		<layout>hbox</layout>
-
+		
 		<button>
 			<legend>A/T</legend>
 			<pref-width>40</pref-width>
@@ -74,10 +74,10 @@
 			</binding>
 		</button>
 	</group>
-
+	
 	<group>
 		<layout>hbox</layout>
-
+		
 		<text>
 			<label>[A/T]</label>
 			<visible>
@@ -124,10 +124,10 @@
 			</visible>
 		</text>
 	</group>
-
+	
 	<group>
 		<layout>hbox</layout>
-
+		
 		<hrule>
 			<stretch>true</stretch>
 		</hrule>
@@ -138,31 +138,67 @@
 			<stretch>true</stretch>
 		</hrule>
 	</group>
-
+	
 	<group>
 		<layout>table</layout>
-
+		
 		<text>
 			<row>0</row>
-			<col>0</col>
+			<col>1</col>
 			<visible>
 				<equals>
 					<property>/it-autoflight/mode/thr</property>
-					<value>PITCH</value>
+					<value>THR LIM</value>
 				</equals>
 			</visible>
 			<border>1</border>
-			<label> PITCH</label>
+			<label>THR LIM</label>
 			<valign>center</valign>
 		</text>
 		<text>
 			<row>0</row>
-			<col>0</col>
+			<col>1</col>
 			<visible>
-				<not-equals>
+				<equals>
 					<property>/it-autoflight/mode/thr</property>
-					<value>PITCH</value>
-				</not-equals>
+					<value>IDLE</value>
+				</equals>
+			</visible>
+			<border>1</border>
+			<label>IDLE </label>
+			<valign>center</valign>
+		</text>
+		<text>
+			<row>0</row>
+			<col>1</col>
+			<visible>
+				<equals>
+					<property>/it-autoflight/mode/thr</property>
+					<value>RETARD</value>
+				</equals>
+			</visible>
+			<border>1</border>
+			<label>RETARD</label>
+			<valign>center</valign>
+		</text>
+		<text>
+			<row>0</row>
+			<col>1</col>
+			<visible>
+				<and>
+					<not-equals>
+						<property>/it-autoflight/mode/thr</property>
+						<value>THR LIM</value>
+					</not-equals>
+					<not-equals>
+						<property>/it-autoflight/mode/thr</property>
+						<value>IDLE</value>
+					</not-equals>
+					<not-equals>
+						<property>/it-autoflight/mode/thr</property>
+						<value>RETARD</value>
+					</not-equals>
+				</and>
 			</visible>
 			<border>1</border>
 			<label>999999</label>
@@ -170,23 +206,23 @@
 			<property>/it-autoflight/mode/thr</property>
 			<live>1</live>
 		</text>
-
+		
 		<vrule>
 			<row>0</row>
-			<col>1</col>
+			<col>2</col>
 		</vrule>
-
+		
 		<text>
 			<row>0</row>
-			<col>2</col>
+			<col>3</col>
 			<visible>
 				<and>
 					<equals>
-						<property>/it-autoflight/output/lnav-armed</property>
+						<property>/it-autoflight/output/lnav-arm</property>
 						<value>0</value>
 					</equals>
 					<equals>
-						<property>/it-autoflight/output/appr-armed</property>
+						<property>/it-autoflight/output/gs-arm</property>
 						<value>1</value>
 					</equals>
 				</and>
@@ -197,19 +233,19 @@
 		</text>
 		<text>
 			<row>0</row>
-			<col>2</col>
+			<col>3</col>
 			<visible>
 				<and>
 					<equals>
-						<property>/it-autoflight/output/lnav-armed</property>
+						<property>/it-autoflight/output/lnav-arm</property>
 						<value>0</value>
 					</equals>
 					<equals>
-						<property>/it-autoflight/output/loc-armed</property>
+						<property>/it-autoflight/output/loc-arm</property>
 						<value>1</value>
 					</equals>
 					<equals>
-						<property>/it-autoflight/output/appr-armed</property>
+						<property>/it-autoflight/output/gs-arm</property>
 						<value>0</value>
 					</equals>
 				</and>
@@ -220,19 +256,19 @@
 		</text>
 		<text>
 			<row>0</row>
-			<col>2</col>
+			<col>3</col>
 			<visible>
 				<and>
 					<equals>
-						<property>/it-autoflight/output/lnav-armed</property>
+						<property>/it-autoflight/output/lnav-arm</property>
 						<value>1</value>
 					</equals>
 					<equals>
-						<property>/it-autoflight/output/loc-armed</property>
+						<property>/it-autoflight/output/loc-arm</property>
 						<value>0</value>
 					</equals>
 					<equals>
-						<property>/it-autoflight/output/appr-armed</property>
+						<property>/it-autoflight/output/gs-arm</property>
 						<value>0</value>
 					</equals>
 				</and>
@@ -241,30 +277,30 @@
 			<label>LNV</label>
 			<valign>center</valign>
 		</text>
-
+		
 		<vrule>
 			<row>0</row>
-			<col>3</col>
+			<col>4</col>
 		</vrule>
-
+		
 		<text>
 			<row>0</row>
-			<col>4</col>
+			<col>5</col>
 			<border>1</border>
-			<label>99999</label>
+			<label>9999</label>
 			<valign>center</valign>
 			<property>/it-autoflight/mode/lat</property>
 			<live>1</live>
 		</text>
-
+		
 		<vrule>
 			<row>0</row>
-			<col>5</col>
+			<col>6</col>
 		</vrule>
-
+		
 		<text>
 			<row>0</row>
-			<col>6</col>
+			<col>7</col>
 			<border>1</border>
 			<label>99999999</label>
 			<valign>center</valign>
@@ -272,10 +308,10 @@
 			<live>1</live>
 		</text>
 	</group>
-
+	
 	<group>
 		<layout>hbox</layout>
-
+		
 		<hrule>
 			<stretch>true</stretch>
 		</hrule>
@@ -286,10 +322,10 @@
 			<stretch>true</stretch>
 		</hrule>
 	</group>
-
+	
 	<group>
 		<layout>hbox</layout>
-
+		
 		<button>
 			<legend>IAS</legend>
 			<pref-width>70</pref-width>
@@ -318,16 +354,16 @@
 			</binding>
 		</button>
 	</group>
-
+	
 	<group>
 		<layout>table</layout>
-
+		
 		<text>
 			<row>0</row>
 			<col>0</col>
 			<label>IAS:   </label>
 		</text>
-
+		
 		<button>
 			<row>0</row>
 			<col>1</col>
@@ -341,12 +377,8 @@
 				</equals>
 			</enable>
 			<binding>
-				<command>property-adjust</command>
-				<property>/it-autoflight/input/kts</property>
-				<min>100</min>
-				<max>350</max>
-				<step>-10</step>
-				<wrap>false</wrap>
+				<command>nasal</command>
+				<script>setprop("/it-autoflight/input/kts", math.max(getprop("/it-autoflight/input/kts") - 10, 100));</script>
 			</binding>
 		</button>
 		<button>
@@ -362,12 +394,8 @@
 				</equals>
 			</enable>
 			<binding>
-				<command>property-adjust</command>
-				<property>/it-autoflight/input/kts</property>
-				<min>100</min>
-				<max>350</max>
-				<step>-1</step>
-				<wrap>false</wrap>
+				<command>nasal</command>
+				<script>setprop("/it-autoflight/input/kts", math.max(getprop("/it-autoflight/input/kts") - 1, 100));</script>
 			</binding>
 		</button>
 
@@ -387,7 +415,7 @@
 				<command>dialog-apply</command>
 			</binding>
 		</input>
-
+		
 		<button>
 			<row>0</row>
 			<col>4</col>
@@ -401,12 +429,8 @@
 				</equals>
 			</enable>
 			<binding>
-				<command>property-adjust</command>
-				<property>/it-autoflight/input/kts</property>
-				<min>100</min>
-				<max>350</max>
-				<step>1</step>
-				<wrap>false</wrap>
+				<command>nasal</command>
+				<script>setprop("/it-autoflight/input/kts", math.min(getprop("/it-autoflight/input/kts") + 1, getprop("/it-autoflight/settings/max-kts")));</script>
 			</binding>
 		</button>
 		<button>
@@ -423,25 +447,21 @@
 				</equals>
 			</enable>
 			<binding>
-				<command>property-adjust</command>
-				<property>/it-autoflight/input/kts</property>
-				<min>100</min>
-				<max>350</max>
-				<step>10</step>
-				<wrap>false</wrap>
+				<command>nasal</command>
+				<script>setprop("/it-autoflight/input/kts", math.min(getprop("/it-autoflight/input/kts") + 10, getprop("/it-autoflight/settings/max-kts")));</script>
 			</binding>
 		</button>
 	</group>
-
+	
 	<group>
 		<layout>table</layout>
-
+		
 		<text>
 			<row>0</row>
 			<col>0</col>
 			<label>Mach:</label>
 		</text>
-
+		
 		<button>
 			<row>0</row>
 			<col>1</col>
@@ -455,12 +475,8 @@
 				</equals>
 			</enable>
 			<binding>
-				<command>property-adjust</command>
-				<property>/it-autoflight/input/mach</property>
-				<min>0.50</min>
-				<max>0.90</max>
-				<step>-0.01</step>
-				<wrap>false</wrap>
+				<command>nasal</command>
+				<script>setprop("/it-autoflight/input/mach", math.round(math.max(getprop("/it-autoflight/input/mach") - 0.01, 0.5), 0.001));</script>
 			</binding>
 		</button>
 		<button>
@@ -476,12 +492,8 @@
 				</equals>
 			</enable>
 			<binding>
-				<command>property-adjust</command>
-				<property>/it-autoflight/input/mach</property>
-				<min>0.50</min>
-				<max>0.90</max>
-				<step>-0.001</step>
-				<wrap>false</wrap>
+				<command>nasal</command>
+				<script>setprop("/it-autoflight/input/mach", math.round(math.max(getprop("/it-autoflight/input/mach") - 0.001, 0.5), 0.001));</script>
 			</binding>
 		</button>
 
@@ -501,7 +513,7 @@
 				<command>dialog-apply</command>
 			</binding>
 		</input>
-
+		
 		<button>
 			<row>0</row>
 			<col>4</col>
@@ -515,12 +527,8 @@
 				</equals>
 			</enable>
 			<binding>
-				<command>property-adjust</command>
-				<property>/it-autoflight/input/mach</property>
-				<min>0.50</min>
-				<max>0.90</max>
-				<step>0.001</step>
-				<wrap>false</wrap>
+				<command>nasal</command>
+				<script>setprop("/it-autoflight/input/mach", math.round(math.min(getprop("/it-autoflight/input/mach") + 0.001, getprop("/it-autoflight/settings/max-mach")), 0.001));</script>
 			</binding>
 		</button>
 		<button>
@@ -537,19 +545,15 @@
 				</equals>
 			</enable>
 			<binding>
-				<command>property-adjust</command>
-				<property>/it-autoflight/input/mach</property>
-				<min>0.50</min>
-				<max>0.90</max>
-				<step>0.01</step>
-				<wrap>false</wrap>
+				<command>nasal</command>
+				<script>setprop("/it-autoflight/input/mach", math.round(math.min(getprop("/it-autoflight/input/mach") + 0.01, getprop("/it-autoflight/settings/max-mach")), 0.001));</script>
 			</binding>
 		</button>
 	</group>
-
+	
 	<group>
 		<layout>hbox</layout>
-
+		
 		<hrule>
 			<stretch>true</stretch>
 		</hrule>
@@ -560,10 +564,10 @@
 			<stretch>true</stretch>
 		</hrule>
 	</group>
-
+	
 	<group>
 		<layout>hbox</layout>
-
+		
 		<button>
 			<legend>HLD</legend>
 			<pref-width>50</pref-width>
@@ -601,16 +605,16 @@
 			</binding>
 		</button>
 	</group>
-
+	
 	<group>
 		<layout>table</layout>
-
+		
 		<text>
 			<row>0</row>
 			<col>0</col>
 			<label>HDG:</label>
 		</text>
-
+		
 		<button>
 			<row>0</row>
 			<col>1</col>
@@ -652,7 +656,7 @@
 				<command>dialog-apply</command>
 			</binding>
 		</input>
-
+		
 		<button>
 			<row>0</row>
 			<col>4</col>
@@ -685,10 +689,10 @@
 			</binding>
 		</button>
 	</group>
-
+	
 	<group>
 		<layout>table</layout>
-
+		
 		<checkbox>
 			<row>0</row>
 			<col>0</col>
@@ -699,14 +703,14 @@
 			</binding>
 			<live>true</live>
 		</checkbox>
-
+		
 		<text>
 			<row>0</row>
 			<col>1</col>
 			<label>NAV Sel:</label>
 			<valign>center</valign>
 		</text>
-
+		
 		<button>
 			<row>0</row>
 			<col>2</col>
@@ -816,18 +820,18 @@
 			</binding>
 		</button>
 	</group>
-
+	
 	<group>
 		<layout>hbox</layout>
-
+		
 		<text>
 			<label>Bank Limit Degrees Select:</label>
 		</text>
 	</group>
-
+	
 	<group>
 		<layout>hbox</layout>
-
+		
 		<slider>
 			<halign>center</halign>
 			<pref-width>215</pref-width>
@@ -841,19 +845,19 @@
 			</binding>
 		</slider>
 	</group>
-
+	
 	<group>
 		<layout>hbox</layout>
-
+		
 		<text>
 			<halign>center</halign>
 			<label>AUTO   5     10     15     20     25     30  </label>
 		</text>
 	</group>
-
+	
 	<group>
 		<layout>hbox</layout>
-
+		
 		<hrule>
 			<stretch>true</stretch>
 		</hrule>
@@ -864,10 +868,10 @@
 			<stretch>true</stretch>
 		</hrule>
 	</group>
-
+	
 	<group>
 		<layout>hbox</layout>
-
+		
 		<button>
 			<legend>HLD</legend>
 			<pref-width>40</pref-width>
@@ -914,16 +918,16 @@
 			</binding>
 		</button>
 	</group>
-
+	
 	<group>
 		<layout>table</layout>
-
+		
 		<text>
 			<row>0</row>
 			<col>0</col>
 			<label>ALT: </label>
 		</text>
-
+		
 		<button>
 			<row>0</row>
 			<col>1</col>
@@ -965,7 +969,7 @@
 				<command>dialog-apply</command>
 			</binding>
 		</input>
-
+		
 		<button>
 			<row>0</row>
 			<col>4</col>
@@ -998,16 +1002,16 @@
 			</binding>
 		</button>
 	</group>
-
+	
 	<group>
 		<layout>table</layout>
-
+		
 		<text>
 			<row>0</row>
 			<col>0</col>
 			<label>V/S: </label>
 		</text>
-
+		
 		<button>
 			<row>0</row>
 			<col>1</col>
@@ -1067,7 +1071,7 @@
 				<command>dialog-apply</command>
 			</binding>
 		</input>
-
+		
 		<button>
 			<row>0</row>
 			<col>4</col>
@@ -1112,16 +1116,16 @@
 			</binding>
 		</button>
 	</group>
-
+	
 	<group>
 		<layout>table</layout>
-
+		
 		<text>
 			<row>0</row>
 			<col>0</col>
 			<label>FPA:</label>
 		</text>
-
+		
 		<button>
 			<row>0</row>
 			<col>1</col>
@@ -1135,12 +1139,8 @@
 				</equals>
 			</enable>
 			<binding>
-				<command>property-adjust</command>
-				<property>/it-autoflight/input/fpa</property>
-				<min>-9.9</min>
-				<max>9.9</max>
-				<step>-1</step>
-				<wrap>false</wrap>
+				<command>nasal</command>
+				<script>setprop("/it-autoflight/input/fpa", math.round(math.max(getprop("/it-autoflight/input/fpa") - 1, -9.9), 0.1));</script>
 			</binding>
 		</button>
 		<button>
@@ -1156,12 +1156,8 @@
 				</equals>
 			</enable>
 			<binding>
-				<command>property-adjust</command>
-				<property>/it-autoflight/input/fpa</property>
-				<min>-9.9</min>
-				<max>9.9</max>
-				<step>-0.1</step>
-				<wrap>false</wrap>
+				<command>nasal</command>
+				<script>setprop("/it-autoflight/input/fpa", math.round(math.max(getprop("/it-autoflight/input/fpa") - 0.1, -9.9), 0.1));</script>
 			</binding>
 		</button>
 
@@ -1181,7 +1177,7 @@
 				<command>dialog-apply</command>
 			</binding>
 		</input>
-
+		
 		<button>
 			<row>0</row>
 			<col>4</col>
@@ -1195,12 +1191,8 @@
 				</equals>
 			</enable>
 			<binding>
-				<command>property-adjust</command>
-				<property>/it-autoflight/input/fpa</property>
-				<min>-9.9</min>
-				<max>9.9</max>
-				<step>0.1</step>
-				<wrap>false</wrap>
+				<command>nasal</command>
+				<script>setprop("/it-autoflight/input/fpa", math.round(math.min(getprop("/it-autoflight/input/fpa") + 0.1, 9.9), 0.1));</script>
 			</binding>
 		</button>
 		<button>
@@ -1217,12 +1209,8 @@
 				</equals>
 			</enable>
 			<binding>
-				<command>property-adjust</command>
-				<property>/it-autoflight/input/fpa</property>
-				<min>-9.9</min>
-				<max>9.9</max>
-				<step>1</step>
-				<wrap>false</wrap>
+				<command>nasal</command>
+				<script>setprop("/it-autoflight/input/fpa", math.round(math.min(getprop("/it-autoflight/input/fpa") + 1, 9.9), 0.1));</script>
 			</binding>
 		</button>
 	</group>

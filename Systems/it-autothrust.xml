@@ -1,10 +1,26 @@
 <?xml version="1.0"?>
 
 <!-- IT-AUTOFLIGHT: AUTOTHRUST -->
-<!-- Copyright (c) 2023 Josh Davidson (Octal450) -->
+<!-- Copyright (c) 2024 Josh Davidson (Octal450) -->
 
 <PropertyList>
-
+	
+	<filter>
+		<name>A/THR Knots Lag</name>
+		<type>exponential</type>
+		<input>/instrumentation/airspeed-indicator/indicated-speed-kt</input>
+		<output>/it-autoflight/internal/athr-kts-input-lag</output>
+		<filter-time>0.04</filter-time>
+	</filter>
+	
+	<filter>
+		<name>A/THR Mach Lag</name>
+		<type>exponential</type>
+		<input>/instrumentation/airspeed-indicator/indicated-mach</input>
+		<output>/it-autoflight/internal/athr-mach-input-lag</output>
+		<filter-time>0.04</filter-time>
+	</filter>
+	
 	<filter>
 		<name>A/THR Knots Input Gain</name>
 		<type>gain</type>
@@ -28,7 +44,7 @@
 			</expression>
 		</max>
 	</filter>
-
+	
 	<filter>
 		<name>A/THR Knots Input Filter</name>
 		<type>noise-spike</type>
@@ -64,7 +80,7 @@
 		</max-rate-of-change>
 		<max-rate-of-change>200</max-rate-of-change>
 	</filter>
-
+	
 	<filter>
 		<name>A/THR Mach Input Gain</name>
 		<type>gain</type>
@@ -88,7 +104,7 @@
 			</expression>
 		</max>
 	</filter>
-
+	
 	<filter>
 		<name>A/THR Mach Input Filter</name>
 		<type>noise-spike</type>
@@ -125,7 +141,7 @@
 		</max-rate-of-change>
 		<max-rate-of-change>2</max-rate-of-change>
 	</filter>
-
+	
 	<pid-controller>
 		<name>IT-CONTROLLER: Knots</name>
 		<enable>
@@ -146,18 +162,18 @@
 				</and>
 			</condition>
 		</enable>
-		<input>/instrumentation/airspeed-indicator/indicated-speed-kt</input>
+		<input>/it-autoflight/internal/athr-kts-input-lag</input>
 		<reference>/it-autoflight/internal/athr-kts</reference>
 		<output>/it-autoflight/internal/throttle-cmd</output>
 		<config>
 			<Kp>0.055</Kp>
 			<Ti>9.0</Ti>
-			<Td>0.00001</Td>
-			<u_min>/it-autoflight/settings/autothrottle-min</u_min>
-			<u_max>/it-autoflight/settings/autothrottle-max</u_max>
+			<Td>0.00001</Td>   
+			<u_min>/it-autoflight/settings/autothrottle-min</u_min>  
+			<u_max>/it-autoflight/settings/autothrottle-max</u_max>  
 		</config>
 	</pid-controller>
-
+	
 	<pid-controller>
 		<name>IT-CONTROLLER: Mach</name>
 		<enable>
@@ -179,7 +195,7 @@
 			</condition>
 		</enable>
 		<input>
-			<property>/instrumentation/airspeed-indicator/indicated-mach</property>
+			<property>/it-autoflight/internal/athr-mach-input-lag</property>
 			<scale>1000</scale>
 		</input>
 		<reference>
@@ -190,12 +206,12 @@
 		<config>
 			<Kp>0.055</Kp>
 			<Ti>9.0</Ti>
-			<Td>0.00001</Td>
-			<u_min>/it-autoflight/settings/autothrottle-min</u_min>
-			<u_max>/it-autoflight/settings/autothrottle-max</u_max>
+			<Td>0.00001</Td>  
+			<u_min>/it-autoflight/settings/autothrottle-min</u_min>  
+			<u_max>/it-autoflight/settings/autothrottle-max</u_max>  
 		</config>
 	</pid-controller>
-
+	
 	<filter>
 		<name>IT-CONTROLLER: Idle Limit</name>
 		<type>gain</type>
@@ -217,7 +233,7 @@
 		<input>
 			<condition>
 				<equals>
-					<property>/it-autoflight/mode/thr</property>
+					<property>/it-autoflight/mode/spd</property>
 					<value>RETARD</value>
 				</equals>
 			</condition>
@@ -226,7 +242,7 @@
 		<input>/it-autoflight/settings/autothrottle-min</input>
 		<output>/it-autoflight/internal/throttle-cmd</output>
 	</filter>
-
+	
 	<filter>
 		<name>IT-CONTROLLER: Thrust Limit</name>
 		<type>gain</type>
@@ -248,7 +264,7 @@
 		<input>/it-autoflight/settings/autothrottle-max</input>
 		<output>/it-autoflight/internal/throttle-cmd</output>
 	</filter>
-
+	
 	<filter>
 		<name>System Command: Throttle</name>
 		<type>noise-spike</type>
@@ -269,7 +285,7 @@
 				<or>
 					<and>
 						<equals>
-							<property>/it-autoflight/mode/thr</property>
+							<property>/it-autoflight/mode/spd</property>
 							<value>RETARD</value>
 						</equals>
 						<or>
@@ -308,7 +324,7 @@
 		</max-rate-of-change>
 		<max-rate-of-change>0.3</max-rate-of-change>
 	</filter>
-
+	
 	<filter>
 		<name>System Command: Throttle Comparator</name>
 		<type>gain</type>
@@ -329,7 +345,7 @@
 		</input>
 		<output>/it-autoflight/internal/throttle-compare-max</output>
 	</filter>
-
+	
 	<filter>
 		<name>System Command: Throttle Inactive Sync</name>
 		<type>gain</type>
@@ -345,7 +361,7 @@
 		<input>/it-autoflight/internal/throttle-compare-max</input>
 		<output>/it-autoflight/internal/throttle</output>
 	</filter>
-
+	
 	<!-- Engine 1 -->
 	<filter>
 		<name>System Command: Throttle 1 Filter</name>
@@ -373,7 +389,7 @@
 		</max-rate-of-change>
 		<max-rate-of-change>100</max-rate-of-change>
 	</filter>
-
+	
 	<filter>
 		<name>System Command: Throttle Backdrive 1</name>
 		<type>gain</type>
@@ -395,7 +411,7 @@
 		<input>/it-autoflight/internal/throttle[0]</input>
 		<output>/controls/engines/engine[0]/throttle</output>
 	</filter>
-
+	
 	<!-- Engine 2 -->
 	<filter>
 		<name>System Command: Throttle 2 Filter</name>
@@ -423,7 +439,7 @@
 		</max-rate-of-change>
 		<max-rate-of-change>100</max-rate-of-change>
 	</filter>
-
+	
 	<filter>
 		<name>System Command: Throttle Backdrive 2</name>
 		<type>gain</type>
@@ -445,7 +461,7 @@
 		<input>/it-autoflight/internal/throttle[1]</input>
 		<output>/controls/engines/engine[1]/throttle</output>
 	</filter>
-
+	
 	<!-- Engine 3 -->
 	<filter>
 		<name>System Command: Throttle 3 Filter</name>
@@ -473,7 +489,7 @@
 		</max-rate-of-change>
 		<max-rate-of-change>100</max-rate-of-change>
 	</filter>
-
+	
 	<filter>
 		<name>System Command: Throttle Backdrive 3</name>
 		<type>gain</type>
@@ -495,7 +511,7 @@
 		<input>/it-autoflight/internal/throttle[2]</input>
 		<output>/controls/engines/engine[2]/throttle</output>
 	</filter>
-
+	
 	<!-- Engine 4 -->
 	<filter>
 		<name>System Command: Throttle 4 Filter</name>
@@ -523,7 +539,7 @@
 		</max-rate-of-change>
 		<max-rate-of-change>100</max-rate-of-change>
 	</filter>
-
+	
 	<filter>
 		<name>System Command: Throttle Backdrive 4</name>
 		<type>gain</type>
@@ -545,7 +561,7 @@
 		<input>/it-autoflight/internal/throttle[3]</input>
 		<output>/controls/engines/engine[3]/throttle</output>
 	</filter>
-
+	
 	<!-- Engine 5 -->
 	<filter>
 		<name>System Command: Throttle 5 Filter</name>
@@ -573,7 +589,7 @@
 		</max-rate-of-change>
 		<max-rate-of-change>100</max-rate-of-change>
 	</filter>
-
+	
 	<filter>
 		<name>System Command: Throttle Backdrive 5</name>
 		<type>gain</type>
@@ -595,7 +611,7 @@
 		<input>/it-autoflight/internal/throttle[4]</input>
 		<output>/controls/engines/engine[4]/throttle</output>
 	</filter>
-
+	
 	<!-- Engine 6 -->
 	<filter>
 		<name>System Command: Throttle 6 Filter</name>
@@ -623,7 +639,7 @@
 		</max-rate-of-change>
 		<max-rate-of-change>100</max-rate-of-change>
 	</filter>
-
+	
 	<filter>
 		<name>System Command: Throttle Backdrive 6</name>
 		<type>gain</type>
@@ -645,7 +661,7 @@
 		<input>/it-autoflight/internal/throttle[5]</input>
 		<output>/controls/engines/engine[5]/throttle</output>
 	</filter>
-
+	
 	<!-- Engine 7 -->
 	<filter>
 		<name>System Command: Throttle 7 Filter</name>
@@ -673,7 +689,7 @@
 		</max-rate-of-change>
 		<max-rate-of-change>100</max-rate-of-change>
 	</filter>
-
+	
 	<filter>
 		<name>System Command: Throttle Backdrive 7</name>
 		<type>gain</type>
@@ -695,7 +711,7 @@
 		<input>/it-autoflight/internal/throttle[6]</input>
 		<output>/controls/engines/engine[6]/throttle</output>
 	</filter>
-
+	
 	<!-- Engine 8 -->
 	<filter>
 		<name>System Command: Throttle 8 Filter</name>
@@ -723,7 +739,7 @@
 		</max-rate-of-change>
 		<max-rate-of-change>100</max-rate-of-change>
 	</filter>
-
+	
 	<filter>
 		<name>System Command: Throttle Backdrive 8</name>
 		<type>gain</type>
