@@ -7,26 +7,27 @@
     <!-- Livery select -->
     <nasal>
         <load>
-         var livery_update = aircraft.livery_update.new("Aircraft/787-family/Models/Liveries-9/GEnx", 10);
+            var livery_update =
+            aircraft.livery_update.new("Aircraft/787-family/Models/Liveries-9/GEnx", 10);
         </load>
 
         <unload>
-         livery_update.stop();
+            livery_update.stop();
         </unload>
     </nasal>
-	
-	<!-- wifiantenna -->
 
-	<animation>
-	  <object-name>wifiantenna</object-name>
-	  <type>select</type>
-	  <condition>
-	     <equals>
-		<property>externaladdons/wifi</property>
-		<value>1</value>
-	     </equals>
-	  </condition>
-	</animation>
+    <!-- wifiantenna -->
+
+    <animation>
+        <object-name>wifiantenna</object-name>
+        <type>select</type>
+        <condition>
+            <equals>
+                <property>externaladdons/wifi</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
 
     <animation>
         <type>material</type>
@@ -134,8 +135,8 @@
     <!-- Flight Deck -->
 
     <model>
-        <name>flightdeck</name>
-        <path>FlightDeck/b787.flightdeck.xml</path>
+        <name>cockpit</name>
+        <path>FlightDeck/cockpit.xml</path>
         <offsets>
             <x-m>-2.982308</x-m>
 
@@ -468,7 +469,7 @@
         </condition>
         <offsets>
             <x-m> -23.9012</x-m>
-            <y-m>  0.00</y-m>
+            <y-m> 0.00</y-m>
             <z-m> -2</z-m>
         </offsets>
     </model>
@@ -484,7 +485,7 @@
         </condition>
         <offsets>
             <x-m> -23.9012</x-m>
-            <y-m>  0.00</y-m>
+            <y-m> 0.00</y-m>
             <z-m> -2</z-m>
         </offsets>
     </model>
@@ -500,7 +501,7 @@
         </condition>
         <offsets>
             <x-m> -23.9012</x-m>
-            <y-m>  0.00</y-m>
+            <y-m> 0.00</y-m>
             <z-m> -2</z-m>
         </offsets>
     </model>
@@ -516,7 +517,7 @@
         </condition>
         <offsets>
             <x-m> -23.9012</x-m>
-            <y-m>  0.00</y-m>
+            <y-m> 0.00</y-m>
             <z-m> -2</z-m>
         </offsets>
     </model>
@@ -673,7 +674,7 @@
         <offset-deg>0</offset-deg>
         <center>
             <x-m>28.71076</x-m>
-            
+
             <z-m>7.1</z-m>
         </center>
         <axis>
@@ -693,7 +694,7 @@
         <offset-deg>0</offset-deg>
         <center>
             <x-m>-23.83516</x-m>
-            
+
             <z-m>-1.164</z-m>
         </center>
         <axis>
@@ -747,7 +748,7 @@
         </interpolation>
         <center>
             <x-m>-23.25</x-m>
-            
+
             <z-m>-1.063</z-m>
         </center>
         <axis>
@@ -1004,18 +1005,18 @@
     <!-- Stairs -->
 
     <model>
-    <path>Aircraft/787-family/Models/Ground/Services/Stairs/stairs.xml</path>
-    <condition>
-        <equals>
-        <property>services/stairs/enable</property>
-        <value>1</value>
-        </equals>
-    </condition>
-    <offsets>
-        <x-m>-24.763</x-m> <!-- front to back -->
-        <y-m>-9.8276</y-m> <!-- side to side -->
-        <z-m>1</z-m> <!-- height -->
-    </offsets>
+        <path>Aircraft/787-family/Models/Ground/Services/Stairs/stairs.xml</path>
+        <condition>
+            <equals>
+                <property>services/stairs/enable</property>
+                <value>1</value>
+            </equals>
+        </condition>
+        <offsets>
+            <x-m>-24.763</x-m> <!-- front to back -->
+            <y-m>-9.8276</y-m> <!-- side to side -->
+            <z-m>1</z-m> <!-- height -->
+        </offsets>
     </model>
 
     <!-- External Power -->
