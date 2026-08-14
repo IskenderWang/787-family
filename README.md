@@ -6,13 +6,15 @@ This is the official home of the unified 787 family, based on the two models lis
 
 After gitorious closed down and former maintainer Omega95 retired, islandmonkey created a GitHub repo, which was subsequently merged into FGAddon. Now, IskenderWang and Marsdolphin, among others, are collaborating on a project that aims to improve the quality of the 787 and several of its variants.
 
-NOTE: The autopilot now fully operates on the latest version of [Octal450's excellent ITAF system](https://github.com/Octal450/IT-AUTOFLIGHT) &mdash; see [here](http://wiki.flightgear.org/IT-AUTOFLIGHT) for more information.
+NOTE: The autopilot now fully operates on the latest version of [Octal450's excellent ITAF system](https://github.com/Octal450/IT-AUTOFLIGHT) &mdash; see [the wiki article](https://wiki.flightgear.org/IT-AUTOFLIGHT) for more information.
 
-## This package contains the following models:
+This version of the 787 for FG uses the property rules/C++ system implemented in `wingflexer.xml`. For more info: [Wingflexer (FG wiki)](https://wiki.flightgear.org/Wingflexer)
 
-- 787-8 (GEnx & RR Trent)
-- 787-9 (GEnx & RR Trent)
-- 787-10 (GEnx & RR Trent)
+## Included models
+
+- **787-8** (GEnx & RR Trent)
+- **787-9** (GEnx & RR Trent)
+- **787-10** (GEnx & RR Trent)
 
 ## Install
 
@@ -33,16 +35,18 @@ git reset --hard origin/master # best bet, later if you want you can switch bran
 ```
 
 - If, for whatever reason in the world, that DOESN'T work, then this should for sure: simply delete that directory entirely and then `git clone` this repo once again to receive a fresh and fully working revision.
-  
-- **I'm not getting enough power during takeoff**: First and foremost, check to be certain that your engine generators are ON by the time you're lined up (you probably already did this as soon as your engines were fully running). Now, for the key thing: *make sure your ***APU gen*** switch is turned **OFF*** before you begin your takeoff roll. For some reason we haven't determined yet, the electrical system doesn't default to the engine generators if the APU gen is on as well, which I suspect leads to insufficient engine power &mdash; so, to prevent any power draw that could delay vR, you'll have to flip it to the OFF position. As for the APU itself, there are several courses of action one can take. Some prefer to turn it off as soon as their engines come alive, while others may wait until a short while after takeoff as just an extra precaution should either of the engines fail in the critical time directly after the rotation for takeoff.
+- **I'm not getting enough power during takeoff**: First and foremost, check to be certain that your engine generators are ON by the time you're lined up (you probably already did this as soon as your engines were fully running). Now, for the key thing: _make sure your **APU gen** is switched **OFF**_ before you begin your takeoff roll. For some reason we haven't determined yet, the electrical system doesn't default to the engine generators if the APU gen is on as well, which I suspect leads to insufficient engine power &mdash; so, to prevent any power draw that could delay vR, you'll have to flip it to the OFF position. As for the APU itself, there are several courses of action one can take. Some prefer to turn it off as soon as their engines come alive, while others may wait until a short while after takeoff as just an extra precaution should either of the engines fail in the critical time directly after the rotation for takeoff.
 
 ## Livery Contribution
 
 If you made a livery, and want it to be added make sure to create a fork, add it there and create a pull request, make sure the livery name is with the current standard of
+
 ```sh
 <name type="string">ICAO Airline full name (Registration)</name>
 ```
+
 Example
+
 ```sh
 <name type="string">DLH Lufthansa (D-ABPD)</name>
 ```
