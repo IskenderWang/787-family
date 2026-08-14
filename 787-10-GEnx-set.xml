@@ -91,7 +91,7 @@
             <splash-texture>Aircraft/787-family/img/splash2.png</splash-texture>
         </startup>
 
-        <!-- Initialize External Connections as False, the clients 
+        <!-- Initialize External Connections as False, the clients
          will change them to true if connection is established -->
 
         <connection>
@@ -161,10 +161,8 @@
             </nd-settings>
 
             <nd n="0">
-                <radar-texture-path type="string">
-                    Aircraft/787-family/Models/Instruments/od_ndradar_1.png</radar-texture-path>
-                <symbol-texture-path type="string">
-                    Aircraft/787-family/Models/Instruments/symbols_2d.png</symbol-texture-path>
+                <radar-texture-path type="string">Aircraft/787-family/Models/Instruments/od_ndradar_1.png</radar-texture-path>
+                <symbol-texture-path type="string">Aircraft/787-family/Models/Instruments/symbols_2d.png</symbol-texture-path>
                 <font>
                     <color>
                         <red type="float">0.7</red>
@@ -185,10 +183,8 @@
             </nd>
 
             <nd n="1">
-                <radar-texture-path type="string">
-                    Aircraft/787-family/Models/Instruments/od_ndradar_2.png</radar-texture-path>
-                <symbol-texture-path type="string">
-                    Aircraft/787-family/Models/Instruments/symbols_2d.png</symbol-texture-path>
+                <radar-texture-path type="string">Aircraft/787-family/Models/Instruments/od_ndradar_2.png</radar-texture-path>
+                <symbol-texture-path type="string">Aircraft/787-family/Models/Instruments/symbols_2d.png</symbol-texture-path>
                 <font>
                     <color>
                         <red type="float">0.7</red>
