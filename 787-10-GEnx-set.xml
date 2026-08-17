@@ -8,7 +8,7 @@
         <aero>787-10-GEnx</aero>
         <primary-set type="bool">true</primary-set>
         <authors>
-          See Authors.md for details.
+            See Authors.md for details.
         </authors>
         <aircraft-version>3.6</aircraft-version>
         <rating>
@@ -66,7 +66,8 @@
                 <diagram>help.jpg</diagram>
                 <chart>help.jpg</chart>
             </efb>
-            <shadow-enabled type="bool">true</shadow-enabled> <!-- disabled in remote aircraft over mp -->
+            <!-- disabled in remote aircraft over mp -->
+            <shadow-enabled type="bool">true</shadow-enabled>
         </model>
 
         <hud>
@@ -87,10 +88,11 @@
         </flaps>
 
         <startup>
-            <splash-texture>Aircraft/787-family/splash2.png</splash-texture>
+            <splash-texture>Aircraft/787-family/img/splash2.png</splash-texture>
         </startup>
 
-        <!-- Initialize External Connections as False, the clients will change them to true if connection is established -->
+        <!-- Initialize External Connections as False, the clients
+         will change them to true if connection is established -->
 
         <connection>
             <fgfscopilot>
@@ -562,7 +564,8 @@
                         <binding>
                             <command>nasal</command>
                             <script>
-                             var dualcontrol = gui.Dialog.new("sim/gui/dialogs/dualcontrol/dialog", "Aircraft/787-family/Systems/dualcontrol-dlg.xml");
+                             var dualcontrol = gui.Dialog.new("sim/gui/dialogs/dualcontrol/dialog",
+                    "Aircraft/787-family/Systems/dualcontrol-dlg.xml");
                              dualcontrol.open();
                             </script>
                         </binding>
@@ -673,7 +676,8 @@
             </generic>
         </multiplay>
 
-        <!-- NOTE that the Dual Control MP Properties will be aliased into /sim/multiplay/generic/ through Dual_Control_Pilot.nas, Dual_Control_Copilot and Dual_Control_787.nas files -->
+        <!-- NOTE that the Dual Control MP Properties will be aliased into /sim/multiplay/generic/
+        through Dual_Control_Pilot.nas, Dual_Control_Copilot and Dual_Control_787.nas files -->
 
     </sim>
 
@@ -856,9 +860,9 @@
             <main-panel-pedestal-norm type="double">0.8</main-panel-pedestal-norm>
             <strobe type="bool">false</strobe>
         </lighting>
-	<externaladdons>
-	    <wifi type="bool">false</wifi>
-	</externaladdons>
+        <externaladdons>
+            <wifi type="bool">false</wifi>
+        </externaladdons>
         <switches>
             <no-smoking-sign type="bool">true</no-smoking-sign>
             <seatbelt-sign type="bool">false</seatbelt-sign>
@@ -938,17 +942,17 @@
             <serviceable>true</serviceable>       <!-- EGPWS_ENABLE -->
 
             <configuration-module>
-                <category-1>  255  </category-1>  <!-- AIRCRAFT_MODE_TYPE_SELECT -->
-                <category-3>  2    </category-3>  <!-- POSITION_INPUT_SELECT -->
-                <category-4>  1002 </category-4>  <!-- ALTITUDE_CALLOUTS -->
-                <category-5>  0    </category-5>  <!-- AUDIO_MENU_SELECT -->
-                <category-6>  1    </category-6>  <!-- TERRAIN_DISPLAY_SELECT -->
-                <category-7>  124  </category-7>  <!-- OPTIONS_SELECT_GROUP_1 -->
-                <category-8>  3    </category-8>  <!-- RADIO_ALTITUDE_INPUT_SELECT -->
-                <category-9>  3    </category-9>  <!-- NAVIGATION_INPUT_SELECT -->
-                <category-10> 6    </category-10> <!-- ATTITUDE_INPUT_SELECT -->
-                <category-13> 7    </category-13> <!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->
-                <category-14> 0    </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
+                <category-1> 255 </category-1>  <!-- AIRCRAFT_MODE_TYPE_SELECT -->
+                <category-3> 2 </category-3>  <!-- POSITION_INPUT_SELECT -->
+                <category-4> 1002 </category-4>  <!-- ALTITUDE_CALLOUTS -->
+                <category-5> 0 </category-5>  <!-- AUDIO_MENU_SELECT -->
+                <category-6> 1 </category-6>  <!-- TERRAIN_DISPLAY_SELECT -->
+                <category-7> 124 </category-7>  <!-- OPTIONS_SELECT_GROUP_1 -->
+                <category-8> 3 </category-8>  <!-- RADIO_ALTITUDE_INPUT_SELECT -->
+                <category-9> 3 </category-9>  <!-- NAVIGATION_INPUT_SELECT -->
+                <category-10> 6 </category-10> <!-- ATTITUDE_INPUT_SELECT -->
+                <category-13> 7 </category-13> <!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->
+                <category-14> 0 </category-14> <!-- AUDIO_OUTPUT_LEVEL -->
             </configuration-module>
 
             <inputs>                              <!-- Module I/O -->

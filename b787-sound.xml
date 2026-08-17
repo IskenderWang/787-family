@@ -492,7 +492,7 @@
             <max-dist>100.0</max-dist>
         </announcement>
 
-        <announcement>
+        <!-- <announcement>
             <name>safety</name>
             <path>Aircraft/787-family/Sounds/safety.wav</path>
             <mode>once</mode>
@@ -509,7 +509,7 @@
             </position>
             <reference-dist>30.0</reference-dist>
             <max-dist>100.0</max-dist>
-        </announcement>
+        </announcement> -->
 
         <announcement>
             <name>cruise</name>
@@ -1194,7 +1194,8 @@
                     <property>instrumentation/fmc/vspeeds/VR</property>
                 </less-than>
                 <and>
-                    <!-- If you're in the air with no gears on the ground (weight on wheels), V1 & VR won't be relevant to you -->
+                    <!-- If you're in the air with no gears on the ground (weight on wheels), V1 &
+                    VR won't be relevant to you -->
                     <or>
                         <property>gear/gear[0]/wow</property>
                         <property>gear/gear[1]/wow</property>
@@ -1247,7 +1248,8 @@
             <path>Aircraft/787-family/Sounds/v2.wav</path>
             <condition>
                 <greater-than>
-                    <!-- Don't bother with a V2 callout if the gears are fully retracted, another measure to restrict to takeoff only -->
+                    <!-- Don't bother with a V2 callout if the gears are fully retracted, another
+                    measure to restrict to takeoff only -->
                     <property>/gear/gear/position-norm</property>
                     <value type="double">0</value>
                 </greater-than>
