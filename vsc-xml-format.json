@@ -1,0 +1,10 @@
+{
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml",
+    "editor.tabSize": 2,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true
+  },
+  "xml.format.maxLineWidth": 120,
+  "redhat.telemetry.enabled": false
+}
