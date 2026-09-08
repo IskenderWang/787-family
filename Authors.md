@@ -6,6 +6,7 @@ Current maintainers:
 * Marsdolphin
 * Pilot2938
 * Nicolás Castellán
+* Naviat
 
 Special thanks to Wesley, Zac, and all other contributors+helpers
 
